@@ -12,13 +12,14 @@
  *******************************************************************************/
 package org.eclipse.sirius.business.internal.resource.parser;
 
-import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.xmi.XMIResource;
+import org.eclipse.emf.ecore.xmi.XMLParserPool;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
@@ -29,11 +30,12 @@ import org.eclipse.sirius.business.internal.migration.RepresentationsFileResourc
 import org.eclipse.sirius.business.internal.migration.RepresentationsFileVersionSAXParser;
 import org.osgi.framework.Version;
 
+import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 
 /**
  * A resource factory decorator to set XMI encodings.
- * 
+ *
  * @author ymortier
  */
 public class AirDResourceFactory extends XMIResourceFactoryImpl {
@@ -71,7 +73,7 @@ public class AirDResourceFactory extends XMIResourceFactoryImpl {
 
     /**
      * Get default load options.
-     * 
+     *
      * @return the default load options
      */
     public static Map<Object, Object> getDefaultLoadOptions() {
@@ -80,17 +82,52 @@ public class AirDResourceFactory extends XMIResourceFactoryImpl {
 
     /**
      * Get default save options.
-     * 
+     *
      * @return the default save options
      */
     public static Map<Object, Object> getDefaultSaveOptions() {
         return DEFAULT_SAVE_OPTIONS;
     }
 
+    // The following three field definitions were copied from
+    // org.eclipse.e4.ui.workbench/src/org/eclipse/e4/ui/internal/workbench/E4XMIResourceFactory.java,
+    // see https://bugs.eclipse.org/bugs/show_bug.cgi?id=409279
+
     /**
-     * 
+     * List used for EMF {@link XMLResource#OPTION_USE_CACHED_LOOKUP_TABLE}
+     * option value. Packaged in a ThreadLocal per EMF recommendation for thread
+     * safety.
+     */
+    private final ThreadLocal<List<Object>> lookupTable = new ThreadLocal<List<Object>>() {
+        @Override
+        protected List<Object> initialValue() {
+            return Lists.newArrayList();
+        }
+    };
+
+    /**
+     * Parser pool object for {@link XMLResource#OPTION_USE_PARSER_POOL} option.
+     * Also needed for setting {@link XMLResource#OPTION_USE_DEPRECATED_METHODS}
+     * for false.
+     */
+    private final XMLParserPool parserPool = new XMLParserPoolImpl(true);
+
+    /**
+     * Map used for {@link XMLResource#OPTION_USE_XML_NAME_TO_FEATURE_MAP}. Per
+     * EMF documentation, the map is hosted within a ThreadLocale for thread
+     * safety.
+     */
+    private final ThreadLocal<Map<Object, Object>> nameToFeatureMap = new ThreadLocal<Map<Object, Object>>() {
+        @Override
+        protected Map<Object, Object> initialValue() {
+            return Maps.newHashMap();
+        }
+    };
+
+    /**
+     *
      * {@inheritDoc}
-     * 
+     *
      * @see org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory#createResource(org.eclipse.emf.common.util.URI)
      */
     @Override
@@ -119,7 +156,7 @@ public class AirDResourceFactory extends XMIResourceFactoryImpl {
 
     /**
      * Returns the implementation of the AirdResourceImpl to use.
-     * 
+     *
      * @param uri
      *            the uri of the AirdResource
      * @return the implementation of the AirdResourceImpl to use
@@ -130,53 +167,39 @@ public class AirDResourceFactory extends XMIResourceFactoryImpl {
 
     /**
      * Sets the Load options to associate to the AirDResource.
-     * 
+     *
      * @param resource
      *            the resource being loaded
      * @param migrationIsNeeded
      */
     private void setLoadOptions(XMIResource resource, boolean migrationIsNeeded) {
-
-        final Map<Object, Object> options = new HashMap<Object, Object>();
-        /* default load options. */
-        options.putAll(getDefaultLoadOptions());
+        Map<Object, Object> options = getDefaultLoadOptions();
         options.put(XMLResource.OPTION_DEFER_ATTACHMENT, true);
         options.put(XMLResource.OPTION_DEFER_IDREF_RESOLUTION, true);
         options.put(XMLResource.OPTION_USE_DEPRECATED_METHODS, false);
-        options.put(XMLResource.OPTION_USE_PARSER_POOL, new XMLParserPoolImpl(true));
-        options.put(XMLResource.OPTION_USE_XML_NAME_TO_FEATURE_MAP, Maps.newHashMap());
-
-        // extendedMetaData and resourceHandler
-
+        options.put(XMLResource.OPTION_USE_PARSER_POOL, parserPool);
+        options.put(XMLResource.OPTION_USE_XML_NAME_TO_FEATURE_MAP, nameToFeatureMap.get());
+        options.put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
         if (migrationIsNeeded) {
             options.put(XMLResource.OPTION_EXTENDED_META_DATA, extendedMetaData);
             options.put(XMLResource.OPTION_RESOURCE_HANDLER, resourceHandler);
         }
-
-        options.put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
-
-        resource.getDefaultLoadOptions().putAll(options);
     }
 
     /**
      * Sets the Save options to associate to the AirDResource.
-     * 
+     *
      * @param resource
      *            the resource being loaded
      * @param migrationIsNeeded
      */
     private void setSaveOptions(XMIResource resource, boolean migrationIsNeeded) {
-
-        final Map<Object, Object> options = new HashMap<Object, Object>();
-        /* default save options. */
-        options.putAll(getDefaultSaveOptions());
+        Map<Object, Object> options = getDefaultSaveOptions();
+        options.put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
+        options.put(XMLResource.OPTION_USE_CACHED_LOOKUP_TABLE, lookupTable.get());
         if (migrationIsNeeded) {
             options.put(XMLResource.OPTION_EXTENDED_META_DATA, extendedMetaData);
             options.put(XMLResource.OPTION_RESOURCE_HANDLER, resourceHandler);
         }
-        options.put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
-
-        resource.getDefaultSaveOptions().putAll(options);
-
     }
 }
