@@ -39,6 +39,19 @@ public class TransitiveClosure<T> implements Relation<T> {
     }
 
     @Override
+     * Create a new transitive closure on the specified relation.
+     * 
+     * @param rel
+     *            the relation to close on.
+     * @param <T>
+     *            the type of the relation.
+     * @return the transitive closure.
+     */
+    public static <T> TransitiveClosure<T> of(Relation<T> rel) {
+        return new TransitiveClosure<T>(rel);
+    }
+
+    /**
     public Set<T> apply(T from) {
         Preconditions.checkNotNull(from);
         Set<T> result = Sets.newHashSet(relation.apply(from));
