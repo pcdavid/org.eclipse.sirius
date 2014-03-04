@@ -19,16 +19,12 @@ import org.eclipse.sirius.ui.business.api.dialect.DialectUIServices;
  * @author pcdavid
  */
 public class TreeDialectUI implements DialectUI {
-    /**
-     * {@inheritDoc}
-     */
+    @Override
     public String getName() {
         return "tree";
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    @Override
     public DialectUIServices getServices() {
         return new TreeDialectUIServices();
     }
