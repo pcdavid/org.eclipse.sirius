@@ -30,5 +30,8 @@
   <extension id="org.eclipse.sirius.common.serviceInterpreter" point="org.eclipse.sirius.common.expressionInterpreter">
     <expressionInterpreterProvider interpreterProviderClass="org.eclipse.sirius.common.tools.internal.interpreter.ServiceInterpreter" />
   </extension>
+  <extension id="org.eclipse.sirius.common.jsInterpreter" point="org.eclipse.sirius.common.expressionInterpreter">
+    <expressionInterpreterProvider interpreterProviderClass="org.eclipse.sirius.common.tools.internal.interpreter.JSInterpreter" />
+  </extension>
   
 </plugin>
