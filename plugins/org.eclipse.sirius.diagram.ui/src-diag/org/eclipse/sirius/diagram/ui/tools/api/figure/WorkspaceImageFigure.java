@@ -13,23 +13,24 @@ package org.eclipse.sirius.diagram.ui.tools.api.figure;
 import java.io.File;
 import java.net.MalformedURLException;
 
+import org.eclipse.core.runtime.Path;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.jface.resource.ImageDescriptor;
-import org.eclipse.sirius.common.tools.api.resource.ImageFileFormat;
+import org.eclipse.sirius.common.tools.api.resource.FileProvider;
 import org.eclipse.sirius.diagram.ContainerStyle;
 import org.eclipse.sirius.diagram.WorkspaceImage;
-import org.eclipse.sirius.diagram.ui.internal.refresh.listeners.WorkspaceFileResourceChangeListener;
 import org.eclipse.sirius.diagram.ui.provider.DiagramUIPlugin;
 import org.eclipse.sirius.diagram.ui.tools.api.image.DiagramImagesPath;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.graphics.ImageData;
 
 /**
  * The {@link WorkspaceImageFigure} is useful to load images using a cache. The
  * image can be in the workspace, or if it's not found in the workspace it will
  * be looked up in the plug-ins.
- *
+ * 
  * @author cbrun
- *
+ * 
  */
 public class WorkspaceImageFigure extends AbstractTransparentImage implements IWorkspaceImageFigure {
 
@@ -39,7 +40,7 @@ public class WorkspaceImageFigure extends AbstractTransparentImage implements IW
 
     /**
      * Create a new {@link WorkspaceImageFigure}.
-     *
+     * 
      * @param flyWeightImage
      *            an image instance.
      */
@@ -49,6 +50,11 @@ public class WorkspaceImageFigure extends AbstractTransparentImage implements IW
         minSize = new Dimension(0, 0);
     }
 
+    /**
+     * {@inheritDoc}
+     * 
+     * @see org.eclipse.draw2d.Figure#setSize(int, int)
+     */
     @Override
     public void setSize(final int w, final int h) {
         if (keepAspectRatio) {
@@ -59,16 +65,31 @@ public class WorkspaceImageFigure extends AbstractTransparentImage implements IW
         }
     }
 
+    /**
+     * {@inheritDoc}
+     * 
+     * @see org.eclipse.draw2d.Figure#setMaximumSize(org.eclipse.draw2d.geometry.Dimension)
+     */
     @Override
     public void setMaximumSize(final Dimension d) {
         super.setMaximumSize(this.getSize());
     }
 
+    /**
+     * {@inheritDoc}
+     * 
+     * @see org.eclipse.draw2d.Figure#setMinimumSize(org.eclipse.draw2d.geometry.Dimension)
+     */
     @Override
     public void setMinimumSize(final Dimension d) {
         super.setMinimumSize(this.getSize());
     }
 
+    /**
+     * {@inheritDoc}
+     * 
+     * @see org.eclipse.draw2d.Figure#setPreferredSize(org.eclipse.draw2d.geometry.Dimension)
+     */
     @Override
     public void setPreferredSize(final Dimension size) {
         super.setPreferredSize(this.getSize());
@@ -76,7 +97,7 @@ public class WorkspaceImageFigure extends AbstractTransparentImage implements IW
 
     /**
      * Get an {@link Image} instance. The image will be stored in a cache.
-     *
+     * 
      * @param path
      *            the path is a "/project/file" path, if it's not found in the
      *            workspace, the class will look for the file in the plug-ins.
@@ -84,23 +105,53 @@ public class WorkspaceImageFigure extends AbstractTransparentImage implements IW
      */
     public static Image flyWeightImage(final String path) {
         if (path != null) {
-            final File imageFile = WorkspaceFileResourceChangeListener.getInstance().getFileFromURI(path);
-            ImageDescriptor desc = null;
-            if (imageFile != null && WorkspaceFileResourceChangeListener.getInstance().getReadStatusOfFile(imageFile)) {
-                try {
-                    desc = WorkspaceFileResourceChangeListener.getInstance().findImageDescriptor(imageFile);
-                } catch (MalformedURLException e) {
-                    // do nothing
-                }
-            }
+            ImageDescriptor desc = imageDescriptor(path);
             return WorkspaceImageFigure.flyWeightImage(desc);
         }
         return WorkspaceImageFigure.getImageNotFound();
     }
 
     /**
+     * Get the dimension of an image file. You should prefer this method instead
+     * of getting the {@link Image} instance itself and then retrieving its size
+     * as this avoid the creation of a native resource which might create
+     * deadlock situations if not done in the UI thread. See
+     * https://bugs.eclipse.org/bugs/show_bug.cgi?id=265265
+     * 
+     * @param path
+     *            the path is a "/project/file" path, if it's not found in the
+     *            workspace, the class will look for the file in the plug-ins.
+     * @return a {@link Dimension} instance having the width and height of the
+     *         image or null if the image can't be found or
+     *         loaded.
+     */
+    public static Dimension getImageBounds(final String path) {
+        ImageDescriptor descriptor = imageDescriptor(path);
+        if (descriptor != null) {
+            ImageData imgData = descriptor.getImageData();
+            if (imgData != null) {
+                return new Dimension(imgData.width, imgData.height);
+            }
+        }
+        return null;
+    }
+
+    private static ImageDescriptor imageDescriptor(final String path) {
+        final File imageFile = WorkspaceFileResourceChangeListener.getInstance().getFileFromURI(path);
+        ImageDescriptor desc = null;
+        if (imageFile != null && WorkspaceFileResourceChangeListener.getInstance().getReadStatusOfFile(imageFile)) {
+            try {
+                desc = WorkspaceFileResourceChangeListener.getInstance().findImageDescriptor(imageFile);
+            } catch (MalformedURLException e) {
+                // do nothing
+            }
+        }
+        return desc;
+    }
+
+    /**
      * Get an {@link Image} instance. The image will be stored in a cache.
-     *
+     * 
      * @param desc
      *            the image descriptor
      * @return an image instance given the image descriptor.
@@ -114,12 +165,12 @@ public class WorkspaceImageFigure extends AbstractTransparentImage implements IW
     }
 
     private static Image getImageNotFound() {
-        return DiagramUIPlugin.getPlugin().getImage(DiagramUIPlugin.Implementation.findImageWithDimensionDescriptor(DiagramImagesPath.IMAGE_NOT_FOUND));
+        return DiagramUIPlugin.getPlugin().getImage(DiagramUIPlugin.getPlugin().findImageWithDimensionDescriptor(DiagramImagesPath.IMAGE_NOT_FOUND));
     }
 
     /**
      * Create an {@link WorkspaceImageFigure} instance from an image path.
-     *
+     * 
      * @param path
      *            the path is a "/project/file" path, if it's not found in the
      *            workspace, the class will look for the file in the plug-ins.
@@ -132,7 +183,7 @@ public class WorkspaceImageFigure extends AbstractTransparentImage implements IW
 
     /**
      * Create an {@link WorkspaceImageFigure} instance from a workspace image.
-     *
+     * 
      * @param wksImage
      *            : an instance of {@link WorkspaceImage}.
      * @return the image figure built using the {@link WorkspaceImage} object.
@@ -145,21 +196,19 @@ public class WorkspaceImageFigure extends AbstractTransparentImage implements IW
 
     /**
      * Get the image aspect ratio.
-     *
+     * 
      * @return the image aspect ratio
      */
-    @Override
     public double getImageAspectRatio() {
         return imageAspectRatio;
     }
 
     /**
      * Refresh the figure.
-     *
+     * 
      * @param bundledImage
      *            the image associated to the figure
      */
-    @Override
     public void refreshFigure(final WorkspaceImage bundledImage) {
         final String path = bundledImage.getWorkspacePath();
         final Image image = WorkspaceImageFigure.flyWeightImage(path);
@@ -171,48 +220,14 @@ public class WorkspaceImageFigure extends AbstractTransparentImage implements IW
 
     /**
      * Refresh the figure.
-     *
+     * 
      * @param containerStyle
      *            the style of the container
      */
-    @Override
     public void refreshFigure(final ContainerStyle containerStyle) {
         if (containerStyle instanceof WorkspaceImage) {
             WorkspaceImage workspaceImage = (WorkspaceImage) containerStyle;
             refreshFigure(workspaceImage);
-        }
-    }
-
-    /**
-     * Extract image from path.
-     * 
-     * @param path
-     *            the path of the image
-     * @return the image
-     */
-    public static Image getImageInstanceFromPath(final String path) {
-        final Image image;
-        if (path != null && isSvgImage(path)) {
-            image = SVGWorkspaceImageFigure.flyWeightImage(path);
-        } else {
-            image = WorkspaceImageFigure.flyWeightImage(path);
-        }
-        return image;
-    }
-
-    /**
-     * Check svg format from the path of an image.
-     * 
-     * @param path
-     *            the path of the image to check
-     * @return true for svg or svgz image format.
-     */
-    public static boolean isSvgImage(String path) {
-        if (path == null) {
-            return false;
-        } else {
-            String pathToUpperCase = path.toUpperCase();
-            return pathToUpperCase.endsWith(ImageFileFormat.SVG.getName()) || pathToUpperCase.endsWith(ImageFileFormat.SVGZ.getName());
         }
     }
 }

@@ -13,7 +13,6 @@ package org.eclipse.sirius.diagram.ui.business.internal.query;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.sirius.diagram.description.style.WorkspaceImageDescription;
 import org.eclipse.sirius.diagram.ui.tools.api.figure.WorkspaceImageFigure;
-import org.eclipse.swt.graphics.Image;
 
 import com.google.common.base.Preconditions;
 
@@ -44,17 +43,12 @@ public class WorkspaceImageQuery {
      * @return the default draw2D dimension according to the specified image.
      */
     public Dimension getDefaultDimension() {
-        final Dimension result = DEFAULT_WORKSPACE_DIMENSION.getCopy();
-        final String path = workspaceImage.getWorkspacePath();
-        final Image image;
-        image = WorkspaceImageFigure.getImageInstanceFromPath(path);
-        if (image != null) {
-            // Use default image size
-            result.width = image.getBounds().width;
-            result.height = image.getBounds().height;
+        Dimension result = null;
+        String path = workspaceImage.getWorkspacePath();
+        if (path != null) {
+            result = WorkspaceImageFigure.getImageBounds(path);
         }
-
-        return result;
+        return Objects.firstNonNull(result, DEFAULT_WORKSPACE_DIMENSION.getCopy());
     }
 
 }

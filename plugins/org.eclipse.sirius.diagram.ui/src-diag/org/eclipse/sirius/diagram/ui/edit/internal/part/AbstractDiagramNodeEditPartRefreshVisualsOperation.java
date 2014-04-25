@@ -40,7 +40,6 @@ import org.eclipse.sirius.diagram.ui.tools.api.graphical.edit.styles.IBorderItem
 import org.eclipse.sirius.diagram.ui.tools.api.graphical.edit.styles.IStyleConfigurationRegistry;
 import org.eclipse.sirius.diagram.ui.tools.api.graphical.edit.styles.StyleConfiguration;
 import org.eclipse.sirius.diagram.ui.tools.api.layout.LayoutUtils;
-import org.eclipse.swt.graphics.Image;
 
 /**
  * Class which handles the refresh on visuals.
@@ -173,8 +172,10 @@ public class AbstractDiagramNodeEditPartRefreshVisualsOperation {
         if (width == -1 && node.getOwnedStyle() instanceof WorkspaceImage) {
             WorkspaceImage workspaceImage = (WorkspaceImage) node.getStyle();
             final String path = workspaceImage.getWorkspacePath();
-            final Image image = WorkspaceImageFigure.getImageInstanceFromPath(path);
-            width = image.getBounds().width;
+            final Dimension bounds = WorkspaceImageFigure.getImageBounds(path);
+
+
+            width = bounds.width;
         } else {
             width = width * LayoutUtils.SCALE;
         }

@@ -15,7 +15,6 @@ import org.eclipse.sirius.diagram.DNode;
 import org.eclipse.sirius.diagram.WorkspaceImage;
 import org.eclipse.sirius.diagram.ui.tools.api.figure.WorkspaceImageFigure;
 import org.eclipse.sirius.diagram.ui.tools.api.layout.LayoutUtils;
-import org.eclipse.swt.graphics.Image;
 
 import com.google.common.base.Preconditions;
 
@@ -49,19 +48,19 @@ public class DNodeQuery {
         final Dimension result = DEFAULT_NODE_DIMENSION.getCopy();
 
         if (node.getStyle() instanceof WorkspaceImage) {
+
             final WorkspaceImage workspaceImage = (WorkspaceImage) node.getStyle();
             final String path = workspaceImage.getWorkspacePath();
-            final Image image;
-            image = WorkspaceImageFigure.getImageInstanceFromPath(path);
-            if (image != null) {
+            Dimension imageDimension = WorkspaceImageFigure.getImageBounds(path);
+            if (imageDimension != null) {
                 // Use default image size
                 if (node.getWidth() == null || Integer.valueOf(node.getWidth()) == -1) {
-                    result.width = image.getBounds().width;
-                    result.height = image.getBounds().height;
+                    result.width = imageDimension.width;
+                    result.height = imageDimension.height;
                 } else {
                     // width is already defined, adapt height thanks to
                     // image ratio
-                    final double ratio = (double) image.getBounds().width / image.getBounds().height;
+                    final double ratio = (double) imageDimension.width / imageDimension.height;
                     double newHeight = node.getWidth().intValue() / ratio;
 
                     // Adapt to draw2D
@@ -84,5 +83,4 @@ public class DNodeQuery {
 
         return result;
     }
-
 }

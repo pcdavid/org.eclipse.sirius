@@ -190,6 +190,26 @@ public class SVGWorkspaceImageFigure extends SVGFigure implements IWorkspaceImag
     }
 
     /**
+     * Get the dimension of an image file. You should prefer this method instead
+     * of getting the {@link Image} instance itself and then retrieving its size
+     * as this avoid the creation of a native resource which might create
+     * deadlock situations if not done in the UI thread. See
+     * https://bugs.eclipse.org/bugs/show_bug.cgi?id=265265
+     * 
+     * @param path
+     *            the path is a "/project/file" path, if it's not found in the
+     *            workspace, the class will look for the file in the plug-ins.
+     * @return a {@link Dimension} instance having the width and height of the
+     *         image or null if the image can't be found or loaded.
+     */
+    public static Dimension getImageBounds(final String path) {
+        SVGWorkspaceImageFigure fig = new SVGWorkspaceImageFigure();
+        fig.updateImageURI(path);
+        fig.prepareDocument();
+        return fig.getBounds().getSize();
+    }
+
+    /**
      * Remove all entries whose key begins with the given key. Remove from the
      * document map, the entries with the given keys to force to re-read the
      * file.
