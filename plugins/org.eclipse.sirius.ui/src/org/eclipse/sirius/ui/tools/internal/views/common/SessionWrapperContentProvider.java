@@ -130,7 +130,7 @@ public class SessionWrapperContentProvider implements ITreeContentProvider {
             // Look for representation with current element as semantic
             // target.
             result.addAll(getWrappedChildren(parentElement));
-            result.addAll(getRepresentationsAssociatedToEObject((EObject) parentElement));
+            addRepresentationsAssociatedToEObject((EObject) parentElement, result);
         }
     }
 
@@ -175,7 +175,7 @@ public class SessionWrapperContentProvider implements ITreeContentProvider {
         }
     }
 
-    private Collection<DRepresentation> getRepresentationsAssociatedToEObject(final EObject eObject) {
+    private void addRepresentationsAssociatedToEObject(EObject eObject, Collection<Object> result) {
         final Session session = SessionManager.INSTANCE.getSession(eObject);
         if (session != null && session.isOpen()) {
             Collection<DRepresentation> allRepresentations = DialectManager.INSTANCE.getRepresentations(eObject, session);
@@ -186,9 +186,8 @@ public class SessionWrapperContentProvider implements ITreeContentProvider {
                     return from.getName();
                 }
             }));
-            return filteredReps;
+            result.addAll(filteredReps);
         }
-        return Collections.emptyList();
     }
 
     private Collection<Resource> filter(final Collection<Resource> resources) {
