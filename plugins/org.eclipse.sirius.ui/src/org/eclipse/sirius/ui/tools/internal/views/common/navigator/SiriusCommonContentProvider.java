@@ -193,7 +193,7 @@ public class SiriusCommonContentProvider implements ICommonContentProvider {
                 sessionWrapperContentProvider = (SessionWrapperContentProvider) ((GroupingContentProvider) defaultContentProvider).getDelegateTreeContentProvider();
             }
             if (sessionWrapperContentProvider != null) {
-                allChildren.addAll(sessionWrapperContentProvider.getChildrenFromExtensions(parentElement));
+                sessionWrapperContentProvider.addChildrenFromExtensions(parentElement, allChildren);
             }
         }
 

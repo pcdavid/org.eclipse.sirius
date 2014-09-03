@@ -77,16 +77,12 @@ public class SessionWrapperContentProvider implements ITreeContentProvider {
         this.extensions = extensions;
     }
 
-    /**
-     * {@inheritDoc}
-     * 
-     * @see org.eclipse.jface.viewers.ITreeContentProvider#getChildren(java.lang.Object)
-     */
+    @Override
     public Object[] getChildren(final Object parentElement) {
         Collection<Object> allChildren = Lists.newArrayList();
         try {
             allChildren.addAll(doGetChildren(parentElement));
-            allChildren.addAll(getChildrenFromExtensions(parentElement));
+            addChildrenFromExtensions(parentElement, allChildren);
         } catch (IllegalStateException e) {
             // Nothing to do, can happen with CDO
         }
@@ -95,21 +91,21 @@ public class SessionWrapperContentProvider implements ITreeContentProvider {
     }
 
     /**
-     * Get custom children from declared extensions.
+     * Get custom children from declared extensions and adds them to the
+     * specified collection.
      * 
      * @param parentElement
      *            the parent element.
-     * 
-     * @return custom children computed by declared extensions.
+     * @param result
+     *            the collection in which to add the children contributed by th
+     *            extension.
      */
-    public Collection<Object> getChildrenFromExtensions(final Object parentElement) {
-        Collection<Object> extensionsChildren = Lists.newArrayList();
+    public void addChildrenFromExtensions(Object parentElement, Collection<Object> result) {
         if (extensions != null) {
             for (final ITreeContentProvider extension : extensions) {
-                extensionsChildren.addAll(Arrays.asList(extension.getChildren(parentElement)));
+                result.addAll(Arrays.asList(extension.getChildren(parentElement)));
             }
         }
-        return extensionsChildren;
     }
 
     private Collection<Object> doGetChildren(final Object parentElement) {
@@ -222,10 +218,7 @@ public class SessionWrapperContentProvider implements ITreeContentProvider {
         return new ResourceQuery(resource).isRepresentationsResource();
     }
 
-    /**
-     * 
-     * {@inheritDoc}
-     */
+    @Override
     public Object getParent(final Object element) {
         Object parent = getParentFromExtensions(element);
 
@@ -264,19 +257,13 @@ public class SessionWrapperContentProvider implements ITreeContentProvider {
         return null;
     }
 
-    /**
-     * 
-     * {@inheritDoc}
-     */
+    @Override
     public boolean hasChildren(final Object element) {
         Object[] children = getChildren(element);
         return children != null && children.length != 0;
     }
 
-    /**
-     * 
-     * {@inheritDoc}
-     */
+    @Override
     public Object[] getElements(final Object inputElement) {
         Object[] result = null;
         if (inputElement instanceof Session) {
@@ -291,10 +278,7 @@ public class SessionWrapperContentProvider implements ITreeContentProvider {
         return result;
     }
 
-    /**
-     * 
-     * {@inheritDoc}
-     */
+    @Override
     public void dispose() {
         try {
             wrapped.dispose();
@@ -309,10 +293,7 @@ public class SessionWrapperContentProvider implements ITreeContentProvider {
         }
     }
 
-    /**
-     * 
-     * {@inheritDoc}
-     */
+    @Override
     public void inputChanged(final Viewer viewer, final Object oldInput, final Object newInput) {
         if (wrapped != null) {
             wrapped.inputChanged(viewer, oldInput, newInput);
