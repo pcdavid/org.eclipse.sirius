@@ -249,8 +249,9 @@ public class SessionWrapperContentProvider implements ITreeContentProvider {
 
     @Override
     public boolean hasChildren(final Object element) {
-        Object[] children = getChildren(element);
-        return children != null && children.length != 0;
+        Collection<Object> children = Lists.newArrayList();
+        addChildren(element, children);
+        return !children.isEmpty();
     }
 
     @Override
