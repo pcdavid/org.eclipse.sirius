@@ -80,13 +80,17 @@ public class SessionWrapperContentProvider implements ITreeContentProvider {
     @Override
     public Object[] getChildren(final Object parentElement) {
         Collection<Object> allChildren = Lists.newArrayList();
+        addChildren(parentElement, allChildren);
+        return allChildren.toArray();
+    }
+
+    private void addChildren(Object parentElement, Collection<Object> result) {
         try {
-            addChildren(parentElement, allChildren);
-            addChildrenFromExtensions(parentElement, allChildren);
+            addNativeChildren(parentElement, result);
+            addChildrenFromExtensions(parentElement, result);
         } catch (IllegalStateException e) {
             // Nothing to do, can happen with CDO
         }
-        return allChildren.toArray();
     }
 
     /**
@@ -107,7 +111,7 @@ public class SessionWrapperContentProvider implements ITreeContentProvider {
         }
     }
 
-    private void addChildren(Object parentElement, Collection<Object> result) {
+    private void addNativeChildren(Object parentElement, Collection<Object> result) {
         if (parentElement instanceof Session) {
             addSessionChildren((Session) parentElement, result);
         } else if (parentElement instanceof CommonSessionItem) {
