@@ -148,7 +148,7 @@ public class SessionWrapperContentProvider implements ITreeContentProvider {
         }
 
         result.add(new ViewpointsFolderItemImpl(session, session));
-        result.addAll(getSemanticResources(session));
+        addSemanticResources(session, result);
     }
 
     /**
@@ -165,18 +165,14 @@ public class SessionWrapperContentProvider implements ITreeContentProvider {
      *            the concerned session
      * @return list of semantic resources
      */
-    private Collection<Resource> getSemanticResources(final Session session) {
-        final Collection<Resource> allSemanticRes = Lists.newArrayList();
-
+    private void addSemanticResources(Session session, Collection<Object> result) {
         // Add semantic resources
-        allSemanticRes.addAll(session.getSemanticResources());
+        result.addAll(session.getSemanticResources());
 
         // Add controlled resources
         if (session instanceof DAnalysisSessionEObject) {
-            allSemanticRes.addAll(((DAnalysisSessionEObject) session).getControlledResources());
+            result.addAll(((DAnalysisSessionEObject) session).getControlledResources());
         }
-
-        return allSemanticRes;
     }
 
     private Collection<DRepresentation> getRepresentationsAssociatedToEObject(final EObject eObject) {
