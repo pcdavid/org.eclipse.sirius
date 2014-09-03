@@ -109,7 +109,7 @@ public class SessionWrapperContentProvider implements ITreeContentProvider {
 
     private void addChildren(Object parentElement, Collection<Object> result) {
         if (parentElement instanceof Session) {
-            result.addAll(getSessionChildren((Session) parentElement));
+            addSessionChildren((Session) parentElement, result);
         } else if (parentElement instanceof CommonSessionItem) {
             result.addAll(((CommonSessionItem) parentElement).getChildren());
         } else if (parentElement instanceof Collection) {
@@ -142,16 +142,13 @@ public class SessionWrapperContentProvider implements ITreeContentProvider {
         return Collections.emptyList();
     }
 
-    private Collection<Object> getSessionChildren(final Session session) {
-        final List<Object> all = Lists.newArrayList();
-
+    private void addSessionChildren(Session session, Collection<Object> result) {
         if (session instanceof DAnalysisSession && !session.getReferencedSessionResources().isEmpty()) {
-            all.add(new ResourcesFolderItemImpl(session, session));
+            result.add(new ResourcesFolderItemImpl(session, session));
         }
 
-        all.add(new ViewpointsFolderItemImpl(session, session));
-        all.addAll(getSemanticResources(session));
-        return all;
+        result.add(new ViewpointsFolderItemImpl(session, session));
+        result.addAll(getSemanticResources(session));
     }
 
     /**
