@@ -80,17 +80,22 @@ public class SessionWrapperContentProvider implements ITreeContentProvider {
     @Override
     public Object[] getChildren(final Object parentElement) {
         Collection<Object> allChildren = Lists.newArrayList();
-        addChildren(parentElement, allChildren);
+        addChildren(parentElement, allChildren, false);
         return allChildren.toArray();
     }
 
-    private void addChildren(Object parentElement, Collection<Object> result) {
+    private boolean addChildren(Object parentElement, Collection<Object> result, boolean checkOnly) {
+        boolean hashChildren = false;
         try {
-            addNativeChildren(parentElement, result);
-            addChildrenFromExtensions(parentElement, result);
+            hashChildren = addNativeChildren(parentElement, result, checkOnly);
+            if (hashChildren && checkOnly) {
+                return true;
+            }
+            hashChildren = hashChildren || addChildrenFromExtensions(parentElement, result, checkOnly);
         } catch (IllegalStateException e) {
             // Nothing to do, can happen with CDO
         }
+        return hashChildren;
     }
 
     /**
@@ -102,22 +107,42 @@ public class SessionWrapperContentProvider implements ITreeContentProvider {
      * @param result
      *            the collection in which to add the children contributed by th
      *            extension.
+     * @param checkOnly
+     *            if true, only check that whether there are any children, and
+     *            return early if any if found.
+     * @return <code>true</code> if there are children from extensions
      */
-    public void addChildrenFromExtensions(Object parentElement, Collection<Object> result) {
+    public boolean addChildrenFromExtensions(Object parentElement, Collection<Object> result, boolean checkOnly) {
+        boolean hasChildren = false;
         if (extensions != null) {
             for (final ITreeContentProvider extension : extensions) {
-                result.addAll(Arrays.asList(extension.getChildren(parentElement)));
+                List<Object> contrib = Arrays.asList(extension.getChildren(parentElement));
+                hasChildren = hasChildren || !contrib.isEmpty();
+                if (hasChildren && checkOnly) {
+                    return true;
+                }
+                result.addAll(contrib);
             }
         }
+        return hasChildren;
     }
 
-    private void addNativeChildren(Object parentElement, Collection<Object> result) {
+    private boolean addNativeChildren(Object parentElement, Collection<Object> result, boolean checkOnly) {
+        boolean hasChildren = false;
         if (parentElement instanceof Session) {
-            addSessionChildren((Session) parentElement, result);
+            hasChildren = addSessionChildren((Session) parentElement, result, checkOnly);
         } else if (parentElement instanceof CommonSessionItem) {
-            result.addAll(((CommonSessionItem) parentElement).getChildren());
+            Collection<?> children = ((CommonSessionItem) parentElement).getChildren();
+            hasChildren = !children.isEmpty();
+            if (!checkOnly) {
+                result.addAll(children);
+            }
         } else if (parentElement instanceof Collection) {
-            result.addAll((Collection<?>) parentElement);
+            Collection<?> coll = (Collection<?>) parentElement;
+            hasChildren = !coll.isEmpty();
+            if (!checkOnly) {
+                result.addAll(coll);
+            }
         } else if (parentElement instanceof Resource) {
             Resource res = (Resource) parentElement;
             Session session = SessionManager.INSTANCE.getSession(res);
@@ -125,33 +150,51 @@ public class SessionWrapperContentProvider implements ITreeContentProvider {
                 if (session instanceof DAnalysisSessionEObject && ((DAnalysisSessionEObject) session).getControlledResources().contains(parentElement)) {
                     for (EObject obj : res.getContents()) {
                         result.add(new ControlledRoot(obj, parentElement));
+                        hasChildren = true;
+                        if (checkOnly) {
+                            break;
+                        }
                     }
                 } else {
-                    addWrappedChildren(parentElement, result);
+                    hasChildren = addWrappedChildren(parentElement, result, checkOnly);
                 }
             }
         } else if (parentElement instanceof EObject && !(parentElement instanceof DRepresentation)) {
             // Look for representation with current element as semantic
             // target.
-            addWrappedChildren(parentElement, result);
-            addRepresentationsAssociatedToEObject((EObject) parentElement, result);
+            hasChildren = addWrappedChildren(parentElement, result, checkOnly);
+            if (hasChildren && checkOnly) {
+                return true;
+            }
+            hasChildren = hasChildren || addRepresentationsAssociatedToEObject((EObject) parentElement, result, checkOnly);
         }
+        return hasChildren;
     }
 
-    private void addWrappedChildren(Object parentElement, Collection<Object> result) {
-        Object[] structuralChildren = wrapped.getChildren(parentElement);
-        if (structuralChildren != null) {
-            result.addAll(Arrays.asList(structuralChildren));
+    private boolean addWrappedChildren(Object parentElement, Collection<Object> result, boolean checkOnly) {
+        boolean hasChildren = false;
+        if (checkOnly) {
+            hasChildren = wrapped.hasChildren(parentElement);
+        } else {
+            Object[] structuralChildren = wrapped.getChildren(parentElement);
+            if (structuralChildren != null && structuralChildren.length > 0) {
+                hasChildren = true;
+                result.addAll(Arrays.asList(structuralChildren));
+            }
         }
+        return hasChildren;
     }
 
-    private void addSessionChildren(Session session, Collection<Object> result) {
-        if (session instanceof DAnalysisSession && !session.getReferencedSessionResources().isEmpty()) {
-            result.add(new ResourcesFolderItemImpl(session, session));
+    private boolean addSessionChildren(Session session, Collection<Object> result, boolean checkOnly) {
+        if (!checkOnly) {
+            if (session instanceof DAnalysisSession && !session.getReferencedSessionResources().isEmpty()) {
+                result.add(new ResourcesFolderItemImpl(session, session));
+            }
+    
+            result.add(new ViewpointsFolderItemImpl(session, session));
+            addSemanticResources(session, result);
         }
-
-        result.add(new ViewpointsFolderItemImpl(session, session));
-        addSemanticResources(session, result);
+        return true;
     }
 
     /**
@@ -178,11 +221,16 @@ public class SessionWrapperContentProvider implements ITreeContentProvider {
         }
     }
 
-    private void addRepresentationsAssociatedToEObject(EObject eObject, Collection<Object> result) {
+    private boolean addRepresentationsAssociatedToEObject(EObject eObject, Collection<Object> result, boolean checkOnly) {
+        boolean hasChildren = false;
         final Session session = SessionManager.INSTANCE.getSession(eObject);
         if (session != null && session.isOpen()) {
             Collection<DRepresentation> allRepresentations = DialectManager.INSTANCE.getRepresentations(eObject, session);
             List<DRepresentation> filteredReps = Lists.newArrayList(Iterables.filter(allRepresentations, new InViewpointPredicate(session.getSelectedViewpoints(false))));
+            hasChildren = !filteredReps.isEmpty();
+            if (hasChildren && checkOnly) {
+                return true;
+            }
             // Sort the available representations alphabetically by name
             Collections.sort(filteredReps, Ordering.natural().onResultOf(new Function<DRepresentation, String>() {
                 public String apply(DRepresentation from) {
@@ -191,6 +239,7 @@ public class SessionWrapperContentProvider implements ITreeContentProvider {
             }));
             result.addAll(filteredReps);
         }
+        return hasChildren;
     }
 
     private Collection<Resource> filter(final Collection<Resource> resources) {
@@ -250,8 +299,11 @@ public class SessionWrapperContentProvider implements ITreeContentProvider {
     @Override
     public boolean hasChildren(final Object element) {
         Collection<Object> children = Lists.newArrayList();
-        addChildren(element, children);
-        return !children.isEmpty();
+        if (addChildren(element, children, true)) {
+            return !children.isEmpty();
+        } else {
+            return false;
+        }
     }
 
     @Override
