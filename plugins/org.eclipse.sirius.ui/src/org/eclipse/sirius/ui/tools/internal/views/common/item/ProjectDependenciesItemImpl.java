@@ -27,7 +27,6 @@ import org.eclipse.sirius.viewpoint.provider.Messages;
 import org.eclipse.sirius.viewpoint.provider.SiriusEditPlugin;
 import org.eclipse.swt.graphics.Image;
 
-import com.google.common.collect.Iterables;
 import com.google.common.collect.Sets;
 
 /**
@@ -53,6 +52,12 @@ public class ProjectDependenciesItemImpl implements ProjectDependenciesItem {
         this.project = project;
     }
 
+    @Override
+    public boolean hasChildren() {
+        Collection<Object> children = Sets.newLinkedHashSet();
+        return addChildren(children, true);
+    }
+
     /**
      * Get the children of this item.
      *
@@ -61,36 +66,62 @@ public class ProjectDependenciesItemImpl implements ProjectDependenciesItem {
     @Override
     public Collection<?> getChildren() {
         Collection<Object> children = Sets.newLinkedHashSet();
+        addChildren(children, false);
+        return children;
+    }
 
+    // CHECKSTYLE:OFF
+    private boolean addChildren(Collection<Object> result, boolean checkOnly) {
+        boolean hasChildren = false;
         Session session = project.getSession();
         if (session != null) {
             /*
              * Retrieve all resources of the session not located directly in the
              * project
              */
-            Iterable<Resource> semanticDeps = session.getSemanticResources();
-            if (session instanceof DAnalysisSessionEObject) {
-                semanticDeps = Iterables.concat(semanticDeps, ((DAnalysisSessionEObject) session).getControlledResources());
+            hasChildren = addProjectDependencies(session.getSemanticResources(), result, checkOnly);
+            if (hasChildren && checkOnly) {
+                return true;
             }
-            children.addAll(extractProjectDependencies(semanticDeps));
+            if (session instanceof DAnalysisSessionEObject) {
+                hasChildren = hasChildren || addProjectDependencies(((DAnalysisSessionEObject) session).getControlledResources(), result, checkOnly);
+                if (hasChildren && checkOnly) {
+                    return true;
+                }
+            }
 
-            Iterable<Resource> analysesDeps = extractProjectDependencies(session.getAllSessionResources());
-            for (Resource analysisRes : analysesDeps) {
-                children.add(new AnalysisResourceItemImpl(session, analysisRes, this));
+            Collection<Object> analysesDeps = Sets.newLinkedHashSet();
+            hasChildren = hasChildren || addProjectDependencies(session.getAllSessionResources(), analysesDeps, checkOnly);
+            if (hasChildren && checkOnly) {
+                return true;
+            }
+            for (Object analysisRes : analysesDeps) {
+                if (analysisRes instanceof Resource) {
+                    hasChildren = true;
+                    if (checkOnly) {
+                        return true;
+                    }
+                    result.add(new AnalysisResourceItemImpl(session, (Resource) analysisRes, this));
+                }
             }
         }
-        return children;
+        return hasChildren;
     }
+    // CHECKSTYLE:ON
 
-    private Collection<Resource> extractProjectDependencies(Iterable<Resource> dependencies) {
-        Collection<Resource> deps = Sets.newLinkedHashSet();
+    private boolean addProjectDependencies(Iterable<Resource> dependencies, Collection<Object> result, boolean checkOnly) {
+        boolean hasChildren = false;
         for (Resource resource : dependencies) {
             final URI uri = resource.getURI();
             if (uri.isPlatformResource()) {
                 final IFile file = WorkspaceSynchronizer.getFile(resource);
                 if (file != null) {
                     if (!project.getProject().equals(file.getProject())) {
-                        deps.add(resource);
+                        hasChildren = true;
+                        if (checkOnly) {
+                            break;
+                        }
+                        result.add(resource);
                     }
                 }
             } else {
@@ -98,10 +129,14 @@ public class ProjectDependenciesItemImpl implements ProjectDependenciesItem {
                  * resource do not have a platform uri, so it could not be
                  * directly in the project
                  */
-                deps.add(resource);
+                hasChildren = true;
+                if (checkOnly) {
+                    break;
+                }
+                result.add(resource);
             }
         }
-        return deps;
+        return hasChildren;
     }
 
     @Override
@@ -123,9 +158,7 @@ public class ProjectDependenciesItemImpl implements ProjectDependenciesItem {
         return project == null ? null : project.getProject();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    @Override
     @Override
     public Object getParent() {
         return getProject();

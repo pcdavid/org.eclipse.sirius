@@ -42,6 +42,11 @@ public class ViewpointsFolderItemImpl extends AbstractFolderItem implements org.
     public String getText() {
         return Messages.ViewpointsFolderItemImpl_representationsPerCategory_title;
     }
+    
+    @Override
+    public boolean hasChildren() {
+        return !session.getSelectedViewpoints(false).isEmpty();
+    }
 
     @Override
     public Collection<?> getChildren() {

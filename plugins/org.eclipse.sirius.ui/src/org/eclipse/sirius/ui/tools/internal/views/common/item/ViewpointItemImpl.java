@@ -31,6 +31,8 @@ import org.eclipse.sirius.viewpoint.provider.Messages;
 import org.eclipse.sirius.viewpoint.provider.SiriusEditPlugin;
 import org.eclipse.swt.graphics.Image;
 
+import com.google.common.collect.Iterables;
+
 /**
  * Represents viewpoint item in session view.
  *
@@ -149,6 +151,11 @@ public class ViewpointItemImpl implements ViewpointItem, Comparable<ViewpointIte
     @Override
     public Option<Session> getSession() {
         return Options.newSome(session);
+    }
+    
+    @Override
+    public boolean hasChildren() {
+        return isSafeViewpoint() && !Iterables.isEmpty(new ViewpointQuery(viewpoint).getAllRepresentationDescriptions());
     }
 
     @Override

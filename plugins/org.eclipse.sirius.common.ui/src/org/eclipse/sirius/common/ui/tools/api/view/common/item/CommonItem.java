@@ -20,6 +20,13 @@ import java.util.Collection;
 public interface CommonItem {
 
     /**
+     * Test if this item has any sub-items.
+     * 
+     * @return true if this item has sub-item.
+     */
+    boolean hasChildren();
+    
+    /**
      * Get the children items.
      * 
      * @return the children

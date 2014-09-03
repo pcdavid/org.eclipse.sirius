@@ -59,18 +59,11 @@ public class RepresentationItemImpl implements ItemWrapper, IAdaptable {
         this.parent = parent;
     }
 
-    /**
-     * {@inheritDoc}
-     * 
-     * @see org.eclipse.sirius.ui.tools.api.views.common.item.ItemWrapper#getWrappedObject()
-     */
+    @Override
     public Object getWrappedObject() {
         return rep.get();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -80,9 +73,6 @@ public class RepresentationItemImpl implements ItemWrapper, IAdaptable {
         return result;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public boolean equals(Object obj) {
         boolean result = true;
@@ -111,21 +101,18 @@ public class RepresentationItemImpl implements ItemWrapper, IAdaptable {
         }
         return result;
     }
+    
+    @Override
+    public boolean hasChildren() {
+        return false;
+    }
 
-    /**
-     * {@inheritDoc}
-     * 
-     * @see org.eclipse.sirius.ui.tools.api.views.common.item.CommonSessionItem#getChildren()
-     */
+    @Override
     public Collection<?> getChildren() {
         return Collections.emptyList();
     }
 
-    /**
-     * {@inheritDoc}
-     * 
-     * @see org.eclipse.sirius.ui.tools.api.views.common.item.CommonSessionItem#getChildren()
-     */
+    @Override
     public Option<Session> getSession() {
         Session session = null;
 
@@ -136,11 +123,7 @@ public class RepresentationItemImpl implements ItemWrapper, IAdaptable {
         return Options.newSome(session);
     }
 
-    /**
-     * {@inheritDoc}
-     * 
-     * @see org.eclipse.core.runtime.IAdaptable#getAdapter(java.lang.Class)
-     */
+    @Override
     public Object getAdapter(@SuppressWarnings("rawtypes") Class adapter) {
         if (rep.get() != null && adapter == EObject.class) {
             return rep.get();
@@ -149,11 +132,7 @@ public class RepresentationItemImpl implements ItemWrapper, IAdaptable {
         return null;
     }
 
-    /**
-     * {@inheritDoc}
-     * 
-     * @see org.eclipse.sirius.ui.tools.api.views.common.item.CommonSessionItem#getParent()
-     */
+    @Override
     public Object getParent() {
         return parent;
     }

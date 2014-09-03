@@ -42,12 +42,17 @@ public class ResourcesFolderItemImpl extends AbstractFolderItem implements org.e
     public String getText() {
         return Messages.ResourcesFolderItemImpl_text;
     }
+    
+    @Override
+    public boolean hasChildren() {
+        return !session.getAllSessionResources().isEmpty();
+    }
 
     @Override
     public Collection<?> getChildren() {
-        final Collection<AnalysisResourceItem> all = Lists.newArrayList();
-        final Collection<Resource> resources = session.getAllSessionResources();
-        for (final Resource resource : resources) {
+        Collection<AnalysisResourceItem> all = Lists.newArrayList();
+        Collection<Resource> resources = session.getAllSessionResources();
+        for (Resource resource : resources) {
             all.add(new AnalysisResourceItemImpl(session, resource, this));
         }
         return all;

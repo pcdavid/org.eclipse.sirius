@@ -79,16 +79,12 @@ public class RepresentationDescriptionItemImpl implements org.eclipse.sirius.ui.
         this.filterForResource = true;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    @Override
     public Object getWrappedObject() {
         return representationDescription;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    @Override
     public int compareTo(final RepresentationDescriptionItemImpl o) {
         if (representationDescription.getName() != null) {
             return representationDescription.getName().compareTo(o.representationDescription.getName());
@@ -97,11 +93,6 @@ public class RepresentationDescriptionItemImpl implements org.eclipse.sirius.ui.
 
     }
 
-    /**
-     * {@inheritDoc}
-     * 
-     * @see java.lang.Object#equals(java.lang.Object)
-     */
     @Override
     public boolean equals(final Object obj) {
         boolean result = false;
@@ -116,19 +107,12 @@ public class RepresentationDescriptionItemImpl implements org.eclipse.sirius.ui.
         return result;
     }
 
-    /**
-     * {@inheritDoc}
-     * 
-     * @see java.lang.Object#hashCode()
-     */
     @Override
     public int hashCode() {
         return representationDescription.getName().hashCode() + parent.hashCode();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    @Override
     @SuppressWarnings("rawtypes")
     public Object getAdapter(Class adapter) {
         if (adapter == EObject.class) {
@@ -137,20 +121,30 @@ public class RepresentationDescriptionItemImpl implements org.eclipse.sirius.ui.
         return null;
     }
 
-    /**
-     * {@inheritDoc}
-     * 
-     * @see org.eclipse.sirius.ui.tools.api.views.common.item.CommonSessionItem#getSession()
-     */
+    @Override
     public Option<Session> getSession() {
         return Options.newSome(session);
     }
 
-    /**
-     * {@inheritDoc}
-     * 
-     * @see org.eclipse.sirius.ui.tools.api.views.common.item.CommonSessionItem#getChildren()
-     */
+    @Override
+    public boolean hasChildren() {
+        Collection<DRepresentation> representationsCandidates = DialectManager.INSTANCE.getRepresentations(representationDescription, session);
+        boolean hasChildren = false;
+        if (!representationsCandidates.isEmpty() && !filterForResource) {
+            hasChildren = true;
+        } else {
+            for (DRepresentation representation : representationsCandidates) {
+                Resource representationResource = representation.eResource();
+                if (representationResource != null && representationResource.equals(resource)) {
+                    hasChildren =  true;
+                    break;
+                }
+            }
+        }
+        return hasChildren;
+    }
+
+    @Override
     public Collection<?> getChildren() {
         final List<DRepresentation> representationsCandidates = Lists.newArrayList(DialectManager.INSTANCE.getRepresentations(representationDescription, session));
 
@@ -185,11 +179,7 @@ public class RepresentationDescriptionItemImpl implements org.eclipse.sirius.ui.
         this.filterForResource = filterForResource;
     }
 
-    /**
-     * {@inheritDoc}
-     * 
-     * @see org.eclipse.sirius.ui.tools.api.views.common.item.CommonSessionItem#getParent()
-     */
+    @Override
     public Object getParent() {
         return parent;
     }

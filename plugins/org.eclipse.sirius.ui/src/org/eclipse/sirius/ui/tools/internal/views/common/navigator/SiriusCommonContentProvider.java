@@ -162,29 +162,38 @@ public class SiriusCommonContentProvider implements ICommonContentProvider {
 
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    @Override
     @Override
     public Object[] getChildren(Object parentElement) {
         Collection<Object> allChildren = Lists.newArrayList();
+        addChildren(parentElement, allChildren, false);
+        return allChildren.toArray();
+    }
 
+    private boolean addChildren(Object parentElement, Collection<Object> result, boolean checkOnly) {
+        boolean hasChildren = false;
         // Init view extension getChildren call detection.
         shouldAskExtension = true;
 
         if (parentElement instanceof IProject) {
             Option<ModelingProject> modelingProj = ModelingProject.asModelingProject((IProject) parentElement);
             if (modelingProj.some()) {
-                allChildren.add(new ProjectDependenciesItemImpl(modelingProj.get()));
+                hasChildren = true;
+                if (!checkOnly) {
+                    result.add(new ProjectDependenciesItemImpl(modelingProj.get()));
+                }
             }
         } else if (parentElement instanceof IFile) {
-            allChildren.addAll(doGetFileChildren((IFile) parentElement));
+            hasChildren = addFileChildren((IFile) parentElement, result, checkOnly);
         } else if (defaultContentProvider != null) {
-            return defaultContentProvider.getChildren(parentElement);
-        }
-
-        // Provided ISessionViewExtension extensions.
-        if (shouldAskExtension) {
+            if (checkOnly) {
+                hasChildren = defaultContentProvider.hasChildren(parentElement);
+            } else {
+                Object[] children = defaultContentProvider.getChildren(parentElement);
+                hasChildren = children != null && children.length > 0;
+                result.addAll(Arrays.asList(children));
+            }
+        } else if (shouldAskExtension) {
             SessionWrapperContentProvider sessionWrapperContentProvider = null;
             if (defaultContentProvider instanceof SessionWrapperContentProvider) {
                 sessionWrapperContentProvider = (SessionWrapperContentProvider) defaultContentProvider;
@@ -193,19 +202,19 @@ public class SiriusCommonContentProvider implements ICommonContentProvider {
                 sessionWrapperContentProvider = (SessionWrapperContentProvider) ((GroupingContentProvider) defaultContentProvider).getDelegateTreeContentProvider();
             }
             if (sessionWrapperContentProvider != null) {
-                sessionWrapperContentProvider.addChildrenFromExtensions(parentElement, allChildren, false);
+                hasChildren = sessionWrapperContentProvider.addChildrenFromExtensions(parentElement, result, checkOnly);
             }
         }
-
-        return allChildren.toArray();
+        return hasChildren;
     }
 
-    private Collection<Object> doGetFileChildren(IFile parentFile) {
-        final Collection<Object> fileChildren = Lists.newArrayList();
+    private boolean addFileChildren(IFile parentFile, Collection<Object> fileChildren, boolean checkOnly) {
         IProject parentProject = parentFile.getProject();
         if (parentProject == null) {
-            return fileChildren;
+            return false;
         }
+        
+        boolean hasChildren = false;
 
         // Look for opened sessions on parent file : detect main aird for non
         // modeling projects, all aird for modeling ones, semantic file for
@@ -230,11 +239,15 @@ public class SiriusCommonContentProvider implements ICommonContentProvider {
                 if (resource != null && resource.isLoaded()) {
                     for (EObject obj : resource.getContents()) {
                         fileChildren.add(new ControlledRoot(obj, parentFile));
+                        hasChildren = true;
+                        if (checkOnly) {
+                            break;
+                        }
                     }
                 } else {
                     resource = getSemanticResource(parentFile, modelingProjectSession);
                     if (resource != null && resource.isLoaded()) {
-                        fileChildren.addAll(safeGetDefaultContentProviderChildren(resource, parentFile));
+                        hasChildren = safeAddDefaultContentProviderChildren(resource, parentFile, fileChildren, checkOnly);
                     }
                 }
             } else {
@@ -243,77 +256,96 @@ public class SiriusCommonContentProvider implements ICommonContentProvider {
                 if (resource != null) {
                     AnalysisResourceItemImpl childrenComputer = new AnalysisResourceItemImpl(modelingProjectSession, resource, parentFile);
                     childrenComputer.setSpecialMode(true);
-                    fileChildren.addAll(childrenComputer.getChildren());
+                    if (checkOnly) {
+                        hasChildren = childrenComputer.hasChildren();
+                    } else {
+                        Collection<?> children = childrenComputer.getChildren();
+                        hasChildren = !children.isEmpty();
+                        fileChildren.addAll(children);
+                    }
                 }
             }
         } else if (!openedSessions.isEmpty() && SiriusUtil.SESSION_RESOURCE_EXTENSION.equals(parentFile.getFileExtension())) {
             // legacy case
             if (openedSessions.size() > 1) {
                 fileChildren.addAll(openedSessions);
+                hasChildren = true;
                 shouldAskExtension = false;
             } else {
-                fileChildren.addAll(safeGetDefaultContentProviderChildren(openedSessions.iterator().next(), parentFile));
+                hasChildren = safeAddDefaultContentProviderChildren(openedSessions.iterator().next(), parentFile, fileChildren, checkOnly);
             }
 
         }
 
         // Transient case
-        if (!SiriusUtil.SESSION_RESOURCE_EXTENSION.equals(parentFile.getFileExtension())) {
+        if (!(hasChildren && checkOnly) && !SiriusUtil.SESSION_RESOURCE_EXTENSION.equals(parentFile.getFileExtension())) {
             Iterable<Session> transientSessions = Iterables.filter(openedSessions, new TransientSessionPredicate());
             if (!Iterables.isEmpty(transientSessions)) {
                 if (modelingProject.some() || Iterables.size(transientSessions) > 1) {
                     Iterables.addAll(fileChildren, transientSessions);
+                    hasChildren = true;
                     shouldAskExtension = false;
                 } else {
-                    fileChildren.addAll(doGetChildrenForTransientSession(transientSessions.iterator().next(), parentFile));
+                    hasChildren = addChildrenForTransientSession(transientSessions.iterator().next(), parentFile, fileChildren, checkOnly);
                 }
             }
         }
-
-        return fileChildren;
+        
+        return hasChildren;
     }
 
-    private Collection<Object> safeGetDefaultContentProviderChildren(Object computationParent, Object parentInView) {
-        Object[] children = defaultContentProvider.getChildren(computationParent);
-
-        // getChildren call on default content provider, it will provide
-        // children from extensions, no need to do it twice.
-        shouldAskExtension = false;
-
-        if (children != null) {
-            List<Object> childrenList = Arrays.asList(children);
-
-            if (parentInView != null && parentInView != computationParent) {
-                for (InternalCommonItem wrapper : Iterables.filter(childrenList, InternalCommonItem.class)) {
-                    wrapper.setParent(parentInView);
+    private boolean safeAddDefaultContentProviderChildren(Object computationParent, Object parentInView, Collection<Object> result, boolean checkOnly) {
+        if (checkOnly) {
+            return defaultContentProvider.hasChildren(computationParent);
+        } else {
+            Object[] children = defaultContentProvider.getChildren(computationParent);
+            
+            // getChildren call on default content provider, it will provide
+            // children from extensions, no need to do it twice.
+            shouldAskExtension = false;
+    
+            if (children != null) {
+                result.addAll(Arrays.asList(children));
+                if (parentInView != null && parentInView != computationParent) {
+                    for (InternalCommonItem wrapper : Iterables.filter(result, InternalCommonItem.class)) {
+                        wrapper.setParent(parentInView);
+                    }
                 }
             }
-
-            return childrenList;
+            return children != null && children.length > 0;
         }
-        return Collections.emptyList();
     }
 
-    private List<Object> doGetChildrenForTransientSession(Session transientSession, IFile semanticFile) {
-        List<Object> children = Lists.newArrayList();
+    private boolean addChildrenForTransientSession(Session transientSession, IFile semanticFile, Collection<Object> result, boolean checkOnly) {
+        boolean hasChildren = false;
         if (defaultContentProvider != null && semanticFile != null && semanticFile.getFullPath() != null) {
             URI semUri = getFileUri(semanticFile);
-            for (Object child : safeGetDefaultContentProviderChildren(transientSession, semanticFile)) {
+            Collection<Object> children = Lists.newArrayList();
+            hasChildren = safeAddDefaultContentProviderChildren(transientSession, semanticFile, children, checkOnly);
+            if (hasChildren && checkOnly) {
+                return true;
+            }
+            for (Object child : children) {
                 if (child instanceof Resource) {
                     if (semUri.equals(((Resource) child).getURI())) {
-                        children.addAll(safeGetDefaultContentProviderChildren(child, semanticFile));
+                        hasChildren = hasChildren || safeAddDefaultContentProviderChildren(child, semanticFile, result, checkOnly);
+                        if (hasChildren && checkOnly) {
+                            break;
+                        }
                     }
                 } else {
-                    children.add(child);
+                    hasChildren = true;
+                    if (checkOnly) {
+                        break;
+                    }
+                    result.add(child);
                 }
             }
         }
-        return children;
+        return hasChildren;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    @Override
     @Override
     public Object getParent(Object element) {
         Object parent = null;
@@ -397,9 +429,7 @@ public class SiriusCommonContentProvider implements ICommonContentProvider {
         return parent;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    @Override
     @Override
     public boolean hasChildren(Object element) {
         if (element instanceof IFile) {
@@ -409,20 +439,16 @@ public class SiriusCommonContentProvider implements ICommonContentProvider {
                 return true;
             }
         }
-        return getChildren(element).length > 0;
+        return addChildren(element, Lists.<Object>newArrayList(), false);
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    @Override
     @Override
     public Object[] getElements(Object inputElement) {
         return getChildren(inputElement);
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    @Override
     @Override
     public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
         if (defaultContentProvider != null) {
@@ -480,16 +506,12 @@ public class SiriusCommonContentProvider implements ICommonContentProvider {
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    @Override
     @Override
     public void init(ICommonContentExtensionSite aConfig) {
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    @Override
     @Override
     public void dispose() {
         removeDoubleClickListener();
@@ -784,17 +806,13 @@ public class SiriusCommonContentProvider implements ICommonContentProvider {
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    @Override
     @Override
     public void saveState(IMemento aMemento) {
         // Do nothing
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    @Override
     @Override
     public void restoreState(IMemento aMemento) {
         // Do nothing
@@ -904,10 +922,7 @@ public class SiriusCommonContentProvider implements ICommonContentProvider {
      * Predicate to test if a session is transient.
      */
     public static class TransientSessionPredicate implements Predicate<Session> {
-
-        /**
-         * {@inheritDoc}
-         */
+        @Override
         @Override
         public boolean apply(Session input) {
             return new URIQuery(input.getSessionResource().getURI()).isInMemoryURI();
@@ -988,7 +1003,7 @@ public class SiriusCommonContentProvider implements ICommonContentProvider {
      * Scope to trigger viewer update/refresh after semantic changes or
      * representation renaming.
      */
-    private class RefreshViewerTriggerScope implements Predicate<Notification> {
+    private static class RefreshViewerTriggerScope implements Predicate<Notification> {
         private final Session session;
 
         private Set<Resource> allSemanticResources = Sets.newHashSet();

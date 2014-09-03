@@ -66,11 +66,6 @@ public class AnalysisResourceItemImpl implements AnalysisResourceItem {
         return resource;
     }
 
-    /**
-     * {@inheritDoc}
-     *
-     * @see org.eclipse.sirius.common.ui.tools.api.view.common.item.ItemDecorator#getImage()
-     */
     public Image getImage() {
         return SiriusEditPlugin.getPlugin().getBundledImage(AnalysisResourceItemImpl.SESSION_IMAGE);
     }
@@ -129,6 +124,15 @@ public class AnalysisResourceItemImpl implements AnalysisResourceItem {
 
         }
         return result;
+    }
+    
+    @Override
+    public boolean hasChildren() {
+        if (resource != null) {
+            return !session.getSelectedViewpoints(false).isEmpty();
+        } else {
+            return false;
+        }
     }
 
     @Override

@@ -31,6 +31,8 @@ public class ControlledRoot implements ItemWrapper, IAdaptable {
     private final EObject root;
 
     private final Object parent;
+    
+    private Option<Session> optSession;
 
     /**
      * Construct a new resource item wrapper.
@@ -45,18 +47,11 @@ public class ControlledRoot implements ItemWrapper, IAdaptable {
         this.parent = parent;
     }
 
-    /**
-     * {@inheritDoc}
-     * 
-     * @see org.eclipse.sirius.ui.tools.api.views.common.item.ItemWrapper#getWrappedObject()
-     */
+    @Override
     public Object getWrappedObject() {
         return root;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -66,9 +61,6 @@ public class ControlledRoot implements ItemWrapper, IAdaptable {
         return result;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public boolean equals(Object obj) {
         boolean result = true;
@@ -97,12 +89,13 @@ public class ControlledRoot implements ItemWrapper, IAdaptable {
         }
         return result;
     }
+    
+    @Override
+    public boolean hasChildren() {
+        return false;
+    }
 
-    /**
-     * {@inheritDoc}
-     * 
-     * @see org.eclipse.sirius.ui.tools.api.views.common.item.CommonSessionItem#getChildren()
-     */
+    @Override
     public Collection<?> getChildren() {
         // This controlled root is just here to show that there is a fragment,
         // and is not supposed to have children. Children will be displayed in
@@ -110,24 +103,19 @@ public class ControlledRoot implements ItemWrapper, IAdaptable {
         return Collections.emptyList();
     }
 
-    /**
-     * {@inheritDoc}
-     * 
-     * @see org.eclipse.sirius.ui.tools.api.views.common.item.CommonSessionItem#getSession()
-     */
+    @Override
     public Option<Session> getSession() {
-        Session session = null;
-        if (root != null) {
-            session = SessionManager.INSTANCE.getSession(root);
+        if (optSession == null) {
+            Session session = null;
+            if (root != null) {
+                session = SessionManager.INSTANCE.getSession(root);
+            }
+            optSession = Options.newSome(session);
         }
-        return Options.newSome(session);
+        return optSession;
     }
 
-    /**
-     * {@inheritDoc}
-     * 
-     * @see org.eclipse.core.runtime.IAdaptable#getAdapter(java.lang.Class)
-     */
+    @Override
     public Object getAdapter(@SuppressWarnings("rawtypes") Class adapter) {
         if (root != null && adapter == EObject.class) {
             return root;
@@ -136,11 +124,7 @@ public class ControlledRoot implements ItemWrapper, IAdaptable {
         return null;
     }
 
-    /**
-     * {@inheritDoc}
-     * 
-     * @see org.eclipse.sirius.ui.tools.api.views.common.item.CommonSessionItem#getParent()
-     */
+    @Override
     public Object getParent() {
         return parent;
     }

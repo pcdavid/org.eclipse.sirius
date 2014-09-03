@@ -132,9 +132,11 @@ public class SessionWrapperContentProvider implements ITreeContentProvider {
         if (parentElement instanceof Session) {
             hasChildren = addSessionChildren((Session) parentElement, result, checkOnly);
         } else if (parentElement instanceof CommonSessionItem) {
-            Collection<?> children = ((CommonSessionItem) parentElement).getChildren();
-            hasChildren = !children.isEmpty();
-            if (!checkOnly) {
+            if (checkOnly) {
+                hasChildren = ((CommonSessionItem) parentElement).hasChildren();
+            } else {
+                Collection<?> children = ((CommonSessionItem) parentElement).getChildren();
+                hasChildren = !children.isEmpty();
                 result.addAll(children);
             }
         } else if (parentElement instanceof Collection) {
