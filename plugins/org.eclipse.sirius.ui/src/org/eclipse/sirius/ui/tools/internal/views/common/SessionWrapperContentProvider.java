@@ -123,23 +123,22 @@ public class SessionWrapperContentProvider implements ITreeContentProvider {
                         result.add(new ControlledRoot(obj, parentElement));
                     }
                 } else {
-                    result.addAll(getWrappedChildren(parentElement));
+                    addWrappedChildren(parentElement, result);
                 }
             }
         } else if (parentElement instanceof EObject && !(parentElement instanceof DRepresentation)) {
             // Look for representation with current element as semantic
             // target.
-            result.addAll(getWrappedChildren(parentElement));
+            addWrappedChildren(parentElement, result);
             addRepresentationsAssociatedToEObject((EObject) parentElement, result);
         }
     }
 
-    private Collection<Object> getWrappedChildren(Object parentElement) {
+    private void addWrappedChildren(Object parentElement, Collection<Object> result) {
         Object[] structuralChildren = wrapped.getChildren(parentElement);
         if (structuralChildren != null) {
-            return Arrays.asList(structuralChildren);
+            result.addAll(Arrays.asList(structuralChildren));
         }
-        return Collections.emptyList();
     }
 
     private void addSessionChildren(Session session, Collection<Object> result) {
