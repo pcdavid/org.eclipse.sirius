@@ -81,12 +81,11 @@ public class SessionWrapperContentProvider implements ITreeContentProvider {
     public Object[] getChildren(final Object parentElement) {
         Collection<Object> allChildren = Lists.newArrayList();
         try {
-            allChildren.addAll(doGetChildren(parentElement));
+            addChildren(parentElement, allChildren);
             addChildrenFromExtensions(parentElement, allChildren);
         } catch (IllegalStateException e) {
             // Nothing to do, can happen with CDO
         }
-
         return allChildren.toArray();
     }
 
@@ -108,9 +107,7 @@ public class SessionWrapperContentProvider implements ITreeContentProvider {
         }
     }
 
-    private Collection<Object> doGetChildren(final Object parentElement) {
-        Collection<Object> result = Lists.newArrayList();
-
+    private void addChildren(Object parentElement, Collection<Object> result) {
         if (parentElement instanceof Session) {
             result.addAll(getSessionChildren((Session) parentElement));
         } else if (parentElement instanceof CommonSessionItem) {
@@ -135,8 +132,6 @@ public class SessionWrapperContentProvider implements ITreeContentProvider {
             result.addAll(getWrappedChildren(parentElement));
             result.addAll(getRepresentationsAssociatedToEObject((EObject) parentElement));
         }
-
-        return result;
     }
 
     private Collection<Object> getWrappedChildren(Object parentElement) {
