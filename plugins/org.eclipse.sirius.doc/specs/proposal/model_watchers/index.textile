@@ -1,0 +1,134 @@
+h1. EMF Model Watchers
+
+h2. Problem Statement
+
+I have an EMF model, instance of a known metamodel. Its content is dynamic, both in attribute values and in structure, with elements being added, moved, deleted, edited, etc. in arbitrary ways.
+
+I also have some non-local computed (derived) dynamic property. By non-local I mean the property value depends on multiple elements in the model, why may appear/disappear/change dynamically.
+
+The objective is to get the current value of this property with minimal overhead.
+
+h2. Examples in Sirius
+
+* I want the list of all representations in the current session, globally and grouped by (root) semantic element..
+* I want the list of currently selected Viewpoints in the session, sorted according to a specific criterion
+
+
+h2. Existing Solutions and Shortcomings
+
+h3. On-demand computation
+
+# Using an interpreted expression
+# Using custom-coded walk on the model (in Java)
+# Same as above but using clever tricks like using the cross-referencer
+
+The two first approaches can be relatively costly. The last one (using the cross-references) add yet another dependency on the presence of such an inverse cross-referencer, which is costly to install and maintan.
+
+All approaches must re-compute the full value each time; they have no way to know if they any change occured since the last time they were invoked that invalidate their result.
+
+h3. Pre-commit (or post-commit) listener
+
+*  Advantages
+** Relatively easy to implement, especially with the SessionEventBroker.
+* Problems
+** Only updated at the end of a transaction. The value seen in the middle of a transaction may be obsolete.
+** The ordering of listeners in the SessionEventBroker is based on integer values that each listener controls with no knowledge of the others and the possible logical dependencies between them. Correct behavior in the presence of dependencies relies on someone having a global knowledge of all the listeners and their dependencies, who maintains the priorities to be compatible with the dependencies.
+** Pre-commit listeners are not invoked on "Undo", so in this case they can produce stale/invalid values, computed on the state after a transaction was commited.
+
+h3. ContentAdapter
+
+h2. Proposed Solution
+
+* A variant of ContentAdapter which only installs (and maintains) itself along a fixed (but configurable) set of containment paths, and only sends notification changes (to its client) when they concern specific points of intersets along these paths.
+* A "central" location which receives only the interesting notifications, with helper APIs to:
+** extract useful information from raw EMF Notification (i.e. not having to handle the complexity of single/multiple possible values manually);
+** facilities to either incrementally update the computed propertie(s), or mark them as invalid/obsolete and re-compute them fully the next time their value is requested.
+* A façade API with a declarative/fluent flavor to configure the system. Something which would look like this from a client perspective:
+
+pre.
+      pm = new ModelPropertyManager(resourceSet);
+      Property<T> p = pm.watchProperty("DAnalysis.ownedViews/DView.{ownedRepresentations|referencedRepresentations}", new Watch() {
+        public void onChange() {
+
+        }
+      });
+
+h2. Unformatted notes
+
+Goal: de-complect (and optimze)
+* installation and maintenance of the minimum set of EMF Adapters on the minimum set of model elements
+* time when the notifications of interest are sent to the code interseted in them
+* place when the notifications of interest are sent to the code interseted in them
+* reaction to the individual change vs computation of global properies
+
+   1. class ModelPath: (Set<EClass>, Set<EReference>)*
+     - à chaque pas, boolean pointOfInterest/watched
+  2. PathWatcherAdapter(ModelPath)
+     - onLeafChange(EObject leafElement, EReference changed, Set<Object> added, Set<Object> removed)
+  3. Multiplexage de plusieurs ModelPath avec un seul Watcher
+
+  4. Generic Watchers:
+     - ResourceSetWatcher
+       - resourcesAdded(Iterable<Resource> r)
+       - resourcesRemoved(Iterable<Resource> r)
+     - ResourceWatcher
+       - rootElementsAdded(Iterable<EObject> obj)
+       - rootElementsRemoved(Iterable<EObject> obj)
+     - EObjectWatcher (API à revoir)
+       - void attributeChanged(EAttribute, Object oldValue, Object newValue)
+       - void referenceChanged(EReference, Object oldValue, Object newValue)
+       - heplers getValuesAdded(), getValuesRemoved(), unifient attr/ref, single/multi-valued
+  5. Path-sensitive Watchers
+     - correspond à un step dans un path
+     - responsable du maintient à jour des watchers nécessaires (et suffisants) pour le step suivant
+     - découplé dans un WatcherInstaller séparé?
+
+  6. Candidats:
+     - DialectManager.getRepresentations(EObject, Session)
+       - Map<EObject, DRepresentation>
+     - DASI.getSelectedViewpoints()
+  7. Découplage entre
+     - détection du changement pertinent
+       - IMMEDIATE, PRE_COMMIT, POST_COMMIT
+     - réaction
+       - invalidate, recompute full, recompute incremental, defer (keep note of changes)
+     - demande de la valeur calculée
+     - mise à jour de la valeur calculée
+
+  8. PathBuilder.from(root)
+     .into(ref1, ref2, ref3).watch(feat1, feat2)
+     .info(ref1, ref4).watch(feat3)
+     .create();
+
+
+h2. Responsibilities
+
+    1. Install and maintain a single adapter on the minimal set of
+       model elements needed to watch all the possible occurrences of
+       the FOI (Features Of Interset) in a given scope (ResourceSet,
+       Resource or EObject).
+
+    2. For each adapted element, keep track of all the FOIs relevant
+       to it (if any). It depends on its type (easy), but also its
+       path, which is dynamic (harder). Also keep track of the
+       notification needs for each FOI (there may be several watchers
+       interested, at different times, on the same changes).
+
+    3. Whenever a change occurs (IMMEDIATE) on one of the adapted
+       elements, if it concerns one of its FOIs *and* one of the
+       corresponding watchers is in IMMEDIATE mode, forward the change
+       notification to the watcher(s). If this happens, also forward
+       the Notification to the central hub to record that it was
+       already sent during this transaction.
+
+    4. Whenever a transaction is about to be commited (PRE_COMMIT),
+       then for each change performed during the transaction, if it
+       concerns one the the FOIs of an adapted element *and* one of
+       the corresponding watchers is in PRE_COMMIT mode, forward (only
+       once) the complete list of changes performed during the
+       transaction to the watcher. If this happens, also forward the
+       Notification to the central hub to record that it was already
+       sent during (one of) the pre-commit step(s).
+
+    5. Notify all Watchers on TRANSACTION_STARTED, TRANSACTION_CLOSED,
+       and EDITING_DOMAIN_DISPOSING.
