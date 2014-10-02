@@ -29,7 +29,9 @@ import org.eclipse.core.resources.IResourceChangeEvent;
 import org.eclipse.core.resources.IResourceDelta;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Path;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.EObject;
@@ -309,20 +311,24 @@ public class ViewpointRegistryImpl extends ViewpointRegistry {
         try {
             final URI fileURI = URI.createPlatformPluginURI(modelerModelResourcePath, true);
             final EObject root = load(fileURI, resourceSet);
-            Option<ViewpointFileCollector> collector = getCollectorFromURI(fileURI);
-            if (collector.some() && collector.get().isValid(root)) {
-                for (final Viewpoint viewpoint : collector.get().collect(root)) {
-                    viewpointsFromPlugin.add(viewpoint);
-                    mapToViewpointProtocol(viewpoint);
-                    addedViewpoints.add(viewpoint);
+            if (root != null) {
+                Option<ViewpointFileCollector> collector = getCollectorFromURI(fileURI);
+                if (collector.some() && collector.get().isValid(root)) {
+                    for (final Viewpoint viewpoint : collector.get().collect(root)) {
+                        viewpointsFromPlugin.add(viewpoint);
+                        mapToViewpointProtocol(viewpoint);
+                        addedViewpoint.add(viewpoint);
+                    }
+    
+                    /* add cross referencer */
+                    addCrossReferencer(root.eResource());
+                } else {
+                    unloadAndRemove(fileURI);
                 }
-
-                /* add cross referencer */
-                addCrossReferencer(root.eResource());
             } else {
-                unloadAndRemove(fileURI);
+                IStatus s = new Status(IStatus.WARNING, SiriusPlugin.ID, UNABLE_TO_LOAD_THIS_FILE + modelerModelResourcePath);
+                SiriusPlugin.getDefault().getLog().log(s);
             }
-
         } catch (final IOException e) {
             SiriusPlugin.getDefault().error(MessageFormat.format(Messages.ViewpointRegistryImpl_FileLoadingErrorMsg, modelerModelResourcePath), e);
         } catch (final WrappedException e) {
@@ -624,11 +630,17 @@ public class ViewpointRegistryImpl extends ViewpointRegistry {
     private EObject load(final IFile file, final ResourceSet set) {
         try {
             final URI fileURI = URI.createPlatformResourceURI(file.getFullPath().toOSString(), true);
-            return load(fileURI, set);
+            EObject result = load(fileURI, set);
+            if (result != null) {
+                return result;
+            } else {
+                IStatus s = new Status(IStatus.WARNING, SiriusPlugin.ID, UNABLE_TO_LOAD_THIS_FILE + file.getFullPath().toString());
+                SiriusPlugin.getDefault().getLog().log(s);
+            }
         } catch (final IOException e) {
             SiriusPlugin.getDefault().error(MessageFormat.format(Messages.ViewpointRegistryImpl_FileLoadingErrorMsg, file.getName()), e);
         } catch (final WrappedException e) {
-            SiriusPlugin.getDefault().warning(MessageFormat.format(Messages.ViewpointRegistryImpl_FileLoadingErrorMsg, file.getName()), e.exception());
+            SiriusPlugin.getDefault().warning(MessageFormat.format(Messages.ViewpointRegistryImpl_FileLoadingErrorMsg, file.getFullPath()), e.exception());
             /* CHECKSTYLE:OFF -> we should handle this kind of exception */
         } catch (final RuntimeException e) {
             /* CHECKSTYLE:ON */
@@ -641,7 +653,11 @@ public class ViewpointRegistryImpl extends ViewpointRegistry {
     private EObject load(final URI fileURI, final ResourceSet set) throws IOException, WrappedException, RuntimeException {
         final Resource loaded = set.getResource(fileURI, true);
         loaded.load(Collections.EMPTY_MAP);
-        return loaded.getContents().get(0);
+        if (loaded.getContents().size() > 0) {
+            return loaded.getContents().get(0);
+        } else {
+            return null;
+        }
         /* CHECKSTYLE:ON */
     }
 
