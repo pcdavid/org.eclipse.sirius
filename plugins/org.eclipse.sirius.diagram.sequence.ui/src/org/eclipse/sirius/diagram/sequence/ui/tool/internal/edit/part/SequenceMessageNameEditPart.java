@@ -25,7 +25,7 @@ import org.eclipse.sirius.diagram.sequence.ui.tool.internal.figure.SequenceMessa
 import org.eclipse.sirius.diagram.sequence.ui.tool.internal.util.RequestQuery;
 import org.eclipse.sirius.diagram.ui.edit.api.part.AbstractDiagramEdgeEditPart.ViewEdgeFigure;
 import org.eclipse.sirius.diagram.ui.internal.edit.parts.DEdgeNameEditPart;
-import org.eclipse.sirius.diagram.ui.tools.internal.edit.command.CommandFactory;
+import org.eclipse.sirius.diagram.ui.tools.internal.edit.command.ICommandFactory;
 
 /**
  * The edit part for sequence message labels.
@@ -67,7 +67,7 @@ public class SequenceMessageNameEditPart extends DEdgeNameEditPart {
         if (result != null && result.canExecute() && new RequestQuery(request).isMove() && messageIsRightToLeft()) {
             CompositeTransactionalCommand ctc = new CompositeTransactionalCommand(getEditingDomain(), result.getLabel());
             ctc.compose(new CommandProxy(result));
-            ICommand fixPositionCommand = CommandFactory.createICommand(getEditingDomain(), new InverseRelativeNodePositionOperation((Node) getNotationView()));
+            ICommand fixPositionCommand = ICommandFactory.createICommand(getEditingDomain(), new InverseRelativeNodePositionOperation((Node) getNotationView()));
             ctc.compose(fixPositionCommand);
             result = new ICommandProxy(ctc);
         }

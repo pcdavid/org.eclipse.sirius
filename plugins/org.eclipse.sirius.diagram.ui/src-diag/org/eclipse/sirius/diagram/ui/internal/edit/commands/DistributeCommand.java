@@ -38,7 +38,7 @@ import org.eclipse.sirius.diagram.ui.business.internal.operation.ShiftDirectBord
 import org.eclipse.sirius.diagram.ui.provider.Messages;
 import org.eclipse.sirius.diagram.ui.tools.api.figure.locator.DBorderItemLocator;
 import org.eclipse.sirius.diagram.ui.tools.internal.actions.distribute.DistributeAction;
-import org.eclipse.sirius.diagram.ui.tools.internal.edit.command.CommandFactory;
+import org.eclipse.sirius.diagram.ui.tools.internal.edit.command.ICommandFactory;
 
 import com.google.common.base.Function;
 import com.google.common.base.Functions;
@@ -599,10 +599,10 @@ public class DistributeCommand extends AbstractTransactionalCommand {
                 }
                 Dimension delta = newBounds.getLocation().getDifference(getBoundsFunction.apply(editPart).getLocation());
                 if (delta.width != 0) {
-                    wrappedCommand.compose(CommandFactory.createICommand(wrappedCommand.getEditingDomain(),
+                    wrappedCommand.compose(ICommandFactory.createICommand(wrappedCommand.getEditingDomain(),
                             new ShiftDirectBorderedNodesOperation(Lists.newArrayList((Node) editPart.getModel()), new Dimension(delta.width, 0))));
                 } else {
-                    wrappedCommand.compose(CommandFactory.createICommand(wrappedCommand.getEditingDomain(),
+                    wrappedCommand.compose(ICommandFactory.createICommand(wrappedCommand.getEditingDomain(),
                             new ShiftDirectBorderedNodesOperation(Lists.newArrayList((Node) editPart.getModel()), new Dimension(0, delta.height))));
                 }
                 previousPartBounds = expectedNewBounds;

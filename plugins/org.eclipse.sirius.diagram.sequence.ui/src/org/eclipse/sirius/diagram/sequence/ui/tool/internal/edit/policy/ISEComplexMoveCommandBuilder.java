@@ -38,7 +38,7 @@ import org.eclipse.sirius.diagram.sequence.ui.tool.internal.edit.operation.Shift
 import org.eclipse.sirius.diagram.sequence.ui.tool.internal.edit.validator.ISEComplexMoveValidator;
 import org.eclipse.sirius.diagram.sequence.ui.tool.internal.util.RequestQuery;
 import org.eclipse.sirius.diagram.sequence.util.Range;
-import org.eclipse.sirius.diagram.ui.tools.internal.edit.command.CommandFactory;
+import org.eclipse.sirius.diagram.ui.tools.internal.edit.command.ICommandFactory;
 
 import com.google.common.base.Predicates;
 import com.google.common.collect.Iterables;
@@ -133,14 +133,14 @@ public class ISEComplexMoveCommandBuilder {
             SetMessageRangeOperation smrc = new SetMessageRangeOperation((Edge) message.getNotationView(), newRange);
             smrc.setSource(source.getNotationNode(), srcBounds);
             smrc.setTarget(target.getNotationNode(), tgtBounds);
-            ctc.compose(CommandFactory.createICommand(editingDomain, smrc));
+            ctc.compose(ICommandFactory.createICommand(editingDomain, smrc));
         }
     }
 
     private void reparentNodes(CompositeTransactionalCommand ctc, Integer vMove, Map<AbstractNodeEvent, ISequenceEvent> reparents) {
         for (Map.Entry<AbstractNodeEvent, ISequenceEvent> entry : reparents.entrySet()) {
             ISequenceEvent newParent = entry.getValue();
-            ctc.compose(CommandFactory.createICommand(editingDomain, new ReparentExecutionOperation(entry.getKey(), newParent)));
+            ctc.compose(ICommandFactory.createICommand(editingDomain, new ReparentExecutionOperation(entry.getKey(), newParent)));
 
             // Compute the absolute bounds implied by the requested move.
             Rectangle realLocation = entry.getKey().getProperLogicalBounds();
@@ -170,7 +170,7 @@ public class ISEComplexMoveCommandBuilder {
     }
 
     private void shiftMessages(CompositeTransactionalCommand ctc, Integer vMove) {
-        ICommand messageMoveCommand = CommandFactory.createICommand(editingDomain, new ShiftMessagesOperation(validator.getMessageToMove(), validator.getMovedElements(), vMove, false, true));
+        ICommand messageMoveCommand = ICommandFactory.createICommand(editingDomain, new ShiftMessagesOperation(validator.getMessageToMove(), validator.getMovedElements(), vMove, false, true));
         ctc.add(messageMoveCommand);
     }
 
@@ -186,20 +186,20 @@ public class ISEComplexMoveCommandBuilder {
             Range tgtRange = validator.getRangeFunction().apply(tgt);
             smrc.setTarget(tgt.getNotationView(), new Rectangle(0, tgtRange.getLowerBound(), 0, tgtRange.getUpperBound()));
 
-            ICommand resizeStartMessages = CommandFactory.createICommand(editingDomain, smrc);
+            ICommand resizeStartMessages = ICommandFactory.createICommand(editingDomain, smrc);
             ctc.add(resizeStartMessages);
         }
     }
 
     private void moveNodes(CompositeTransactionalCommand ctc, Integer vMove, Collection<ISequenceNode> seqNodesToMove) {
-        ICommand moveExecCmd = CommandFactory.createICommand(editingDomain, new ISequenceNodeMoveOperation(seqNodesToMove, vMove));
+        ICommand moveExecCmd = ICommandFactory.createICommand(editingDomain, new ISequenceNodeMoveOperation(seqNodesToMove, vMove));
         ctc.compose(moveExecCmd);
         ctc.setLabel(moveExecCmd.getLabel());
     }
 
     private void expandDiagram(CompositeTransactionalCommand ctc, Integer vMove) {
         if (validator.getExpansionZone() != null && !validator.getExpansionZone().isEmpty()) {
-            ctc.compose(CommandFactory.createICommand(editingDomain, new VerticalSpaceExpansion(validator.getDiagram(), validator.getExpansionZone(), vMove, validator.getMovedElements())));
+            ctc.compose(ICommandFactory.createICommand(editingDomain, new VerticalSpaceExpansion(validator.getDiagram(), validator.getExpansionZone(), vMove, validator.getMovedElements())));
         }
     }
 

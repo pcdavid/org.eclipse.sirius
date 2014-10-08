@@ -88,7 +88,7 @@ import org.eclipse.sirius.diagram.ui.provider.Messages;
 import org.eclipse.sirius.diagram.ui.tools.api.figure.locator.DBorderItemLocator;
 import org.eclipse.sirius.diagram.ui.tools.api.graphical.edit.styles.IBorderItemOffsets;
 import org.eclipse.sirius.diagram.ui.tools.api.layout.provider.AbstractLayoutProvider;
-import org.eclipse.sirius.diagram.ui.tools.internal.edit.command.CommandFactory;
+import org.eclipse.sirius.diagram.ui.tools.internal.edit.command.ICommandFactory;
 import org.eclipse.sirius.diagram.ui.tools.internal.graphical.edit.policies.ChangeBoundRequestRecorder;
 import org.eclipse.sirius.diagram.ui.tools.internal.layout.ArrangeAllWithAutoSize;
 import org.eclipse.sirius.diagram.ui.tools.internal.part.SiriusDiagramGraphicalViewer;
@@ -613,7 +613,7 @@ public class BorderItemAwareLayoutProvider extends AbstractLayoutProvider {
                             }
                         }
                         compoundCommand.add(
-                                new ICommandProxy(CommandFactory.createICommand(graphicalEditPart.getEditingDomain(), new RegionContainerUpdateLayoutOperation((Node) graphicalEditPart.getModel()))));
+                                new ICommandProxy(ICommandFactory.createICommand(graphicalEditPart.getEditingDomain(), new RegionContainerUpdateLayoutOperation((Node) graphicalEditPart.getModel()))));
                     }
                 }
             }

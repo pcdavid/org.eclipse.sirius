@@ -45,12 +45,12 @@ import org.eclipse.sirius.diagram.sequence.ui.tool.internal.edit.part.InstanceRo
 import org.eclipse.sirius.diagram.sequence.ui.tool.internal.edit.validator.InstanceRoleMoveValidator;
 import org.eclipse.sirius.diagram.sequence.ui.tool.internal.edit.validator.InstanceRoleResizeValidator;
 import org.eclipse.sirius.diagram.sequence.ui.tool.internal.util.RequestQuery;
-import org.eclipse.sirius.diagram.ui.business.internal.operation.AbstractModelChangeOperation;
 import org.eclipse.sirius.diagram.ui.business.internal.operation.MoveViewOperation;
 import org.eclipse.sirius.diagram.ui.graphical.edit.policies.AirResizableEditPolicy;
 import org.eclipse.sirius.diagram.ui.tools.api.command.DoNothingCommand;
-import org.eclipse.sirius.diagram.ui.tools.internal.edit.command.CommandFactory;
+import org.eclipse.sirius.diagram.ui.tools.internal.edit.command.ICommandFactory;
 import org.eclipse.sirius.ext.base.Option;
+import org.eclipse.sirius.tools.internal.command.AbstractModelChangeOperation;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
@@ -229,7 +229,7 @@ public class InstanceRoleResizableEditPolicy extends AirResizableEditPolicy {
     private void addMoveViewCommand(TransactionalEditingDomain transactionalEditingDomain, CompositeTransactionalCommand compositeCommand, Point delta, ISequenceNode sequenceNode) {
         IAdaptable adapter = new EObjectAdapter(sequenceNode.getNotationNode());
         AbstractModelChangeOperation<Void> moveViewOperation = new MoveViewOperation(DiagramUIMessages.SetLocationCommand_Label_Resize, adapter, delta);
-        IUndoableOperation moveCmd = CommandFactory.createICommand(transactionalEditingDomain, moveViewOperation);
+        IUndoableOperation moveCmd = ICommandFactory.createICommand(transactionalEditingDomain, moveViewOperation);
         compositeCommand.add(moveCmd);
     }
 
@@ -252,7 +252,7 @@ public class InstanceRoleResizableEditPolicy extends AirResizableEditPolicy {
                 InstanceRole instanceRole = entry.getKey();
                 IAdaptable adapter = new EObjectAdapter(instanceRole.getNotationView());
                 AbstractModelChangeOperation<Void> resizeViewOperation = new ResizeViewOperation(DiagramUIMessages.SetLocationCommand_Label_Resize, adapter, sizeDelta);
-                IUndoableOperation resizeCmd = CommandFactory.createICommand(transactionalEditingDomain, resizeViewOperation);
+                IUndoableOperation resizeCmd = ICommandFactory.createICommand(transactionalEditingDomain, resizeViewOperation);
                 compositeCommand.add(resizeCmd);
             }
         }

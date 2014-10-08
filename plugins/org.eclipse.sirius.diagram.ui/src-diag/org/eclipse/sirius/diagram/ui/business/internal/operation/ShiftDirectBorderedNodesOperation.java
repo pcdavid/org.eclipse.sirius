@@ -18,6 +18,7 @@ import org.eclipse.gmf.runtime.notation.LayoutConstraint;
 import org.eclipse.gmf.runtime.notation.Location;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.sirius.diagram.ui.provider.Messages;
+import org.eclipse.sirius.tools.internal.command.AbstractModelChangeOperation;
 
 /**
  * This command moves the specified bordered nodes of a given EditPart

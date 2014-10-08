@@ -19,6 +19,7 @@ import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.sirius.diagram.ui.provider.Messages;
+import org.eclipse.sirius.tools.internal.command.AbstractModelChangeOperation;
 
 /**
  * Shift a view by the delta.

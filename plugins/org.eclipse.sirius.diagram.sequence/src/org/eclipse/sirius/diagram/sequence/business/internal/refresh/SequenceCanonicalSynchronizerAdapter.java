@@ -57,12 +57,9 @@ import org.eclipse.sirius.diagram.sequence.business.internal.query.RangeComparat
 import org.eclipse.sirius.diagram.sequence.business.internal.query.SequenceDiagramQuery;
 import org.eclipse.sirius.diagram.sequence.ordering.EventEnd;
 import org.eclipse.sirius.diagram.sequence.util.Range;
-import org.eclipse.sirius.diagram.ui.business.api.view.SiriusLayoutDataManager;
-import org.eclipse.sirius.diagram.ui.business.internal.view.LayoutData;
-import org.eclipse.sirius.diagram.ui.internal.refresh.listeners.FilterListener;
-import org.eclipse.sirius.diagram.ui.tools.internal.edit.command.CommandFactory;
 import org.eclipse.sirius.ext.base.Option;
 import org.eclipse.sirius.ext.base.Options;
+import org.eclipse.sirius.tools.internal.command.CommandFactory;
 
 import com.google.common.base.Predicates;
 import com.google.common.collect.Iterables;

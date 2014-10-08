@@ -64,7 +64,7 @@ import org.eclipse.sirius.diagram.ui.graphical.edit.policies.CreationUtil;
 import org.eclipse.sirius.diagram.ui.tools.api.command.DoNothingCommand;
 import org.eclipse.sirius.diagram.ui.tools.api.editor.DDiagramEditor;
 import org.eclipse.sirius.diagram.ui.tools.api.requests.DistributeRequest;
-import org.eclipse.sirius.diagram.ui.tools.internal.edit.command.CommandFactory;
+import org.eclipse.sirius.diagram.ui.tools.internal.edit.command.ICommandFactory;
 import org.eclipse.sirius.ext.base.Option;
 import org.eclipse.sirius.ext.gmf.runtime.editparts.GraphicalHelper;
 import org.eclipse.sirius.viewpoint.description.tool.AbstractToolDescription;
@@ -149,7 +149,7 @@ public class SequenceContainerCreationPolicy extends ContainerCreationEditPolicy
                     // Shift the element to not include int the range of the
                     // AbstractFrame to create
                     VerticalSpaceExpansion verticalSpaceExpansion = new VerticalSpaceExpansion(sequenceDiagram, expansionZone, 0, Collections.<ISequenceEvent> emptyList());
-                    ICommand expandSubEventsCmd = CommandFactory.createICommand(domain, verticalSpaceExpansion);
+                    ICommand expandSubEventsCmd = ICommandFactory.createICommand(domain, verticalSpaceExpansion);
 
                     result = new ICommandProxy(expandSubEventsCmd).chain(result);
                 }

@@ -43,6 +43,7 @@ import org.eclipse.sirius.diagram.ui.internal.operation.CenterEdgeEndModelChange
 import org.eclipse.sirius.ext.base.Option;
 import org.eclipse.sirius.ext.base.Options;
 import org.eclipse.sirius.viewpoint.Style;
+import org.eclipse.sirius.tools.internal.command.CommandFactory;
 import org.eclipse.sirius.viewpoint.ViewpointPackage;
 
 import com.google.common.base.Predicate;

@@ -46,8 +46,9 @@ import org.eclipse.sirius.diagram.tools.api.command.IDiagramCommandFactoryProvid
 import org.eclipse.sirius.diagram.ui.internal.view.factories.ViewLocationHint;
 import org.eclipse.sirius.diagram.ui.tools.api.command.GMFCommandWrapper;
 import org.eclipse.sirius.diagram.ui.tools.api.figure.locator.DBorderItemLocator;
-import org.eclipse.sirius.diagram.ui.tools.internal.edit.command.CommandFactory;
+import org.eclipse.sirius.diagram.ui.tools.internal.edit.command.ICommandFactory;
 import org.eclipse.sirius.ext.gmf.runtime.editparts.GraphicalHelper;
+import org.eclipse.sirius.tools.internal.command.CommandFactory;
 
 /**
  * Helper class to share code between different kinds of edit parts when
@@ -73,8 +74,8 @@ public final class SequenceEditPartsOperations {
         SequenceDiagram sequenceDiagram = EditPartsHelper.getSequenceDiagram(self);
         SequenceDDiagram sequenceDDiagram = sequenceDiagram.getSequenceDDiagram();
         TransactionalEditingDomain domain = self.getEditingDomain();
-        cc.add(new ICommandProxy(CommandFactory.createICommand(domain, new RefreshGraphicalOrderingOperation(sequenceDiagram))));
-        cc.add(new ICommandProxy(CommandFactory.createICommand(domain, new RefreshSemanticOrderingsOperation(sequenceDDiagram))));
+        cc.add(new ICommandProxy(ICommandFactory.createICommand(domain, new RefreshGraphicalOrderingOperation(sequenceDiagram))));
+        cc.add(new ICommandProxy(ICommandFactory.createICommand(domain, new RefreshSemanticOrderingsOperation(sequenceDDiagram))));
     }
 
     /**
@@ -103,7 +104,7 @@ public final class SequenceEditPartsOperations {
     public static void addRefreshGraphicalOrderingCommand(CompositeTransactionalCommand cc, IGraphicalEditPart self) {
         SequenceDiagram sequenceDiagram = EditPartsHelper.getSequenceDiagram(self);
         TransactionalEditingDomain domain = cc.getEditingDomain();
-        cc.compose(CommandFactory.createICommand(domain, new RefreshGraphicalOrderingOperation(sequenceDiagram)));
+        cc.compose(ICommandFactory.createICommand(domain, new RefreshGraphicalOrderingOperation(sequenceDiagram)));
     }
 
     /**
@@ -118,7 +119,7 @@ public final class SequenceEditPartsOperations {
         SequenceDiagram sequenceDiagram = EditPartsHelper.getSequenceDiagram(self);
         SequenceDDiagram sequenceDDiagram = sequenceDiagram.getSequenceDDiagram();
         TransactionalEditingDomain domain = cc.getEditingDomain();
-        cc.compose(CommandFactory.createICommand(domain, new RefreshSemanticOrderingsOperation(sequenceDDiagram)));
+        cc.compose(ICommandFactory.createICommand(domain, new RefreshSemanticOrderingsOperation(sequenceDDiagram)));
     }
 
     /**
@@ -133,7 +134,7 @@ public final class SequenceEditPartsOperations {
      * @param set
      */
     public static void addSynchronizeSemanticOrderingCommand(CompositeTransactionalCommand cc, ISequenceEvent event) {
-        cc.compose(CommandFactory.createICommand(cc.getEditingDomain(), new SynchronizeISequenceEventsSemanticOrderingOperation(event)));
+        cc.compose(ICommandFactory.createICommand(cc.getEditingDomain(), new SynchronizeISequenceEventsSemanticOrderingOperation(event)));
     }
 
     /**
@@ -149,7 +150,7 @@ public final class SequenceEditPartsOperations {
      *            additionnal events to reorder.
      */
     public static void addSynchronizeSemanticOrderingCommand(CompositeTransactionalCommand cc, ISequenceEvent event, Collection<ISequenceEvent> selection) {
-        cc.compose(CommandFactory.createICommand(cc.getEditingDomain(), new SynchronizeISequenceEventsSemanticOrderingOperation(event, selection)));
+        cc.compose(ICommandFactory.createICommand(cc.getEditingDomain(), new SynchronizeISequenceEventsSemanticOrderingOperation(event, selection)));
     }
 
     /**
@@ -164,7 +165,7 @@ public final class SequenceEditPartsOperations {
      * @param set
      */
     public static void addSynchronizeSemanticOrderingCommand(CompositeTransactionalCommand cc, InstanceRole instanceRole) {
-        cc.compose(CommandFactory.createICommand(cc.getEditingDomain(), new SynchronizeInstanceRoleSemanticOrderingOperation(instanceRole)));
+        cc.compose(ICommandFactory.createICommand(cc.getEditingDomain(), new SynchronizeInstanceRoleSemanticOrderingOperation(instanceRole)));
     }
 
     /**
@@ -180,7 +181,7 @@ public final class SequenceEditPartsOperations {
      *            additionnal instance roles to reorder.
      */
     public static void addSynchronizeSemanticOrderingCommand(CompositeTransactionalCommand cc, InstanceRole instanceRole, Collection<InstanceRole> selection) {
-        cc.compose(CommandFactory.createICommand(cc.getEditingDomain(), new SynchronizeInstanceRoleSemanticOrderingOperation(instanceRole, selection)));
+        cc.compose(ICommandFactory.createICommand(cc.getEditingDomain(), new SynchronizeInstanceRoleSemanticOrderingOperation(instanceRole, selection)));
     }
 
     /**

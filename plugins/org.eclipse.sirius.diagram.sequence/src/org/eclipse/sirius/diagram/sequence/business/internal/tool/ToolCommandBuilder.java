@@ -59,7 +59,6 @@ import org.eclipse.sirius.diagram.sequence.internal.tool.command.builders.StateC
 import org.eclipse.sirius.diagram.sequence.ordering.EventEnd;
 import org.eclipse.sirius.diagram.sequence.ordering.SingleEventEnd;
 import org.eclipse.sirius.diagram.tools.internal.command.builders.NodeCreationCommandBuilder;
-import org.eclipse.sirius.diagram.ui.tools.internal.commands.emf.EMFCommandFactoryUI;
 import org.eclipse.sirius.ecore.extender.business.api.accessor.ModelAccessor;
 import org.eclipse.sirius.tools.api.command.SiriusCommand;
 import org.eclipse.sirius.tools.api.interpreter.InterpreterUtil;

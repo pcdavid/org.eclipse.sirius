@@ -40,7 +40,7 @@ import org.eclipse.sirius.diagram.ui.internal.edit.policies.InitialPointsOfReque
 import org.eclipse.sirius.diagram.ui.internal.edit.policies.SiriusConnectionBendpointEditPolicy;
 import org.eclipse.sirius.diagram.ui.internal.operation.CenterEdgeEndModelChangeOperation;
 import org.eclipse.sirius.diagram.ui.provider.DiagramUIPlugin;
-import org.eclipse.sirius.diagram.ui.tools.internal.edit.command.CommandFactory;
+import org.eclipse.sirius.diagram.ui.tools.internal.edit.command.ICommandFactory;
 
 /**
  * A specific ConnectionLineSegEditPolicy to override
@@ -124,7 +124,7 @@ public class TreeLayoutConnectionLineSegEditPolicy extends SiriusConnectionBendp
             // End :
 
             compoundCommand.add(new ICommandProxy(sbbCommand));
-            ICommand command = CommandFactory.createICommand(editingDomain, new CenterEdgeEndModelChangeOperation((ConnectionEditPart) getHost(), edge));
+            ICommand command = ICommandFactory.createICommand(editingDomain, new CenterEdgeEndModelChangeOperation((ConnectionEditPart) getHost(), edge));
             compoundCommand.add(new ICommandProxy(command));
             return compoundCommand;
         }

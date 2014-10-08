@@ -47,7 +47,7 @@ import org.eclipse.sirius.diagram.sequence.ui.tool.internal.util.SequenceDiagram
 import org.eclipse.sirius.diagram.sequence.util.Range;
 import org.eclipse.sirius.diagram.ui.business.internal.query.DNodeQuery;
 import org.eclipse.sirius.diagram.ui.graphical.edit.policies.SpecificBorderItemSelectionEditPolicy;
-import org.eclipse.sirius.diagram.ui.tools.internal.edit.command.CommandFactory;
+import org.eclipse.sirius.diagram.ui.tools.internal.edit.command.ICommandFactory;
 import org.eclipse.sirius.ext.base.Option;
 import org.eclipse.sirius.ext.gmf.runtime.editparts.GraphicalHelper;
 
@@ -178,7 +178,7 @@ public class EndOfLifeSelectionPolicy extends SpecificBorderItemSelectionEditPol
         Dimension sizeDelta = cbr.getSizeDelta().getCopy();
         GraphicalHelper.screen2logical(sizeDelta, getEOL());
         TransactionalEditingDomain domain = getEOL().getEditingDomain();
-        ctc.compose(CommandFactory.createICommand(domain, new ShiftDescendantMessagesOperation(lep.getISequenceEvent(), sizeDelta.height, true, false, false)));
+        ctc.compose(ICommandFactory.createICommand(domain, new ShiftDescendantMessagesOperation(lep.getISequenceEvent(), sizeDelta.height, true, false, false)));
     }
 
     private boolean canResizeLifeline(EndOfLifeEditPart self, ChangeBoundsRequest request) {

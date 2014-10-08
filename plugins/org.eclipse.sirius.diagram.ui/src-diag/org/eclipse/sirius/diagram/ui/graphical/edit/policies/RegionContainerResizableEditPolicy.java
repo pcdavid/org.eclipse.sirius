@@ -38,7 +38,7 @@ import org.eclipse.sirius.diagram.ui.internal.edit.commands.ChildrenAdjustmentCo
 import org.eclipse.sirius.diagram.ui.internal.edit.parts.AbstractDNodeContainerCompartmentEditPart;
 import org.eclipse.sirius.diagram.ui.internal.operation.RegionContainerUpdateLayoutOperation;
 import org.eclipse.sirius.diagram.ui.provider.Messages;
-import org.eclipse.sirius.diagram.ui.tools.internal.edit.command.CommandFactory;
+import org.eclipse.sirius.diagram.ui.tools.internal.edit.command.ICommandFactory;
 import org.eclipse.sirius.ext.base.Option;
 import org.eclipse.sirius.ext.base.Options;
 
@@ -107,7 +107,7 @@ public class RegionContainerResizableEditPolicy extends AirResizableEditPolicy {
             }
         }
 
-        ctc.add(CommandFactory.createICommand(domain, new RegionContainerUpdateLayoutOperation((Node) host.getModel())));
+        ctc.add(ICommandFactory.createICommand(domain, new RegionContainerUpdateLayoutOperation((Node) host.getModel())));
         return regionContainerAutoSizeCommand;
     }
 

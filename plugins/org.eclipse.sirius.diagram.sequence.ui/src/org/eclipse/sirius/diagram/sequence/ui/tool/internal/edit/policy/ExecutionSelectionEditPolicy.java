@@ -72,7 +72,7 @@ import org.eclipse.sirius.diagram.sequence.ui.tool.internal.util.RequestQuery;
 import org.eclipse.sirius.diagram.sequence.util.Range;
 import org.eclipse.sirius.diagram.ui.edit.internal.part.DiagramBorderNodeEditPartOperation;
 import org.eclipse.sirius.diagram.ui.graphical.edit.policies.SpecificBorderItemSelectionEditPolicy;
-import org.eclipse.sirius.diagram.ui.tools.internal.edit.command.CommandFactory;
+import org.eclipse.sirius.diagram.ui.tools.internal.edit.command.ICommandFactory;
 import org.eclipse.sirius.ext.base.Option;
 import org.eclipse.sirius.ext.draw2d.figure.FigureUtilities;
 import org.eclipse.sirius.ext.gmf.runtime.editparts.GraphicalHelper;
@@ -166,7 +166,7 @@ public class ExecutionSelectionEditPolicy extends SpecificBorderItemSelectionEdi
         if (needVerticalSpaceExpansion(validator, request)) {
             SequenceDiagramEditPart diagram = EditPartsHelper.getSequenceDiagramPart(hostPart);
             Collection<ISequenceEvent> eventToIgnore = Collections.singletonList((ISequenceEvent) self);
-            ctc.compose(CommandFactory.createICommand(editingDomain, new VerticalSpaceExpansion(diagram.getSequenceDiagram(), validator.getExpansionZone(), 0, eventToIgnore))); // FinalParentHelper.computeLinkedSiblings(requestQuery))));
+            ctc.compose(ICommandFactory.createICommand(editingDomain, new VerticalSpaceExpansion(diagram.getSequenceDiagram(), validator.getExpansionZone(), 0, eventToIgnore))); // FinalParentHelper.computeLinkedSiblings(requestQuery))));
         }
         if (validator.getFinalHierarchicalParent().equals(self.getHierarchicalParentEvent())) {
             Command cmd = DiagramBorderNodeEditPartOperation.getResizeBorderItemCommand((ExecutionEditPart) getHost(), request, false);
@@ -247,13 +247,13 @@ public class ExecutionSelectionEditPolicy extends SpecificBorderItemSelectionEdi
         int moveDelta = logicalDelta.y;
         int sizeDelta = logicalDelta.height;
         if (rq.isResizeFromTop()) {
-            cc.compose(CommandFactory.createICommand(editingDomain, new ShiftDirectSubExecutionsOperation(exec, sizeDelta)));
-            cc.compose(CommandFactory.createICommand(editingDomain, new ShiftDescendantMessagesOperation(exec, moveDelta, true, false, true)));
+            cc.compose(ICommandFactory.createICommand(editingDomain, new ShiftDirectSubExecutionsOperation(exec, sizeDelta)));
+            cc.compose(ICommandFactory.createICommand(editingDomain, new ShiftDescendantMessagesOperation(exec, moveDelta, true, false, true)));
 
             addCompoundEventsMoveCommands(exec, cc, editingDomain, true, moveDelta, cbr, validator);
             addCompoundEventsMoveCommands(exec, cc, editingDomain, false, 0, cbr, validator);
         } else if (rq.isResizeFromBottom()) {
-            cc.compose(CommandFactory.createICommand(editingDomain, new ShiftDescendantMessagesOperation(exec, sizeDelta, true, false, false)));
+            cc.compose(ICommandFactory.createICommand(editingDomain, new ShiftDescendantMessagesOperation(exec, sizeDelta, true, false, false)));
 
             addCompoundEventsMoveCommands(exec, cc, editingDomain, true, 0, cbr, validator);
             addCompoundEventsMoveCommands(exec, cc, editingDomain, false, sizeDelta, cbr, validator);
@@ -317,7 +317,7 @@ public class ExecutionSelectionEditPolicy extends SpecificBorderItemSelectionEdi
                         Message msg = (Message) ise;
                         addMessageReconnectionCommand(self, cc, editingDomain, msg, newRange, request, validator);
                     } else {
-                        cc.compose(CommandFactory.createICommand(editingDomain, new SetVerticalRangeOperation(ise, newRange)));
+                        cc.compose(ICommandFactory.createICommand(editingDomain, new SetVerticalRangeOperation(ise, newRange)));
                     }
                 } else {
                     cc.compose(org.eclipse.gmf.runtime.common.core.command.UnexecutableCommand.INSTANCE);
@@ -424,7 +424,7 @@ public class ExecutionSelectionEditPolicy extends SpecificBorderItemSelectionEdi
         if (invalidCommand) {
             cc.compose(org.eclipse.gmf.runtime.common.core.command.UnexecutableCommand.INSTANCE);
         } else {
-            cc.compose(CommandFactory.createICommand(editingDomain, smrc));
+            cc.compose(ICommandFactory.createICommand(editingDomain, smrc));
         }
 
     }

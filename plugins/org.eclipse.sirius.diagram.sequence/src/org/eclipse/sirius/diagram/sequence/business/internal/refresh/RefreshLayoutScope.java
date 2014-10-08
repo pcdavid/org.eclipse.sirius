@@ -15,7 +15,7 @@ import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
-import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.sirius.common.tools.api.query.NotificationQuery;
 import org.eclipse.sirius.diagram.DDiagramElement;
 import org.eclipse.sirius.diagram.DiagramPackage;
 import org.eclipse.sirius.diagram.WorkspaceImage;
@@ -24,7 +24,6 @@ import org.eclipse.sirius.diagram.sequence.business.internal.elements.EndOfLife;
 import org.eclipse.sirius.diagram.sequence.business.internal.elements.ISequenceElementAccessor;
 import org.eclipse.sirius.diagram.sequence.business.internal.elements.InstanceRole;
 import org.eclipse.sirius.diagram.sequence.business.internal.util.BendpointsHelper;
-import org.eclipse.sirius.diagram.ui.tools.internal.util.NotificationQuery;
 import org.eclipse.sirius.viewpoint.ViewpointPackage;
 
 import com.google.common.base.Predicate;

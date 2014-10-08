@@ -40,7 +40,7 @@ import org.eclipse.sirius.diagram.ui.graphical.edit.policies.SiriusResizeTracker
 import org.eclipse.sirius.diagram.ui.internal.edit.parts.AbstractDNodeContainerCompartmentEditPart;
 import org.eclipse.sirius.diagram.ui.internal.edit.parts.DNodeContainerViewNodeContainerCompartmentEditPart;
 import org.eclipse.sirius.diagram.ui.provider.Messages;
-import org.eclipse.sirius.diagram.ui.tools.internal.edit.command.CommandFactory;
+import org.eclipse.sirius.diagram.ui.tools.internal.edit.command.ICommandFactory;
 import org.eclipse.sirius.diagram.ui.tools.internal.util.EditPartQuery;
 import org.eclipse.sirius.ext.gmf.runtime.editparts.GraphicalHelper;
 
@@ -181,7 +181,7 @@ public class ChildrenAdjustmentCommand extends AbstractTransactionalCommand {
             for (EditPart editPart : childrenExceptBorderItemPart) {
                 IAdaptable adapter = new EObjectAdapter((Node) editPart.getModel());
                 // Shift this view by the delta
-                cc.compose(CommandFactory.createICommand(cc.getEditingDomain(), new MoveViewOperation(DiagramUIMessages.SetLocationCommand_Label_Resize, adapter, delta)));
+                cc.compose(ICommandFactory.createICommand(cc.getEditingDomain(), new MoveViewOperation(DiagramUIMessages.SetLocationCommand_Label_Resize, adapter, delta)));
             }
         }
     }
@@ -242,7 +242,7 @@ public class ChildrenAdjustmentCommand extends AbstractTransactionalCommand {
             // the bottom side.
             List<Node> childrenToMove = resizedPartQuery.getBorderedNodes(PositionConstants.SOUTH);
             if (!childrenToMove.isEmpty()) {
-                cc.compose(CommandFactory.createICommand(cc.getEditingDomain(), new ShiftDirectBorderedNodesOperation(childrenToMove, new Dimension(0, verticalSizeDelta))));
+                cc.compose(ICommandFactory.createICommand(cc.getEditingDomain(), new ShiftDirectBorderedNodesOperation(childrenToMove, new Dimension(0, verticalSizeDelta))));
             }
 
             // The border nodes of the east and west side must eventually be
@@ -283,7 +283,7 @@ public class ChildrenAdjustmentCommand extends AbstractTransactionalCommand {
                     List<Node> borderNodes = resizedPartQuery.getBorderedNodes(PositionConstants.WEST);
                     borderNodes.addAll(resizedPartQuery.getBorderedNodes(PositionConstants.EAST));
                     borderNodes.removeAll(childrenToMoveWithDelta.keySet());
-                    cc.compose(CommandFactory.createICommand(cc.getEditingDomain(), new ShiftDirectBorderedNodesOperation(borderNodes, new Dimension(0, verticalSizeDelta))));
+                    cc.compose(ICommandFactory.createICommand(cc.getEditingDomain(), new ShiftDirectBorderedNodesOperation(borderNodes, new Dimension(0, verticalSizeDelta))));
                 } else {
                     // The edges linked to border nodes of the west and east
                     // sides must be adapted to only move the last segment.
@@ -307,7 +307,7 @@ public class ChildrenAdjustmentCommand extends AbstractTransactionalCommand {
             // east side.
             List<Node> childrenToMove = resizedPartQuery.getBorderedNodes(PositionConstants.EAST);
             if (!childrenToMove.isEmpty()) {
-                cc.compose(CommandFactory.createICommand(cc.getEditingDomain(), new ShiftDirectBorderedNodesOperation(childrenToMove, new Dimension(horizontalSizeDelta, 0))));
+                cc.compose(IommandFactory.createICommand(cc.getEditingDomain(), new ShiftDirectBorderedNodesOperation(childrenToMove, new Dimension(horizontalSizeDelta, 0))));
             }
             // The border nodes of the north or south side must eventually be
             // shift to stay in the parent bounds.
@@ -347,7 +347,7 @@ public class ChildrenAdjustmentCommand extends AbstractTransactionalCommand {
                     List<Node> borderNodes = resizedPartQuery.getBorderedNodes(PositionConstants.NORTH);
                     borderNodes.addAll(resizedPartQuery.getBorderedNodes(PositionConstants.SOUTH));
                     borderNodes.removeAll(childrenToMoveWithDelta.keySet());
-                    cc.compose(CommandFactory.createICommand(cc.getEditingDomain(), new ShiftDirectBorderedNodesOperation(borderNodes, new Dimension(horizontalSizeDelta, 0))));
+                    cc.compose(ICommandFactory.createICommand(cc.getEditingDomain(), new ShiftDirectBorderedNodesOperation(borderNodes, new Dimension(horizontalSizeDelta, 0))));
                 } else {
                     // The edges linked border nodes of the north and south
                     // sides must be adapted to only move the last segment.

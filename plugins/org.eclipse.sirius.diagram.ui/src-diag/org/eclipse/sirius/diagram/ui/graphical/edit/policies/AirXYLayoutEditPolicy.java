@@ -53,7 +53,7 @@ import org.eclipse.sirius.diagram.ui.internal.edit.parts.AbstractDNodeContainerC
 import org.eclipse.sirius.diagram.ui.internal.operation.ShiftEdgeIdentityAnchorOperation;
 import org.eclipse.sirius.diagram.ui.internal.view.factories.ViewSizeHint;
 import org.eclipse.sirius.diagram.ui.tools.api.layout.LayoutUtils;
-import org.eclipse.sirius.diagram.ui.tools.internal.edit.command.CommandFactory;
+import org.eclipse.sirius.diagram.ui.tools.internal.edit.command.ICommandFactory;
 
 /**
  * The {@link AirXYLayoutEditPolicy}. import
@@ -344,7 +344,7 @@ public class AirXYLayoutEditPolicy extends XYLayoutEditPolicy {
             ctc.add(new CommandProxy(superCommand));
 
             ShiftEdgeIdentityAnchorOperation operation = new ShiftEdgeIdentityAnchorOperation(request);
-            ICommand command = CommandFactory.createICommand(editingDomain, operation);
+            ICommand command = ICommandFactory.createICommand(editingDomain, operation);
             ctc.add(command);
             return new ICommandProxy(ctc);
         }

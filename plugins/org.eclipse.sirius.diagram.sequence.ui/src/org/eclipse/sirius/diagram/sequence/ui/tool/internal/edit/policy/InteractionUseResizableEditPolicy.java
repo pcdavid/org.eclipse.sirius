@@ -32,7 +32,7 @@ import org.eclipse.sirius.diagram.sequence.ui.tool.internal.edit.validator.Abstr
 import org.eclipse.sirius.diagram.sequence.ui.tool.internal.edit.validator.InteractionUseMoveValidator;
 import org.eclipse.sirius.diagram.sequence.ui.tool.internal.util.RequestQuery;
 import org.eclipse.sirius.diagram.sequence.util.Range;
-import org.eclipse.sirius.diagram.ui.tools.internal.edit.command.CommandFactory;
+import org.eclipse.sirius.diagram.ui.tools.internal.edit.command.ICommandFactory;
 
 import com.google.common.collect.Lists;
 
@@ -98,7 +98,7 @@ public class InteractionUseResizableEditPolicy extends AbstractFrameResizableEdi
                 ISequenceEvent iSequenceEvent = self.getISequenceEvent();
                 SequenceDiagram diagram = iSequenceEvent.getDiagram();
                 Collection<ISequenceEvent> eventToIgnore = Collections.singletonList(iSequenceEvent);
-                ICommand autoExpand = CommandFactory.createICommand(self.getEditingDomain(), new VerticalSpaceExpansion(diagram, expansionZone, 0, eventToIgnore));
+                ICommand autoExpand = ICommandFactory.createICommand(self.getEditingDomain(), new VerticalSpaceExpansion(diagram, expansionZone, 0, eventToIgnore));
                 ctc.compose(autoExpand);
             }
 

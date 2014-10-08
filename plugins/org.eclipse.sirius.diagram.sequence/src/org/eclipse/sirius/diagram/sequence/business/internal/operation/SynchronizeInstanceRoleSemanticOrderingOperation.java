@@ -30,9 +30,9 @@ import org.eclipse.sirius.diagram.sequence.business.internal.elements.InstanceRo
 import org.eclipse.sirius.diagram.sequence.business.internal.elements.SequenceDiagram;
 import org.eclipse.sirius.diagram.sequence.business.internal.tool.ToolCommandBuilder;
 import org.eclipse.sirius.diagram.sequence.description.tool.InstanceRoleReorderTool;
-import org.eclipse.sirius.diagram.ui.business.internal.operation.AbstractModelChangeOperation;
 import org.eclipse.sirius.ext.base.Option;
 import org.eclipse.sirius.tools.api.command.SiriusCommand;
+import org.eclipse.sirius.tools.internal.command.AbstractModelChangeOperation;
 import org.eclipse.sirius.viewpoint.description.tool.AbstractToolDescription;
 
 import com.google.common.base.Objects;

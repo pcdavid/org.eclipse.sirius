@@ -49,7 +49,6 @@ import org.eclipse.sirius.diagram.DEdge;
 import org.eclipse.sirius.diagram.EdgeStyle;
 import org.eclipse.sirius.diagram.description.CenteringStyle;
 import org.eclipse.sirius.diagram.ui.business.api.query.EdgeQuery;
-import org.eclipse.sirius.diagram.ui.business.internal.operation.AbstractModelChangeOperation;
 import org.eclipse.sirius.diagram.ui.graphical.figures.CanonicalRectilinearRouter;
 import org.eclipse.sirius.diagram.ui.internal.edit.parts.DEdgeEditPart;
 import org.eclipse.sirius.diagram.ui.internal.refresh.GMFHelper;
@@ -58,6 +57,7 @@ import org.eclipse.sirius.diagram.ui.tools.internal.util.GMFNotationUtilities;
 import org.eclipse.sirius.ext.base.Option;
 import org.eclipse.sirius.ext.base.Options;
 import org.eclipse.sirius.ext.gmf.runtime.editparts.GraphicalHelper;
+import org.eclipse.sirius.tools.internal.command.AbstractModelChangeOperation;
 import org.eclipse.ui.IEditorPart;
 
 /**
@@ -65,9 +65,9 @@ import org.eclipse.ui.IEditorPart;
  * operation will compute the edge anchor and bendpoints according to the
  * {@link EdgeStyle#isSourceCentered()} and {@link EdgeStyle#isTargetCentered()}
  * values.
- * 
+ *
  * @author Florian Barbin
- * 
+ *
  */
 @SuppressWarnings("restriction")
 public class CenterEdgeEndModelChangeOperation extends AbstractModelChangeOperation<Void> {
@@ -97,7 +97,7 @@ public class CenterEdgeEndModelChangeOperation extends AbstractModelChangeOperat
     /**
      * Constructor to use the connectionEditPart to compute the new edge
      * bendpoints.
-     * 
+     *
      * @param connectionEditPart
      *            the edge connectionEditPart.
      * @param edge
@@ -113,7 +113,7 @@ public class CenterEdgeEndModelChangeOperation extends AbstractModelChangeOperat
      * Default constructor to center the given gmf edge ends (if needed). This
      * operation will try to retrieve the corresponding figure (if possible) to
      * compute the new bendpoints.
-     * 
+     *
      * @param edge
      *            the GMF edge to center ends.
      */
@@ -124,7 +124,7 @@ public class CenterEdgeEndModelChangeOperation extends AbstractModelChangeOperat
     /**
      * Constructor to explicitly specify whether this operation should try to
      * retrieve the edge figure to compute the new bendpoints.
-     * 
+     *
      * @param edge
      *            the GMF edge.
      * @param useFigure
@@ -139,7 +139,7 @@ public class CenterEdgeEndModelChangeOperation extends AbstractModelChangeOperat
     /**
      * Set the source and target figure size. Those size will be used instead of
      * compute them.
-     * 
+     *
      * @param sourceFigureSize
      *            the edge source figure size. If null, the size will be
      *            computed.
@@ -187,7 +187,7 @@ public class CenterEdgeEndModelChangeOperation extends AbstractModelChangeOperat
     /**
      * Center the connection end (Source, Target or Both) according to the
      * center value.
-     * 
+     *
      * @param center
      *            the {@link CenteringStyle} value.
      */
@@ -239,7 +239,7 @@ public class CenterEdgeEndModelChangeOperation extends AbstractModelChangeOperat
      * the draw2D absolute bounds, we will compute these bounds from draw2D if
      * we have access to the figure, or from GMF if we work in "pure" GMF
      * context.
-     * 
+     *
      * @param gmfView
      *            the GMFView to compute the absolute bounds.
      * @param isSource
@@ -281,7 +281,7 @@ public class CenterEdgeEndModelChangeOperation extends AbstractModelChangeOperat
 
     /**
      * Deal with the straight edge case.
-     * 
+     *
      * @param center
      *            the {@link Center} value: {@link Center#SOURCE}
      *            {@link Center#TARGET} or {@link Center#BOTH}.
@@ -336,7 +336,7 @@ public class CenterEdgeEndModelChangeOperation extends AbstractModelChangeOperat
 
     /**
      * Deal with the rectilinear edge case.
-     * 
+     *
      * @param center
      *            the {@link CenteringStyle} value:
      *            {@link CenteringStyle#SOURCE} {@link CenteringStyle#TARGET} or
@@ -421,7 +421,7 @@ public class CenterEdgeEndModelChangeOperation extends AbstractModelChangeOperat
 
     /**
      * Retrieve the absolute coordinates of bendpoints.
-     * 
+     *
      * @param bendpoints
      *            the bendpoints.
      * @return the absolute bendpoint coordinates list.
@@ -500,7 +500,7 @@ public class CenterEdgeEndModelChangeOperation extends AbstractModelChangeOperat
     /**
      * Compute the anchor absolute coordinates following the figure bounds and
      * the anchor location.
-     * 
+     *
      * @param absoluteBounds
      *            the figure absolute bounds.
      * @param precisionPoint
@@ -600,9 +600,9 @@ public class CenterEdgeEndModelChangeOperation extends AbstractModelChangeOperat
      * In the case of an existing edge that was oblique and is now transformed
      * to rectilinear, we need to anticipate the future rectilinear bendpoints
      * to next center the source or target connection ends.
-     * 
+     *
      * <strong>We suppose the connection attribute is not null</strong>
-     * 
+     *
      * @return a rectilinear PointList.
      */
     private PointList getRectilinearPointListFromConnection() {

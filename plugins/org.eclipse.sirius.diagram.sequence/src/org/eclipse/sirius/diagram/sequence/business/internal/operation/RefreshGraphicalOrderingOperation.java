@@ -22,7 +22,7 @@ import org.eclipse.sirius.diagram.sequence.business.internal.ordering.RefreshOrd
 import org.eclipse.sirius.diagram.sequence.ordering.EventEnd;
 import org.eclipse.sirius.diagram.sequence.ordering.EventEndsOrdering;
 import org.eclipse.sirius.diagram.sequence.ordering.SingleEventEnd;
-import org.eclipse.sirius.diagram.ui.business.internal.operation.AbstractModelChangeOperation;
+import org.eclipse.sirius.tools.internal.command.AbstractModelChangeOperation;
 
 import com.google.common.base.Function;
 import com.google.common.base.Predicate;

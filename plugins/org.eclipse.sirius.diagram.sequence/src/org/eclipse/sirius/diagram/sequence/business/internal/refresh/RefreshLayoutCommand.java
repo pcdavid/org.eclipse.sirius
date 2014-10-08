@@ -22,16 +22,15 @@ import org.eclipse.sirius.diagram.sequence.business.internal.elements.SequenceDi
 import org.eclipse.sirius.diagram.sequence.business.internal.operation.RefreshGraphicalOrderingOperation;
 import org.eclipse.sirius.diagram.sequence.business.internal.operation.RefreshSemanticOrderingsOperation;
 import org.eclipse.sirius.diagram.sequence.business.internal.operation.SynchronizeGraphicalOrderingOperation;
-import org.eclipse.sirius.diagram.sequence.business.internal.ordering.RefreshOrderingHelper;
+import org.eclipse.sirius.tools.internal.command.AbstractModelChangeOperation;
 import org.eclipse.sirius.diagram.sequence.ordering.EventEnd;
-import org.eclipse.sirius.diagram.ui.business.internal.operation.AbstractModelChangeOperation;
 import org.eclipse.sirius.ecore.extender.business.api.permission.IPermissionAuthority;
 import org.eclipse.sirius.ecore.extender.business.api.permission.PermissionAuthorityRegistry;
 import org.eclipse.sirius.ui.tools.api.profiler.SiriusTasks;
 
 /**
  * Command to refresh the graphical layout of the whole diagram.
- * 
+ *
  * @author edugueperoux
  */
 public class RefreshLayoutCommand extends RecordingCommand {
@@ -45,14 +44,14 @@ public class RefreshLayoutCommand extends RecordingCommand {
 
     /**
      * Default constructor.
-     * 
+     *
      * @param diagram
      *            {@link Diagram} to refresh, used also to access
      *            {@link SequenceDDiagram} & {@link SequenceDiagram} to refresh
-     * 
+     *
      * @param refreshDiagram
      *            <code>true</code> if we should actually update the GMF model
-     * 
+     *
      *            {@inheritDoc}
      */
     public RefreshLayoutCommand(TransactionalEditingDomain domain, Diagram diagram, boolean refreshDiagram) {
@@ -63,7 +62,7 @@ public class RefreshLayoutCommand extends RecordingCommand {
 
     /**
      * Overridden to refresh the sequence layout.
-     * 
+     *
      * {@inheritDoc}
      */
     @Override

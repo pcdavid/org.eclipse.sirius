@@ -27,11 +27,11 @@ import org.eclipse.sirius.diagram.sequence.business.internal.operation.RefreshSe
 import org.eclipse.sirius.diagram.sequence.business.internal.operation.SynchronizeGraphicalOrderingOperation;
 import org.eclipse.sirius.diagram.sequence.ui.Messages;
 import org.eclipse.sirius.diagram.sequence.ui.tool.internal.edit.part.SequenceDiagramEditPart;
-import org.eclipse.sirius.diagram.ui.business.internal.operation.AbstractModelChangeOperation;
 import org.eclipse.sirius.diagram.ui.tools.api.command.DoNothingCommand;
 import org.eclipse.sirius.diagram.ui.tools.api.layout.provider.AbstractLayoutProvider;
 import org.eclipse.sirius.diagram.ui.tools.api.util.EditPartTools;
-import org.eclipse.sirius.diagram.ui.tools.internal.edit.command.CommandFactory;
+import org.eclipse.sirius.diagram.ui.tools.internal.edit.command.ICommandFactory;
+import org.eclipse.sirius.tools.internal.command.AbstractModelChangeOperation;
 
 /**
  * The layout provider for sequence diagrams.
@@ -71,7 +71,7 @@ public class SequenceLayoutProvider extends AbstractLayoutProvider {
         operations.add(new RefreshSemanticOrderingsOperation(sequenceDDiagram));
         operations.add(new SynchronizeGraphicalOrderingOperation(sdep.getDiagramView(), true));
 
-        ICommand cmd = CommandFactory.createICommand(transactionalEditingDomain, operations);
+        ICommand cmd = ICommandFactory.createICommand(transactionalEditingDomain, operations);
         cmd.setLabel(Messages.SequenceLayoutProvider_arrangeAllCommand);
 
         return new ICommandProxy(cmd);

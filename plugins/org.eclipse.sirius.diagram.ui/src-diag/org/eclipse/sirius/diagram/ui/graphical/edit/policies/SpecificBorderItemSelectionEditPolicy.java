@@ -69,7 +69,7 @@ import org.eclipse.sirius.diagram.ui.internal.edit.parts.DNodeNameEditPart;
 import org.eclipse.sirius.diagram.ui.internal.operation.ShiftEdgeIdentityAnchorOperation;
 import org.eclipse.sirius.diagram.ui.tools.api.figure.locator.DBorderItemLocator;
 import org.eclipse.sirius.diagram.ui.tools.api.graphical.edit.styles.IBorderItemOffsets;
-import org.eclipse.sirius.diagram.ui.tools.internal.edit.command.CommandFactory;
+import org.eclipse.sirius.diagram.ui.tools.internal.edit.command.ICommandFactory;
 import org.eclipse.sirius.diagram.ui.tools.internal.figure.locator.FeedbackDBorderItemLocator;
 import org.eclipse.sirius.diagram.ui.tools.internal.ui.NoCopyDragEditPartsTrackerEx;
 import org.eclipse.sirius.ext.gmf.runtime.editparts.GraphicalHelper;
@@ -588,7 +588,7 @@ public class SpecificBorderItemSelectionEditPolicy extends ResizableEditPolicyEx
             }
 
             ShiftEdgeIdentityAnchorOperation operation = new ShiftEdgeIdentityAnchorOperation(request, newBounds.getSize(), delta);
-            ICommand command = CommandFactory.createICommand(editingDomain, operation);
+            ICommand command = ICommandFactory.createICommand(editingDomain, operation);
             ctc.add(command);
 
             // we add a command to keep the edges centered (if they should be)

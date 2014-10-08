@@ -32,8 +32,8 @@ import org.eclipse.sirius.diagram.sequence.business.internal.elements.Operand;
 import org.eclipse.sirius.diagram.sequence.business.internal.elements.SequenceDiagram;
 import org.eclipse.sirius.diagram.sequence.business.internal.query.ISequenceEventQuery;
 import org.eclipse.sirius.diagram.sequence.util.Range;
-import org.eclipse.sirius.diagram.ui.business.internal.operation.AbstractModelChangeOperation;
 import org.eclipse.sirius.ext.base.Option;
+import org.eclipse.sirius.tools.internal.command.AbstractModelChangeOperation;
 
 import com.google.common.base.Predicates;
 import com.google.common.collect.Iterables;

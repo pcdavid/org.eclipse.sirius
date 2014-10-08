@@ -8,13 +8,12 @@
  * Contributors:
  *    Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipse.sirius.diagram.ui.tools.internal.edit.command;
+package org.eclipse.sirius.tools.internal.command;
 
 import java.util.Collection;
 
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.sirius.diagram.ui.business.internal.operation.AbstractModelChangeOperation;
 
 /**
  * A Recording Command used in CommandFactory to execute a collection of

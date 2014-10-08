@@ -53,7 +53,7 @@ import org.eclipse.sirius.diagram.ui.business.internal.view.EdgeLayoutData;
 import org.eclipse.sirius.diagram.ui.graphical.edit.policies.SiriusGraphicalNodeEditPolicy;
 import org.eclipse.sirius.diagram.ui.internal.edit.parts.DNode2EditPart;
 import org.eclipse.sirius.diagram.ui.internal.view.factories.ViewLocationHint;
-import org.eclipse.sirius.diagram.ui.tools.internal.edit.command.CommandFactory;
+import org.eclipse.sirius.diagram.ui.tools.internal.edit.command.ICommandFactory;
 import org.eclipse.sirius.ext.base.Option;
 import org.eclipse.sirius.ext.base.Options;
 import org.eclipse.sirius.ext.gmf.runtime.editparts.GraphicalHelper;
@@ -160,9 +160,9 @@ public class InstanceRoleSiriusGraphicalNodeEditPolicy extends SiriusGraphicalNo
 
                     // Avoid EndOfLife Move
                     Lifeline lifeline = (Lifeline) lep.getISequenceEvent();
-                    ctc.compose(CommandFactory.createICommand(domain, new EndOfLifeMoveOperation(lifeline, -deltaY)));
-                    ctc.compose(CommandFactory.createICommand(domain, new ShiftDirectSubExecutionsOperation(lep.getISequenceEvent(), -deltaY)));
-                    ctc.compose(CommandFactory.createICommand(domain, new ShiftDescendantMessagesOperation(lep.getISequenceEvent(), deltaY, true, false, true)));
+                    ctc.compose(ICommandFactory.createICommand(domain, new EndOfLifeMoveOperation(lifeline, -deltaY)));
+                    ctc.compose(ICommandFactory.createICommand(domain, new ShiftDirectSubExecutionsOperation(lep.getISequenceEvent(), -deltaY)));
+                    ctc.compose(ICommandFactory.createICommand(domain, new ShiftDescendantMessagesOperation(lep.getISequenceEvent(), deltaY, true, false, true)));
                     SequenceEditPartsOperations.addRefreshSemanticOrderingCommand(ctc, (IGraphicalEditPart) getHost());
                     SequenceEditPartsOperations.addRefreshGraphicalOrderingCommand(ctc, (IGraphicalEditPart) getHost());
 

@@ -22,13 +22,13 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.sirius.diagram.ui.edit.api.part.AbstractDiagramContainerEditPart;
 import org.eclipse.sirius.diagram.ui.internal.operation.ResetOriginChangeModelOperation;
 import org.eclipse.sirius.diagram.ui.tools.api.requests.RequestConstants;
-import org.eclipse.sirius.diagram.ui.tools.internal.edit.command.CommandFactory;
+import org.eclipse.sirius.diagram.ui.tools.internal.edit.command.ICommandFactory;
 
 /**
  * An EditPolicy that returns a ResetOrigin Command.
- * 
+ *
  * @author Florian Barbin
- * 
+ *
  */
 public class ResetOriginEditPolicy extends AbstractEditPolicy {
 
@@ -52,7 +52,7 @@ public class ResetOriginEditPolicy extends AbstractEditPolicy {
                 }
             }
             if (operation != null) {
-                ICommand command = CommandFactory.createICommand(((IGraphicalEditPart) editPart).getEditingDomain(), operation);
+                ICommand command = ICommandFactory.createICommand(((IGraphicalEditPart) editPart).getEditingDomain(), operation);
                 return new ICommandProxy(command);
             }
         }

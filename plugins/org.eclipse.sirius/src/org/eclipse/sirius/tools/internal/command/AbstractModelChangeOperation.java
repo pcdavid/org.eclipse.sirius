@@ -8,7 +8,7 @@
  * Contributors:
  *    Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipse.sirius.diagram.ui.business.internal.operation;
+package org.eclipse.sirius.tools.internal.command;
 
 import org.eclipse.sirius.diagram.ui.provider.Messages;
 

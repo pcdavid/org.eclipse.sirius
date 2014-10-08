@@ -39,8 +39,8 @@ import org.eclipse.sirius.diagram.sequence.description.tool.ReorderTool;
 import org.eclipse.sirius.diagram.sequence.ordering.CompoundEventEnd;
 import org.eclipse.sirius.diagram.sequence.ordering.EventEnd;
 import org.eclipse.sirius.diagram.sequence.ordering.SingleEventEnd;
-import org.eclipse.sirius.diagram.ui.business.internal.operation.AbstractModelChangeOperation;
 import org.eclipse.sirius.tools.api.command.SiriusCommand;
+import org.eclipse.sirius.tools.internal.command.AbstractModelChangeOperation;
 import org.eclipse.sirius.viewpoint.description.tool.AbstractToolDescription;
 
 import com.google.common.base.Objects;

@@ -77,7 +77,7 @@ import org.eclipse.sirius.diagram.sequence.ui.tool.internal.edit.validator.Posit
 import org.eclipse.sirius.diagram.sequence.ui.tool.internal.figure.HorizontalGuide;
 import org.eclipse.sirius.diagram.sequence.ui.tool.internal.util.EditPartsHelper;
 import org.eclipse.sirius.diagram.sequence.util.Range;
-import org.eclipse.sirius.diagram.ui.tools.internal.edit.command.CommandFactory;
+import org.eclipse.sirius.diagram.ui.tools.internal.edit.command.ICommandFactory;
 import org.eclipse.sirius.ext.base.Option;
 import org.eclipse.sirius.ext.base.Options;
 import org.eclipse.sirius.ext.gmf.runtime.editparts.GraphicalHelper;
@@ -464,7 +464,7 @@ public class SequenceMessageEditPolicy extends ConnectionBendpointEditPolicy {
         setOperations(true, message, finalRange, smrc, reflectiveMessage);
         setOperations(false, message, finalRange, smrc, reflectiveMessage);
 
-        return CommandFactory.createICommand(thisEvent.getEditingDomain(), smrc);
+        return ICommandFactory.createICommand(thisEvent.getEditingDomain(), smrc);
     }
 
     private void setOperations(boolean source, Message message, Range finalRange, SetMessageRangeOperation smrc, boolean reflectiveMessage) {
@@ -693,7 +693,7 @@ public class SequenceMessageEditPolicy extends ConnectionBendpointEditPolicy {
             ctc.compose(new CommandProxy(baseCommand));
             updateMovingTargetReferencePoint(baseCommand, cbr);
             TransactionalEditingDomain editingDomain = smep.getEditingDomain();
-            ctc.compose(CommandFactory.createICommand(editingDomain, new ShiftDescendantMessagesOperation(lifelineEditPart.getISequenceEvent(), cbr.getSizeDelta().height, true, false, false)));
+            ctc.compose(ICommandFactory.createICommand(editingDomain, new ShiftDescendantMessagesOperation(lifelineEditPart.getISequenceEvent(), cbr.getSizeDelta().height, true, false, false)));
         }
         return ctc;
     }
@@ -763,9 +763,9 @@ public class SequenceMessageEditPolicy extends ConnectionBendpointEditPolicy {
 
         // Avoid EndOfLife Move
         TransactionalEditingDomain editingDomain = smep.getEditingDomain();
-        cc.compose(CommandFactory.createICommand(editingDomain, new EndOfLifeMoveOperation((Lifeline) lep.getISequenceEvent(), -cbr.getMoveDelta().y)));
-        cc.compose(CommandFactory.createICommand(editingDomain, new ShiftDirectSubExecutionsOperation(lep.getISequenceEvent(), -cbr.getMoveDelta().y)));
-        cc.compose(CommandFactory.createICommand(editingDomain, new ShiftDescendantMessagesOperation(lep.getISequenceEvent(), cbr.getMoveDelta().y, true, false, true)));
+        cc.compose(ICommandFactory.createICommand(editingDomain, new EndOfLifeMoveOperation((Lifeline) lep.getISequenceEvent(), -cbr.getMoveDelta().y)));
+        cc.compose(ICommandFactory.createICommand(editingDomain, new ShiftDirectSubExecutionsOperation(lep.getISequenceEvent(), -cbr.getMoveDelta().y)));
+        cc.compose(ICommandFactory.createICommand(editingDomain, new ShiftDescendantMessagesOperation(lep.getISequenceEvent(), cbr.getMoveDelta().y, true, false, true)));
 
         return cc;
     }

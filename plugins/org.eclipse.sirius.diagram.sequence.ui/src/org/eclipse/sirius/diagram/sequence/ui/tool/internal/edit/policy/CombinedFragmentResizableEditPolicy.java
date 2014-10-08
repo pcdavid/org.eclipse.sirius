@@ -53,7 +53,7 @@ import org.eclipse.sirius.diagram.sequence.ui.tool.internal.edit.validator.Abstr
 import org.eclipse.sirius.diagram.sequence.ui.tool.internal.edit.validator.ISEComplexMoveValidator;
 import org.eclipse.sirius.diagram.sequence.ui.tool.internal.util.RequestQuery;
 import org.eclipse.sirius.diagram.sequence.util.Range;
-import org.eclipse.sirius.diagram.ui.tools.internal.edit.command.CommandFactory;
+import org.eclipse.sirius.diagram.ui.tools.internal.edit.command.ICommandFactory;
 import org.eclipse.sirius.ext.base.Option;
 import org.eclipse.sirius.ext.base.Options;
 
@@ -117,7 +117,7 @@ public class CombinedFragmentResizableEditPolicy extends AbstractFrameResizableE
             if (expansionZone != null && !expansionZone.isEmpty()) {
                 SequenceDiagram diagram = fragment.getDiagram();
                 Collection<ISequenceEvent> eventToIgnore = Collections.singletonList(fragment);
-                autoExpand = CommandFactory.createICommand(cfep.getEditingDomain(), new VerticalSpaceExpansion(diagram, expansionZone, 0, eventToIgnore));
+                autoExpand = ICommandFactory.createICommand(cfep.getEditingDomain(), new VerticalSpaceExpansion(diagram, expansionZone, 0, eventToIgnore));
             }
 
             postProcessDefaultCommand(cfep, request, ctc, autoExpand);

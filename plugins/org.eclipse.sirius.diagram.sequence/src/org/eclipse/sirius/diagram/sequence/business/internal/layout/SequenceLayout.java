@@ -22,7 +22,6 @@ import org.eclipse.sirius.diagram.sequence.business.internal.layout.flag.Sequenc
 import org.eclipse.sirius.diagram.sequence.business.internal.layout.horizontal.SequenceHorizontalLayout;
 import org.eclipse.sirius.diagram.sequence.business.internal.layout.observation.SequenceObservationLayout;
 import org.eclipse.sirius.diagram.sequence.business.internal.layout.vertical.SequenceVerticalLayout;
-import org.eclipse.sirius.diagram.ui.business.api.query.NodeQuery;
 import org.eclipse.sirius.ext.base.Option;
 
 import com.google.common.collect.Iterables;

@@ -51,7 +51,7 @@ import org.eclipse.sirius.diagram.ui.internal.edit.parts.SquareEditPart;
 import org.eclipse.sirius.diagram.ui.internal.operation.RegionContainerUpdateLayoutOperation;
 import org.eclipse.sirius.diagram.ui.internal.view.factories.AbstractContainerViewFactory;
 import org.eclipse.sirius.diagram.ui.provider.DiagramUIPlugin;
-import org.eclipse.sirius.diagram.ui.tools.internal.edit.command.CommandFactory;
+import org.eclipse.sirius.diagram.ui.tools.internal.edit.command.ICommandFactory;
 import org.eclipse.sirius.diagram.ui.tools.internal.layout.provider.AbstractCompositeLayoutProvider;
 import org.eclipse.sirius.diagram.ui.tools.internal.preferences.SiriusDiagramUiInternalPreferencesKeys;
 
@@ -324,7 +324,7 @@ public class ArrangeAllWithAutoSize {
         }
 
         if (isRegionContainer(gep)) {
-            cc.add(new ICommandProxy(CommandFactory.createICommand(gep.getEditingDomain(), new RegionContainerUpdateLayoutOperation((org.eclipse.gmf.runtime.notation.Node) gep.getModel()))));
+            cc.add(new ICommandProxy(ICommandFactory.createICommand(gep.getEditingDomain(), new RegionContainerUpdateLayoutOperation((org.eclipse.gmf.runtime.notation.Node) gep.getModel()))));
         }
 
     }

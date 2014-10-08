@@ -34,7 +34,6 @@ import org.eclipse.sirius.diagram.sequence.util.Range;
 import org.eclipse.sirius.ext.base.Option;
 import org.eclipse.sirius.ext.base.Options;
 import org.eclipse.sirius.tools.api.interpreter.InterpreterUtil;
-import org.eclipse.sirius.ui.tools.api.profiler.SiriusTasks;
 
 import com.google.common.base.Predicate;
 import com.google.common.base.Predicates;

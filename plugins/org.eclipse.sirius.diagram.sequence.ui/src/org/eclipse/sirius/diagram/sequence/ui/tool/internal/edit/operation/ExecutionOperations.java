@@ -42,9 +42,9 @@ import org.eclipse.sirius.diagram.ui.graphical.edit.policies.NodeCreationEditPol
 import org.eclipse.sirius.diagram.ui.graphical.edit.policies.SiriusGraphicalNodeEditPolicy;
 import org.eclipse.sirius.diagram.ui.tools.api.figure.AirDefaultSizeNodeFigure;
 import org.eclipse.sirius.diagram.ui.tools.api.policy.CompoundEditPolicy;
-import org.eclipse.sirius.diagram.ui.tools.internal.edit.command.CommandFactory;
 import org.eclipse.sirius.diagram.ui.tools.internal.util.EditPartQuery;
 import org.eclipse.sirius.ext.base.Option;
+import org.eclipse.sirius.tools.internal.command.CommandFactory;
 
 import com.google.common.collect.Iterables;
 

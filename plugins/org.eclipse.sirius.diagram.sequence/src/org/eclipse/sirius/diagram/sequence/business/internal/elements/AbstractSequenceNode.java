@@ -15,7 +15,6 @@ import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gmf.runtime.notation.Bounds;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.sirius.diagram.DDiagramElement;
-import org.eclipse.sirius.diagram.ui.tools.api.util.GMFNotationHelper;
 
 /**
  * Abstract base class for sequence elements which are represented by a GMF

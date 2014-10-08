@@ -35,19 +35,19 @@ import org.eclipse.gmf.runtime.notation.LayoutConstraint;
 import org.eclipse.gmf.runtime.notation.Location;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.sirius.diagram.ui.business.internal.operation.AbstractModelChangeOperation;
 import org.eclipse.sirius.diagram.ui.edit.api.part.AbstractDiagramContainerEditPart;
 import org.eclipse.sirius.diagram.ui.internal.edit.parts.AbstractDNodeContainerCompartmentEditPart;
 import org.eclipse.sirius.diagram.ui.provider.Messages;
+import org.eclipse.sirius.tools.internal.command.AbstractModelChangeOperation;
 
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 
 /**
  * A Change Model Operation that reset the diagram origin bounds.
- * 
+ *
  * @author Florian Barbin
- * 
+ *
  */
 public class ResetOriginChangeModelOperation extends AbstractModelChangeOperation<Void> {
 
@@ -61,7 +61,7 @@ public class ResetOriginChangeModelOperation extends AbstractModelChangeOperatio
     /**
      * Constructor to perform this operation by using the displayed figures
      * bounds of this diagram.
-     * 
+     *
      * @param diagramEditPart
      *            the root Diagram EditPart.
      */
@@ -72,7 +72,7 @@ public class ResetOriginChangeModelOperation extends AbstractModelChangeOperatio
     /**
      * Constructor to perform this operation by using the displayed figures
      * bounds of this container.
-     * 
+     *
      * @param diagramEditPart
      *            the root Diagram EditPart.
      */
@@ -159,7 +159,7 @@ public class ResetOriginChangeModelOperation extends AbstractModelChangeOperatio
 
     /**
      * Calculates the bounding box around given edit parts.
-     * 
+     *
      * @param editParts
      *            given edit parts
      * @return the edit parts bounding box
@@ -184,7 +184,7 @@ public class ResetOriginChangeModelOperation extends AbstractModelChangeOperatio
      * bounds. Note that some edges can be hidden due to a source or target
      * which is no visible (because of scroll bar within a container for
      * instance); in this case consider the edge as visible.
-     * 
+     *
      * @param primaryEditParts
      *            the primary editParts list.
      */
@@ -204,7 +204,7 @@ public class ResetOriginChangeModelOperation extends AbstractModelChangeOperatio
     /**
      * Gets the primary editparts on this surface, that is, the top-level shapes
      * and connectors.
-     * 
+     *
      * @return List of primary edit parts. If there are none then it returns a
      *         Collections.EMPTY_LIST, which is immutable
      */
@@ -229,7 +229,7 @@ public class ResetOriginChangeModelOperation extends AbstractModelChangeOperatio
      * Calculates the bounding box around given edit parts. The bounding box is
      * relative to container. Method inspired from
      * {@link DiagramImageUtils#calculateImageRectangle(List, double, Dimension)}
-     * 
+     *
      * @param editparts
      *            given edit parts
      * @param frameSize
