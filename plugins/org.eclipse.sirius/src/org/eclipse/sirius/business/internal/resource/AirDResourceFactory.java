@@ -37,6 +37,8 @@ import com.google.common.collect.Maps;
  */
 public class AirDResourceFactory extends XMIResourceFactoryImpl {
 
+    private static final XMLParserPoolImpl SHARED_PARSER_POOL = new XMLParserPoolImpl(true);
+
     private static final String XMI_ENCODING = "UTF-8"; //$NON-NLS-1$
 
     // default load options.
@@ -143,7 +145,7 @@ public class AirDResourceFactory extends XMIResourceFactoryImpl {
         loadOptions.put(XMLResource.OPTION_DEFER_ATTACHMENT, true);
         loadOptions.put(XMLResource.OPTION_DEFER_IDREF_RESOLUTION, true);
         loadOptions.put(XMLResource.OPTION_USE_DEPRECATED_METHODS, false);
-        loadOptions.put(XMLResource.OPTION_USE_PARSER_POOL, new XMLParserPoolImpl(true));
+        loadOptions.put(XMLResource.OPTION_USE_PARSER_POOL, AirDResourceFactory.SHARED_PARSER_POOL);
         loadOptions.put(XMLResource.OPTION_USE_XML_NAME_TO_FEATURE_MAP, Maps.newHashMap());
 
         // extendedMetaData and resourceHandler
