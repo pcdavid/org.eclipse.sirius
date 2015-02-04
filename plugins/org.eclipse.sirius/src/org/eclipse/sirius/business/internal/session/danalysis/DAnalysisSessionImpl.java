@@ -68,6 +68,7 @@ import org.eclipse.sirius.business.internal.session.IsModifiedSavingPolicy;
 import org.eclipse.sirius.business.internal.session.ReloadingPolicyImpl;
 import org.eclipse.sirius.business.internal.session.RepresentationNameListener;
 import org.eclipse.sirius.business.internal.session.SessionEventBrokerImpl;
+import org.eclipse.sirius.business.internal.session.danalysis.adapters.SiriusResourceSetAdapter;
 import org.eclipse.sirius.common.tools.DslCommonPlugin;
 import org.eclipse.sirius.common.tools.api.interpreter.IInterpreter;
 import org.eclipse.sirius.common.tools.api.resource.ResourceSetSync;
@@ -1162,6 +1163,7 @@ public class DAnalysisSessionImpl extends DAnalysisSessionEObjectImpl implements
                 }
             }
 
+            getTransactionalEditingDomain().getResourceSet().eAdapters().add(new SiriusResourceSetAdapter(this));
             DViewOperations.on(this).updateSelectedViewpointsData(new SubProgressMonitor(monitor, 10));
             initLocalTriggers();
 
