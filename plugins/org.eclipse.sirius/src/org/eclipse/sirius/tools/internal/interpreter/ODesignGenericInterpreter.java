@@ -29,6 +29,7 @@ import org.eclipse.sirius.common.tools.api.contentassist.IProposalProvider;
 import org.eclipse.sirius.common.tools.api.interpreter.CompoundInterpreter;
 import org.eclipse.sirius.common.tools.api.interpreter.EvaluationException;
 import org.eclipse.sirius.common.tools.api.interpreter.IInterpreter;
+import org.eclipse.sirius.common.tools.api.interpreter.IInterpreter2;
 import org.eclipse.sirius.common.tools.api.interpreter.IInterpreterContext;
 import org.eclipse.sirius.common.tools.api.interpreter.IInterpreterProvider;
 import org.eclipse.sirius.common.tools.api.interpreter.IInterpreterStatus;
@@ -38,6 +39,7 @@ import org.eclipse.sirius.common.tools.api.interpreter.VariableManager;
 import org.eclipse.sirius.common.tools.api.profiler.ProfilerTask;
 import org.eclipse.sirius.ecore.extender.business.api.accessor.MetamodelDescriptor;
 import org.eclipse.sirius.ecore.extender.business.api.accessor.ModelAccessor;
+import org.eclipse.sirius.ext.emf.InverseReferenceFinder;
 import org.eclipse.sirius.tools.api.profiler.SiriusTasksKey;
 
 import com.google.common.collect.Sets;
@@ -78,6 +80,8 @@ public class ODesignGenericInterpreter implements IInterpreter, IProposalProvide
 
     /** The profiler tasks. */
     private final Map<String, ProfilerTask> profilerTasks = new HashMap<String, ProfilerTask>();
+
+    private InverseReferenceFinder inverseReferenceFinder;
 
     @Override
     public void activateMetamodels(Collection<MetamodelDescriptor> metamodels) {
@@ -344,10 +348,21 @@ public class ODesignGenericInterpreter implements IInterpreter, IProposalProvide
     }
 
     @Override
-    public void setCrossReferencer(final ECrossReferenceAdapter crossReferencer) {
+    public void setCrossReferencer(ECrossReferenceAdapter crossReferencer) {
         this.crossReferencer = crossReferencer;
         for (final IInterpreter interpreter : this.loadedInterpreters.values()) {
             interpreter.setCrossReferencer(crossReferencer);
+        }
+    }
+    
+
+    @Override
+    public void setInverseReferenceFinder(InverseReferenceFinder irf) {
+        this.inverseReferenceFinder = irf;
+        for (final IInterpreter interpreter : this.loadedInterpreters.values()) {
+            if (interpreter instanceof IInterpreter2) {
+                ((IInterpreter2) interpreter).setInverseReferenceFinder(this.inverseReferenceFinder);
+            }
         }
     }
 
@@ -393,5 +408,4 @@ public class ODesignGenericInterpreter implements IInterpreter, IProposalProvide
             }
         }
     }
-
 }

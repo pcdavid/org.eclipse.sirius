@@ -27,7 +27,6 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.emf.edit.command.SetCommand;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -89,6 +88,7 @@ import org.eclipse.sirius.diagram.ui.tools.internal.actions.delete.DeleteFromMod
 import org.eclipse.sirius.diagram.ui.tools.internal.actions.delete.DeleteWithHookAction;
 import org.eclipse.sirius.diagram.ui.tools.internal.commands.ResetStylePropertiesToDefaultValuesCommand;
 import org.eclipse.sirius.diagram.ui.tools.internal.handler.ChangeFilterActivation;
+import org.eclipse.sirius.ext.emf.InverseReferenceFinder;
 import org.eclipse.sirius.tests.support.command.CreateNoteAttachmentRecordingCommand;
 import org.eclipse.sirius.tests.support.command.CreateNoteRecordingCommand;
 import org.eclipse.sirius.tools.api.command.ui.NoUICallback;
@@ -1178,7 +1178,7 @@ public class SiriusDiagramTestCase extends AbstractToolDescriptionTestCase {
             }
 
             if (sessionToUse != null) {
-                final ECrossReferenceAdapter crossReference = sessionToUse.getSemanticCrossReferencer();
+                final InverseReferenceFinder crossReference = sessionToUse.getInverseReferenceFinder();
                 for (final org.eclipse.emf.ecore.EStructuralFeature.Setting setting : crossReference.getInverseReferences(diagramElement)) {
                     if (clazz.isInstance(setting.getEObject()) && setting.getEStructuralFeature() == NotationPackage.eINSTANCE.getView_Element()) {
                         if (result != null) {

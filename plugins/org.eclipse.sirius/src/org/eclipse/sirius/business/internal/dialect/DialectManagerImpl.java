@@ -25,7 +25,6 @@ import org.eclipse.core.runtime.SubProgressMonitor;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.sirius.business.api.dialect.Dialect;
 import org.eclipse.sirius.business.api.dialect.DialectManager;
 import org.eclipse.sirius.business.api.dialect.RepresentationNotification;
@@ -40,6 +39,7 @@ import org.eclipse.sirius.common.tools.api.util.EclipseUtil;
 import org.eclipse.sirius.ecore.extender.business.api.accessor.ModelAccessor;
 import org.eclipse.sirius.ext.base.Option;
 import org.eclipse.sirius.ext.base.Options;
+import org.eclipse.sirius.ext.emf.InverseReferenceFinder;
 import org.eclipse.sirius.tools.api.command.CommandContext;
 import org.eclipse.sirius.tools.api.command.ui.UICallBack;
 import org.eclipse.sirius.viewpoint.DRepresentation;
@@ -251,7 +251,7 @@ public class DialectManagerImpl implements DialectManager {
 
     private Collection<DRepresentation> findAllRepresentations(EObject semantic, Session session) {
         Collection<DRepresentation> result = Lists.newArrayList();
-        ECrossReferenceAdapter xref = session.getSemanticCrossReferencer();
+        InverseReferenceFinder xref = session.getInverseReferenceFinder();
         for (EStructuralFeature.Setting setting : xref.getInverseReferences(semantic)) {
             if (ViewpointPackage.Literals.DREPRESENTATION.isInstance(setting.getEObject()) && setting.getEStructuralFeature() == ViewpointPackage.Literals.DSEMANTIC_DECORATOR__TARGET) {
                 result.add((DRepresentation) setting.getEObject());

@@ -68,7 +68,7 @@ public class DViewSpec extends DViewImpl {
             } else {
                 session = SessionManager.INSTANCE.getSession(next);
             }
-            SiriusPlugin.getDefault().getModelAccessorRegistry().getModelAccessor(next).eDelete(next, session != null ? session.getSemanticCrossReferencer() : null);
+            SiriusPlugin.getDefault().getModelAccessorRegistry().getModelAccessor(next).eDelete(next, session != null ? session.getInverseReferenceFinder() : null);
         }
     }
 

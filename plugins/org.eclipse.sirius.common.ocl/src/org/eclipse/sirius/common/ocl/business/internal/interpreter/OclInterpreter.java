@@ -43,6 +43,7 @@ import org.eclipse.sirius.common.tools.api.contentassist.ContentProposal;
 import org.eclipse.sirius.common.tools.api.contentassist.IProposalProvider;
 import org.eclipse.sirius.common.tools.api.interpreter.EvaluationException;
 import org.eclipse.sirius.common.tools.api.interpreter.IInterpreter;
+import org.eclipse.sirius.common.tools.api.interpreter.IInterpreter2;
 import org.eclipse.sirius.common.tools.api.interpreter.IInterpreterContext;
 import org.eclipse.sirius.common.tools.api.interpreter.IInterpreterProvider;
 import org.eclipse.sirius.common.tools.api.interpreter.IInterpreterStatus;
@@ -50,13 +51,14 @@ import org.eclipse.sirius.common.tools.api.interpreter.IVariableStatusListener;
 import org.eclipse.sirius.common.tools.api.interpreter.VariableManager;
 import org.eclipse.sirius.ecore.extender.business.api.accessor.MetamodelDescriptor;
 import org.eclipse.sirius.ecore.extender.business.api.accessor.ModelAccessor;
+import org.eclipse.sirius.ext.emf.InverseReferenceFinder;
 
 /**
  * The OCL interpreter.
  * 
  * @author ymortier
  */
-public class OclInterpreter implements IInterpreter, IInterpreterProvider, IProposalProvider {
+public class OclInterpreter implements IInterpreter, IInterpreter2, IInterpreterProvider, IProposalProvider {
 
     /** The OCL expression discrimant. */
     public static final String OCL_DISCRIMINANT = "ocl:"; //$NON-NLS-1$
@@ -406,6 +408,11 @@ public class OclInterpreter implements IInterpreter, IInterpreterProvider, IProp
      */
     @Override
     public void setCrossReferencer(final ECrossReferenceAdapter crossReferencer) {
+        // no handling (AFAIK) of cross references for OCL
+    }
+    
+    @Override
+    public void setInverseReferenceFinder(InverseReferenceFinder irf) {
         // no handling (AFAIK) of cross references for OCL
     }
 

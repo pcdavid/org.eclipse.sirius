@@ -14,7 +14,6 @@ import java.util.Arrays;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.gmf.runtime.common.core.util.StringStatics;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Edge;
@@ -29,6 +28,7 @@ import org.eclipse.sirius.diagram.ui.internal.edit.parts.DEdgeBeginNameEditPart;
 import org.eclipse.sirius.diagram.ui.internal.edit.parts.DEdgeEndNameEditPart;
 import org.eclipse.sirius.diagram.ui.internal.edit.parts.DEdgeNameEditPart;
 import org.eclipse.sirius.diagram.ui.part.SiriusVisualIDRegistry;
+import org.eclipse.sirius.ext.emf.InverseReferenceFinder;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
 
 /**
@@ -150,7 +150,7 @@ public final class SiriusGMFHelper {
      * @return the edge which has as element the diagram element given as
      *         parameter or null if any
      */
-    public static Edge getGmfEdge(final DDiagramElement diagramElement, final ECrossReferenceAdapter crossReference) {
+    public static Edge getGmfEdge(final DDiagramElement diagramElement, final InverseReferenceFinder crossReference) {
         return SiriusGMFHelper.getGmfView(diagramElement, Edge.class, crossReference);
     }
 
@@ -246,7 +246,7 @@ public final class SiriusGMFHelper {
             }
 
             if (sessionToUse != null) {
-                final ECrossReferenceAdapter crossReference = sessionToUse.getSemanticCrossReferencer();
+                final InverseReferenceFinder crossReference = sessionToUse.getInverseReferenceFinder();
                 return getGmfView(diagramElement, clazz, crossReference);
             }
         }
@@ -269,7 +269,7 @@ public final class SiriusGMFHelper {
      *         parameter or null if any
      */
     @SuppressWarnings("unchecked")
-    private static <T> T getGmfView(final EObject diagramElement, final Class<T> clazz, final ECrossReferenceAdapter semanticCrossReference) {
+    private static <T> T getGmfView(final EObject diagramElement, final Class<T> clazz, final InverseReferenceFinder semanticCrossReference) {
         if (semanticCrossReference != null) {
             for (final org.eclipse.emf.ecore.EStructuralFeature.Setting setting : semanticCrossReference.getInverseReferences(diagramElement)) {
                 if (clazz.isInstance(setting.getEObject()) && setting.getEStructuralFeature() == NotationPackage.eINSTANCE.getView_Element()) {

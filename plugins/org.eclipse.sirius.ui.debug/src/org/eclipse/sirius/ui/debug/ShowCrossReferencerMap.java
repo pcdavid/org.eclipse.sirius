@@ -25,11 +25,11 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
 import org.eclipse.sirius.common.tools.api.util.ReflectionHelper;
 import org.eclipse.sirius.ext.base.Option;
+import org.eclipse.sirius.ext.emf.InverseReferenceFinder;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
 
 import com.google.common.collect.Lists;
@@ -101,7 +101,7 @@ final class ShowCrossReferencerMap implements Runnable {
             }
 
             if (session != null) {
-                ECrossReferenceAdapter crossReferencer = session.getSemanticCrossReferencer();
+                InverseReferenceFinder crossReferencer = session.getInverseReferenceFinder();
                 Collection<Resource> semanticResources = session.getSemanticResources();
                 Option<Object> inverseCrossReferencer = ReflectionHelper.getFieldValueWithoutException(crossReferencer, "inverseCrossReferencer");
                 if (inverseCrossReferencer.some()) {

@@ -119,7 +119,7 @@ public final class LogThroughActiveDialectEditorLogListener implements ILogListe
                 } else {
                     session = SessionManager.INSTANCE.getSession(lockedElement);
                 }
-                Iterable<Setting> representationsElementsReferencingLockedElement = Iterables.filter(session.getSemanticCrossReferencer().getInverseReferences(lockedElement),
+                Iterable<Setting> representationsElementsReferencingLockedElement = Iterables.filter(session.getInverseReferenceFinder().getInverseReferences(lockedElement),
                         new Predicate<Setting>() {
                             @Override
                             public boolean apply(Setting input) {

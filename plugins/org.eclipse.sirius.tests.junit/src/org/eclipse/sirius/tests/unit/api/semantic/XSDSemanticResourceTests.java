@@ -27,6 +27,7 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.business.api.session.SessionManager;
 import org.eclipse.sirius.business.api.session.SessionStatus;
 import org.eclipse.sirius.business.api.session.danalysis.DAnalysisSession;
+import org.eclipse.sirius.ext.emf.InverseReferenceFinder;
 import org.eclipse.sirius.tests.SiriusTestsPlugin;
 import org.eclipse.sirius.tests.sample.scxml.DocumentRoot;
 import org.eclipse.sirius.tests.sample.scxml.ScxmlScxmlType;
@@ -224,11 +225,13 @@ public class XSDSemanticResourceTests extends SiriusDiagramTestCase {
      * content.
      */
     private void checkCrossReferencer() {
-        ECrossReferenceAdapter crossReferencer = session.getSemanticCrossReferencer();
+        InverseReferenceFinder crossReferencer = session.getInverseReferenceFinder();
 
         // Call the method {@link ECrossReferenceAdapter.getTarget()} only to
         // force the initialization of the {@link LazyCrossReferencer}
-        crossReferencer.getTarget();
+        if (crossReferencer instanceof ECrossReferenceAdapter) {
+            ((ECrossReferenceAdapter) crossReferencer).getTarget();
+        }
 
         for (Resource semanticResource : session.getSemanticResources()) {
             // Check the resource

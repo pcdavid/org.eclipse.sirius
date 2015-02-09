@@ -70,7 +70,7 @@ public class RepairWithMappingImportsTest extends AbstractRepairMigrateTest {
 
         DEdge dEdge = Iterables.filter(dDiagram.getOwnedDiagramElements(), DEdge.class).iterator().next();
         Edge gmfEdge = null;
-        for (Setting setting : session.getSemanticCrossReferencer().getInverseReferences(dEdge)) {
+        for (Setting setting : session.getInverseReferenceFinder().getInverseReferences(dEdge)) {
             if (setting.getEObject() instanceof Edge) {
                 gmfEdge = (Edge) setting.getEObject();
             }

@@ -10,8 +10,6 @@
  *******************************************************************************/
 package org.eclipse.sirius.common.acceleo.mtl.business.internal.interpreter;
 
-import com.google.common.collect.Sets;
-
 import java.util.Set;
 
 import org.eclipse.acceleo.common.utils.IAcceleoCrossReferenceProvider;
@@ -19,6 +17,9 @@ import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
+import org.eclipse.sirius.ext.emf.InverseReferenceFinder;
+
+import com.google.common.collect.Sets;
 
 /**
  * Implements the {@link IAcceleoCrossReferenceProvider} interface in order to
@@ -28,7 +29,9 @@ import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
  */
 public class AcceleoSiriusCrossReferencerProvider implements IAcceleoCrossReferenceProvider {
     /** The delegate cross referencer we'll be using. */
-    private final ECrossReferenceAdapter crossReferencer;
+    private final InverseReferenceFinder crossReferencer;
+
+    private final ECrossReferenceAdapter xref;
 
     /**
      * Instantiate our cross referencer provider given its delegate.
@@ -36,35 +39,53 @@ public class AcceleoSiriusCrossReferencerProvider implements IAcceleoCrossRefere
      * @param crossReferencer
      *            The delegate cross referencer.
      */
-    public AcceleoSiriusCrossReferencerProvider(ECrossReferenceAdapter crossReferencer) {
+    public AcceleoSiriusCrossReferencerProvider(InverseReferenceFinder crossReferencer) {
         this.crossReferencer = crossReferencer;
+        this.xref = null;
     }
 
     /**
-     * {@inheritDoc}
+     * Instantiate our cross referencer provider given its delegate.
      * 
-     * @see org.eclipse.acceleo.common.utils.IAcceleoCrossReferenceProvider#getInverseReferences(org.eclipse.emf.ecore.EObject)
+     * @param xref
+     *            The delegate cross referencer.
      */
+    public AcceleoSiriusCrossReferencerProvider(ECrossReferenceAdapter xref) {
+        this.crossReferencer = null;
+        this.xref = xref;
+    }
+
+    @Override
     public Set<EObject> getInverseReferences(EObject eObject) {
         final Set<EObject> result = Sets.newLinkedHashSet();
-        for (EStructuralFeature.Setting setting : crossReferencer.getInverseReferences(eObject)) {
-            result.add(setting.getEObject());
+        if (crossReferencer != null) {
+            for (EStructuralFeature.Setting setting : crossReferencer.getInverseReferences(eObject)) {
+                result.add(setting.getEObject());
+            }
+        } else {
+            for (EStructuralFeature.Setting setting : xref.getInverseReferences(eObject)) {
+                result.add(setting.getEObject());
+            }
         }
         return result;
     }
 
-    /**
-     * {@inheritDoc}
-     * 
-     * @see org.eclipse.acceleo.common.utils.IAcceleoCrossReferenceProvider#getInverseReferences(org.eclipse.emf.ecore.EObject,
-     *      org.eclipse.emf.ecore.EClassifier)
-     */
+    @Override
     public Set<EObject> getInverseReferences(EObject eObject, EClassifier filter) {
         final Set<EObject> result = Sets.newLinkedHashSet();
-        for (EStructuralFeature.Setting setting : crossReferencer.getInverseReferences(eObject)) {
-            final EObject eObj = setting.getEObject();
-            if (filter == null || filter.isInstance(eObj)) {
-                result.add(eObj);
+        if (crossReferencer != null) {
+            for (EStructuralFeature.Setting setting : crossReferencer.getInverseReferences(eObject)) {
+                final EObject eObj = setting.getEObject();
+                if (filter == null || filter.isInstance(eObj)) {
+                    result.add(eObj);
+                }
+            }
+        } else {
+            for (EStructuralFeature.Setting setting : xref.getInverseReferences(eObject)) {
+                final EObject eObj = setting.getEObject();
+                if (filter == null || filter.isInstance(eObj)) {
+                    result.add(eObj);
+                }
             }
         }
         return result;

@@ -15,8 +15,8 @@ import java.util.Iterator;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.sirius.ext.emf.EReferencePredicate;
+import org.eclipse.sirius.ext.emf.InverseReferenceFinder;
 
 /**
  * This Interface defines a metamodel extender. An extender add new information
@@ -243,7 +243,7 @@ public interface IMetamodelExtender {
      *            dangling references.
      * @return the deleted instance or null if it was not able to delete it.
      */
-    EObject eDelete(EObject objectToRemove, ECrossReferenceAdapter xref);
+    EObject eDelete(EObject objectToRemove, InverseReferenceFinder xref);
 
     /**
      * Remove the Object from its container and delete all the dangling
@@ -260,16 +260,16 @@ public interface IMetamodelExtender {
      *            be considered)
      * @return the deleted instance or null if it was not able to delete it.
      */
-    EObject eDelete(EObject objectToRemove, ECrossReferenceAdapter xref, EReferencePredicate isReferencesToIgnorePredicate);
+    EObject eDelete(EObject objectToRemove, InverseReferenceFinder xref, EReferencePredicate isReferencesToIgnorePredicate);
 
     /**
      * Remove inverse cross references of the specified {@link EObject}. This
      * method will not remove an element from its container except if the used
-     * {@link ECrossReferenceAdapter} return
+     * {@link InverseReferenceFinder} return
      * {@link org.eclipse.emf.ecore.EStructuralFeature.Setting} for the
      * containment feature (this is not the case for the default
      * implementation). This method is called from
-     * {@link IMetamodelExtender#eDelete(EObject, ECrossReferenceAdapter, isReferencesToIgnorePredicate)} during the
+     * {@link IMetamodelExtender#eDelete(EObject, InverseReferenceFinder, EReferencePredicate)} during the
      * deletion of an element.
      * 
      * @param eObject
@@ -284,7 +284,7 @@ public interface IMetamodelExtender {
      * @return a Collection of impacted {@link EObject objects} of this inverse
      *         cross references removal
      */
-    Collection<EObject> eRemoveInverseCrossReferences(EObject eObject, ECrossReferenceAdapter xref, EReferencePredicate isReferencesToIgnorePredicate);
+    Collection<EObject> eRemoveInverseCrossReferences(EObject eObject, InverseReferenceFinder xref, EReferencePredicate isReferencesToIgnorePredicate);
 
     /**
      * Return true if the given instance comes from a metamodel extension

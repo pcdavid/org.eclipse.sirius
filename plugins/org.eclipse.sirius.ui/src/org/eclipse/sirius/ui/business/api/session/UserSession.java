@@ -23,7 +23,6 @@ import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.SubProgressMonitor;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.operation.IRunnableWithProgress;
 import org.eclipse.jface.viewers.ISelection;
@@ -33,6 +32,7 @@ import org.eclipse.sirius.business.api.dialect.DialectManager;
 import org.eclipse.sirius.business.api.helper.SiriusResourceHelper;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
+import org.eclipse.sirius.ext.emf.InverseReferenceFinder;
 import org.eclipse.sirius.ui.business.api.dialect.DialectEditor;
 import org.eclipse.sirius.ui.business.api.dialect.DialectUIManager;
 import org.eclipse.sirius.ui.business.api.viewpoint.ViewpointSelectionCallback;
@@ -281,8 +281,8 @@ public class UserSession {
      *
      * @return the semantic cross referencer.
      */
-    public ECrossReferenceAdapter getSemanticCrossReferencer() {
-        return session.getSemanticCrossReferencer();
+    public InverseReferenceFinder getSemanticCrossReferencer() {
+        return session.getInverseReferenceFinder();
     }
 
     private DRepresentation findRepresentationByName(String name) {

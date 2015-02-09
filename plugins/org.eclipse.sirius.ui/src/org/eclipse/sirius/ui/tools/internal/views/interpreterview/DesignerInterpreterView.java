@@ -22,6 +22,7 @@ import java.util.Map.Entry;
 
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature.Setting;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
@@ -52,10 +53,12 @@ import org.eclipse.sirius.business.api.session.SessionManager;
 import org.eclipse.sirius.common.tools.api.interpreter.CompoundInterpreter;
 import org.eclipse.sirius.common.tools.api.interpreter.EvaluationException;
 import org.eclipse.sirius.common.tools.api.interpreter.IInterpreter;
+import org.eclipse.sirius.common.tools.api.interpreter.IInterpreter2;
 import org.eclipse.sirius.common.tools.api.interpreter.IInterpreterSiriusVariables;
 import org.eclipse.sirius.common.tools.api.interpreter.IVariableStatusListener;
 import org.eclipse.sirius.common.tools.api.util.StringUtil;
 import org.eclipse.sirius.common.ui.tools.api.contentassist.ContentInstanceProposalProvider;
+import org.eclipse.sirius.ext.emf.InverseReferenceFinder;
 import org.eclipse.sirius.ui.tools.api.views.interpreterview.InterpreterView;
 import org.eclipse.sirius.ui.tools.internal.views.common.navigator.adapters.ModelDragTargetAdapter;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
@@ -139,7 +142,7 @@ public class DesignerInterpreterView extends ViewPart implements InterpreterView
     /* business object */
     private EObject current;
 
-    private final IInterpreter interpreter = CompoundInterpreter.createGenericInterpreter();
+    private final IInterpreter2 interpreter = CompoundInterpreter.createGenericInterpreter();
 
     private ContentInstanceProposalProvider contentInstanceProposalProvider;
 
@@ -424,9 +427,9 @@ public class DesignerInterpreterView extends ViewPart implements InterpreterView
     private void handleNewExpression() {
         if (interpreter != null && current != null) {
             try {
-                final ECrossReferenceAdapter crosser = retrieveCrosser(current);
+                final InverseReferenceFinder crosser = retrieveCrosser(current);
                 if (crosser != null) {
-                    interpreter.setCrossReferencer(crosser);
+                    interpreter.setInverseReferenceFinder(crosser);
                 }
                 final Resource resource = current.eResource();
                 if (resource != null) {
@@ -448,8 +451,8 @@ public class DesignerInterpreterView extends ViewPart implements InterpreterView
         }
     }
 
-    private ECrossReferenceAdapter retrieveCrosser(final EObject cur) {
-        ECrossReferenceAdapter result = null;
+    private InverseReferenceFinder retrieveCrosser(final EObject cur) {
+        InverseReferenceFinder result = null;
         EObject semantic = cur;
         Session sess = null;
         if (cur instanceof DSemanticDecorator) {
@@ -459,10 +462,22 @@ public class DesignerInterpreterView extends ViewPart implements InterpreterView
             sess = SessionManager.INSTANCE.getSession(semantic);
         }
         if (sess != null) {
-            result = sess.getSemanticCrossReferencer();
+            result = sess.getInverseReferenceFinder();
         }
         if (result == null) {
-            result = ECrossReferenceAdapter.getCrossReferenceAdapter(cur);
+            final ECrossReferenceAdapter xref = ECrossReferenceAdapter.getCrossReferenceAdapter(cur);
+            result = new InverseReferenceFinder() {
+                
+                @Override
+                public Collection<Setting> getInverseReferences(EObject eObject, boolean resolve) {
+                    return xref.getInverseReferences(eObject, resolve);
+                }
+                
+                @Override
+                public Collection<Setting> getInverseReferences(EObject eObject) {
+                    return xref.getInverseReferences(eObject);
+                }
+            };
         }
         return result;
     }

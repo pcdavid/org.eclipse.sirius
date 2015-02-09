@@ -23,7 +23,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.sirius.business.api.dialect.AbstractRepresentationDialectServices;
@@ -48,6 +47,7 @@ import org.eclipse.sirius.common.tools.api.util.StringUtil;
 import org.eclipse.sirius.description.contribution.ContributionPoint;
 import org.eclipse.sirius.ecore.extender.business.api.accessor.ModelAccessor;
 import org.eclipse.sirius.ext.emf.AllContents;
+import org.eclipse.sirius.ext.emf.InverseReferenceFinder;
 import org.eclipse.sirius.table.business.api.refresh.DTableSynchronizer;
 import org.eclipse.sirius.table.business.internal.dialect.description.TableInterpretedExpressionQuery;
 import org.eclipse.sirius.table.business.internal.refresh.DTableElementSynchronizerSpec;
@@ -319,7 +319,7 @@ public class TableDialectServices extends AbstractRepresentationDialectServices 
         Set<DTableElement> tableElementsToRefresh = Sets.newHashSet();
         Session session = new org.eclipse.sirius.business.api.query.EObjectQuery(table.getTarget()).getSession();
         if (session != null) {
-            ECrossReferenceAdapter xref = session.getSemanticCrossReferencer();
+            InverseReferenceFinder xref = session.getInverseReferenceFinder();
             // Deal with each notifier only one time.
             Set<EObject> alreadyDoneNotifiers = Sets.newHashSet();
             for (Notification notification : notifications) {
@@ -335,7 +335,7 @@ public class TableDialectServices extends AbstractRepresentationDialectServices 
         return tableElementsToRefresh;
     }
 
-    private Set<DTableElement> getTableElementsToRefresh(EObject notifier, DTable table, ECrossReferenceAdapter xref) {
+    private Set<DTableElement> getTableElementsToRefresh(EObject notifier, DTable table, InverseReferenceFinder xref) {
         Set<DTableElement> tableElementsToRefresh = Sets.newHashSet();
         Collection<EObject> inverseReferencers = new org.eclipse.sirius.business.api.query.EObjectQuery(notifier, xref).getInverseReferences(REPRESENTATION_ELEMENTS_INVERSE_REFERENCES);
         for (EObject inverseReferencer : inverseReferencers) {

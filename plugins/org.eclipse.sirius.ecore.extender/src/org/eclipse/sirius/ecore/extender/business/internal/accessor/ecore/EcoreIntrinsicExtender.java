@@ -29,13 +29,13 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EStructuralFeature.Setting;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.sirius.ecore.extender.business.api.accessor.AbstractMetamodelExtender;
 import org.eclipse.sirius.ecore.extender.business.api.accessor.EcoreMetamodelDescriptor;
 import org.eclipse.sirius.ecore.extender.business.api.accessor.ExtensionFeatureDescription;
 import org.eclipse.sirius.ecore.extender.business.api.accessor.MetamodelDescriptor;
 import org.eclipse.sirius.ext.emf.EReferencePredicate;
+import org.eclipse.sirius.ext.emf.InverseReferenceFinder;
 
 import com.google.common.base.Predicates;
 import com.google.common.collect.HashMultimap;
@@ -144,12 +144,12 @@ public class EcoreIntrinsicExtender extends AbstractMetamodelExtender {
     }
 
     @Override
-    public EObject eDelete(final EObject objectToRemove, final ECrossReferenceAdapter xref) {
+    public EObject eDelete(final EObject objectToRemove, final InverseReferenceFinder xref) {
         return eDelete(objectToRemove, xref, null);
     }
 
     @Override
-    public EObject eDelete(EObject objectToRemove, ECrossReferenceAdapter xref, EReferencePredicate isReferencesToIgnorePredicate) {
+    public EObject eDelete(EObject objectToRemove, InverseReferenceFinder xref, EReferencePredicate isReferencesToIgnorePredicate) {
         if (xref == null) {
             // If no cross referencer can be found,
             // we simply remove the element from its container
@@ -165,7 +165,7 @@ public class EcoreIntrinsicExtender extends AbstractMetamodelExtender {
     }
 
     @Override
-    public Collection<EObject> eRemoveInverseCrossReferences(EObject eObject, ECrossReferenceAdapter xref, EReferencePredicate isReferencesToIgnorePredicate) {
+    public Collection<EObject> eRemoveInverseCrossReferences(EObject eObject, InverseReferenceFinder xref, EReferencePredicate isReferencesToIgnorePredicate) {
         Collection<EObject> impactedEObjects = new LinkedHashSet<EObject>();
         Collection<Setting> inverseReferences = xref.getInverseReferences(eObject, true);
         Collection<Setting> containmentReferences = getContainmentReferences(inverseReferences);

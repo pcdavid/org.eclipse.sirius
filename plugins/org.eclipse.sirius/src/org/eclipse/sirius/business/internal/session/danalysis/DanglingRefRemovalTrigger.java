@@ -22,17 +22,16 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature.Setting;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.business.api.session.ModelChangeTrigger;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.common.tools.DslCommonPlugin;
-import org.eclipse.sirius.common.tools.api.util.SiriusCrossReferenceAdapterImpl;
 import org.eclipse.sirius.ecore.extender.business.api.accessor.ModelAccessor;
 import org.eclipse.sirius.ext.base.Option;
 import org.eclipse.sirius.ext.base.Options;
 import org.eclipse.sirius.ext.emf.EReferencePredicate;
+import org.eclipse.sirius.ext.emf.InverseReferenceFinder;
 import org.eclipse.sirius.tools.api.profiler.SiriusTasksKey;
 import org.eclipse.sirius.tools.api.ui.RefreshEditorsPrecommitListener;
 import org.eclipse.sirius.viewpoint.DRepresentation;
@@ -225,7 +224,7 @@ public class DanglingRefRemovalTrigger implements ModelChangeTrigger {
                     }
                 };
 
-                Command removeDangling = new RemoveDanglingReferencesCommand(session.getTransactionalEditingDomain(), session.getModelAccessor(), session.getSemanticCrossReferencer(),
+                Command removeDangling = new RemoveDanglingReferencesCommand(session.getTransactionalEditingDomain(), session.getModelAccessor(), session.getInverseReferenceFinder(),
                         session.getSemanticResources(), session.getRefreshEditorsListener(), toRemoveXRefFrom, refToIgnore);
                 DslCommonPlugin.PROFILER.stopWork(SiriusTasksKey.CLEANING_REMOVEDANGLING_KEY);
                 return Options.newSome(removeDangling);
@@ -309,7 +308,7 @@ public class DanglingRefRemovalTrigger implements ModelChangeTrigger {
 
         private ModelAccessor modelAccessor;
 
-        private ECrossReferenceAdapter xReferencer;
+        private InverseReferenceFinder irFinder;
 
         private Collection<Resource> semanticResources;
 
@@ -333,11 +332,11 @@ public class DanglingRefRemovalTrigger implements ModelChangeTrigger {
          *            ignored during deletion or not (can be null if all
          *            references should be considered)
          */
-        RemoveDanglingReferencesCommand(TransactionalEditingDomain domain, ModelAccessor accessor, ECrossReferenceAdapter xRef, Collection<Resource> semanticResources,
+        RemoveDanglingReferencesCommand(TransactionalEditingDomain domain, ModelAccessor accessor, InverseReferenceFinder xRef, Collection<Resource> semanticResources,
                 RefreshEditorsPrecommitListener refreshEditorsPrecommitListener, Collection<EObject> toRemoveXRefFrom, EReferencePredicate isReferenceToIgnore) {
             super(domain, Messages.DanglingRefRemovalTrigger_removeDanglingCmdLabel);
             this.modelAccessor = accessor;
-            this.xReferencer = xRef;
+            this.irFinder = xRef;
             this.semanticResources = semanticResources;
             this.refreshEditorsPrecommitListener = refreshEditorsPrecommitListener;
             this.toRemoveXRefFrom.addAll(toRemoveXRefFrom);
@@ -356,10 +355,18 @@ public class DanglingRefRemovalTrigger implements ModelChangeTrigger {
                 // trigger a second refresh by the
                 // RefreshEditorsPrecommitListener only when the command removed
                 // some dangling reference.
-                ECrossReferenceAdapter filteredCrossReferencer = new SiriusCrossReferenceAdapterImpl() {
+                InverseReferenceFinder filteredCrossReferencer = new InverseReferenceFinder() {
                     @Override
                     public Collection<Setting> getInverseReferences(EObject eObject, boolean resolve) {
-                        Collection<Setting> settings = xReferencer.getInverseReferences(eObject, resolve);
+                        return filtered(irFinder.getInverseReferences(eObject, resolve));
+                    }
+
+                    @Override
+                    public Collection<Setting> getInverseReferences(EObject eObject) {
+                        return filtered(irFinder.getInverseReferences(eObject));
+                    }
+
+                    private Collection<Setting> filtered(Collection<Setting> settings) {
                         Collection<Setting> settingsToTryToUnset = Lists.newArrayList();
                         for (Setting s : settings) {
                             if (!toRemoveXRefFrom.contains(s.getEObject())) {
@@ -387,7 +394,7 @@ public class DanglingRefRemovalTrigger implements ModelChangeTrigger {
 
             toRemoveXRefFrom.clear();
             modelAccessor = null;
-            xReferencer = null;
+            irFinder = null;
             semanticResources = null;
             refreshEditorsPrecommitListener = null;
         }

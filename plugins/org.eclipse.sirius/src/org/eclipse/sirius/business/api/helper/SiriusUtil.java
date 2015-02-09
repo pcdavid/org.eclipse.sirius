@@ -268,7 +268,7 @@ public final class SiriusUtil {
             }
         }
         if (currentEObjectSession != null) {
-            Collection<EStructuralFeature.Setting> usages = currentEObjectSession.getSemanticCrossReferencer().getInverseReferences(eObject);
+            Collection<EStructuralFeature.Setting> usages = currentEObjectSession.getInverseReferenceFinder().getInverseReferences(eObject);
             for (EStructuralFeature.Setting setting : usages) {
                 if (setting.getEStructuralFeature().isChangeable()) {
                     EcoreUtil.remove(setting, eObject);

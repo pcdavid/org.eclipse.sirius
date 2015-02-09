@@ -20,9 +20,9 @@ import org.eclipse.emf.common.util.AbstractTreeIterator;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.sirius.ecore.extender.business.internal.common.ExtenderDescriptor;
 import org.eclipse.sirius.ext.emf.EReferencePredicate;
+import org.eclipse.sirius.ext.emf.InverseReferenceFinder;
 
 import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
@@ -217,12 +217,12 @@ public class CompositeMetamodelExtender extends AbstractMetamodelExtender {
     }
 
     @Override
-    public EObject eDelete(final EObject objectToRemove, final ECrossReferenceAdapter xref) {
+    public EObject eDelete(final EObject objectToRemove, final InverseReferenceFinder xref) {
         return eDelete(objectToRemove, xref, null);
     }
 
     @Override
-    public EObject eDelete(EObject objectToRemove, ECrossReferenceAdapter xref, EReferencePredicate isReferencesToIgnorePredicate) {
+    public EObject eDelete(EObject objectToRemove, InverseReferenceFinder xref, EReferencePredicate isReferencesToIgnorePredicate) {
         EObject result = null;
         /*
          * we want every extender to be notified when an instance should be
@@ -235,7 +235,7 @@ public class CompositeMetamodelExtender extends AbstractMetamodelExtender {
     }
 
     @Override
-    public Collection<EObject> eRemoveInverseCrossReferences(EObject eObject, ECrossReferenceAdapter xref, EReferencePredicate isReferencesToIgnorePredicate) {
+    public Collection<EObject> eRemoveInverseCrossReferences(EObject eObject, InverseReferenceFinder xref, EReferencePredicate isReferencesToIgnorePredicate) {
         Collection<EObject> impactedEObjects = new LinkedHashSet<EObject>();
         for (final IMetamodelExtender extender : getActivatedExtenders()) {
             impactedEObjects.addAll(extender.eRemoveInverseCrossReferences(eObject, xref, isReferencesToIgnorePredicate));

@@ -69,6 +69,7 @@ import org.eclipse.sirius.common.acceleo.mtl.business.internal.extension.ImportH
 import org.eclipse.sirius.common.acceleo.mtl.business.internal.interpreter.DynamicAcceleoModule.QueryIdentifier;
 import org.eclipse.sirius.common.tools.api.interpreter.EvaluationException;
 import org.eclipse.sirius.common.tools.api.interpreter.IInterpreter;
+import org.eclipse.sirius.common.tools.api.interpreter.IInterpreter2;
 import org.eclipse.sirius.common.tools.api.interpreter.IInterpreterContext;
 import org.eclipse.sirius.common.tools.api.interpreter.IInterpreterStatus;
 import org.eclipse.sirius.common.tools.api.interpreter.IVariableStatusListener;
@@ -80,6 +81,7 @@ import org.eclipse.sirius.common.tools.api.interpreter.VariableType;
 import org.eclipse.sirius.ecore.extender.business.api.accessor.EcoreMetamodelDescriptor;
 import org.eclipse.sirius.ecore.extender.business.api.accessor.MetamodelDescriptor;
 import org.eclipse.sirius.ecore.extender.business.api.accessor.ModelAccessor;
+import org.eclipse.sirius.ext.emf.InverseReferenceFinder;
 import org.osgi.framework.Bundle;
 
 import com.google.common.base.Joiner;
@@ -96,7 +98,7 @@ import com.google.common.collect.Sets;
  * 
  * @author <a href="mailto:laurent.goubet@obeo.fr">Laurent Goubet</a>
  */
-public class AcceleoMTLInterpreter implements IInterpreter, TypedValidation {
+public class AcceleoMTLInterpreter implements IInterpreter, IInterpreter2, TypedValidation {
     /**
      * This represents the prefix of an Acceleo 3 expression.
      * 
@@ -409,11 +411,7 @@ public class AcceleoMTLInterpreter implements IInterpreter, TypedValidation {
         return match;
     }
 
-    /**
-     * {@inheritDoc}
-     * 
-     * @see org.eclipse.sirius.common.tools.api.interpreter.IInterpreter#activateMetamodels(java.util.Collection)
-     */
+    @Override
     @Override
     public void activateMetamodels(Collection<MetamodelDescriptor> metamodels) {
         Set<EPackage> additionalEPackages = Sets.newLinkedHashSet();
@@ -450,21 +448,13 @@ public class AcceleoMTLInterpreter implements IInterpreter, TypedValidation {
         }
     }
 
-    /**
-     * {@inheritDoc}
-     * 
-     * @see org.eclipse.sirius.common.tools.api.interpreter.IInterpreter#addVariableStatusListener(org.eclipse.sirius.common.tools.api.interpreter.IVariableStatusListener)
-     */
+    @Override
     @Override
     public void addVariableStatusListener(IVariableStatusListener newListener) {
         variableStatusListeners.add(newListener);
     }
 
-    /**
-     * {@inheritDoc}
-     * 
-     * @see org.eclipse.sirius.common.tools.api.interpreter.IInterpreter#clearImports()
-     */
+    @Override
     @Override
     public void clearImports() {
         mtlDependencies.clear();
@@ -473,11 +463,7 @@ public class AcceleoMTLInterpreter implements IInterpreter, TypedValidation {
         invalidateModule();
     }
 
-    /**
-     * {@inheritDoc}
-     * 
-     * @see org.eclipse.sirius.common.tools.api.interpreter.IInterpreter#clearVariables()
-     */
+    @Override
     @Override
     public void clearVariables() {
         variables.clear();
@@ -821,6 +807,14 @@ public class AcceleoMTLInterpreter implements IInterpreter, TypedValidation {
      * 
      * @see org.eclipse.sirius.common.tools.api.interpreter.IInterpreter#setCrossReferencer(org.eclipse.emf.ecore.util.ECrossReferenceAdapter)
      */
+    @Override
+    public void setInverseReferenceFinder(InverseReferenceFinder irf) {
+        if (adapterFactory == null) {
+            adapterFactory = new CrossReferencerProviderAdapterFactory(irf);
+            Platform.getAdapterManager().registerAdapters(adapterFactory, EObject.class);
+        }
+    }
+
     @Override
     public void setCrossReferencer(ECrossReferenceAdapter crossReferencer) {
         if (adapterFactory == null) {

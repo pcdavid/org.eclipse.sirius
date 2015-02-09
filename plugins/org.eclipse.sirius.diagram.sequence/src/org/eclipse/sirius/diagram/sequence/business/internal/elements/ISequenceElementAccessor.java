@@ -17,7 +17,6 @@ import java.util.Iterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature.Setting;
-import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.Node;
@@ -31,6 +30,7 @@ import org.eclipse.sirius.diagram.DSemanticDiagram;
 import org.eclipse.sirius.diagram.sequence.SequenceDDiagram;
 import org.eclipse.sirius.ext.base.Option;
 import org.eclipse.sirius.ext.base.Options;
+import org.eclipse.sirius.ext.emf.InverseReferenceFinder;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
 import org.eclipse.sirius.viewpoint.ViewpointPackage;
 
@@ -321,7 +321,7 @@ public final class ISequenceElementAccessor {
      *         element as target.
      */
     public static Collection<ISequenceEvent> getEventsForSemanticElement(SequenceDiagram diagram, EObject semanticElement) {
-        ECrossReferenceAdapter xref = ISequenceElementAccessor.getCrossReferencer(semanticElement);
+        InverseReferenceFinder xref = ISequenceElementAccessor.getCrossReferencer(semanticElement);
         if (xref == null) {
             return Collections.emptySet();
         } else {
@@ -354,7 +354,7 @@ public final class ISequenceElementAccessor {
      *         element as target.
      */
     public static Collection<View> getViewsForSemanticElement(SequenceDDiagram diagram, EObject semanticElement) {
-        ECrossReferenceAdapter xref = ISequenceElementAccessor.getCrossReferencer(semanticElement);
+        InverseReferenceFinder xref = ISequenceElementAccessor.getCrossReferencer(semanticElement);
         if (xref == null || diagram == null) {
             return Collections.emptySet();
         } else {
@@ -390,7 +390,7 @@ public final class ISequenceElementAccessor {
      *         element as target.
      */
     public static Collection<DDiagramElement> getDiagramElementsForSemanticElement(SequenceDiagram diagram, EObject semanticElement) {
-        ECrossReferenceAdapter xref = ISequenceElementAccessor.getCrossReferencer(semanticElement);
+        InverseReferenceFinder xref = ISequenceElementAccessor.getCrossReferencer(semanticElement);
         if (xref == null) {
             return Collections.emptySet();
         } else {
@@ -404,7 +404,7 @@ public final class ISequenceElementAccessor {
         }
     }
 
-    private static Option<View> getGMFView(DSemanticDecorator dSem, ECrossReferenceAdapter xref) {
+    private static Option<View> getGMFView(DSemanticDecorator dSem, InverseReferenceFinder xref) {
         for (Setting setting : xref.getInverseReferences(dSem)) {
             if (ISequenceElementAccessor.isViewElementReference(setting)) {
                 EObject view = setting.getEObject();
@@ -431,10 +431,10 @@ public final class ISequenceElementAccessor {
         return setting.getEObject() instanceof DDiagram && setting.getEStructuralFeature().equals(targetReference);
     }
 
-    private static ECrossReferenceAdapter getCrossReferencer(EObject semanticElement) {
+    private static InverseReferenceFinder getCrossReferencer(EObject semanticElement) {
         Session session = SessionManager.INSTANCE.getSession(semanticElement);
         if (session != null) {
-            return session.getSemanticCrossReferencer();
+            return session.getInverseReferenceFinder();
         } else {
             return null;
         }

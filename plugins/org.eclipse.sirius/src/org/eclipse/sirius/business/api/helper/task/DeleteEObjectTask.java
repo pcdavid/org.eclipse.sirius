@@ -12,7 +12,6 @@ package org.eclipse.sirius.business.api.helper.task;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
 import org.eclipse.sirius.business.internal.session.danalysis.DanglingRefRemovalTrigger;
@@ -20,6 +19,7 @@ import org.eclipse.sirius.ecore.extender.business.api.accessor.ModelAccessor;
 import org.eclipse.sirius.ecore.extender.business.api.accessor.exception.FeatureNotFoundException;
 import org.eclipse.sirius.ecore.extender.business.api.accessor.exception.MetaClassNotFoundException;
 import org.eclipse.sirius.ext.emf.EReferencePredicate;
+import org.eclipse.sirius.ext.emf.InverseReferenceFinder;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
 import org.eclipse.sirius.viewpoint.Messages;
 
@@ -75,12 +75,8 @@ public class DeleteEObjectTask extends AbstractCommandTask {
         };
     }
 
-    /**
-     * 
-     * {@inheritDoc}
-     * 
-     * @see org.eclipse.sirius.business.api.helper.task.ICommandTask#execute()
-     */
+
+    @Override
     @Override
     public void execute() throws MetaClassNotFoundException, FeatureNotFoundException {
         Session session = null;
@@ -102,22 +98,17 @@ public class DeleteEObjectTask extends AbstractCommandTask {
         }
 
         // Step 2 : perform delete
-        ECrossReferenceAdapter semanticCrossReferencer = null;
+        InverseReferenceFinder semanticCrossReferencer = null;
         if (session != null) {
-            semanticCrossReferencer = session.getSemanticCrossReferencer();
+            semanticCrossReferencer = session.getInverseReferenceFinder();
         }
         accessor.eDelete(objectToDelete, semanticCrossReferencer, danglingEReferencesToIgnores);
 
     }
 
-    /**
-     * The label associated to this command. {@inheritDoc}
-     * 
-     * @see org.eclipse.sirius.business.api.helper.task.ICommandTask#getLabel()
-     */
+    @Override
     @Override
     public String getLabel() {
         return Messages.DeleteEObjectTask_label;
     }
-
 }

@@ -58,6 +58,7 @@ import org.eclipse.sirius.diagram.DiagramPlugin;
 import org.eclipse.sirius.diagram.ui.internal.edit.parts.DDiagramEditPart;
 import org.eclipse.sirius.diagram.ui.provider.DiagramUIPlugin;
 import org.eclipse.sirius.diagram.ui.tools.api.editor.DDiagramEditor;
+import org.eclipse.sirius.ext.emf.InverseReferenceFinder;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PartInitException;
@@ -256,6 +257,17 @@ public class SiriusDiagramEditorUtil {
     /**
      * @was-generated
      */
+                eCrossReferenceAdapter = new InverseReferenceFinder() {
+                    @Override
+                    public Collection<Setting> getInverseReferences(EObject eObject, boolean resolve) {
+                        return xref.getInverseReferences(eObject, resolve);
+                    }
+                    
+                    @Override
+                    public Collection<Setting> getInverseReferences(EObject eObject) {
+                        return xref.getInverseReferences(eObject);
+                    }
+                };
     public static class LazyElement2ViewMap {
         /**
          * @was-generated

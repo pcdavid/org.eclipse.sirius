@@ -28,6 +28,7 @@
    <extension-point id="migrationParticipant" name="%extension-point.migration.name" schema="schema/migrationParticipant.exsd"/>
    <extension-point id="repairParticipant" name="%extension-point.repairParticipant.name" schema="schema/repairParticipant.exsd"/>
    <extension-point id="resourceStrategy" name="%extension-point.resourceStrategy.name" schema="schema/resourceStrategy.exsd"/>
+   <extension-point id="xRefFinderFactory" name="%XRefFinderFactory" schema="schema/xRefFinderFactory.exsd"/>
    <extension-point id="interpretedExpressionQueryProvider" name="%extension-point.interpretedExpressionQueryProvider.name" schema="schema/interpretedExpressionQueryProvider.exsd"/>
    <extension-point id="modelOperationManager" name="%extension-point.modelOperationManager.name" schema="schema/modelOperationManager.exsd"/>
    <extension-point id="dRepresentationLocationRule" name="%extension-point.dRepresentationLocationRule.name" schema="schema/dRepresentationLocationRule.exsd"/>

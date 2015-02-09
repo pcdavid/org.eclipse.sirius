@@ -75,10 +75,10 @@ import org.eclipse.sirius.business.internal.session.RepresentationNameSynchroLis
 import org.eclipse.sirius.business.internal.session.SessionEventBrokerImpl;
 import org.eclipse.sirius.common.tools.DslCommonPlugin;
 import org.eclipse.sirius.common.tools.api.interpreter.IInterpreter;
+import org.eclipse.sirius.common.tools.api.interpreter.IInterpreter2;
 import org.eclipse.sirius.common.tools.api.resource.ResourceSetSync;
 import org.eclipse.sirius.common.tools.api.resource.ResourceSetSync.ResourceStatus;
 import org.eclipse.sirius.common.tools.api.resource.ResourceSyncClient;
-import org.eclipse.sirius.common.tools.api.util.ECrossReferenceAdapterWithUnproxyCapability;
 import org.eclipse.sirius.common.tools.api.util.EqualityHelper;
 import org.eclipse.sirius.common.tools.api.util.SiriusCrossReferenceAdapter;
 import org.eclipse.sirius.ecore.extender.business.api.accessor.EcoreMetamodelDescriptor;
@@ -87,6 +87,7 @@ import org.eclipse.sirius.ecore.extender.business.api.permission.IPermissionAuth
 import org.eclipse.sirius.ecore.extender.business.api.permission.PermissionAuthorityRegistry;
 import org.eclipse.sirius.ecore.extender.business.api.permission.exception.LockedInstanceException;
 import org.eclipse.sirius.ecore.extender.business.internal.accessor.ModelAccessorAdapter;
+import org.eclipse.sirius.ext.emf.InverseReferenceFinder;
 import org.eclipse.sirius.tools.api.command.ui.NoUICallback;
 import org.eclipse.sirius.tools.api.interpreter.InterpreterRegistry;
 import org.eclipse.sirius.tools.api.profiler.SiriusTasksKey;
@@ -154,9 +155,9 @@ public class DAnalysisSessionImpl extends DAnalysisSessionEObjectImpl implements
 
     private SessionService services;
 
-    private ECrossReferenceAdapterWithUnproxyCapability crossReferencer;
+    private InverseReferenceFinder inverseReferenceFinder;
 
-    private IInterpreter interpreter;
+    private IInterpreter2 interpreter;
 
     private final ListenerList listeners = new ListenerList();
 
@@ -201,8 +202,8 @@ public class DAnalysisSessionImpl extends DAnalysisSessionEObjectImpl implements
 
     @Override
     public IInterpreter getInterpreter() {
-        if (this.crossReferencer == null) {
-            this.interpreter.setCrossReferencer(getSemanticCrossReferencer());
+        if (this.inverseReferenceFinder == null) {
+            this.interpreter.setInverseReferenceFinder(getInverseReferenceFinder());
         }
         return this.interpreter;
     }
@@ -225,7 +226,7 @@ public class DAnalysisSessionImpl extends DAnalysisSessionEObjectImpl implements
         this.interpreter.setProperty(IInterpreter.FILES, null);
         this.interpreter.setProperty(IInterpreter.FILES, filePaths);
         InterpreterRegistry.prepareImportsFromSession(this.interpreter, this);
-        this.interpreter.setCrossReferencer(getSemanticCrossReferencer());
+        this.interpreter.setInverseReferenceFinder(getInverseReferenceFinder());
     }
 
     // *******************
@@ -233,14 +234,14 @@ public class DAnalysisSessionImpl extends DAnalysisSessionEObjectImpl implements
     // *******************
 
     @Override
-    public ECrossReferenceAdapterWithUnproxyCapability getSemanticCrossReferencer() {
-        if (crossReferencer == null) {
-            crossReferencer = createSemanticCrossReferencer();
+    public InverseReferenceFinder getInverseReferenceFinder() {
+        if (inverseReferenceFinder == null) {
+            inverseReferenceFinder = createInverseReferenceFinder();
             if (interpreter != null) {
-                interpreter.setCrossReferencer(crossReferencer);
+                interpreter.setInverseReferenceFinder(inverseReferenceFinder);
             }
         }
-        return crossReferencer;
+        return inverseReferenceFinder;
     }
 
     /**
@@ -248,7 +249,7 @@ public class DAnalysisSessionImpl extends DAnalysisSessionEObjectImpl implements
      * 
      * @return a new cross referencer adapter
      */
-    protected ECrossReferenceAdapterWithUnproxyCapability createSemanticCrossReferencer() {
+    protected InverseReferenceFinder createInverseReferenceFinder() {
         return new SessionLazyCrossReferencer(this);
     }
 
@@ -259,9 +260,10 @@ public class DAnalysisSessionImpl extends DAnalysisSessionEObjectImpl implements
      *            the resource on which the semantic cross reference should be added.
      */
     protected void registerResourceInCrossReferencer(final Resource newResource) {
-        if (crossReferencer != null) {
-            if (!newResource.eAdapters().contains(crossReferencer)) {
-                newResource.eAdapters().add(crossReferencer);
+        if (inverseReferenceFinder instanceof Adapter) {
+            Adapter inverseReferenceFinderAdapter = (Adapter) inverseReferenceFinder;
+            if (!newResource.eAdapters().contains(inverseReferenceFinderAdapter)) {
+                newResource.eAdapters().add(inverseReferenceFinderAdapter);
             }
         }
     }
@@ -273,9 +275,9 @@ public class DAnalysisSessionImpl extends DAnalysisSessionEObjectImpl implements
      *            the resource from which the semantic cross reference should be removed.
      */
     protected void unregisterResourceInCrossReferencer(final Resource resource) {
-        if (crossReferencer != null) {
-            if (resource.eAdapters().contains(crossReferencer)) {
-                resource.eAdapters().remove(crossReferencer);
+        if (inverseReferenceFinder != null) {
+            if (resource.eAdapters().contains(inverseReferenceFinder)) {
+                resource.eAdapters().remove(inverseReferenceFinder);
             }
         }
     }
@@ -1281,7 +1283,7 @@ public class DAnalysisSessionImpl extends DAnalysisSessionEObjectImpl implements
             tracker.dispose();
             tracker = null;
         }
-        crossReferencer = null;
+        inverseReferenceFinder = null;
         saver.dispose();
 
         transactionalEditingDomain.dispose();

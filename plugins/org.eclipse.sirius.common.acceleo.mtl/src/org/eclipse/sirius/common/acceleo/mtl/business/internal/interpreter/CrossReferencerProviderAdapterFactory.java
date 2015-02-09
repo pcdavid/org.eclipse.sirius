@@ -15,6 +15,7 @@ import org.eclipse.core.runtime.IAdapterFactory;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
+import org.eclipse.sirius.ext.emf.InverseReferenceFinder;
 
 /**
  * This will be registered against the platform in order to adapt EObjects into
@@ -24,7 +25,9 @@ import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
  */
 public class CrossReferencerProviderAdapterFactory implements IAdapterFactory {
     /** The delegate cross referencer we'll be using. */
-    private final ECrossReferenceAdapter crossReferencer;
+    private final InverseReferenceFinder invRefFinder;
+    
+    private final ECrossReferenceAdapter xrefAdapter;
 
     /**
      * Instantiates our factory given the cross referencer we are to use.
@@ -32,8 +35,20 @@ public class CrossReferencerProviderAdapterFactory implements IAdapterFactory {
      * @param crossReferencer
      *            The cross referencer we'll be using.
      */
-    public CrossReferencerProviderAdapterFactory(ECrossReferenceAdapter crossReferencer) {
-        this.crossReferencer = crossReferencer;
+    public CrossReferencerProviderAdapterFactory(InverseReferenceFinder crossReferencer) {
+        this.invRefFinder = crossReferencer;
+        this.xrefAdapter = null;
+    }
+    
+    /**
+     * Instantiates our factory given the cross referencer we are to use.
+     * 
+     * @param xref
+     *            The cross referencer we'll be using.
+     */
+    public CrossReferencerProviderAdapterFactory(ECrossReferenceAdapter xref) {
+        this.xrefAdapter = xref;
+        this.invRefFinder = null;
     }
 
     /**
@@ -43,13 +58,16 @@ public class CrossReferencerProviderAdapterFactory implements IAdapterFactory {
      *      java.lang.Class)
      */
     public Object getAdapter(Object adaptableObject, @SuppressWarnings("rawtypes") Class adapterType) {
+        Object result = null;
         if (adaptableObject instanceof EObject && adapterType.equals(IAcceleoCrossReferenceProvider.class)) {
             Resource res = ((EObject) adaptableObject).eResource();
-            if (res != null && res.eAdapters().contains(crossReferencer)) {
-                return new AcceleoSiriusCrossReferencerProvider(crossReferencer);
+            if (xrefAdapter != null && res != null && res.eAdapters().contains(xrefAdapter)) {
+                result = new AcceleoSiriusCrossReferencerProvider(xrefAdapter);
+            } else if (invRefFinder != null) {
+                result = new AcceleoSiriusCrossReferencerProvider(invRefFinder);
             }
         }
-        return null;
+        return result;
     }
 
     /**

@@ -17,7 +17,6 @@ import java.util.List;
 import java.util.Set;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
 import org.eclipse.sirius.diagram.DDiagram;
@@ -34,6 +33,7 @@ import org.eclipse.sirius.diagram.description.DiagramDescription;
 import org.eclipse.sirius.diagram.description.DiagramElementMapping;
 import org.eclipse.sirius.diagram.description.EdgeMapping;
 import org.eclipse.sirius.diagram.description.NodeMapping;
+import org.eclipse.sirius.ext.emf.InverseReferenceFinder;
 import org.eclipse.sirius.viewpoint.SiriusPlugin;
 
 import com.google.common.collect.Lists;
@@ -141,7 +141,7 @@ public abstract class AbstractUniqueRefreshExtension implements IRefreshExtensio
      */
     private void delete(final DDiagramElement element) {
         final Session session = SessionManager.INSTANCE.getSession(element.getTarget());
-        final ECrossReferenceAdapter xref = session != null ? session.getSemanticCrossReferencer() : null;
+        final InverseReferenceFinder xref = session != null ? session.getInverseReferenceFinder() : null;
         SiriusPlugin.getDefault().getModelAccessorRegistry().getModelAccessor(element).eDelete(element, xref);
     }
 

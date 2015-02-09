@@ -67,7 +67,7 @@ public class GMFDiagramUpdater {
         dDiagramHiddenElementsUpdater = new DDiagramHiddenElementsUpdater(domain, dDiagram);
         visibilityPropagator = new VisibilityPropagatorAdapter(session, dDiagram);
 
-        edgeStyleUpdater = new EdgeStyleUpdater(domain, session.getSemanticCrossReferencer());
+        edgeStyleUpdater = new EdgeStyleUpdater(domain, session.getInverseReferenceFinder());
     }
 
     /**

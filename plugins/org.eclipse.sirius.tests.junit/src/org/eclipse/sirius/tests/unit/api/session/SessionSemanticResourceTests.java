@@ -25,6 +25,7 @@ import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.danalysis.DAnalysisSession;
+import org.eclipse.sirius.ext.emf.InverseReferenceFinder;
 import org.eclipse.sirius.tests.SiriusTestsPlugin;
 import org.eclipse.sirius.tests.support.api.EclipseTestsSupportHelper;
 import org.eclipse.sirius.tests.support.api.SiriusDiagramTestCase;
@@ -313,7 +314,7 @@ public class SessionSemanticResourceTests extends SiriusDiagramTestCase {
      * Ensure that the cross referencer is on all semantic resources.
      */
     private void checkCrossReferencer() {
-        ECrossReferenceAdapter crossReferencer = session.getSemanticCrossReferencer();
+        InverseReferenceFinder crossReferencer = session.getInverseReferenceFinder();
         for (Resource semanticResource : session.getSemanticResources()) {
             assertTrue("The resource '" + semanticResource.getURI() + "' should have the cross referencer", semanticResource.eAdapters().contains(crossReferencer));
         }

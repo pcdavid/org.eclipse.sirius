@@ -11,10 +11,10 @@
 package org.eclipse.sirius.diagram.business.api.query;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.ext.base.Option;
 import org.eclipse.sirius.ext.base.Options;
+import org.eclipse.sirius.ext.emf.InverseReferenceFinder;
 import org.eclipse.sirius.viewpoint.DRepresentation;
 
 /**
@@ -44,10 +44,10 @@ public class EObjectQuery extends org.eclipse.sirius.business.api.query.EObjectQ
      * @param eObject
      *            the element to query.
      * @param xref
-     *            ECrossReferenceAdapter to use for all queries about inverse
-     *            references.
+     *            {@link InverseReferenceFinder} to use for all queries about
+     *            inverse references.
      */
-    public EObjectQuery(EObject eObject, ECrossReferenceAdapter xref) {
+    public EObjectQuery(EObject eObject, InverseReferenceFinder xref) {
         super(eObject, xref);
     }
 

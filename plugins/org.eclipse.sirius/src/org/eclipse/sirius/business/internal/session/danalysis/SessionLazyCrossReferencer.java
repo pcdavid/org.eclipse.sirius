@@ -10,17 +10,28 @@
  *******************************************************************************/
 package org.eclipse.sirius.business.internal.session.danalysis;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.EStructuralFeature.Setting;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.sirius.common.tools.api.util.LazyCrossReferencer;
 import org.eclipse.sirius.viewpoint.DRepresentation;
+import org.eclipse.sirius.ext.emf.xref.XRefFinder;
+import org.eclipse.sirius.ext.emf.xref.XRefFinderImpl;
+import org.eclipse.sirius.ext.emf.xref.XRefResult;
+import org.eclipse.sirius.viewpoint.SiriusPlugin;
 
 import com.google.common.base.Predicates;
 import com.google.common.collect.Iterables;
@@ -35,6 +46,10 @@ import com.google.common.collect.Iterables;
 public class SessionLazyCrossReferencer extends LazyCrossReferencer {
     private DAnalysisSessionImpl session;
 
+    private XRefFinder xRefFinder;
+
+    private ResourceSet resourceSet;
+
     /**
      * Construct from an opened session.
      * 
@@ -43,6 +58,8 @@ public class SessionLazyCrossReferencer extends LazyCrossReferencer {
      */
     public SessionLazyCrossReferencer(DAnalysisSessionImpl session) {
         this.session = session;
+        this.resourceSet = session.getTransactionalEditingDomain().getResourceSet();
+        this.xRefFinder = new XRefFinderImpl(SiriusPlugin.getDefault().getXRefFinderFactoryRegistry(), resourceSet);
     }
 
     @Override
@@ -85,6 +102,15 @@ public class SessionLazyCrossReferencer extends LazyCrossReferencer {
             }
         }
         super.selfAdapt(notification);
+    }
+    public Collection<Setting> getInverseReferences(EObject object) {
+        Collection<EStructuralFeature.Setting> xrefs = new ArrayList<EStructuralFeature.Setting>();
+        Set<XRefResult> result = xRefFinder.getXRefs(Collections.singleton(resourceSet), Collections.singleton(object), null);
+        for (XRefResult xRefResult : result) {
+            InternalEObject referencingEObject = (InternalEObject) xRefResult.getReferencingEObject(true, true);
+            xrefs.add(referencingEObject.eSetting(xRefResult.getEReference()));
+        }
+        return xrefs;
     }
 
     /**

@@ -20,7 +20,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
@@ -36,6 +35,7 @@ import org.eclipse.sirius.common.tools.api.interpreter.EvaluationException;
 import org.eclipse.sirius.common.tools.api.interpreter.IInterpreter;
 import org.eclipse.sirius.common.tools.api.util.StringUtil;
 import org.eclipse.sirius.ecore.extender.business.api.accessor.ModelAccessor;
+import org.eclipse.sirius.ext.emf.InverseReferenceFinder;
 import org.eclipse.sirius.tools.api.command.DCommand;
 import org.eclipse.sirius.tools.api.interpreter.InterpreterRegistry;
 import org.eclipse.sirius.tools.api.interpreter.InterpreterUtil;
@@ -126,10 +126,12 @@ public class TreeDialectServices extends AbstractRepresentationDialectServices {
     }
 
     @Override
+    @Override
     public void initRepresentations(Viewpoint vp, EObject semantic, IProgressMonitor monitor) {
         super.initRepresentations(semantic, vp, TreeDescription.class, monitor);
     }
 
+    @Override
     @Override
     protected <T extends RepresentationDescription> void initRepresentationForElement(T representationDescription, EObject semanticElement, IProgressMonitor monitor) {
         if (representationDescription instanceof TreeDescription) {
@@ -187,6 +189,7 @@ public class TreeDialectServices extends AbstractRepresentationDialectServices {
     }
 
     @Override
+    @Override
     public void refresh(DRepresentation representation, boolean fullRefresh, IProgressMonitor monitor) {
         try {
             monitor.beginTask(Messages.TreeDialectServices_treeRefresh, 1);
@@ -198,6 +201,7 @@ public class TreeDialectServices extends AbstractRepresentationDialectServices {
         }
     }
 
+    @Override
     @Override
     public RepresentationDescription getDescription(DRepresentation representation) {
         if (isSupported(representation)) {
@@ -219,6 +223,7 @@ public class TreeDialectServices extends AbstractRepresentationDialectServices {
     }
 
     @Override
+    @Override
     public boolean canCreate(EObject semantic, RepresentationDescription desc) {
         boolean result = false;
         if (semantic != null && isSupported(desc)) {
@@ -237,6 +242,7 @@ public class TreeDialectServices extends AbstractRepresentationDialectServices {
         return result;
     }
 
+    @Override
     @Override
     public IInterpretedExpressionQuery createInterpretedExpressionQuery(EObject target, EStructuralFeature feature) {
         return new TreeInterpretedExpressionQuery(target, feature);
@@ -284,7 +290,7 @@ public class TreeDialectServices extends AbstractRepresentationDialectServices {
         Set<DTreeElement> treeElementsToRefresh = Sets.newHashSet();
         Session session = new org.eclipse.sirius.business.api.query.EObjectQuery(tree.getTarget()).getSession();
         if (session != null) {
-            ECrossReferenceAdapter xref = session.getSemanticCrossReferencer();
+            InverseReferenceFinder xref = session.getInverseReferenceFinder();
             // Deal with each notifier only one time.
             Set<EObject> alreadyDoneNotifiers = Sets.newHashSet();
             for (Notification notification : notifications) {
@@ -300,7 +306,7 @@ public class TreeDialectServices extends AbstractRepresentationDialectServices {
         return treeElementsToRefresh;
     }
 
-    private Set<DTreeElement> getTreeElementsToRefresh(EObject notifier, DTree tree, ECrossReferenceAdapter xref) {
+    private Set<DTreeElement> getTreeElementsToRefresh(EObject notifier, DTree tree, InverseReferenceFinder xref) {
         Set<DTreeElement> treeElementsToRefresh = Sets.newHashSet();
         Collection<EObject> inverseReferencers = new EObjectQuery(notifier, xref).getInverseReferences(REPRESENTATION_ELEMENTS_INVERSE_REFERENCES);
         for (EObject inverseReferencer : inverseReferencers) {

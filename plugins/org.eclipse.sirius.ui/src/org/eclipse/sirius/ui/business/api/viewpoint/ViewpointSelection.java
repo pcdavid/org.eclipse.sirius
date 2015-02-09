@@ -289,7 +289,7 @@ public final class ViewpointSelection {
      */
     public static void openViewpointsSelectionDialog(final Session session, boolean createNewRepresentations) {
         if (Movida.isEnabled()) {
-            session.getSemanticCrossReferencer();
+            session.getInverseReferenceFinder();
             org.eclipse.sirius.business.internal.movida.registry.ViewpointRegistry registry = (org.eclipse.sirius.business.internal.movida.registry.ViewpointRegistry) ViewpointRegistry.getInstance();
             org.eclipse.sirius.business.internal.movida.ViewpointSelection selection = DAnalysisSessionHelper.getViewpointSelection(registry, (DAnalysisSession) session);
             Set<URI> selectedBefore = selection.getSelected();
@@ -299,7 +299,7 @@ public final class ViewpointSelection {
                 ViewpointSelection.applyViewpointSelectionChange(session, selection, selectedBefore);
             }
         } else {
-            session.getSemanticCrossReferencer();
+            session.getInverseReferenceFinder();
             final SortedMap<Viewpoint, Boolean> viewpointsMap = ViewpointSelection.getViewpointsWithMonitor(session);
             org.eclipse.sirius.ui.business.internal.viewpoint.ViewpointSelectionDialog vsd = new org.eclipse.sirius.ui.business.internal.viewpoint.ViewpointSelectionDialog(
                     PlatformUI.getWorkbench().getDisplay().getActiveShell(), viewpointsMap);

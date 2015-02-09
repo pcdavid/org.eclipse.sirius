@@ -26,10 +26,12 @@ import org.eclipse.sirius.business.api.dialect.description.MultiLanguagesValidat
 import org.eclipse.sirius.business.internal.dialect.description.InterpretedExpressionQueryProviderRegistry;
 import org.eclipse.sirius.business.internal.helper.delete.DeleteHookDescriptorRegistryListener;
 import org.eclipse.sirius.business.internal.helper.task.ModelOperationManagerRegistryListener;
+import org.eclipse.sirius.business.internal.session.XRefFinderFactoryRegistryImpl;
 import org.eclipse.sirius.business.internal.resource.strategy.ResourceStrategyRegistryListener;
 import org.eclipse.sirius.business.internal.session.factory.SessionFactoryRegistryListener;
 import org.eclipse.sirius.ecore.extender.business.api.accessor.ModelAccessorsRegistry;
 import org.eclipse.sirius.tools.api.command.ui.UICallBack;
+import org.eclipse.sirius.ext.emf.xref.XRefFinder;
 import org.eclipse.sirius.tools.api.interpreter.InterpreterRegistry;
 import org.eclipse.sirius.tools.internal.ui.ExternalJavaActionRegistryListener;
 import org.eclipse.sirius.tools.internal.validation.EValidatorAdapter;
@@ -127,6 +129,8 @@ public final class SiriusPlugin extends EMFPlugin {
          */
         private ExternalJavaActionRegistryListener javaActionRegistryListener;
 
+        private XRefFinderFactoryRegistryImpl xRefFinderFactoryRegistry;
+
         /**
          * The registry listener that will be used to listen to contribution
          * changes against the external resource strategy extension point.
@@ -174,6 +178,7 @@ public final class SiriusPlugin extends EMFPlugin {
             javaActionRegistryListener = new ExternalJavaActionRegistryListener();
             javaActionRegistryListener.init();
             resourceStrategyRegistryListener = new ResourceStrategyRegistryListener();
+            xRefFinderFactoryRegistry = new XRefFinderFactoryRegistryImpl();
             resourceStrategyRegistryListener.init();
             modelOperationManagerRegistryListener = new ModelOperationManagerRegistryListener();
             modelOperationManagerRegistryListener.init();
@@ -202,6 +207,8 @@ public final class SiriusPlugin extends EMFPlugin {
             javaActionRegistryListener = null;
             resourceStrategyRegistryListener.dispose();
             resourceStrategyRegistryListener = null;
+            xRefFinderFactoryRegistry.dispose();
+            xRefFinderFactoryRegistry = null;
             modelOperationManagerRegistryListener.dispose();
             modelOperationManagerRegistryListener = null;
             expressionQueryProviderRegistry.dispose();
@@ -230,6 +237,15 @@ public final class SiriusPlugin extends EMFPlugin {
          */
         public InterpreterRegistry getInterpreterRegistry() {
             return interRegistry;
+        }
+
+        /**
+         * Get the {@link XRefFinder.Factory.Registry} singleton.
+         * 
+         * @return the {@link XRefFinder.Factory.Registry} singleton
+         */
+        public XRefFinder.Factory.Registry getXRefFinderFactoryRegistry() {
+            return xRefFinderFactoryRegistry;
         }
 
         /**

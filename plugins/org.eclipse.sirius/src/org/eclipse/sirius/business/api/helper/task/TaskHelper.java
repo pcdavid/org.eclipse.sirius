@@ -19,7 +19,6 @@ import java.util.Set;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature.Setting;
-import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.sirius.business.api.query.DRepresentationQuery;
 import org.eclipse.sirius.business.api.query.EObjectQuery;
@@ -32,6 +31,7 @@ import org.eclipse.sirius.common.tools.api.interpreter.IInterpreterSiriusVariabl
 import org.eclipse.sirius.common.tools.api.util.StringUtil;
 import org.eclipse.sirius.ecore.extender.business.api.accessor.ModelAccessor;
 import org.eclipse.sirius.ext.base.Option;
+import org.eclipse.sirius.ext.emf.InverseReferenceFinder;
 import org.eclipse.sirius.tools.api.command.ui.UICallBack;
 import org.eclipse.sirius.viewpoint.DAnalysis;
 import org.eclipse.sirius.viewpoint.DRepresentation;
@@ -120,7 +120,7 @@ public class TaskHelper {
     public Set<DSemanticDecorator> getDElementToClearFromSemanticElements(final EObject context, final Set<EObject> semanticElements) {
         Set<DSemanticDecorator> decoratorsToDestroy = Sets.newHashSet();
         if (context != null) {
-            final ECrossReferenceAdapter xref = getSemanticCrossReferencer(context);
+            final InverseReferenceFinder xref = getSemanticCrossReferencer(root);
             if (xref != null) {
                 decoratorsToDestroy = getDElementToClearWithXref(context, semanticElements, xref);
             } else {
@@ -130,7 +130,7 @@ public class TaskHelper {
         return decoratorsToDestroy;
     }
 
-    private Set<DSemanticDecorator> getDElementToClearWithXref(final EObject context, final Set<EObject> semanticElements, final ECrossReferenceAdapter xref) {
+    private Set<DSemanticDecorator> getDElementToClearWithXref(final EObject context, final Set<EObject> semanticElements, final InverseReferenceFinder xref) {
         final Set<DSemanticDecorator> decoratorsToDestroy = new HashSet<DSemanticDecorator>();
         if (context instanceof DAnalysis || context instanceof DView || context instanceof DRepresentation) {
             for (EObject semElt : semanticElements) {
@@ -160,7 +160,7 @@ public class TaskHelper {
         return EcoreUtil.isAncestor(context, son);
     }
 
-    private ECrossReferenceAdapter getSemanticCrossReferencer(EObject root) {
+    private InverseReferenceFinder getSemanticCrossReferencer(EObject root) {
         Session session = null;
         if (root instanceof DAnalysis) {
             for (Session tempSession : SessionManager.INSTANCE.getSessions()) {
@@ -174,9 +174,9 @@ public class TaskHelper {
             session = SessionManager.INSTANCE.getSession(root);
         }
 
-        ECrossReferenceAdapter xref = null;
-        if (session != null && session.getSemanticCrossReferencer() != null) {
-            xref = session.getSemanticCrossReferencer();
+        InverseReferenceFinder xref = null;
+        if (session != null && session.getInverseReferenceFinder() != null) {
+            xref = session.getInverseReferenceFinder();
         }
         return xref;
     }

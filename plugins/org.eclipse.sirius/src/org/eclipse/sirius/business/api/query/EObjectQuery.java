@@ -30,7 +30,6 @@ import org.eclipse.emf.ecore.EStructuralFeature.Setting;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
@@ -39,6 +38,7 @@ import org.eclipse.sirius.ext.base.Option;
 import org.eclipse.sirius.ext.base.Options;
 import org.eclipse.sirius.ext.emf.EClassQuery;
 import org.eclipse.sirius.viewpoint.DAnalysis;
+import org.eclipse.sirius.ext.emf.InverseReferenceFinder;
 import org.eclipse.sirius.viewpoint.DRepresentation;
 import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
 import org.eclipse.sirius.viewpoint.Messages;
@@ -63,9 +63,9 @@ public class EObjectQuery {
     protected EObject eObject;
 
     /**
-     * The {@link ECrossReferenceAdapter} to use for all inverse references queries.
+     * The {@link InverseReferenceFinder} to use for all inverse references
      */
-    protected ECrossReferenceAdapter xref;
+    protected InverseReferenceFinder xref;
 
     /**
      * Create a new query.
@@ -84,9 +84,10 @@ public class EObjectQuery {
      * @param eObject
      *            the element to query.
      * @param xref
-     *            ECrossReferenceAdapter to use for all queries about inverse references.
+     *            {@link InverseReferenceFinder} to use for all queries about
+     *            inverse references.
      */
-    public EObjectQuery(EObject eObject, ECrossReferenceAdapter xref) {
+    public EObjectQuery(EObject eObject, InverseReferenceFinder xref) {
         this.eObject = eObject;
         this.xref = xref;
     }
@@ -212,7 +213,7 @@ public class EObjectQuery {
         if (xref == null) {
             Session session = getSession();
             if (session != null) {
-                xref = session.getSemanticCrossReferencer();
+                xref = session.getInverseReferenceFinder();
             }
         }
         if (xref == null) {

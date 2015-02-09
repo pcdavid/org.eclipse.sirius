@@ -20,12 +20,14 @@ import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.sirius.common.tools.api.interpreter.EvaluationException;
 import org.eclipse.sirius.common.tools.api.interpreter.IInterpreter;
 import org.eclipse.sirius.common.tools.api.interpreter.IInterpreterWithDiagnostic;
+import org.eclipse.sirius.common.tools.api.interpreter.IInterpreter2;
 import org.eclipse.sirius.common.tools.api.interpreter.IInterpreterContext;
 import org.eclipse.sirius.common.tools.api.interpreter.IInterpreterStatus;
 import org.eclipse.sirius.common.tools.api.interpreter.IVariableStatusListener;
 import org.eclipse.sirius.common.tools.api.interpreter.TypedValidation;
 import org.eclipse.sirius.ecore.extender.business.api.accessor.MetamodelDescriptor;
 import org.eclipse.sirius.ecore.extender.business.api.accessor.ModelAccessor;
+import org.eclipse.sirius.ext.emf.InverseReferenceFinder;
 
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
@@ -43,6 +45,7 @@ public abstract class AbstractInterpreter implements IInterpreter, TypedValidati
     /**
      * {@inheritDoc}
      */
+    @Override
     public boolean provides(String expression) {
         return expression != null && expression.startsWith(getPrefix());
     }
@@ -50,6 +53,7 @@ public abstract class AbstractInterpreter implements IInterpreter, TypedValidati
     /**
      * {@inheritDoc}
      */
+    @Override
     public Collection<EObject> evaluateCollection(EObject context, String expression) throws EvaluationException {
         Object raw = evaluate(context, expression);
         final Collection<EObject> result;
@@ -68,6 +72,7 @@ public abstract class AbstractInterpreter implements IInterpreter, TypedValidati
     /**
      * {@inheritDoc}
      */
+    @Override
     public boolean evaluateBoolean(EObject context, String expression) throws EvaluationException {
         Object raw = evaluate(context, expression);
         final boolean result;
@@ -97,6 +102,7 @@ public abstract class AbstractInterpreter implements IInterpreter, TypedValidati
     /**
      * {@inheritDoc}
      */
+    @Override
     public EObject evaluateEObject(EObject context, String expression) throws EvaluationException {
         Object raw = evaluate(context, expression);
         if (raw instanceof EObject) {
@@ -109,6 +115,7 @@ public abstract class AbstractInterpreter implements IInterpreter, TypedValidati
     /**
      * {@inheritDoc}
      */
+    @Override
     public String evaluateString(EObject context, String expression) throws EvaluationException {
         Object raw = evaluate(context, expression);
         if (raw != null) {
@@ -121,6 +128,7 @@ public abstract class AbstractInterpreter implements IInterpreter, TypedValidati
     /**
      * {@inheritDoc}
      */
+    @Override
     public Integer evaluateInteger(EObject context, String expression) throws EvaluationException {
         Object raw = evaluate(context, expression);
         try {
@@ -133,6 +141,7 @@ public abstract class AbstractInterpreter implements IInterpreter, TypedValidati
     /**
      * {@inheritDoc}
      */
+    @Override
     public void clearImports() {
         // Nothing to do.
     }
@@ -140,6 +149,7 @@ public abstract class AbstractInterpreter implements IInterpreter, TypedValidati
     /**
      * {@inheritDoc}
      */
+    @Override
     public void addImport(String dependency) {
         // Nothing to do.
     }
@@ -147,6 +157,7 @@ public abstract class AbstractInterpreter implements IInterpreter, TypedValidati
     /**
      * {@inheritDoc}
      */
+    @Override
     public void setProperty(Object key, Object value) {
         // Nothing to do.
     }
@@ -154,6 +165,7 @@ public abstract class AbstractInterpreter implements IInterpreter, TypedValidati
     /**
      * {@inheritDoc}
      */
+    @Override
     public void setVariable(String name, Object value) {
         // Nothing to do.
     }
@@ -161,6 +173,7 @@ public abstract class AbstractInterpreter implements IInterpreter, TypedValidati
     /**
      * {@inheritDoc}
      */
+    @Override
     public void unSetVariable(String name) {
         // Nothing to do.
     }
@@ -168,6 +181,7 @@ public abstract class AbstractInterpreter implements IInterpreter, TypedValidati
     /**
      * {@inheritDoc}
      */
+    @Override
     public Object getVariable(String name) {
         return null;
     }
@@ -175,6 +189,7 @@ public abstract class AbstractInterpreter implements IInterpreter, TypedValidati
     /**
      * {@inheritDoc}
      */
+    @Override
     public void clearVariables() {
         // Nothing to do.
     }
@@ -182,6 +197,7 @@ public abstract class AbstractInterpreter implements IInterpreter, TypedValidati
     /**
      * {@inheritDoc}
      */
+    @Override
     public void dispose() {
         // Nothing to do.
     }
@@ -189,6 +205,7 @@ public abstract class AbstractInterpreter implements IInterpreter, TypedValidati
     /**
      * {@inheritDoc}
      */
+    @Override
     public void addVariableStatusListener(IVariableStatusListener newListener) {
         // Nothing to do.
     }
@@ -196,6 +213,7 @@ public abstract class AbstractInterpreter implements IInterpreter, TypedValidati
     /**
      * {@inheritDoc}
      */
+    @Override
     public void removeVariableStatusListener(IVariableStatusListener listener) {
         // Nothing to do.
     }
@@ -203,6 +221,7 @@ public abstract class AbstractInterpreter implements IInterpreter, TypedValidati
     /**
      * {@inheritDoc}
      */
+    @Override
     public Map<String, ?> getVariables() {
         return Collections.emptyMap();
     }
@@ -210,6 +229,7 @@ public abstract class AbstractInterpreter implements IInterpreter, TypedValidati
     /**
      * {@inheritDoc}
      */
+    @Override
     public void setModelAccessor(ModelAccessor modelAccessor) {
         // Nothing to do.
     }
@@ -217,6 +237,7 @@ public abstract class AbstractInterpreter implements IInterpreter, TypedValidati
     /**
      * {@inheritDoc}
      */
+    @Override
     public String getVariablePrefix() {
         return ""; //$NON-NLS-1$
     }
@@ -224,6 +245,7 @@ public abstract class AbstractInterpreter implements IInterpreter, TypedValidati
     /**
      * {@inheritDoc}
      */
+    @Override
     public void setCrossReferencer(ECrossReferenceAdapter crossReferencer) {
         // Nothing to do.
     }
@@ -231,6 +253,15 @@ public abstract class AbstractInterpreter implements IInterpreter, TypedValidati
     /**
      * {@inheritDoc}
      */
+    @Override
+    public void setInverseReferenceFinder(InverseReferenceFinder irf) {
+        // Nothing to do.
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
     public Collection<String> getImports() {
         return Collections.emptySet();
     }
@@ -238,6 +269,7 @@ public abstract class AbstractInterpreter implements IInterpreter, TypedValidati
     /**
      * {@inheritDoc}
      */
+    @Override
     public void removeImport(String dependency) {
         // Nothing to do.
     }
@@ -245,6 +277,7 @@ public abstract class AbstractInterpreter implements IInterpreter, TypedValidati
     /**
      * {@inheritDoc}
      */
+    @Override
     public boolean supportsValidation() {
         return false;
     }
@@ -252,6 +285,7 @@ public abstract class AbstractInterpreter implements IInterpreter, TypedValidati
     /**
      * {@inheritDoc}
      */
+    @Override
     public Collection<IInterpreterStatus> validateExpression(IInterpreterContext context, String expression) {
         return analyzeExpression(context, expression).getStatuses();
     }
@@ -259,6 +293,7 @@ public abstract class AbstractInterpreter implements IInterpreter, TypedValidati
     /**
      * {@inheritDoc}
      */
+    @Override
     public void activateMetamodels(Collection<MetamodelDescriptor> metamodels) {
         // Nothing to do.
     }

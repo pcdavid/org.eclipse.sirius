@@ -36,6 +36,7 @@ import org.eclipse.sirius.business.api.session.SessionListener;
 import org.eclipse.sirius.common.tools.api.resource.ResourceSetSync;
 import org.eclipse.sirius.common.tools.api.resource.ResourceSetSync.ResourceStatus;
 import org.eclipse.sirius.common.tools.api.resource.ResourceSyncClient;
+import org.eclipse.sirius.ext.emf.InverseReferenceFinder;
 import org.eclipse.sirius.tools.api.command.semantic.RemoveSemanticResourceCommand;
 import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
 import org.eclipse.sirius.viewpoint.Messages;
@@ -199,7 +200,13 @@ public class SessionResourcesSynchronizer implements ResourceSyncClient {
                 try {
                     resource.load(Collections.EMPTY_MAP);
                     EcoreUtil.resolveAll(resource);
-                    session.getSemanticCrossReferencer().resolveProxyCrossReferences(resource);
+                    // TODO : find a more generic way to notify
+                    // InverseReferenceFinder that it must update its cache
+                    // according to a reload
+                    InverseReferenceFinder inverseReferenceFinder = session.getInverseReferenceFinder();
+                    if (inverseReferenceFinder instanceof SessionLazyCrossReferencer) {
+                        ((SessionLazyCrossReferencer) inverseReferenceFinder).resolveProxyCrossReferences(resource);
+                    }
                 } catch (IOException e) {
                     setResult(e);
                 }

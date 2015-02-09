@@ -25,6 +25,7 @@ import org.eclipse.sirius.diagram.DiagramPackage;
 import org.eclipse.sirius.diagram.EdgeStyle;
 import org.eclipse.sirius.diagram.ui.business.api.view.SiriusGMFHelper;
 import org.eclipse.sirius.diagram.ui.tools.internal.commands.UpdateGMFEdgeStyleCommand;
+import org.eclipse.sirius.ext.emf.InverseReferenceFinder;
 
 /**
  * This listener is in charge of updating the GMF informations related to Edge
@@ -46,7 +47,7 @@ public class EdgeStyleUpdater extends ResourceSetListenerImpl {
      * The viewpoint cross reference used to get GMF elements from
      * DDiagramElements.
      */
-    private ECrossReferenceAdapter crossReference;
+    private InverseReferenceFinder crossReference;
 
     /**
      * Default constructor.
@@ -57,7 +58,7 @@ public class EdgeStyleUpdater extends ResourceSetListenerImpl {
      *            The viewpoint cross reference used to get GMF elements from
      *            DDiagramElements.
      */
-    public EdgeStyleUpdater(TransactionalEditingDomain domain, ECrossReferenceAdapter crossReference) {
+    public EdgeStyleUpdater(TransactionalEditingDomain domain, InverseReferenceFinder crossReference) {
         super(LISTENED_FEATURES);
         domain.addResourceSetListener(this);
         this.crossReference = crossReference;

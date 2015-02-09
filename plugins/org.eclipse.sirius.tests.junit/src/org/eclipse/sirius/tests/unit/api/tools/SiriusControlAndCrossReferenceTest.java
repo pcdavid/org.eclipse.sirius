@@ -27,6 +27,7 @@ import org.eclipse.sirius.business.api.session.danalysis.DAnalysisSession;
 import org.eclipse.sirius.business.api.session.danalysis.SimpleAnalysisSelector;
 import org.eclipse.sirius.common.tools.api.util.ReflectionHelper;
 import org.eclipse.sirius.ext.base.Option;
+import org.eclipse.sirius.ext.emf.InverseReferenceFinder;
 import org.eclipse.sirius.tests.SiriusTestsPlugin;
 import org.eclipse.sirius.tests.support.api.SiriusDiagramTestCase;
 import org.eclipse.sirius.tools.api.command.ui.NoUICallback;
@@ -90,7 +91,7 @@ public class SiriusControlAndCrossReferenceTest extends SiriusDiagramTestCase {
         assertEquals(2, session.getAllSessionResources().size());
 
         // Check cross referencer installation on the new aird.
-        ECrossReferenceAdapter semanticCrossReferencer = session.getSemanticCrossReferencer();
+        InverseReferenceFinder semanticCrossReferencer = session.getInverseReferenceFinder();
         Option<Object> internalXReferencer = ReflectionHelper.getFieldValueWithoutException(semanticCrossReferencer, "adapter");
         if (internalXReferencer.some()) {
             // The lazy cross referencer has an internal cross referencer

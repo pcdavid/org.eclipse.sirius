@@ -18,10 +18,10 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.common.tools.api.interpreter.IInterpreter;
 import org.eclipse.sirius.ecore.extender.business.api.accessor.ModelAccessor;
+import org.eclipse.sirius.ext.emf.InverseReferenceFinder;
 import org.eclipse.sirius.tools.api.ui.RefreshEditorsPrecommitListener;
 import org.eclipse.sirius.viewpoint.DView;
 import org.eclipse.sirius.viewpoint.description.Viewpoint;
@@ -282,11 +282,12 @@ public interface Session {
     IInterpreter getInterpreter();
 
     /**
-     * This methods create the cross referencer on demand.
+     * Get the {@link InverseReferenceFinder} service.
      * 
-     * @return a cross referencer adapter for the session semantic models.
+     * @return the {@link InverseReferenceFinder} service to known inverse
+     *         referencing objects.
      */
-    ECrossReferenceAdapter getSemanticCrossReferencer();
+    InverseReferenceFinder getInverseReferenceFinder();
 
     /**
      * return the services associated with the session.

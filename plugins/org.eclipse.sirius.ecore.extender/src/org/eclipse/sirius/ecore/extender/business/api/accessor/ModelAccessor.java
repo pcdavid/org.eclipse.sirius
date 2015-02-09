@@ -30,6 +30,7 @@ import org.eclipse.sirius.ecore.extender.business.api.permission.exception.Locke
 import org.eclipse.sirius.ecore.extender.business.internal.Messages;
 import org.eclipse.sirius.ecore.extender.business.internal.permission.PermissionService;
 import org.eclipse.sirius.ext.emf.EReferencePredicate;
+import org.eclipse.sirius.ext.emf.InverseReferenceFinder;
 
 /**
  * This class is the common layer to access emf models. You may want to use it
@@ -407,12 +408,12 @@ public class ModelAccessor {
      * 
      * @param objectToRemove
      *            object to delete.
-     * @param xref
-     *            the optional cross-referencer to use to locate all the
-     *            dangling references.
+     * @param irf
+     *            the optional service to use to locate all the dangling
+     *            references.
      */
-    public void eDelete(final EObject objectToRemove, final ECrossReferenceAdapter xref) {
-        eDelete(objectToRemove, xref, null);
+    public void eDelete(final EObject objectToRemove, final InverseReferenceFinder irf) {
+        eDelete(objectToRemove, irf, null);
     }
 
     /**
@@ -422,16 +423,16 @@ public class ModelAccessor {
      * 
      * @param objectToRemove
      *            object to delete.
-     * @param xref
-     *            the optional cross-referencer to use to locate all the
-     *            dangling references
+     * @param irf
+     *            the optional service to use to locate all the dangling
+     *            references.
      * @param isReferencesToIgnorePredicate
      *            a predicate indicating if a given reference should be ignored
      *            during deletion or not (can be null if all references should
      *            be considered)
      */
-    public void eDelete(EObject objectToRemove, ECrossReferenceAdapter xref, EReferencePredicate isReferencesToIgnorePredicate) {
-        eDelete(objectToRemove, xref, isReferencesToIgnorePredicate, true);
+    public void eDelete(EObject objectToRemove, InverseReferenceFinder irf, EReferencePredicate isReferencesToIgnorePredicate) {
+        eDelete(objectToRemove, irf, isReferencesToIgnorePredicate, true);
     }
 
     /**
@@ -441,8 +442,8 @@ public class ModelAccessor {
      * 
      * @param objectToRemove
      *            object to delete.
-     * @param xref
-     *            the optional cross-referencer to use to locate all the
+     * @param irf
+     *            the optional service to use to locate all the
      *            dangling references
      * @param isReferencesToIgnorePredicate
      *            a predicate indicating if a given reference should be ignored
@@ -456,14 +457,25 @@ public class ModelAccessor {
      *            can be deleted and leave the not changeable features
      *            unchanged.
      */
-    private void eDelete(EObject objectToRemove, ECrossReferenceAdapter xref, EReferencePredicate isReferencesToIgnorePredicate, boolean simpleRemoveShouldBePerformedIfDanglingReferenceIsNotChangeable) {
+    private void eDelete(EObject objectToRemove, InverseReferenceFinder irf, EReferencePredicate isReferencesToIgnorePredicate, boolean simpleRemoveShouldBePerformedIfDanglingReferenceIsNotChangeable) {
         // Step 1: getting cross referencer for the adapters of the object to
         // remove (if needed)
-        final ECrossReferenceAdapter effectiveXRef;
-        if (xref == null) {
-            effectiveXRef = ECrossReferenceAdapter.getCrossReferenceAdapter(objectToRemove);
+        final InverseReferenceFinder effectiveXRef;
+        if (irf == null) {
+            final ECrossReferenceAdapter xref = ECrossReferenceAdapter.getCrossReferenceAdapter(objectToRemove);
+            effectiveXRef = new InverseReferenceFinder() {
+                @Override
+                public Collection<Setting> getInverseReferences(EObject eObject) {
+                    return xref.getInverseReferences(eObject);
+                }
+                
+                @Override
+                public Collection<Setting> getInverseReferences(EObject eObject, boolean resolve) {
+                    return xref.getInverseReferences(eObject, resolve);
+                }
+            };
         } else {
-            effectiveXRef = xref;
+            effectiveXRef = irf;
         }
 
         // Step 2: determine which kind of deletion should be performed
@@ -526,8 +538,8 @@ public class ModelAccessor {
      * 
      * @param eObject
      *            the {@link EObject} for which remove cross references
-     * @param xref
-     *            the optional cross-referencer to use to locate all the cross
+     * @param iref
+     *            the optional service to use to locate all the cross
      *            references
      * @param isReferencesToIgnorePredicate
      *            a predicate indicating if a given reference should be ignored
@@ -536,14 +548,25 @@ public class ModelAccessor {
      * @return a Collection of impacted {@link EObject objects} of this inverse
      *         cross references removal
      */
-    public Collection<EObject> eRemoveInverseCrossReferences(EObject eObject, ECrossReferenceAdapter xref, EReferencePredicate isReferencesToIgnorePredicate) {
+    public Collection<EObject> eRemoveInverseCrossReferences(EObject eObject, InverseReferenceFinder iref, EReferencePredicate isReferencesToIgnorePredicate) {
         // Step 1: getting cross referencer for the adapters of the object to
         // remove (if needed)
-        final ECrossReferenceAdapter effectiveXRef;
-        if (xref == null) {
-            effectiveXRef = ECrossReferenceAdapter.getCrossReferenceAdapter(eObject);
+        final InverseReferenceFinder effectiveXRef;
+        if (iref == null) {
+            final ECrossReferenceAdapter xref = ECrossReferenceAdapter.getCrossReferenceAdapter(eObject);
+            effectiveXRef = new InverseReferenceFinder() {
+                @Override
+                public Collection<Setting> getInverseReferences(EObject eObject) {
+                    return xref.getInverseReferences(eObject);
+                }
+                
+                @Override
+                public Collection<Setting> getInverseReferences(EObject eObject, boolean resolve) {
+                    return xref.getInverseReferences(eObject, resolve);
+                }
+            };
         } else {
-            effectiveXRef = xref;
+            effectiveXRef = iref;
         }
 
         // Step 2: determine if all inverse cross references can be removed by
@@ -568,7 +591,7 @@ public class ModelAccessor {
      *            a predicate indicating if a given reference should be ignored
      *            during deletion or not
      */
-    private boolean allReferencesCanBeEdited(final EObject target, final ECrossReferenceAdapter xref, EReferencePredicate isReferencesToIgnorePredicate) {
+    private boolean allReferencesCanBeEdited(final EObject target, final InverseReferenceFinder xref, EReferencePredicate isReferencesToIgnorePredicate) {
         boolean allReferencesCanBeEdited = true;
         if (xref != null) {
             final Collection<Setting> refs = xref.getInverseReferences(target, true);

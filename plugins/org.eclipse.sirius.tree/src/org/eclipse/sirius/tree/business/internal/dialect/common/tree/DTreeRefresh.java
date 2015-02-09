@@ -13,6 +13,8 @@ package org.eclipse.sirius.tree.business.internal.dialect.common.tree;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.OperationCanceledException;
 import org.eclipse.core.runtime.SubProgressMonitor;
+import org.eclipse.emf.ecore.EStructuralFeature.Setting;
+import org.eclipse.sirius.ext.emf.InverseReferenceFinder;
 import org.eclipse.sirius.synchronizer.CreatedOutput;
 import org.eclipse.sirius.synchronizer.Mapping;
 import org.eclipse.sirius.synchronizer.MappingHiearchyTable;

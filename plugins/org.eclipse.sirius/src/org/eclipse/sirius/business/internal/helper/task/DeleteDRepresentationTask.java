@@ -66,7 +66,7 @@ public class DeleteDRepresentationTask extends AbstractCommandTask {
                     } else {
                         session = SessionManager.INSTANCE.getSession(representation);
                     }
-                    accessor.eDelete(representation, session != null ? session.getSemanticCrossReferencer() : null);
+                    accessor.eDelete(representation, session != null ? session.getInverseReferenceFinder() : null);
                 } else {
                     // remove the object from its container
                     accessor.eRemove(representation);

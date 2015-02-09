@@ -560,11 +560,11 @@ public class DDiagramSynchronizer {
                  * if semantic element is null then node is a remaining dust that we should delete
                  */
                 if (semanticElement == null) {
-                    this.accessor.eDelete(element, session != null ? session.getSemanticCrossReferencer() : null);
+                    this.accessor.eDelete(element, session != null ? session.getInverseReferenceFinder() : null);
                 }
 
                 if (!shouldKeepElement(mappingManager, element)) {
-                    this.accessor.eDelete(element, session != null ? session.getSemanticCrossReferencer() : null);
+                    this.accessor.eDelete(element, session != null ? session.getInverseReferenceFinder() : null);
                 } else {
                     hideElementToUser(element);
                 }
@@ -614,7 +614,7 @@ public class DDiagramSynchronizer {
     }
 
     private void convertGmfModelTypes(final AbstractDNode node, final AbstractDNode newNode) {
-        final Collection<Setting> settings = session.getSemanticCrossReferencer().getInverseReferences(node);
+        final Collection<Setting> settings = session.getInverseReferenceFinder().getInverseReferences(node);
         for (final Setting setting : settings) {
             final EObject referencer = setting.getEObject();
             if (setting.getEStructuralFeature().isMany()) {
@@ -887,7 +887,7 @@ public class DDiagramSynchronizer {
             monitor.beginTask(Messages.DDiagramSynchronizer_deleteNodesMsg, Iterables.size(candidatesToRemove));
             for (final AbstractDNodeCandidate nodeToDelete : candidatesToRemove) {
                 if (nodeToDelete.comesFromDiagramElement()) {
-                    this.accessor.eDelete(nodeToDelete.getOriginalElement(), session != null ? session.getSemanticCrossReferencer() : null);
+                    this.accessor.eDelete(nodeToDelete.getOriginalElement(), session != null ? session.getInverseReferenceFinder() : null);
                     monitor.worked(1);
                 }
             }
@@ -1278,7 +1278,7 @@ public class DDiagramSynchronizer {
         for (final DEdgeCandidate edgeCandidate : Iterables.concat(status.getRemovedElements(), invalidCandidates)) {
             if (!isDefinedInAnotherLayer(edgeCandidate, mappingsToEdgeTargets)) {
                 DslCommonPlugin.PROFILER.startWork(SiriusTasksKey.CLEANING_EDGES_KEY);
-                this.accessor.eDelete(edgeCandidate.getEdge(), session != null ? session.getSemanticCrossReferencer() : null);
+                this.accessor.eDelete(edgeCandidate.getEdge(), session != null ? session.getInverseReferenceFinder() : null);
                 DslCommonPlugin.PROFILER.stopWork(SiriusTasksKey.CLEANING_EDGES_KEY);
             }
         }

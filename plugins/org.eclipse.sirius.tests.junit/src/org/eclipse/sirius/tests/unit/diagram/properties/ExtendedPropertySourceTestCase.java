@@ -24,7 +24,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor.PropertyValueWrapper;
@@ -39,6 +38,7 @@ import org.eclipse.sirius.ecore.extender.business.api.accessor.ModelAccessor;
 import org.eclipse.sirius.ecore.extender.business.api.accessor.exception.FeatureNotFoundException;
 import org.eclipse.sirius.ecore.extender.business.api.permission.exception.LockedInstanceException;
 import org.eclipse.sirius.ext.emf.EReferencePredicate;
+import org.eclipse.sirius.ext.emf.InverseReferenceFinder;
 import org.eclipse.sirius.viewpoint.SiriusPlugin;
 import org.eclipse.sirius.viewpoint.description.DescriptionFactory;
 import org.eclipse.sirius.viewpoint.description.DescriptionPackage;
@@ -552,16 +552,16 @@ public class ExtendedPropertySourceTestCase extends TestCase {
             return Collections.<EObject> emptyList().iterator();
         }
 
-        public EObject eDelete(EObject objectToRemove, ECrossReferenceAdapter xref) {
+        public EObject eDelete(EObject objectToRemove, InverseReferenceFinder xref) {
             return null;
         }
 
-        public EObject eDelete(EObject objectToRemove, ECrossReferenceAdapter xref, EReferencePredicate isReferenceToIgnorePredicate) {
+        public EObject eDelete(EObject objectToRemove, InverseReferenceFinder xref, EReferencePredicate isReferenceToIgnorePredicate) {
             return null;
         }
         
         @Override
-        public Collection<EObject> eRemoveInverseCrossReferences(EObject eObject, ECrossReferenceAdapter xref, EReferencePredicate isReferencesToIgnorePredicate) {
+        public Collection<EObject> eRemoveInverseCrossReferences(EObject eObject, InverseReferenceFinder xref, EReferencePredicate isReferencesToIgnorePredicate) {
             return Collections.emptyList();
         }
 

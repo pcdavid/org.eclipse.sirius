@@ -24,7 +24,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.gmf.runtime.notation.Diagram;
@@ -70,6 +69,7 @@ import org.eclipse.sirius.diagram.tools.api.command.DiagramCommandFactoryService
 import org.eclipse.sirius.ecore.extender.business.api.accessor.ModelAccessor;
 import org.eclipse.sirius.ext.base.Option;
 import org.eclipse.sirius.ext.base.Options;
+import org.eclipse.sirius.ext.emf.InverseReferenceFinder;
 import org.eclipse.sirius.tools.api.command.CommandContext;
 import org.eclipse.sirius.tools.api.command.DCommand;
 import org.eclipse.sirius.tools.api.command.ui.UICallBack;
@@ -504,7 +504,7 @@ public class DiagramDialectServices extends AbstractRepresentationDialectService
         Set<DDiagramElement> diagramElementsToRefresh = Sets.newHashSet();
         Session session = new EObjectQuery(diagram.getTarget()).getSession();
         if (session != null) {
-            ECrossReferenceAdapter xref = session.getSemanticCrossReferencer();
+            InverseReferenceFinder xref = session.getInverseReferenceFinder();
             // Group the notifications by notifiers
             Map<EObject, List<Notification>> notificationsByNotifer = Maps.newHashMap();
             for (Notification notification : notifications) {
@@ -568,7 +568,7 @@ public class DiagramDialectServices extends AbstractRepresentationDialectService
         return diagramElementsToRefresh;
     }
 
-    private Set<DDiagramElement> getDiagramElementsToRefresh(EObject notifier, DSemanticDiagram diagram, ECrossReferenceAdapter xref) {
+    private Set<DDiagramElement> getDiagramElementsToRefresh(EObject notifier, DSemanticDiagram diagram, InverseReferenceFinder xref) {
         Set<DDiagramElement> diagramElementsToRefresh = Sets.newHashSet();
         Collection<EObject> inverseReferencers = new EObjectQuery(notifier, xref).getInverseReferences(REPRESENTATION_ELEMENTS_INVERSE_REFERENCES);
         for (EObject inverseReferencer : inverseReferencers) {

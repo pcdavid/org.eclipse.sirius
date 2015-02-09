@@ -19,6 +19,7 @@ import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
+import org.eclipse.sirius.ext.emf.InverseReferenceFinder;
 
 /**
  * Specific {@link ECrossReferenceAdapter} which resolve proxy ability can be
@@ -27,7 +28,7 @@ import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
  * 
  * @author <a href="mailto:laurent.fasani@obeo.fr">Laurent Fasani</a>
  */
-public class SiriusCrossReferenceAdapterImpl extends ECrossReferenceAdapter implements SiriusCrossReferenceAdapter {
+public class SiriusCrossReferenceAdapterImpl extends ECrossReferenceAdapter implements SiriusCrossReferenceAdapter, InverseReferenceFinder {
     /**
      * to keep track if the setting targets have been captured yet.
      * 

@@ -46,6 +46,7 @@ import org.eclipse.sirius.diagram.ui.provider.DiagramUIPlugin;
 import org.eclipse.sirius.diagram.ui.provider.Messages;
 import org.eclipse.sirius.diagram.ui.tools.api.util.GMFNotationHelper;
 import org.eclipse.sirius.diagram.ui.tools.internal.preferences.SiriusDiagramUiInternalPreferencesKeys;
+import org.eclipse.sirius.ext.emf.InverseReferenceFinder;
 
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Iterators;
@@ -247,7 +248,7 @@ public class NotationVisibilityUpdater extends ResourceSetListenerImpl {
          * instead of a resource wise one but there isn't right now. The
          * resource wise one is added by the session.
          */
-        final ECrossReferenceAdapter crossReferencer = session.getSemanticCrossReferencer();
+        final InverseReferenceFinder crossReferencer = session.getInverseReferenceFinder();
         List<View> result = new ArrayList<View>();
         if (crossReferencer != null) {
             final Iterator<EStructuralFeature.Setting> it = crossReferencer.getInverseReferences(elem).iterator();
