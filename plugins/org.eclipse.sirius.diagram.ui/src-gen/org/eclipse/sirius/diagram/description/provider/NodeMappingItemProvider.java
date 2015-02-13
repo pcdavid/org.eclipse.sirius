@@ -141,6 +141,7 @@ public class NodeMappingItemProvider extends AbstractNodeMappingItemProvider {
     @Override
     public String getText(Object object) {
         String label = new IdentifiedElementQuery((IdentifiedElement) object).getLabel();
+        label = label + " on " + ((NodeMapping) object).getDomainClass(); // $NON-NLS-1$
         EStructuralFeature eContainingFeature = ((EObject) object).eContainingFeature();
         if (eContainingFeature != null && eContainingFeature.getFeatureID() == org.eclipse.sirius.diagram.description.DescriptionPackage.ABSTRACT_NODE_MAPPING__BORDERED_NODE_MAPPINGS) {
             return MessageFormat.format(Messages.NodeMappingItemProvider_borderedLabel, label);

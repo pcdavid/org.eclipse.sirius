@@ -123,10 +123,11 @@ public class SquareDescriptionItemProvider extends NodeStyleDescriptionItemProvi
     public String getText(Object object) {
 
         String color = new ColorQuery(((SquareDescription) object).getColor()).getLabel();
+        String labelExpression = ((SquareDescription) object).getLabelExpression();
         String label = getString("_UI_SquareDescription_type"); //$NON-NLS-1$
 
         if (color != null) {
-            return label + " " + color; //$NON-NLS-1$
+            return label + " " + labelExpression + " [" + color + "]"; //$NON-NLS-1$ $NON-NLS-2$ $NON-NLS-3$
         } else {
             return label;
         }
