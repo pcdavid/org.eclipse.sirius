@@ -26,26 +26,13 @@ import org.eclipse.sirius.diagram.ui.graphical.edit.part.specific.BracketEdgeEdi
 import org.eclipse.sirius.diagram.ui.graphical.edit.policies.BracketResizableShapeLabelEditPolicy;
 import org.eclipse.sirius.diagram.ui.part.SiriusVisualIDRegistry;
 
-/**
- * @was-generated NOT
- */
 public class DEdgeNameEditPart extends AbstractDEdgeNameEditPart {
-
-    /**
-     * @was-generated
-     */
     public static final int VISUAL_ID = 6001;
 
-    /**
-     * @not-generated
-     */
     static {
         registerSnapBackPosition(SiriusVisualIDRegistry.getType(org.eclipse.sirius.diagram.ui.internal.edit.parts.DEdgeNameEditPart.VISUAL_ID), new Point(0, -10));
     }
 
-    /**
-     * @was-generated
-     */
     public DEdgeNameEditPart(View view) {
         super(view);
     }
@@ -102,9 +89,7 @@ public class DEdgeNameEditPart extends AbstractDEdgeNameEditPart {
                 getKeyPoint()));
     }
 
-    /**
-     * @was-generated
-     */
+    @Override
     public int getKeyPoint() {
         return ConnectionLocator.MIDDLE;
     }

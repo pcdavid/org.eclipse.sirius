@@ -25,12 +25,7 @@ import org.eclipse.sirius.diagram.ui.tools.internal.ui.NoCopyDragEditPartsTracke
  * @author <a href="mailto:alex.lagarde@obeo.fr">Alex Lagarde</a>
  */
 public class NonResizableAndNonDuplicableEditPolicy extends NonResizableEditPolicy {
-
-    /**
-     * {@inheritDoc}
-     * 
-     * @see org.eclipse.gef.editpolicies.NonResizableEditPolicy#createSelectionHandles()
-     */
+    @SuppressWarnings("rawtypes")
     @Override
     protected List createSelectionHandles() {
         List selectionHandles = super.createSelectionHandles();

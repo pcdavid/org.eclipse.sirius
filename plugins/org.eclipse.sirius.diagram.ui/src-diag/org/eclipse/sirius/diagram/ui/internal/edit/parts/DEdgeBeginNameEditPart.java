@@ -18,33 +18,17 @@ import org.eclipse.gef.EditPolicy;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.sirius.diagram.ui.part.SiriusVisualIDRegistry;
 
-/**
- * @was-generated
- */
 public class DEdgeBeginNameEditPart extends AbstractDEdgeNameEditPart {
-
-    /**
-     * @was-generated
-     */
     public static final int VISUAL_ID = 6002;
 
-    /**
-     * @not-generated
-     */
     static {
         registerSnapBackPosition(SiriusVisualIDRegistry.getType(org.eclipse.sirius.diagram.ui.internal.edit.parts.DEdgeBeginNameEditPart.VISUAL_ID), new Point(0, 10));
     }
 
-    /**
-     * @was-generated
-     */
     public DEdgeBeginNameEditPart(View view) {
         super(view);
     }
 
-    /**
-     * @was-generated
-     */
     public int getKeyPoint() {
         return ConnectionLocator.TARGET;
     }
@@ -59,5 +43,4 @@ public class DEdgeBeginNameEditPart extends AbstractDEdgeNameEditPart {
     protected boolean isDirectEditEnabled() {
         return false;
     }
-
 }
