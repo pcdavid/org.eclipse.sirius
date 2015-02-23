@@ -16,10 +16,16 @@ import java.util.Set;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.EStructuralFeature.Setting;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.sirius.common.tools.api.util.LazyCrossReferencer;
 
 import com.google.common.collect.Iterables;
+
+import com.google.common.collect.Sets;
 
 /**
  * A LazyCrossReferencer for the session.
@@ -59,5 +65,26 @@ public class SessionLazyCrossReferencer extends LazyCrossReferencer {
                 adapters.add(this);
             }
         }
+    }
+    
+    @Override
+    public Collection<Setting> getInverseReferences(EObject object, boolean resolve) {
+        Collection<Setting> result = super.getInverseReferences(object, resolve);
+        if (object != null) {
+            EClass klass = object.eClass();
+            // CHECKSTYLE:OFF
+            StringBuilder trace = new StringBuilder("### getInverseReferences(").append(klass.getEPackage().getName()).append(".").append(klass.getName()).append("): ");
+            Set<EStructuralFeature> features = Sets.newHashSet();
+            for (Setting setting : result) {
+                features.add(setting.getEStructuralFeature());
+            }
+            for (EStructuralFeature esf : features) {
+                klass = esf.getEContainingClass();
+                trace.append(klass.getEPackage().getName()).append(".").append(klass.getName()).append("::").append(esf.getName()).append(" ");
+            }
+            System.out.println(trace);
+            // CHECKSTYLE:ON
+        }
+        return result;
     }
 }
