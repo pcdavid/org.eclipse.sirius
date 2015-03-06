@@ -114,8 +114,22 @@ import com.google.common.collect.Sets;
  * @author cbrun
  */
 public class DAnalysisSessionImpl extends DAnalysisSessionEObjectImpl implements Session, DAnalysisSession, ResourceSyncClient {
-    /** The custom saving policy the session should use. */
-    private SavingPolicy savingPolicy;
+    /**
+     * Holder for all user-configurable settings and policies.
+     */
+    private static final class Configuration {
+        /** The custom saving policy the session should use. */
+        SavingPolicy savingPolicy;
+
+        /** Determines how to react to external changes. */
+        ReloadingPolicy reloadingPolicy;
+
+        boolean disposeEditingDomainOnClose = true;
+
+        IResourceCollector currentResourceCollector;
+    }
+
+    private final Configuration config = new Configuration();
 
     /** The {@link TransactionalEditingDomain} associated to this Session. */
     private TransactionalEditingDomain transactionalEditingDomain;
@@ -128,13 +142,7 @@ public class DAnalysisSessionImpl extends DAnalysisSessionEObjectImpl implements
 
     private SessionResourcesTracker tracker = new SessionResourcesTracker(this);
 
-    // Session's configuration
-
     private final Saver saver;
-
-    private ReloadingPolicy reloadingPolicy;
-
-    private IResourceCollector currentResourceCollector;
 
     private SessionVSMUpdater vsmUpdater = new SessionVSMUpdater(this);
 
@@ -517,8 +525,8 @@ public class DAnalysisSessionImpl extends DAnalysisSessionEObjectImpl implements
      */
     protected Collection<Resource> collectAllReferencedResources(Resource res) {
         Collection<Resource> result = Collections.emptyList();
-        if (currentResourceCollector != null) {
-            result = currentResourceCollector.getAllReferencedResources(res);
+        if (config.currentResourceCollector != null) {
+            result = config.currentResourceCollector.getAllReferencedResources(res);
         }
         return result;
     }
@@ -534,8 +542,8 @@ public class DAnalysisSessionImpl extends DAnalysisSessionEObjectImpl implements
      */
     protected Collection<Resource> collectAllReferencingResources(Resource res) {
         Collection<Resource> result = Collections.emptyList();
-        if (currentResourceCollector != null) {
-            result = currentResourceCollector.getAllReferencingResources(res);
+        if (config.currentResourceCollector != null) {
+            result = config.currentResourceCollector.getAllReferencingResources(res);
         }
         return result;
     }
@@ -859,17 +867,17 @@ public class DAnalysisSessionImpl extends DAnalysisSessionEObjectImpl implements
 
     @Override
     public void setReloadingPolicy(ReloadingPolicy reloadingPolicy) {
-        this.reloadingPolicy = reloadingPolicy;
+        this.config.reloadingPolicy = reloadingPolicy;
     }
 
     @Override
     public ReloadingPolicy getReloadingPolicy() {
-        return reloadingPolicy != null ? reloadingPolicy : new ReloadingPolicyImpl(new NoUICallback());
+        return config.reloadingPolicy != null ? config.reloadingPolicy : new ReloadingPolicyImpl(new NoUICallback());
     }
 
     @Override
     public void setSavingPolicy(SavingPolicy savingPolicy) {
-        this.savingPolicy = savingPolicy;
+        this.config.savingPolicy = savingPolicy;
     }
 
     /**
@@ -882,7 +890,7 @@ public class DAnalysisSessionImpl extends DAnalysisSessionEObjectImpl implements
      */
     @Override
     public SavingPolicy getSavingPolicy() {
-        return savingPolicy != null ? savingPolicy : new IsModifiedSavingPolicy(transactionalEditingDomain);
+        return config.savingPolicy != null ? config.savingPolicy : new IsModifiedSavingPolicy(transactionalEditingDomain);
     }
 
     /**
@@ -1066,7 +1074,7 @@ public class DAnalysisSessionImpl extends DAnalysisSessionEObjectImpl implements
     }
 
     public void setResourceCollector(IResourceCollector collector) {
-        this.currentResourceCollector = collector;
+        this.config.currentResourceCollector = collector;
     }
 
     // *******************
@@ -1194,8 +1202,8 @@ public class DAnalysisSessionImpl extends DAnalysisSessionEObjectImpl implements
             removeListener(getRefreshEditorsListener());
         }
         refreshEditorsListeners = null;
-        reloadingPolicy = null;
-        savingPolicy = null;
+        config.reloadingPolicy = null;
+        config.savingPolicy = null;
         if (interpreter != null) {
             interpreter.dispose();
         }
@@ -1212,9 +1220,9 @@ public class DAnalysisSessionImpl extends DAnalysisSessionEObjectImpl implements
          */
         ResourceSet resourceSet = getTransactionalEditingDomain().getResourceSet();
 
-        if (currentResourceCollector != null) {
-            currentResourceCollector.dispose();
-            currentResourceCollector = null;
+        if (config.currentResourceCollector != null) {
+            config.currentResourceCollector.dispose();
+            config.currentResourceCollector = null;
         }
         interpreter = null;
         if (representationNameListener != null) {
