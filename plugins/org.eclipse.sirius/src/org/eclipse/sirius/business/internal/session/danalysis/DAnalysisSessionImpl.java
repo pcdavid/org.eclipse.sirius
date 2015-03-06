@@ -18,6 +18,7 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
@@ -117,16 +118,26 @@ public class DAnalysisSessionImpl extends DAnalysisSessionEObjectImpl implements
     /**
      * Holder for all user-configurable settings and policies.
      */
-    private static final class Configuration {
+    @SuppressWarnings("serial")
+    private static final class Configuration extends ConcurrentHashMap<String, Object> {
         /** The custom saving policy the session should use. */
-        SavingPolicy savingPolicy;
+        public static final String OPTION_SAVING_POLICY = "SIRIUS_OPTION_SAVING_POLICY";
 
         /** Determines how to react to external changes. */
-        ReloadingPolicy reloadingPolicy;
+        public static final String OPTION_RELOADING_POLICY = "SIRIUS_OPTION_RELOADING_POLICY";
 
-        boolean disposeEditingDomainOnClose = true;
+        public static final String OPTION_DISPOSE_EDITING_DOMAIN_ON_CLOSE = "SIRIUS_OPTION_DISPOSE_EDITING_DOMAIN_ON_CLOSE";
 
-        IResourceCollector currentResourceCollector;
+        public static final String OPTION_RESOURCE_COLLECTOR = "SIRIUS_OPTION_RESOURCE_COLLECTOR";
+
+        public <T> T getOption(String key, Class<T> expectedType) {
+            Object value = get(key);
+            if (expectedType.isInstance(value)) {
+                return expectedType.cast(value);
+            } else {
+                return null;
+            }
+        }
     }
 
     private final Configuration config = new Configuration();
@@ -525,8 +536,9 @@ public class DAnalysisSessionImpl extends DAnalysisSessionEObjectImpl implements
      */
     protected Collection<Resource> collectAllReferencedResources(Resource res) {
         Collection<Resource> result = Collections.emptyList();
-        if (config.currentResourceCollector != null) {
-            result = config.currentResourceCollector.getAllReferencedResources(res);
+        IResourceCollector collector = config.getOption(Configuration.OPTION_RESOURCE_COLLECTOR, IResourceCollector.class);
+        if (collector != null) {
+            result = collector.getAllReferencedResources(res);
         }
         return result;
     }
@@ -542,8 +554,9 @@ public class DAnalysisSessionImpl extends DAnalysisSessionEObjectImpl implements
      */
     protected Collection<Resource> collectAllReferencingResources(Resource res) {
         Collection<Resource> result = Collections.emptyList();
-        if (config.currentResourceCollector != null) {
-            result = config.currentResourceCollector.getAllReferencingResources(res);
+        IResourceCollector collector = config.getOption(Configuration.OPTION_RESOURCE_COLLECTOR, IResourceCollector.class);
+        if (collector != null) {
+            result = collector.getAllReferencingResources(res);
         }
         return result;
     }
@@ -867,17 +880,18 @@ public class DAnalysisSessionImpl extends DAnalysisSessionEObjectImpl implements
 
     @Override
     public void setReloadingPolicy(ReloadingPolicy reloadingPolicy) {
-        this.config.reloadingPolicy = reloadingPolicy;
+        this.config.put(Configuration.OPTION_RELOADING_POLICY, reloadingPolicy);
     }
 
     @Override
     public ReloadingPolicy getReloadingPolicy() {
-        return config.reloadingPolicy != null ? config.reloadingPolicy : new ReloadingPolicyImpl(new NoUICallback());
+        ReloadingPolicy result = config.getOption(Configuration.OPTION_RELOADING_POLICY, ReloadingPolicy.class);
+        return result != null ? result : new ReloadingPolicyImpl(new NoUICallback());
     }
 
     @Override
     public void setSavingPolicy(SavingPolicy savingPolicy) {
-        this.config.savingPolicy = savingPolicy;
+        this.config.put(Configuration.OPTION_SAVING_POLICY, savingPolicy);
     }
 
     /**
@@ -890,7 +904,8 @@ public class DAnalysisSessionImpl extends DAnalysisSessionEObjectImpl implements
      */
     @Override
     public SavingPolicy getSavingPolicy() {
-        return config.savingPolicy != null ? config.savingPolicy : new IsModifiedSavingPolicy(transactionalEditingDomain);
+        SavingPolicy result = config.getOption(Configuration.OPTION_SAVING_POLICY, SavingPolicy.class);
+        return result != null ? result : new IsModifiedSavingPolicy(transactionalEditingDomain);
     }
 
     /**
@@ -1066,6 +1081,7 @@ public class DAnalysisSessionImpl extends DAnalysisSessionEObjectImpl implements
     // Session Configuration
     // *******************
 
+        return result == null ? false : result.booleanValue();
     @Override
     public void setAnalysisSelector(final DAnalysisSelector selector) {
         if (this.getServices() instanceof DAnalysisSessionService) {
@@ -1073,8 +1089,14 @@ public class DAnalysisSessionImpl extends DAnalysisSessionEObjectImpl implements
         }
     }
 
+    /**
+     * Set the implementation of IResourceCollector to use.
+     * 
+     * @param collector
+     *            the collector to use in this session.
+     */
     public void setResourceCollector(IResourceCollector collector) {
-        this.config.currentResourceCollector = collector;
+        this.config.put(Configuration.OPTION_RESOURCE_COLLECTOR, collector);
     }
 
     // *******************
@@ -1202,8 +1224,6 @@ public class DAnalysisSessionImpl extends DAnalysisSessionEObjectImpl implements
             removeListener(getRefreshEditorsListener());
         }
         refreshEditorsListeners = null;
-        config.reloadingPolicy = null;
-        config.savingPolicy = null;
         if (interpreter != null) {
             interpreter.dispose();
         }
@@ -1220,9 +1240,9 @@ public class DAnalysisSessionImpl extends DAnalysisSessionEObjectImpl implements
          */
         ResourceSet resourceSet = getTransactionalEditingDomain().getResourceSet();
 
-        if (config.currentResourceCollector != null) {
-            config.currentResourceCollector.dispose();
-            config.currentResourceCollector = null;
+        IResourceCollector collector = config.getOption(Configuration.OPTION_RESOURCE_COLLECTOR, IResourceCollector.class);
+        if (collector != null) {
+            collector.dispose();
         }
         interpreter = null;
         if (representationNameListener != null) {
@@ -1258,6 +1278,7 @@ public class DAnalysisSessionImpl extends DAnalysisSessionEObjectImpl implements
         doDisposePermissionAuthority(resourceSet);
         transactionalEditingDomain = null;
         getActivatedViewpoints().clear();
+        config.clear();
         services = null;
         sessionResource = null;
         mainDAnalysis = null;
