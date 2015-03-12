@@ -27,16 +27,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="description" lowerBound="1"
         eType="#//description/FeatureExtensionDescription"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DStylizable" abstract="true" interface="true">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="An element that has a style."/>
-    </eAnnotations>
-    <eOperations name="getStyle" eType="#//Style">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Return the style of the element."/>
-      </eAnnotations>
-    </eOperations>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DRefreshable" abstract="true" interface="true">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="An element that can be refreshed."/>
@@ -122,7 +112,11 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DRepresentationElement" abstract="true"
       eSuperTypes="#//DMappingBased #//DStylizable #//DRefreshable #//DSemanticDecorator">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+    <eOperations name="getStyle" eType="#//Style">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Return the style of the element."/>
+      </eAnnotations>
+    </eOperations>
         defaultValueLiteral="">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The name of the element. It is the name that is displayed on the diagram."/>
