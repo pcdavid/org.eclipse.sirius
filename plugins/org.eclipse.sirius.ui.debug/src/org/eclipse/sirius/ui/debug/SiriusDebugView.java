@@ -19,6 +19,7 @@ import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -37,9 +38,12 @@ import org.eclipse.core.commands.operations.IUndoContext;
 import org.eclipse.core.commands.operations.IUndoableOperation;
 import org.eclipse.core.commands.operations.OperationHistoryFactory;
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.Adapters;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.draw2d.Bendpoint;
 import org.eclipse.draw2d.Connection;
@@ -92,6 +96,7 @@ import org.eclipse.gmf.runtime.notation.datatype.RelativeBendpoint;
 import org.eclipse.jface.dialogs.ProgressMonitorDialog;
 import org.eclipse.jface.operation.IRunnableWithProgress;
 import org.eclipse.sirius.business.api.dialect.DialectManager;
+import org.eclipse.sirius.business.api.modelingproject.ModelingProject;
 import org.eclipse.sirius.business.api.query.EObjectQuery;
 import org.eclipse.sirius.business.api.query.SiriusReferenceFinder;
 import org.eclipse.sirius.business.api.session.Session;
@@ -510,6 +515,82 @@ public class SiriusDebugView extends AbstractDebugView {
         addEMFResourcesStatisticsAction();
         addVSMStatisticsAction();
         addShowAdaptersActions();
+        addShowLoadedResourcesAction();
+    }
+
+    private void addShowLoadedResourcesAction() {
+        addAction("Show Loaded Resource", new Runnable() {
+            @Override
+            public void run() {
+                Session session = null;
+                EObject current = getCurrentEObject();
+                if (current != null) {
+                    ResourceSet rs = current.eResource() != null ? current.eResource().getResourceSet() : null;
+                    if (rs != null) {
+                        Collection<Session> sessions = SessionManager.INSTANCE.getSessions();
+                        for (Session currentSession : sessions) {
+                            ResourceSet currentRs = currentSession.getTransactionalEditingDomain().getResourceSet();
+                            if (currentRs.equals(rs)) {
+                                session = currentSession;
+                                break;
+                            }
+                        }
+                    }
+                } else if (selection instanceof IProject) {
+                    session = getSessionFromProject((IProject) selection);
+                } else if (selection instanceof IResource) {
+                    IProject project = ((IResource) selection).getProject();
+                    session = getSessionFromProject(project);
+                }
+
+                if (session != null) {
+                    setText(getSessionDescription(session));
+                } else
+                    setText("session not found");
+            }
+
+            private Session getSessionFromProject(IProject project) {
+                ModelingProject mp = new ModelingProject();
+                mp.setProject(project);
+                URI optionalMainSessionFileURI = mp.getMainRepresentationsFileURI(new NullProgressMonitor(), false, false).get();
+                return SessionManager.INSTANCE.getExistingSession(optionalMainSessionFileURI);
+            }
+
+            private String getSessionDescription(Session s) {
+                StringBuilder sb = new StringBuilder();
+                sb.append("Session is ").append(s.isOpen() ? "OPEN" : "CLOSED").append("\n");
+
+                sb.append("Session.getAllSessionResources()\n");
+                Collection<Resource> allSessionResources = s.getAllSessionResources();
+                appendResourceDescription(sb, allSessionResources);
+
+                sb.append("Session.getSemanticResources()\n");
+                Collection<Resource> semanticResources = s.getSemanticResources();
+                appendResourceDescription(sb, semanticResources);
+
+                sb.append("DAnalysisSessionImpl.getControlledResources()\n");
+                Collection<Resource> controlledSemanticResources = ((DAnalysisSessionImpl) s).getControlledResources();
+                appendResourceDescription(sb, controlledSemanticResources);
+
+                ResourceSet rs = s.getTransactionalEditingDomain().getResourceSet();
+                Collection<Resource> resources = new ArrayList<Resource>(rs.getResources());
+                resources.removeAll(allSessionResources);
+                resources.removeAll(semanticResources);
+                resources.removeAll(controlledSemanticResources);
+                sb.append("Other resources on resourceSet\n");
+                appendResourceDescription(sb, resources);
+
+                return sb.toString();
+            }
+
+            private void appendResourceDescription(StringBuilder sb, Collection<Resource> resources) {
+                for (Resource res : resources) {
+                    EList<EObject> contents = res.getContents();
+                    sb.append(" * ").append(res.getURI().toString()).append(res.isLoaded() ? " loaded" : " not loaded").append(contents != null && !contents.isEmpty() ? ", not empty" : ", empty")
+                            .append("\n");
+                }
+            }
+        });
     }
 
     private void addShowAdaptersActions() {
