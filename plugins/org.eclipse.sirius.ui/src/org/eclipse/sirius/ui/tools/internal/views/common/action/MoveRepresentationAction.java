@@ -16,7 +16,9 @@ import java.util.Collection;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.sirius.business.api.dialect.DialectManager;
 import org.eclipse.sirius.business.api.dialect.command.MoveRepresentationCommand;
+import org.eclipse.sirius.business.api.query.RepresentationDescriptionQuery;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.danalysis.DAnalysisSessionHelper;
 import org.eclipse.sirius.ecore.extender.business.api.permission.IPermissionAuthority;
@@ -27,6 +29,8 @@ import org.eclipse.sirius.viewpoint.DAnalysis;
 import org.eclipse.sirius.viewpoint.DRepresentation;
 import org.eclipse.sirius.viewpoint.DRepresentationContainer;
 import org.eclipse.sirius.viewpoint.provider.Messages;
+import org.eclipse.sirius.viewpoint.DView;
+import org.eclipse.sirius.viewpoint.description.Viewpoint;
 import org.eclipse.sirius.viewpoint.provider.SiriusEditPlugin;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
@@ -111,7 +115,7 @@ public class MoveRepresentationAction extends Action {
 
                 // Step 2: Check target representation container
                 if (!invalid) {
-                    DRepresentationContainer targetContainer = DAnalysisSessionHelper.findContainerForAddedRepresentation(targetAnalysis, input);
+                    DRepresentationContainer targetContainer = findContainerForAddedRepresentation(targetAnalysis, input);
                     if (targetContainer != null) {
                         IPermissionAuthority permissionAuthority = PermissionAuthorityRegistry.getDefault().getPermissionAuthority(targetContainer);
                         if (permissionAuthority != null && !permissionAuthority.canCreateIn(targetContainer)) {
@@ -126,4 +130,30 @@ public class MoveRepresentationAction extends Action {
 
         return !anyInvalidMove;
     }
+    
+    private static DRepresentationContainer findContainerForAddedRepresentation(DAnalysis analysis, final DRepresentation representation) {
+        final Viewpoint viewpoint = new RepresentationDescriptionQuery(DialectManager.INSTANCE.getDescription(representation)).getParentViewpoint();
+        return getContainer(analysis, viewpoint);
+    }
+    
+    /**
+     * Get a representation container for a viewpoint.
+     * 
+     * @param analysis
+     *            the analysis to iterate on
+     * @param viewpoint
+     *            selected viewpoint
+     * @return the first representation container found
+     */
+    private static DRepresentationContainer getContainer(DAnalysis analysis, Viewpoint viewpoint) {
+        DRepresentationContainer result = null;
+        for (final DView view : analysis.getOwnedViews()) {
+            if (view instanceof DRepresentationContainer && viewpoint == view.getViewpoint()) {
+                result = (DRepresentationContainer) view;
+                break;
+            }
+        }
+        return result;
+    }
+
 }

@@ -12,18 +12,14 @@ package org.eclipse.sirius.business.api.session.danalysis;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.sirius.business.api.dialect.DialectManager;
 import org.eclipse.sirius.business.api.query.DAnalysisQuery;
 import org.eclipse.sirius.business.api.query.EObjectQuery;
-import org.eclipse.sirius.business.api.query.RepresentationDescriptionQuery;
 import org.eclipse.sirius.business.api.query.URIQuery;
 import org.eclipse.sirius.business.api.query.ViewpointQuery;
 import org.eclipse.sirius.business.api.resource.ResourceDescriptor;
@@ -56,26 +52,6 @@ public final class DAnalysisSessionHelper {
     }
 
     /**
-     * Add a new analysis resource in the analysis session.
-     * 
-     * @param session
-     *            the analysis session
-     * @param loadedResource
-     *            the analysis resource to add
-     */
-    public static void addNewAnalysisResource(final DAnalysisSession session, final Resource loadedResource) {
-        boolean newAird = true;
-        final Iterator<Resource> iterator = session.getAllSessionResources().iterator();
-        while (newAird && iterator.hasNext()) {
-            final Resource resource = iterator.next();
-            newAird = !resource.getURI().equals(loadedResource.getURI());
-        }
-        if (newAird) {
-            session.addAnalysis(loadedResource);
-        }
-    }
-
-    /**
      * Select an analysis from a viewpoint and added representation.
      * 
      * @param viewpoint
@@ -95,69 +71,6 @@ public final class DAnalysisSessionHelper {
         } else {
             return (DAnalysis) candidates.toArray()[0];
         }
-    }
-
-    /**
-     * Select an analysis from a resource.
-     * 
-     * @param resource
-     *            the resource
-     * @param candidates
-     *            the analysis candidates.
-     * @param analysisSelector
-     *            the analysis selector
-     * @return the selected analysis
-     */
-    public DAnalysis selectAnalysis(final Resource resource, final Collection<DAnalysis> candidates, final DAnalysisSelector analysisSelector) {
-
-        if (candidates.size() > 1 && analysisSelector != null) {
-            return analysisSelector.selectSmartlyAnalysisForAddedResource(resource, candidates);
-        } else {
-            return (DAnalysis) candidates.toArray()[0];
-        }
-    }
-
-    /**
-     * Find an existing container.
-     * 
-     * @param semanticRoot
-     *            the semantic root to match
-     * @param viewpoint
-     *            the viewpoint to match
-     * @param all
-     *            the candidates analysis
-     * @param analysisSelector
-     *            the selector
-     * @return the free container if found or <code>null</code> otherwise.
-     */
-    public static DRepresentationContainer findContainer(final EObject semanticRoot, final Viewpoint viewpoint, final Collection<DAnalysis> all, final DAnalysisSelector analysisSelector) {
-
-        final Collection<DRepresentationContainer> containers = getContainers(all, viewpoint);
-        if (containers.isEmpty()) {
-            return null;
-        }
-
-        final Collection<DAnalysis> candidates = new ArrayList<DAnalysis>();
-        for (final DRepresentationContainer container : containers) {
-            if (container.eContainer() instanceof DAnalysis) {
-                candidates.add((DAnalysis) container.eContainer());
-            }
-        }
-
-        // The first DAnalysis candidates must be the main DAnalysis
-        final DAnalysis analysis = candidates.iterator().next();
-
-        DRepresentationContainer freeContainer = null;
-
-        for (final DRepresentationContainer container : containers) {
-            if (container.eContainer() == analysis) {
-                freeContainer = container;
-                break;
-            }
-        }
-
-        return freeContainer;
-
     }
 
     /**
@@ -213,61 +126,6 @@ public final class DAnalysisSessionHelper {
     }
 
     /**
-     * Find an existing container.
-     * 
-     * @param analysis
-     *            selected analysis
-     * @param representation
-     *            the added representation.
-     * @return the free container if found or <code>null</code> otherwise.
-     */
-    public static DRepresentationContainer findContainerForAddedRepresentation(DAnalysis analysis, final DRepresentation representation) {
-        final Viewpoint viewpoint = new RepresentationDescriptionQuery(DialectManager.INSTANCE.getDescription(representation)).getParentViewpoint();
-        return getContainer(analysis, viewpoint);
-    }
-
-    /**
-     * Find a free container.
-     * 
-     * @param viewpoint
-     *            the viewpoint to match
-     * @param analyses
-     *            the candidates analyses
-     * @param analysisSelector
-     *            the selector
-     * @return the free container if found or <code>null</code> otherwise.
-     * @since 0.9.0
-     */
-    public static DRepresentationContainer findFreeContainer(final Viewpoint viewpoint, final Collection<DAnalysis> analyses, final DAnalysisSelector analysisSelector) {
-
-        final Collection<DRepresentationContainer> views = getContainers(analyses, null);
-        if (views.isEmpty()) {
-            return null;
-        }
-
-        final Collection<DAnalysis> candidates = new ArrayList<DAnalysis>();
-        for (final DRepresentationContainer view : views) {
-            if (view.eContainer() instanceof DAnalysis) {
-                candidates.add((DAnalysis) view.eContainer());
-            }
-        }
-
-        // The first DAnalysis candidates must be the main DAnalysis
-        final DAnalysis analysis = candidates.iterator().next();
-
-        DRepresentationContainer freeView = null;
-
-        for (final DRepresentationContainer view : views) {
-            if (view.eContainer() == analysis) {
-                freeView = view;
-                break;
-            }
-        }
-
-        return freeView;
-    }
-
-    /**
      * Find a free container for added representation.
      * 
      * @param semantic
@@ -309,30 +167,6 @@ public final class DAnalysisSessionHelper {
         }
 
         return freeView;
-    }
-
-    /**
-     * Get the semantic resource associated with this diagram resource.
-     * 
-     * @param diagramResource
-     *            the diagram resource
-     * @return the semantic resource or <code>null</code> if it can not be
-     *         founded.
-     */
-    public static Collection<Resource> getSemanticResource(final Resource diagramResource) {
-        final Collection<Resource> semanticResources = new HashSet<Resource>();
-        if (diagramResource.getContents().size() > 0) {
-            final EObject root = diagramResource.getContents().get(0);
-            if (root instanceof DAnalysis) {
-                for (final EObject model : ((DAnalysis) root).getModels()) {
-                    Resource modelResource = model.eResource();
-                    if (modelResource != null) {
-                        semanticResources.add(modelResource);
-                    }
-                }
-            }
-        }
-        return semanticResources;
     }
 
     /**
