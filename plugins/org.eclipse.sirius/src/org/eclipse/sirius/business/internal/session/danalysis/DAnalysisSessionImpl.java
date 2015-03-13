@@ -840,7 +840,7 @@ public class DAnalysisSessionImpl extends DAnalysisSessionEObjectImpl implements
      * @return true if the specified {@link Resource} is one of the
      *         {@link Session}, false otherwise
      */
-    protected boolean isResourceOfSession(Resource resource, Iterable<Resource> resources) {
+    protected boolean isResourceOfSession(final Resource resource, Iterable<Resource> resources) {
         for (Resource input : resources) {
             if (resource == input || (input.getURI() != null && Objects.equal(resource.getURI(), input.getURI()))) {
                 return true;
