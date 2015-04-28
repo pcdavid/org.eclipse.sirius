@@ -18,7 +18,6 @@ import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.SortedSet;
 import java.util.TreeSet;
 
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -64,7 +63,11 @@ final class DViewOperations {
     }
 
     public Collection<Viewpoint> getSelectedViewpoints(boolean includeReferencedAnalysis) {
-        SortedSet<Viewpoint> result = new TreeSet<Viewpoint>(new ViewpointRegistry.ViewpointComparator());
+        return getSelectedViewpoints(includeReferencedAnalysis, false);
+    }
+
+    public Collection<Viewpoint> getSelectedViewpoints(boolean includeReferencedAnalysis, boolean sorted) {
+        Set<Viewpoint> result = sorted ? new TreeSet<Viewpoint>(new ViewpointRegistry.ViewpointComparator()) : Sets.<Viewpoint> newHashSet();
         Collection<DAnalysis> scope = includeReferencedAnalysis ? session.allAnalyses() : Collections.singleton(session.getMainAnalysis());
         for (DView view : getSelectedViews(scope)) {
             Viewpoint viewpoint = view.getViewpoint();
