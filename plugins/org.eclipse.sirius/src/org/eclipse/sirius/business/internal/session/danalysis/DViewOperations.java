@@ -29,7 +29,6 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.sirius.business.api.componentization.ViewpointRegistry;
 import org.eclipse.sirius.business.api.dialect.DialectManager;
 import org.eclipse.sirius.business.api.extender.MetamodelDescriptorManager;
-import org.eclipse.sirius.business.api.helper.SiriusResourceHelper;
 import org.eclipse.sirius.business.api.query.DAnalysisQuery;
 import org.eclipse.sirius.business.api.session.SessionListener;
 import org.eclipse.sirius.business.internal.metamodel.helper.ComponentizationHelper;
@@ -187,17 +186,14 @@ final class DViewOperations {
 
     public void updateSelectedViewpointsData(IProgressMonitor monitor) {
         try {
-            Set<Viewpoint> selectedViewpoints = Sets.newLinkedHashSet();
-            for (Viewpoint viewpoint : getSelectedViewpoints(false)) {
-                if (viewpoint.eResource() != null) {
-                    selectedViewpoints.add(SiriusResourceHelper.getCorrespondingViewpoint(session, viewpoint));
-                } else {
-                    selectedViewpoints.add(viewpoint);
-                }
-            }
-            SetView<Viewpoint> difference = Sets.difference(Sets.newHashSet(session.getActivatedViewpoints()), Sets.newHashSet(selectedViewpoints));
+            Set<Viewpoint> selectedViewpoints = Sets.newHashSet(getSelectedViewpoints(false));
+            SetView<Viewpoint> difference = Sets.difference(Sets.newHashSet(session.getActivatedViewpoints()), selectedViewpoints);
             monitor.beginTask(Messages.DViewOperations_updateSelectedVPDataMsg, selectedViewpoints.size() + difference.size() + 1);
-            // FIXME : it is useful?
+            /*
+             * Cross-referencing the VSMs is required for the implementation of
+             * EOperations which 'simulate' eOpposites, like
+             * PasteDescriptionSpec.getContainers() for example.
+             */
             for (Viewpoint viewpoint : selectedViewpoints) {
                 Resource viewpointResource = viewpoint.eResource();
                 if (viewpointResource != null) {
@@ -214,10 +210,10 @@ final class DViewOperations {
             }
             session.getActivatedViewpoints().addAll(selectedViewpoints);
             session.getActivatedViewpoints().retainAll(selectedViewpoints);
-            // tell the accessor and the interpreter which metamodels we know
+            // Tell the accessor and the interpreter which metamodels we know
             // of.
             final ModelAccessor accessor = session.getModelAccessor();
-            Collection<MetamodelDescriptor> metamodels = MetamodelDescriptorManager.INSTANCE.provides(getSelectedViewpoints(false));
+            Collection<MetamodelDescriptor> metamodels = MetamodelDescriptorManager.INSTANCE.provides(selectedViewpoints);
             if (accessor != null) {
                 accessor.activateMetamodels(metamodels);
             }
