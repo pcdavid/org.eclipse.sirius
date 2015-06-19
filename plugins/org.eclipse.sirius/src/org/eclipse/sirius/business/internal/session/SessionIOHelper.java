@@ -19,6 +19,8 @@ import org.eclipse.emf.ecore.resource.Resource;
  * @author pcdavid
  */
 public final class SessionIOHelper {
+    private static final LoggingSessionIOHandler DEFAULT_HANDLER = new LoggingSessionIOHandler(new BasicSessionIOHandler());
+
     private SessionIOHelper() {
         // Prevent instanciation.
     }
@@ -33,7 +35,7 @@ public final class SessionIOHelper {
      *         operations on the resource.
      */
     public static SessionIOHandler getHandlerFor(Resource resource) {
-        return new BasicSessionIOHandler();
+        return SessionIOHelper.DEFAULT_HANDLER;
     }
 
 }
