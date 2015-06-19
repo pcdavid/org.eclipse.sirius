@@ -26,6 +26,7 @@ import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
 import org.eclipse.sirius.business.api.session.danalysis.DAnalysisSession;
 import org.eclipse.sirius.business.internal.command.control.UncontrolCommand;
+import org.eclipse.sirius.business.internal.session.SessionIOHelper;
 import org.eclipse.sirius.viewpoint.DAnalysis;
 import org.eclipse.sirius.viewpoint.DRepresentation;
 import org.eclipse.sirius.viewpoint.Messages;
@@ -277,7 +278,7 @@ public class SiriusUncontrolCommand extends UncontrolCommand {
         if (res != null) {
             try {
                 res.save(Collections.emptyMap());
-                res.delete(Collections.emptyMap());
+                SessionIOHelper.getHandlerFor(res).delete(res, Collections.emptyMap());
             } catch (IOException e) {
                 SiriusPlugin.getDefault().error(Messages.SiriusUncontrolCommand_resourceDeletionFailedMsg, e);
             }
