@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+import org.eclipse.sirius.business.internal.session.SessionIOHelper;
 import org.eclipse.sirius.common.acceleo.mtl.business.internal.interpreter.AcceleoMTLInterpreter;
 import org.eclipse.sirius.diagram.BracketEdgeStyle;
 import org.eclipse.sirius.diagram.BundledImage;
@@ -328,7 +329,7 @@ public class DDiagramElementSynchronizerTest extends TestCase {
 
         // resourceFactory cannot be null
         Resource res = resourceFactory.createResource(uri);
-        res.load(str, Collections.emptyMap());
+        SessionIOHelper.getHandlerFor(res).load(res, str, Collections.emptyMap());
         str.close();
         return res;
     }
