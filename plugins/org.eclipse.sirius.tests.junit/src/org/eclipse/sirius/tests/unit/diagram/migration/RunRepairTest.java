@@ -32,6 +32,7 @@ import org.eclipse.sirius.business.api.repair.SiriusRepairProcess;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
 import org.eclipse.sirius.business.api.session.SessionStatus;
+import org.eclipse.sirius.business.internal.session.SessionIOHelper;
 import org.eclipse.sirius.common.tools.internal.resource.ResourceSyncClientNotifier;
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.DDiagramElementContainer;
@@ -350,7 +351,7 @@ public class RunRepairTest extends AbstractRepairMigrateTest {
         final ResourceSet resourceSet = new ResourceSetImpl();
         final URI uri = URI.createPlatformResourceURI(path, true);
         final Resource resource = ModelUtils.createResource(uri, resourceSet);
-        resource.load(Collections.EMPTY_MAP);
+        SessionIOHelper.getHandlerFor(resource).load(resource, Collections.EMPTY_MAP);
 
         return (List<E>) resource.getContents();
     }

@@ -30,6 +30,7 @@ import org.eclipse.gef.editparts.ZoomManager;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramRootEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramEditor;
+import org.eclipse.sirius.business.internal.session.SessionIOHelper;
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.layoutdata.AbstractLayoutData;
 import org.eclipse.sirius.diagram.layoutdata.tools.api.util.LayoutHelper;
@@ -372,7 +373,7 @@ public class AbstractSiriusLayoutDataManagerForSemanticElementsTest extends Siri
         final ResourceSet resourceSet = new ResourceSetImpl();
         final URI uri = URI.createPlatformPluginURI(path, true);
         final Resource resource = ModelUtils.createResource(uri, resourceSet);
-        resource.load(Collections.EMPTY_MAP);
+        SessionIOHelper.getHandlerFor(resource).load(resource, Collections.EMPTY_MAP);
 
         return resource.getContents();
     }

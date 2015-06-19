@@ -24,6 +24,7 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.business.api.query.ViewpointQuery;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.internal.movida.registry.ViewpointRegistry;
+import org.eclipse.sirius.business.internal.session.SessionIOHelper;
 import org.eclipse.sirius.ext.base.Option;
 import org.eclipse.sirius.ext.base.Options;
 import org.eclipse.sirius.viewpoint.DAnalysis;
@@ -93,7 +94,7 @@ public final class SiriusResourceHelper {
             // editingDomain
             final Resource editingDomainResource = editingDomainResourceSet.getResource(registryViewpoint.eResource().getURI(), true);
             try {
-                editingDomainResource.load(Collections.EMPTY_MAP);
+                SessionIOHelper.getHandlerFor(editingDomainResource).load(editingDomainResource, Collections.EMPTY_MAP);
                 // Search the corresponding viewpoint in the resource of
                 // the editingDomain resourceSet
                 final Viewpoint editingDomainViewpoint = SiriusUtil.findViewpoint(editingDomainResource, registryViewpoint.getName());
@@ -137,7 +138,7 @@ public final class SiriusResourceHelper {
                 continue;
             }
             try {
-                editingDomainResource.load(Collections.EMPTY_MAP);
+                SessionIOHelper.getHandlerFor(editingDomainResource).load(editingDomainResource, Collections.EMPTY_MAP);
                 /* check URI and then viewpoint name */
                 registryViewpointResource = registryViewpoint.eResource();
                 if (SiriusResourceHelper.sameURIs(registryViewpointResource, editingDomainResource)) {
@@ -166,7 +167,7 @@ public final class SiriusResourceHelper {
             }
             final Resource editingDomainResource = domain.getResourceSet().getResource(registryViewpointResource.getURI(), true);
             try {
-                editingDomainResource.load(Collections.EMPTY_MAP);
+                SessionIOHelper.getHandlerFor(editingDomainResource).load(editingDomainResource, Collections.EMPTY_MAP);
                 /*
                  * Search the corresponding viewpoint in the resource of the
                  * editingDomain resourceSet

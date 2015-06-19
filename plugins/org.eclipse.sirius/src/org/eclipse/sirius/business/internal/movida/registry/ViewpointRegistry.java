@@ -46,6 +46,7 @@ import org.eclipse.sirius.business.internal.movida.registry.monitoring.PluginMon
 import org.eclipse.sirius.business.internal.movida.registry.monitoring.ViewpointResourceListener;
 import org.eclipse.sirius.business.internal.movida.registry.monitoring.ViewpointResourceMonitor;
 import org.eclipse.sirius.business.internal.movida.registry.monitoring.WorkspaceMonitor;
+import org.eclipse.sirius.business.internal.session.SessionIOHelper;
 import org.eclipse.sirius.common.tools.api.util.EclipseUtil;
 import org.eclipse.sirius.ext.base.Option;
 import org.eclipse.sirius.ext.base.Options;
@@ -452,7 +453,7 @@ public class ViewpointRegistry extends org.eclipse.sirius.business.api.component
     private void ensureLoaded(Resource unmasked) {
         if (!unmasked.isLoaded()) {
             try {
-                unmasked.load(Collections.emptyMap());
+                SessionIOHelper.getHandlerFor(unmasked).load(unmasked, Collections.emptyMap());
             } catch (IOException e) {
                 warning(MessageFormat.format("Unable to load the VSM at {0}", unmasked.getURI()), e); //$NON-NLS-1$
             }

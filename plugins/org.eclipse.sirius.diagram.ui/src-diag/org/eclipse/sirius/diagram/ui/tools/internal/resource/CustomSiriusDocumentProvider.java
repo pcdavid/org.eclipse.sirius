@@ -40,6 +40,7 @@ import org.eclipse.jface.operation.IRunnableContext;
 import org.eclipse.sirius.business.api.dialect.DialectManager;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionStatus;
+import org.eclipse.sirius.business.internal.session.SessionIOHelper;
 import org.eclipse.sirius.common.tools.DslCommonPlugin;
 import org.eclipse.sirius.common.tools.api.resource.ResourceLoaderListener;
 import org.eclipse.sirius.common.tools.api.resource.ResourceTools;
@@ -186,7 +187,7 @@ public class CustomSiriusDocumentProvider extends AbstractDocumentProvider imple
                     // options.put(org.eclipse.emf.ecore.xmi.XMLResource.
                     // OPTION_RECORD_UNKNOWN_FEATURE,
                     // Boolean.TRUE);
-                    resource.load(options);
+                    SessionIOHelper.getHandlerFor(resource).load(resource, options);
                 } catch (final IOException e) {
                     resource.unload();
                     throw e;

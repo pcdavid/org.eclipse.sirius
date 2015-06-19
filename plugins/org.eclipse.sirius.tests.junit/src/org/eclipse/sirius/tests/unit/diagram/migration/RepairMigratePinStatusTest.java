@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.sirius.business.internal.session.SessionIOHelper;
 import org.eclipse.sirius.diagram.DNodeList;
 import org.eclipse.sirius.diagram.tools.api.layout.PinHelper;
 import org.eclipse.sirius.ecore.extender.tool.api.ModelUtils;
@@ -110,7 +111,7 @@ public class RepairMigratePinStatusTest extends AbstractRepairMigrateTest {
         final ResourceSet resourceSet = new ResourceSetImpl();
         final URI uri = URI.createPlatformResourceURI(path, true);
         final Resource resource = ModelUtils.createResource(uri, resourceSet);
-        resource.load(Collections.EMPTY_MAP);
+        SessionIOHelper.getHandlerFor(resource).load(resource, Collections.EMPTY_MAP);
 
         return (List<E>) resource.getContents();
     }

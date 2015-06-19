@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMLParserPoolImpl;
 import org.eclipse.sirius.business.internal.resource.parser.XMIModelFileSaxParser;
 import org.eclipse.sirius.viewpoint.Messages;
+import org.eclipse.sirius.business.internal.session.SessionIOHelper;
 import org.eclipse.sirius.viewpoint.SiriusPlugin;
 
 import com.google.common.base.Preconditions;
@@ -68,7 +69,7 @@ public class LoadEMFResource implements Runnable {
                     // changed, unload it before reload.
                     unload();
                 }
-                res.load(getOptions());
+                SessionIOHelper.getHandlerFor(res).load(res, getOptions());
             }
             // CHECKSTYLE:OFF
         } catch (final RuntimeException e) {

@@ -22,6 +22,7 @@ import org.eclipse.sirius.business.api.componentization.ViewpointRegistryListene
 import org.eclipse.sirius.business.api.helper.SiriusUtil;
 import org.eclipse.sirius.business.api.session.SessionListener;
 import org.eclipse.sirius.business.internal.migration.resource.ResourceFileExtensionPredicate;
+import org.eclipse.sirius.business.internal.session.SessionIOHelper;
 import org.eclipse.sirius.tools.api.interpreter.InterpreterRegistry;
 import org.eclipse.sirius.viewpoint.Messages;
 import org.eclipse.sirius.viewpoint.SiriusPlugin;
@@ -62,7 +63,7 @@ public class SessionVSMUpdater implements ViewpointRegistryListener2 {
             IFile correspondingFile = WorkspaceSynchronizer.getFile(res);
             if (!res.isLoaded() && correspondingFile != null && correspondingFile.exists()) {
                 try {
-                    res.load(Collections.emptyMap());
+                    SessionIOHelper.getHandlerFor(res).load(res, Collections.emptyMap());
                     if (res.isLoaded() && !res.getContents().isEmpty()) {
                         session.registerResourceInCrossReferencer(res);
                         // Refresh the imports of interpreter in case of new

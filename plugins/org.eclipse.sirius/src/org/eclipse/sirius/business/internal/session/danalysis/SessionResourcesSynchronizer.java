@@ -31,6 +31,7 @@ import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
 import org.eclipse.sirius.business.api.query.ResourceQuery;
 import org.eclipse.sirius.business.api.session.ReloadingPolicy.Action;
 import org.eclipse.sirius.business.api.session.SessionListener;
+import org.eclipse.sirius.business.internal.session.SessionIOHelper;
 import org.eclipse.sirius.common.tools.api.resource.ResourceSetSync;
 import org.eclipse.sirius.common.tools.api.resource.ResourceSetSync.ResourceStatus;
 import org.eclipse.sirius.common.tools.api.resource.ResourceSyncClient;
@@ -197,7 +198,7 @@ public class SessionResourcesSynchronizer implements ResourceSyncClient {
                 resource.unload();
                 session.enableCrossReferencerResolve(resource);
                 try {
-                    resource.load(Collections.EMPTY_MAP);
+                    SessionIOHelper.getHandlerFor(resource).load(resource, Collections.EMPTY_MAP);
                     EcoreUtil.resolveAll(resource);
                     session.getSemanticCrossReferencer().resolveProxyCrossReferences(resource);
                 } catch (IOException e) {

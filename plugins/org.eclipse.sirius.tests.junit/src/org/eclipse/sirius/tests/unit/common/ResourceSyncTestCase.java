@@ -31,6 +31,7 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.impl.InternalTransactionalEditingDomain;
 import org.eclipse.emf.transaction.impl.TransactionalEditingDomainImpl;
 import org.eclipse.sirius.business.internal.resource.ResourceModifiedFieldUpdater;
+import org.eclipse.sirius.business.internal.session.SessionIOHelper;
 import org.eclipse.sirius.common.tools.api.resource.ResourceSetSync;
 import org.eclipse.sirius.common.tools.api.resource.ResourceSetSync.ResourceStatus;
 import org.eclipse.ui.PlatformUI;
@@ -120,7 +121,7 @@ public class ResourceSyncTestCase extends TestCase {
 
         assertTrue("Nothing is done, we should be read only.", ResourceSetSync.isReadOnly(ecoreRes));
 
-        ecoreRes.load(Collections.EMPTY_MAP);
+        SessionIOHelper.getHandlerFor(ecoreRes).load(ecoreRes, Collections.EMPTY_MAP);
 
         assertTrue("Now we should not be dirty because of a loading.", ResourceSetSync.isReadOnly(ecoreRes));
     }

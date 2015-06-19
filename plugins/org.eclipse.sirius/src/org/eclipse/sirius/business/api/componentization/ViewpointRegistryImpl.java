@@ -45,6 +45,7 @@ import org.eclipse.sirius.business.api.helper.SiriusUtil;
 import org.eclipse.sirius.business.api.query.RepresentationDescriptionQuery;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
+import org.eclipse.sirius.business.internal.session.SessionIOHelper;
 import org.eclipse.sirius.common.tools.DslCommonPlugin;
 import org.eclipse.sirius.common.tools.api.util.EclipseUtil;
 import org.eclipse.sirius.common.tools.api.util.EqualityHelper;
@@ -640,7 +641,7 @@ public class ViewpointRegistryImpl extends ViewpointRegistry {
     /* CHECKSTYLE:OFF -> this method may throw runtime exception */
     private EObject load(final URI fileURI, final ResourceSet set) throws IOException, WrappedException, RuntimeException {
         final Resource loaded = set.getResource(fileURI, true);
-        loaded.load(Collections.EMPTY_MAP);
+        SessionIOHelper.getHandlerFor(loaded).load(loaded, Collections.EMPTY_MAP);
         return loaded.getContents().get(0);
         /* CHECKSTYLE:ON */
     }

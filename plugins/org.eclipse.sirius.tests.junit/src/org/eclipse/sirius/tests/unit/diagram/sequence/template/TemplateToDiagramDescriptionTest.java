@@ -19,6 +19,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
+import org.eclipse.sirius.business.internal.session.SessionIOHelper;
 import org.eclipse.sirius.diagram.description.DescriptionFactory;
 import org.eclipse.sirius.diagram.description.DescriptionPackage;
 import org.eclipse.sirius.diagram.sequence.business.internal.query.SequenceDiagramDescriptionQuery;
@@ -232,7 +233,7 @@ public class TemplateToDiagramDescriptionTest extends TestCase {
 
     private TSequenceDiagram loadTemplate(String path) throws IOException {
         Resource res = new XMIResourceImpl(URI.createPlatformPluginURI("/" + SiriusTestsPlugin.PLUGIN_ID + path, true));
-        res.load(Collections.EMPTY_MAP);
+        SessionIOHelper.getHandlerFor(res).load(res, Collections.EMPTY_MAP);
         return (TSequenceDiagram) res.getContents().get(0);
     }
 }
