@@ -57,7 +57,7 @@ public class SessionVSMUpdater implements ViewpointRegistryListener2 {
             // Unload emtpy odesign.
             if (!res.isModified() && res.isLoaded() && res.getContents().isEmpty()) {
                 session.unregisterResourceInCrossReferencer(res);
-                res.unload();
+                SessionIOHelper.getHandlerFor(res).unload(res);
             }
             // Reload unloaded odesign (ViewpointRegistry can unload them).
             IFile correspondingFile = WorkspaceSynchronizer.getFile(res);

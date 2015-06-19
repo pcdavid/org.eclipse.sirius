@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.sirius.business.internal.movida.registry.ViewpointRegistry;
 import org.eclipse.sirius.business.internal.movida.registry.ViewpointRegistryListener;
+import org.eclipse.sirius.business.internal.session.SessionIOHelper;
 import org.eclipse.sirius.ext.base.Option;
 
 import com.google.common.base.Joiner;
@@ -200,7 +201,7 @@ public class DynamicVSMLoader implements ViewpointRegistryListener {
         for (Resource res : resourceSet.getResources()) {
             if (!required.contains(res.getURI()) && res.getURI().isPlatform() && !protectedResources.contains(res.getURI())) {
                 maybeUnneeded.add(res);
-                res.unload();
+                SessionIOHelper.getHandlerFor(res).unload(res);
             }
         }
         return maybeUnneeded;

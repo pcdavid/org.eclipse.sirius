@@ -189,7 +189,7 @@ public class CustomSiriusDocumentProvider extends AbstractDocumentProvider imple
                     // Boolean.TRUE);
                     SessionIOHelper.getHandlerFor(resource).load(resource, options);
                 } catch (final IOException e) {
-                    resource.unload();
+                    SessionIOHelper.getHandlerFor(resource).unload(resource);
                     throw e;
                 }
             }

@@ -30,6 +30,7 @@ import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
 import org.eclipse.sirius.business.api.session.danalysis.DAnalysisSession;
 import org.eclipse.sirius.business.api.session.factory.SessionFactory;
+import org.eclipse.sirius.business.internal.session.SessionIOHelper;
 import org.eclipse.sirius.diagram.description.DiagramDescription;
 import org.eclipse.sirius.tests.support.api.SiriusDiagramTestCase;
 import org.eclipse.sirius.tests.support.api.TestsUtil;
@@ -384,7 +385,7 @@ public class DAnalysisSessionTests extends SiriusDiagramTestCase {
         final TransactionalEditingDomain domain = session.getTransactionalEditingDomain();
 
         Assert.assertTrue(domain.getResourceSet().getResources().contains(resource));
-        resource.unload();
+        SessionIOHelper.getHandlerFor(resource).unload(resource);
     }
 
     public void testCreateWrongSession() throws Exception {

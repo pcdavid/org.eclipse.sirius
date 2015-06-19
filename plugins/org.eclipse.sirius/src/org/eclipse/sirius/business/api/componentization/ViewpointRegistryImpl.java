@@ -612,7 +612,7 @@ public class ViewpointRegistryImpl extends ViewpointRegistry {
                  */
             }
             try {
-                resource.unload();
+                SessionIOHelper.getHandlerFor(resource).unload(resource);
             } catch (final IllegalArgumentException e) {
                 SiriusPlugin.getDefault().error(MessageFormat.format(Messages.ViewpointRegistryImpl_unableToUnloadFileErrorMsg, resource.getURI().toString()), e);
             } catch (final NullPointerException e) {
@@ -852,7 +852,7 @@ public class ViewpointRegistryImpl extends ViewpointRegistry {
                 final URI resourceURI = resource.getURI();
                 if (resourceURI != null) {
                     if (resourceURI.toPlatformString(true) != null && resourceURI.toPlatformString(true).equals(odesignFile.getFullPath().toString())) {
-                        resource.unload();
+                        SessionIOHelper.getHandlerFor(resource).unload(resource);
                         if (remove) {
                             sessionResourceSet.getResources().remove(resource);
                         }

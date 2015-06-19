@@ -97,7 +97,7 @@ public class LoadEMFResource implements Runnable {
 
     private void unload() {
         if (res != null) {
-            res.unload();
+            SessionIOHelper.getHandlerFor(res).unload(res);
             set.getResources().remove(res);
             res = null;
         }

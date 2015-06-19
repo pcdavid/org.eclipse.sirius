@@ -58,6 +58,7 @@ import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
 import org.eclipse.sirius.business.api.session.danalysis.DAnalysisSession;
 import org.eclipse.sirius.business.api.session.factory.SessionFactory;
+import org.eclipse.sirius.business.internal.session.SessionIOHelper;
 import org.eclipse.sirius.business.internal.session.danalysis.DAnalysisSessionImpl;
 import org.eclipse.sirius.common.tools.DslCommonPlugin;
 import org.eclipse.sirius.common.tools.api.listener.NotificationUtil;
@@ -1228,7 +1229,7 @@ public class ProfiledCommandFactory {
                             resources.add(model.eResource());
                         for (Resource resource : resources) {
                             if (resource.isLoaded())
-                                resource.unload();
+                                SessionIOHelper.getHandlerFor(resource).unload(resource);
                         }
                     }
                 });

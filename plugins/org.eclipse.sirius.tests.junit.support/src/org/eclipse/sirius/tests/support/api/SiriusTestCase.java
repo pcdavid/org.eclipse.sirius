@@ -70,6 +70,7 @@ import org.eclipse.sirius.business.internal.migration.RepresentationsFileMigrati
 import org.eclipse.sirius.business.internal.migration.RepresentationsFileVersionSAXParser;
 import org.eclipse.sirius.business.internal.migration.description.VSMMigrationService;
 import org.eclipse.sirius.business.internal.migration.description.VSMVersionSAXParser;
+import org.eclipse.sirius.business.internal.session.SessionIOHelper;
 import org.eclipse.sirius.common.tools.api.interpreter.IInterpreter;
 import org.eclipse.sirius.diagram.DiagramPlugin;
 import org.eclipse.sirius.diagram.tools.api.command.DiagramCommandFactoryService;
@@ -1850,7 +1851,7 @@ public abstract class SiriusTestCase extends TestCase {
             }
 
             for (final Resource resource : Lists.newArrayList(domain.getResourceSet().getResources())) {
-                resource.unload();
+                SessionIOHelper.getHandlerFor(resource).unload(resource);
             }
 
             for (final Group modelerModele : groups) {

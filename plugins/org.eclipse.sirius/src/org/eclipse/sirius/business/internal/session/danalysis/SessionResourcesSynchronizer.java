@@ -195,7 +195,7 @@ public class SessionResourcesSynchronizer implements ResourceSyncClient {
             @Override
             public void run() {
                 session.disableCrossReferencerResolve(resource);
-                resource.unload();
+                SessionIOHelper.getHandlerFor(resource).unload(resource);
                 session.enableCrossReferencerResolve(resource);
                 try {
                     SessionIOHelper.getHandlerFor(resource).load(resource, Collections.EMPTY_MAP);

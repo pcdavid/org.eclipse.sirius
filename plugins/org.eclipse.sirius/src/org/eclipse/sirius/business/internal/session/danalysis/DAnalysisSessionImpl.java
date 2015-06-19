@@ -68,6 +68,7 @@ import org.eclipse.sirius.business.internal.session.IsModifiedSavingPolicy;
 import org.eclipse.sirius.business.internal.session.ReloadingPolicyImpl;
 import org.eclipse.sirius.business.internal.session.RepresentationNameListener;
 import org.eclipse.sirius.business.internal.session.SessionEventBrokerImpl;
+import org.eclipse.sirius.business.internal.session.SessionIOHelper;
 import org.eclipse.sirius.common.tools.DslCommonPlugin;
 import org.eclipse.sirius.common.tools.api.interpreter.IInterpreter;
 import org.eclipse.sirius.common.tools.api.resource.ResourceSetSync;
@@ -558,7 +559,7 @@ public class DAnalysisSessionImpl extends DAnalysisSessionEObjectImpl implements
                     // the resourceSet.
                     // So we must unload it before load it again.
                     // resourceSet.
-                    newSemanticResource.unload();
+                    SessionIOHelper.getHandlerFor(newSemanticResource).unload(newSemanticResource);
                 }
                 monitor.worked(1);
                 // Make ResourceSet aware of resource loading with progress
@@ -677,7 +678,7 @@ public class DAnalysisSessionImpl extends DAnalysisSessionEObjectImpl implements
         unregisterResourceInCrossReferencer(res);
         if (!isFromPackageRegistry(set, res)) {
             disableCrossReferencerResolve(res);
-            res.unload();
+            SessionIOHelper.getHandlerFor(res).unload(res);
             enableCrossReferencerResolve(res);
         }
 
@@ -1233,7 +1234,7 @@ public class DAnalysisSessionImpl extends DAnalysisSessionEObjectImpl implements
         unloadAllResources();
         // To remove remaining resource like environment:/viewpoint
         for (Resource resource : new ArrayList<Resource>(resourceSet.getResources())) {
-            resource.unload();
+            SessionIOHelper.getHandlerFor(resource).unload(resource);
             resourceSet.getResources().remove(resource);
         }
         // Notify that the session is closed.
@@ -1328,14 +1329,14 @@ public class DAnalysisSessionImpl extends DAnalysisSessionEObjectImpl implements
     private void unloadAllResources() {
         ResourceSet rs = transactionalEditingDomain.getResourceSet();
         for (Resource resource : getAllSessionResources()) {
-            resource.unload();
+            SessionIOHelper.getHandlerFor(resource).unload(resource);
             rs.getResources().remove(resource);
         }
         for (Resource res : Iterables.concat(super.getResources(), getSemanticResources(), super.getControlledResources())) {
             // Don't try to unload metamodel resources.
             try {
                 if (!isFromPackageRegistry(rs, res)) {
-                    res.unload();
+                    SessionIOHelper.getHandlerFor(res).unload(res);
                 }
             } catch (final IllegalStateException e) {
                 // we might have an exception unloading a resource already

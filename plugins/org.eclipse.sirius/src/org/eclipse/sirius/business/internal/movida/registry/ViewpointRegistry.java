@@ -433,7 +433,7 @@ public class ViewpointRegistry extends org.eclipse.sirius.business.api.component
                 result = Options.newNone();
             } else if (!vsm.getErrors().isEmpty()) {
                 warning(MessageFormat.format("Errors occured while trying to load the VSM at {0}", uri), null); //$NON-NLS-1$
-                vsm.unload();
+                SessionIOHelper.getHandlerFor(vsm).unload(vsm);
                 resourceSet.getResources().remove(vsm);
                 result = Options.newNone();
             } else {

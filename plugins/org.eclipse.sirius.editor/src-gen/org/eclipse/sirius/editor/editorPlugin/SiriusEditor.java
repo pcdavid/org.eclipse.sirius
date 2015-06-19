@@ -94,6 +94,7 @@ import org.eclipse.jface.viewers.StructuredViewer;
 import org.eclipse.jface.viewers.TreeSelection;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.Viewer;
+import org.eclipse.sirius.business.internal.session.SessionIOHelper;
 import org.eclipse.sirius.editor.properties.ViewpointPropertySheetPage;
 import org.eclipse.sirius.editor.utils.SelectionTreeTextEditor;
 import org.eclipse.sirius.ui.business.api.dialect.DialectUIManager;
@@ -509,7 +510,7 @@ public class SiriusEditor extends MultiPageEditorPart implements IAdapterFactory
             for (Iterator<Resource> i = changedResources.iterator(); i.hasNext();) {
                 Resource resource = i.next();
                 if (resource.isLoaded()) {
-                    resource.unload();
+                    SessionIOHelper.getHandlerFor(resource).unload(resource);
                     beforeReload(resource);
                     try {
                         resource.load(Collections.EMPTY_MAP);

@@ -38,6 +38,7 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.workspace.IWorkspaceCommandStack;
 import org.eclipse.emf.workspace.ResourceUndoContext;
 import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramEditor;
+import org.eclipse.sirius.business.internal.session.SessionIOHelper;
 import org.eclipse.sirius.common.tools.DslCommonPlugin;
 import org.eclipse.sirius.common.tools.api.editing.EditingDomainFactoryService;
 import org.eclipse.sirius.tests.sample.benchmark.BenchmarkFactory;
@@ -289,7 +290,7 @@ public class BenchmarkScenario {
             final Resource resource = resourceSet.createResource(URI.createFileURI(specificBenchmarckTest.getOutputLocation().getAbsolutePath()));
             resource.getContents().add(scenario);
             resource.save(Collections.EMPTY_MAP);
-            resource.unload();
+            SessionIOHelper.getHandlerFor(resource).unload(resource);
         } catch (final IOException e) {
             // TODO Couldn't save results. As it could have been real lengthy, a
             // serialization should be printed out to standard error.

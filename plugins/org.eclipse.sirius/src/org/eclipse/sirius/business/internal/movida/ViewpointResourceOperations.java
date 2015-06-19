@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.sirius.business.api.query.ViewpointQuery;
+import org.eclipse.sirius.business.internal.session.SessionIOHelper;
 import org.eclipse.sirius.viewpoint.description.Viewpoint;
 
 import com.google.common.base.Preconditions;
@@ -54,7 +55,7 @@ public class ViewpointResourceOperations {
      */
     public void unloadAndResetProxyURIs() {
         Map<EObject, URI> logicalURIs = computeLogicalURIs();
-        resource.unload();
+        SessionIOHelper.getHandlerFor(resource).unload(resource);
         for (InternalEObject obj : Iterables.filter(logicalURIs.keySet(), InternalEObject.class)) {
             if (obj.eIsProxy()) {
                 obj.eSetProxyURI(logicalURIs.get(obj));
