@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.sirius.business.internal.session.SessionIOHelper;
 import org.eclipse.sirius.tests.swtbot.support.api.AbstractSiriusSwtBotGefTestCase;
 
 /**
@@ -45,6 +46,6 @@ public abstract class AbstractScenarioTestCase extends AbstractSiriusSwtBotGefTe
 
         final Resource ecoreRes = new ResourceSetImpl().createResource(URI.createPlatformResourceURI("/" + getProjectName() + "/" + MODELS_DIR + "/" + "Ecore.ecore", true));
         ecoreRes.getContents().add(EcoreUtil.copy(EcorePackage.eINSTANCE));
-        ecoreRes.save(Collections.EMPTY_MAP);
+        SessionIOHelper.getHandlerFor(ecoreRes).save(ecoreRes, Collections.EMPTY_MAP);
     }
 }

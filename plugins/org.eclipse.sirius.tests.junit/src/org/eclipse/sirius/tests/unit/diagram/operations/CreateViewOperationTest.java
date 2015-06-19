@@ -29,6 +29,7 @@ import org.eclipse.sirius.business.api.query.URIQuery;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
 import org.eclipse.sirius.business.internal.helper.task.operations.AbstractOperationTask;
+import org.eclipse.sirius.business.internal.session.SessionIOHelper;
 import org.eclipse.sirius.common.tools.api.interpreter.IInterpreter;
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.DiagramFactory;
@@ -169,7 +170,7 @@ public class CreateViewOperationTest extends TestCase {
         EPackage semantic = EcoreFactory.eINSTANCE.createEPackage();
         semantic.getEClassifiers().add(EcoreFactory.eINSTANCE.createEClass());
         semanticResource.getContents().add(semantic);
-        semanticResource.save(Collections.emptyMap());
+        SessionIOHelper.getHandlerFor(semanticResource).save(semanticResource, Collections.emptyMap());
         session = SessionManager.INSTANCE.getSession(transientSessionResourceURI, new NullProgressMonitor());
         session.open(new NullProgressMonitor());
         TransactionalEditingDomain domain = session.getTransactionalEditingDomain();

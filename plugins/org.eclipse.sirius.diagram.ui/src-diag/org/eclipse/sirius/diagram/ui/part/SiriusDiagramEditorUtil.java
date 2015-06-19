@@ -51,6 +51,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.dialogs.IDialogSettings;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.jface.wizard.WizardDialog;
+import org.eclipse.sirius.business.internal.session.SessionIOHelper;
 import org.eclipse.sirius.common.tools.api.resource.ResourceSetFactory;
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.DiagramFactory;
@@ -178,10 +179,9 @@ public class SiriusDiagramEditorUtil {
                 }
 
                 try {
-                    modelResource.save(org.eclipse.sirius.diagram.ui.part.SiriusDiagramEditorUtil.getSaveOptions());
-                    diagramResource.save(org.eclipse.sirius.diagram.ui.part.SiriusDiagramEditorUtil.getSaveOptions());
+                    SessionIOHelper.getHandlerFor(modelResource).save(modelResource, org.eclipse.sirius.diagram.ui.part.SiriusDiagramEditorUtil.getSaveOptions());
+                    SessionIOHelper.getHandlerFor(diagramResource).save(diagramResource, org.eclipse.sirius.diagram.ui.part.SiriusDiagramEditorUtil.getSaveOptions());
                 } catch (IOException e) {
-
                     DiagramPlugin.getDefault().logError(org.eclipse.sirius.diagram.ui.provider.Messages.SiriusDiagramEditorUtil_modelAndDiagramResourceSaveError, e);
                 }
                 return CommandResult.newOKCommandResult();

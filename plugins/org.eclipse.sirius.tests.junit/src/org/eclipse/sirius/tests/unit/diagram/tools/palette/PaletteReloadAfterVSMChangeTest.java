@@ -15,10 +15,12 @@ import java.util.Collections;
 
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.gef.palette.PaletteRoot;
 import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramEditDomain;
+import org.eclipse.sirius.business.internal.session.SessionIOHelper;
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.description.DiagramDescription;
 import org.eclipse.sirius.diagram.description.tool.ToolSection;
@@ -135,7 +137,8 @@ public class PaletteReloadAfterVSMChangeTest extends AbstractPaletteManagerTest 
         // This dummy modification should just trigger the reload of the
         // palette.
         group.setDocumentation("test");
-        group.eResource().save(Collections.emptyMap());
+        Resource resource = group.eResource();
+        SessionIOHelper.getHandlerFor(resource).save(resource, Collections.emptyMap());
 
         TestsUtil.synchronizationWithUIThread();
 
@@ -171,7 +174,8 @@ public class PaletteReloadAfterVSMChangeTest extends AbstractPaletteManagerTest 
         ToolDescription td = ToolFactory.eINSTANCE.createToolDescription();
         td.setName("TestTool");
         sectionToModify.getOwnedTools().add(td);
-        group.eResource().save(Collections.emptyMap());
+        Resource resource = group.eResource();
+        SessionIOHelper.getHandlerFor(resource).save(resource, Collections.emptyMap());
 
         TestsUtil.synchronizationWithUIThread();
 
@@ -179,7 +183,8 @@ public class PaletteReloadAfterVSMChangeTest extends AbstractPaletteManagerTest 
 
         // Modify the tool id/label
         td.setName("TestTool2");
-        group.eResource().save(Collections.emptyMap());
+        resource = group.eResource();
+        SessionIOHelper.getHandlerFor(resource).save(resource, Collections.emptyMap());
 
         TestsUtil.synchronizationWithUIThread();
 
@@ -189,7 +194,8 @@ public class PaletteReloadAfterVSMChangeTest extends AbstractPaletteManagerTest 
 
         // Remove a tool.
         sectionToModify.getOwnedTools().remove(td);
-        group.eResource().save(Collections.emptyMap());
+        resource = group.eResource();
+        SessionIOHelper.getHandlerFor(resource).save(resource, Collections.emptyMap());
 
         TestsUtil.synchronizationWithUIThread();
 

@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.edit.command.RemoveCommand;
 import org.eclipse.emf.edit.command.SetCommand;
@@ -33,6 +34,7 @@ import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramEditor;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.sirius.business.api.dialect.command.RefreshRepresentationsCommand;
 import org.eclipse.sirius.business.api.preferences.SiriusPreferencesKeys;
+import org.eclipse.sirius.business.internal.session.SessionIOHelper;
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.DDiagramElement;
 import org.eclipse.sirius.diagram.EdgeTarget;
@@ -215,7 +217,8 @@ public class EntitiesDiagramModificationOutsideEditorTests extends SiriusDiagram
 
         // Revert the previous aird version (without the new diagram)
         try {
-            previousSessionContent.eResource().save(Collections.EMPTY_MAP);
+            Resource res = previousSessionContent.eResource();
+            SessionIOHelper.getHandlerFor(res).save(res, Collections.EMPTY_MAP);
         } catch (IOException e) {
             fail("Pb to restore the previous version of aird file : " + e.getMessage());
         }
@@ -277,7 +280,9 @@ public class EntitiesDiagramModificationOutsideEditorTests extends SiriusDiagram
                     ePackageInAnotherResourceSet.getEClassifiers().clear();
                 }
             });
-            ePackageInAnotherResourceSet.eResource().save(Collections.EMPTY_MAP);
+            
+            Resource res = ePackageInAnotherResourceSet.eResource();
+            SessionIOHelper.getHandlerFor(res).save(res, Collections.EMPTY_MAP);
         } catch (IOException e) {
             fail("Pb when saving the resource in another resourceSet : " + e.getMessage());
         }

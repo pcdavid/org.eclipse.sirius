@@ -29,6 +29,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.sirius.business.api.color.AbstractColorUpdater;
 import org.eclipse.sirius.business.api.dialect.DialectManager;
 import org.eclipse.sirius.business.api.session.SessionStatus;
+import org.eclipse.sirius.business.internal.session.SessionIOHelper;
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.DDiagramElement;
 import org.eclipse.sirius.diagram.DEdge;
@@ -473,7 +474,8 @@ public class RefreshWithCustomizationTests extends SiriusDiagramTestCase {
         EObject eObject = new ResourceSetImpl().getEObject(uri, true);
         eObject.eSet(DescriptionPackage.Literals.VSM_ELEMENT_CUSTOMIZATION__PREDICATE_EXPRESSION, "[" + Boolean.valueOf(enable).toString() + "/]");
         try {
-            eObject.eResource().save(Collections.emptyMap());
+            Resource eResource = eObject.eResource();
+            SessionIOHelper.getHandlerFor(eResource).save(eResource, Collections.emptyMap());
         } catch (IOException e) {
             fail(e.getLocalizedMessage());
         }

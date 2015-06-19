@@ -37,6 +37,7 @@ import org.eclipse.jface.window.Window;
 import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.sirius.business.api.session.Session;
+import org.eclipse.sirius.business.internal.session.SessionIOHelper;
 import org.eclipse.sirius.ui.business.api.viewpoint.ViewpointSelection;
 import org.eclipse.sirius.ui.tools.api.actions.analysis.IAddModelDependencyWizard;
 import org.eclipse.sirius.ui.tools.internal.dialogs.SemanticResourceDialog;
@@ -239,7 +240,7 @@ public class CreateOrAddResourceWizard extends Wizard implements IAddModelDepend
                          */
                         final Map<Object, Object> options = new HashMap<Object, Object>();
                         options.put(XMLResource.OPTION_ENCODING, initialObjectPage.getEncoding());
-                        resource.save(options);
+                        SessionIOHelper.getHandlerFor(resource).save(resource, options);
                         uris.add(resource.getURI());
                     } catch (final IOException e) {
                         SiriusPlugin.getDefault().error(Messages.CreateOrAddResourceWizard_resourceNotCreatedError, e);

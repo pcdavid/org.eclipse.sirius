@@ -277,7 +277,7 @@ public class SiriusUncontrolCommand extends UncontrolCommand {
     protected void deleteResource(final Resource res) {
         if (res != null) {
             try {
-                res.save(Collections.emptyMap());
+                SessionIOHelper.getHandlerFor(res).save(res, Collections.emptyMap());
                 SessionIOHelper.getHandlerFor(res).delete(res, Collections.emptyMap());
             } catch (IOException e) {
                 SiriusPlugin.getDefault().error(Messages.SiriusUncontrolCommand_resourceDeletionFailedMsg, e);

@@ -36,6 +36,7 @@ import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.wizard.Wizard;
+import org.eclipse.sirius.business.internal.session.SessionIOHelper;
 import org.eclipse.sirius.diagram.DiagramPlugin;
 import org.eclipse.sirius.diagram.ui.internal.edit.parts.DDiagramEditPart;
 import org.eclipse.sirius.diagram.ui.provider.DiagramUIPlugin;
@@ -130,7 +131,7 @@ public class SiriusNewDiagramFileWizard extends Wizard {
         };
         try {
             OperationHistoryFactory.getOperationHistory().execute(command, new NullProgressMonitor(), null);
-            diagramResource.save(SiriusDiagramEditorUtil.getSaveOptions());
+            SessionIOHelper.getHandlerFor(diagramResource).save(diagramResource, SiriusDiagramEditorUtil.getSaveOptions());
             SiriusDiagramEditorUtil.openDiagram(diagramResource);
         } catch (ExecutionException e) {
             DiagramPlugin.getDefault().logError(org.eclipse.sirius.diagram.ui.provider.Messages.SiriusNewDiagramFileWizard_errorDuringCreation, e);

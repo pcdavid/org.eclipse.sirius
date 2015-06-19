@@ -19,6 +19,7 @@ import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.transaction.RecordingCommand;
@@ -30,6 +31,7 @@ import org.eclipse.jface.action.Action;
 import org.eclipse.jface.operation.IRunnableWithProgress;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.sirius.business.api.preferences.SiriusPreferencesKeys;
+import org.eclipse.sirius.business.internal.session.SessionIOHelper;
 import org.eclipse.sirius.common.tools.internal.resource.ResourceSyncClientNotifier;
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.DDiagramElement;
@@ -287,7 +289,8 @@ public class UnsynchronizedMappingAndDeleteFromOutsideEditorTests extends Sirius
                     ePackageInAnotherResourceSet.getESubpackages().remove(2);
                 }
             });
-            ePackageInAnotherResourceSet.eResource().save(Collections.EMPTY_MAP);
+            Resource resource = ePackageInAnotherResourceSet.eResource();
+            SessionIOHelper.getHandlerFor(resource).save(resource, Collections.EMPTY_MAP);
         } catch (IOException e) {
             fail("Pb when saving the resource in another resourceSet : " + e.getMessage());
         }

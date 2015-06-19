@@ -50,6 +50,7 @@ import org.eclipse.jface.dialogs.ProgressMonitorDialog;
 import org.eclipse.jface.operation.IRunnableContext;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.StructuredSelection;
+import org.eclipse.sirius.business.internal.session.SessionIOHelper;
 import org.eclipse.sirius.viewpoint.description.DescriptionFactory;
 import org.eclipse.sirius.viewpoint.description.DescriptionPackage;
 import org.eclipse.sirius.viewpoint.description.Group;
@@ -255,7 +256,7 @@ public final class ViewpointSpecificationProject {
                     //
                     final Map<String, String> options = new HashMap<String, String>();
                     options.put(XMLResource.OPTION_ENCODING, encoding);
-                    resource.save(options);
+                    SessionIOHelper.getHandlerFor(resource).save(resource, options);
                 } catch (final IOException ioe) {
                     final IStatus status = new Status(IStatus.ERROR, SiriusEditPlugin.ID, IStatus.OK, ioe.getMessage(), ioe);
                     SiriusEditPlugin.getPlugin().getLog().log(status);

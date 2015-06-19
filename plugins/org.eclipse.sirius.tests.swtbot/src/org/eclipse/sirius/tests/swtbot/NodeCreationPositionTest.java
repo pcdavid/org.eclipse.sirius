@@ -35,6 +35,7 @@ import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.sirius.business.api.preferences.SiriusPreferencesKeys;
 import org.eclipse.sirius.common.tools.api.interpreter.IInterpreter;
+import org.eclipse.sirius.business.internal.session.SessionIOHelper;
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.ui.business.api.view.SiriusLayoutDataManager;
 import org.eclipse.sirius.diagram.ui.internal.edit.parts.DNode3EditPart;
@@ -891,7 +892,7 @@ public class NodeCreationPositionTest extends AbstractSiriusSwtBotGefTestCase {
 
             commandToExecute.setRootPackage(ePackageInAnotherResourceSet);
             otherTED.getCommandStack().execute(commandToExecute);
-            ePackageInAnotherResourceSet.eResource().save(Collections.EMPTY_MAP);
+            SessionIOHelper.getHandlerFor(ePackageInAnotherResourceSet.eResource()).save(ePackageInAnotherResourceSet.eResource(), Collections.EMPTY_MAP);
         } catch (IOException e) {
             fail("Pb when saving the resource in another resourceSet : " + e.getMessage());
         }

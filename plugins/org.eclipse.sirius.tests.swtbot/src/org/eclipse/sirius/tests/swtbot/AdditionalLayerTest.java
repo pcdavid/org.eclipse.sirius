@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.business.api.dialect.command.RefreshRepresentationsCommand;
 import org.eclipse.sirius.business.api.session.Session;
+import org.eclipse.sirius.business.internal.session.SessionIOHelper;
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.description.AdditionalLayer;
 import org.eclipse.sirius.diagram.description.DescriptionFactory;
@@ -134,7 +135,7 @@ public class AdditionalLayerTest extends AbstractSiriusSwtBotGefTestCase {
 
         additionalLayers.add(additionalLayer);
         try {
-            vsmResource.save(Collections.emptyMap());
+            SessionIOHelper.getHandlerFor(vsmResource).save(vsmResource, Collections.emptyMap());
         } catch (IOException e) {
             fail("Can't save vsm resource");
         }

@@ -28,6 +28,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.sirius.business.internal.session.SessionIOHelper;
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.DNode;
 import org.eclipse.sirius.diagram.ResizeKind;
@@ -808,7 +809,7 @@ public class ResizeKindRefreshTests extends AbstractSiriusSwtBotGefTestCase {
         }
         SWTBotUtils.waitAllUiEvents();
         try {
-            modelerResource.save(Collections.emptyMap());
+            SessionIOHelper.getHandlerFor(modelerResource).save(modelerResource,  Collections.emptyMap());
         } catch (IOException e) {
             fail(e.getLocalizedMessage());
         } finally {
@@ -825,7 +826,7 @@ public class ResizeKindRefreshTests extends AbstractSiriusSwtBotGefTestCase {
         nodeStyleDescription.setResizeKind(resizeKind);
         SWTBotUtils.waitAllUiEvents();
         try {
-            modelerResource.save(Collections.emptyMap());
+            SessionIOHelper.getHandlerFor(modelerResource).save(modelerResource,  Collections.emptyMap());
         } catch (IOException e) {
             fail(e.getLocalizedMessage());
         } finally {

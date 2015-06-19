@@ -11,14 +11,17 @@
 package org.eclipse.sirius.tests.swtbot.sequence;
 
 import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.sirius.business.api.session.SessionManager;
 import org.eclipse.sirius.business.internal.session.ReloadingPolicyImpl;
+import org.eclipse.sirius.business.internal.session.SessionIOHelper;
 import org.eclipse.sirius.common.tools.internal.resource.ResourceSyncClientNotifier;
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.sequence.SequenceDDiagram;
@@ -311,7 +314,8 @@ public class InstanceRoleOrderingTests extends AbstractSequenceDiagramTestCase {
         myInteraction.getParticipants().move(0, 1);
         try {
             // Save semantic model
-            myInteraction.eResource().save(null);
+            Resource res = myInteraction.eResource();
+            SessionIOHelper.getHandlerFor(res).save(res, null);
         } catch (IOException e) {
             fail("resource can not be saved");
         }

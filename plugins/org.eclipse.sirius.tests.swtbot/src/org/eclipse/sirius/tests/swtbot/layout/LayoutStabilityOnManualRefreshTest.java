@@ -16,11 +16,13 @@ import java.util.Collections;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EcoreFactory;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.impl.TransactionalEditingDomainImpl;
+import org.eclipse.sirius.business.internal.session.SessionIOHelper;
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.ui.edit.api.part.AbstractDiagramListEditPart;
 import org.eclipse.sirius.ecore.extender.tool.api.ModelUtils;
@@ -123,7 +125,8 @@ public class LayoutStabilityOnManualRefreshTest extends AbstractSiriusSwtBotGefT
                     ePackageInAnotherResourceSet.getESubpackages().get(0).getESubpackages().add(newPackage);
                 }
             });
-            ePackageInAnotherResourceSet.eResource().save(Collections.EMPTY_MAP);
+            Resource res = ePackageInAnotherResourceSet.eResource();
+            SessionIOHelper.getHandlerFor(res).save(res, Collections.EMPTY_MAP);
         } catch (IOException e) {
             fail("Pb when saving the resource in another resourceSet : " + e.getMessage());
         }

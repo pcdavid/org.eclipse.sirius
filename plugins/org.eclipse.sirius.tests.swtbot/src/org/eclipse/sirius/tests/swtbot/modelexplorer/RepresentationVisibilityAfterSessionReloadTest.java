@@ -22,6 +22,7 @@ import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.impl.TransactionalEditingDomainImpl;
 import org.eclipse.emf.transaction.util.TransactionUtil;
+import org.eclipse.sirius.business.internal.session.SessionIOHelper;
 import org.eclipse.sirius.ecore.extender.tool.api.ModelUtils;
 import org.eclipse.sirius.tests.swtbot.Activator;
 import org.eclipse.sirius.tests.swtbot.support.api.AbstractSiriusSwtBotGefTestCase;
@@ -127,7 +128,8 @@ public class RepresentationVisibilityAfterSessionReloadTest extends AbstractSiri
                     ePackageInAnotherResourceSet.getEClassifiers().clear();
                 }
             });
-            ePackageInAnotherResourceSet.eResource().save(Collections.EMPTY_MAP);
+            Resource res = ePackageInAnotherResourceSet.eResource();
+            SessionIOHelper.getHandlerFor(res).save(res, Collections.EMPTY_MAP);
         } catch (IOException e) {
             fail("Promblem when saving the resource in another resourceSet : " + e.getMessage());
         }

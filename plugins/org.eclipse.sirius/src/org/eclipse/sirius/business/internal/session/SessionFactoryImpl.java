@@ -143,7 +143,7 @@ public final class SessionFactoryImpl implements SessionFactory {
             DAnalysis analysis = ViewpointFactory.eINSTANCE.createDAnalysis();
             sessionModelResource.getContents().add(analysis);
             try {
-                sessionModelResource.save(Collections.emptyMap());
+                SessionIOHelper.getHandlerFor(sessionModelResource).save(sessionModelResource, Collections.emptyMap());
             } catch (IOException e) {
                 throw new CoreException(new Status(IStatus.ERROR, SiriusPlugin.ID, Messages.SessionFactoryImpl_creationFailedErrorMsg, e));
             }

@@ -40,6 +40,7 @@ import org.eclipse.gmf.runtime.notation.HintedDiagramLinkStyle;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.Style;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.sirius.business.internal.session.SessionIOHelper;
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.ui.internal.edit.parts.DDiagramEditPart;
 import org.eclipse.sirius.diagram.ui.part.Messages;
@@ -149,7 +150,7 @@ public class OpenDiagramEditPolicy extends OpenEditPolicy {
                             for (Iterator<Resource> it = diagramFacetResource.getResourceSet().getResources().iterator(); it.hasNext();) {
                                 Resource nextResource = it.next();
                                 if (nextResource.isLoaded() && !getEditingDomain().isReadOnly(nextResource)) {
-                                    nextResource.save(SiriusDiagramEditorUtil.getSaveOptions());
+                                    SessionIOHelper.getHandlerFor(nextResource).save(nextResource, SiriusDiagramEditorUtil.getSaveOptions());
                                 }
                             }
                         } catch (IOException ex) {

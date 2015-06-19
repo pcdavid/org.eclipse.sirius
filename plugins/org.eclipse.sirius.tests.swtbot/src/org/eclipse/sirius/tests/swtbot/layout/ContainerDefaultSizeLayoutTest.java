@@ -26,6 +26,7 @@ import org.eclipse.gmf.runtime.notation.Bounds;
 import org.eclipse.gmf.runtime.notation.LayoutConstraint;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.sirius.business.internal.session.SessionIOHelper;
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.ui.edit.api.part.AbstractDiagramContainerEditPart;
 import org.eclipse.sirius.diagram.ui.edit.api.part.AbstractDiagramElementContainerEditPart;
@@ -221,7 +222,7 @@ public class ContainerDefaultSizeLayoutTest extends AbstractSiriusSwtBotGefTestC
         root.getEClassifiers().add(eEnum);
 
         try {
-            root.eResource().save(Collections.EMPTY_MAP);
+            SessionIOHelper.getHandlerFor(root.eResource()).save(root.eResource(), Collections.EMPTY_MAP);
         } catch (IOException e) {
             fail("Pb when saving the resource in another resourceSet : " + e.getMessage());
         }
@@ -289,7 +290,7 @@ public class ContainerDefaultSizeLayoutTest extends AbstractSiriusSwtBotGefTestC
         root.getESubpackages().add(newPackage);
 
         try {
-            root.eResource().save(Collections.EMPTY_MAP);
+            SessionIOHelper.getHandlerFor(root.eResource()).save(root.eResource(), Collections.EMPTY_MAP);
         } catch (IOException e) {
             fail("Pb when saving the resource in another resourceSet : " + e.getMessage());
         }

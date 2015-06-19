@@ -16,6 +16,7 @@ import java.util.List;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.sirius.business.internal.session.SessionIOHelper;
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.description.ContainerMapping;
 import org.eclipse.sirius.diagram.description.DiagramDescription;
@@ -185,7 +186,7 @@ public class DirectEditLabelTest extends AbstractSiriusSwtBotGefTestCase {
         setValue.setFeatureName("name");
         setValue.setValueExpression("[arg0/]");
 
-        odesignResource.save(Collections.emptyMap());
+        SessionIOHelper.getHandlerFor(odesignResource).save(odesignResource, Collections.emptyMap());
     }
 
 }

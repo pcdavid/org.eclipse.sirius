@@ -16,6 +16,7 @@ import java.util.Collections;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.transaction.RecordingCommand;
@@ -23,6 +24,7 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.impl.TransactionalEditingDomainImpl;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+import org.eclipse.sirius.business.internal.session.SessionIOHelper;
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.DDiagramElement;
 import org.eclipse.sirius.ecore.extender.tool.api.ModelUtils;
@@ -101,7 +103,8 @@ public class EntitiesDiagramDeleteFromOutsideEditorTests extends SiriusDiagramTe
                     ePackageInAnotherResourceSet.getEClassifiers().clear();
                 }
             });
-            ePackageInAnotherResourceSet.eResource().save(Collections.EMPTY_MAP);
+            Resource res = ePackageInAnotherResourceSet.eResource();
+            SessionIOHelper.getHandlerFor(res).save(res, Collections.EMPTY_MAP);
         } catch (IOException e) {
             fail("Pb when saving the resource in another resourceSet : " + e.getMessage());
         }
