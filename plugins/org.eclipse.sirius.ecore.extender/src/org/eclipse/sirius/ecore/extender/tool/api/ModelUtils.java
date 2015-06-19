@@ -12,7 +12,6 @@ package org.eclipse.sirius.ecore.extender.tool.api;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -228,40 +227,6 @@ public final class ModelUtils {
      */
     public static EObject load(final File file, final ResourceSet resourceSet) throws IOException {
         return ModelUtils.load(URI.createFileURI(file.getPath()), resourceSet);
-    }
-
-    /**
-     * Load a model from an {@link java.io.InputStream InputStream} in a given
-     * {@link ResourceSet}.
-     * <p>
-     * This will return the first root of the loaded model, other roots can be
-     * accessed via the resource's content.
-     * </p>
-     * 
-     * @param stream
-     *            The inputstream to load from
-     * @param fileName
-     *            The original filename
-     * @param resourceSet
-     *            The {@link ResourceSet} to load the model in.
-     * @return The loaded model
-     * @throws IOException
-     *             If the given file does not exist.
-     */
-    public static EObject load(final InputStream stream, final String fileName, final ResourceSet resourceSet) throws IOException {
-        if (stream == null) {
-            throw new NullPointerException(Messages.ModelUtils_missingInputStream);
-        }
-        EObject result = null;
-
-        final Resource modelResource = ModelUtils.createResource(URI.createURI(fileName), resourceSet);
-        final Map<Object, Object> options = new HashMap<Object, Object>();
-        options.put(XMLResource.OPTION_ENCODING, System.getProperty(ModelUtils.ENCODING_PROPERTY));
-        modelResource.load(stream, options);
-        if (modelResource.getContents().size() > 0) {
-            result = modelResource.getContents().get(0);
-        }
-        return result;
     }
 
     /**
