@@ -33,6 +33,7 @@ import org.eclipse.sirius.business.api.dialect.DialectManager;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.danalysis.DAnalysisSession;
 import org.eclipse.sirius.business.api.session.danalysis.SimpleAnalysisSelector;
+import org.eclipse.sirius.business.internal.session.SessionIOHelper;
 import org.eclipse.sirius.tests.SiriusTestsPlugin;
 import org.eclipse.sirius.tests.support.api.EclipseTestsSupportHelper;
 import org.eclipse.sirius.tests.support.api.SiriusDiagramTestCase;
@@ -190,7 +191,7 @@ public class SiriusControlAndDeleteRepresentationTest extends SiriusDiagramTestC
 
         boolean isModified = resource.isModified();
         long timestamp = resource.getTimeStamp();
-        resource.save(outputStream, null);
+        SessionIOHelper.getHandlerFor(resource).save(resource, outputStream, null);
         resource.setModified(isModified);
         resource.setTimeStamp(timestamp);
 

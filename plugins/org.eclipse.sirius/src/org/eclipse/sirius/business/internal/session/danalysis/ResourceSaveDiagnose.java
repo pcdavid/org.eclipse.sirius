@@ -20,6 +20,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.URIConverter;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.sirius.business.internal.session.SessionIOHelper;
 import org.eclipse.sirius.common.tools.api.resource.ResourceSetSync;
 
 /**
@@ -81,7 +82,7 @@ public class ResourceSaveDiagnose {
             long preSaveTimestamp = resourcetoSave.getTimeStamp();
             boolean preSaveIsModified = resourcetoSave.isModified();
             try {
-                resourcetoSave.save(temporaryFileOutputStream, options);
+                SessionIOHelper.getHandlerFor(resourcetoSave).save(resourcetoSave, temporaryFileOutputStream, options);
             } finally {
                 temporaryFileOutputStream.close();
                 /*
