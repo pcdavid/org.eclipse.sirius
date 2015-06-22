@@ -34,13 +34,19 @@ import org.eclipse.sirius.common.tools.api.util.SiriusCrossReferenceAdapterImpl;
  * 
  * @author <a href="mailto:esteban.dugueperoux@obeo.fr">Esteban Dugueperoux</a>
  */
-public class LocalResourceCollector extends SiriusCrossReferenceAdapterImpl implements IResourceCollector {
+public class LocalResourceCollector extends SiriusCrossReferenceAdapterImpl implements IResourceCollector, CrossReferenceTracker {
 
     private ResourceSet resourceSet;
 
     private Map<Resource, Collection<Resource>> directlyReferencingResources;
 
     private Map<Resource, Collection<Resource>> directlyReferencedResources;
+
+    /**
+     * A Map for each Resource to have all resource externally referenced
+     * EObjects through resource local EObject through which EReferences .
+     */
+    private Map<Resource, Map<EObject, Map<EObject, EStructuralFeature>>> resourcesRefs = new WeakHashMap<Resource, Map<EObject, Map<EObject, EStructuralFeature>>>();
 
     private boolean initialized;
 
@@ -104,9 +110,6 @@ public class LocalResourceCollector extends SiriusCrossReferenceAdapterImpl impl
         directlyReferencingResources.remove(referencedResource);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public Collection<Resource> getAllReferencedResources(Resource resource) {
         if (!initialized) {
@@ -144,86 +147,60 @@ public class LocalResourceCollector extends SiriusCrossReferenceAdapterImpl impl
         return allTransitiveResources;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
-    public void dispose() {
-        if (initialized) {
-            resourceSet.eAdapters().remove(this);
-            initialized = false;
+    public void onReferenceAdded(InternalEObject eObject, EReference eReference, EObject crossReferencedEObject) {
+        Resource referencingResource = eObject.eResource();
+        Resource referencedResource = crossReferencedEObject.eResource();
+        if (referencingResource != null && referencedResource != null && referencingResource != referencedResource) {
+            if (!new ResourceQuery(referencingResource).isRepresentationsResource() && !new ResourceQuery(referencedResource).isRepresentationsResource()) {
+                Map<EObject, Map<EObject, EStructuralFeature>> referencedEObjects = resourcesRefs.get(referencingResource);
+                if (referencedEObjects == null) {
+                    referencedEObjects = new LinkedHashMap<EObject, Map<EObject, EStructuralFeature>>();
+                    resourcesRefs.put(referencingResource, referencedEObjects);
+                }
+                Map<EObject, EStructuralFeature> settings = referencedEObjects.get(crossReferencedEObject);
+                if (settings == null) {
+                    settings = new LinkedHashMap<EObject, EStructuralFeature>();
+                    referencedEObjects.put(crossReferencedEObject, settings);
+                }
+                Setting setting = eObject.eSetting(eReference);
+                // Does not add
+                // EcorePackage.Literals.ETYPED_ELEMENT__EGENERIC_TYPE
+                // reference because it is not removed from crossReference
+                if (setting.getEStructuralFeature() != EcorePackage.Literals.EGENERIC_TYPE__ECLASSIFIER) {
+                    settings.put(setting.getEObject(), setting.getEStructuralFeature());
+                }
+                addInterResourceResourceReference(referencingResource, referencedResource);
+            }
         }
-        resourceSet = null;
-        directlyReferencingResources = null;
-        directlyReferencedResources = null;
     }
 
-    class LocalInverseCrossReferencer extends InverseCrossReferencer {
+    @Override
+    public void onReferenceRemoved(EObject eObject, EReference ref, EObject crossReferencedEObject) {
+        Resource referencingResource = eObject.eResource();
+        Resource referencedResource = crossReferencedEObject.eResource();
+        if (referencingResource != null && referencedResource != null && referencingResource != referencedResource) {
+            if (!new ResourceQuery(referencingResource).isRepresentationsResource() && !new ResourceQuery(referencedResource).isRepresentationsResource()) {
+                removeInMap(referencedResource, referencingResource, eObject, crossReferencedEObject);
+            }
+        }
+    }
 
-        private static final long serialVersionUID = 1L;
-
-        /**
-         * A Map for each Resource to have all resource externally referenced
-         * EObjects through resource local EObject through which EReferences .
-         */
-        private Map<Resource, Map<EObject, Map<EObject, EStructuralFeature>>> resourcesRefs = new WeakHashMap<Resource, Map<EObject, Map<EObject, EStructuralFeature>>>();
-
-        @Override
-        protected void add(InternalEObject eObject, EReference eReference, EObject crossReferencedEObject) {
-            super.add(eObject, eReference, crossReferencedEObject);
-            Resource referencingResource = eObject.eResource();
-            Resource referencedResource = crossReferencedEObject.eResource();
-            if (referencingResource != null && referencedResource != null && referencingResource != referencedResource) {
-                if (!new ResourceQuery(referencingResource).isRepresentationsResource() && !new ResourceQuery(referencedResource).isRepresentationsResource()) {
-                    Map<EObject, Map<EObject, EStructuralFeature>> referencedEObjects = resourcesRefs.get(referencingResource);
-                    if (referencedEObjects == null) {
-                        referencedEObjects = new LinkedHashMap<EObject, Map<EObject, EStructuralFeature>>();
-                        resourcesRefs.put(referencingResource, referencedEObjects);
-                    }
-                    Map<EObject, EStructuralFeature> settings = referencedEObjects.get(crossReferencedEObject);
-                    if (settings == null) {
-                        settings = new LinkedHashMap<EObject, EStructuralFeature>();
-                        referencedEObjects.put(crossReferencedEObject, settings);
-                    }
-                    Setting setting = eObject.eSetting(eReference);
-                    // Does not add
-                    // EcorePackage.Literals.ETYPED_ELEMENT__EGENERIC_TYPE
-                    // reference because it is not removed from crossReference
-                    if (setting.getEStructuralFeature() != EcorePackage.Literals.EGENERIC_TYPE__ECLASSIFIER) {
-                        settings.put(setting.getEObject(), setting.getEStructuralFeature());
-                    }
-                    addInterResourceResourceReference(referencingResource, referencedResource);
+    private void removeInMap(Resource referencedResource, Resource referencingResource, EObject eObject, EObject crossReferencedEObject) {
+        Map<EObject, Map<EObject, EStructuralFeature>> referencedEObjects = resourcesRefs.get(referencingResource);
+        if (referencedEObjects != null) {
+            Map<EObject, EStructuralFeature> settings = referencedEObjects.get(crossReferencedEObject);
+            if (settings != null) {
+                settings.remove(eObject);
+            }
+            if (settings == null || settings.isEmpty()) {
+                referencedEObjects.remove(crossReferencedEObject);
+                if (referencedEObjects.isEmpty()) {
+                    resourcesRefs.remove(referencingResource);
+                    removeInterResourceResourceReference(referencingResource, referencedResource);
                 }
             }
         }
-
-        @Override
-        public void remove(EObject eObject, EReference eReference, EObject crossReferencedEObject) {
-            super.remove(eObject, eReference, crossReferencedEObject);
-            Resource referencingResource = eObject.eResource();
-            Resource referencedResource = crossReferencedEObject.eResource();
-            if (referencingResource != null && referencedResource != null && referencingResource != referencedResource) {
-                if (!new ResourceQuery(referencingResource).isRepresentationsResource() && !new ResourceQuery(referencedResource).isRepresentationsResource()) {
-                    removeInMap(referencedResource, referencingResource, eObject, crossReferencedEObject);
-                }
-            }
-        }
-
-        private void removeInMap(Resource referencedResource, Resource referencingResource, EObject eObject, EObject crossReferencedEObject) {
-            Map<EObject, Map<EObject, EStructuralFeature>> referencedEObjects = resourcesRefs.get(referencingResource);
-            if (referencedEObjects != null) {
-                Map<EObject, EStructuralFeature> settings = referencedEObjects.get(crossReferencedEObject);
-                if (settings != null) {
-                    settings.remove(eObject);
-                }
-                if (settings == null || settings.isEmpty()) {
-                    referencedEObjects.remove(crossReferencedEObject);
-                    if (referencedEObjects.isEmpty()) {
-                        resourcesRefs.remove(referencingResource);
-                        removeInterResourceResourceReference(referencingResource, referencedResource);
-                    }
-                }
-            }
         }
 
         @Override
@@ -253,8 +230,34 @@ public class LocalResourceCollector extends SiriusCrossReferenceAdapterImpl impl
                     return true;
                 }
             };
+    }
+
+    @Override
+    public void dispose() {
+        if (initialized) {
+            resourceSet.eAdapters().remove(this);
+            initialized = false;
+        }
+        resourceSet = null;
+        directlyReferencingResources = null;
+        directlyReferencedResources = null;
+    }
+
+    class LocalInverseCrossReferencer extends InverseCrossReferencer {
+
+        private static final long serialVersionUID = 1L;
+
+        @Override
+        protected void add(InternalEObject eObject, EReference eReference, EObject crossReferencedEObject) {
+            super.add(eObject, eReference, crossReferencedEObject);
+            onReferenceAdded(eObject, eReference, crossReferencedEObject);
         }
 
+        @Override
+        public void remove(EObject eObject, EReference eReference, EObject crossReferencedEObject) {
+            super.remove(eObject, eReference, crossReferencedEObject);
+            onReferenceRemoved(eObject, eReference, crossReferencedEObject);
+        }
     }
 
 }
