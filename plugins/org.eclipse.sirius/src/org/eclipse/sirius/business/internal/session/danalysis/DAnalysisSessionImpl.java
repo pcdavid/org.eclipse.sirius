@@ -243,7 +243,7 @@ public class DAnalysisSessionImpl extends DAnalysisSessionEObjectImpl implements
      * @return a new cross referencer adapter
      */
     protected ECrossReferenceAdapterWithUnproxyCapability createSemanticCrossReferencer() {
-        return new SessionLazyCrossReferencer(this);
+        return new SessionLazyCrossReferencer(this, null);
     }
 
     /**
