@@ -1064,7 +1064,7 @@ public class DAnalysisSessionImpl extends DAnalysisSessionEObjectImpl implements
     public void setResourceCollector(IResourceCollector collector) {
         this.currentResourceCollector = collector;
     }
-    
+
     public IResourceCollector getResourceCollector() {
         return this.currentResourceCollector;
     }

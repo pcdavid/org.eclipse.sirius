@@ -42,9 +42,7 @@ import org.eclipse.sirius.viewpoint.DRepresentation;
 import org.eclipse.sirius.viewpoint.impl.DAnalysisSessionEObjectImpl;
 import org.eclipse.sirius.viewpoint.provider.SiriusEditPlugin;
 
-import com.google.common.collect.Iterators;
 import com.google.common.collect.Lists;
-import com.google.common.collect.UnmodifiableIterator;
 
 /**
  * Test semantics resources and crossReferenceAdapter on semantic resources when
@@ -209,11 +207,11 @@ public class SiriusControlAndCrossReferenceInMultiSessionTest extends SiriusTest
         Resource resourceLib_P1InConsumer = controlledResourcesInConsumer.get(0);
 
         Collection<Resource> resReferencedByConsumer = (Collection<Resource>) method.invoke(session, resourceConsumer);
-        UnmodifiableIterator<LocalResourceCollector> lcrItInconsumer = Iterators.filter(resourceConsumer.getResourceSet().eAdapters().iterator(), LocalResourceCollector.class);
-        assertTrue("The LocalResourceCollector is not set on resourceSet", lcrItInconsumer.hasNext());
         assertEquals(1, resReferencedByConsumer.size());
-
-        LocalResourceCollector lcrInConsumer = lcrItInconsumer.next();
+        
+        irc = ((DAnalysisSessionImpl) session).getResourceCollector();
+        assertTrue("The LocalResourceCollector configured in the session", irc instanceof LocalResourceCollector);
+        LocalResourceCollector lcrInConsumer = (LocalResourceCollector) irc;
         assertTrue(resReferencedByConsumer.iterator().next().getURI().toString().contains(SEMANTIC_MODEL_LIB_P1));
 
         Collection<Resource> resReferencingLib = lcrInConsumer.getAllReferencingResources(resourceLib_P1InConsumer);
@@ -275,8 +273,9 @@ public class SiriusControlAndCrossReferenceInMultiSessionTest extends SiriusTest
         resourceConsumer = resItrInConsumer.next();
         Resource resourceLibInConsumer = resItrInConsumer.next();
 
-        lcrItInconsumer = Iterators.filter(resourceConsumer.getResourceSet().eAdapters().iterator(), LocalResourceCollector.class);
-        lcrInConsumer = lcrItInconsumer.next();
+        irc = ((DAnalysisSessionImpl) session).getResourceCollector();
+        assertTrue("The LocalResourceCollector configured in the session", irc instanceof LocalResourceCollector);
+        lcrInConsumer = (LocalResourceCollector) irc;
         resReferencedByConsumer = lcrInConsumer.getAllReferencedResources(resourceConsumer);
         assertEquals("size of resources referenced by " + SEMANTIC_MODEL_CONSUMER, 1, resReferencedByConsumer.size());
         // TODO : should be uncomment in 461602

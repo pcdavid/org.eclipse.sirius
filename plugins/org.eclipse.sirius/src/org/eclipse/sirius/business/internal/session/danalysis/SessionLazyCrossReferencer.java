@@ -18,6 +18,7 @@ import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EStructuralFeature.Setting;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.sirius.common.tools.api.util.LazyCrossReferencer;
@@ -78,6 +79,11 @@ public class SessionLazyCrossReferencer extends LazyCrossReferencer {
     class InverseCrossReferencerWithCallback extends LocalInverseCrossReferencer {
 
         private static final long serialVersionUID = 1L;
+        
+        @Override
+        protected Collection<Setting> newCollection() {
+            return new IndexedSettingsEList();
+        }
 
         @Override
         protected void add(InternalEObject eObject, EReference eReference, EObject crossReferencedEObject) {
