@@ -43,6 +43,7 @@ import org.eclipse.sirius.business.api.control.SiriusControlCommand;
 import org.eclipse.sirius.business.api.dialect.DialectManager;
 import org.eclipse.sirius.business.api.preferences.SiriusPreferencesKeys;
 import org.eclipse.sirius.business.api.repair.SiriusRepairProcess;
+import org.eclipse.sirius.business.api.resource.ResourceDescriptor;
 import org.eclipse.sirius.business.api.resource.WorkspaceDragAndDropSupport;
 import org.eclipse.sirius.business.api.session.SessionManager;
 import org.eclipse.sirius.business.api.session.SessionStatus;
@@ -551,8 +552,8 @@ public class DAnalysisModelsUpdateTests extends SiriusDiagramTestCase implements
         assertEquals("The current project should contain " + SEMANTIC_RESOURCE_NAME, SEMANTIC_RESOURCE_NAME, members[2].getName());
         assertEquals("The current project should contain " + SEMANTIC_RESOURCE_NAME_P3, SEMANTIC_RESOURCE_NAME_P3, members[3].getName());
 
-        assertEquals("The DAnalysis.models reference of the main session resource before fragmentation should only reference root EPackage", Collections.singletonList(rootEPackage),
-                dAnalysisOfMainSessionResource.getModels());
+        assertEquals("The DAnalysis.models reference of the main session resource before fragmentation should only reference root EPackage", Collections.singletonList(new ResourceDescriptor(rootEPackage.eResource().getURI())),
+                dAnalysisOfMainSessionResource.getSemanticResources());
 
         // Control (fragment) p22 and p222 each in its own fragment
         fragment(p2EPackage, p2FragmentedSemanticResourceURI, p2EPackageDRepresentation, p2FragmentedSessionResourceURI);

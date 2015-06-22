@@ -42,8 +42,8 @@ import com.google.common.base.Preconditions;
 import com.google.common.base.Predicate;
 import com.google.common.base.Predicates;
 import com.google.common.collect.Iterables;
-import com.google.common.collect.Iterators;
 import com.google.common.collect.Lists;
+import com.google.common.collect.Sets;
 
 /**
  * This class is responsible for keeping track of which resources in the
@@ -82,22 +82,9 @@ class SessionResourcesTracker {
 
     void initialize(IProgressMonitor monitor) {
         DslCommonPlugin.PROFILER.startWork(SiriusTasksKey.RESOLVE_ALL_KEY);
-        Collection<DAnalysis> analyses = session.allAnalyses();
-        // First resolve all VSM resources used for Sirius to ignore VSM
-        // resources and VSM linked resources (as viewpoint:/environment
-        // resource) as new semantic element
-        resolveAllVSMResources(analyses);
-        // Resolve all semantic resources from {@link DAnalysis.getModels()}
-        resolveAllSemanticResourcesFromModels(analyses);
-        // Then resolve all resources (to automatically add new semantic
-        // resources)
-        List<Resource> resourcesBeforeLoadOfSession = Lists.newArrayList(session.getTransactionalEditingDomain().getResourceSet().getResources());
-        forceLoadingOfEveryLinkedResource();
-        monitor.worked(10);
 
-        // Add the unknown resources to the semantic resources of this
-        // session.
-        manageAutomaticallyLoadedResources(session, resourcesBeforeLoadOfSession);
+        // Add the unknown resources to the semantic resources of this session.
+        manageAutomaticallyLoadedResources(session, Lists.<Resource>newArrayList());
         monitor.worked(1);
 
         DslCommonPlugin.PROFILER.stopWork(SiriusTasksKey.RESOLVE_ALL_KEY);
@@ -245,16 +232,52 @@ class SessionResourcesTracker {
      */
     static void manageAutomaticallyLoadedResources(final DAnalysisSessionImpl session, List<Resource> knownResources) {
         TransactionalEditingDomain domain = session.getTransactionalEditingDomain();
-        List<Resource> resourcesAfterLoadOfSession = Lists.newArrayList(domain.getResourceSet().getResources());
+        Set<Resource> resourcesAfterLoadOfSession = Sets.newLinkedHashSet(domain.getResourceSet().getResources());
         // Remove the known resources
-        Iterators.removeAll(resourcesAfterLoadOfSession.iterator(), knownResources);
+        // resourcesAfterLoadOfSession.removeAll(knownResources);
 
         if (resourcesAfterLoadOfSession.isEmpty()) {
             return;
         }
 
-        Set<Resource> referencedSessionResources = session.getReferencedSessionResources();
-        Collection<Resource> newReferencedSessionResources = Lists.newArrayList(Iterables.filter(resourcesAfterLoadOfSession, Predicates.in(referencedSessionResources)));
+        registerNewlyReferencedSessionResources(session, resourcesAfterLoadOfSession);
+
+        // Remove the known semantic resources
+        resourcesAfterLoadOfSession.removeAll(session.getSemanticResources());
+        // Remove the known referenced representations file resources
+        resourcesAfterLoadOfSession.removeAll(session.getReferencedSessionResources());
+        
+        Set<Resource> knownSemanticResources = Sets.newHashSet(session.getSemanticResources());
+        Set<Resource> allSemanticResources = Sets.newHashSet();
+        IResourceCollector irc = session.getResourceCollector();
+        for (Resource resource : knownSemanticResources) {
+            allSemanticResources.add(resource);
+            allSemanticResources.addAll(irc.getAllReferencedResources(resource));
+        }
+        final Set<Resource> newSemanticResources = Sets.difference(allSemanticResources, knownSemanticResources);
+
+        Predicate<Resource> resourcesToIgnore = new Predicate<Resource>() {
+            public boolean apply(Resource resource) {
+                // Remove empty resource and the Sirius environment
+                return resource.getContents().isEmpty() || new URIQuery(resource.getURI()).isEnvironmentURI();
+            }
+        };
+        Iterables.removeIf(newSemanticResources, resourcesToIgnore);
+        //final List<Resource> newSemanticResources = Lists.newArrayList(Iterables.filter(resourcesAfterLoadOfSession, Predicates.not(resourcesToIgnore)));
+        if (!newSemanticResources.isEmpty()) {
+            domain.getCommandStack().execute(new RecordingCommand(domain, Messages.SessionResourcesTracker_addReferencedSemanticResourcesMsg) {
+                @Override
+                protected void doExecute() {
+                    for (Resource resource : newSemanticResources) {
+                        session.addSemanticResource(resource.getURI(), new NullProgressMonitor());
+                    }
+                }
+            });
+        }
+    }
+
+    private static void registerNewlyReferencedSessionResources(final DAnalysisSessionImpl session, Collection<Resource> resourcesAfterLoadOfSession) {
+        Collection<Resource> newReferencedSessionResources = Lists.newArrayList(Iterables.filter(resourcesAfterLoadOfSession, Predicates.in(session.getReferencedSessionResources())));
         if (!newReferencedSessionResources.isEmpty()) {
             for (Resource newReferencedSessionResource : newReferencedSessionResources) {
                 session.registerResourceInCrossReferencer(newReferencedSessionResource);
@@ -262,28 +285,6 @@ class SessionResourcesTracker {
                     session.addAdaptersOnAnalysis(refAnalysis);
                 }
             }
-        }
-
-        // Remove the known semantic resources
-        Iterators.removeAll(resourcesAfterLoadOfSession.iterator(), session.getSemanticResources());
-        // Remove the known referenced representations file resources
-        Iterators.removeAll(resourcesAfterLoadOfSession.iterator(), referencedSessionResources);
-
-        final Iterable<Resource> newSemanticResourcesIterator = Iterables.filter(resourcesAfterLoadOfSession, new Predicate<Resource>() {
-            public boolean apply(Resource resource) {
-                // Remove empty resource and the Sirius environment
-                return !resource.getContents().isEmpty() && !(new URIQuery(resource.getURI()).isEnvironmentURI());
-            }
-        });
-        if (!Iterables.isEmpty(newSemanticResourcesIterator)) {
-            domain.getCommandStack().execute(new RecordingCommand(domain, Messages.SessionResourcesTracker_addReferencedSemanticResourcesMsg) {
-                @Override
-                protected void doExecute() {
-                    for (Resource resource : newSemanticResourcesIterator) {
-                        session.addSemanticResource(resource.getURI(), new NullProgressMonitor());
-                    }
-                }
-            });
         }
     }
 
