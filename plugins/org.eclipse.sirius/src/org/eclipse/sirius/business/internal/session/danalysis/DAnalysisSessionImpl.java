@@ -133,7 +133,7 @@ public class DAnalysisSessionImpl extends DAnalysisSessionEObjectImpl implements
 
     private ReloadingPolicy reloadingPolicy;
 
-    private IResourceCollector currentResourceCollector;
+    private IResourceCollector currentResourceCollector = new LocalResourceCollector();
 
     private SessionVSMUpdater vsmUpdater = new SessionVSMUpdater(this);
 
@@ -183,10 +183,8 @@ public class DAnalysisSessionImpl extends DAnalysisSessionEObjectImpl implements
         super.getAnalyses().add(mainDAnalysis);
         super.getResources().add(sessionResource);
         setAnalysisSelector(DAnalysisSelectorService.getSelector(this));
-        setResourceCollector(new LocalResourceCollector(getTransactionalEditingDomain().getResourceSet()));
         setDeferSaveToPostCommit(true);
         setSaveInExclusiveTransaction(true);
-
     }
 
     // *******************
@@ -243,7 +241,7 @@ public class DAnalysisSessionImpl extends DAnalysisSessionEObjectImpl implements
      * @return a new cross referencer adapter
      */
     protected ECrossReferenceAdapterWithUnproxyCapability createSemanticCrossReferencer() {
-        return new SessionLazyCrossReferencer(this, null);
+        return new SessionLazyCrossReferencer(this, this.currentResourceCollector instanceof CrossReferenceTracker ? ((CrossReferenceTracker) this.currentResourceCollector) : null);
     }
 
     /**
@@ -1066,6 +1064,10 @@ public class DAnalysisSessionImpl extends DAnalysisSessionEObjectImpl implements
     public void setResourceCollector(IResourceCollector collector) {
         this.currentResourceCollector = collector;
     }
+    
+    public IResourceCollector getResourceCollector() {
+        return this.currentResourceCollector;
+    }
 
     // *******************
     // Viewpoint Selection and DView Management
@@ -1133,6 +1135,13 @@ public class DAnalysisSessionImpl extends DAnalysisSessionEObjectImpl implements
             this.representationNameListener = new RepresentationNameListener(this);
             monitor.worked(1);
 
+            /*
+             * Force the initialization and global installation of the
+             * cross-referencer early, as it now also needed by
+             * LocalResourceCollector.
+             */
+            getTransactionalEditingDomain().getResourceSet().eAdapters().add(getSemanticCrossReferencer());
+
             tracker.initialize(monitor);
             monitor.worked(1);
 
@@ -1176,6 +1185,7 @@ public class DAnalysisSessionImpl extends DAnalysisSessionEObjectImpl implements
         } finally {
             monitor.done();
         }
+
     }
 
     @Override

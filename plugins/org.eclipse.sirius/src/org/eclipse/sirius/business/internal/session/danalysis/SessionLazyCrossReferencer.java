@@ -50,14 +50,10 @@ public class SessionLazyCrossReferencer extends LazyCrossReferencer {
         this.session = session;
         this.xrefTracker = xrefTracker;
     }
-
+    
     @Override
     protected InverseCrossReferencer createInverseCrossReferencer() {
-        if (xrefTracker != null) {
-            return new InverseCrossReferencerWithCallback();
-        } else {
-            return super.createInverseCrossReferencer();
-        }
+        return new InverseCrossReferencerWithCallback();
     }
 
     @Override
@@ -79,20 +75,24 @@ public class SessionLazyCrossReferencer extends LazyCrossReferencer {
         }
     }
 
-    class InverseCrossReferencerWithCallback extends InverseCrossReferencer {
+    class InverseCrossReferencerWithCallback extends LocalInverseCrossReferencer {
 
         private static final long serialVersionUID = 1L;
 
         @Override
         protected void add(InternalEObject eObject, EReference eReference, EObject crossReferencedEObject) {
             super.add(eObject, eReference, crossReferencedEObject);
-            xrefTracker.onReferenceAdded(eObject, eReference, crossReferencedEObject);
+            if (xrefTracker != null) {
+                xrefTracker.onReferenceAdded(eObject, eReference, crossReferencedEObject);
+            }
         }
 
         @Override
         public void remove(EObject eObject, EReference eReference, EObject crossReferencedEObject) {
             super.remove(eObject, eReference, crossReferencedEObject);
-            xrefTracker.onReferenceRemoved(eObject, eReference, crossReferencedEObject);
+            if (xrefTracker != null) {
+                xrefTracker.onReferenceRemoved(eObject, eReference, crossReferencedEObject);
+            }
         }
     }
 }
