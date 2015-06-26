@@ -220,7 +220,7 @@ public class SessionResourcesSynchronizer implements ResourceSyncClient {
                 }
                 // Analyze the unknown resources to detect new semantic or
                 // session resources.
-                session.discoverAutomaticallyLoadedResources(resourcesBeforeReload);
+                session.discoverAutomaticallyLoadedResources();
                 session.notifyListeners(SessionListener.REPLACED);
             }
         } catch (InterruptedException e) {

@@ -12,7 +12,6 @@ package org.eclipse.sirius.business.internal.session.danalysis;
 
 import java.util.Collection;
 import java.util.Collections;
-import java.util.List;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -76,9 +75,7 @@ class SessionResourcesTracker {
 
     void initialize(IProgressMonitor monitor) {
         DslCommonPlugin.PROFILER.startWork(SiriusTasksKey.RESOLVE_ALL_KEY);
-
-        // Add the unknown resources to the semantic resources of this session.
-        manageAutomaticallyLoadedResources(session, Lists.<Resource>newArrayList());
+        manageAutomaticallyLoadedResources(session);
         monitor.worked(1);
 
         DslCommonPlugin.PROFILER.stopWork(SiriusTasksKey.RESOLVE_ALL_KEY);
@@ -146,46 +143,13 @@ class SessionResourcesTracker {
     }
 
     /**
-     * Check the resources in the resourceSet. Detect new resources and add them
-     * to the session as new semantic resources or referenced session resources.<BR>
-     * <BR>
-     * New semantic resources are :
-     * <UL>
-     * <LI>Resources that are not in the <code>knownResources</code> list</LI>
-     * <LI>Resources that are not in the semantic resources of this session</LI>
-     * <LI>Resources that are not in the referenced representations files
-     * resources of this session</LI>
-     * <LI>Resources that are not the Sirius environment resource</LI>
-     * </UL>
-     * <BR>
-     * New referenced session resources are :
-     * <UL>
-     * <LI>Resources that are not in the <code>knownResources</code> list</LI>
-     * <LI>Resources that are in the referenced representations files resources
-     * of this session (the list is computed from the allAnalyses() result)</LI>
-     * </UL>
-     * 
-     * @param knownResources
-     *            List of resources that is already loaded before the resolveAll
-     *            of the representations file load.
+     * Discover semantic and session resources that we now depend on (i.e. they
+     * were loading when resolving the session), and make sure they are
+     * registered in the session if not already known.
      */
-    static void manageAutomaticallyLoadedResources(final DAnalysisSessionImpl session, List<Resource> knownResources) {
-        TransactionalEditingDomain domain = session.getTransactionalEditingDomain();
-        Set<Resource> resourcesAfterLoadOfSession = Sets.newLinkedHashSet(domain.getResourceSet().getResources());
-        // Remove the known resources
-        // resourcesAfterLoadOfSession.removeAll(knownResources);
+    static void manageAutomaticallyLoadedResources(final DAnalysisSessionImpl session) {
+        registerNewlyReferencedSessionResources(session);
 
-        if (resourcesAfterLoadOfSession.isEmpty()) {
-            return;
-        }
-
-        registerNewlyReferencedSessionResources(session, resourcesAfterLoadOfSession);
-
-        // Remove the known semantic resources
-        resourcesAfterLoadOfSession.removeAll(session.getSemanticResources());
-        // Remove the known referenced representations file resources
-        resourcesAfterLoadOfSession.removeAll(session.getReferencedSessionResources());
-        
         Set<Resource> knownSemanticResources = Sets.newHashSet(session.getSemanticResources());
         Set<Resource> allSemanticResources = Sets.newHashSet();
         IResourceCollector irc = session.getResourceCollector();
@@ -203,6 +167,7 @@ class SessionResourcesTracker {
         };
         Iterables.removeIf(newSemanticResources, resourcesToIgnore);
         if (!newSemanticResources.isEmpty()) {
+            TransactionalEditingDomain domain = session.getTransactionalEditingDomain();
             domain.getCommandStack().execute(new RecordingCommand(domain, Messages.SessionResourcesTracker_addReferencedSemanticResourcesMsg) {
                 @Override
                 protected void doExecute() {
@@ -214,14 +179,14 @@ class SessionResourcesTracker {
         }
     }
 
-    private static void registerNewlyReferencedSessionResources(final DAnalysisSessionImpl session, Collection<Resource> resourcesAfterLoadOfSession) {
-        Collection<Resource> newReferencedSessionResources = Lists.newArrayList(Iterables.filter(resourcesAfterLoadOfSession, Predicates.in(session.getReferencedSessionResources())));
-        if (!newReferencedSessionResources.isEmpty()) {
-            for (Resource newReferencedSessionResource : newReferencedSessionResources) {
-                session.registerResourceInCrossReferencer(newReferencedSessionResource);
-                for (DAnalysis refAnalysis : Iterables.filter(newReferencedSessionResource.getContents(), DAnalysis.class)) {
-                    session.addAdaptersOnAnalysis(refAnalysis);
-                }
+    private static void registerNewlyReferencedSessionResources(final DAnalysisSessionImpl session) {
+        TransactionalEditingDomain domain = session.getTransactionalEditingDomain();
+        Set<Resource> allResources = Sets.newLinkedHashSet(domain.getResourceSet().getResources());
+        Collection<Resource> newReferencedSessionResources = Lists.newArrayList(Iterables.filter(allResources, Predicates.in(session.getReferencedSessionResources())));
+        for (Resource newReferencedSessionResource : newReferencedSessionResources) {
+            session.registerResourceInCrossReferencer(newReferencedSessionResource);
+            for (DAnalysis refAnalysis : Iterables.filter(newReferencedSessionResource.getContents(), DAnalysis.class)) {
+                session.addAdaptersOnAnalysis(refAnalysis);
             }
         }
     }

@@ -680,8 +680,8 @@ public class DAnalysisSessionImpl extends DAnalysisSessionEObjectImpl implements
         }
     }
 
-    void discoverAutomaticallyLoadedResources(List<Resource> allResources) {
-        SessionResourcesTracker.manageAutomaticallyLoadedResources(this, allResources);
+    void discoverAutomaticallyLoadedResources() {
+        SessionResourcesTracker.manageAutomaticallyLoadedResources(this);
     }
 
     // *******************
