@@ -20,21 +20,15 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Status;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.RunnableWithResult;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.sirius.business.api.query.URIQuery;
 import org.eclipse.sirius.common.tools.DslCommonPlugin;
-import org.eclipse.sirius.ecore.extender.tool.api.ModelUtils;
-import org.eclipse.sirius.ext.emf.EReferencePredicate;
 import org.eclipse.sirius.tools.api.profiler.SiriusTasksKey;
 import org.eclipse.sirius.viewpoint.DAnalysis;
-import org.eclipse.sirius.viewpoint.DView;
 import org.eclipse.sirius.viewpoint.Messages;
 import org.eclipse.sirius.viewpoint.SiriusPlugin;
 
@@ -152,61 +146,6 @@ class SessionResourcesTracker {
     }
 
     /**
-     * Resolve all resources of the resource set of this session. Some
-     * references are ignored (derived features, containment/container
-     * references).
-     */
-    private void forceLoadingOfEveryLinkedResource() {
-        ModelUtils.resolveAll(session.getTransactionalEditingDomain().getResourceSet(), new EReferencePredicate() {
-            @Override
-            public boolean apply(EReference input) {
-                // Do not resolve derived features.
-                // Do not resolve containment/container references : they are
-                // already resolved by the model structural analysis course.
-                return !input.isDerived() && !input.isContainer() && !input.isContainment();
-            }
-        });
-    }
-
-    /**
-     * Resolve all VSM resources, and VSM linked resources (as
-     * viewpoint:/environment resource), used through Sirius in
-     * <code>allAnalysis</code>.
-     * 
-     * @param allAnalysis
-     *            The analysis of this session (owned analysis or referenced
-     *            analysis by this session).
-     */
-    private void resolveAllVSMResources(Collection<DAnalysis> allAnalysis) {
-        List<Resource> resolvedResources = Lists.newArrayList();
-        for (DAnalysis dAnalysis : allAnalysis) {
-            for (DView dView : dAnalysis.getOwnedViews()) {
-                if (dView.getViewpoint() != null) {
-                    Resource vsmResource = dView.getViewpoint().eResource();
-                    if (vsmResource != null && !resolvedResources.contains(vsmResource)) {
-                        ModelUtils.resolveAll(vsmResource, true);
-                        resolvedResources.add(vsmResource);
-                    }
-                }
-            }
-        }
-    }
-
-    /**
-     * Resolve all semantic resources.
-     * 
-     * @param allAnalysis
-     *            The analysis of this session
-     */
-    private void resolveAllSemanticResourcesFromModels(Collection<DAnalysis> allAnalysis) {
-        for (DAnalysis dAnalysis : allAnalysis) {
-            for (EObject model : dAnalysis.getModels()) {
-                EcoreUtil.resolve(model, dAnalysis);
-            }
-        }
-    }
-
-    /**
      * Check the resources in the resourceSet. Detect new resources and add them
      * to the session as new semantic resources or referenced session resources.<BR>
      * <BR>
@@ -263,7 +202,6 @@ class SessionResourcesTracker {
             }
         };
         Iterables.removeIf(newSemanticResources, resourcesToIgnore);
-        //final List<Resource> newSemanticResources = Lists.newArrayList(Iterables.filter(resourcesAfterLoadOfSession, Predicates.not(resourcesToIgnore)));
         if (!newSemanticResources.isEmpty()) {
             domain.getCommandStack().execute(new RecordingCommand(domain, Messages.SessionResourcesTracker_addReferencedSemanticResourcesMsg) {
                 @Override
