@@ -8,7 +8,7 @@
  * Contributors:
  *    Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipse.sirius.diagram.ui.internal.refresh;
+package org.eclipse.sirius.diagram.business.internal.refresh;
 
 import java.util.Collection;
 import java.util.Map;
@@ -55,8 +55,8 @@ public final class SiriusDiagramSessionEventBroker implements ModelChangeTrigger
     }
 
     /**
-     * Return a SiriusDiagramSessionEventBroker for this session, create a
-     * new one if not already existing.
+     * Return a SiriusDiagramSessionEventBroker for this session, create a new
+     * one if not already existing.
      * 
      * @param session
      *            {@link Session} for which to get a
@@ -82,6 +82,7 @@ public final class SiriusDiagramSessionEventBroker implements ModelChangeTrigger
     /**
      * {@inheritDoc}
      */
+    @Override
     public Option<Command> localChangesAboutToCommit(Collection<Notification> notifications) {
         TransactionalEditingDomain domain = getSession().getTransactionalEditingDomain();
         Option<Command> triggerCommand = Options.newSome(viewpointGMFSynchronizerDispatcher.getGMFNotationModelSynchronizationCmd(domain, notifications));
@@ -107,6 +108,7 @@ public final class SiriusDiagramSessionEventBroker implements ModelChangeTrigger
      * 
      * {@inheritDoc}
      */
+    @Override
     public int priority() {
         return PRIORITY;
     }
