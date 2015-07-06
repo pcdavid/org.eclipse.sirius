@@ -515,7 +515,8 @@ public class DAnalysisSessionImpl extends DAnalysisSessionEObjectImpl implements
     protected Collection<Resource> collectAllReferencedResources(Resource res) {
         Collection<Resource> result = Collections.emptyList();
         if (currentResourceCollector != null) {
-            result = currentResourceCollector.getAllReferencedResources(res);
+            result = Lists.newArrayList(currentResourceCollector.getAllReferencedResources(res));
+            result.removeAll(getControlledResources());
         }
         return result;
     }
@@ -532,7 +533,8 @@ public class DAnalysisSessionImpl extends DAnalysisSessionEObjectImpl implements
     protected Collection<Resource> collectAllReferencingResources(Resource res) {
         Collection<Resource> result = Collections.emptyList();
         if (currentResourceCollector != null) {
-            result = currentResourceCollector.getAllReferencingResources(res);
+            result = Lists.newArrayList(currentResourceCollector.getAllReferencingResources(res));
+            result.removeAll(getControlledResources());
         }
         return result;
     }
