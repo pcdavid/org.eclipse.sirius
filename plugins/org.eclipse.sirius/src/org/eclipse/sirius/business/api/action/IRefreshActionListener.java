@@ -8,7 +8,7 @@
  * Contributors:
  *    Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipse.sirius.ui.business.api.action;
+package org.eclipse.sirius.business.api.action;
 
 import org.eclipse.sirius.viewpoint.DRepresentation;
 
