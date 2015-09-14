@@ -12,7 +12,6 @@
  *******************************************************************************/
 package org.eclipse.sirius.business.api.session;
 
-import java.io.IOException;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -86,7 +85,14 @@ public class SavingPolicyImpl extends AbstractSavingPolicy {
                 mergedOptions.putAll(saveOptions);
             }
             hasChangesToSave = diagnose.isSaveable() && diagnose.hasDifferentSerialization(mergedOptions);
-        } catch (final IOException e) {
+            // CHECKSTYLE:OFF
+        } catch (final Exception e) {
+            // CHECKSTYLE:ON
+            // Catch all exceptions here: if the saving attempt crashed (for
+            // example a bug in the Resource implementation), we should not
+            // crash ourselve, but consider the resource unsaveable (at least
+            // until the
+            // next try).
             SiriusPlugin.getDefault().error(Messages.SavingPolicyImpl_savingErrorMsg, e);
         }
         return hasChangesToSave;
