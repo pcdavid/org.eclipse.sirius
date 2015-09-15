@@ -83,19 +83,24 @@ public class WorkspaceImageFigure extends AbstractTransparentImage implements IW
      * @return an image instance given the path.
      */
     public static Image flyWeightImage(final String path) {
+        Image result = WorkspaceImageFigure.getImageNotFound();
         if (path != null) {
-            final File imageFile = WorkspaceFileResourceChangeListener.getInstance().getFileFromURI(path);
-            ImageDescriptor desc = null;
-            if (imageFile != null && WorkspaceFileResourceChangeListener.getInstance().getReadStatusOfFile(imageFile)) {
-                try {
-                    desc = WorkspaceFileResourceChangeListener.getInstance().findImageDescriptor(imageFile);
-                } catch (MalformedURLException e) {
-                    // do nothing
+            if (isSvgImage(path)) {
+                result = SVGWorkspaceImageFigure.flyWeightImage(path);
+            } else {
+                final File imageFile = WorkspaceFileResourceChangeListener.getInstance().getFileFromURI(path);
+                ImageDescriptor desc = null;
+                if (imageFile != null && WorkspaceFileResourceChangeListener.getInstance().getReadStatusOfFile(imageFile)) {
+                    try {
+                        desc = WorkspaceFileResourceChangeListener.getInstance().findImageDescriptor(imageFile);
+                    } catch (MalformedURLException e) {
+                        // do nothing
+                    }
                 }
+                result = WorkspaceImageFigure.flyWeightImage(desc);
             }
-            return WorkspaceImageFigure.flyWeightImage(desc);
         }
-        return WorkspaceImageFigure.getImageNotFound();
+        return result;
     }
 
     /**
