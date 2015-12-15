@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -508,6 +509,67 @@ public class SiriusDebugView extends AbstractDebugView {
         addLoadAllRepresentationsAction();
         addEMFResourcesStatisticsAction();
         addVSMStatisticsAction();
+        addShowAdaptersActions();
+    }
+
+    private void addShowAdaptersActions() {
+        addAction("Show adapters", new Runnable() {
+            @Override
+            public void run() {
+                EObject current = getCurrentEObject();
+                if (current != null && current.eResource() != null && current.eResource().getResourceSet() != null) {
+                    int totalElements = 0;
+                    Set<Adapter> uniqueAdapters = new HashSet<>();
+                    ResourceSet rs = current.eResource().getResourceSet();
+                    Multimap<String, String> adaptersByType = LinkedHashMultimap.create();
+                    recordAdapters(rs, adaptersByType);
+                    uniqueAdapters.addAll(rs.eAdapters());
+                    totalElements++;
+                    for (Resource res : rs.getResources()) {
+                        recordAdapters(res, adaptersByType);
+                        uniqueAdapters.addAll(res.eAdapters());
+                        totalElements++;
+                        TreeIterator<EObject> allContents = res.getAllContents();
+                        while (allContents.hasNext()) {
+                            EObject elt = allContents.next();
+                            recordAdapters(elt, adaptersByType);
+                            uniqueAdapters.addAll(elt.eAdapters());
+                            totalElements++;
+                        }
+                    }
+                    StringBuilder report = createReport(totalElements, uniqueAdapters, adaptersByType);
+                    setText(report.toString());
+                }
+            }
+
+            private StringBuilder createReport(int totalElements, Set<Adapter> uniqueAdapters, Multimap<String, String> adaptersByType) {
+                StringBuilder report = new StringBuilder();
+                report.append("Total elements inspected: ").append(totalElements).append("\n");
+                report.append("Unique adapters: ").append(uniqueAdapters.size()).append("\n");
+                List<String> keys = Lists.newArrayList(adaptersByType.keySet());
+                Collections.sort(keys);
+                for (String key : keys) {
+                    List<String> adapters = Lists.newArrayList(adaptersByType.get(key));
+                    Collections.sort(adapters);
+                    report.append("* ").append(key).append(" (").append(adapters.size()).append(" adapters):\n");
+                    for (String a : adapters) {
+                        report.append(" - ").append(a).append("\n");
+                    }
+                }
+                return report;
+            }
+
+            private void recordAdapters(Notifier not, Multimap<String, String> adaptersByType) {
+                String targetName = getKey(not);
+                for (Adapter a : not.eAdapters()) {
+                    adaptersByType.put(targetName, getKey(a));
+                }
+            }
+
+            private String getKey(Object o) {
+                return o.getClass().getName().replace("org.eclipse.sirius", "oes");
+            }
+        });
     }
 
     private void addVSMStatisticsAction() {
