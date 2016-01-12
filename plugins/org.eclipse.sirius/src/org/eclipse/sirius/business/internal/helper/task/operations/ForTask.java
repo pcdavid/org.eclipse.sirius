@@ -19,6 +19,8 @@ import java.util.List;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.sirius.business.api.helper.task.ICommandTask;
 import org.eclipse.sirius.business.api.helper.task.ICreationTask;
+import org.eclipse.sirius.business.api.logger.RuntimeLoggerInterpreter;
+import org.eclipse.sirius.business.api.logger.RuntimeLoggerManager;
 import org.eclipse.sirius.business.internal.helper.task.ExecuteToolOperationTask;
 import org.eclipse.sirius.business.internal.helper.task.IDeletionTask;
 import org.eclipse.sirius.business.internal.helper.task.IModificationTask;
@@ -28,10 +30,14 @@ import org.eclipse.sirius.ecore.extender.business.api.accessor.exception.Feature
 import org.eclipse.sirius.ecore.extender.business.api.accessor.exception.MetaClassNotFoundException;
 import org.eclipse.sirius.tools.api.command.CommandContext;
 import org.eclipse.sirius.tools.api.command.ui.UICallBack;
+import org.eclipse.sirius.tools.api.interpreter.InterpreterUtil;
 import org.eclipse.sirius.viewpoint.DRepresentationElement;
 import org.eclipse.sirius.viewpoint.Messages;
 import org.eclipse.sirius.viewpoint.description.tool.For;
 import org.eclipse.sirius.viewpoint.description.tool.ModelOperation;
+import org.eclipse.sirius.viewpoint.description.tool.ToolPackage;
+
+import com.google.common.collect.Lists;
 
 /**
  * A task wich dynamic create subtask and execute them.
@@ -46,7 +52,7 @@ public class ForTask extends AbstractOperationTask implements ICreationTask, IDe
     private final For forOp;
 
     /**
-     * Defualt constructor.
+     * Default constructor.
      * 
      * @param extPackage
      *            the extended package
@@ -68,7 +74,7 @@ public class ForTask extends AbstractOperationTask implements ICreationTask, IDe
     @Override
     public void execute() throws MetaClassNotFoundException, FeatureNotFoundException {
         // create at the runtime the children tasks.
-        final List<?> contextTargets = CommandContext.getContextTargets(forOp, context);
+        final List<?> contextTargets = getContextTargets(context);
 
         final String iteratorName = forOp.getIteratorName();
         EObject childOperationsContext = context.getCurrentTarget();
@@ -85,7 +91,7 @@ public class ForTask extends AbstractOperationTask implements ICreationTask, IDe
             while (iterModelOperations.hasNext()) {
                 final ModelOperation currentOperation = iterModelOperations.next();
                 // recursive call
-                childTask = new ExecuteToolOperationTask(extPackage, childOperationsContext, null, currentOperation, uiCallback);
+                childTask = new ExecuteToolOperationTask(extPackage, childOperationsContext, currentOperation, uiCallback);
                 this.getChildrenTasks().add(childTask);
             }
             childTask = new InterpretedExpressionVariableTask(context, extPackage, InterpretedExpressionVariableTask.KIND_UNSET, iteratorName, currentTarget, interpreter);
@@ -163,5 +169,23 @@ public class ForTask extends AbstractOperationTask implements ICreationTask, IDe
     @Override
     public Collection<DRepresentationElement> getCreatedRepresentationElements() {
         return Collections.emptySet();
+    }
+    
+    private List<Object> getContextTargets(final CommandContext context) {
+        List<Object> contextTargets = null;
+        final IInterpreter inter = InterpreterUtil.getInterpreter(context.getCurrentTarget());
+        final RuntimeLoggerInterpreter safeInterpreter = RuntimeLoggerManager.INSTANCE.decorate(inter);
+
+        final Object result = safeInterpreter.evaluate(context.getCurrentTarget(), forOp, ToolPackage.eINSTANCE.getFor_Expression());
+        if (result == null) {
+            contextTargets = Lists.newArrayList();
+        } else if (result instanceof Collection) {
+            contextTargets = Lists.newArrayList((Collection<?>) result);
+        } else if (result.getClass().isArray()) {
+            contextTargets = Lists.newArrayList((Object[]) result);
+        } else {
+            contextTargets = Lists.newArrayList(result);
+        }
+        return contextTargets;
     }
 }

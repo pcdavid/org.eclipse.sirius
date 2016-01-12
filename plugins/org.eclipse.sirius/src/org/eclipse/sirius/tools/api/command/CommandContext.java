@@ -10,20 +10,10 @@
  *******************************************************************************/
 package org.eclipse.sirius.tools.api.command;
 
-import java.util.Collection;
-import java.util.List;
 import java.util.Stack;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.sirius.business.api.logger.RuntimeLoggerInterpreter;
-import org.eclipse.sirius.business.api.logger.RuntimeLoggerManager;
-import org.eclipse.sirius.common.tools.api.interpreter.IInterpreter;
-import org.eclipse.sirius.tools.api.interpreter.InterpreterUtil;
 import org.eclipse.sirius.viewpoint.DRepresentation;
-import org.eclipse.sirius.viewpoint.description.tool.For;
-import org.eclipse.sirius.viewpoint.description.tool.ToolPackage;
-
-import com.google.common.collect.Lists;
 
 /**
  * This class keeps the trace of all contexts.
@@ -86,13 +76,6 @@ public class CommandContext {
     }
 
     /**
-     * Clear the next push.
-     */
-    public void clearNextPush() {
-        this.nextPushEObject = null;
-    }
-
-    /**
      * Define the next push.
      * 
      * @param nextPushEObject
@@ -103,22 +86,12 @@ public class CommandContext {
     }
 
     /**
-     * Push the specified object.
-     * 
-     * @param newTarget
-     *            the object to push.
-     */
-    public void pushTarget(final EObject newTarget) {
-        targetStack.push(newTarget);
-    }
-
-    /**
      * Pop and return the popped context. Return <code>null</code> if the is no
      * available context.
      * 
      * @return the popped context.
      */
-    public EObject popTarget() {
+    private EObject popTarget() {
         EObject result = null;
 
         if (!targetStack.isEmpty()) {
@@ -135,8 +108,8 @@ public class CommandContext {
      *            the command context.
      */
     public static void pushContext(final CommandContext context) {
-        context.pushTarget(context.getNextPush());
-        context.clearNextPush();
+        context.targetStack.push(context.getNextPush());
+        context.nextPushEObject = null;
     }
 
     /**
@@ -147,33 +120,5 @@ public class CommandContext {
      */
     public static void popContext(final CommandContext context) {
         context.popTarget();
-    }
-
-    /**
-     * Load the list of contexts.
-     * 
-     * @param forOp
-     *            the expression that gets the list of contexts.
-     * @param context
-     *            the current context.
-     * @return the list of contexts.
-     */
-    public static List<Object> getContextTargets(final For forOp, final CommandContext context) {
-
-        List<Object> contextTargets = null;
-        final IInterpreter inter = InterpreterUtil.getInterpreter(context.getCurrentTarget());
-        final RuntimeLoggerInterpreter safeInterpreter = RuntimeLoggerManager.INSTANCE.decorate(inter);
-
-        final Object result = safeInterpreter.evaluate(context.getCurrentTarget(), forOp, ToolPackage.eINSTANCE.getFor_Expression());
-        if (result == null) {
-            contextTargets = Lists.newArrayList();
-        } else if (result instanceof Collection) {
-            contextTargets = Lists.newArrayList((Collection<?>) result);
-        } else if (result.getClass().isArray()) {
-            contextTargets = Lists.newArrayList((Object[]) result);
-        } else {
-            contextTargets = Lists.newArrayList(result);
-        }
-        return contextTargets;
     }
 }

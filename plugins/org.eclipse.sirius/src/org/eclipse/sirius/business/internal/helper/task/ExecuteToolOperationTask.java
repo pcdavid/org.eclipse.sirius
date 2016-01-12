@@ -82,6 +82,9 @@ public class ExecuteToolOperationTask extends AbstractCommandTask {
      * 
      * @param uiCallback
      *            the {@link UICallBack}
+     * @deprecated Use
+     *             {@link ExecuteToolOperationTask#ExecuteToolOperationTask(ModelAccessor, EObject, ModelOperation, UICallBack)}
+     *             instead
      */
     public ExecuteToolOperationTask(final ModelAccessor extPackage, final EObject target, final DRepresentation representation, final ModelOperation op, final UICallBack uiCallback) {
         this.extPackage = extPackage;
