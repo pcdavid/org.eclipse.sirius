@@ -85,7 +85,7 @@ public class ForTask extends AbstractOperationTask implements ICreationTask, IDe
             while (iterModelOperations.hasNext()) {
                 final ModelOperation currentOperation = iterModelOperations.next();
                 // recursive call
-                childTask = new ExecuteToolOperationTask(extPackage, childOperationsContext, context.getRepresentation(), currentOperation, uiCallback);
+                childTask = new ExecuteToolOperationTask(extPackage, childOperationsContext, null, currentOperation, uiCallback);
                 this.getChildrenTasks().add(childTask);
             }
             childTask = new InterpretedExpressionVariableTask(context, extPackage, InterpretedExpressionVariableTask.KIND_UNSET, iteratorName, currentTarget, interpreter);
