@@ -38,8 +38,6 @@ public class CommandContext {
     /** The initial push. */
     private EObject nextPushEObject;
 
-    private DRepresentation representation;
-
     /**
      * Create a new {@link CommandContext}.
      * 
@@ -51,17 +49,6 @@ public class CommandContext {
      */
     public CommandContext(final EObject target, final DRepresentation representation) {
         this.nextPushEObject = target;
-        this.representation = representation;
-    }
-
-    /**
-     * Get the current representation.
-     * 
-     * @return the representation currently edited
-     * @since 0.9.0
-     */
-    public DRepresentation getRepresentation() {
-        return this.representation;
     }
 
     /**
