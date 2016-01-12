@@ -55,7 +55,7 @@ public class CreateInstanceOperationTest extends TestCase {
 
     private ModelAccessor accessor;
 
-    private CommandContext rootContext = new CommandContext(EcorePackage.eINSTANCE, null);
+    private CommandContext rootContext = new CommandContext(EcorePackage.eINSTANCE);
 
     private String variableName = DEFAULT_VARIABLE_NAME;
 

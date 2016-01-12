@@ -41,7 +41,7 @@ public class ChangeContextOperationTest extends TestCase {
 
     private ModelAccessor accessor;
 
-    private CommandContext rootContext = new CommandContext(EcorePackage.eINSTANCE, null);
+    private CommandContext rootContext = new CommandContext(EcorePackage.eINSTANCE);
 
     private class Case {
         protected EObject root;

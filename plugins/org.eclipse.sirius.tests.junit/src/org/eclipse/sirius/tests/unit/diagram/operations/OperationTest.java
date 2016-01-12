@@ -90,7 +90,7 @@ public class OperationTest extends DocbookTestCase {
             e.printStackTrace();
         }
         assertNotNull("Not possible to catch the semantic model element.", book);
-        CommandContext context = new CommandContext(book, null);
+        CommandContext context = new CommandContext(book);
 
         // definition and execution of the create instance operation.
         createOp.setReferenceName("chapter");
@@ -117,7 +117,7 @@ public class OperationTest extends DocbookTestCase {
             e.printStackTrace();
         }
         assertNotNull("Not possible to catch the semantic model element.", chapter);
-        CommandContext context = new CommandContext(chapter, null);
+        CommandContext context = new CommandContext(chapter);
 
         final AbstractOperationTask task = createSect1InstanceTask(context);
 
@@ -171,7 +171,7 @@ public class OperationTest extends DocbookTestCase {
             e.printStackTrace();
         }
         assertNotNull("Not possible to catch the semantic model root element.", book);
-        CommandContext context = new CommandContext(book, null);
+        CommandContext context = new CommandContext(book);
 
         // definition and execution of the change context operation.
         String browseChapter = "aql:self.eContents()->first()";
@@ -224,7 +224,7 @@ public class OperationTest extends DocbookTestCase {
             e.printStackTrace();
         }
         assertNotNull("Not possible to catch the semantic model element.", chapter);
-        CommandContext context = new CommandContext(chapter, null);
+        CommandContext context = new CommandContext(chapter);
 
         final AbstractOperationTask task = new SetValueTask(context, accessor, op, session.getInterpreter());
 
@@ -282,7 +282,7 @@ public class OperationTest extends DocbookTestCase {
             e.printStackTrace();
         }
         assertNotNull("Not possible to catch the semantic model root element.", book);
-        CommandContext context = new CommandContext(book, null);
+        CommandContext context = new CommandContext(book);
 
         final AbstractOperationTask task = new SetValueTask(context, accessor, op, session.getInterpreter());
 
@@ -337,7 +337,7 @@ public class OperationTest extends DocbookTestCase {
             e.printStackTrace();
         }
         assertNotNull("Not possible to catch the semantic model root element.", book);
-        CommandContext context = new CommandContext(book, null);
+        CommandContext context = new CommandContext(book);
 
         final AbstractOperationTask task = new UnsetTask(context, accessor, op, session.getInterpreter());
 
@@ -390,7 +390,7 @@ public class OperationTest extends DocbookTestCase {
             e.printStackTrace();
         }
         assertNotNull("Not possible to catch the semantic model element.", chapter);
-        CommandContext context = new CommandContext(chapter, null);
+        CommandContext context = new CommandContext(chapter);
 
         final AbstractOperationTask task = new RemoveElementTask(context, accessor, op, session.getInterpreter());
 
@@ -442,7 +442,7 @@ public class OperationTest extends DocbookTestCase {
             e.printStackTrace();
         }
         assertNotNull("Not possible to catch the semantic model element.", chapter);
-        CommandContext context = new CommandContext(chapter, null);
+        CommandContext context = new CommandContext(chapter);
 
         final AbstractOperationTask sect1task = createSect1InstanceTask(context);
 
@@ -510,7 +510,7 @@ public class OperationTest extends DocbookTestCase {
             e.printStackTrace();
         }
         assertNotNull("Not possible to catch the wanted semantic model element.", sect1);
-        CommandContext sect1context = new CommandContext(sect1, null);
+        CommandContext sect1context = new CommandContext(sect1);
 
         final MoveElement op = ToolFactory.eINSTANCE.createMoveElement();
         op.setFeatureName("sect1");
@@ -578,7 +578,7 @@ public class OperationTest extends DocbookTestCase {
         op.setContainerViewExpression("aql:self");
 
         assertNotNull("Not possible to catch the diagram.", obviousDiagram);
-        CommandContext context = new CommandContext(obviousDiagram, null);
+        CommandContext context = new CommandContext(obviousDiagram);
 
         final AbstractOperationTask task = new CreateViewTask(context, accessor, op, interpreter);
 
@@ -693,7 +693,7 @@ public class OperationTest extends DocbookTestCase {
         DCommand cmd = new SiriusCommand(session.getTransactionalEditingDomain());
 
         for (int i = 0; i < 3; i++) {
-            final CommandContext context = new CommandContext(chapter, null);
+            final CommandContext context = new CommandContext(chapter);
             final AbstractOperationTask task = createSect1InstanceTask(context);
             cmd.getTasks().add(task);
         }
@@ -709,7 +709,7 @@ public class OperationTest extends DocbookTestCase {
         }
         assertEquals("Wrong count of element having the wanted value.", 0, instanceCount);
 
-        final CommandContext chapContext = new CommandContext(chapter, null);
+        final CommandContext chapContext = new CommandContext(chapter);
         final AbstractOperationTask fortask = new ForTask(chapContext, accessor, forop, session.getInterpreter(), null);
         // final AbstractOperationTask settask = new SetValueTask(accessor,
         // chapContext, setop,
@@ -772,7 +772,7 @@ public class OperationTest extends DocbookTestCase {
             e.printStackTrace();
         }
         assertNotNull("Not possible to catch the semantic model element.", chapter);
-        CommandContext context = new CommandContext(chapter, null);
+        CommandContext context = new CommandContext(chapter);
 
         AbstractOperationTask iftask = new IfTask(context, accessor, ifop, session.getInterpreter());
         final AbstractOperationTask task = new SetValueTask(context, accessor, op, session.getInterpreter());
@@ -889,7 +889,7 @@ public class OperationTest extends DocbookTestCase {
             e.printStackTrace();
         }
         assertNotNull("Not possible to catch the semantic model element.", chapter);
-        CommandContext context = new CommandContext(chapter, null);
+        CommandContext context = new CommandContext(chapter);
 
         AbstractOperationTask switchtask = new SwitchTask(context, accessor, switchOp, session, new NoUICallback());
         // check that there is no instance of chapter with an id equal to

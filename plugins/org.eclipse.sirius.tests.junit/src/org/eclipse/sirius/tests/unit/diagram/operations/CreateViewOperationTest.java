@@ -176,7 +176,7 @@ public class CreateViewOperationTest extends TestCase {
         Command addSemanticResourceCmd = new AddSemanticResourceCommand(session, transientSemanticResourceURI, new NullProgressMonitor());
         domain.getCommandStack().execute(addSemanticResourceCmd);
         semantic = (EPackage) session.getSemanticResources().iterator().next().getContents().get(0);
-        rootContext = new CommandContext(semantic.getEClassifiers().get(0), null);
+        rootContext = new CommandContext(semantic.getEClassifiers().get(0));
 
         UserSession.from(session).selectOnlyViewpoint(EcoreModeler.DESIGN_VIEWPOINT_NAME);
 

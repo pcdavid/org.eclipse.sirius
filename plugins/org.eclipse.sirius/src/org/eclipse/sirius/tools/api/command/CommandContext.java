@@ -43,10 +43,23 @@ public class CommandContext {
      * 
      * @param target
      *            the first context.
+     * @since 4.0.0
+     */
+    public CommandContext(final EObject target) {
+        this.nextPushEObject = target;
+    }
+
+    /**
+     * Create a new {@link CommandContext}.
+     * 
+     * @param target
+     *            the first context.
      * @param representation
      *            the current representation
      * @since 0.9.0
+     * @deprecated Use {@link CommandContext#CommandContext(EObject)} instead.
      */
+    @Deprecated
     public CommandContext(final EObject target, final DRepresentation representation) {
         this.nextPushEObject = target;
     }

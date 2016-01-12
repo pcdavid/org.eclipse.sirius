@@ -91,7 +91,7 @@ public class ExecuteToolOperationTask extends AbstractCommandTask {
             this.session = new EObjectQuery(representation).getSession();
         }
         Preconditions.checkArgument(session != null, Messages.ExecuteToolOperationTask_sessionNotFound);
-        final CommandContext context = new CommandContext(target, representation);
+        final CommandContext context = new CommandContext(target);
         this.rootOperationTask = createTask(op, context);
         // for task creates children tasks at runtime
         if (!(rootOperationTask instanceof ForTask) && op instanceof ContainerModelOperation) {
