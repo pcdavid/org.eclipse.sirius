@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2007, 2015 THALES GLOBAL SERVICES.
+ * Copyright (c) 2007, 2016 THALES GLOBAL SERVICES.
  * This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
  * which accompanies this distribution, and is available at
@@ -15,7 +15,6 @@ package org.eclipse.sirius.business.internal.helper.task.operations;
 import java.text.MessageFormat;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashSet;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.sirius.business.api.helper.task.ICommandTask;
@@ -66,14 +65,12 @@ public class CreateInstanceTask extends AbstractOperationTask implements ICreati
         this.createOp = createInstance;
     }
 
-    /**
-     * {@inheritDoc}
-     * 
-     * @see org.eclipse.sirius.business.api.helper.task.ICommandTask#execute()
-     */
     @Override
     public void execute() throws MetaClassNotFoundException, FeatureNotFoundException {
         target = context.getCurrentTarget();
+        if (!extPackage.eValid(target, createOp.getReferenceName())) {
+            throw new FeatureNotFoundException(MessageFormat.format(org.eclipse.sirius.ecore.extender.business.internal.Messages.ModelAccessor_error_featureNotFound, createOp.getReferenceName(), target));
+        }
         final String typeName = getFeatureName(target, createOp, createOp.getTypeName());
         instance = extPackage.createInstance(typeName);
         if (instance == null) {
@@ -100,64 +97,36 @@ public class CreateInstanceTask extends AbstractOperationTask implements ICreati
         }
     }
 
-    /**
-     * {@inheritDoc}
-     * 
-     * @see org.eclipse.sirius.business.api.helper.task.ICommandTask#getLabel()
-     */
     @Override
     public String getLabel() {
         return Messages.CreateInstanceTask_label;
     }
 
-    /**
-     * {@inheritDoc}
-     * 
-     * @see org.eclipse.sirius.business.api.helper.task.ICreationTask#getCreatedElements()
-     */
     @Override
     public Collection<EObject> getCreatedElements() {
-        final Collection<EObject> result = new HashSet<EObject>(1);
         if (instance != null) {
-            result.add(instance);
+            return Collections.singleton(instance);
+        } else {
+            return Collections.emptySet();
         }
-        return result;
     }
 
-    /**
-     * {@inheritDoc}
-     * 
-     * @see org.eclipse.sirius.business.internal.helper.task.IModificationTask#getAffectedElements()
-     */
     @Override
     public Collection<EObject> getAffectedElements() {
-        final Collection<EObject> result = new HashSet<EObject>(1);
         if (target != null) {
-            result.add(target);
+            return Collections.singleton(target);
+        } else {
+            return Collections.emptySet();
         }
-        return result;
     }
 
-    /**
-     * {@inheritDoc}
-     * 
-     * @see org.eclipse.sirius.business.internal.helper.task.IModificationTask#getCreatedReferences()
-     */
     @Override
     public Collection<EObject> getCreatedReferences() {
-        // not applicable
         return Collections.emptySet();
     }
 
-    /**
-     * {@inheritDoc}
-     * 
-     * @see org.eclipse.sirius.business.api.helper.task.ICreationTask#getCreatedRepresentationElements()
-     */
     @Override
     public Collection<DRepresentationElement> getCreatedRepresentationElements() {
-        // nothing
         return Collections.emptySet();
     }
-
 }
