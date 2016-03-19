@@ -401,7 +401,7 @@ public class ArrangeAllWithAutoSize {
                 extendedBoxName.union(new Dimension(0, translate.height));
             }
             for (SquareEditPart nameNode : Iterables.filter(gep.getChildren(), SquareEditPart.class)) {
-                Dimension translate = gep.getFigure().getMinimumSize().getCopy();
+                Dimension translate = nameNode.getFigure().getMinimumSize().getCopy();
                 extendedBoxName.union(new Dimension(0, translate.height));
             }
 
