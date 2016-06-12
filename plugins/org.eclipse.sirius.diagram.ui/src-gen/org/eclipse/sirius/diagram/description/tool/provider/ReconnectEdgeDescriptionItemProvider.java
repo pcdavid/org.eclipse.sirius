@@ -28,8 +28,11 @@ import org.eclipse.sirius.diagram.description.tool.ReconnectEdgeDescription;
 import org.eclipse.sirius.diagram.description.tool.ToolFactory;
 import org.eclipse.sirius.diagram.description.tool.ToolPackage;
 import org.eclipse.sirius.diagram.ui.provider.DiagramUIPlugin;
+import org.eclipse.sirius.tools.api.FeaturePresentation;
 import org.eclipse.sirius.viewpoint.description.IdentifiedElement;
 import org.eclipse.sirius.viewpoint.description.tool.provider.MappingBasedToolDescriptionItemProvider;
+
+import com.google.common.collect.ImmutableList;
 
 /**
  * This is the item provider adapter for a
@@ -87,10 +90,19 @@ public class ReconnectEdgeDescriptionItemProvider extends MappingBasedToolDescri
      * {@link org.eclipse.emf.edit.command.MoveCommand} in
      * {@link #createCommand}. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
-     * @generated
+     * @generated NOT
      */
     @Override
     public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+        if (childrenFeatures == null) {
+            List<EStructuralFeature> features = ImmutableList.copyOf(this.getChildrenFeaturesGen(object));
+            childrenFeatures.clear();
+            childrenFeatures.addAll(FeaturePresentation.sortedFeatures(features));
+        }
+        return childrenFeatures;
+    }
+
+    public Collection<? extends EStructuralFeature> getChildrenFeaturesGen(Object object) {
         if (childrenFeatures == null) {
             super.getChildrenFeatures(object);
             childrenFeatures.add(ToolPackage.Literals.RECONNECT_EDGE_DESCRIPTION__SOURCE);

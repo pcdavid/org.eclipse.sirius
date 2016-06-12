@@ -23,10 +23,13 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.eclipse.sirius.business.api.query.IdentifiedElementQuery;
 import org.eclipse.sirius.diagram.sequence.description.DescriptionFactory;
 import org.eclipse.sirius.diagram.sequence.description.tool.MessageCreationTool;
+import org.eclipse.sirius.tools.api.FeaturePresentation;
 import org.eclipse.sirius.viewpoint.description.DescriptionPackage;
 import org.eclipse.sirius.viewpoint.description.IdentifiedElement;
 import org.eclipse.sirius.viewpoint.description.tool.ToolFactory;
 import org.eclipse.sirius.viewpoint.description.tool.ToolPackage;
+
+import com.google.common.collect.ImmutableList;
 
 /**
  * This is the item provider adapter for a
@@ -248,10 +251,19 @@ public class MessageCreationToolItemProvider extends SequenceDiagramToolDescript
      * {@link org.eclipse.emf.edit.command.MoveCommand} in
      * {@link #createCommand}. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
-     * @generated
+     * @generated NOT
      */
     @Override
     public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+        if (childrenFeatures == null) {
+            List<EStructuralFeature> features = ImmutableList.copyOf(this.getChildrenFeaturesGen(object));
+            childrenFeatures.clear();
+            childrenFeatures.addAll(FeaturePresentation.sortedFeatures(features));
+        }
+        return childrenFeatures;
+    }
+
+    public Collection<? extends EStructuralFeature> getChildrenFeaturesGen(Object object) {
         if (childrenFeatures == null) {
             super.getChildrenFeatures(object);
             childrenFeatures.add(ToolPackage.Literals.ABSTRACT_TOOL_DESCRIPTION__FILTERS);
@@ -265,7 +277,6 @@ public class MessageCreationToolItemProvider extends SequenceDiagramToolDescript
         }
         return childrenFeatures;
     }
-
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
      *
