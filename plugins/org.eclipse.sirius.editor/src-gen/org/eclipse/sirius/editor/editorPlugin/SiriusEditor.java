@@ -84,6 +84,11 @@ import org.eclipse.jface.resource.FontDescriptor;
 import org.eclipse.jface.resource.FontRegistry;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
+import org.eclipse.jface.viewers.CellEditor;
+import org.eclipse.jface.viewers.ColumnViewerEditor;
+import org.eclipse.jface.viewers.ColumnViewerEditorActivationEvent;
+import org.eclipse.jface.viewers.ColumnViewerEditorActivationStrategy;
+import org.eclipse.jface.viewers.ICellModifier;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.ISelectionProvider;
@@ -91,13 +96,16 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.StructuredViewer;
+import org.eclipse.jface.viewers.TextCellEditor;
 import org.eclipse.jface.viewers.TreeSelection;
 import org.eclipse.jface.viewers.TreeViewer;
+import org.eclipse.jface.viewers.TreeViewerEditor;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.sirius.editor.properties.ViewpointPropertySheetPage;
 import org.eclipse.sirius.editor.utils.SelectionTreeTextEditor;
 import org.eclipse.sirius.ui.business.api.dialect.DialectUIManager;
 import org.eclipse.sirius.ui.business.api.featureExtensions.FeatureExtensionsUIManager;
+import org.eclipse.sirius.viewpoint.ViewpointPackage;
 import org.eclipse.sirius.viewpoint.description.DescriptionFactory;
 import org.eclipse.sirius.viewpoint.description.audit.provider.AuditItemProviderAdapterFactory;
 import org.eclipse.sirius.viewpoint.description.provider.DescriptionItemProviderAdapterFactory;
@@ -122,7 +130,6 @@ import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.Tree;
-import org.eclipse.swt.widgets.Widget;
 import org.eclipse.ui.IActionBars;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorPart;
@@ -851,6 +858,12 @@ public class SiriusEditor extends MultiPageEditorPart
                         Tree tree = new Tree(composite, SWT.MULTI);
                         initRefreshListeners(tree);
                         TreeViewer newTreeViewer = new TreeViewer(tree);
+                        TreeViewerEditor.create(newTreeViewer, new ColumnViewerEditorActivationStrategy(newTreeViewer) {
+                            protected boolean isEditorActivationEvent(ColumnViewerEditorActivationEvent event) {
+                                return event.eventType == ColumnViewerEditorActivationEvent.MOUSE_DOUBLE_CLICK_SELECTION || (event.eventType == ColumnViewerEditorActivationEvent.KEY_PRESSED && event.keyCode == SWT.F2);
+                            }
+                        }, ColumnViewerEditor.DEFAULT);
+                        enableEditing1(newTreeViewer);
                         return newTreeViewer;
                     }
 
@@ -951,6 +964,43 @@ public class SiriusEditor extends MultiPageEditorPart
                 getContainer().setSize(point.x, point.y - 6);
             }
         }
+    }
+
+    private void enableEditing1(TreeViewer treeViewer) {
+        // You have to create identifier for tree columns
+        treeViewer.setColumnProperties(new String[] { "col1" });
+        // Create text editor
+        treeViewer.setCellEditors(new CellEditor[] { new TextCellEditor(treeViewer.getTree()) });
+        treeViewer.setCellModifier(new ICellModifier() {
+
+            @Override
+            public void modify(Object element, String property, Object value) {
+                if (element instanceof TreeItem) {
+                    // update element and tree model
+                    TreeItem treeItem = (TreeItem) element;
+                    Object data = treeItem.getData();
+                    if (data instanceof IdentifiedElement) {
+                        IdentifiedElement elt = (IdentifiedElement) data;
+                        getEditingDomain().getCommandStack().execute(SetCommand.create(getEditingDomain(), elt, DescriptionPackage.Literals.IDENTIFIED_ELEMENT__NAME, value));
+                        treeItem.setText(value.toString());
+                    }
+                }
+            }
+
+            @Override
+            public Object getValue(Object element, String property) {
+                if (element instanceof IdentifiedElement) {
+                    IdentifiedElement elt = (IdentifiedElement) element;
+                    return elt.getName();
+                }
+                return element.toString();
+            }
+
+            @Override
+            public boolean canModify(Object element, String property) {
+                return element instanceof IdentifiedElement;
+            }
+        });
     }
 
     /**
