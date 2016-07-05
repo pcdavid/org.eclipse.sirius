@@ -50,6 +50,7 @@ import org.eclipse.ui.ISaveablePart2;
 import org.eclipse.ui.ISaveablesSource;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchPreferenceConstants;
+import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.Saveable;
@@ -225,7 +226,15 @@ public class EditingSession implements IEditingSession, ISaveablesSource, Refres
                 DialectUIManager.INSTANCE.closeEditor(editor, save);
             }
         } else {
-            PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().closeEditor(editor, save);
+            final IWorkbenchPage page = EclipseUIUtil.getActivePage();
+            if (page != null) {
+                page.getWorkbenchWindow().getShell().getDisplay().asyncExec(new Runnable() {
+                    @Override
+                    public void run() {
+                        page.closeEditor(editor, save);
+                    }
+                });
+            }
         }
     }
 
