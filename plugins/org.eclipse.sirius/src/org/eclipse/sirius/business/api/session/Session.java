@@ -19,6 +19,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
+import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.common.tools.api.interpreter.IInterpreter;
 import org.eclipse.sirius.ecore.extender.business.api.accessor.ModelAccessor;
@@ -378,4 +379,25 @@ public interface Session {
      * @since 0.9.0
      */
     RefreshEditorsPrecommitListener getRefreshEditorsListener();
+
+    /**
+     * Execute some operation in the context of the session.
+     * 
+     * @param label
+     *            a title for the operation
+     * @param r
+     *            the operation
+     */
+    default void execute(String label, final Runnable r) {
+        TransactionalEditingDomain ted = this.getTransactionalEditingDomain();
+        if (ted != null) {
+            RecordingCommand cmd = new RecordingCommand(ted, label) {
+                @Override
+                protected void doExecute() {
+                    r.run();
+                }
+            };
+            ted.getCommandStack().execute(cmd);
+        }
+    }
 }
