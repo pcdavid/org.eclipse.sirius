@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: org.eclipse.sirius.tests.rcptt.sample.properties.design.group
 Bundle-SymbolicName: org.eclipse.sirius.tests.rcptt.sample.properties.design.group;singleton:=true
 Bundle-Version: 4.1.0
-Bundle-Activator: org.eclipse.sirius.tests.rcptt.sample.properties.design.group.Activator
+Bundle-Activator: org.eclipse.sirius.tests.rcptt.properties.design.group.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.core.resources,
