@@ -12,36 +12,32 @@ package org.eclipse.sirius.tree.editor.properties.filters.description.treedescri
 // Start of user code specific imports
 
 import org.eclipse.emf.ecore.EStructuralFeature;
-
+import org.eclipse.sirius.editor.properties.filters.common.ViewpointPropertyFilter;
 import org.eclipse.sirius.tree.description.DescriptionPackage;
-import org.eclipse.sirius.tree.editor.properties.filters.common.ViewpointPropertyFilter;
 
 // End of user code specific imports
-
 
 /**
  * A filter for the preconditionExpression property section.
  */
 public class TreeDescriptionPreconditionExpressionFilter extends ViewpointPropertyFilter {
 
-	/**
-	 * {@inheritDoc}
-	 */
-	protected EStructuralFeature getFeature() {
-		return DescriptionPackage.eINSTANCE.getTreeDescription_PreconditionExpression();
-	}
-	
-	/**
-	 * {@inheritDoc}
-	 */
-	protected boolean isRightInputType(Object arg0) {
+    /**
+     * {@inheritDoc}
+     */
+    protected EStructuralFeature getFeature() {
+        return DescriptionPackage.eINSTANCE.getTreeDescription_PreconditionExpression();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    protected boolean isRightInputType(Object arg0) {
         return arg0 instanceof org.eclipse.sirius.tree.description.TreeDescription;
     }
-	
-	// Start of user code user methods
+
+    // Start of user code user methods
 
     // End of user code user methods
-	
-	
 
 }

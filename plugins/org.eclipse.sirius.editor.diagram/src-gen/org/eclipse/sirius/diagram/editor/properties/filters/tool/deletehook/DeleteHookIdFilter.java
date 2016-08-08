@@ -12,36 +12,32 @@ package org.eclipse.sirius.diagram.editor.properties.filters.tool.deletehook;
 // Start of user code specific imports
 
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.sirius.diagram.description.tool.ToolPackage;
-import org.eclipse.sirius.diagram.editor.properties.filters.common.ViewpointPropertyFilter;
+import org.eclipse.sirius.editor.properties.filters.common.ViewpointPropertyFilter;
 
 // End of user code specific imports
-
 
 /**
  * A filter for the id property section.
  */
 public class DeleteHookIdFilter extends ViewpointPropertyFilter {
 
-	/**
-	 * {@inheritDoc}
-	 */
-	protected EStructuralFeature getFeature() {
-		return ToolPackage.eINSTANCE.getDeleteHook_Id();
-	}
-	
-	/**
-	 * {@inheritDoc}
-	 */
-	protected boolean isRightInputType(Object arg0) {
+    /**
+     * {@inheritDoc}
+     */
+    protected EStructuralFeature getFeature() {
+        return ToolPackage.eINSTANCE.getDeleteHook_Id();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    protected boolean isRightInputType(Object arg0) {
         return arg0 instanceof org.eclipse.sirius.diagram.description.tool.DeleteHook;
     }
-	
-	// Start of user code user methods
+
+    // Start of user code user methods
 
     // End of user code user methods
-	
-	
 
 }

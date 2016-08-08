@@ -12,36 +12,32 @@ package org.eclipse.sirius.diagram.editor.properties.filters.style.ellipsenodede
 // Start of user code specific imports
 
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.sirius.diagram.description.style.StylePackage;
-import org.eclipse.sirius.diagram.editor.properties.filters.common.ViewpointPropertyFilter;
+import org.eclipse.sirius.editor.properties.filters.common.ViewpointPropertyFilter;
 
 // End of user code specific imports
-
 
 /**
  * A filter for the verticalDiameterComputationExpression property section.
  */
 public class EllipseNodeDescriptionVerticalDiameterComputationExpressionFilter extends ViewpointPropertyFilter {
 
-	/**
-	 * {@inheritDoc}
-	 */
-	protected EStructuralFeature getFeature() {
-		return StylePackage.eINSTANCE.getEllipseNodeDescription_VerticalDiameterComputationExpression();
-	}
-	
-	/**
-	 * {@inheritDoc}
-	 */
-	protected boolean isRightInputType(Object arg0) {
+    /**
+     * {@inheritDoc}
+     */
+    protected EStructuralFeature getFeature() {
+        return StylePackage.eINSTANCE.getEllipseNodeDescription_VerticalDiameterComputationExpression();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    protected boolean isRightInputType(Object arg0) {
         return arg0 instanceof org.eclipse.sirius.diagram.description.style.EllipseNodeDescription;
     }
-	
-	// Start of user code user methods
+
+    // Start of user code user methods
 
     // End of user code user methods
-	
-	
 
 }

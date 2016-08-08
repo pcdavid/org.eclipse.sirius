@@ -12,36 +12,32 @@ package org.eclipse.sirius.editor.properties.filters.validation.semanticvalidati
 // Start of user code specific imports
 
 import org.eclipse.emf.ecore.EStructuralFeature;
-
-import org.eclipse.sirius.viewpoint.description.validation.ValidationPackage;
 import org.eclipse.sirius.editor.properties.filters.common.ViewpointPropertyFilter;
+import org.eclipse.sirius.viewpoint.description.validation.ValidationPackage;
 
 // End of user code specific imports
-
 
 /**
  * A filter for the targetClass property section.
  */
 public class SemanticValidationRuleTargetClassFilter extends ViewpointPropertyFilter {
 
-	/**
-	 * {@inheritDoc}
-	 */
-	protected EStructuralFeature getFeature() {
-		return ValidationPackage.eINSTANCE.getSemanticValidationRule_TargetClass();
-	}
-	
-	/**
-	 * {@inheritDoc}
-	 */
-	protected boolean isRightInputType(Object arg0) {
+    /**
+     * {@inheritDoc}
+     */
+    protected EStructuralFeature getFeature() {
+        return ValidationPackage.eINSTANCE.getSemanticValidationRule_TargetClass();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    protected boolean isRightInputType(Object arg0) {
         return arg0 instanceof org.eclipse.sirius.viewpoint.description.validation.SemanticValidationRule;
     }
-	
-	// Start of user code user methods
+
+    // Start of user code user methods
 
     // End of user code user methods
-	
-	
 
 }

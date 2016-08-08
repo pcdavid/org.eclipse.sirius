@@ -12,36 +12,32 @@ package org.eclipse.sirius.properties.editor.properties.filters.properties.selec
 // Start of user code specific imports
 
 import org.eclipse.emf.ecore.EStructuralFeature;
-
+import org.eclipse.sirius.editor.properties.filters.common.ViewpointPropertyFilter;
 import org.eclipse.sirius.properties.PropertiesPackage;
-import org.eclipse.sirius.properties.editor.properties.filters.common.ViewpointPropertyFilter;
 
 // End of user code specific imports
-
 
 /**
  * A filter for the candidateDisplayExpression property section.
  */
 public class SelectDescriptionCandidateDisplayExpressionFilter extends ViewpointPropertyFilter {
 
-	/**
-	 * {@inheritDoc}
-	 */
-	protected EStructuralFeature getFeature() {
-		return PropertiesPackage.eINSTANCE.getSelectDescription_CandidateDisplayExpression();
-	}
-	
-	/**
-	 * {@inheritDoc}
-	 */
-	protected boolean isRightInputType(Object arg0) {
+    /**
+     * {@inheritDoc}
+     */
+    protected EStructuralFeature getFeature() {
+        return PropertiesPackage.eINSTANCE.getSelectDescription_CandidateDisplayExpression();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    protected boolean isRightInputType(Object arg0) {
         return arg0 instanceof org.eclipse.sirius.properties.SelectDescription;
     }
-	
-	// Start of user code user methods
+
+    // Start of user code user methods
 
     // End of user code user methods
-	
-	
 
 }

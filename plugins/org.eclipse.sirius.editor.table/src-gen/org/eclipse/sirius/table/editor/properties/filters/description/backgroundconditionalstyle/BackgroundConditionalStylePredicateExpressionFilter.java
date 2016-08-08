@@ -12,36 +12,32 @@ package org.eclipse.sirius.table.editor.properties.filters.description.backgroun
 // Start of user code specific imports
 
 import org.eclipse.emf.ecore.EStructuralFeature;
-
+import org.eclipse.sirius.editor.properties.filters.common.ViewpointPropertyFilter;
 import org.eclipse.sirius.table.metamodel.table.description.DescriptionPackage;
-import org.eclipse.sirius.table.editor.properties.filters.common.ViewpointPropertyFilter;
 
 // End of user code specific imports
-
 
 /**
  * A filter for the predicateExpression property section.
  */
 public class BackgroundConditionalStylePredicateExpressionFilter extends ViewpointPropertyFilter {
 
-	/**
-	 * {@inheritDoc}
-	 */
-	protected EStructuralFeature getFeature() {
-		return DescriptionPackage.eINSTANCE.getBackgroundConditionalStyle_PredicateExpression();
-	}
-	
-	/**
-	 * {@inheritDoc}
-	 */
-	protected boolean isRightInputType(Object arg0) {
+    /**
+     * {@inheritDoc}
+     */
+    protected EStructuralFeature getFeature() {
+        return DescriptionPackage.eINSTANCE.getBackgroundConditionalStyle_PredicateExpression();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    protected boolean isRightInputType(Object arg0) {
         return arg0 instanceof org.eclipse.sirius.table.metamodel.table.description.BackgroundConditionalStyle;
     }
-	
-	// Start of user code user methods
+
+    // Start of user code user methods
 
     // End of user code user methods
-	
-	
 
 }

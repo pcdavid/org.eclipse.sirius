@@ -12,36 +12,32 @@ package org.eclipse.sirius.diagram.editor.properties.filters.style.gaugesectiond
 // Start of user code specific imports
 
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.sirius.diagram.description.style.StylePackage;
-import org.eclipse.sirius.diagram.editor.properties.filters.common.ViewpointPropertyFilter;
+import org.eclipse.sirius.editor.properties.filters.common.ViewpointPropertyFilter;
 
 // End of user code specific imports
-
 
 /**
  * A filter for the foregroundColor property section.
  */
 public class GaugeSectionDescriptionForegroundColorFilter extends ViewpointPropertyFilter {
 
-	/**
-	 * {@inheritDoc}
-	 */
-	protected EStructuralFeature getFeature() {
-		return StylePackage.eINSTANCE.getGaugeSectionDescription_ForegroundColor();
-	}
-	
-	/**
-	 * {@inheritDoc}
-	 */
-	protected boolean isRightInputType(Object arg0) {
+    /**
+     * {@inheritDoc}
+     */
+    protected EStructuralFeature getFeature() {
+        return StylePackage.eINSTANCE.getGaugeSectionDescription_ForegroundColor();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    protected boolean isRightInputType(Object arg0) {
         return arg0 instanceof org.eclipse.sirius.diagram.description.style.GaugeSectionDescription;
     }
-	
-	// Start of user code user methods
+
+    // Start of user code user methods
 
     // End of user code user methods
-	
-	
 
 }

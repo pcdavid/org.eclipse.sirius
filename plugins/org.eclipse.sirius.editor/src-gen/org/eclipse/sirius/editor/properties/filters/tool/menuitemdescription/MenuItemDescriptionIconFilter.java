@@ -12,36 +12,32 @@ package org.eclipse.sirius.editor.properties.filters.tool.menuitemdescription;
 // Start of user code specific imports
 
 import org.eclipse.emf.ecore.EStructuralFeature;
-
-import org.eclipse.sirius.viewpoint.description.tool.ToolPackage;
 import org.eclipse.sirius.editor.properties.filters.common.ViewpointPropertyFilter;
+import org.eclipse.sirius.viewpoint.description.tool.ToolPackage;
 
 // End of user code specific imports
-
 
 /**
  * A filter for the icon property section.
  */
 public class MenuItemDescriptionIconFilter extends ViewpointPropertyFilter {
 
-	/**
-	 * {@inheritDoc}
-	 */
-	protected EStructuralFeature getFeature() {
-		return ToolPackage.eINSTANCE.getMenuItemDescription_Icon();
-	}
-	
-	/**
-	 * {@inheritDoc}
-	 */
-	protected boolean isRightInputType(Object arg0) {
+    /**
+     * {@inheritDoc}
+     */
+    protected EStructuralFeature getFeature() {
+        return ToolPackage.eINSTANCE.getMenuItemDescription_Icon();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    protected boolean isRightInputType(Object arg0) {
         return arg0 instanceof org.eclipse.sirius.viewpoint.description.tool.MenuItemDescription;
     }
-	
-	// Start of user code user methods
+
+    // Start of user code user methods
 
     // End of user code user methods
-	
-	
 
 }
