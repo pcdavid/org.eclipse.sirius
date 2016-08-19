@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.sirius.editor.properties.sections.common.AbstractComboPropertySection;
 import org.eclipse.sirius.properties.PropertiesPackage;
+import org.eclipse.sirius.viewpoint.description.ColorDescription;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 
@@ -111,6 +112,7 @@ public class WidgetStyleLabelBackgroundColorPropertySection extends AbstractComb
             }
         }
 
+        Collections.sort((List<ColorDescription>) values, AbstractComboPropertySection.COLOR_COMPARATOR);
         // Start of user code choice of values
         // End of user code choice of values
         return values;

@@ -22,6 +22,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.sirius.diagram.description.style.StylePackage;
 import org.eclipse.sirius.editor.editorPlugin.SiriusEditor;
 import org.eclipse.sirius.editor.properties.sections.common.AbstractComboPropertySection;
+import org.eclipse.sirius.viewpoint.description.ColorDescription;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 
@@ -108,7 +109,7 @@ public class NoteDescriptionColorPropertySection extends AbstractComboPropertySe
 
         // Required singleValued color reference : do not propose null.
         values.remove(null);
-
+        Collections.sort((List<ColorDescription>) values, COLOR_COMPARATOR);
         // Start of user code choice of values
         // End of user code choice of values
         return values;

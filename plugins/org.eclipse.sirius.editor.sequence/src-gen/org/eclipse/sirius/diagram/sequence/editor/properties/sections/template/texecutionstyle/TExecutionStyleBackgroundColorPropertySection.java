@@ -22,6 +22,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.sirius.diagram.sequence.template.TemplatePackage;
 import org.eclipse.sirius.editor.editorPlugin.SiriusEditor;
 import org.eclipse.sirius.editor.properties.sections.common.AbstractComboPropertySection;
+import org.eclipse.sirius.viewpoint.description.ColorDescription;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CLabel;
 import org.eclipse.swt.layout.FormAttachment;
@@ -112,7 +113,7 @@ public class TExecutionStyleBackgroundColorPropertySection extends AbstractCombo
 
         // Required singleValued color reference : do not propose null.
         values.remove(null);
-
+        Collections.sort((List<ColorDescription>) values, COLOR_COMPARATOR);
         // Start of user code choice of values
         // End of user code choice of values
         return values;

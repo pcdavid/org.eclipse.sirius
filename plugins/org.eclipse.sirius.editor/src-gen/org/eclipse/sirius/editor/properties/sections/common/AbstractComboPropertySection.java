@@ -1,17 +1,19 @@
+
 /*******************************************************************************
- * Copyright (c) 2006, 2008 IBM Corporation and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *
- * Contributors:
- * IBM Corporation - initial API and implementation
- * Obeo - Combo box adaptation
- *******************************************************************************/
+  * Copyright (c) 2006, 2016 IBM Corporation and others.
+  * All rights reserved. This program and the accompanying materials
+  * are made available under the terms of the Eclipse Public License v1.0
+  * which accompanies this distribution, and is available at
+  * http://www.eclipse.org/legal/epl-v10.html
+  *
+  * Contributors:
+  * IBM Corporation - initial API and implementation
+  * Obeo - Combo box adaptation
+  *******************************************************************************/
 
 package org.eclipse.sirius.editor.properties.sections.common;
 
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 
@@ -24,6 +26,8 @@ import org.eclipse.emf.edit.domain.IEditingDomainProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.sirius.editor.properties.ViewpointPropertySheetPage;
+import org.eclipse.sirius.viewpoint.description.ColorDescription;
+import org.eclipse.sirius.viewpoint.description.SystemColor;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CCombo;
 import org.eclipse.swt.custom.CLabel;
@@ -45,6 +49,23 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
  * An abstract implementation of a section with a combo box.
  */
 public abstract class AbstractComboPropertySection extends AbstractViewpointPropertySection {
+    /**
+     * A comparator to ensure user-specified colors appear before the default
+     * ones.
+     */
+    protected static Comparator<ColorDescription> COLOR_COMPARATOR = new Comparator<ColorDescription>() {
+        @Override
+        public int compare(ColorDescription o1, ColorDescription o2) {
+            if (o1 instanceof SystemColor && !(o2 instanceof SystemColor)) {
+                return 1;
+            } else if (!(o1 instanceof SystemColor) && o2 instanceof SystemColor) {
+                return -1;
+            } else {
+                return 0;
+            }
+        }
+    };
+
     /** The combo control for the section. */
     protected CCombo combo;
 
