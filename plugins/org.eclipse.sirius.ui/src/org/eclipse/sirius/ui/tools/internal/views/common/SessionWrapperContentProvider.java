@@ -19,6 +19,7 @@ import java.util.List;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.provider.IDisposable;
+import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryContentProvider;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.Viewer;
@@ -138,6 +139,8 @@ public class SessionWrapperContentProvider implements ITreeContentProvider {
             // target.
             result.addAll(getWrappedChildren(parentElement));
             result.addAll(getRepresentationDescriptorsAssociatedToEObject((EObject) parentElement));
+        } else if (parentElement instanceof IStructuredItemContentProvider) {
+            result.addAll(((IStructuredItemContentProvider) parentElement).getElements(parentElement));
         }
 
         return result;
