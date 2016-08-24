@@ -856,8 +856,14 @@ public abstract class AbstractDTreeEditor extends EditorPart
             Job refreshJob = new Job(Messages.AbstractDTreeEditor_modelerDescriptionFilesLoadedJob) {
                 @Override
                 protected IStatus run(IProgressMonitor monitor) {
-                    getEditingDomain().getCommandStack().execute(new RefreshRepresentationsCommand(getEditingDomain(), monitor, getRepresentation()));
-                    return Status.OK_STATUS;
+                    TransactionalEditingDomain domain = getEditingDomain();
+                    if (domain != null && domain.getCommandStack() != null) {
+                        domain.getCommandStack().execute(new RefreshRepresentationsCommand(domain, monitor, getRepresentation()));
+                        return Status.OK_STATUS;
+                    } else {
+                        // Nothing to do, the domain has been disposed since we were scheduled.
+                        return Status.CANCEL_STATUS;
+                    }
                 }
             };
             refreshJob.schedule();
