@@ -22,6 +22,7 @@ import org.eclipse.sirius.common.tools.api.util.ReflectionHelper;
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.ui.edit.api.part.AbstractDiagramContainerEditPart;
 import org.eclipse.sirius.table.metamodel.table.DTable;
+import org.eclipse.sirius.tests.support.api.TestsUtil;
 import org.eclipse.sirius.tests.swtbot.Activator;
 import org.eclipse.sirius.tests.swtbot.support.api.AbstractSiriusSwtBotGefTestCase;
 import org.eclipse.sirius.tests.swtbot.support.api.business.UIResource;
@@ -84,6 +85,9 @@ public class CellEditorExtensionTest extends AbstractSiriusSwtBotGefTestCase {
      * Tests the semantic properties with diagram editor.
      */
     public void testCellEditorOnDiagram() {
+        if (TestsUtil.isEEFBasedPropertiesViewsSupportInstalled()) {
+            return;
+        }
         editor = (SWTBotSiriusDiagramEditor) openRepresentation(localSession.getOpenedSession(), REPRESENTATION_DESCRIPTION_DIAGRAM, "new " + REPRESENTATION_DESCRIPTION_DIAGRAM, DDiagram.class);
         SWTBotUtils.waitAllUiEvents();
         SWTBotGefEditPart botGefEditPart = editor.getEditPart("NewEClass1", AbstractDiagramContainerEditPart.class);
@@ -96,6 +100,9 @@ public class CellEditorExtensionTest extends AbstractSiriusSwtBotGefTestCase {
      * Tests the semantic properties with tree editor.
      */
     public void testCellEditorOnTree() {
+        if (TestsUtil.isEEFBasedPropertiesViewsSupportInstalled()) {
+            return;
+        }
         tree = openRepresentation(localSession.getOpenedSession(), REPRESENTATION_DESCRIPTION_TREE, "new " + REPRESENTATION_DESCRIPTION_TREE, DTree.class);
         SWTBotUtils.waitAllUiEvents();
         SWTBot swtBot = tree.bot();
@@ -108,6 +115,9 @@ public class CellEditorExtensionTest extends AbstractSiriusSwtBotGefTestCase {
      * Tests the semantic properties with table editor.
      */
     public void testCellEditorOnTable() {
+        if (TestsUtil.isEEFBasedPropertiesViewsSupportInstalled()) {
+            return;
+        }
         table = openRepresentation(localSession.getOpenedSession(), REPRESENTATION_DESCRIPTION_TABLE, "new " + REPRESENTATION_DESCRIPTION_TABLE, DTable.class);
         SWTBotUtils.waitAllUiEvents();
         SWTBot swtBot = table.bot();

@@ -116,6 +116,7 @@ import org.eclipse.sirius.diagram.ui.tools.internal.routers.DForestRouter;
 import org.eclipse.sirius.diagram.ui.tools.internal.routers.DTreeRouter;
 import org.eclipse.sirius.tests.support.api.ImageEquality;
 import org.eclipse.sirius.tests.support.api.SiriusAssert;
+import org.eclipse.sirius.tests.support.api.TestsUtil;
 import org.eclipse.sirius.tests.swtbot.support.api.business.UIResource;
 import org.eclipse.sirius.tests.swtbot.support.api.editor.SWTBotSiriusDiagramEditor;
 import org.eclipse.sirius.tests.swtbot.support.api.editor.SWTBotSiriusHelper;
@@ -290,6 +291,9 @@ public class AbstractRefreshWithCustomizedStyleOnCompleteExampleTest extends Abs
      *         customized
      */
     protected boolean customizeSiriusStylePropertyFromStyleTab(SWTBotGefEditPart swtBotGefEditPart, Style style, EStructuralFeature feature) {
+        if (TestsUtil.isEEFBasedPropertiesViewsSupportInstalled()) {
+            return false;
+        }
         boolean customized = false;
         editor.reveal(swtBotGefEditPart.part());
         swtBotGefEditPart.select();

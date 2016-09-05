@@ -32,6 +32,7 @@ import org.eclipse.sirius.diagram.ui.provider.DiagramUIPlugin;
 import org.eclipse.sirius.ext.base.Option;
 import org.eclipse.sirius.table.metamodel.table.DTableElement;
 import org.eclipse.sirius.tests.support.api.ImageEquality;
+import org.eclipse.sirius.tests.support.api.TestsUtil;
 import org.eclipse.sirius.tests.swtbot.LabelProviderProviderTests.DiagramLabelProviderProviderStub.DiagramLabelProvider;
 import org.eclipse.sirius.tests.swtbot.LabelProviderProviderTests.TableLabelProviderProviderStub.TableLabelProvider;
 import org.eclipse.sirius.tests.swtbot.LabelProviderProviderTests.TreeLabelProviderProviderStub.TreeLabelProvider;
@@ -125,6 +126,9 @@ public class LabelProviderProviderTests extends AbstractSiriusSwtBotGefTestCase 
      * without customization.
      */
     public void testPropertiesViewTitleOnDiagramDialectEditorWithoutContributions() {
+        if (TestsUtil.isEEFBasedPropertiesViewsSupportInstalled()) {
+            return;
+        }
         editor = (SWTBotSiriusDiagramEditor) openRepresentation(localSession.getOpenedSession(), DIAGRAM_DESC_NAME, "new " + DIAGRAM_DESC_NAME, DDiagram.class);
         SWTBotView propertiesView = bot.viewByTitle("Properties");
         SWTBot propertiesViewBot = propertiesView.bot();
@@ -149,6 +153,9 @@ public class LabelProviderProviderTests extends AbstractSiriusSwtBotGefTestCase 
      * customization.
      */
     public void testPropertiesViewTitleOnTableDialectEditorWithoutContributions() {
+        if (TestsUtil.isEEFBasedPropertiesViewsSupportInstalled()) {
+            return;
+        }
         UITableRepresentation table = localSession.getLocalSessionBrowser().perCategory().selectViewpoint(VIEWPOINT_NAME).selectRepresentation(TABLE_DESC_NAME)
                 .selectRepresentationInstance("new " + TABLE_DESC_NAME, UITableRepresentation.class).open();
         SWTBotEditor tableEditorBot = table.getEditor();
@@ -174,6 +181,9 @@ public class LabelProviderProviderTests extends AbstractSiriusSwtBotGefTestCase 
      * customization.
      */
     public void testPropertiesViewTitleOnTreeDialectEditorWithoutContributions() {
+        if (TestsUtil.isEEFBasedPropertiesViewsSupportInstalled()) {
+            return;
+        }
         UITreeRepresentation tree = localSession.getLocalSessionBrowser().perCategory().selectViewpoint(VIEWPOINT_NAME).selectRepresentation(TREE_DESC_NAME)
                 .selectRepresentationInstance("new " + TREE_DESC_NAME, UITreeRepresentation.class).open();
         SWTBotEditor treeEditorBot = tree.getEditor();
@@ -199,6 +209,9 @@ public class LabelProviderProviderTests extends AbstractSiriusSwtBotGefTestCase 
      * element selection.
      */
     public void testPropertiesViewTitleOnDiagramDialectEditorWithContributions() {
+        if (TestsUtil.isEEFBasedPropertiesViewsSupportInstalled()) {
+            return;
+        }
         addContributions();
         editor = (SWTBotSiriusDiagramEditor) openRepresentation(localSession.getOpenedSession(), DIAGRAM_DESC_NAME, "new " + DIAGRAM_DESC_NAME, DDiagram.class);
         SWTBotView propertiesView = bot.viewByTitle("Properties");
@@ -224,6 +237,9 @@ public class LabelProviderProviderTests extends AbstractSiriusSwtBotGefTestCase 
      * selection.
      */
     public void testPropertiesViewTitleOnTableDialectEditorWithContributions() {
+        if (TestsUtil.isEEFBasedPropertiesViewsSupportInstalled()) {
+            return;
+        }
         addContributions();
         UITableRepresentation table = localSession.getLocalSessionBrowser().perCategory().selectViewpoint(VIEWPOINT_NAME).selectRepresentation(TABLE_DESC_NAME)
                 .selectRepresentationInstance("new " + TABLE_DESC_NAME, UITableRepresentation.class).open();
@@ -250,6 +266,9 @@ public class LabelProviderProviderTests extends AbstractSiriusSwtBotGefTestCase 
      * selection.
      */
     public void testPropertiesViewTitleOnTreeDialectEditorWithContributions() {
+        if (TestsUtil.isEEFBasedPropertiesViewsSupportInstalled()) {
+            return;
+        }
         addContributions();
         UITreeRepresentation tree = localSession.getLocalSessionBrowser().perCategory().selectViewpoint(VIEWPOINT_NAME).selectRepresentation(TREE_DESC_NAME)
                 .selectRepresentationInstance("new " + TREE_DESC_NAME, UITreeRepresentation.class).open();

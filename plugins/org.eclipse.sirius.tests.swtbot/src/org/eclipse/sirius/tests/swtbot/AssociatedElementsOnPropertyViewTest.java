@@ -13,6 +13,7 @@ package org.eclipse.sirius.tests.swtbot;
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.ui.edit.api.part.AbstractDiagramContainerEditPart;
 import org.eclipse.sirius.table.metamodel.table.DTable;
+import org.eclipse.sirius.tests.support.api.TestsUtil;
 import org.eclipse.sirius.tests.swtbot.support.api.AbstractSiriusSwtBotGefTestCase;
 import org.eclipse.sirius.tests.swtbot.support.api.business.UIResource;
 import org.eclipse.sirius.tests.swtbot.support.api.editor.SWTBotSiriusDiagramEditor;
@@ -75,6 +76,9 @@ public class AssociatedElementsOnPropertyViewTest extends AbstractSiriusSwtBotGe
      * Check the property view of an edit table
      */
     public void testEditTable() {
+        if (TestsUtil.isEEFBasedPropertiesViewsSupportInstalled()) {
+            return;
+        }
         doTestTableOrTree(EDIT_TABLE_DESCRIPTION_NAME, EDIT_TABLE_NAME, DTable.class);
     }
 
@@ -82,6 +86,9 @@ public class AssociatedElementsOnPropertyViewTest extends AbstractSiriusSwtBotGe
      * Check the property view of a cross table
      */
     public void testCrossTable() {
+        if (TestsUtil.isEEFBasedPropertiesViewsSupportInstalled()) {
+            return;
+        }
         doTestTableOrTree(CROSS_TABLE_DESCRIPTION_NAME, CROSS_TABLE_NAME, DTable.class);
     }
 
@@ -89,6 +96,9 @@ public class AssociatedElementsOnPropertyViewTest extends AbstractSiriusSwtBotGe
      * Check the property view of a tree
      */
     public void testTree() {
+        if (TestsUtil.isEEFBasedPropertiesViewsSupportInstalled()) {
+            return;
+        }
         doTestTableOrTree(TREE_DESCRIPTION_NAME, TREE_NAME, DTree.class);
     }
 
@@ -96,6 +106,9 @@ public class AssociatedElementsOnPropertyViewTest extends AbstractSiriusSwtBotGe
      * Check the property view of a diagram
      */
     public void testDiagram() {
+        if (TestsUtil.isEEFBasedPropertiesViewsSupportInstalled()) {
+            return;
+        }
         SWTBotSiriusDiagramEditor editor = (SWTBotSiriusDiagramEditor) openRepresentation(localSession.getOpenedSession(), DIAGRAM_DESCRIPTION_NAME, DIAGRAM_NAME, DDiagram.class);
         SWTBotGefEditPart editPart = editor.getEditPart(ELEMENT_NAME, AbstractDiagramContainerEditPart.class);
         editPart.select();

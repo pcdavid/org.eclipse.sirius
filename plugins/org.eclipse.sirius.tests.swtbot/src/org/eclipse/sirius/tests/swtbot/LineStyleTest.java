@@ -32,6 +32,7 @@ import org.eclipse.sirius.diagram.ui.edit.api.part.IDiagramElementEditPart;
 import org.eclipse.sirius.diagram.ui.edit.api.part.IDiagramNodeEditPart;
 import org.eclipse.sirius.diagram.ui.edit.api.part.IStyleEditPart;
 import org.eclipse.sirius.diagram.ui.edit.internal.part.DiagramElementEditPartOperation;
+import org.eclipse.sirius.tests.support.api.TestsUtil;
 import org.eclipse.sirius.tests.swtbot.support.api.AbstractSiriusSwtBotGefTestCase;
 import org.eclipse.sirius.tests.swtbot.support.api.business.UIResource;
 import org.eclipse.sirius.tests.swtbot.support.api.condition.CheckSelectedCondition;
@@ -119,6 +120,9 @@ public class LineStyleTest extends AbstractSiriusSwtBotGefTestCase {
     }
 
     private void doTestLineStyleCustomizationFromPropertySection(String label, boolean edge) {
+        if (TestsUtil.isEEFBasedPropertiesViewsSupportInstalled()) {
+            return;
+        }
         SWTBotGefEditPart editPart = selectAndCheckEditPart(label);
         checkLineStyle(editPart, LineStyle.SOLID_LITERAL, false);
         changeLineStyle(LineStyle.DASH_LITERAL, edge);

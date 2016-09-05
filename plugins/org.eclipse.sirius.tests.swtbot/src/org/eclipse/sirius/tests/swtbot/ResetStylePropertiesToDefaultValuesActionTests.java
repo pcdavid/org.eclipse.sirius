@@ -15,6 +15,7 @@ import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.ui.edit.api.part.AbstractDiagramContainerEditPart;
 import org.eclipse.sirius.diagram.ui.edit.api.part.AbstractDiagramEdgeEditPart;
 import org.eclipse.sirius.diagram.ui.edit.api.part.AbstractDiagramListEditPart;
+import org.eclipse.sirius.tests.support.api.TestsUtil;
 import org.eclipse.sirius.tests.swtbot.support.api.AbstractSiriusSwtBotGefTestCase;
 import org.eclipse.sirius.tests.swtbot.support.api.business.UIResource;
 import org.eclipse.sirius.tests.swtbot.support.api.condition.CheckSelectedCondition;
@@ -179,6 +180,9 @@ public class ResetStylePropertiesToDefaultValuesActionTests extends AbstractSiri
      * click on Style in properties view Appearance for an edge.
      */
     public void testRefreshActionCancelCustomStylePropertiesViewForEdge() {
+        if (TestsUtil.isEEFBasedPropertiesViewsSupportInstalled()) {
+            return;
+        }
         selectAndCheckEditPart(REF1, AbstractDiagramEdgeEditPart.class);
         // Check that the "Reset style properties to default values" button is
         // disabled

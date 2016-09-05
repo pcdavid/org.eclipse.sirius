@@ -14,6 +14,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.sirius.tests.support.api.TestsUtil;
 import org.eclipse.sirius.tests.swtbot.*;
 import org.eclipse.sirius.tests.swtbot.celleditor.CellEditorExtensionTest;
 import org.eclipse.sirius.tests.swtbot.clipboard.CustomClipboardSupportTest;
@@ -362,7 +363,9 @@ public class AllTestSuite extends TestCase {
             // Nothing to do, as viewpoint.cdonative is not accessible the
             // CDONative tests will not be launched
         }
-        suite.addTestSuite(SetPropertyOfTableTreeByPropertiesViewTest.class);
+        if (!TestsUtil.isEEFBasedPropertiesViewsSupportInstalled()) {
+            suite.addTestSuite(SetPropertyOfTableTreeByPropertiesViewTest.class);
+        }
         suite.addTestSuite(ElementCreationWithPopupMenuTests.class);
         suite.addTestSuite(ElementCreationWithPopupMenuWith200PercentOfZoomTests.class);
         suite.addTestSuite(ElementCreationWithPopupMenuWith50PercentOfZoomTests.class);

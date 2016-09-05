@@ -186,6 +186,9 @@ public class SetStyleToWorkspaceImageTests extends AbstractSiriusSwtBotGefTestCa
              */
             return;
         }
+        if (TestsUtil.isEEFBasedPropertiesViewsSupportInstalled()) {
+            return;
+        }
         // Appearance tab tests
         testSetWkpImageStyleCancel(C1_NODE, AbstractDiagramNodeEditPart.class, false);
         testSetWkpImageStyleCancel(C1_LIST, AbstractDiagramListEditPart.class, false);
@@ -216,6 +219,9 @@ public class SetStyleToWorkspaceImageTests extends AbstractSiriusSwtBotGefTestCa
      *             Test error.
      */
     public void testSetWkpImageStyleDisabledOnListElementFromAppearanceSection() throws Exception {
+        if (TestsUtil.isEEFBasedPropertiesViewsSupportInstalled()) {
+            return;
+        }
         testSetWkpImageStyleDisabled(A1C1_LIST, AbstractDiagramNameEditPart.class, false);
     }
 
@@ -426,6 +432,9 @@ public class SetStyleToWorkspaceImageTests extends AbstractSiriusSwtBotGefTestCa
      *             Test error.
      */
     public void testSetWkpImageStyleOnNodeFromAppearanceSection() throws Exception {
+        if (TestsUtil.isEEFBasedPropertiesViewsSupportInstalled()) {
+            return;
+        }
         testSetWkpImageStyleApplicationAndCancel(C1_NODE, AbstractDiagramNodeEditPart.class, false, getJpgImagePath());
     }
 
@@ -436,6 +445,9 @@ public class SetStyleToWorkspaceImageTests extends AbstractSiriusSwtBotGefTestCa
      *             Test error.
      */
     public void testSetWkpImageStyleOnListFromAppearanceSection() throws Exception {
+        if (TestsUtil.isEEFBasedPropertiesViewsSupportInstalled()) {
+            return;
+        }
         testSetWkpImageStyleApplicationAndCancel(C1_LIST, AbstractDiagramListEditPart.class, false, getJpgImagePath());
     }
 
@@ -446,6 +458,9 @@ public class SetStyleToWorkspaceImageTests extends AbstractSiriusSwtBotGefTestCa
      *             Test error.
      */
     public void testSetWkpImageStyleOnContainerFromAppearanceSection() throws Exception {
+        if (TestsUtil.isEEFBasedPropertiesViewsSupportInstalled()) {
+            return;
+        }
         testSetWkpImageStyleApplicationAndCancel(C1_CONTAINER, AbstractDiagramContainerEditPart.class, false, getJpgImagePath());
     }
 
@@ -456,6 +471,9 @@ public class SetStyleToWorkspaceImageTests extends AbstractSiriusSwtBotGefTestCa
      *             Test error.
      */
     public void testSetWkpImageStyleOnBorderNodeFromAppearanceSection() throws Exception {
+        if (TestsUtil.isEEFBasedPropertiesViewsSupportInstalled()) {
+            return;
+        }
         testSetWkpImageStyleApplicationAndCancel(A1C1_NODE, AbstractDiagramBorderNodeEditPart.class, false, getJpgImagePath());
     }
 
@@ -466,6 +484,9 @@ public class SetStyleToWorkspaceImageTests extends AbstractSiriusSwtBotGefTestCa
      *             Test error.
      */
     public void testSetWkpImageStyleOnContainedNodeFromAppearanceSection() throws Exception {
+        if (TestsUtil.isEEFBasedPropertiesViewsSupportInstalled()) {
+            return;
+        }
         testSetWkpImageStyleApplicationAndCancel(A1C1_CONTAINER, AbstractDiagramNodeEditPart.class, false, getJpgImagePath());
     }
 
@@ -476,6 +497,9 @@ public class SetStyleToWorkspaceImageTests extends AbstractSiriusSwtBotGefTestCa
      *             Test error.
      */
     public void testSetWkpImageStyleOnContainedNodeFromAppearanceSectionWithPluginImagePath() throws Exception {
+        if (TestsUtil.isEEFBasedPropertiesViewsSupportInstalled()) {
+            return;
+        }
         testSetWkpImageStyleApplicationAndCancel(A1C1_CONTAINER, AbstractDiagramNodeEditPart.class, false,
                 "/org.eclipse.sirius.tests.junit/data/unit/migration/do_not_migrate/campaign/TestCampaign_10/image.bmp");
     }
@@ -484,6 +508,9 @@ public class SetStyleToWorkspaceImageTests extends AbstractSiriusSwtBotGefTestCa
      * Test the filter function of the workspace selection dialog (VP-3520).
      */
     public void testTheFilterArea() {
+        if (TestsUtil.isEEFBasedPropertiesViewsSupportInstalled()) {
+            return;
+        }
         boolean afterEclipse3_5 = true;
         if (new PluginVersionCompatibility("org.eclipse.ui.navigator").compareTo(new Version("3.4.2.M20100120-0800")) <= 0) {
             afterEclipse3_5 = false;
