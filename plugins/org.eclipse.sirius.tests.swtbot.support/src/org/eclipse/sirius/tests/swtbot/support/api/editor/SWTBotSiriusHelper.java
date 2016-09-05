@@ -13,11 +13,14 @@ package org.eclipse.sirius.tests.swtbot.support.api.editor;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.eef.properties.ui.internal.page.propertylist.EEFListElement;
+import org.eclipse.eef.properties.ui.internal.page.propertylist.EEFTabbedPropertyList;
 import org.eclipse.sirius.common.tools.api.util.ReflectionHelper;
 import org.eclipse.sirius.diagram.ui.tools.api.editor.DDiagramEditor;
 import org.eclipse.sirius.ext.base.Option;
 import org.eclipse.sirius.ext.base.Options;
 import org.eclipse.sirius.table.ui.tools.api.editor.DTableEditor;
+import org.eclipse.sirius.tests.support.api.TestsUtil;
 import org.eclipse.sirius.tree.ui.tools.api.editor.DTreeEditor;
 import org.eclipse.sirius.ui.business.api.dialect.DialectEditor;
 import org.eclipse.swt.SWT;
@@ -97,29 +100,57 @@ public final class SWTBotSiriusHelper {
      */
     @SuppressWarnings({ "unchecked" })
     public static boolean selectPropertyTabItem(final String label) {
-        final Matcher<TabbedPropertyList> matcher = Matchers.allOf(WidgetMatcherFactory.widgetOfType(TabbedPropertyList.class));
-        final List<TabbedPropertyList> widgets = SWTBotSiriusHelper.widget(matcher);
+        Boolean result;
+        
+        if (!TestsUtil.isEEFBasedPropertiesViewsSupportInstalled()) {
+            final Matcher<TabbedPropertyList> matcher = Matchers.allOf(WidgetMatcherFactory.widgetOfType(TabbedPropertyList.class));
+            final List<TabbedPropertyList> widgets = SWTBotSiriusHelper.widget(matcher);
+    
+            result = UIThreadRunnable.syncExec(SWTUtils.display(), new BoolResult() {
+                @Override
+                public Boolean run() {
+                    boolean result = false;
+    
+                    for (final TabbedPropertyList tabbedProperty : widgets) {
+                        final ListElement tabItem = SWTBotSiriusHelper.getTabItem(label, tabbedProperty);
+                        if (tabItem != null) {
+                            final Event mouseEvent = SWTBotSiriusHelper.createEvent(tabItem, tabItem.getBounds().x, tabItem.getBounds().y, 1, SWT.BUTTON1, 1);
+                            tabItem.notifyListeners(SWT.MouseUp, mouseEvent);
+    
+                            result = true;
+                            break; // quit the for
+                        }
+                    } // for
+    
+                    return result;
+                }
+            });
+        } else {
+            final Matcher<EEFTabbedPropertyList> matcher = Matchers.allOf(WidgetMatcherFactory.widgetOfType(EEFTabbedPropertyList.class));
+            final List<EEFTabbedPropertyList> widgets = SWTBotSiriusHelper.widget(matcher);
+    
+            result = UIThreadRunnable.syncExec(SWTUtils.display(), new BoolResult() {
+                @Override
+                public Boolean run() {
+                    boolean result = false;
+    
+                    for (final EEFTabbedPropertyList tabbedProperty : widgets) {
+                        final EEFListElement tabItem = SWTBotSiriusHelper.getTabItem(label, tabbedProperty);
+                        if (tabItem != null) {
+                            final Event mouseEvent = SWTBotSiriusHelper.createEvent(tabItem, tabItem.getBounds().x, tabItem.getBounds().y, 1, SWT.BUTTON1, 1);
+                            tabItem.notifyListeners(SWT.MouseUp, mouseEvent);
+    
+                            result = true;
+                            break; // quit the for
+                        }
+                    } // for
+    
+                    return result;
+                }
+            });
 
-        Boolean result = UIThreadRunnable.syncExec(SWTUtils.display(), new BoolResult() {
-            @Override
-            public Boolean run() {
-                boolean result = false;
-
-                for (final TabbedPropertyList tabbedProperty : widgets) {
-                    final ListElement tabItem = SWTBotSiriusHelper.getTabItem(label, tabbedProperty);
-                    if (tabItem != null) {
-                        final Event mouseEvent = SWTBotSiriusHelper.createEvent(tabItem, tabItem.getBounds().x, tabItem.getBounds().y, 1, SWT.BUTTON1, 1);
-                        tabItem.notifyListeners(SWT.MouseUp, mouseEvent);
-
-                        result = true;
-                        break; // quit the for
-                    }
-                } // for
-
-                return result;
-            }
-        });
-
+        }
+        
         return result != null ? result.booleanValue() : false;
     }
 
@@ -179,7 +210,20 @@ public final class SWTBotSiriusHelper {
         }
         return null;
     }
-
+    
+    /**
+     * Select the tab with the name label in the property views
+     * 
+     * @param label
+     */
+    private static EEFListElement getTabItem(final String label, final EEFTabbedPropertyList tabbedProperty) {
+        for (final Object listElement : tabbedProperty.getTabList()) {
+            if (listElement instanceof EEFListElement && ((EEFListElement) listElement).getTabItem().getText().equals(label)) {
+                return (EEFListElement) listElement;
+            }
+        }
+        return null;
+    }
     /**
      * Attempts to locate the editor matching the given name. If no match is
      * found an exception will be thrown. The name is the name as displayed on
