@@ -365,6 +365,7 @@
         <module>../../incubation/org.eclipse.sirius.properties</module>
         <module>../../incubation/org.eclipse.sirius.properties.edit</module>
         <module>../../incubation/org.eclipse.sirius.editor.properties</module>
+        <module>../../incubation/org.eclipse.sirius.doc.properties</module>
         <module>../../incubation/org.eclipse.sirius.ui.properties</module>
         <module>../../incubation/org.eclipse.sirius.sample.properties</module>
         <module>../../incubation/org.eclipse.sirius.sample.properties.checkbox</module>

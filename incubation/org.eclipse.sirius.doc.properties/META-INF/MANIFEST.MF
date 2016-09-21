@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-SymbolicName: org.eclipse.sirius.doc.properties;singleton:=true
+Bundle-Version: 4.0.1.qualifier
+Require-Bundle: org.eclipse.help;bundle-version="3.6.0"
