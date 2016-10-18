@@ -25,6 +25,7 @@ import org.eclipse.draw2d.RotatableDecoration;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
@@ -52,6 +53,7 @@ import org.eclipse.sirius.diagram.DDiagramElement;
 import org.eclipse.sirius.diagram.DEdge;
 import org.eclipse.sirius.diagram.DiagramPackage;
 import org.eclipse.sirius.diagram.EdgeStyle;
+import org.eclipse.sirius.diagram.EdgeTarget;
 import org.eclipse.sirius.diagram.business.api.query.DDiagramElementQuery;
 import org.eclipse.sirius.diagram.description.CenteringStyle;
 import org.eclipse.sirius.diagram.description.tool.RequestDescription;
@@ -676,47 +678,44 @@ public abstract class AbstractDiagramEdgeEditPart extends ConnectionNodeEditPart
         @SuppressWarnings("deprecation")
         @Override
         public void layout() {
-            if (!isActive()) {
-                return;
-            }
-            final EObject element = resolveSemanticElement();
-            if (element != null && DEdge.class.isInstance(element)) {
-                final DEdge edge = (DEdge) element;
-                boolean needRefreshVisuals = false;
-                if (edge.getPath() != null && !edge.getPath().isEmpty()) {
-                    if (AbstractDiagramEdgeEditPart.invalidPath(AbstractDiagramEdgeEditPart.this, edge)) {
-                        if (getSelected() != EditPart.SELECTED_PRIMARY) {
-                            needRefreshVisuals = true;
-                        }
+            if (isActive()) {
+                final EObject element = resolveSemanticElement();
+                if (element instanceof DEdge) {
+                    final DEdge edge = (DEdge) element;
+                    
+                    EList<EdgeTarget> path = edge.getPath();
+                    if ((path != null && !path.isEmpty() && getSelected() != EditPart.SELECTED_PRIMARY) || edge.isIsMockEdge()) {
+                        refreshVisuals();
                     }
-                }
-                if (needRefreshVisuals || edge.isIsMockEdge()) {
-                    refreshVisuals();
-                }
 
-                if (this.getBounds() != null && getSource() != null && getTarget() != null) {
-                    super.layout();
-                }
+                    if (this.getBounds() != null && getSource() != null && getTarget() != null) {
+                        super.layout();
+                    }
 
-                if (edge.getName() == null || StringUtil.isEmpty(edge.getName())) {
-                    fFigureViewEdgeNameFigure.setVisible(false);
+                    refreshLabelsVisibility(edge);
                 }
+            }
+        }
 
-                if (edge.getName() != null && !StringUtil.isEmpty(edge.getName()) && !(new DDiagramElementQuery(edge).isLabelHidden()) && !fFigureViewEdgeNameFigure.isVisible()) {
-                    fFigureViewEdgeNameFigure.setVisible(true);
-                }
-                if (edge.getEndLabel() == null || StringUtil.isEmpty(edge.getEndLabel())) {
-                    fFigureViewEdgeEndNameFigure.setVisible(false);
-                }
-                if (edge.getEndLabel() != null && !StringUtil.isEmpty(edge.getEndLabel()) && !(new DDiagramElementQuery(edge).isLabelHidden()) && !fFigureViewEdgeEndNameFigure.isVisible()) {
-                    fFigureViewEdgeEndNameFigure.setVisible(true);
-                }
-                if (edge.getBeginLabel() == null || StringUtil.isEmpty(edge.getBeginLabel())) {
-                    fFigureViewEdgeBeginNameFigure.setVisible(false);
-                }
-                if (edge.getBeginLabel() != null && !StringUtil.isEmpty(edge.getBeginLabel()) && !(new DDiagramElementQuery(edge).isLabelHidden()) && !fFigureViewEdgeBeginNameFigure.isVisible()) {
-                    fFigureViewEdgeBeginNameFigure.setVisible(true);
-                }
+        private void refreshLabelsVisibility(final DEdge edge) {
+            boolean labelHidden = new DDiagramElementQuery(edge).isLabelHidden();
+
+            if (StringUtil.isEmpty(edge.getName())) {
+                fFigureViewEdgeNameFigure.setVisible(false);
+            } else if (!labelHidden && !fFigureViewEdgeNameFigure.isVisible()) {
+                fFigureViewEdgeNameFigure.setVisible(true);
+            }
+
+            if (StringUtil.isEmpty(edge.getEndLabel())) {
+                fFigureViewEdgeEndNameFigure.setVisible(false);
+            } else if (!labelHidden && !fFigureViewEdgeEndNameFigure.isVisible()) {
+                fFigureViewEdgeEndNameFigure.setVisible(true);
+            }
+
+            if (StringUtil.isEmpty(edge.getBeginLabel())) {
+                fFigureViewEdgeBeginNameFigure.setVisible(false);
+            } else if (!labelHidden && !fFigureViewEdgeBeginNameFigure.isVisible()) {
+                fFigureViewEdgeBeginNameFigure.setVisible(true);
             }
         }
 
