@@ -41,6 +41,7 @@ import org.eclipse.swtbot.swt.finder.utils.SWTUtils;
 import org.eclipse.swtbot.swt.finder.waits.WaitForObjectCondition;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IEditorReference;
+import org.eclipse.ui.forms.widgets.Form;
 import org.eclipse.ui.internal.views.properties.tabbed.view.TabbedPropertyList;
 import org.eclipse.ui.internal.views.properties.tabbed.view.TabbedPropertyList.ListElement;
 import org.eclipse.ui.internal.views.properties.tabbed.view.TabbedPropertyTitle;
@@ -72,21 +73,37 @@ public final class SWTBotSiriusHelper {
      */
     @SuppressWarnings({ "unchecked" })
     public static Option<String> getPropertyItemTitle() {
-        final Matcher<TabbedPropertyTitle> matcher = Matchers.allOf(WidgetMatcherFactory.widgetOfType(TabbedPropertyTitle.class));
-        final List<TabbedPropertyTitle> widgets = SWTBotSiriusHelper.widget(matcher);
+        String result;
+        if (!TestsUtil.isEEFBasedPropertiesViewsSupportInstalled()) {
+            final Matcher<TabbedPropertyTitle> matcher = Matchers.allOf(WidgetMatcherFactory.widgetOfType(TabbedPropertyTitle.class));
+            final List<TabbedPropertyTitle> widgets = SWTBotSiriusHelper.widget(matcher);
 
-        String result = UIThreadRunnable.syncExec(SWTUtils.display(), new StringResult() {
-            @Override
-            public String run() {
-                for (final TabbedPropertyTitle tabbedProperty : widgets) {
-                    Option<Object> title = ReflectionHelper.getFieldValueWithoutException(tabbedProperty, "text");
-                    if (title.some()) {
-                        return (String) title.get();
+            result = UIThreadRunnable.syncExec(SWTUtils.display(), new StringResult() {
+                @Override
+                public String run() {
+                    for (final TabbedPropertyTitle tabbedProperty : widgets) {
+                        Option<Object> title = ReflectionHelper.getFieldValueWithoutException(tabbedProperty, "text");
+                        if (title.some()) {
+                            return (String) title.get();
+                        }
                     }
+                    return null;
                 }
-                return null;
-            }
-        });
+            });
+        } else {
+            final Matcher<Form> matcher = Matchers.allOf(WidgetMatcherFactory.widgetOfType(Form.class));
+            final List<Form> widgets = SWTBotSiriusHelper.widget(matcher);
+
+            result = UIThreadRunnable.syncExec(SWTUtils.display(), new StringResult() {
+                @Override
+                public String run() {
+                    for (final Form form : widgets) {
+                        return form.getText();
+                    }
+                    return null;
+                }
+            });
+        }
 
         return Options.newSome(result);
     }
@@ -101,56 +118,56 @@ public final class SWTBotSiriusHelper {
     @SuppressWarnings({ "unchecked" })
     public static boolean selectPropertyTabItem(final String label) {
         Boolean result;
-        
+
         if (!TestsUtil.isEEFBasedPropertiesViewsSupportInstalled()) {
             final Matcher<TabbedPropertyList> matcher = Matchers.allOf(WidgetMatcherFactory.widgetOfType(TabbedPropertyList.class));
             final List<TabbedPropertyList> widgets = SWTBotSiriusHelper.widget(matcher);
-    
+
             result = UIThreadRunnable.syncExec(SWTUtils.display(), new BoolResult() {
                 @Override
                 public Boolean run() {
                     boolean result = false;
-    
+
                     for (final TabbedPropertyList tabbedProperty : widgets) {
                         final ListElement tabItem = SWTBotSiriusHelper.getTabItem(label, tabbedProperty);
                         if (tabItem != null) {
                             final Event mouseEvent = SWTBotSiriusHelper.createEvent(tabItem, tabItem.getBounds().x, tabItem.getBounds().y, 1, SWT.BUTTON1, 1);
                             tabItem.notifyListeners(SWT.MouseUp, mouseEvent);
-    
+
                             result = true;
                             break; // quit the for
                         }
                     } // for
-    
+
                     return result;
                 }
             });
         } else {
             final Matcher<EEFTabbedPropertyList> matcher = Matchers.allOf(WidgetMatcherFactory.widgetOfType(EEFTabbedPropertyList.class));
             final List<EEFTabbedPropertyList> widgets = SWTBotSiriusHelper.widget(matcher);
-    
+
             result = UIThreadRunnable.syncExec(SWTUtils.display(), new BoolResult() {
                 @Override
                 public Boolean run() {
                     boolean result = false;
-    
+
                     for (final EEFTabbedPropertyList tabbedProperty : widgets) {
                         final EEFListElement tabItem = SWTBotSiriusHelper.getTabItem(label, tabbedProperty);
                         if (tabItem != null) {
                             final Event mouseEvent = SWTBotSiriusHelper.createEvent(tabItem, tabItem.getBounds().x, tabItem.getBounds().y, 1, SWT.BUTTON1, 1);
                             tabItem.notifyListeners(SWT.MouseUp, mouseEvent);
-    
+
                             result = true;
                             break; // quit the for
                         }
                     } // for
-    
+
                     return result;
                 }
             });
 
         }
-        
+
         return result != null ? result.booleanValue() : false;
     }
 
@@ -210,7 +227,7 @@ public final class SWTBotSiriusHelper {
         }
         return null;
     }
-    
+
     /**
      * Select the tab with the name label in the property views
      * 
@@ -224,6 +241,7 @@ public final class SWTBotSiriusHelper {
         }
         return null;
     }
+
     /**
      * Attempts to locate the editor matching the given name. If no match is
      * found an exception will be thrown. The name is the name as displayed on
