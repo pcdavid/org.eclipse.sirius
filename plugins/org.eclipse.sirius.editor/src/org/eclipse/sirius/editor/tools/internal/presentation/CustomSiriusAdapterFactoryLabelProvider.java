@@ -10,9 +10,18 @@
  *******************************************************************************/
 package org.eclipse.sirius.editor.tools.internal.presentation;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
+import org.eclipse.sirius.common.tools.api.util.StringUtil;
+import org.eclipse.sirius.viewpoint.description.IdentifiedElement;
 
 /**
  * @author <a href="mailto:julien.dupont@obeo.fr">Julien DUPONT</a>
@@ -25,15 +34,20 @@ class CustomSiriusAdapterFactoryLabelProvider extends AdapterFactoryLabelProvide
         super(adapterFactory);
     }
 
-
     @Override
     public String getText(Object object) {
-        String text = super.getText(object);
-        if (object instanceof EObject && showTypes) {
-            text = "<" + ((EObject) object).eClass().getName() + "> " + text;
+        String result = super.getText(object);
+        if (object instanceof IdentifiedElement) {
+            IdentifiedElement elt = (IdentifiedElement) object;
+            String label = addDefaultTranslationIfAvailable(elt, elt.getLabel());
+            if (!StringUtil.isEmpty(label)) {
+                result = label;
+            }
         }
-
-        return text;
+        if (object instanceof EObject && showTypes) {
+            result = String.format("<%s> %s", ((EObject) object).eClass().getName(), result);
+        }
+        return result;
     }
 
     /**
@@ -51,4 +65,35 @@ class CustomSiriusAdapterFactoryLabelProvider extends AdapterFactoryLabelProvide
         this.showTypes = showTypes;
     }
 
+    private String addDefaultTranslationIfAvailable(IdentifiedElement elt, String key) {
+        Resource res = elt.eResource();
+        if (isTranslationKey(key) && isModelInWorkspaceProject(res)) {
+            IFile translationsFile = getTranslationFileFor(res);
+            if (translationsFile.exists()) {
+                Properties p = new Properties();
+                try (FileInputStream inStream = new FileInputStream(translationsFile.getLocation().toFile())) {
+                    p.load(inStream);
+                    String translation = p.getProperty(key.substring(1));
+                    if (translation != null) {
+                        return String.format("%s [%s]", translation, key); //$NON-NLS-1$
+                    }
+                } catch (IOException e) {
+                    // Ignore
+                }
+            }
+        }
+        return key;
+    }
+
+    private boolean isModelInWorkspaceProject(Resource res) {
+        return res != null && res.getURI().isPlatformResource() && res.getURI().segmentCount() > 1;
+    }
+
+    private boolean isTranslationKey(String key) {
+        return key != null && key.startsWith("%");
+    }
+
+    private IFile getTranslationFileFor(Resource res) {
+        return ResourcesPlugin.getWorkspace().getRoot().getProject(res.getURI().segment(1)).getFile("plugin.properties"); //$NON-NLS-1$
+    }
 }
