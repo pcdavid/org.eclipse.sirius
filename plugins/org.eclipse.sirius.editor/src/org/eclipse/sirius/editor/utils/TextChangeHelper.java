@@ -18,6 +18,7 @@ import org.eclipse.swt.widgets.Text;
  * TextChangeHelper notifies the listener of text lifecycle events on behalf of
  * the widget(s) it listens to.
  */
+//CHECKSTYLE:OFF
 public abstract class TextChangeHelper implements TextChangeListener {
 
     protected boolean notifyOnCarriageReturn = true;

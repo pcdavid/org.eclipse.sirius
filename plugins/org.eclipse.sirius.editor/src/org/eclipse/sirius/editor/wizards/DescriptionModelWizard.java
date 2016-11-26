@@ -73,6 +73,7 @@ import org.eclipse.ui.part.ISetSelectionTarget;
 /**
  * This is a simple wizard for creating a new model file.
  */
+//CHECKSTYLE:OFF
 public class DescriptionModelWizard extends Wizard implements INewWizard {
     /**
      * This caches an instance of the model package.

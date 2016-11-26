@@ -51,7 +51,10 @@ import org.eclipse.ui.PartInitException;
 /**
  * This is the action bar contributor for the Viewpoint model editor.
  */
+//CHECKSTYLE:OFF
 public class ViewpointActionBarContributor extends EditingDomainActionBarContributor implements ISelectionChangedListener {
+    private static final String ID_ADDITIONS = "additions";
+
     /**
      * This keeps track of the active editor.
      */
@@ -133,6 +136,9 @@ public class ViewpointActionBarContributor extends EditingDomainActionBarContrib
 
     /**
      * This adds Separators for editor additions to the tool bar.
+     * 
+     * @param toolBarManager
+     *            the target toolbar to contribute to.
      */
     public void contributeToToolBar(IToolBarManager toolBarManager) {
         toolBarManager.add(new Separator("viewpoint-settings"));
@@ -142,26 +148,29 @@ public class ViewpointActionBarContributor extends EditingDomainActionBarContrib
     /**
      * This adds to the menu bar a menu and some separators for editor
      * additions, as well as the sub-menus for object creation items.
+     * 
+     * @param menuManager
+     *            the target menu to contribute to.
      */
     public void contributeToMenu(IMenuManager menuManager) {
         super.contributeToMenu(menuManager);
 
         IMenuManager submenuManager = new MenuManager(SiriusEditorPlugin.INSTANCE.getString("_UI_SiriusEditor_menu"), "viewpointMenuID");
-        menuManager.insertAfter("additions", submenuManager);
+        menuManager.insertAfter(ViewpointActionBarContributor.ID_ADDITIONS, submenuManager);
         submenuManager.add(new Separator("settings"));
         submenuManager.add(new Separator("actions"));
-        submenuManager.add(new Separator("additions"));
+        submenuManager.add(new Separator(ViewpointActionBarContributor.ID_ADDITIONS));
         submenuManager.add(new Separator("additions-end"));
 
         // Prepare for CreateChild item addition or removal.
         //
         createChildMenuManager = new MenuManager(SiriusEditorPlugin.INSTANCE.getString("_UI_CreateChild_menu_item"));
-        submenuManager.insertBefore("additions", createChildMenuManager);
+        submenuManager.insertBefore(ViewpointActionBarContributor.ID_ADDITIONS, createChildMenuManager);
 
         // Prepare for CreateSibling item addition or removal.
         //
         createSiblingMenuManager = new MenuManager(SiriusEditorPlugin.INSTANCE.getString("_UI_CreateSibling_menu_item"));
-        submenuManager.insertBefore("additions", createSiblingMenuManager);
+        submenuManager.insertBefore(ViewpointActionBarContributor.ID_ADDITIONS, createSiblingMenuManager);
 
         // Force an update because Eclipse hides empty menus now.
         //
@@ -177,6 +186,9 @@ public class ViewpointActionBarContributor extends EditingDomainActionBarContrib
     /**
      * When the active editor changes, this remembers the change and registers
      * with it as a selection provider.
+     * 
+     * @param part
+     *            the new active editor.
      */
     public void setActiveEditor(IEditorPart part) {
         super.setActiveEditor(part);
@@ -207,6 +219,9 @@ public class ViewpointActionBarContributor extends EditingDomainActionBarContrib
      * {@link org.eclipse.jface.viewers.SelectionChangedEvent}s by querying for
      * the children and siblings that can be added to the selected object and
      * updating the menus accordingly.
+     * 
+     * @param event
+     *            event object describing the change
      */
     public void selectionChanged(SelectionChangedEvent event) {
         // Remove any menu items for old selection.
@@ -256,8 +271,8 @@ public class ViewpointActionBarContributor extends EditingDomainActionBarContrib
     protected Collection<IAction> generateCreateChildActions(Collection<?> descriptors, ISelection selection) {
         Collection<IAction> actions = new ArrayList<IAction>();
         if (descriptors != null) {
-            for (Iterator<?> i = descriptors.iterator(); i.hasNext();) {
-                actions.add(new CreateChildAction(activeEditorPart, selection, i.next()));
+            for (Object descriptor : descriptors) {
+                actions.add(new CreateChildAction(activeEditorPart, selection, descriptor));
             }
         }
         return actions;
@@ -272,8 +287,8 @@ public class ViewpointActionBarContributor extends EditingDomainActionBarContrib
     protected Collection<IAction> generateCreateSiblingActions(Collection<?> descriptors, ISelection selection) {
         Collection<IAction> actions = new ArrayList<IAction>();
         if (descriptors != null) {
-            for (Iterator<?> i = descriptors.iterator(); i.hasNext();) {
-                actions.add(new CreateSiblingAction(activeEditorPart, selection, i.next()));
+            for (Object descriptor : descriptors) {
+                actions.add(new CreateSiblingAction(activeEditorPart, selection, descriptor));
             }
         }
         return actions;

@@ -20,10 +20,11 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EObject;
 
 /**
- * Usefull methods for EMF adapter factories
+ * Useful methods for EMF adapter factories.
  * 
  * @author Cedric Brun <cedric.brun@obeo.fr>
  */
+//CHECKSTYLE:OFF
 public final class AdapterUtils {
     private static final String ADAPTER_FACTORY_EXTENSION_POINT = "org.eclipse.emf.edit.itemProviderAdapterFactories"; //$NON-NLS-1$
 

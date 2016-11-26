@@ -33,54 +33,56 @@ public class ViewpointLabelProvider extends LabelProvider {
      */
     private AdapterFactoryLabelProvider adapterFactoryLabelProvider;
 
-    /**
-     * @see org.eclipse.jface.viewers.ILabelProvider#getImage(java.lang.Object)
-     */
+    @Override
     public Image getImage(Object object) {
         Image labelImage = null;
 
-        if (object != null && !object.equals(StructuredSelection.EMPTY)) {
-            if (object instanceof IStructuredSelection) {
-                IStructuredSelection structuredSelection = (IStructuredSelection) object;
-                if (!containsDifferentTypes(structuredSelection))
-                    object = structuredSelection.getFirstElement();
+        Object input = object;
+        if (input != null && !input.equals(StructuredSelection.EMPTY)) {
+            if (input instanceof IStructuredSelection) {
+                IStructuredSelection structuredSelection = (IStructuredSelection) input;
+                if (!containsDifferentTypes(structuredSelection)) {
+                    input = structuredSelection.getFirstElement();
+                }
             }
 
-            if (object instanceof EObject || object instanceof Resource) {
-                labelImage = getAdapterFactoryLabelProvider().getImage(object);
+            if (input instanceof EObject || input instanceof Resource) {
+                labelImage = getAdapterFactoryLabelProvider().getImage(input);
             }
         }
 
         return labelImage;
     }
 
-    /**
-     * @see org.eclipse.jface.viewers.ILabelProvider#getText(java.lang.Object)
-     */
+    @Override
     public String getText(Object object) {
         String text = null;
         int selectionSize = 0;
 
-        if (object != null && !object.equals(StructuredSelection.EMPTY)) {
-            if (object instanceof IStructuredSelection) {
-                IStructuredSelection structuredSelection = (IStructuredSelection) object;
+        Object input = object;
+        if (input != null && !input.equals(StructuredSelection.EMPTY)) {
+            if (input instanceof IStructuredSelection) {
+                IStructuredSelection structuredSelection = (IStructuredSelection) input;
                 selectionSize = structuredSelection.size();
                 if (selectionSize == 1 && structuredSelection.getFirstElement() instanceof EObject) {
-                    object = structuredSelection.getFirstElement();
+                    input = structuredSelection.getFirstElement();
                 }
-                if (containsDifferentTypes(structuredSelection))
-                    text = selectionSize + " items selected";//$NON-NLS-1$
+                if (containsDifferentTypes(structuredSelection)) {
+                    text = selectionSize + " items selected"; //$NON-NLS-1$
+                }
             }
         }
 
-        if (object != null)
-            text = getAdapterFactoryLabelProvider().getText(object);
+        if (input != null) {
+            text = getAdapterFactoryLabelProvider().getText(input);
+        }
         if (selectionSize > 1) {
             text = selectionSize + " [";
-            for (Iterator iterator = ((IStructuredSelection) object).iterator(); iterator.hasNext();) {
+            for (Iterator iterator = ((IStructuredSelection) input).iterator(); iterator.hasNext(); /* */) {
                 text += getAdapterFactoryLabelProvider().getText(iterator.next());
-                if (iterator.hasNext())
+                if (iterator.hasNext()) {
                     text += ", ";
+                }
             }
             text += "] selected";
         }
@@ -92,7 +94,7 @@ public class ViewpointLabelProvider extends LabelProvider {
      * Fetches the plugin's
      * {@link org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider
      * AdapterFactoryLabelProvider} .
-     * 
+     *
      * @return The plugin's
      *         {@link org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider
      *         AdapterFactoryLabelProvider} .
@@ -108,7 +110,7 @@ public class ViewpointLabelProvider extends LabelProvider {
      * Determines if the objects contained by a given
      * {@link org.eclipse.jface.viewers.IStructuredSelection structured
      * selection} are of different types.
-     * 
+     *
      * @param structuredSelection
      *            The structured selection.
      * @return <code>True</code> if there are objects of different types in the
@@ -119,11 +121,12 @@ public class ViewpointLabelProvider extends LabelProvider {
         final List selectionList = structuredSelection.toList();
 
         if (selectionList.size() > 1) {
-            for (Iterator iterator = selectionList.iterator(); iterator.hasNext();) {
+            for (Iterator iterator = selectionList.iterator(); iterator.hasNext(); /* */) {
                 Object element = iterator.next();
                 if (iterator.hasNext()) {
-                    if (iterator.next().getClass() != element.getClass())
+                    if (iterator.next().getClass() != element.getClass()) {
                         areDistinct = true;
+                    }
                 }
             }
         }

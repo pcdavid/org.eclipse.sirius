@@ -82,6 +82,7 @@ import com.google.common.collect.Sets;
  * 
  * @author cedric
  */
+//CHECKSTYLE:OFF
 public class WorkspaceClassLoading extends BundleClassLoading {
 
     private IResourceChangeListener workspaceListener = new IResourceChangeListener() {

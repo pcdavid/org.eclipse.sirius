@@ -33,6 +33,7 @@ import org.eclipse.swt.widgets.TreeItem;
  * Allows the edition of the {@link org.eclipse.swt.widgets.TreeItem TreeItem}
  * double-clicked by the user.
  */
+//CHECKSTYLE:OFF
 public class SelectionTreeTextEditor extends AdapterFactoryTreeEditor {
     protected EditingDomain editingDomain;
 

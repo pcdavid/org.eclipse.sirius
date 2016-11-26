@@ -7,7 +7,7 @@
     </members>
   </repository>
   <actions>
-    <actions xsi:type="chain:ChainCall" chainPath="/fr.obeo.pim.ecore.gen.editor/generateEditorInsrc-gen.chain" argumentsFiles="//@repository/@members.0/@files.0 //@repository/@members.0/@files.1">
+    <actions xsi:type="chain:ChainCall" chainPath="/fr.obeo.pim.ecore.gen.editor/generatePropertySections.chain" argumentsFiles="//@repository/@members.0/@files.0 //@repository/@members.0/@files.1">
       <argumentsPatterns>org.eclipse.sirius.editor</argumentsPatterns>
     </actions>
   </actions>

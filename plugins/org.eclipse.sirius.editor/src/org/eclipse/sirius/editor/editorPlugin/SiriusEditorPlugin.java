@@ -37,6 +37,7 @@ import com.google.common.collect.Sets;
 /**
  * This is the central singleton for the Viewpoint editor plugin.
  */
+//CHECKSTYLE:OFF
 public final class SiriusEditorPlugin extends EMFPlugin {
     /**
      * Keep track of the singleton.

@@ -15,6 +15,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
  * This interface helps defining common behavior for the Viewpoint model
  * editors.
  */
+//CHECKSTYLE:OFF
 public interface IAdapterFactoryProvider {
     /**
      * @return the editor adapter factory

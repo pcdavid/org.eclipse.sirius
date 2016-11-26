@@ -45,8 +45,8 @@ import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.sirius.editor.editorPlugin.SiriusEditorPlugin;
-import org.eclipse.sirius.viewpoint.description.audit.AuditFactory;
-import org.eclipse.sirius.viewpoint.description.audit.AuditPackage;
+import org.eclipse.sirius.viewpoint.description.validation.ValidationFactory;
+import org.eclipse.sirius.viewpoint.description.validation.ValidationPackage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
@@ -71,26 +71,27 @@ import org.eclipse.ui.part.ISetSelectionTarget;
 /**
  * This is a simple wizard for creating a new model file.
  */
-public class AuditModelWizard extends Wizard implements INewWizard {
+//CHECKSTYLE:OFF
+public class ValidationModelWizard extends Wizard implements INewWizard {
     /**
      * This caches an instance of the model package.
      */
-    protected AuditPackage auditPackage = AuditPackage.eINSTANCE;
+    protected ValidationPackage validationPackage = ValidationPackage.eINSTANCE;
 
     /**
      * This caches an instance of the model factory.
      */
-    protected AuditFactory auditFactory = auditPackage.getAuditFactory();
+    protected ValidationFactory validationFactory = validationPackage.getValidationFactory();
 
     /**
      * This is the file creation page.
      */
-    protected AuditModelWizardNewFileCreationPage newFileCreationPage;
+    protected ValidationModelWizardNewFileCreationPage newFileCreationPage;
 
     /**
      * This is the initial object creation page.
      */
-    protected AuditModelWizardInitialObjectCreationPage initialObjectCreationPage;
+    protected ValidationModelWizardInitialObjectCreationPage initialObjectCreationPage;
 
     /**
      * Remember the selection during initialization for populating the default
@@ -124,7 +125,7 @@ public class AuditModelWizard extends Wizard implements INewWizard {
     protected Collection<String> getInitialObjectNames() {
         if (initialObjectNames == null) {
             initialObjectNames = new ArrayList<String>();
-            for (Iterator<EClassifier> classifiers = auditPackage.getEClassifiers().iterator(); classifiers.hasNext();) {
+            for (Iterator<EClassifier> classifiers = validationPackage.getEClassifiers().iterator(); classifiers.hasNext();) {
                 EClassifier eClassifier = classifiers.next();
                 if (eClassifier instanceof EClass) {
                     EClass eClass = (EClass) eClassifier;
@@ -146,8 +147,8 @@ public class AuditModelWizard extends Wizard implements INewWizard {
      * Create a new model.
      */
     protected EObject createInitialModel() {
-        EClass eClass = (EClass) auditPackage.getEClassifier(initialObjectCreationPage.getInitialObjectName());
-        EObject rootObject = auditFactory.create(eClass);
+        EClass eClass = (EClass) validationPackage.getEClassifier(initialObjectCreationPage.getInitialObjectName());
+        EObject rootObject = validationFactory.create(eClass);
 
         // Start of user code createInitialModel
 
@@ -237,11 +238,11 @@ public class AuditModelWizard extends Wizard implements INewWizard {
     /**
      * This is the one page of the wizard.
      */
-    public class AuditModelWizardNewFileCreationPage extends WizardNewFileCreationPage {
+    public class ValidationModelWizardNewFileCreationPage extends WizardNewFileCreationPage {
         /**
          * Pass in the selection.
          */
-        public AuditModelWizardNewFileCreationPage(String pageId, IStructuredSelection selection) {
+        public ValidationModelWizardNewFileCreationPage(String pageId, IStructuredSelection selection) {
             super(pageId, selection);
         }
 
@@ -250,7 +251,7 @@ public class AuditModelWizard extends Wizard implements INewWizard {
          */
         protected boolean validatePage() {
             if (super.validatePage()) {
-                // Make sure the file ends in ".audit".
+                // Make sure the file ends in ".validation".
                 //
                 String requiredExt = SiriusEditorPlugin.INSTANCE.getString("_UI_SiriusEditorFilenameExtension");
                 String enteredExt = new Path(getFileName()).getFileExtension();
@@ -273,7 +274,7 @@ public class AuditModelWizard extends Wizard implements INewWizard {
     /**
      * This is the page where the type of object to create is selected.
      */
-    public class AuditModelWizardInitialObjectCreationPage extends WizardPage {
+    public class ValidationModelWizardInitialObjectCreationPage extends WizardPage {
         protected Combo initialObjectField;
 
         protected List<String> encodings;
@@ -283,7 +284,7 @@ public class AuditModelWizard extends Wizard implements INewWizard {
         /**
          * Pass in the selection.
          */
-        public AuditModelWizardInitialObjectCreationPage(String pageId) {
+        public ValidationModelWizardInitialObjectCreationPage(String pageId) {
             super(pageId);
         }
 
@@ -423,9 +424,9 @@ public class AuditModelWizard extends Wizard implements INewWizard {
     public void addPages() {
         // Create a page, set the title, and the initial model file name.
         //
-        newFileCreationPage = new AuditModelWizardNewFileCreationPage("Whatever", selection);
-        newFileCreationPage.setTitle(SiriusEditorPlugin.INSTANCE.getString("_UI_AuditModelWizard_label"));
-        newFileCreationPage.setDescription(SiriusEditorPlugin.INSTANCE.getString("_UI_AuditModelWizard_description"));
+        newFileCreationPage = new ValidationModelWizardNewFileCreationPage("Whatever", selection);
+        newFileCreationPage.setTitle(SiriusEditorPlugin.INSTANCE.getString("_UI_ValidationModelWizard_label"));
+        newFileCreationPage.setDescription(SiriusEditorPlugin.INSTANCE.getString("_UI_ValidationModelWizard_description"));
         newFileCreationPage
                 .setFileName(SiriusEditorPlugin.INSTANCE.getString("_UI_SiriusEditorFilenameDefaultBase") + "." + SiriusEditorPlugin.INSTANCE.getString("_UI_SiriusEditorFilenameExtension"));
         addPage(newFileCreationPage);
@@ -464,8 +465,8 @@ public class AuditModelWizard extends Wizard implements INewWizard {
                 }
             }
         }
-        initialObjectCreationPage = new AuditModelWizardInitialObjectCreationPage("Whatever2");
-        initialObjectCreationPage.setTitle(SiriusEditorPlugin.INSTANCE.getString("_UI_AuditModelWizard_label"));
+        initialObjectCreationPage = new ValidationModelWizardInitialObjectCreationPage("Whatever2");
+        initialObjectCreationPage.setTitle(SiriusEditorPlugin.INSTANCE.getString("_UI_ValidationModelWizard_label"));
         initialObjectCreationPage.setDescription(SiriusEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
         addPage(initialObjectCreationPage);
     }

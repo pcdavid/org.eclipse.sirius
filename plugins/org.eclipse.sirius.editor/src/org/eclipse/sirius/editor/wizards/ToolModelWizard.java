@@ -45,8 +45,8 @@ import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.sirius.editor.editorPlugin.SiriusEditorPlugin;
-import org.eclipse.sirius.viewpoint.ViewpointFactory;
-import org.eclipse.sirius.viewpoint.ViewpointPackage;
+import org.eclipse.sirius.viewpoint.description.tool.ToolFactory;
+import org.eclipse.sirius.viewpoint.description.tool.ToolPackage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
@@ -71,26 +71,27 @@ import org.eclipse.ui.part.ISetSelectionTarget;
 /**
  * This is a simple wizard for creating a new model file.
  */
-public class ViewpointModelWizard extends Wizard implements INewWizard {
+//CHECKSTYLE:OFF
+public class ToolModelWizard extends Wizard implements INewWizard {
     /**
      * This caches an instance of the model package.
      */
-    protected ViewpointPackage viewpointPackage = ViewpointPackage.eINSTANCE;
+    protected ToolPackage toolPackage = ToolPackage.eINSTANCE;
 
     /**
      * This caches an instance of the model factory.
      */
-    protected ViewpointFactory viewpointFactory = viewpointPackage.getViewpointFactory();
+    protected ToolFactory toolFactory = toolPackage.getToolFactory();
 
     /**
      * This is the file creation page.
      */
-    protected ViewpointModelWizardNewFileCreationPage newFileCreationPage;
+    protected ToolModelWizardNewFileCreationPage newFileCreationPage;
 
     /**
      * This is the initial object creation page.
      */
-    protected ViewpointModelWizardInitialObjectCreationPage initialObjectCreationPage;
+    protected ToolModelWizardInitialObjectCreationPage initialObjectCreationPage;
 
     /**
      * Remember the selection during initialization for populating the default
@@ -124,7 +125,7 @@ public class ViewpointModelWizard extends Wizard implements INewWizard {
     protected Collection<String> getInitialObjectNames() {
         if (initialObjectNames == null) {
             initialObjectNames = new ArrayList<String>();
-            for (Iterator<EClassifier> classifiers = viewpointPackage.getEClassifiers().iterator(); classifiers.hasNext();) {
+            for (Iterator<EClassifier> classifiers = toolPackage.getEClassifiers().iterator(); classifiers.hasNext();) {
                 EClassifier eClassifier = classifiers.next();
                 if (eClassifier instanceof EClass) {
                     EClass eClass = (EClass) eClassifier;
@@ -146,8 +147,8 @@ public class ViewpointModelWizard extends Wizard implements INewWizard {
      * Create a new model.
      */
     protected EObject createInitialModel() {
-        EClass eClass = (EClass) viewpointPackage.getEClassifier(initialObjectCreationPage.getInitialObjectName());
-        EObject rootObject = viewpointFactory.create(eClass);
+        EClass eClass = (EClass) toolPackage.getEClassifier(initialObjectCreationPage.getInitialObjectName());
+        EObject rootObject = toolFactory.create(eClass);
 
         // Start of user code createInitialModel
 
@@ -237,11 +238,11 @@ public class ViewpointModelWizard extends Wizard implements INewWizard {
     /**
      * This is the one page of the wizard.
      */
-    public class ViewpointModelWizardNewFileCreationPage extends WizardNewFileCreationPage {
+    public class ToolModelWizardNewFileCreationPage extends WizardNewFileCreationPage {
         /**
          * Pass in the selection.
          */
-        public ViewpointModelWizardNewFileCreationPage(String pageId, IStructuredSelection selection) {
+        public ToolModelWizardNewFileCreationPage(String pageId, IStructuredSelection selection) {
             super(pageId, selection);
         }
 
@@ -250,7 +251,7 @@ public class ViewpointModelWizard extends Wizard implements INewWizard {
          */
         protected boolean validatePage() {
             if (super.validatePage()) {
-                // Make sure the file ends in ".viewpoint".
+                // Make sure the file ends in ".tool".
                 //
                 String requiredExt = SiriusEditorPlugin.INSTANCE.getString("_UI_SiriusEditorFilenameExtension");
                 String enteredExt = new Path(getFileName()).getFileExtension();
@@ -273,7 +274,7 @@ public class ViewpointModelWizard extends Wizard implements INewWizard {
     /**
      * This is the page where the type of object to create is selected.
      */
-    public class ViewpointModelWizardInitialObjectCreationPage extends WizardPage {
+    public class ToolModelWizardInitialObjectCreationPage extends WizardPage {
         protected Combo initialObjectField;
 
         protected List<String> encodings;
@@ -283,7 +284,7 @@ public class ViewpointModelWizard extends Wizard implements INewWizard {
         /**
          * Pass in the selection.
          */
-        public ViewpointModelWizardInitialObjectCreationPage(String pageId) {
+        public ToolModelWizardInitialObjectCreationPage(String pageId) {
             super(pageId);
         }
 
@@ -423,9 +424,9 @@ public class ViewpointModelWizard extends Wizard implements INewWizard {
     public void addPages() {
         // Create a page, set the title, and the initial model file name.
         //
-        newFileCreationPage = new ViewpointModelWizardNewFileCreationPage("Whatever", selection);
-        newFileCreationPage.setTitle(SiriusEditorPlugin.INSTANCE.getString("_UI_ViewpointModelWizard_label"));
-        newFileCreationPage.setDescription(SiriusEditorPlugin.INSTANCE.getString("_UI_ViewpointModelWizard_description"));
+        newFileCreationPage = new ToolModelWizardNewFileCreationPage("Whatever", selection);
+        newFileCreationPage.setTitle(SiriusEditorPlugin.INSTANCE.getString("_UI_ToolModelWizard_label"));
+        newFileCreationPage.setDescription(SiriusEditorPlugin.INSTANCE.getString("_UI_ToolModelWizard_description"));
         newFileCreationPage
                 .setFileName(SiriusEditorPlugin.INSTANCE.getString("_UI_SiriusEditorFilenameDefaultBase") + "." + SiriusEditorPlugin.INSTANCE.getString("_UI_SiriusEditorFilenameExtension"));
         addPage(newFileCreationPage);
@@ -464,8 +465,8 @@ public class ViewpointModelWizard extends Wizard implements INewWizard {
                 }
             }
         }
-        initialObjectCreationPage = new ViewpointModelWizardInitialObjectCreationPage("Whatever2");
-        initialObjectCreationPage.setTitle(SiriusEditorPlugin.INSTANCE.getString("_UI_ViewpointModelWizard_label"));
+        initialObjectCreationPage = new ToolModelWizardInitialObjectCreationPage("Whatever2");
+        initialObjectCreationPage.setTitle(SiriusEditorPlugin.INSTANCE.getString("_UI_ToolModelWizard_label"));
         initialObjectCreationPage.setDescription(SiriusEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
         addPage(initialObjectCreationPage);
     }

@@ -147,6 +147,7 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 /**
  * This is an example of a Viewpoint model editor.
  */
+//CHECKSTYLE:OFF
 public class SiriusEditor extends MultiPageEditorPart
         implements IAdapterFactoryProvider, IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, ITabbedPropertySheetPageContributor, IGotoMarker {
 
