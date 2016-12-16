@@ -27,6 +27,7 @@ public class GroupDescriptionDomainClassPropertySection extends AbstractTextProp
     /**
      * @see org.eclipse.sirius.properties.editor.properties.sections.AbstractTextPropertySection#getDefaultLabelText()
      */
+    @Override
     protected String getDefaultLabelText() {
         return "DomainClass"; //$NON-NLS-1$
     }
@@ -34,6 +35,7 @@ public class GroupDescriptionDomainClassPropertySection extends AbstractTextProp
     /**
      * @see org.eclipse.sirius.properties.editor.properties.sections.AbstractTextPropertySection#getLabelText()
      */
+    @Override
     protected String getLabelText() {
         String labelText;
         labelText = super.getLabelText() + ":"; //$NON-NLS-1$
@@ -46,6 +48,7 @@ public class GroupDescriptionDomainClassPropertySection extends AbstractTextProp
     /**
      * @see org.eclipse.sirius.properties.editor.properties.sections.AbstractTextPropertySection#getFeature()
      */
+    @Override
     public EAttribute getFeature() {
         return PropertiesPackage.eINSTANCE.getGroupDescription_DomainClass();
     }
@@ -53,6 +56,7 @@ public class GroupDescriptionDomainClassPropertySection extends AbstractTextProp
     /**
      * @see org.eclipse.sirius.properties.editor.properties.sections.AbstractTextPropertySection#getFeatureValue(String)
      */
+    @Override
     protected Object getFeatureValue(String newText) {
         return newText;
     }
@@ -60,6 +64,7 @@ public class GroupDescriptionDomainClassPropertySection extends AbstractTextProp
     /**
      * @see org.eclipse.sirius.properties.editor.properties.sections.AbstractTextPropertySection#isEqual(String)
      */
+    @Override
     protected boolean isEqual(String newText) {
         return getFeatureAsText().equals(newText);
     }
@@ -67,6 +72,7 @@ public class GroupDescriptionDomainClassPropertySection extends AbstractTextProp
     /**
      * {@inheritDoc}
      */
+    @Override
     public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
         super.createControls(parent, tabbedPropertySheetPage);
         /*
@@ -85,6 +91,7 @@ public class GroupDescriptionDomainClassPropertySection extends AbstractTextProp
     /**
      * {@inheritDoc}
      */
+    @Override
     protected String getPropertyDescription() {
         return "";
     }

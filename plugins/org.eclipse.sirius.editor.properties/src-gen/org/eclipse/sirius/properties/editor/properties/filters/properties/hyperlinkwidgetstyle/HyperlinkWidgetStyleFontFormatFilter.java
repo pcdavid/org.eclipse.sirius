@@ -25,6 +25,7 @@ public class HyperlinkWidgetStyleFontFormatFilter extends ViewpointPropertyFilte
     /**
      * {@inheritDoc}
      */
+    @Override
     protected EStructuralFeature getFeature() {
         return PropertiesPackage.eINSTANCE.getHyperlinkWidgetStyle_FontFormat();
     }
@@ -32,6 +33,7 @@ public class HyperlinkWidgetStyleFontFormatFilter extends ViewpointPropertyFilte
     /**
      * {@inheritDoc}
      */
+    @Override
     protected boolean isRightInputType(Object arg0) {
         return arg0 instanceof org.eclipse.sirius.properties.HyperlinkWidgetStyle;
     }

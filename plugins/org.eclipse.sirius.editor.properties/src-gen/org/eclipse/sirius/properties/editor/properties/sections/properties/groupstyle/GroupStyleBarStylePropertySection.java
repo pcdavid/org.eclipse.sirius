@@ -29,6 +29,7 @@ public class GroupStyleBarStylePropertySection extends AbstractRadioButtonProper
     /**
      * @see org.eclipse.sirius.properties.editor.properties.sections.AbstractRadioButtonPropertySection#getDefaultLabelText()
      */
+    @Override
     protected String getDefaultLabelText() {
         return "BarStyle"; //$NON-NLS-1$
     }
@@ -36,6 +37,7 @@ public class GroupStyleBarStylePropertySection extends AbstractRadioButtonProper
     /**
      * @see org.eclipse.sirius.properties.editor.properties.sections.AbstractRadioButtonPropertySection#getLabelText()
      */
+    @Override
     protected String getLabelText() {
         String labelText;
         labelText = super.getLabelText() + ":"; //$NON-NLS-1$
@@ -48,6 +50,7 @@ public class GroupStyleBarStylePropertySection extends AbstractRadioButtonProper
     /**
      * @see org.eclipse.sirius.properties.editor.properties.sections.AbstractRadioButtonPropertySection#getFeature()
      */
+    @Override
     protected EAttribute getFeature() {
         return PropertiesPackage.eINSTANCE.getGroupStyle_BarStyle();
     }
@@ -55,6 +58,7 @@ public class GroupStyleBarStylePropertySection extends AbstractRadioButtonProper
     /**
      * @see org.eclipse.sirius.properties.editor.properties.sections.AbstractRadioButtonPropertySection#getFeatureValue(int)
      */
+    @Override
     protected Object getFeatureValue(int index) {
         return getChoiceOfValues().get(index);
     }
@@ -62,6 +66,7 @@ public class GroupStyleBarStylePropertySection extends AbstractRadioButtonProper
     /**
      * @see org.eclipse.sirius.properties.editor.properties.sections.AbstractRadioButtonPropertySection#isEqual(int)
      */
+    @Override
     protected boolean isEqual(int index) {
         return getChoiceOfValues().get(index).equals(eObject.eGet(getFeature()));
     }
@@ -69,6 +74,7 @@ public class GroupStyleBarStylePropertySection extends AbstractRadioButtonProper
     /**
      * @see org.eclipse.sirius.properties.editor.properties.sections.AbstractRadioButtonPropertySection#getEnumerationFeatureValues()
      */
+    @Override
     protected List<?> getChoiceOfValues() {
         return TitleBarStyle.VALUES;
     }
@@ -76,6 +82,7 @@ public class GroupStyleBarStylePropertySection extends AbstractRadioButtonProper
     /**
      * {@inheritDoc}
      */
+    @Override
     public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
         super.createControls(parent, tabbedPropertySheetPage);
 

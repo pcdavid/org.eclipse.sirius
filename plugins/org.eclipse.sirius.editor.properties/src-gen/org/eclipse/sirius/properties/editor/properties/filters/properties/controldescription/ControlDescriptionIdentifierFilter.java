@@ -25,6 +25,7 @@ public class ControlDescriptionIdentifierFilter extends ViewpointPropertyFilter 
     /**
      * {@inheritDoc}
      */
+    @Override
     protected EStructuralFeature getFeature() {
         return PropertiesPackage.eINSTANCE.getControlDescription_Identifier();
     }
@@ -32,6 +33,7 @@ public class ControlDescriptionIdentifierFilter extends ViewpointPropertyFilter 
     /**
      * {@inheritDoc}
      */
+    @Override
     protected boolean isRightInputType(Object arg0) {
         return arg0 instanceof org.eclipse.sirius.properties.ControlDescription;
     }

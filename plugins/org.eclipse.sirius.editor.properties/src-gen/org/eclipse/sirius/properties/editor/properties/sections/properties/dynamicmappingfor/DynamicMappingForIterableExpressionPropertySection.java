@@ -32,6 +32,7 @@ public class DynamicMappingForIterableExpressionPropertySection extends Abstract
     /**
      * @see org.eclipse.sirius.properties.editor.properties.sections.AbstractTextWithButtonPropertySection#getDefaultLabelText()
      */
+    @Override
     protected String getDefaultLabelText() {
         return "IterableExpression"; //$NON-NLS-1$
     }
@@ -39,6 +40,7 @@ public class DynamicMappingForIterableExpressionPropertySection extends Abstract
     /**
      * @see org.eclipse.sirius.properties.editor.properties.sections.AbstractTextWithButtonPropertySection#getLabelText()
      */
+    @Override
     protected String getLabelText() {
         String labelText;
         labelText = super.getLabelText() + "*:"; //$NON-NLS-1$
@@ -51,6 +53,7 @@ public class DynamicMappingForIterableExpressionPropertySection extends Abstract
     /**
      * @see org.eclipse.sirius.properties.editor.properties.sections.AbstractTextWithButtonPropertySection#getFeature()
      */
+    @Override
     public EAttribute getFeature() {
         return PropertiesPackage.eINSTANCE.getDynamicMappingFor_IterableExpression();
     }
@@ -58,6 +61,7 @@ public class DynamicMappingForIterableExpressionPropertySection extends Abstract
     /**
      * @see org.eclipse.sirius.properties.editor.properties.sections.AbstractTextWithButtonPropertySection#getFeatureValue(String)
      */
+    @Override
     protected Object getFeatureValue(String newText) {
         return newText;
     }
@@ -65,6 +69,7 @@ public class DynamicMappingForIterableExpressionPropertySection extends Abstract
     /**
      * @see org.eclipse.sirius.properties.editor.properties.sections.AbstractTextWithButtonPropertySection#isEqual(String)
      */
+    @Override
     protected boolean isEqual(String newText) {
         return getFeatureAsText().equals(newText);
     }
@@ -72,6 +77,7 @@ public class DynamicMappingForIterableExpressionPropertySection extends Abstract
     /**
      * {@inheritDoc}
      */
+    @Override
     public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
         super.createControls(parent, tabbedPropertySheetPage);
         /*
@@ -92,6 +98,7 @@ public class DynamicMappingForIterableExpressionPropertySection extends Abstract
     @Override
     protected SelectionListener createButtonListener() {
         return new SelectionAdapter() {
+            @Override
             public void widgetSelected(SelectionEvent e) {
                 TextWithContentProposalDialog dialog = new TextWithContentProposalDialog(composite.getShell(), DynamicMappingForIterableExpressionPropertySection.this, text.getText());
                 dialog.open();
@@ -104,6 +111,7 @@ public class DynamicMappingForIterableExpressionPropertySection extends Abstract
     /**
      * {@inheritDoc}
      */
+    @Override
     protected String getPropertyDescription() {
         return "";
     }

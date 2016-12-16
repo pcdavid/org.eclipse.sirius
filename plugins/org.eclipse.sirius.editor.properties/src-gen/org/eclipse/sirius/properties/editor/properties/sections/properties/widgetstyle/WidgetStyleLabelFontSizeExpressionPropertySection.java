@@ -32,6 +32,7 @@ public class WidgetStyleLabelFontSizeExpressionPropertySection extends AbstractT
     /**
      * @see org.eclipse.sirius.properties.editor.properties.sections.AbstractTextWithButtonPropertySection#getDefaultLabelText()
      */
+    @Override
     protected String getDefaultLabelText() {
         return "LabelFontSizeExpression"; //$NON-NLS-1$
     }
@@ -39,6 +40,7 @@ public class WidgetStyleLabelFontSizeExpressionPropertySection extends AbstractT
     /**
      * @see org.eclipse.sirius.properties.editor.properties.sections.AbstractTextWithButtonPropertySection#getLabelText()
      */
+    @Override
     protected String getLabelText() {
         String labelText;
         labelText = super.getLabelText() + ":"; //$NON-NLS-1$
@@ -51,6 +53,7 @@ public class WidgetStyleLabelFontSizeExpressionPropertySection extends AbstractT
     /**
      * @see org.eclipse.sirius.properties.editor.properties.sections.AbstractTextWithButtonPropertySection#getFeature()
      */
+    @Override
     public EAttribute getFeature() {
         return PropertiesPackage.eINSTANCE.getWidgetStyle_LabelFontSizeExpression();
     }
@@ -58,6 +61,7 @@ public class WidgetStyleLabelFontSizeExpressionPropertySection extends AbstractT
     /**
      * @see org.eclipse.sirius.properties.editor.properties.sections.AbstractTextWithButtonPropertySection#getFeatureValue(String)
      */
+    @Override
     protected Object getFeatureValue(String newText) {
         return newText;
     }
@@ -65,6 +69,7 @@ public class WidgetStyleLabelFontSizeExpressionPropertySection extends AbstractT
     /**
      * @see org.eclipse.sirius.properties.editor.properties.sections.AbstractTextWithButtonPropertySection#isEqual(String)
      */
+    @Override
     protected boolean isEqual(String newText) {
         return getFeatureAsText().equals(newText);
     }
@@ -72,6 +77,7 @@ public class WidgetStyleLabelFontSizeExpressionPropertySection extends AbstractT
     /**
      * {@inheritDoc}
      */
+    @Override
     public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
         super.createControls(parent, tabbedPropertySheetPage);
         /*
@@ -90,6 +96,7 @@ public class WidgetStyleLabelFontSizeExpressionPropertySection extends AbstractT
     @Override
     protected SelectionListener createButtonListener() {
         return new SelectionAdapter() {
+            @Override
             public void widgetSelected(SelectionEvent e) {
                 TextWithContentProposalDialog dialog = new TextWithContentProposalDialog(composite.getShell(), WidgetStyleLabelFontSizeExpressionPropertySection.this, text.getText());
                 dialog.open();
@@ -102,6 +109,7 @@ public class WidgetStyleLabelFontSizeExpressionPropertySection extends AbstractT
     /**
      * {@inheritDoc}
      */
+    @Override
     protected String getPropertyDescription() {
         return "";
     }

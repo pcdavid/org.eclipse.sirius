@@ -26,6 +26,7 @@ public class HyperlinkWidgetStyleFontFormatPropertySection extends AbstractEdito
     /**
      * @see org.eclipse.sirius.properties.editor.properties.sections.AbstractEditorDialogPropertySection#getDefaultLabelText()
      */
+    @Override
     protected String getDefaultLabelText() {
         return "FontFormat"; //$NON-NLS-1$
     }
@@ -33,6 +34,7 @@ public class HyperlinkWidgetStyleFontFormatPropertySection extends AbstractEdito
     /**
      * @see org.eclipse.sirius.properties.editor.properties.sections.AbstractEditorDialogPropertySection#getLabelText()
      */
+    @Override
     protected String getLabelText() {
         String labelText;
         labelText = super.getLabelText() + ":"; //$NON-NLS-1$
@@ -45,6 +47,7 @@ public class HyperlinkWidgetStyleFontFormatPropertySection extends AbstractEdito
     /**
      * @see org.eclipse.sirius.properties.editor.properties.sections.AbstractEditorDialogPropertySection#getFeature()
      */
+    @Override
     protected EAttribute getFeature() {
         return PropertiesPackage.eINSTANCE.getHyperlinkWidgetStyle_FontFormat();
     }
@@ -52,6 +55,7 @@ public class HyperlinkWidgetStyleFontFormatPropertySection extends AbstractEdito
     /**
      * @see org.eclipse.sirius.properties.editor.properties.sections.AbstractEditorDialogPropertySection#getFeatureAsText()
      */
+    @Override
     protected String getFeatureAsText() {
         String string = new String();
 
@@ -59,8 +63,9 @@ public class HyperlinkWidgetStyleFontFormatPropertySection extends AbstractEdito
             List<?> values = (List<?>) eObject.eGet(getFeature());
             for (Iterator<?> iterator = values.iterator(); iterator.hasNext();) {
                 string += getAdapterFactoryLabelProvider().getText(iterator.next());
-                if (iterator.hasNext())
+                if (iterator.hasNext()) {
                     string += ", ";
+                }
             }
         }
 
@@ -70,6 +75,7 @@ public class HyperlinkWidgetStyleFontFormatPropertySection extends AbstractEdito
     /**
      * @see org.eclipse.sirius.properties.editor.properties.sections.AbstractEditorDialogPropertySection#isEqual(List)
      */
+    @Override
     protected boolean isEqual(List<?> newList) {
         return newList.equals(eObject.eGet(getFeature()));
     }
@@ -77,6 +83,7 @@ public class HyperlinkWidgetStyleFontFormatPropertySection extends AbstractEdito
     /**
      * @see org.eclipse.sirius.properties.editor.properties.sections.AbstractEditorDialogPropertySection#getEnumerationFeatureValues()
      */
+    @Override
     protected List<?> getChoiceOfValues() {
         return FontFormat.VALUES;
     }
@@ -84,6 +91,7 @@ public class HyperlinkWidgetStyleFontFormatPropertySection extends AbstractEdito
     /**
      * {@inheritDoc}
      */
+    @Override
     public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
         super.createControls(parent, tabbedPropertySheetPage);
     }

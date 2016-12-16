@@ -25,6 +25,7 @@ public class DynamicMappingIfPredicateExpressionFilter extends ViewpointProperty
     /**
      * {@inheritDoc}
      */
+    @Override
     protected EStructuralFeature getFeature() {
         return PropertiesPackage.eINSTANCE.getDynamicMappingIf_PredicateExpression();
     }
@@ -32,6 +33,7 @@ public class DynamicMappingIfPredicateExpressionFilter extends ViewpointProperty
     /**
      * {@inheritDoc}
      */
+    @Override
     protected boolean isRightInputType(Object arg0) {
         return arg0 instanceof org.eclipse.sirius.properties.DynamicMappingIf;
     }

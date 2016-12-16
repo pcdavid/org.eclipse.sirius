@@ -25,6 +25,7 @@ public class WidgetConditionalStylePreconditionExpressionFilter extends Viewpoin
     /**
      * {@inheritDoc}
      */
+    @Override
     protected EStructuralFeature getFeature() {
         return PropertiesPackage.eINSTANCE.getWidgetConditionalStyle_PreconditionExpression();
     }
@@ -32,6 +33,7 @@ public class WidgetConditionalStylePreconditionExpressionFilter extends Viewpoin
     /**
      * {@inheritDoc}
      */
+    @Override
     protected boolean isRightInputType(Object arg0) {
         return arg0 instanceof org.eclipse.sirius.properties.WidgetConditionalStyle;
     }

@@ -25,6 +25,7 @@ public class WidgetDescriptionIsEnabledExpressionFilter extends ViewpointPropert
     /**
      * {@inheritDoc}
      */
+    @Override
     protected EStructuralFeature getFeature() {
         return PropertiesPackage.eINSTANCE.getWidgetDescription_IsEnabledExpression();
     }
@@ -32,6 +33,7 @@ public class WidgetDescriptionIsEnabledExpressionFilter extends ViewpointPropert
     /**
      * {@inheritDoc}
      */
+    @Override
     protected boolean isRightInputType(Object arg0) {
         return arg0 instanceof org.eclipse.sirius.properties.WidgetDescription;
     }

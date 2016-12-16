@@ -25,6 +25,7 @@ public class PageDescriptionPreconditionExpressionFilter extends ViewpointProper
     /**
      * {@inheritDoc}
      */
+    @Override
     protected EStructuralFeature getFeature() {
         return PropertiesPackage.eINSTANCE.getPageDescription_PreconditionExpression();
     }
@@ -32,6 +33,7 @@ public class PageDescriptionPreconditionExpressionFilter extends ViewpointProper
     /**
      * {@inheritDoc}
      */
+    @Override
     protected boolean isRightInputType(Object arg0) {
         return arg0 instanceof org.eclipse.sirius.properties.PageDescription;
     }

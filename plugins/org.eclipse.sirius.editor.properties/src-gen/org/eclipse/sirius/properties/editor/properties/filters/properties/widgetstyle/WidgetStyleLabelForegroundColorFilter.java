@@ -25,6 +25,7 @@ public class WidgetStyleLabelForegroundColorFilter extends ViewpointPropertyFilt
     /**
      * {@inheritDoc}
      */
+    @Override
     protected EStructuralFeature getFeature() {
         return PropertiesPackage.eINSTANCE.getWidgetStyle_LabelForegroundColor();
     }
@@ -32,6 +33,7 @@ public class WidgetStyleLabelForegroundColorFilter extends ViewpointPropertyFilt
     /**
      * {@inheritDoc}
      */
+    @Override
     protected boolean isRightInputType(Object arg0) {
         return arg0 instanceof org.eclipse.sirius.properties.WidgetStyle;
     }
