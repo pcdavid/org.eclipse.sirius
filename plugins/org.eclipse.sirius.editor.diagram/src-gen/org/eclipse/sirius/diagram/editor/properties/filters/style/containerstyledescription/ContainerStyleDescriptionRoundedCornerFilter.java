@@ -17,27 +17,30 @@ import org.eclipse.sirius.editor.properties.filters.common.ViewpointPropertyFilt
 
 // End of user code specific imports
 
+
 /**
  * A filter for the roundedCorner property section.
  */
 public class ContainerStyleDescriptionRoundedCornerFilter extends ViewpointPropertyFilter {
 
-    /**
-     * {@inheritDoc}
-     */
-    protected EStructuralFeature getFeature() {
-        return StylePackage.eINSTANCE.getContainerStyleDescription_RoundedCorner();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    protected boolean isRightInputType(Object arg0) {
+	/**
+	 * {@inheritDoc}
+	 */
+	protected EStructuralFeature getFeature() {
+		return StylePackage.eINSTANCE.getContainerStyleDescription_RoundedCorner();
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	protected boolean isRightInputType(Object arg0) {
         return arg0 instanceof org.eclipse.sirius.diagram.description.style.ContainerStyleDescription;
     }
-
-    // Start of user code user methods
+	
+	// Start of user code user methods
 
     // End of user code user methods
+	
+	
 
 }

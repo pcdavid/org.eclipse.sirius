@@ -26,65 +26,59 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
  * A section for the orientation property of a FillLayoutDescription object.
  */
 public class FillLayoutDescriptionOrientationPropertySection extends AbstractRadioButtonPropertySection {
-    /**
-     * @see org.eclipse.sirius.properties.editor.properties.sections.AbstractRadioButtonPropertySection#getDefaultLabelText()
-     */
-    @Override
-    protected String getDefaultLabelText() {
-        return "Orientation"; //$NON-NLS-1$
-    }
+	/**
+	 * @see org.eclipse.sirius.properties.editor.properties.sections.AbstractRadioButtonPropertySection#getDefaultLabelText()
+	 */
+	protected String getDefaultLabelText() {
+	    return "Orientation"; //$NON-NLS-1$
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.properties.editor.properties.sections.AbstractRadioButtonPropertySection#getLabelText()
+	 */
+	protected String getLabelText() {
+		String labelText;
+		labelText = super.getLabelText() + ":"; //$NON-NLS-1$
+		// Start of user code get label text
 
-    /**
-     * @see org.eclipse.sirius.properties.editor.properties.sections.AbstractRadioButtonPropertySection#getLabelText()
-     */
-    @Override
-    protected String getLabelText() {
-        String labelText;
-        labelText = super.getLabelText() + ":"; //$NON-NLS-1$
-        // Start of user code get label text
+	    // End of user code get label text
+	    return labelText;
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.properties.editor.properties.sections.AbstractRadioButtonPropertySection#getFeature()
+	 */
+	protected EAttribute getFeature() {
+		return PropertiesPackage.eINSTANCE.getFillLayoutDescription_Orientation();
+	}
 
-        // End of user code get label text
-        return labelText;
-    }
+	/**
+	 * @see org.eclipse.sirius.properties.editor.properties.sections.AbstractRadioButtonPropertySection#getFeatureValue(int)
+	 */
+	protected Object getFeatureValue(int index) {
+		return getChoiceOfValues().get(index);
+	}
 
-    /**
-     * @see org.eclipse.sirius.properties.editor.properties.sections.AbstractRadioButtonPropertySection#getFeature()
-     */
-    @Override
-    protected EAttribute getFeature() {
-        return PropertiesPackage.eINSTANCE.getFillLayoutDescription_Orientation();
-    }
+	/**
+	 * @see org.eclipse.sirius.properties.editor.properties.sections.AbstractRadioButtonPropertySection#isEqual(int)
+	 */
+	protected boolean isEqual(int index) {
+		return getChoiceOfValues().get(index).equals(eObject.eGet(getFeature()));
+	}
 
-    /**
-     * @see org.eclipse.sirius.properties.editor.properties.sections.AbstractRadioButtonPropertySection#getFeatureValue(int)
-     */
-    @Override
-    protected Object getFeatureValue(int index) {
-        return getChoiceOfValues().get(index);
-    }
+	/**
+	 * @see org.eclipse.sirius.properties.editor.properties.sections.AbstractRadioButtonPropertySection#getEnumerationFeatureValues()
+	 */
+	protected List<?> getChoiceOfValues() {
+		return FILL_LAYOUT_ORIENTATION.VALUES;
+	}
 
-    /**
-     * @see org.eclipse.sirius.properties.editor.properties.sections.AbstractRadioButtonPropertySection#isEqual(int)
-     */
-    @Override
-    protected boolean isEqual(int index) {
-        return getChoiceOfValues().get(index).equals(eObject.eGet(getFeature()));
-    }
-
-    /**
-     * @see org.eclipse.sirius.properties.editor.properties.sections.AbstractRadioButtonPropertySection#getEnumerationFeatureValues()
-     */
-    @Override
-    protected List<?> getChoiceOfValues() {
-        return FILL_LAYOUT_ORIENTATION.VALUES;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
-        super.createControls(parent, tabbedPropertySheetPage);
-
-    }
+	/**
+	 * {@inheritDoc}
+	 */
+	public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
+	    super.createControls(parent, tabbedPropertySheetPage);	  	    
+	   
+	
+	}
 }

@@ -17,27 +17,30 @@ import org.eclipse.sirius.editor.properties.filters.common.ViewpointPropertyFilt
 
 // End of user code specific imports
 
+
 /**
  * A filter for the borderColor property section.
  */
 public class TExecutionStyleBorderColorFilter extends ViewpointPropertyFilter {
 
-    /**
-     * {@inheritDoc}
-     */
-    protected EStructuralFeature getFeature() {
-        return TemplatePackage.eINSTANCE.getTExecutionStyle_BorderColor();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    protected boolean isRightInputType(Object arg0) {
+	/**
+	 * {@inheritDoc}
+	 */
+	protected EStructuralFeature getFeature() {
+		return TemplatePackage.eINSTANCE.getTExecutionStyle_BorderColor();
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	protected boolean isRightInputType(Object arg0) {
         return arg0 instanceof org.eclipse.sirius.diagram.sequence.template.TExecutionStyle;
     }
-
-    // Start of user code user methods
+	
+	// Start of user code user methods
 
     // End of user code user methods
+	
+	
 
 }

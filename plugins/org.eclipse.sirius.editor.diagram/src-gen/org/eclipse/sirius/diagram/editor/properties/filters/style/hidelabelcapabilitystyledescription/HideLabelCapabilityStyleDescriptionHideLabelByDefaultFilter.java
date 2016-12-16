@@ -21,26 +21,27 @@ import org.eclipse.sirius.viewpoint.description.ConditionalStyleDescription;
 
 // End of user code specific imports
 
+
 /**
  * A filter for the hideLabelByDefault property section.
  */
 public class HideLabelCapabilityStyleDescriptionHideLabelByDefaultFilter extends ViewpointPropertyFilter {
 
-    /**
-     * {@inheritDoc}
-     */
-    protected EStructuralFeature getFeature() {
-        return StylePackage.eINSTANCE.getHideLabelCapabilityStyleDescription_HideLabelByDefault();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    protected boolean isRightInputType(Object arg0) {
+	/**
+	 * {@inheritDoc}
+	 */
+	protected EStructuralFeature getFeature() {
+		return StylePackage.eINSTANCE.getHideLabelCapabilityStyleDescription_HideLabelByDefault();
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	protected boolean isRightInputType(Object arg0) {
         return arg0 instanceof org.eclipse.sirius.diagram.description.style.HideLabelCapabilityStyleDescription;
     }
-
-    // Start of user code user methods
+	
+	// Start of user code user methods
 
     public boolean select(Object arg0) {
         if (isRightInputType(arg0) && isStyleInNodeMapping((org.eclipse.sirius.diagram.description.style.HideLabelCapabilityStyleDescription) arg0)) {
@@ -69,5 +70,7 @@ public class HideLabelCapabilityStyleDescriptionHideLabelByDefaultFilter extends
     }
 
     // End of user code user methods
+	
+	
 
 }

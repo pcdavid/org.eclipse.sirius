@@ -26,93 +26,93 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 /**
  * A section for the id property of a CustomStyleDescription object.
  */
-public class CustomStyleDescriptionIdPropertySection extends AbstractTextPropertySection {
+public class CustomStyleDescriptionIdPropertySection extends AbstractTextPropertySection  {
+	
+	/** Help control of the section. */
+	protected CLabel help;
+	
+	/**
+	 * @see org.eclipse.ui.views.properties.tabbed.view.ITabbedPropertySection#refresh()
+	 */
+	public void refresh() {
+		super.refresh();
 
-    /** Help control of the section. */
-    protected CLabel help;
+		final String tooltip = getToolTipText();
+		if (tooltip != null && help != null) {
+			help.setToolTipText(getToolTipText());
+		}
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractTextPropertySection#getDefaultLabelText()
+	 */
+	protected String getDefaultLabelText() {
+	    return "Id"; //$NON-NLS-1$
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractTextPropertySection#getLabelText()
+	 */
+	protected String getLabelText() {
+		String labelText;
+		labelText = super.getLabelText() + ":"; //$NON-NLS-1$
+		// Start of user code get label text
 
-    /**
-     * @see org.eclipse.ui.views.properties.tabbed.view.ITabbedPropertySection#refresh()
-     */
-    public void refresh() {
-        super.refresh();
-
-        final String tooltip = getToolTipText();
-        if (tooltip != null && help != null) {
-            help.setToolTipText(getToolTipText());
-        }
-    }
-
-    /**
-     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractTextPropertySection#getDefaultLabelText()
-     */
-    protected String getDefaultLabelText() {
-        return "Id"; //$NON-NLS-1$
-    }
-
-    /**
-     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractTextPropertySection#getLabelText()
-     */
-    protected String getLabelText() {
-        String labelText;
-        labelText = super.getLabelText() + ":"; //$NON-NLS-1$
-        // Start of user code get label text
-
-        // End of user code get label text
-        return labelText;
-    }
-
-    /**
-     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractTextPropertySection#getFeature()
-     */
-    public EAttribute getFeature() {
-        return StylePackage.eINSTANCE.getCustomStyleDescription_Id();
-    }
-
-    /**
-     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractTextPropertySection#getFeatureValue(String)
-     */
-    protected Object getFeatureValue(String newText) {
-        return newText;
-    }
-
-    /**
-     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractTextPropertySection#isEqual(String)
-     */
-    protected boolean isEqual(String newText) {
-        return getFeatureAsText().equals(newText);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
-        super.createControls(parent, tabbedPropertySheetPage);
-
-        text.setToolTipText(getToolTipText());
-
-        help = getWidgetFactory().createCLabel(composite, "");
-        FormData data = new FormData();
+	    // End of user code get label text
+	    return labelText;
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractTextPropertySection#getFeature()
+	 */
+	public EAttribute getFeature() {
+		return StylePackage.eINSTANCE.getCustomStyleDescription_Id();
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractTextPropertySection#getFeatureValue(String)
+	 */
+	protected Object getFeatureValue(String newText) {
+		return newText;
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractTextPropertySection#isEqual(String)
+	 */
+	protected boolean isEqual(String newText) {
+		return getFeatureAsText().equals(newText);
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
+	    super.createControls(parent, tabbedPropertySheetPage);
+	    
+	    text.setToolTipText(getToolTipText());
+	    	    
+	    help = getWidgetFactory().createCLabel(composite,"");
+	    FormData data = new FormData();
         data.top = new FormAttachment(text, 0, SWT.TOP);
-        data.left = new FormAttachment(nameLabel);
+        data.left = new FormAttachment(nameLabel);     
         help.setLayoutData(data);
         help.setImage(getHelpIcon());
-        help.setToolTipText(getToolTipText());
+        help.setToolTipText(getToolTipText());	    
+	    
+	    // Start of user code create controls
 
-        // Start of user code create controls
+	    // End of user code create controls
+	    
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	protected String getPropertyDescription() {
+		return "ID for the custom style, you should put here an ID you'll leverage using the API to provide your own custom style.";
+	}
+	
+	// Start of user code user operations
 
-        // End of user code create controls
-
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    protected String getPropertyDescription() {
-        return "ID for the custom style, you should put here an ID you'll leverage using the API to provide your own custom style.";
-    }
-
-    // Start of user code user operations
-
-    // End of user code user operations
+	// End of user code user operations
 }

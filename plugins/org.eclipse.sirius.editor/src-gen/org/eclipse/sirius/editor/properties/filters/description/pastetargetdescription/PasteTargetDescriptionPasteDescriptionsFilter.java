@@ -17,27 +17,30 @@ import org.eclipse.sirius.viewpoint.description.DescriptionPackage;
 
 // End of user code specific imports
 
+
 /**
  * A filter for the pasteDescriptions property section.
  */
 public class PasteTargetDescriptionPasteDescriptionsFilter extends ViewpointPropertyFilter {
 
-    /**
-     * {@inheritDoc}
-     */
-    protected EStructuralFeature getFeature() {
-        return DescriptionPackage.eINSTANCE.getPasteTargetDescription_PasteDescriptions();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    protected boolean isRightInputType(Object arg0) {
+	/**
+	 * {@inheritDoc}
+	 */
+	protected EStructuralFeature getFeature() {
+		return DescriptionPackage.eINSTANCE.getPasteTargetDescription_PasteDescriptions();
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	protected boolean isRightInputType(Object arg0) {
         return arg0 instanceof org.eclipse.sirius.viewpoint.description.PasteTargetDescription;
     }
-
-    // Start of user code user methods
+	
+	// Start of user code user methods
 
     // End of user code user methods
+	
+	
 
 }

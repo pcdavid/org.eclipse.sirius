@@ -7,7 +7,7 @@
  * Contributors:
  *    Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipse.sirius.editor.wizards;
+ package org.eclipse.sirius.editor.wizards;
 
 // Start of user code imports
 
@@ -72,408 +72,410 @@ import org.eclipse.ui.part.ISetSelectionTarget;
  * This is a simple wizard for creating a new model file.
  */
 public class AuditModelWizard extends Wizard implements INewWizard {
-    /**
-     * This caches an instance of the model package.
-     */
-    protected AuditPackage auditPackage = AuditPackage.eINSTANCE;
+	/**
+	 * This caches an instance of the model package.
+	 */
+	protected AuditPackage auditPackage = AuditPackage.eINSTANCE;
 
-    /**
-     * This caches an instance of the model factory.
-     */
-    protected AuditFactory auditFactory = auditPackage.getAuditFactory();
+	/**
+	 * This caches an instance of the model factory.
+	 */
+	protected AuditFactory auditFactory = auditPackage.getAuditFactory();
 
-    /**
-     * This is the file creation page.
-     */
-    protected AuditModelWizardNewFileCreationPage newFileCreationPage;
+	/**
+	 * This is the file creation page.
+	 */
+	protected AuditModelWizardNewFileCreationPage newFileCreationPage;
 
-    /**
-     * This is the initial object creation page.
-     */
-    protected AuditModelWizardInitialObjectCreationPage initialObjectCreationPage;
+	/**
+	 * This is the initial object creation page.
+	 */
+	protected AuditModelWizardInitialObjectCreationPage initialObjectCreationPage;
 
-    /**
-     * Remember the selection during initialization for populating the default
-     * container.
-     */
-    protected IStructuredSelection selection;
+	/**
+	 * Remember the selection during initialization for populating the default container.
+	 */
+	protected IStructuredSelection selection;
 
-    /**
-     * Remember the workbench during initialization.
-     */
-    protected IWorkbench workbench;
+	/**
+	 * Remember the workbench during initialization.
+	 */
+	protected IWorkbench workbench;
 
-    /**
-     * Caches the names of the types that can be created as the root object.
-     */
-    protected List<String> initialObjectNames;
+	/**
+	 * Caches the names of the types that can be created as the root object.
+	 */
+	protected List<String> initialObjectNames;
 
-    /**
-     * This just records the information.
-     */
-    public void init(IWorkbench workbench, IStructuredSelection selection) {
-        this.workbench = workbench;
-        this.selection = selection;
-        setWindowTitle(SiriusEditorPlugin.INSTANCE.getString("_UI_Wizard_label"));
-        setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(SiriusEditorPlugin.INSTANCE.getImage("full/wizban/NewModel")));
-    }
+	/**
+	 * This just records the information.
+	 */
+	public void init(IWorkbench workbench, IStructuredSelection selection) {
+		this.workbench = workbench;
+		this.selection = selection;
+		setWindowTitle(SiriusEditorPlugin.INSTANCE.getString("_UI_Wizard_label"));
+		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(SiriusEditorPlugin.INSTANCE.getImage("full/wizban/NewModel")));
+	}
 
-    /**
-     * Returns the names of the types that can be created as the root object.
-     */
-    protected Collection<String> getInitialObjectNames() {
-        if (initialObjectNames == null) {
-            initialObjectNames = new ArrayList<String>();
-            for (Iterator<EClassifier> classifiers = auditPackage.getEClassifiers().iterator(); classifiers.hasNext();) {
-                EClassifier eClassifier = classifiers.next();
-                if (eClassifier instanceof EClass) {
-                    EClass eClass = (EClass) eClassifier;
-                    if (!eClass.isAbstract()) {
-                        initialObjectNames.add(eClass.getName());
-                    }
-                }
-            }
-            Collections.sort(initialObjectNames, java.text.Collator.getInstance());
-        }
+	/**
+	 * Returns the names of the types that can be created as the root object.
+	 */
+	protected Collection<String> getInitialObjectNames() {
+		if (initialObjectNames == null) {
+			initialObjectNames = new ArrayList<String>();
+			for (Iterator<EClassifier> classifiers = auditPackage.getEClassifiers().iterator(); classifiers.hasNext(); ) {
+				EClassifier eClassifier = classifiers.next();
+				if (eClassifier instanceof EClass) {
+					EClass eClass = (EClass)eClassifier;
+					if (!eClass.isAbstract()) {
+						initialObjectNames.add(eClass.getName());
+					}
+				}
+			}
+			Collections.sort(initialObjectNames, java.text.Collator.getInstance());
+		}
+		
+		// Start of user code getInitialObjectNames
 
-        // Start of user code getInitialObjectNames
+		// End of user code getInitialObjectNames
+		return initialObjectNames;
+	}
 
-        // End of user code getInitialObjectNames
-        return initialObjectNames;
-    }
+	/**
+	 * Create a new model.
+	 */
+	protected EObject createInitialModel() {
+		EClass eClass = (EClass)auditPackage.getEClassifier(initialObjectCreationPage.getInitialObjectName());
+		EObject rootObject = auditFactory.create(eClass);
+		
+		// Start of user code createInitialModel
 
-    /**
-     * Create a new model.
-     */
-    protected EObject createInitialModel() {
-        EClass eClass = (EClass) auditPackage.getEClassifier(initialObjectCreationPage.getInitialObjectName());
-        EObject rootObject = auditFactory.create(eClass);
+		// End of user code createInitialModel
+		
+		return rootObject;
+	}
 
-        // Start of user code createInitialModel
+	/**
+	 * Do the work after everything is specified.
+	 */
+	public boolean performFinish() {
+		try {
+			// Remember the file.
+			//
+			final IFile modelFile = getModelFile();
 
-        // End of user code createInitialModel
+			// Do the work within an operation.
+			//
+			WorkspaceModifyOperation operation =
+				new WorkspaceModifyOperation() {
+					protected void execute(IProgressMonitor progressMonitor) {
+						try {
+							// Create a resource set
+							//
+							ResourceSet resourceSet = new ResourceSetImpl();
 
-        return rootObject;
-    }
+							// Get the URI of the model file.
+							//
+							URI fileURI = URI.createPlatformResourceURI(modelFile.getFullPath().toString(), true);
 
-    /**
-     * Do the work after everything is specified.
-     */
-    public boolean performFinish() {
-        try {
-            // Remember the file.
-            //
-            final IFile modelFile = getModelFile();
+							// Create a resource for this file.
+							//
+							Resource resource = resourceSet.createResource(fileURI);
 
-            // Do the work within an operation.
-            //
-            WorkspaceModifyOperation operation = new WorkspaceModifyOperation() {
-                protected void execute(IProgressMonitor progressMonitor) {
-                    try {
-                        // Create a resource set
-                        //
-                        ResourceSet resourceSet = new ResourceSetImpl();
+							// Add the initial model object to the contents.
+							//
+							EObject rootObject = createInitialModel();
+							if (rootObject != null) {
+								resource.getContents().add(rootObject);
+							}
 
-                        // Get the URI of the model file.
-                        //
-                        URI fileURI = URI.createPlatformResourceURI(modelFile.getFullPath().toString(), true);
+							// Save the contents of the resource to the file system.
+							//
+							Map<Object, Object> options = new HashMap<Object, Object>();
+							options.put(XMLResource.OPTION_ENCODING, initialObjectCreationPage.getEncoding());
+							resource.save(options);
+						} catch (Exception exception) {
+							SiriusEditorPlugin.INSTANCE.log(exception);
+						} finally {
+							progressMonitor.done();
+						}
+					}
+				};
 
-                        // Create a resource for this file.
-                        //
-                        Resource resource = resourceSet.createResource(fileURI);
+			getContainer().run(false, false, operation);
 
-                        // Add the initial model object to the contents.
-                        //
-                        EObject rootObject = createInitialModel();
-                        if (rootObject != null) {
-                            resource.getContents().add(rootObject);
-                        }
+			// Select the new file resource in the current view.
+			//
+			IWorkbenchWindow workbenchWindow = workbench.getActiveWorkbenchWindow();
+			IWorkbenchPage page = workbenchWindow.getActivePage();
+			final IWorkbenchPart activePart = page.getActivePart();
+			if (activePart instanceof ISetSelectionTarget) {
+				final ISelection targetSelection = new StructuredSelection(modelFile);
+				getShell().getDisplay().asyncExec
+					(new Runnable() {
+						 public void run() {
+							 ((ISetSelectionTarget)activePart).selectReveal(targetSelection);
+						 }
+					 });
+			}
 
-                        // Save the contents of the resource to the file system.
-                        //
-                        Map<Object, Object> options = new HashMap<Object, Object>();
-                        options.put(XMLResource.OPTION_ENCODING, initialObjectCreationPage.getEncoding());
-                        resource.save(options);
-                    } catch (Exception exception) {
-                        SiriusEditorPlugin.INSTANCE.log(exception);
-                    } finally {
-                        progressMonitor.done();
-                    }
-                }
-            };
+			// Open an editor on the new file.
+			//
+			try {
+				page.openEditor
+					(new FileEditorInput(modelFile),
+					 workbench.getEditorRegistry().getDefaultEditor(modelFile.getFullPath().toString()).getId());
+			} catch (PartInitException exception) {
+				MessageDialog.openError(workbenchWindow.getShell(), SiriusEditorPlugin.INSTANCE.getString("_UI_OpenEditorError_label"), exception.getMessage());
+				return false;
+			}
 
-            getContainer().run(false, false, operation);
+			return true;
+		} catch (Exception exception) {
+			SiriusEditorPlugin.INSTANCE.log(exception);
+			return false;
+		}
+	}
 
-            // Select the new file resource in the current view.
-            //
-            IWorkbenchWindow workbenchWindow = workbench.getActiveWorkbenchWindow();
-            IWorkbenchPage page = workbenchWindow.getActivePage();
-            final IWorkbenchPart activePart = page.getActivePart();
-            if (activePart instanceof ISetSelectionTarget) {
-                final ISelection targetSelection = new StructuredSelection(modelFile);
-                getShell().getDisplay().asyncExec(new Runnable() {
-                    public void run() {
-                        ((ISetSelectionTarget) activePart).selectReveal(targetSelection);
-                    }
-                });
-            }
+	/**
+	 * This is the one page of the wizard.
+	 */
+	public class AuditModelWizardNewFileCreationPage extends WizardNewFileCreationPage {
+		/**
+		 * Pass in the selection.
+		 */
+		public AuditModelWizardNewFileCreationPage(String pageId, IStructuredSelection selection) {
+			super(pageId, selection);
+		}
 
-            // Open an editor on the new file.
-            //
-            try {
-                page.openEditor(new FileEditorInput(modelFile), workbench.getEditorRegistry().getDefaultEditor(modelFile.getFullPath().toString()).getId());
-            } catch (PartInitException exception) {
-                MessageDialog.openError(workbenchWindow.getShell(), SiriusEditorPlugin.INSTANCE.getString("_UI_OpenEditorError_label"), exception.getMessage());
-                return false;
-            }
+		/**
+		 * The framework calls this to see if the file is correct.
+		 */
+		protected boolean validatePage() {
+			if (super.validatePage()) {
+				// Make sure the file ends in ".audit".
+				//
+				String requiredExt = SiriusEditorPlugin.INSTANCE.getString("_UI_SiriusEditorFilenameExtension");
+				String enteredExt = new Path(getFileName()).getFileExtension();
+				if (enteredExt == null || !enteredExt.equals(requiredExt)) {
+					setErrorMessage(SiriusEditorPlugin.INSTANCE.getString("_WARN_FilenameExtension", new Object [] { requiredExt }));
+					return false;
+				} else {
+					return true;
+				}
+			} else {
+				return false;
+			}
+		}
 
-            return true;
-        } catch (Exception exception) {
-            SiriusEditorPlugin.INSTANCE.log(exception);
-            return false;
-        }
-    }
+		public IFile getModelFile() {
+			return ResourcesPlugin.getWorkspace().getRoot().getFile(getContainerFullPath().append(getFileName()));
+		}
+	}
 
-    /**
-     * This is the one page of the wizard.
-     */
-    public class AuditModelWizardNewFileCreationPage extends WizardNewFileCreationPage {
-        /**
-         * Pass in the selection.
-         */
-        public AuditModelWizardNewFileCreationPage(String pageId, IStructuredSelection selection) {
-            super(pageId, selection);
-        }
+	/**
+	 * This is the page where the type of object to create is selected.
+	 */
+	public class AuditModelWizardInitialObjectCreationPage extends WizardPage {
+		protected Combo initialObjectField;
 
-        /**
-         * The framework calls this to see if the file is correct.
-         */
-        protected boolean validatePage() {
-            if (super.validatePage()) {
-                // Make sure the file ends in ".audit".
-                //
-                String requiredExt = SiriusEditorPlugin.INSTANCE.getString("_UI_SiriusEditorFilenameExtension");
-                String enteredExt = new Path(getFileName()).getFileExtension();
-                if (enteredExt == null || !enteredExt.equals(requiredExt)) {
-                    setErrorMessage(SiriusEditorPlugin.INSTANCE.getString("_WARN_FilenameExtension", new Object[] { requiredExt }));
-                    return false;
-                } else {
-                    return true;
-                }
-            } else {
-                return false;
-            }
-        }
+		protected List<String> encodings;
 
-        public IFile getModelFile() {
-            return ResourcesPlugin.getWorkspace().getRoot().getFile(getContainerFullPath().append(getFileName()));
-        }
-    }
+		protected Combo encodingField;
 
-    /**
-     * This is the page where the type of object to create is selected.
-     */
-    public class AuditModelWizardInitialObjectCreationPage extends WizardPage {
-        protected Combo initialObjectField;
+		/**
+		 * Pass in the selection.
+		 */
+		public AuditModelWizardInitialObjectCreationPage(String pageId) {
+			super(pageId);
+		}
 
-        protected List<String> encodings;
+		public void createControl(Composite parent) {
+			Composite composite = new Composite(parent, SWT.NONE);
+			{
+				GridLayout layout = new GridLayout();
+				layout.numColumns = 1;
+				layout.verticalSpacing = 12;
+				composite.setLayout(layout);
 
-        protected Combo encodingField;
+				GridData data = new GridData();
+				data.verticalAlignment = GridData.FILL;
+				data.grabExcessVerticalSpace = true;
+				data.horizontalAlignment = GridData.FILL;
+				composite.setLayoutData(data);
+			}
 
-        /**
-         * Pass in the selection.
-         */
-        public AuditModelWizardInitialObjectCreationPage(String pageId) {
-            super(pageId);
-        }
+			Label containerLabel = new Label(composite, SWT.LEFT);
+			{
+				containerLabel.setText(SiriusEditorPlugin.INSTANCE.getString("_UI_ModelObject"));
 
-        public void createControl(Composite parent) {
-            Composite composite = new Composite(parent, SWT.NONE);
-            {
-                GridLayout layout = new GridLayout();
-                layout.numColumns = 1;
-                layout.verticalSpacing = 12;
-                composite.setLayout(layout);
+				GridData data = new GridData();
+				data.horizontalAlignment = GridData.FILL;
+				containerLabel.setLayoutData(data);
+			}
 
-                GridData data = new GridData();
-                data.verticalAlignment = GridData.FILL;
-                data.grabExcessVerticalSpace = true;
-                data.horizontalAlignment = GridData.FILL;
-                composite.setLayoutData(data);
-            }
+			initialObjectField = new Combo(composite, SWT.BORDER);
+			{
+				GridData data = new GridData();
+				data.horizontalAlignment = GridData.FILL;
+				data.grabExcessHorizontalSpace = true;
+				initialObjectField.setLayoutData(data);
+			}
 
-            Label containerLabel = new Label(composite, SWT.LEFT);
-            {
-                containerLabel.setText(SiriusEditorPlugin.INSTANCE.getString("_UI_ModelObject"));
+			for (Iterator<String> i = getInitialObjectNames().iterator(); i.hasNext(); ) {
+				initialObjectField.add(getLabel(i.next()));
+			}
 
-                GridData data = new GridData();
-                data.horizontalAlignment = GridData.FILL;
-                containerLabel.setLayoutData(data);
-            }
+			if (initialObjectField.getItemCount() == 1) {
+				initialObjectField.select(0);
+			}
+			initialObjectField.addModifyListener(validator);
 
-            initialObjectField = new Combo(composite, SWT.BORDER);
-            {
-                GridData data = new GridData();
-                data.horizontalAlignment = GridData.FILL;
-                data.grabExcessHorizontalSpace = true;
-                initialObjectField.setLayoutData(data);
-            }
+			Label encodingLabel = new Label(composite, SWT.LEFT);
+			{
+				encodingLabel.setText(SiriusEditorPlugin.INSTANCE.getString("_UI_XMLEncoding"));
 
-            for (Iterator<String> i = getInitialObjectNames().iterator(); i.hasNext();) {
-                initialObjectField.add(getLabel(i.next()));
-            }
+				GridData data = new GridData();
+				data.horizontalAlignment = GridData.FILL;
+				encodingLabel.setLayoutData(data);
+			}
+			encodingField = new Combo(composite, SWT.BORDER);
+			{
+				GridData data = new GridData();
+				data.horizontalAlignment = GridData.FILL;
+				data.grabExcessHorizontalSpace = true;
+				encodingField.setLayoutData(data);
+			}
 
-            if (initialObjectField.getItemCount() == 1) {
-                initialObjectField.select(0);
-            }
-            initialObjectField.addModifyListener(validator);
+			for (Iterator<String> i = getEncodings().iterator(); i.hasNext(); ) {
+				encodingField.add(i.next());
+			}
 
-            Label encodingLabel = new Label(composite, SWT.LEFT);
-            {
-                encodingLabel.setText(SiriusEditorPlugin.INSTANCE.getString("_UI_XMLEncoding"));
+			encodingField.select(0);
+			encodingField.addModifyListener(validator);
 
-                GridData data = new GridData();
-                data.horizontalAlignment = GridData.FILL;
-                encodingLabel.setLayoutData(data);
-            }
-            encodingField = new Combo(composite, SWT.BORDER);
-            {
-                GridData data = new GridData();
-                data.horizontalAlignment = GridData.FILL;
-                data.grabExcessHorizontalSpace = true;
-                encodingField.setLayoutData(data);
-            }
+			setPageComplete(validatePage());
+			setControl(composite);
+		}
 
-            for (Iterator<String> i = getEncodings().iterator(); i.hasNext();) {
-                encodingField.add(i.next());
-            }
+		protected ModifyListener validator =
+			new ModifyListener() {
+				public void modifyText(ModifyEvent e) {
+					setPageComplete(validatePage());
+				}
+			};
 
-            encodingField.select(0);
-            encodingField.addModifyListener(validator);
+		protected boolean validatePage() {
+			return getInitialObjectName() != null && getEncodings().contains(encodingField.getText());
+		}
 
-            setPageComplete(validatePage());
-            setControl(composite);
-        }
+		public void setVisible(boolean visible) {
+			super.setVisible(visible);
+			if (visible) {
+				if (initialObjectField.getItemCount() == 1) {
+					initialObjectField.clearSelection();
+					encodingField.setFocus();
+				} else {
+					encodingField.clearSelection();
+					initialObjectField.setFocus();
+				}
+			}
+		}
 
-        protected ModifyListener validator = new ModifyListener() {
-            public void modifyText(ModifyEvent e) {
-                setPageComplete(validatePage());
-            }
-        };
+		public String getInitialObjectName() {
+			String label = initialObjectField.getText();
 
-        protected boolean validatePage() {
-            return getInitialObjectName() != null && getEncodings().contains(encodingField.getText());
-        }
+			for (Iterator<String> i = getInitialObjectNames().iterator(); i.hasNext(); ) {
+				String name = i.next();
+				if (getLabel(name).equals(label)) {
+					return name;
+				}
+			}
+			return null;
+		}
 
-        public void setVisible(boolean visible) {
-            super.setVisible(visible);
-            if (visible) {
-                if (initialObjectField.getItemCount() == 1) {
-                    initialObjectField.clearSelection();
-                    encodingField.setFocus();
-                } else {
-                    encodingField.clearSelection();
-                    initialObjectField.setFocus();
-                }
-            }
-        }
+		public String getEncoding() {
+			return encodingField.getText();
+		}
 
-        public String getInitialObjectName() {
-            String label = initialObjectField.getText();
+		/**
+		 * Returns the label for the specified type name.
+		 */
+		protected String getLabel(String typeName) {
+			try {
+				return org.eclipse.sirius.editor.editorPlugin.SiriusEditorPlugin.INSTANCE.getString("_UI_" + typeName + "_type");
+			} catch(MissingResourceException mre) {
+				SiriusEditorPlugin.INSTANCE.log(mre);
+			}
+			return typeName;
+		}
 
-            for (Iterator<String> i = getInitialObjectNames().iterator(); i.hasNext();) {
-                String name = i.next();
-                if (getLabel(name).equals(label)) {
-                    return name;
-                }
-            }
-            return null;
-        }
+		protected Collection<String> getEncodings() {
+			if (encodings == null) {
+				encodings = new ArrayList<String>();
+				for (StringTokenizer stringTokenizer = new StringTokenizer(SiriusEditorPlugin.INSTANCE.getString("_UI_XMLEncodingChoices")); stringTokenizer.hasMoreTokens(); ) {
+					encodings.add(stringTokenizer.nextToken());
+				}
+			}
+			return encodings;
+		}
+	}
 
-        public String getEncoding() {
-            return encodingField.getText();
-        }
+	/**
+	 * The framework calls this to create the contents of the wizard.
+	 */
+	public void addPages() {
+		// Create a page, set the title, and the initial model file name.
+		//
+		newFileCreationPage = new AuditModelWizardNewFileCreationPage("Whatever", selection);
+		newFileCreationPage.setTitle(SiriusEditorPlugin.INSTANCE.getString("_UI_AuditModelWizard_label"));
+		newFileCreationPage.setDescription(SiriusEditorPlugin.INSTANCE.getString("_UI_AuditModelWizard_description"));
+		newFileCreationPage.setFileName(SiriusEditorPlugin.INSTANCE.getString("_UI_SiriusEditorFilenameDefaultBase") + "." + SiriusEditorPlugin.INSTANCE.getString("_UI_SiriusEditorFilenameExtension"));
+		addPage(newFileCreationPage);
 
-        /**
-         * Returns the label for the specified type name.
-         */
-        protected String getLabel(String typeName) {
-            try {
-                return org.eclipse.sirius.editor.editorPlugin.SiriusEditorPlugin.INSTANCE.getString("_UI_" + typeName + "_type");
-            } catch (MissingResourceException mre) {
-                SiriusEditorPlugin.INSTANCE.log(mre);
-            }
-            return typeName;
-        }
+		// Try and get the resource selection to determine a current directory for the file dialog.
+		//
+		if (selection != null && !selection.isEmpty()) {
+			// Get the resource...
+			//
+			Object selectedElement = selection.iterator().next();
+			if (selectedElement instanceof IResource) {
+				// Get the resource parent, if it's a file.
+				//
+				IResource selectedResource = (IResource)selectedElement;
+				if (selectedResource.getType() == IResource.FILE) {
+					selectedResource = selectedResource.getParent();
+				}
 
-        protected Collection<String> getEncodings() {
-            if (encodings == null) {
-                encodings = new ArrayList<String>();
-                for (StringTokenizer stringTokenizer = new StringTokenizer(SiriusEditorPlugin.INSTANCE.getString("_UI_XMLEncodingChoices")); stringTokenizer.hasMoreTokens();) {
-                    encodings.add(stringTokenizer.nextToken());
-                }
-            }
-            return encodings;
-        }
-    }
+				// This gives us a directory...
+				//
+				if (selectedResource instanceof IFolder || selectedResource instanceof IProject) {
+					// Set this for the container.
+					//
+					newFileCreationPage.setContainerFullPath(selectedResource.getFullPath());
 
-    /**
-     * The framework calls this to create the contents of the wizard.
-     */
-    public void addPages() {
-        // Create a page, set the title, and the initial model file name.
-        //
-        newFileCreationPage = new AuditModelWizardNewFileCreationPage("Whatever", selection);
-        newFileCreationPage.setTitle(SiriusEditorPlugin.INSTANCE.getString("_UI_AuditModelWizard_label"));
-        newFileCreationPage.setDescription(SiriusEditorPlugin.INSTANCE.getString("_UI_AuditModelWizard_description"));
-        newFileCreationPage
-                .setFileName(SiriusEditorPlugin.INSTANCE.getString("_UI_SiriusEditorFilenameDefaultBase") + "." + SiriusEditorPlugin.INSTANCE.getString("_UI_SiriusEditorFilenameExtension"));
-        addPage(newFileCreationPage);
+					// Make up a unique new name here.
+					//
+					String defaultModelBaseFilename = SiriusEditorPlugin.INSTANCE.getString("_UI_SiriusEditorFilenameDefaultBase");
+					String defaultModelFilenameExtension = SiriusEditorPlugin.INSTANCE.getString("_UI_SiriusEditorFilenameExtension");
+					String modelFilename = defaultModelBaseFilename + "." + defaultModelFilenameExtension;
+					for (int i = 1; ((IContainer)selectedResource).findMember(modelFilename) != null; ++i) {
+						modelFilename = defaultModelBaseFilename + i + "." + defaultModelFilenameExtension;
+					}
+					newFileCreationPage.setFileName(modelFilename);
+				}
+			}
+		}
+		initialObjectCreationPage = new AuditModelWizardInitialObjectCreationPage("Whatever2");
+		initialObjectCreationPage.setTitle(SiriusEditorPlugin.INSTANCE.getString("_UI_AuditModelWizard_label"));
+		initialObjectCreationPage.setDescription(SiriusEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
+		addPage(initialObjectCreationPage);
+	}
 
-        // Try and get the resource selection to determine a current directory
-        // for the file dialog.
-        //
-        if (selection != null && !selection.isEmpty()) {
-            // Get the resource...
-            //
-            Object selectedElement = selection.iterator().next();
-            if (selectedElement instanceof IResource) {
-                // Get the resource parent, if it's a file.
-                //
-                IResource selectedResource = (IResource) selectedElement;
-                if (selectedResource.getType() == IResource.FILE) {
-                    selectedResource = selectedResource.getParent();
-                }
-
-                // This gives us a directory...
-                //
-                if (selectedResource instanceof IFolder || selectedResource instanceof IProject) {
-                    // Set this for the container.
-                    //
-                    newFileCreationPage.setContainerFullPath(selectedResource.getFullPath());
-
-                    // Make up a unique new name here.
-                    //
-                    String defaultModelBaseFilename = SiriusEditorPlugin.INSTANCE.getString("_UI_SiriusEditorFilenameDefaultBase");
-                    String defaultModelFilenameExtension = SiriusEditorPlugin.INSTANCE.getString("_UI_SiriusEditorFilenameExtension");
-                    String modelFilename = defaultModelBaseFilename + "." + defaultModelFilenameExtension;
-                    for (int i = 1; ((IContainer) selectedResource).findMember(modelFilename) != null; ++i) {
-                        modelFilename = defaultModelBaseFilename + i + "." + defaultModelFilenameExtension;
-                    }
-                    newFileCreationPage.setFileName(modelFilename);
-                }
-            }
-        }
-        initialObjectCreationPage = new AuditModelWizardInitialObjectCreationPage("Whatever2");
-        initialObjectCreationPage.setTitle(SiriusEditorPlugin.INSTANCE.getString("_UI_AuditModelWizard_label"));
-        initialObjectCreationPage.setDescription(SiriusEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
-        addPage(initialObjectCreationPage);
-    }
-
-    /**
-     * Get the file from the page.
-     */
-    public IFile getModelFile() {
-        return newFileCreationPage.getModelFile();
-    }
+	/**
+	 * Get the file from the page.
+	 */
+	public IFile getModelFile() {
+		return newFileCreationPage.getModelFile();
+	}
 }

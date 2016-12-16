@@ -17,29 +17,30 @@ import org.eclipse.sirius.properties.PropertiesPackage;
 
 // End of user code specific imports
 
+
 /**
  * A filter for the valueExpression property section.
  */
 public class HyperlinkDescriptionValueExpressionFilter extends ViewpointPropertyFilter {
 
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    protected EStructuralFeature getFeature() {
-        return PropertiesPackage.eINSTANCE.getHyperlinkDescription_ValueExpression();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    protected boolean isRightInputType(Object arg0) {
+	/**
+	 * {@inheritDoc}
+	 */
+	protected EStructuralFeature getFeature() {
+		return PropertiesPackage.eINSTANCE.getHyperlinkDescription_ValueExpression();
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	protected boolean isRightInputType(Object arg0) {
         return arg0 instanceof org.eclipse.sirius.properties.HyperlinkDescription;
     }
-
-    // Start of user code user methods
+	
+	// Start of user code user methods
 
     // End of user code user methods
+	
+	
 
 }

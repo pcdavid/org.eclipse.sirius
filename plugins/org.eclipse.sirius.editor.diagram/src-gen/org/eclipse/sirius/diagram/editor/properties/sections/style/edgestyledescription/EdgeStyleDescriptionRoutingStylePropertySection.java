@@ -27,60 +27,60 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
  * A section for the routingStyle property of a EdgeStyleDescription object.
  */
 public class EdgeStyleDescriptionRoutingStylePropertySection extends AbstractRadioButtonPropertySection {
-    /**
-     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractRadioButtonPropertySection#getDefaultLabelText()
-     */
-    protected String getDefaultLabelText() {
-        return "RoutingStyle"; //$NON-NLS-1$
-    }
+	/**
+	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractRadioButtonPropertySection#getDefaultLabelText()
+	 */
+	protected String getDefaultLabelText() {
+	    return "RoutingStyle"; //$NON-NLS-1$
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractRadioButtonPropertySection#getLabelText()
+	 */
+	protected String getLabelText() {
+		String labelText;
+	    labelText = super.getLabelText() + "*:"; //$NON-NLS-1$
+		// Start of user code get label text
 
-    /**
-     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractRadioButtonPropertySection#getLabelText()
-     */
-    protected String getLabelText() {
-        String labelText;
-        labelText = super.getLabelText() + "*:"; //$NON-NLS-1$
-        // Start of user code get label text
+	    // End of user code get label text
+	    return labelText;
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractRadioButtonPropertySection#getFeature()
+	 */
+	protected EAttribute getFeature() {
+		return StylePackage.eINSTANCE.getEdgeStyleDescription_RoutingStyle();
+	}
 
-        // End of user code get label text
-        return labelText;
-    }
+	/**
+	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractRadioButtonPropertySection#getFeatureValue(int)
+	 */
+	protected Object getFeatureValue(int index) {
+		return getChoiceOfValues().get(index);
+	}
 
-    /**
-     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractRadioButtonPropertySection#getFeature()
-     */
-    protected EAttribute getFeature() {
-        return StylePackage.eINSTANCE.getEdgeStyleDescription_RoutingStyle();
-    }
+	/**
+	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractRadioButtonPropertySection#isEqual(int)
+	 */
+	protected boolean isEqual(int index) {
+		return getChoiceOfValues().get(index).equals(eObject.eGet(getFeature()));
+	}
 
-    /**
-     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractRadioButtonPropertySection#getFeatureValue(int)
-     */
-    protected Object getFeatureValue(int index) {
-        return getChoiceOfValues().get(index);
-    }
+	/**
+	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractRadioButtonPropertySection#getEnumerationFeatureValues()
+	 */
+	protected List<?> getChoiceOfValues() {
+		return EdgeRouting.VALUES;
+	}
 
-    /**
-     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractRadioButtonPropertySection#isEqual(int)
-     */
-    protected boolean isEqual(int index) {
-        return getChoiceOfValues().get(index).equals(eObject.eGet(getFeature()));
-    }
-
-    /**
-     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractRadioButtonPropertySection#getEnumerationFeatureValues()
-     */
-    protected List<?> getChoiceOfValues() {
-        return EdgeRouting.VALUES;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
-        super.createControls(parent, tabbedPropertySheetPage);
-
-        nameLabel.setFont(SiriusEditor.getFontRegistry().get("required"));
-
-    }
+	/**
+	 * {@inheritDoc}
+	 */
+	public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
+	    super.createControls(parent, tabbedPropertySheetPage);	  	    
+	   
+	     nameLabel.setFont(SiriusEditor.getFontRegistry().get("required"));
+	
+	}
 }

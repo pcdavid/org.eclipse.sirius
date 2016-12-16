@@ -17,27 +17,30 @@ import org.eclipse.sirius.editor.properties.filters.common.ViewpointPropertyFilt
 
 // End of user code specific imports
 
+
 /**
  * A filter for the sequenceDiagram property section.
  */
 public class EventEndsOrderingSequenceDiagramFilter extends ViewpointPropertyFilter {
 
-    /**
-     * {@inheritDoc}
-     */
-    protected EStructuralFeature getFeature() {
-        return OrderingPackage.eINSTANCE.getEventEndsOrdering_SequenceDiagram();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    protected boolean isRightInputType(Object arg0) {
+	/**
+	 * {@inheritDoc}
+	 */
+	protected EStructuralFeature getFeature() {
+		return OrderingPackage.eINSTANCE.getEventEndsOrdering_SequenceDiagram();
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	protected boolean isRightInputType(Object arg0) {
         return arg0 instanceof org.eclipse.sirius.diagram.sequence.ordering.EventEndsOrdering;
     }
-
-    // Start of user code user methods
+	
+	// Start of user code user methods
 
     // End of user code user methods
+	
+	
 
 }

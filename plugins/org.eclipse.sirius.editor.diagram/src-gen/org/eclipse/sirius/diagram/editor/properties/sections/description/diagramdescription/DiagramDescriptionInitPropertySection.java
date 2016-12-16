@@ -30,96 +30,98 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
  * A section for the init property of a DiagramDescription object.
  */
 public class DiagramDescriptionInitPropertySection extends AbstractComboPropertySection {
-    /**
-     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractComboPropertySection#getDefaultLabelText()
-     */
-    protected String getDefaultLabelText() {
-        return "Init"; //$NON-NLS-1$
-    }
+	/**
+	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractComboPropertySection#getDefaultLabelText()
+	 */
+	protected String getDefaultLabelText() {
+	    return "Init"; //$NON-NLS-1$
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractComboPropertySection#getLabelText()
+	 */
+	protected String getLabelText() {
+		String labelText;
+		labelText = super.getLabelText() + ":"; //$NON-NLS-1$
+		// Start of user code get label text
 
-    /**
-     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractComboPropertySection#getLabelText()
-     */
-    protected String getLabelText() {
-        String labelText;
-        labelText = super.getLabelText() + ":"; //$NON-NLS-1$
-        // Start of user code get label text
+	    // End of user code get label text
+	    return labelText;
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractComboPropertySection#getFeature()
+	 */
+	protected EReference getFeature() {
+		return DescriptionPackage.eINSTANCE.getDiagramDescription_Init();
+	}
 
-        // End of user code get label text
-        return labelText;
-    }
+	/**
+	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractComboPropertySection#getFeatureValue(int)
+	 */
+	protected Object getFeatureValue(int index) {
+		return getFeatureValueAt(index);
+	}
 
-    /**
-     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractComboPropertySection#getFeature()
-     */
-    protected EReference getFeature() {
-        return DescriptionPackage.eINSTANCE.getDiagramDescription_Init();
-    }
-
-    /**
-     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractComboPropertySection#getFeatureValue(int)
-     */
-    protected Object getFeatureValue(int index) {
-        return getFeatureValueAt(index);
-    }
-
-    /**
-     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractComboPropertySection#isEqual(int)
-     */
-    protected boolean isEqual(int index) {
-        boolean isEqual = false;
-        if (getFeatureValueAt(index) == null)
-            isEqual = eObject.eGet(getFeature()) == null;
-        else
-            isEqual = getFeatureValueAt(index).equals(eObject.eGet(getFeature()));
-        return isEqual;
-    }
-
-    /**
-     * Returns the value at the specified index in the choice of values for the
-     * feature.
-     * 
-     * @param index
-     *            Index of the value.
-     * @return the value at the specified index in the choice of values.
-     */
-    protected Object getFeatureValueAt(int index) {
-        List<?> values = getChoiceOfValues();
-        if (values.size() < index || values.size() == 0 || index == -1) {
+	/**
+	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractComboPropertySection#isEqual(int)
+	 */
+	protected boolean isEqual(int index) {
+		boolean isEqual = false;
+		if (getFeatureValueAt(index) == null)
+			isEqual = eObject.eGet(getFeature()) == null;
+		else
+			isEqual = getFeatureValueAt(index).equals(eObject.eGet(getFeature()));
+		return isEqual;
+	}
+	
+	/**
+	 * Returns the value at the specified index in the choice of values for the
+	 * feature.
+	 * 
+	 * @param index
+	 * 			Index of the value.
+	 * @return
+	 * 			the value at the specified index in the choice of values.
+	 */
+	protected Object getFeatureValueAt(int index) {
+		List<?> values = getChoiceOfValues();
+		if (values.size() < index || values.size() == 0 || index == -1) {
             return null;
         }
-        return values.get(index);
-    }
+		return values.get(index);
+	}
 
-    /**
-     * Fetches the list of available values for the feature.
-     * 
-     * @return The list of available values for the feature.
-     */
-    protected List<?> getChoiceOfValues() {
-        List<?> values = Collections.emptyList();
-        List<IItemPropertyDescriptor> propertyDescriptors = getDescriptors();
-        for (Iterator<IItemPropertyDescriptor> iterator = propertyDescriptors.iterator(); iterator.hasNext();) {
-            IItemPropertyDescriptor propertyDescriptor = iterator.next();
-            if (((EStructuralFeature) propertyDescriptor.getFeature(eObject)) == getFeature())
-                values = new ArrayList<Object>(propertyDescriptor.getChoiceOfValues(eObject));
-        }
+	/**
+	 * Fetches the list of available values for the feature.
+	 * 
+	 * @return
+	 * 			The list of available values for the feature.
+	 */
+	protected List<?> getChoiceOfValues() {
+		List<?> values = Collections.emptyList();
+		List<IItemPropertyDescriptor> propertyDescriptors = getDescriptors();
+	    for (Iterator<IItemPropertyDescriptor> iterator = propertyDescriptors.iterator(); iterator.hasNext(); ) {
+	    	IItemPropertyDescriptor propertyDescriptor = iterator.next();
+	    	if (((EStructuralFeature)propertyDescriptor.getFeature(eObject)) == getFeature())
+	    	    values = new ArrayList<Object>(propertyDescriptor.getChoiceOfValues(eObject));
+	    } 		
+	    
+	    // Start of user code choice of values
+	    // End of user code choice of values
+		return values;
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
+	    super.createControls(parent, tabbedPropertySheetPage);	  	    
+	    // Start of user code create controls
 
-        // Start of user code choice of values
-        // End of user code choice of values
-        return values;
-    }
+	    // End of user code create controls	    
+	}		
+	// Start of user code user operations
 
-    /**
-     * {@inheritDoc}
-     */
-    public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
-        super.createControls(parent, tabbedPropertySheetPage);
-        // Start of user code create controls
-
-        // End of user code create controls
-    }
-    // Start of user code user operations
-
-    // End of user code user operations
+	// End of user code user operations
 }

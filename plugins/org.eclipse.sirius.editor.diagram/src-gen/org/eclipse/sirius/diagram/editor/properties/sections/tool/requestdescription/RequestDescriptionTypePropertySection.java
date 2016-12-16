@@ -27,94 +27,94 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 /**
  * A section for the type property of a RequestDescription object.
  */
-public class RequestDescriptionTypePropertySection extends AbstractTextPropertySection {
+public class RequestDescriptionTypePropertySection extends AbstractTextPropertySection  {
+	
+	/** Help control of the section. */
+	protected CLabel help;
+	
+	/**
+	 * @see org.eclipse.ui.views.properties.tabbed.view.ITabbedPropertySection#refresh()
+	 */
+	public void refresh() {
+		super.refresh();
 
-    /** Help control of the section. */
-    protected CLabel help;
+		final String tooltip = getToolTipText();
+		if (tooltip != null && help != null) {
+			help.setToolTipText(getToolTipText());
+		}
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractTextPropertySection#getDefaultLabelText()
+	 */
+	protected String getDefaultLabelText() {
+	    return "Type"; //$NON-NLS-1$
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractTextPropertySection#getLabelText()
+	 */
+	protected String getLabelText() {
+		String labelText;
+	    labelText = super.getLabelText() + "*:"; //$NON-NLS-1$
+		// Start of user code get label text
 
-    /**
-     * @see org.eclipse.ui.views.properties.tabbed.view.ITabbedPropertySection#refresh()
-     */
-    public void refresh() {
-        super.refresh();
-
-        final String tooltip = getToolTipText();
-        if (tooltip != null && help != null) {
-            help.setToolTipText(getToolTipText());
-        }
-    }
-
-    /**
-     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractTextPropertySection#getDefaultLabelText()
-     */
-    protected String getDefaultLabelText() {
-        return "Type"; //$NON-NLS-1$
-    }
-
-    /**
-     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractTextPropertySection#getLabelText()
-     */
-    protected String getLabelText() {
-        String labelText;
-        labelText = super.getLabelText() + "*:"; //$NON-NLS-1$
-        // Start of user code get label text
-
-        // End of user code get label text
-        return labelText;
-    }
-
-    /**
-     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractTextPropertySection#getFeature()
-     */
-    public EAttribute getFeature() {
-        return ToolPackage.eINSTANCE.getRequestDescription_Type();
-    }
-
-    /**
-     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractTextPropertySection#getFeatureValue(String)
-     */
-    protected Object getFeatureValue(String newText) {
-        return newText;
-    }
-
-    /**
-     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractTextPropertySection#isEqual(String)
-     */
-    protected boolean isEqual(String newText) {
-        return getFeatureAsText().equals(newText);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
-        super.createControls(parent, tabbedPropertySheetPage);
-
-        text.setToolTipText(getToolTipText());
-
-        help = getWidgetFactory().createCLabel(composite, "");
-        FormData data = new FormData();
+	    // End of user code get label text
+	    return labelText;
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractTextPropertySection#getFeature()
+	 */
+	public EAttribute getFeature() {
+		return ToolPackage.eINSTANCE.getRequestDescription_Type();
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractTextPropertySection#getFeatureValue(String)
+	 */
+	protected Object getFeatureValue(String newText) {
+		return newText;
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractTextPropertySection#isEqual(String)
+	 */
+	protected boolean isEqual(String newText) {
+		return getFeatureAsText().equals(newText);
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
+	    super.createControls(parent, tabbedPropertySheetPage);
+	    
+	    text.setToolTipText(getToolTipText());
+	    	    
+	    help = getWidgetFactory().createCLabel(composite,"");
+	    FormData data = new FormData();
         data.top = new FormAttachment(text, 0, SWT.TOP);
-        data.left = new FormAttachment(nameLabel);
+        data.left = new FormAttachment(nameLabel);     
         help.setLayoutData(data);
         help.setImage(getHelpIcon());
-        help.setToolTipText(getToolTipText());
-        nameLabel.setFont(SiriusEditor.getFontRegistry().get("required"));
+        help.setToolTipText(getToolTipText());	    
+	     nameLabel.setFont(SiriusEditor.getFontRegistry().get("required"));
+	    
+	    // Start of user code create controls
 
-        // Start of user code create controls
+	    // End of user code create controls
+	    
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	protected String getPropertyDescription() {
+		return "Arbitrary identifier of a request sent on the current EditPart. You should use the provided API to install an EditPolicy reacting to the request.";
+	}
+	
+	// Start of user code user operations
 
-        // End of user code create controls
-
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    protected String getPropertyDescription() {
-        return "Arbitrary identifier of a request sent on the current EditPart. You should use the provided API to install an EditPolicy reacting to the request.";
-    }
-
-    // Start of user code user operations
-
-    // End of user code user operations
+	// End of user code user operations
 }

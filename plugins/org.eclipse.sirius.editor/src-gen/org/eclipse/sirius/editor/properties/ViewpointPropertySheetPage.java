@@ -23,54 +23,57 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 public class ViewpointPropertySheetPage extends TabbedPropertySheetPage {
 
     /*
-     * Start of user code attributes
+	 * Start of user code attributes
      */
 
     /*
-     * End of user code attributes
+	 * End of user code attributes
+	 */	  
+	 	 
+	/** The Viewpoint EMF editor. */
+	protected SiriusEditor editor;
+	
+	
+	/** The Label provider for this property sheet page. */
+	protected ViewpointLabelProvider labelProvider;
+
+	/**
+	 * Contructor for this property sheet page.
+	 * 
+	 * @param editor
+	 *            The EMF editor contributor of the property sheet page.
+	 */
+	public ViewpointPropertySheetPage(SiriusEditor editor) {
+		super(editor);
+		this.editor = editor;
+	}
+
+	/**
+	 * Returns the EMF editor of this property sheet page.
+	 * 
+	 * @return
+	 * 			The EMF editor of this property sheet page.
+	 */
+	public SiriusEditor getEditor() {
+		return editor;
+	}
+
+	/**
+	 * Get the EMF AdapterFactory for this editor.
+	 * 
+	 * @return
+	 *			The EMF AdapterFactory for this editor.
+	 */
+	public AdapterFactory getAdapterFactory() {
+		return editor.getAdapterFactory();
+	}
+	
+	/*
+	 * Start of user code methods
      */
-
-    /** The Viewpoint EMF editor. */
-    protected SiriusEditor editor;
-
-    /** The Label provider for this property sheet page. */
-    protected ViewpointLabelProvider labelProvider;
-
-    /**
-     * Contructor for this property sheet page.
-     * 
-     * @param editor
-     *            The EMF editor contributor of the property sheet page.
-     */
-    public ViewpointPropertySheetPage(SiriusEditor editor) {
-        super(editor);
-        this.editor = editor;
-    }
-
-    /**
-     * Returns the EMF editor of this property sheet page.
-     * 
-     * @return The EMF editor of this property sheet page.
-     */
-    public SiriusEditor getEditor() {
-        return editor;
-    }
-
-    /**
-     * Get the EMF AdapterFactory for this editor.
-     * 
-     * @return The EMF AdapterFactory for this editor.
-     */
-    public AdapterFactory getAdapterFactory() {
-        return editor.getAdapterFactory();
-    }
 
     /*
-     * Start of user code methods
-     */
-
-    /*
-     * End of user code methods
-     */
-
+	 * End of user code methods
+	 */	  
+	
 }

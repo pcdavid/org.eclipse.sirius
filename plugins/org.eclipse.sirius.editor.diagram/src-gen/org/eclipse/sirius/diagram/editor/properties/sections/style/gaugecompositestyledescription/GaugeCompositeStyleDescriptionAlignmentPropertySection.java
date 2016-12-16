@@ -27,72 +27,71 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 // End of user code imports
 
 /**
- * A section for the alignment property of a GaugeCompositeStyleDescription
- * object.
+ * A section for the alignment property of a GaugeCompositeStyleDescription object.
  */
 public class GaugeCompositeStyleDescriptionAlignmentPropertySection extends AbstractRadioButtonPropertySection {
-    /**
-     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractRadioButtonPropertySection#getDefaultLabelText()
-     */
-    protected String getDefaultLabelText() {
-        return "Alignment"; //$NON-NLS-1$
-    }
+	/**
+	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractRadioButtonPropertySection#getDefaultLabelText()
+	 */
+	protected String getDefaultLabelText() {
+	    return "Alignment"; //$NON-NLS-1$
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractRadioButtonPropertySection#getLabelText()
+	 */
+	protected String getLabelText() {
+		String labelText;
+		labelText = super.getLabelText() + ":"; //$NON-NLS-1$
+		// Start of user code get label text
 
-    /**
-     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractRadioButtonPropertySection#getLabelText()
-     */
-    protected String getLabelText() {
-        String labelText;
-        labelText = super.getLabelText() + ":"; //$NON-NLS-1$
-        // Start of user code get label text
+	    // End of user code get label text
+	    return labelText;
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractRadioButtonPropertySection#getFeature()
+	 */
+	protected EAttribute getFeature() {
+		return StylePackage.eINSTANCE.getGaugeCompositeStyleDescription_Alignment();
+	}
 
-        // End of user code get label text
-        return labelText;
-    }
+	/**
+	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractRadioButtonPropertySection#getFeatureValue(int)
+	 */
+	protected Object getFeatureValue(int index) {
+		return getChoiceOfValues().get(index);
+	}
 
-    /**
-     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractRadioButtonPropertySection#getFeature()
-     */
-    protected EAttribute getFeature() {
-        return StylePackage.eINSTANCE.getGaugeCompositeStyleDescription_Alignment();
-    }
+	/**
+	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractRadioButtonPropertySection#isEqual(int)
+	 */
+	protected boolean isEqual(int index) {
+		return getChoiceOfValues().get(index).equals(eObject.eGet(getFeature()));
+	}
 
-    /**
-     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractRadioButtonPropertySection#getFeatureValue(int)
-     */
-    protected Object getFeatureValue(int index) {
-        return getChoiceOfValues().get(index);
-    }
+	/**
+	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractRadioButtonPropertySection#getEnumerationFeatureValues()
+	 */
+	protected List<?> getChoiceOfValues() {
+		return AlignmentKind.VALUES;
+	}
 
-    /**
-     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractRadioButtonPropertySection#isEqual(int)
-     */
-    protected boolean isEqual(int index) {
-        return getChoiceOfValues().get(index).equals(eObject.eGet(getFeature()));
-    }
-
-    /**
-     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractRadioButtonPropertySection#getEnumerationFeatureValues()
-     */
-    protected List<?> getChoiceOfValues() {
-        return AlignmentKind.VALUES;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
-        super.createControls(parent, tabbedPropertySheetPage);
-
-        nameLabel.setToolTipText("Alignment of the gauges.");
-
-        CLabel help = getWidgetFactory().createCLabel(composite, "");
-        FormData data = new FormData();
+	/**
+	 * {@inheritDoc}
+	 */
+	public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
+	    super.createControls(parent, tabbedPropertySheetPage);	  	    
+	   
+	    nameLabel.setToolTipText("Alignment of the gauges.");
+	    	    
+	    CLabel help = getWidgetFactory().createCLabel(composite,"");
+	    FormData data = new FormData();
         data.top = new FormAttachment(nameLabel, 0, SWT.TOP);
-        data.left = new FormAttachment(nameLabel);
+        data.left = new FormAttachment(nameLabel);     
         help.setLayoutData(data);
         help.setImage(getHelpIcon());
-        help.setToolTipText("Alignment of the gauges.");
-
-    }
+        help.setToolTipText("Alignment of the gauges.");	    
+	
+	}
 }

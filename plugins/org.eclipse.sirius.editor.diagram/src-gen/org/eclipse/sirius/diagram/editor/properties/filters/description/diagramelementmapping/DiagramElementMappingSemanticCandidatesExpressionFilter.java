@@ -19,26 +19,27 @@ import org.eclipse.sirius.editor.properties.filters.common.ViewpointPropertyFilt
 
 // End of user code specific imports
 
+
 /**
  * A filter for the semanticCandidatesExpression property section.
  */
 public class DiagramElementMappingSemanticCandidatesExpressionFilter extends ViewpointPropertyFilter {
 
-    /**
-     * {@inheritDoc}
-     */
-    protected EStructuralFeature getFeature() {
-        return DescriptionPackage.eINSTANCE.getDiagramElementMapping_SemanticCandidatesExpression();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    protected boolean isRightInputType(Object arg0) {
+	/**
+	 * {@inheritDoc}
+	 */
+	protected EStructuralFeature getFeature() {
+		return DescriptionPackage.eINSTANCE.getDiagramElementMapping_SemanticCandidatesExpression();
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	protected boolean isRightInputType(Object arg0) {
         return arg0 instanceof org.eclipse.sirius.diagram.description.DiagramElementMapping;
     }
-
-    // Start of user code user methods
+	
+	// Start of user code user methods
     public boolean select(Object arg0) {
         if (isEdgeMapping(arg0) && isNormalEdgeMapping(arg0) && !((EdgeMapping) arg0).isUseDomainElement()) {
             return false;
@@ -54,5 +55,7 @@ public class DiagramElementMappingSemanticCandidatesExpressionFilter extends Vie
         return ((EObject) obj).eClass().equals(DescriptionPackage.eINSTANCE.getEdgeMapping());
     }
     // End of user code user methods
+	
+	
 
 }

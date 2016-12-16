@@ -28,100 +28,100 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 /**
  * A section for the domainClass property of a TSequenceDiagram object.
  */
-public class TSequenceDiagramDomainClassPropertySection extends AbstractTextPropertySection {
+public class TSequenceDiagramDomainClassPropertySection extends AbstractTextPropertySection  {
+	
+	/** Help control of the section. */
+	protected CLabel help;
+	
+	/**
+	 * @see org.eclipse.ui.views.properties.tabbed.view.ITabbedPropertySection#refresh()
+	 */
+	public void refresh() {
+		super.refresh();
 
-    /** Help control of the section. */
-    protected CLabel help;
+		final String tooltip = getToolTipText();
+		if (tooltip != null && help != null) {
+			help.setToolTipText(getToolTipText());
+		}
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.diagram.sequence.editor.properties.sections.AbstractTextPropertySection#getDefaultLabelText()
+	 */
+	protected String getDefaultLabelText() {
+	    return "DomainClass"; //$NON-NLS-1$
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.diagram.sequence.editor.properties.sections.AbstractTextPropertySection#getLabelText()
+	 */
+	protected String getLabelText() {
+		String labelText;
+	    labelText = super.getLabelText() + "*:"; //$NON-NLS-1$
+		// Start of user code get label text
 
-    /**
-     * @see org.eclipse.ui.views.properties.tabbed.view.ITabbedPropertySection#refresh()
-     */
-    public void refresh() {
-        super.refresh();
-
-        final String tooltip = getToolTipText();
-        if (tooltip != null && help != null) {
-            help.setToolTipText(getToolTipText());
-        }
-    }
-
-    /**
-     * @see org.eclipse.sirius.diagram.sequence.editor.properties.sections.AbstractTextPropertySection#getDefaultLabelText()
-     */
-    protected String getDefaultLabelText() {
-        return "DomainClass"; //$NON-NLS-1$
-    }
-
-    /**
-     * @see org.eclipse.sirius.diagram.sequence.editor.properties.sections.AbstractTextPropertySection#getLabelText()
-     */
-    protected String getLabelText() {
-        String labelText;
-        labelText = super.getLabelText() + "*:"; //$NON-NLS-1$
-        // Start of user code get label text
-
-        // End of user code get label text
-        return labelText;
-    }
-
-    /**
-     * @see org.eclipse.sirius.diagram.sequence.editor.properties.sections.AbstractTextPropertySection#getFeature()
-     */
-    public EAttribute getFeature() {
-        return TemplatePackage.eINSTANCE.getTSequenceDiagram_DomainClass();
-    }
-
-    /**
-     * @see org.eclipse.sirius.diagram.sequence.editor.properties.sections.AbstractTextPropertySection#getFeatureValue(String)
-     */
-    protected Object getFeatureValue(String newText) {
-        return newText;
-    }
-
-    /**
-     * @see org.eclipse.sirius.diagram.sequence.editor.properties.sections.AbstractTextPropertySection#isEqual(String)
-     */
-    protected boolean isEqual(String newText) {
-        return getFeatureAsText().equals(newText);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
-        super.createControls(parent, tabbedPropertySheetPage);
-        /*
-         * We set the color as it's a TypeName
-         */
-        text.setBackground(SiriusEditor.getColorRegistry().get("green"));
-
-        text.setToolTipText(getToolTipText());
-
-        help = getWidgetFactory().createCLabel(composite, "");
-        FormData data = new FormData();
+	    // End of user code get label text
+	    return labelText;
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.diagram.sequence.editor.properties.sections.AbstractTextPropertySection#getFeature()
+	 */
+	public EAttribute getFeature() {
+		return TemplatePackage.eINSTANCE.getTSequenceDiagram_DomainClass();
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.diagram.sequence.editor.properties.sections.AbstractTextPropertySection#getFeatureValue(String)
+	 */
+	protected Object getFeatureValue(String newText) {
+		return newText;
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.diagram.sequence.editor.properties.sections.AbstractTextPropertySection#isEqual(String)
+	 */
+	protected boolean isEqual(String newText) {
+		return getFeatureAsText().equals(newText);
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
+	    super.createControls(parent, tabbedPropertySheetPage);
+	    /*
+	     * We set the color as it's a TypeName
+	     */
+	    text.setBackground(SiriusEditor.getColorRegistry().get("green"));
+	    
+	    text.setToolTipText(getToolTipText());
+	    	    
+	    help = getWidgetFactory().createCLabel(composite,"");
+	    FormData data = new FormData();
         data.top = new FormAttachment(text, 0, SWT.TOP);
-        data.left = new FormAttachment(nameLabel);
+        data.left = new FormAttachment(nameLabel);     
         help.setLayoutData(data);
         help.setImage(getHelpIcon());
-        help.setToolTipText(getToolTipText());
-        nameLabel.setFont(SiriusEditor.getFontRegistry().get("required"));
-
+        help.setToolTipText(getToolTipText());	    
+	     nameLabel.setFont(SiriusEditor.getFontRegistry().get("required"));
+        
         TypeContentProposalProvider.bindCompletionProcessor(this, text);
+	    
+	    // Start of user code create controls
 
-        // Start of user code create controls
+	    // End of user code create controls
+	    
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	protected String getPropertyDescription() {
+		return "The type name of the semantic elements represented by the lifelines.";
+	}
+	
+	// Start of user code user operations
 
-        // End of user code create controls
-
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    protected String getPropertyDescription() {
-        return "The type name of the semantic elements represented by the lifelines.";
-    }
-
-    // Start of user code user operations
-
-    // End of user code user operations
+	// End of user code user operations
 }

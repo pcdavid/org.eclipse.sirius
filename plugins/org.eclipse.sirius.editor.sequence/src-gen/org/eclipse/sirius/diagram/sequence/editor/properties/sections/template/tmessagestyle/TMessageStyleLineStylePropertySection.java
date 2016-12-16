@@ -30,68 +30,68 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
  * A section for the lineStyle property of a TMessageStyle object.
  */
 public class TMessageStyleLineStylePropertySection extends AbstractComboPropertySection {
-    /**
-     * @see org.eclipse.sirius.diagram.sequence.editor.properties.sections.AbstractComboPropertySection#getDefaultLabelText()
-     */
-    protected String getDefaultLabelText() {
-        return "LineStyle"; //$NON-NLS-1$
-    }
+	/**
+	 * @see org.eclipse.sirius.diagram.sequence.editor.properties.sections.AbstractComboPropertySection#getDefaultLabelText()
+	 */
+	protected String getDefaultLabelText() {
+	    return "LineStyle"; //$NON-NLS-1$
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.diagram.sequence.editor.properties.sections.AbstractComboPropertySection#getLabelText()
+	 */
+	protected String getLabelText() {
+		String labelText;
+		labelText = super.getLabelText() + ":"; //$NON-NLS-1$
+		// Start of user code get label text
 
-    /**
-     * @see org.eclipse.sirius.diagram.sequence.editor.properties.sections.AbstractComboPropertySection#getLabelText()
-     */
-    protected String getLabelText() {
-        String labelText;
-        labelText = super.getLabelText() + ":"; //$NON-NLS-1$
-        // Start of user code get label text
+	    // End of user code get label text
+	    return labelText;
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.diagram.sequence.editor.properties.sections.AbstractComboPropertySection#getFeature()
+	 */
+	protected EAttribute getFeature() {
+		return TemplatePackage.eINSTANCE.getTMessageStyle_LineStyle();
+	}
 
-        // End of user code get label text
-        return labelText;
-    }
+	/**
+	 * @see org.eclipse.sirius.diagram.sequence.editor.properties.sections.AbstractComboPropertySection#getFeatureValue(int)
+	 */
+	protected Object getFeatureValue(int index) {
+		return getChoiceOfValues().get(index);
+	}
 
-    /**
-     * @see org.eclipse.sirius.diagram.sequence.editor.properties.sections.AbstractComboPropertySection#getFeature()
-     */
-    protected EAttribute getFeature() {
-        return TemplatePackage.eINSTANCE.getTMessageStyle_LineStyle();
-    }
+	/**
+	 * @see org.eclipse.sirius.diagram.sequence.editor.properties.sections.AbstractComboPropertySection#isEqual(int)
+	 */
+	protected boolean isEqual(int index) {
+		return getChoiceOfValues().get(index).equals(eObject.eGet(getFeature()));
+	}
 
-    /**
-     * @see org.eclipse.sirius.diagram.sequence.editor.properties.sections.AbstractComboPropertySection#getFeatureValue(int)
-     */
-    protected Object getFeatureValue(int index) {
-        return getChoiceOfValues().get(index);
-    }
+	/**
+	 * @see org.eclipse.sirius.diagram.sequence.editor.properties.sections.AbstractComboPropertySection#getEnumerationFeatureValues()
+	 */
+	protected List<?> getChoiceOfValues() {
+		return LineStyle.VALUES;
+	}
 
-    /**
-     * @see org.eclipse.sirius.diagram.sequence.editor.properties.sections.AbstractComboPropertySection#isEqual(int)
-     */
-    protected boolean isEqual(int index) {
-        return getChoiceOfValues().get(index).equals(eObject.eGet(getFeature()));
-    }
-
-    /**
-     * @see org.eclipse.sirius.diagram.sequence.editor.properties.sections.AbstractComboPropertySection#getEnumerationFeatureValues()
-     */
-    protected List<?> getChoiceOfValues() {
-        return LineStyle.VALUES;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
-        super.createControls(parent, tabbedPropertySheetPage);
-
-        nameLabel.setToolTipText("Style of the message line.");
-
-        CLabel help = getWidgetFactory().createCLabel(composite, "");
-        FormData data = new FormData();
+	/**
+	 * {@inheritDoc}
+	 */
+	public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
+	    super.createControls(parent, tabbedPropertySheetPage);	  	    
+	   
+	    nameLabel.setToolTipText("Style of the message line.");
+	    	    
+	    CLabel help = getWidgetFactory().createCLabel(composite,"");
+	    FormData data = new FormData();
         data.top = new FormAttachment(nameLabel, 0, SWT.TOP);
-        data.left = new FormAttachment(nameLabel);
+        data.left = new FormAttachment(nameLabel);     
         help.setLayoutData(data);
         help.setImage(getHelpIcon());
-        help.setToolTipText("Style of the message line.");
-
-    }
+        help.setToolTipText("Style of the message line.");	    
+	
+	}
 }

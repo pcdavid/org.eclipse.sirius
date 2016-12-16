@@ -17,27 +17,30 @@ import org.eclipse.sirius.viewpoint.description.DescriptionPackage;
 
 // End of user code specific imports
 
+
 /**
  * A filter for the applyOnAll property section.
  */
 public class EStructuralFeatureCustomizationApplyOnAllFilter extends ViewpointPropertyFilter {
 
-    /**
-     * {@inheritDoc}
-     */
-    protected EStructuralFeature getFeature() {
-        return DescriptionPackage.eINSTANCE.getEStructuralFeatureCustomization_ApplyOnAll();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    protected boolean isRightInputType(Object arg0) {
+	/**
+	 * {@inheritDoc}
+	 */
+	protected EStructuralFeature getFeature() {
+		return DescriptionPackage.eINSTANCE.getEStructuralFeatureCustomization_ApplyOnAll();
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	protected boolean isRightInputType(Object arg0) {
         return arg0 instanceof org.eclipse.sirius.viewpoint.description.EStructuralFeatureCustomization;
     }
-
-    // Start of user code user methods
+	
+	// Start of user code user methods
 
     // End of user code user methods
+	
+	
 
 }

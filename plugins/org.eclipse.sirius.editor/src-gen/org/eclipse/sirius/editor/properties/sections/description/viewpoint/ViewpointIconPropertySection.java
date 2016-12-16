@@ -26,61 +26,63 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 /**
  * A section for the icon property of a Viewpoint object.
  */
-public class ViewpointIconPropertySection extends AbstractTextWithButtonPropertySection {
+public class ViewpointIconPropertySection extends AbstractTextWithButtonPropertySection  {
+	
+	
+	/**
+	 * @see org.eclipse.sirius.editor.properties.sections.AbstractTextWithButtonPropertySection#getDefaultLabelText()
+	 */
+	protected String getDefaultLabelText() {
+	    return "Icon"; //$NON-NLS-1$
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.editor.properties.sections.AbstractTextWithButtonPropertySection#getLabelText()
+	 */
+	protected String getLabelText() {
+		String labelText;
+		labelText = super.getLabelText() + ":"; //$NON-NLS-1$
+		// Start of user code get label text
 
-    /**
-     * @see org.eclipse.sirius.editor.properties.sections.AbstractTextWithButtonPropertySection#getDefaultLabelText()
-     */
-    protected String getDefaultLabelText() {
-        return "Icon"; //$NON-NLS-1$
-    }
+	    // End of user code get label text
+	    return labelText;
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.editor.properties.sections.AbstractTextWithButtonPropertySection#getFeature()
+	 */
+	public EAttribute getFeature() {
+		return DescriptionPackage.eINSTANCE.getViewpoint_Icon();
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.editor.properties.sections.AbstractTextWithButtonPropertySection#getFeatureValue(String)
+	 */
+	protected Object getFeatureValue(String newText) {
+		return newText;
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.editor.properties.sections.AbstractTextWithButtonPropertySection#isEqual(String)
+	 */
+	protected boolean isEqual(String newText) {
+		return getFeatureAsText().equals(newText);
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
+	    super.createControls(parent, tabbedPropertySheetPage);
+	    
+	    
+	    // Start of user code create controls
 
-    /**
-     * @see org.eclipse.sirius.editor.properties.sections.AbstractTextWithButtonPropertySection#getLabelText()
-     */
-    protected String getLabelText() {
-        String labelText;
-        labelText = super.getLabelText() + ":"; //$NON-NLS-1$
-        // Start of user code get label text
+	    // End of user code create controls
+	    
+	}
 
-        // End of user code get label text
-        return labelText;
-    }
-
-    /**
-     * @see org.eclipse.sirius.editor.properties.sections.AbstractTextWithButtonPropertySection#getFeature()
-     */
-    public EAttribute getFeature() {
-        return DescriptionPackage.eINSTANCE.getViewpoint_Icon();
-    }
-
-    /**
-     * @see org.eclipse.sirius.editor.properties.sections.AbstractTextWithButtonPropertySection#getFeatureValue(String)
-     */
-    protected Object getFeatureValue(String newText) {
-        return newText;
-    }
-
-    /**
-     * @see org.eclipse.sirius.editor.properties.sections.AbstractTextWithButtonPropertySection#isEqual(String)
-     */
-    protected boolean isEqual(String newText) {
-        return getFeatureAsText().equals(newText);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
-        super.createControls(parent, tabbedPropertySheetPage);
-
-        // Start of user code create controls
-
-        // End of user code create controls
-
-    }
-
-    @Override
+	@Override
     protected SelectionListener createButtonListener() {
         return new SelectionAdapter() {
             public void widgetSelected(SelectionEvent e) {
@@ -92,15 +94,15 @@ public class ViewpointIconPropertySection extends AbstractTextWithButtonProperty
             }
         };
     }
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	protected String getPropertyDescription() {
+		return "";
+	}
+	
+	// Start of user code user operations
 
-    /**
-     * {@inheritDoc}
-     */
-    protected String getPropertyDescription() {
-        return "";
-    }
-
-    // Start of user code user operations
-
-    // End of user code user operations
+	// End of user code user operations
 }

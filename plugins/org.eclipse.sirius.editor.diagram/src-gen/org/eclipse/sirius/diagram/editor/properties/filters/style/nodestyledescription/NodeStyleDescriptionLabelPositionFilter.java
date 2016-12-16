@@ -20,26 +20,27 @@ import org.eclipse.sirius.viewpoint.description.ConditionalStyleDescription;
 
 // End of user code specific imports
 
+
 /**
  * A filter for the labelPosition property section.
  */
 public class NodeStyleDescriptionLabelPositionFilter extends ViewpointPropertyFilter {
 
-    /**
-     * {@inheritDoc}
-     */
-    protected EStructuralFeature getFeature() {
-        return StylePackage.eINSTANCE.getNodeStyleDescription_LabelPosition();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    protected boolean isRightInputType(Object arg0) {
+	/**
+	 * {@inheritDoc}
+	 */
+	protected EStructuralFeature getFeature() {
+		return StylePackage.eINSTANCE.getNodeStyleDescription_LabelPosition();
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	protected boolean isRightInputType(Object arg0) {
         return arg0 instanceof org.eclipse.sirius.diagram.description.style.NodeStyleDescription;
     }
-
-    // Start of user code user methods
+	
+	// Start of user code user methods
 
     /**
      * {@inheritDoc}
@@ -71,5 +72,7 @@ public class NodeStyleDescriptionLabelPositionFilter extends ViewpointPropertyFi
     }
 
     // End of user code user methods
+	
+	
 
 }

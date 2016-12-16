@@ -23,91 +23,91 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 // End of user code imports
 
 /**
- * A section for the inheritsAncestorFilters property of a AbstractMappingImport
- * object.
+ * A section for the inheritsAncestorFilters property of a AbstractMappingImport object.
  */
 public class AbstractMappingImportInheritsAncestorFiltersPropertySection extends AbstractCheckBoxPropertySection {
-    /**
-     * @see org.eclipse.sirius.editor.properties.sections.AbstractCheckBoxPropertySection#getDefaultLabelText()
-     */
-    protected String getDefaultLabelText() {
-        return "InheritsAncestorFilters"; //$NON-NLS-1$
-    }
+	/**
+	 * @see org.eclipse.sirius.editor.properties.sections.AbstractCheckBoxPropertySection#getDefaultLabelText()
+	 */
+	protected String getDefaultLabelText() {
+	    return "InheritsAncestorFilters"; //$NON-NLS-1$
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.editor.properties.sections.AbstractCheckBoxPropertySection#getLabelText()
+	 */
+	protected String getLabelText() {
+		String labelText;
+		labelText = super.getLabelText() + ":"; //$NON-NLS-1$
+		// Start of user code get label text
 
-    /**
-     * @see org.eclipse.sirius.editor.properties.sections.AbstractCheckBoxPropertySection#getLabelText()
-     */
-    protected String getLabelText() {
-        String labelText;
-        labelText = super.getLabelText() + ":"; //$NON-NLS-1$
-        // Start of user code get label text
-
-        // End of user code get label text
-        return labelText;
-    }
-
-    /**
-     * @see org.eclipse.sirius.editor.properties.sections.AbstractCheckBoxPropertySection#getFeature()
-     */
-    protected EAttribute getFeature() {
-        return DescriptionPackage.eINSTANCE.getAbstractMappingImport_InheritsAncestorFilters();
-    }
-
-    /**
-     * @see org.eclipse.sirius.editor.properties.sections.AbstractCheckBoxPropertySection#getFeatureAsInteger()
-     */
-    protected String getDefaultFeatureAsText() {
-        String value = new String();
-        if (eObject.eGet(getFeature()) != null)
-            value = toBoolean(eObject.eGet(getFeature()).toString()).toString();
-        return value;
-    }
-
-    /**
-     * @see org.eclipse.sirius.editor.properties.sections.AbstractCheckBoxPropertySection#getFeatureValue(int)
-     */
-    protected Object getFeatureValue(String newText) {
-        return toBoolean(newText);
-    }
-
-    /**
-     * @see org.eclipse.sirius.editor.properties.sections.AbstractCheckBoxPropertySection#isEqual(int)
-     */
-    protected boolean isEqual(String newText) {
-        boolean equal = true;
-        if (toBoolean(newText) != null)
-            equal = getFeatureAsText().equals(toBoolean(newText).toString());
-        else
-            refresh();
-        return equal;
-    }
-
-    /**
-     * Converts the given text to the boolean it represents if applicable.
-     * 
-     * @return The boolean the given text represents if applicable,
-     *         <code>null</code> otherwise.
-     */
-    private Boolean toBoolean(String text) {
-        Boolean booleanValue = null;
-        if (text.toLowerCase().matches("true|false"))
-            booleanValue = Boolean.parseBoolean(text);
-        return booleanValue;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
-        super.createControls(parent, tabbedPropertySheetPage);
-        checkbox.setToolTipText("Set to true if you want the filters applying on the imported mappings apply on this one.");
-
-        CLabel help = getWidgetFactory().createCLabel(composite, "");
-        FormData data = new FormData();
+	    // End of user code get label text
+	    return labelText;
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.editor.properties.sections.AbstractCheckBoxPropertySection#getFeature()
+	 */
+	protected EAttribute getFeature() {
+		return DescriptionPackage.eINSTANCE.getAbstractMappingImport_InheritsAncestorFilters();
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.editor.properties.sections.AbstractCheckBoxPropertySection#getFeatureAsInteger()
+	 */
+	protected String getDefaultFeatureAsText() {
+		String value = new String();
+		if (eObject.eGet(getFeature()) != null)
+			value = toBoolean(eObject.eGet(getFeature()).toString()).toString();
+		return value;
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.editor.properties.sections.AbstractCheckBoxPropertySection#getFeatureValue(int)
+	 */
+	protected Object getFeatureValue(String newText) {
+		return toBoolean(newText);
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.editor.properties.sections.AbstractCheckBoxPropertySection#isEqual(int)
+	 */
+	protected boolean isEqual(String newText) {
+		boolean equal = true;
+		if (toBoolean(newText) != null)
+			equal = getFeatureAsText().equals(toBoolean(newText).toString());
+		else
+			refresh();
+		return equal;
+	}
+	
+	/**
+	 * Converts the given text to the boolean it represents if applicable.
+	 * 
+	 * @return
+	 *			The boolean the given text represents if applicable, <code>null</code>
+	 *			otherwise.
+	 */
+	private Boolean toBoolean(String text) {
+		Boolean booleanValue = null;
+		if (text.toLowerCase().matches("true|false"))
+			booleanValue = Boolean.parseBoolean(text);
+		return booleanValue;
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
+	    super.createControls(parent, tabbedPropertySheetPage);	  	    
+	    checkbox.setToolTipText("Set to true if you want the filters applying on the imported mappings apply on this one.");	    
+	    
+	    CLabel help = getWidgetFactory().createCLabel(composite,"");
+	    FormData data = new FormData();
         data.top = new FormAttachment(checkbox, 0, SWT.TOP);
-        data.left = new FormAttachment(nameLabel);
+        data.left = new FormAttachment(nameLabel);     
         help.setLayoutData(data);
         help.setImage(getHelpIcon());
-        help.setToolTipText("Set to true if you want the filters applying on the imported mappings apply on this one.");
-    }
+        help.setToolTipText("Set to true if you want the filters applying on the imported mappings apply on this one.");	  
+	}
 }

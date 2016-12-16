@@ -18,26 +18,27 @@ import org.eclipse.sirius.viewpoint.description.InterpolatedColor;
 
 // End of user code specific imports
 
+
 /**
  * A filter for the maxValueComputationExpression property section.
  */
 public class InterpolatedColorMaxValueComputationExpressionFilter extends ViewpointPropertyFilter {
 
-    /**
-     * {@inheritDoc}
-     */
-    protected EStructuralFeature getFeature() {
-        return DescriptionPackage.eINSTANCE.getInterpolatedColor_MaxValueComputationExpression();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    protected boolean isRightInputType(Object arg0) {
+	/**
+	 * {@inheritDoc}
+	 */
+	protected EStructuralFeature getFeature() {
+		return DescriptionPackage.eINSTANCE.getInterpolatedColor_MaxValueComputationExpression();
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	protected boolean isRightInputType(Object arg0) {
         return arg0 instanceof org.eclipse.sirius.viewpoint.description.InterpolatedColor;
     }
-
-    // Start of user code user methods
+	
+	// Start of user code user methods
 
     private InterpolatedColor InterpolatedColor;
 
@@ -61,5 +62,7 @@ public class InterpolatedColorMaxValueComputationExpressionFilter extends Viewpo
     }
 
     // End of user code user methods
+	
+	
 
 }

@@ -19,26 +19,27 @@ import org.eclipse.sirius.editor.properties.filters.common.ViewpointPropertyFilt
 
 // End of user code specific imports
 
+
 /**
  * A filter for the sourceFinderExpression property section.
  */
 public class EdgeMappingSourceFinderExpressionFilter extends ViewpointPropertyFilter {
 
-    /**
-     * {@inheritDoc}
-     */
-    protected EStructuralFeature getFeature() {
-        return DescriptionPackage.eINSTANCE.getEdgeMapping_SourceFinderExpression();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    protected boolean isRightInputType(Object arg0) {
+	/**
+	 * {@inheritDoc}
+	 */
+	protected EStructuralFeature getFeature() {
+		return DescriptionPackage.eINSTANCE.getEdgeMapping_SourceFinderExpression();
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	protected boolean isRightInputType(Object arg0) {
         return arg0 instanceof org.eclipse.sirius.diagram.description.EdgeMapping;
     }
-
-    // Start of user code user methods
+	
+	// Start of user code user methods
     public boolean select(Object arg0) {
         return super.select(arg0) && (!isNormalEdgeMapping(arg0) || ((EdgeMapping) arg0).isUseDomainElement());
     }
@@ -47,5 +48,7 @@ public class EdgeMappingSourceFinderExpressionFilter extends ViewpointPropertyFi
         return ((EObject) obj).eClass().equals(DescriptionPackage.eINSTANCE.getEdgeMapping());
     }
     // End of user code user methods
+	
+	
 
 }

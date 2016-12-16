@@ -34,92 +34,92 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
  * A section for the endsOrdering property of a TSequenceDiagram object.
  */
 public class TSequenceDiagramEndsOrderingPropertySection extends AbstractTextWithButtonPropertySection implements ContentProposalClient {
+	
+	/** Help control of the section. */
+	protected CLabel help;
+	
+	/**
+	 * @see org.eclipse.ui.views.properties.tabbed.view.ITabbedPropertySection#refresh()
+	 */
+	public void refresh() {
+		super.refresh();
 
-    /** Help control of the section. */
-    protected CLabel help;
+		final String tooltip = getToolTipText();
+		if (tooltip != null && help != null) {
+			help.setToolTipText(getToolTipText());
+		}
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.diagram.sequence.editor.properties.sections.AbstractTextWithButtonPropertySection#getDefaultLabelText()
+	 */
+	protected String getDefaultLabelText() {
+	    return "EndsOrdering"; //$NON-NLS-1$
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.diagram.sequence.editor.properties.sections.AbstractTextWithButtonPropertySection#getLabelText()
+	 */
+	protected String getLabelText() {
+		String labelText;
+	    labelText = super.getLabelText() + "*:"; //$NON-NLS-1$
+		// Start of user code get label text
 
-    /**
-     * @see org.eclipse.ui.views.properties.tabbed.view.ITabbedPropertySection#refresh()
-     */
-    public void refresh() {
-        super.refresh();
-
-        final String tooltip = getToolTipText();
-        if (tooltip != null && help != null) {
-            help.setToolTipText(getToolTipText());
-        }
-    }
-
-    /**
-     * @see org.eclipse.sirius.diagram.sequence.editor.properties.sections.AbstractTextWithButtonPropertySection#getDefaultLabelText()
-     */
-    protected String getDefaultLabelText() {
-        return "EndsOrdering"; //$NON-NLS-1$
-    }
-
-    /**
-     * @see org.eclipse.sirius.diagram.sequence.editor.properties.sections.AbstractTextWithButtonPropertySection#getLabelText()
-     */
-    protected String getLabelText() {
-        String labelText;
-        labelText = super.getLabelText() + "*:"; //$NON-NLS-1$
-        // Start of user code get label text
-
-        // End of user code get label text
-        return labelText;
-    }
-
-    /**
-     * @see org.eclipse.sirius.diagram.sequence.editor.properties.sections.AbstractTextWithButtonPropertySection#getFeature()
-     */
-    public EAttribute getFeature() {
-        return TemplatePackage.eINSTANCE.getTSequenceDiagram_EndsOrdering();
-    }
-
-    /**
-     * @see org.eclipse.sirius.diagram.sequence.editor.properties.sections.AbstractTextWithButtonPropertySection#getFeatureValue(String)
-     */
-    protected Object getFeatureValue(String newText) {
-        return newText;
-    }
-
-    /**
-     * @see org.eclipse.sirius.diagram.sequence.editor.properties.sections.AbstractTextWithButtonPropertySection#isEqual(String)
-     */
-    protected boolean isEqual(String newText) {
-        return getFeatureAsText().equals(newText);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
-        super.createControls(parent, tabbedPropertySheetPage);
-        /*
-         * We set the color as it's a InterpretedExpression
-         */
-        text.setBackground(SiriusEditor.getColorRegistry().get("yellow"));
-
-        text.setToolTipText(getToolTipText());
-
-        help = getWidgetFactory().createCLabel(composite, "");
-        FormData data = new FormData();
+	    // End of user code get label text
+	    return labelText;
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.diagram.sequence.editor.properties.sections.AbstractTextWithButtonPropertySection#getFeature()
+	 */
+	public EAttribute getFeature() {
+		return TemplatePackage.eINSTANCE.getTSequenceDiagram_EndsOrdering();
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.diagram.sequence.editor.properties.sections.AbstractTextWithButtonPropertySection#getFeatureValue(String)
+	 */
+	protected Object getFeatureValue(String newText) {
+		return newText;
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.diagram.sequence.editor.properties.sections.AbstractTextWithButtonPropertySection#isEqual(String)
+	 */
+	protected boolean isEqual(String newText) {
+		return getFeatureAsText().equals(newText);
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
+	    super.createControls(parent, tabbedPropertySheetPage);
+	    /*
+	     * We set the color as it's a InterpretedExpression
+	     */
+	    text.setBackground(SiriusEditor.getColorRegistry().get("yellow"));
+	    
+	    text.setToolTipText(getToolTipText());
+	    	    
+	    help = getWidgetFactory().createCLabel(composite,"");
+	    FormData data = new FormData();
         data.top = new FormAttachment(text, 0, SWT.TOP);
-        data.left = new FormAttachment(nameLabel);
+        data.left = new FormAttachment(nameLabel);     
         help.setLayoutData(data);
         help.setImage(getHelpIcon());
-        help.setToolTipText(getToolTipText());
-        nameLabel.setFont(SiriusEditor.getFontRegistry().get("required"));
+        help.setToolTipText(getToolTipText());	    
+	     nameLabel.setFont(SiriusEditor.getFontRegistry().get("required"));
+	    
+         TypeContentProposalProvider.bindPluginsCompletionProcessors(this, text);
+	    
+	    // Start of user code create controls
 
-        TypeContentProposalProvider.bindPluginsCompletionProcessors(this, text);
+	    // End of user code create controls
+	    
+	}
 
-        // Start of user code create controls
-
-        // End of user code create controls
-
-    }
-
-    @Override
+	@Override
     protected SelectionListener createButtonListener() {
         return new SelectionAdapter() {
             public void widgetSelected(SelectionEvent e) {
@@ -130,15 +130,15 @@ public class TSequenceDiagramEndsOrderingPropertySection extends AbstractTextWit
             }
         };
     }
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	protected String getPropertyDescription() {
+		return "An interpreted expression used to compute the semantic (chronological) ordering of events on the diagram.";
+	}
+	
+	// Start of user code user operations
 
-    /**
-     * {@inheritDoc}
-     */
-    protected String getPropertyDescription() {
-        return "An interpreted expression used to compute the semantic (chronological) ordering of events on the diagram.";
-    }
-
-    // Start of user code user operations
-
-    // End of user code user operations
+	// End of user code user operations
 }

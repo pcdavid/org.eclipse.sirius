@@ -31,95 +31,94 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 // End of user code imports
 
 /**
- * A section for the semanticCandidatesExpression property of a
- * ElementColumnMapping object.
+ * A section for the semanticCandidatesExpression property of a ElementColumnMapping object.
  */
 public class ElementColumnMappingSemanticCandidatesExpressionPropertySection extends AbstractTextWithButtonPropertySection implements ContentProposalClient {
+	
+	/** Help control of the section. */
+	protected CLabel help;
+	
+	/**
+	 * @see org.eclipse.ui.views.properties.tabbed.view.ITabbedPropertySection#refresh()
+	 */
+	public void refresh() {
+		super.refresh();
 
-    /** Help control of the section. */
-    protected CLabel help;
+		final String tooltip = getToolTipText();
+		if (tooltip != null && help != null) {
+			help.setToolTipText(getToolTipText());
+		}
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.table.editor.properties.sections.AbstractTextWithButtonPropertySection#getDefaultLabelText()
+	 */
+	protected String getDefaultLabelText() {
+	    return "SemanticCandidatesExpression"; //$NON-NLS-1$
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.table.editor.properties.sections.AbstractTextWithButtonPropertySection#getLabelText()
+	 */
+	protected String getLabelText() {
+		String labelText;
+		labelText = super.getLabelText() + ":"; //$NON-NLS-1$
+		// Start of user code get label text
 
-    /**
-     * @see org.eclipse.ui.views.properties.tabbed.view.ITabbedPropertySection#refresh()
-     */
-    public void refresh() {
-        super.refresh();
-
-        final String tooltip = getToolTipText();
-        if (tooltip != null && help != null) {
-            help.setToolTipText(getToolTipText());
-        }
-    }
-
-    /**
-     * @see org.eclipse.sirius.table.editor.properties.sections.AbstractTextWithButtonPropertySection#getDefaultLabelText()
-     */
-    protected String getDefaultLabelText() {
-        return "SemanticCandidatesExpression"; //$NON-NLS-1$
-    }
-
-    /**
-     * @see org.eclipse.sirius.table.editor.properties.sections.AbstractTextWithButtonPropertySection#getLabelText()
-     */
-    protected String getLabelText() {
-        String labelText;
-        labelText = super.getLabelText() + ":"; //$NON-NLS-1$
-        // Start of user code get label text
-
-        // End of user code get label text
-        return labelText;
-    }
-
-    /**
-     * @see org.eclipse.sirius.table.editor.properties.sections.AbstractTextWithButtonPropertySection#getFeature()
-     */
-    public EAttribute getFeature() {
-        return DescriptionPackage.eINSTANCE.getElementColumnMapping_SemanticCandidatesExpression();
-    }
-
-    /**
-     * @see org.eclipse.sirius.table.editor.properties.sections.AbstractTextWithButtonPropertySection#getFeatureValue(String)
-     */
-    protected Object getFeatureValue(String newText) {
-        return newText;
-    }
-
-    /**
-     * @see org.eclipse.sirius.table.editor.properties.sections.AbstractTextWithButtonPropertySection#isEqual(String)
-     */
-    protected boolean isEqual(String newText) {
-        return getFeatureAsText().equals(newText);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
-        super.createControls(parent, tabbedPropertySheetPage);
-        /*
-         * We set the color as it's a InterpretedExpression
-         */
-        text.setBackground(SiriusEditor.getColorRegistry().get("yellow"));
-
-        text.setToolTipText(getToolTipText());
-
-        help = getWidgetFactory().createCLabel(composite, "");
-        FormData data = new FormData();
+	    // End of user code get label text
+	    return labelText;
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.table.editor.properties.sections.AbstractTextWithButtonPropertySection#getFeature()
+	 */
+	public EAttribute getFeature() {
+		return DescriptionPackage.eINSTANCE.getElementColumnMapping_SemanticCandidatesExpression();
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.table.editor.properties.sections.AbstractTextWithButtonPropertySection#getFeatureValue(String)
+	 */
+	protected Object getFeatureValue(String newText) {
+		return newText;
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.table.editor.properties.sections.AbstractTextWithButtonPropertySection#isEqual(String)
+	 */
+	protected boolean isEqual(String newText) {
+		return getFeatureAsText().equals(newText);
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
+	    super.createControls(parent, tabbedPropertySheetPage);
+	    /*
+	     * We set the color as it's a InterpretedExpression
+	     */
+	    text.setBackground(SiriusEditor.getColorRegistry().get("yellow"));
+	    
+	    text.setToolTipText(getToolTipText());
+	    	    
+	    help = getWidgetFactory().createCLabel(composite,"");
+	    FormData data = new FormData();
         data.top = new FormAttachment(text, 0, SWT.TOP);
-        data.left = new FormAttachment(nameLabel);
+        data.left = new FormAttachment(nameLabel);     
         help.setLayoutData(data);
         help.setImage(getHelpIcon());
-        help.setToolTipText(getToolTipText());
+        help.setToolTipText(getToolTipText());	    
+	    
+         TypeContentProposalProvider.bindPluginsCompletionProcessors(this, text);
+	    
+	    // Start of user code create controls
 
-        TypeContentProposalProvider.bindPluginsCompletionProcessors(this, text);
+	    // End of user code create controls
+	    
+	}
 
-        // Start of user code create controls
-
-        // End of user code create controls
-
-    }
-
-    @Override
+	@Override
     protected SelectionListener createButtonListener() {
         return new SelectionAdapter() {
             public void widgetSelected(SelectionEvent e) {
@@ -130,15 +129,15 @@ public class ElementColumnMappingSemanticCandidatesExpressionPropertySection ext
             }
         };
     }
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	protected String getPropertyDescription() {
+		return "Restrict the list of elements to consider before creating the graphical elements. If it is not set,\nthen the whole model hiearchy will be browsed and any element of the given type validating\nthe precondition expression will cause the creation of a graphical element. If you set this\nattribute then only the elements returned by the expression evaluation will be considered.";
+	}
+	
+	// Start of user code user operations
 
-    /**
-     * {@inheritDoc}
-     */
-    protected String getPropertyDescription() {
-        return "Restrict the list of elements to consider before creating the graphical elements. If it is not set,\nthen the whole model hiearchy will be browsed and any element of the given type validating\nthe precondition expression will cause the creation of a graphical element. If you set this\nattribute then only the elements returned by the expression evaluation will be considered.";
-    }
-
-    // Start of user code user operations
-
-    // End of user code user operations
+	// End of user code user operations
 }

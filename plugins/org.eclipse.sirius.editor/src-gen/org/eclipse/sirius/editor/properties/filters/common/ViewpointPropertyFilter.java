@@ -16,7 +16,9 @@ import org.eclipse.jface.viewers.IFilter;
 
 // End of user code imports
 
+
 public abstract class ViewpointPropertyFilter implements IFilter {
+
 
     public boolean select(Object arg0) {
         if (isRightInputType(arg0)) {
@@ -27,19 +29,19 @@ public abstract class ViewpointPropertyFilter implements IFilter {
         }
         return false;
     }
-
+    
     protected boolean isVisible(EStructuralFeature feature) {
-        // Start of user code common filter isVisible
+    // Start of user code common filter isVisible
         return true;
-        // End of user code common filter isVisible
+    // End of user code common filter isVisible
     }
 
     abstract protected EStructuralFeature getFeature();
-
+    
     abstract protected boolean isRightInputType(Object arg0);
+    	
+	// Start of user code user methods
 
-    // Start of user code user methods
-
-    // End of user code user methods
+    //End of user code user methods
 
 }

@@ -36,78 +36,77 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 // End of user code imports
 
 /**
- * A section for the metamodel property of a RepresentationExtensionDescription
- * object.
+ * A section for the metamodel property of a RepresentationExtensionDescription object.
  */
 public class RepresentationExtensionDescriptionMetamodelPropertySection extends AbstractEditorDialogPropertySection {
-    /**
-     * @see org.eclipse.sirius.editor.properties.sections.AbstractEditorDialogPropertySection#getDefaultLabelText()
-     */
-    protected String getDefaultLabelText() {
-        return "Metamodel"; //$NON-NLS-1$
-    }
+	/**
+	 * @see org.eclipse.sirius.editor.properties.sections.AbstractEditorDialogPropertySection#getDefaultLabelText()
+	 */
+	protected String getDefaultLabelText() {
+	    return "Metamodel"; //$NON-NLS-1$
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.editor.properties.sections.AbstractEditorDialogPropertySection#getLabelText()
+	 */
+	protected String getLabelText() {
+		String labelText;
+		labelText = super.getLabelText() + ":"; //$NON-NLS-1$
+		// Start of user code get label text
 
-    /**
-     * @see org.eclipse.sirius.editor.properties.sections.AbstractEditorDialogPropertySection#getLabelText()
-     */
-    protected String getLabelText() {
-        String labelText;
-        labelText = super.getLabelText() + ":"; //$NON-NLS-1$
-        // Start of user code get label text
+	    // End of user code get label text
+	    return labelText;
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.editor.properties.sections.AbstractEditorDialogPropertySection#getFeature()
+	 */
+	protected EReference getFeature() {
+		return DescriptionPackage.eINSTANCE.getRepresentationExtensionDescription_Metamodel();
+	}
 
-        // End of user code get label text
-        return labelText;
-    }
+	/**
+	 * @see org.eclipse.sirius.editor.properties.sections.AbstractEditorDialogPropertySection#getFeatureAsText()
+	 */
+	protected String getFeatureAsText() {
+		String string = new String();
+		
+		if (eObject.eGet(getFeature()) != null) {
+			List<?> values = (List<?>)eObject.eGet(getFeature());
+			for (Iterator<?> iterator = values.iterator(); iterator.hasNext(); ) {
+				EObject eObj = (EObject)iterator.next();
+				string += getAdapterFactoryLabelProvider(eObj).getText(eObj);
+				if (iterator.hasNext())
+					string += ", ";
+			}
+		}
+		
+		return string;
+	}
 
-    /**
-     * @see org.eclipse.sirius.editor.properties.sections.AbstractEditorDialogPropertySection#getFeature()
-     */
-    protected EReference getFeature() {
-        return DescriptionPackage.eINSTANCE.getRepresentationExtensionDescription_Metamodel();
-    }
-
-    /**
-     * @see org.eclipse.sirius.editor.properties.sections.AbstractEditorDialogPropertySection#getFeatureAsText()
-     */
-    protected String getFeatureAsText() {
-        String string = new String();
-
-        if (eObject.eGet(getFeature()) != null) {
-            List<?> values = (List<?>) eObject.eGet(getFeature());
-            for (Iterator<?> iterator = values.iterator(); iterator.hasNext();) {
-                EObject eObj = (EObject) iterator.next();
-                string += getAdapterFactoryLabelProvider(eObj).getText(eObj);
-                if (iterator.hasNext())
-                    string += ", ";
-            }
-        }
-
-        return string;
-    }
-
-    /**
-     * @see org.eclipse.sirius.editor.properties.sections.AbstractEditorDialogPropertySection#isEqual(java.util.List)
-     */
-    protected boolean isEqual(List<?> newList) {
-        return newList.equals(eObject.eGet(getFeature()));
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
-        super.createControls(parent, tabbedPropertySheetPage);
-        text.setToolTipText("You might want to associate your description with an ecore model, this is not mandatory, but if you do so the editor will provides you a richer validation.");
-
-        CLabel help = getWidgetFactory().createCLabel(composite, "");
-        FormData data = new FormData();
+	/**
+	 * @see org.eclipse.sirius.editor.properties.sections.AbstractEditorDialogPropertySection#isEqual(java.util.List)
+	 */
+	protected boolean isEqual(List<?> newList) {
+		return newList.equals(eObject.eGet(getFeature()));
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
+	    super.createControls(parent, tabbedPropertySheetPage);	  	    
+	    text.setToolTipText("You might want to associate your description with an ecore model, this is not mandatory, but if you do so the editor will provides you a richer validation.");
+	    	    
+	    CLabel help = getWidgetFactory().createCLabel(composite,"");
+	    FormData data = new FormData();
         data.top = new FormAttachment(text, 0, SWT.TOP);
-        data.left = new FormAttachment(nameLabel);
+        data.left = new FormAttachment(nameLabel);     
         help.setLayoutData(data);
         help.setImage(getHelpIcon());
-        help.setToolTipText("You might want to associate your description with an ecore model, this is not mandatory, but if you do so the editor will provides you a richer validation.");
-
-        // Start of user code create controls
+        help.setToolTipText("You might want to associate your description with an ecore model, this is not mandatory, but if you do so the editor will provides you a richer validation.");	    
+	    
+	    // Start of user code create controls
         data = new FormData();
         data.left = new FormAttachment(0, LABEL_WIDTH);
         data.right = new FormAttachment(90, 0);
@@ -147,10 +146,10 @@ public class RepresentationExtensionDescriptionMetamodelPropertySection extends 
                     editingDomain.loadResource(result);
             }
         });
-        // End of user code create controls
-    }
+	    // End of user code create controls	    
+	}
+	
+	// Start of user code user operations
 
-    // Start of user code user operations
-
-    // End of user code user operations
+	// End of user code user operations
 }

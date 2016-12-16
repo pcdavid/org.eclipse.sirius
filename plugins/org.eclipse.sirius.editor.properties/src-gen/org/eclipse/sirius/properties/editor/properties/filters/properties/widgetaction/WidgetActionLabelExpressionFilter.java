@@ -17,29 +17,30 @@ import org.eclipse.sirius.properties.PropertiesPackage;
 
 // End of user code specific imports
 
+
 /**
  * A filter for the labelExpression property section.
  */
 public class WidgetActionLabelExpressionFilter extends ViewpointPropertyFilter {
 
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    protected EStructuralFeature getFeature() {
-        return PropertiesPackage.eINSTANCE.getWidgetAction_LabelExpression();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    protected boolean isRightInputType(Object arg0) {
+	/**
+	 * {@inheritDoc}
+	 */
+	protected EStructuralFeature getFeature() {
+		return PropertiesPackage.eINSTANCE.getWidgetAction_LabelExpression();
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	protected boolean isRightInputType(Object arg0) {
         return arg0 instanceof org.eclipse.sirius.properties.WidgetAction;
     }
-
-    // Start of user code user methods
+	
+	// Start of user code user methods
 
     // End of user code user methods
+	
+	
 
 }

@@ -17,27 +17,30 @@ import org.eclipse.sirius.viewpoint.description.tool.ToolPackage;
 
 // End of user code specific imports
 
+
 /**
  * A filter for the iteratorName property section.
  */
 public class ForIteratorNameFilter extends ViewpointPropertyFilter {
 
-    /**
-     * {@inheritDoc}
-     */
-    protected EStructuralFeature getFeature() {
-        return ToolPackage.eINSTANCE.getFor_IteratorName();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    protected boolean isRightInputType(Object arg0) {
+	/**
+	 * {@inheritDoc}
+	 */
+	protected EStructuralFeature getFeature() {
+		return ToolPackage.eINSTANCE.getFor_IteratorName();
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	protected boolean isRightInputType(Object arg0) {
         return arg0 instanceof org.eclipse.sirius.viewpoint.description.tool.For;
     }
-
-    // Start of user code user methods
+	
+	// Start of user code user methods
 
     // End of user code user methods
+	
+	
 
 }

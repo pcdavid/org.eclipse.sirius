@@ -27,60 +27,60 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
  * A section for the direction property of a CompositeLayout object.
  */
 public class CompositeLayoutDirectionPropertySection extends AbstractRadioButtonPropertySection {
-    /**
-     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractRadioButtonPropertySection#getDefaultLabelText()
-     */
-    protected String getDefaultLabelText() {
-        return "Direction"; //$NON-NLS-1$
-    }
+	/**
+	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractRadioButtonPropertySection#getDefaultLabelText()
+	 */
+	protected String getDefaultLabelText() {
+	    return "Direction"; //$NON-NLS-1$
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractRadioButtonPropertySection#getLabelText()
+	 */
+	protected String getLabelText() {
+		String labelText;
+	    labelText = super.getLabelText() + "*:"; //$NON-NLS-1$
+		// Start of user code get label text
 
-    /**
-     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractRadioButtonPropertySection#getLabelText()
-     */
-    protected String getLabelText() {
-        String labelText;
-        labelText = super.getLabelText() + "*:"; //$NON-NLS-1$
-        // Start of user code get label text
+	    // End of user code get label text
+	    return labelText;
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractRadioButtonPropertySection#getFeature()
+	 */
+	protected EAttribute getFeature() {
+		return DescriptionPackage.eINSTANCE.getCompositeLayout_Direction();
+	}
 
-        // End of user code get label text
-        return labelText;
-    }
+	/**
+	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractRadioButtonPropertySection#getFeatureValue(int)
+	 */
+	protected Object getFeatureValue(int index) {
+		return getChoiceOfValues().get(index);
+	}
 
-    /**
-     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractRadioButtonPropertySection#getFeature()
-     */
-    protected EAttribute getFeature() {
-        return DescriptionPackage.eINSTANCE.getCompositeLayout_Direction();
-    }
+	/**
+	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractRadioButtonPropertySection#isEqual(int)
+	 */
+	protected boolean isEqual(int index) {
+		return getChoiceOfValues().get(index).equals(eObject.eGet(getFeature()));
+	}
 
-    /**
-     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractRadioButtonPropertySection#getFeatureValue(int)
-     */
-    protected Object getFeatureValue(int index) {
-        return getChoiceOfValues().get(index);
-    }
+	/**
+	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractRadioButtonPropertySection#getEnumerationFeatureValues()
+	 */
+	protected List<?> getChoiceOfValues() {
+		return LayoutDirection.VALUES;
+	}
 
-    /**
-     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractRadioButtonPropertySection#isEqual(int)
-     */
-    protected boolean isEqual(int index) {
-        return getChoiceOfValues().get(index).equals(eObject.eGet(getFeature()));
-    }
-
-    /**
-     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractRadioButtonPropertySection#getEnumerationFeatureValues()
-     */
-    protected List<?> getChoiceOfValues() {
-        return LayoutDirection.VALUES;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
-        super.createControls(parent, tabbedPropertySheetPage);
-
-        nameLabel.setFont(SiriusEditor.getFontRegistry().get("required"));
-
-    }
+	/**
+	 * {@inheritDoc}
+	 */
+	public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
+	    super.createControls(parent, tabbedPropertySheetPage);	  	    
+	   
+	     nameLabel.setFont(SiriusEditor.getFontRegistry().get("required"));
+	
+	}
 }

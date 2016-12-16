@@ -17,26 +17,27 @@ import org.eclipse.sirius.editor.properties.filters.common.ViewpointPropertyFilt
 
 // End of user code specific imports
 
+
 /**
  * A filter for the init property section.
  */
 public class DiagramDescriptionInitFilter extends ViewpointPropertyFilter {
 
-    /**
-     * {@inheritDoc}
-     */
-    protected EStructuralFeature getFeature() {
-        return DescriptionPackage.eINSTANCE.getDiagramDescription_Init();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    protected boolean isRightInputType(Object arg0) {
+	/**
+	 * {@inheritDoc}
+	 */
+	protected EStructuralFeature getFeature() {
+		return DescriptionPackage.eINSTANCE.getDiagramDescription_Init();
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	protected boolean isRightInputType(Object arg0) {
         return arg0 instanceof org.eclipse.sirius.diagram.description.DiagramDescription;
     }
-
-    // Start of user code user methods
+	
+	// Start of user code user methods
 
     /**
      * {@inheritDoc}
@@ -49,5 +50,7 @@ public class DiagramDescriptionInitFilter extends ViewpointPropertyFilter {
     }
 
     // End of user code user methods
+	
+	
 
 }

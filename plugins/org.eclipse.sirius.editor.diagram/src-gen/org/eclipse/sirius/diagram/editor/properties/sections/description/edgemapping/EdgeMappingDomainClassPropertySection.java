@@ -28,104 +28,104 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 /**
  * A section for the domainClass property of a EdgeMapping object.
  */
-public class EdgeMappingDomainClassPropertySection extends AbstractTextPropertySection {
+public class EdgeMappingDomainClassPropertySection extends AbstractTextPropertySection  {
+	
+	/** Help control of the section. */
+	protected CLabel help;
+	
+	/**
+	 * @see org.eclipse.ui.views.properties.tabbed.view.ITabbedPropertySection#refresh()
+	 */
+	public void refresh() {
+		super.refresh();
 
-    /** Help control of the section. */
-    protected CLabel help;
-
-    /**
-     * @see org.eclipse.ui.views.properties.tabbed.view.ITabbedPropertySection#refresh()
-     */
-    public void refresh() {
-        super.refresh();
-
-        final String tooltip = getToolTipText();
-        if (tooltip != null && help != null) {
-            help.setToolTipText(getToolTipText());
-        }
-    }
-
-    /**
-     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractTextPropertySection#getDefaultLabelText()
-     */
-    protected String getDefaultLabelText() {
-        return "DomainClass"; //$NON-NLS-1$
-    }
-
-    /**
-     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractTextPropertySection#getLabelText()
-     */
-    protected String getLabelText() {
-        String labelText;
-        labelText = super.getLabelText() + ":"; //$NON-NLS-1$
-        // Start of user code get label text
+		final String tooltip = getToolTipText();
+		if (tooltip != null && help != null) {
+			help.setToolTipText(getToolTipText());
+		}
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractTextPropertySection#getDefaultLabelText()
+	 */
+	protected String getDefaultLabelText() {
+	    return "DomainClass"; //$NON-NLS-1$
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractTextPropertySection#getLabelText()
+	 */
+	protected String getLabelText() {
+		String labelText;
+		labelText = super.getLabelText() + ":"; //$NON-NLS-1$
+		// Start of user code get label text
 
         // Only displayed and required when isUsedDomainElement()
         labelText = super.getLabelText() + "*:"; //$NON-NLS-1$
 
-        // End of user code get label text
-        return labelText;
-    }
-
-    /**
-     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractTextPropertySection#getFeature()
-     */
-    public EAttribute getFeature() {
-        return DescriptionPackage.eINSTANCE.getEdgeMapping_DomainClass();
-    }
-
-    /**
-     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractTextPropertySection#getFeatureValue(String)
-     */
-    protected Object getFeatureValue(String newText) {
-        return newText;
-    }
-
-    /**
-     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractTextPropertySection#isEqual(String)
-     */
-    protected boolean isEqual(String newText) {
-        return getFeatureAsText().equals(newText);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
-        super.createControls(parent, tabbedPropertySheetPage);
-        /*
-         * We set the color as it's a TypeName
-         */
-        text.setBackground(SiriusEditor.getColorRegistry().get("green"));
-
-        text.setToolTipText(getToolTipText());
-
-        help = getWidgetFactory().createCLabel(composite, "");
-        FormData data = new FormData();
+	    // End of user code get label text
+	    return labelText;
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractTextPropertySection#getFeature()
+	 */
+	public EAttribute getFeature() {
+		return DescriptionPackage.eINSTANCE.getEdgeMapping_DomainClass();
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractTextPropertySection#getFeatureValue(String)
+	 */
+	protected Object getFeatureValue(String newText) {
+		return newText;
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractTextPropertySection#isEqual(String)
+	 */
+	protected boolean isEqual(String newText) {
+		return getFeatureAsText().equals(newText);
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
+	    super.createControls(parent, tabbedPropertySheetPage);
+	    /*
+	     * We set the color as it's a TypeName
+	     */
+	    text.setBackground(SiriusEditor.getColorRegistry().get("green"));
+	    
+	    text.setToolTipText(getToolTipText());
+	    	    
+	    help = getWidgetFactory().createCLabel(composite,"");
+	    FormData data = new FormData();
         data.top = new FormAttachment(text, 0, SWT.TOP);
-        data.left = new FormAttachment(nameLabel);
+        data.left = new FormAttachment(nameLabel);     
         help.setLayoutData(data);
         help.setImage(getHelpIcon());
-        help.setToolTipText(getToolTipText());
-
+        help.setToolTipText(getToolTipText());	    
+        
         TypeContentProposalProvider.bindCompletionProcessor(this, text);
-
-        // Start of user code create controls
+	    
+	    // Start of user code create controls
 
         // Only displayed and required when isUsedDomainElement()
         nameLabel.setFont(SiriusEditor.getFontRegistry().get("required"));
-        // End of user code create controls
+	    // End of user code create controls
+	    
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	protected String getPropertyDescription() {
+		return "Type name of the domain class triggering the creation of a new Edge.\nFor instance in UML2 you can have 'Association' here.\nOnly needed if 'use domain element' is set to true.";
+	}
+	
+	// Start of user code user operations
 
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    protected String getPropertyDescription() {
-        return "Type name of the domain class triggering the creation of a new Edge.\nFor instance in UML2 you can have 'Association' here.\nOnly needed if 'use domain element' is set to true.";
-    }
-
-    // Start of user code user operations
-
-    // End of user code user operations
+	// End of user code user operations
 }

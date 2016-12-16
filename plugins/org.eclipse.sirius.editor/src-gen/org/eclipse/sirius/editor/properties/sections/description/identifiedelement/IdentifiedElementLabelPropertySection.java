@@ -28,97 +28,97 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 /**
  * A section for the label property of a IdentifiedElement object.
  */
-public class IdentifiedElementLabelPropertySection extends AbstractTextPropertySection {
+public class IdentifiedElementLabelPropertySection extends AbstractTextPropertySection  {
+	
+	/** Help control of the section. */
+	protected CLabel help;
+	
+	/**
+	 * @see org.eclipse.ui.views.properties.tabbed.view.ITabbedPropertySection#refresh()
+	 */
+	public void refresh() {
+		super.refresh();
 
-    /** Help control of the section. */
-    protected CLabel help;
+		final String tooltip = getToolTipText();
+		if (tooltip != null && help != null) {
+			help.setToolTipText(getToolTipText());
+		}
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.editor.properties.sections.AbstractTextPropertySection#getDefaultLabelText()
+	 */
+	protected String getDefaultLabelText() {
+	    return "Label"; //$NON-NLS-1$
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.editor.properties.sections.AbstractTextPropertySection#getLabelText()
+	 */
+	protected String getLabelText() {
+		String labelText;
+		labelText = super.getLabelText() + ":"; //$NON-NLS-1$
+		// Start of user code get label text
 
-    /**
-     * @see org.eclipse.ui.views.properties.tabbed.view.ITabbedPropertySection#refresh()
-     */
-    public void refresh() {
-        super.refresh();
-
-        final String tooltip = getToolTipText();
-        if (tooltip != null && help != null) {
-            help.setToolTipText(getToolTipText());
-        }
-    }
-
-    /**
-     * @see org.eclipse.sirius.editor.properties.sections.AbstractTextPropertySection#getDefaultLabelText()
-     */
-    protected String getDefaultLabelText() {
-        return "Label"; //$NON-NLS-1$
-    }
-
-    /**
-     * @see org.eclipse.sirius.editor.properties.sections.AbstractTextPropertySection#getLabelText()
-     */
-    protected String getLabelText() {
-        String labelText;
-        labelText = super.getLabelText() + ":"; //$NON-NLS-1$
-        // Start of user code get label text
-
-        // End of user code get label text
-        return labelText;
-    }
-
-    /**
-     * @see org.eclipse.sirius.editor.properties.sections.AbstractTextPropertySection#getFeature()
-     */
-    public EAttribute getFeature() {
-        return DescriptionPackage.eINSTANCE.getIdentifiedElement_Label();
-    }
-
-    /**
-     * @see org.eclipse.sirius.editor.properties.sections.AbstractTextPropertySection#getFeatureValue(String)
-     */
-    protected Object getFeatureValue(String newText) {
-        return newText;
-    }
-
-    /**
-     * @see org.eclipse.sirius.editor.properties.sections.AbstractTextPropertySection#isEqual(String)
-     */
-    protected boolean isEqual(String newText) {
-        return getFeatureAsText().equals(newText);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
-        super.createControls(parent, tabbedPropertySheetPage);
-        /*
-         * We set the color as it's a TranslatableMessage
-         */
-        text.setBackground(SiriusEditor.getColorRegistry().get("light_blue"));
-
-        text.setToolTipText(getToolTipText());
-
-        help = getWidgetFactory().createCLabel(composite, "");
-        FormData data = new FormData();
+	    // End of user code get label text
+	    return labelText;
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.editor.properties.sections.AbstractTextPropertySection#getFeature()
+	 */
+	public EAttribute getFeature() {
+		return DescriptionPackage.eINSTANCE.getIdentifiedElement_Label();
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.editor.properties.sections.AbstractTextPropertySection#getFeatureValue(String)
+	 */
+	protected Object getFeatureValue(String newText) {
+		return newText;
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.editor.properties.sections.AbstractTextPropertySection#isEqual(String)
+	 */
+	protected boolean isEqual(String newText) {
+		return getFeatureAsText().equals(newText);
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
+	    super.createControls(parent, tabbedPropertySheetPage);
+	    /*
+	     * We set the color as it's a TranslatableMessage
+	     */
+	    text.setBackground(SiriusEditor.getColorRegistry().get("light_blue"));
+	    
+	    text.setToolTipText(getToolTipText());
+	    	    
+	    help = getWidgetFactory().createCLabel(composite,"");
+	    FormData data = new FormData();
         data.top = new FormAttachment(text, 0, SWT.TOP);
-        data.left = new FormAttachment(nameLabel);
+        data.left = new FormAttachment(nameLabel);     
         help.setLayoutData(data);
         help.setImage(getHelpIcon());
-        help.setToolTipText(getToolTipText());
+        help.setToolTipText(getToolTipText());	    
+	    
+	    // Start of user code create controls
 
-        // Start of user code create controls
-
-        // End of user code create controls
-
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    protected String getPropertyDescription() {
-        return "The label used to display this to the end-user.";
-    }
-
-    // Start of user code user operations
+	    // End of user code create controls
+	    
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	protected String getPropertyDescription() {
+		return "The label used to display this to the end-user.";
+	}
+	
+	// Start of user code user operations
     protected Composite getComposite() {
         return composite;
     }
@@ -134,5 +134,5 @@ public class IdentifiedElementLabelPropertySection extends AbstractTextPropertyS
     protected CLabel getLabel() {
         return nameLabel;
     }
-    // End of user code user operations
+	// End of user code user operations
 }

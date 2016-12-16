@@ -17,27 +17,30 @@ import org.eclipse.sirius.viewpoint.description.tool.ToolPackage;
 
 // End of user code specific imports
 
+
 /**
  * A filter for the elementExpression property section.
  */
 public class UnsetElementExpressionFilter extends ViewpointPropertyFilter {
 
-    /**
-     * {@inheritDoc}
-     */
-    protected EStructuralFeature getFeature() {
-        return ToolPackage.eINSTANCE.getUnset_ElementExpression();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    protected boolean isRightInputType(Object arg0) {
+	/**
+	 * {@inheritDoc}
+	 */
+	protected EStructuralFeature getFeature() {
+		return ToolPackage.eINSTANCE.getUnset_ElementExpression();
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	protected boolean isRightInputType(Object arg0) {
         return arg0 instanceof org.eclipse.sirius.viewpoint.description.tool.Unset;
     }
-
-    // Start of user code user methods
+	
+	// Start of user code user methods
 
     // End of user code user methods
+	
+	
 
 }

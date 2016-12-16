@@ -28,70 +28,70 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
  * A section for the source property of a TSourceTargetMessageMapping object.
  */
 public class TSourceTargetMessageMappingSourcePropertySection extends AbstractEditorDialogPropertySection {
-    /**
-     * @see org.eclipse.sirius.diagram.sequence.editor.properties.sections.AbstractEditorDialogPropertySection#getDefaultLabelText()
-     */
-    protected String getDefaultLabelText() {
-        return "Source"; //$NON-NLS-1$
-    }
+	/**
+	 * @see org.eclipse.sirius.diagram.sequence.editor.properties.sections.AbstractEditorDialogPropertySection#getDefaultLabelText()
+	 */
+	protected String getDefaultLabelText() {
+	    return "Source"; //$NON-NLS-1$
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.diagram.sequence.editor.properties.sections.AbstractEditorDialogPropertySection#getLabelText()
+	 */
+	protected String getLabelText() {
+		String labelText;
+	    labelText = super.getLabelText() + "*:"; //$NON-NLS-1$
+		// Start of user code get label text
 
-    /**
-     * @see org.eclipse.sirius.diagram.sequence.editor.properties.sections.AbstractEditorDialogPropertySection#getLabelText()
-     */
-    protected String getLabelText() {
-        String labelText;
-        labelText = super.getLabelText() + "*:"; //$NON-NLS-1$
-        // Start of user code get label text
+	    // End of user code get label text
+	    return labelText;
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.diagram.sequence.editor.properties.sections.AbstractEditorDialogPropertySection#getFeature()
+	 */
+	protected EReference getFeature() {
+		return TemplatePackage.eINSTANCE.getTSourceTargetMessageMapping_Source();
+	}
 
-        // End of user code get label text
-        return labelText;
-    }
+	/**
+	 * @see org.eclipse.sirius.diagram.sequence.editor.properties.sections.AbstractEditorDialogPropertySection#getFeatureAsText()
+	 */
+	protected String getFeatureAsText() {
+		String string = new String();
+		
+		if (eObject.eGet(getFeature()) != null) {
+			List<?> values = (List<?>)eObject.eGet(getFeature());
+			for (Iterator<?> iterator = values.iterator(); iterator.hasNext(); ) {
+				EObject eObj = (EObject)iterator.next();
+				string += getAdapterFactoryLabelProvider(eObj).getText(eObj);
+				if (iterator.hasNext())
+					string += ", ";
+			}
+		}
+		
+		return string;
+	}
 
-    /**
-     * @see org.eclipse.sirius.diagram.sequence.editor.properties.sections.AbstractEditorDialogPropertySection#getFeature()
-     */
-    protected EReference getFeature() {
-        return TemplatePackage.eINSTANCE.getTSourceTargetMessageMapping_Source();
-    }
+	/**
+	 * @see org.eclipse.sirius.diagram.sequence.editor.properties.sections.AbstractEditorDialogPropertySection#isEqual(java.util.List)
+	 */
+	protected boolean isEqual(List<?> newList) {
+		return newList.equals(eObject.eGet(getFeature()));
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
+	    super.createControls(parent, tabbedPropertySheetPage);	  	    
+	     nameLabel.setFont(SiriusEditor.getFontRegistry().get("required"));
+	    // Start of user code create controls
 
-    /**
-     * @see org.eclipse.sirius.diagram.sequence.editor.properties.sections.AbstractEditorDialogPropertySection#getFeatureAsText()
-     */
-    protected String getFeatureAsText() {
-        String string = new String();
+	    // End of user code create controls	    
+	}
+	
+	// Start of user code user operations
 
-        if (eObject.eGet(getFeature()) != null) {
-            List<?> values = (List<?>) eObject.eGet(getFeature());
-            for (Iterator<?> iterator = values.iterator(); iterator.hasNext();) {
-                EObject eObj = (EObject) iterator.next();
-                string += getAdapterFactoryLabelProvider(eObj).getText(eObj);
-                if (iterator.hasNext())
-                    string += ", ";
-            }
-        }
-
-        return string;
-    }
-
-    /**
-     * @see org.eclipse.sirius.diagram.sequence.editor.properties.sections.AbstractEditorDialogPropertySection#isEqual(java.util.List)
-     */
-    protected boolean isEqual(List<?> newList) {
-        return newList.equals(eObject.eGet(getFeature()));
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
-        super.createControls(parent, tabbedPropertySheetPage);
-        nameLabel.setFont(SiriusEditor.getFontRegistry().get("required"));
-        // Start of user code create controls
-
-        // End of user code create controls
-    }
-
-    // Start of user code user operations
-
-    // End of user code user operations
+	// End of user code user operations
 }

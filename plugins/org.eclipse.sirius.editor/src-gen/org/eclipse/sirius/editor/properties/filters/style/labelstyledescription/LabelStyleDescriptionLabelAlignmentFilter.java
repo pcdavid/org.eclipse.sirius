@@ -17,26 +17,27 @@ import org.eclipse.sirius.viewpoint.description.style.StylePackage;
 
 // End of user code specific imports
 
+
 /**
  * A filter for the labelAlignment property section.
  */
 public class LabelStyleDescriptionLabelAlignmentFilter extends ViewpointPropertyFilter {
 
-    /**
-     * {@inheritDoc}
-     */
-    protected EStructuralFeature getFeature() {
-        return StylePackage.eINSTANCE.getLabelStyleDescription_LabelAlignment();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    protected boolean isRightInputType(Object arg0) {
+	/**
+	 * {@inheritDoc}
+	 */
+	protected EStructuralFeature getFeature() {
+		return StylePackage.eINSTANCE.getLabelStyleDescription_LabelAlignment();
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	protected boolean isRightInputType(Object arg0) {
         return arg0 instanceof org.eclipse.sirius.viewpoint.description.style.LabelStyleDescription;
     }
-
-    // Start of user code user methods
+	
+	// Start of user code user methods
     public boolean select(Object arg0) {
         if (isRightInputType(arg0) && !(arg0.getClass().getName().contains("TreeItemStyleDescription"))) {
             EStructuralFeature feature = getFeature();
@@ -47,5 +48,7 @@ public class LabelStyleDescriptionLabelAlignmentFilter extends ViewpointProperty
         return false;
     }
     // End of user code user methods
+	
+	
 
 }

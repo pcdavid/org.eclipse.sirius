@@ -17,27 +17,30 @@ import org.eclipse.sirius.viewpoint.description.style.StylePackage;
 
 // End of user code specific imports
 
+
 /**
  * A filter for the cornerHeight property section.
  */
 public class LabelBorderStyleDescriptionCornerHeightFilter extends ViewpointPropertyFilter {
 
-    /**
-     * {@inheritDoc}
-     */
-    protected EStructuralFeature getFeature() {
-        return StylePackage.eINSTANCE.getLabelBorderStyleDescription_CornerHeight();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    protected boolean isRightInputType(Object arg0) {
+	/**
+	 * {@inheritDoc}
+	 */
+	protected EStructuralFeature getFeature() {
+		return StylePackage.eINSTANCE.getLabelBorderStyleDescription_CornerHeight();
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	protected boolean isRightInputType(Object arg0) {
         return arg0 instanceof org.eclipse.sirius.viewpoint.description.style.LabelBorderStyleDescription;
     }
-
-    // Start of user code user methods
+	
+	// Start of user code user methods
 
     // End of user code user methods
+	
+	
 
 }

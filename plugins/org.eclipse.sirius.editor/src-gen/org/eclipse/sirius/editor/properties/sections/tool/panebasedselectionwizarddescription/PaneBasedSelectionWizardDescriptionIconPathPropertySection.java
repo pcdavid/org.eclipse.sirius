@@ -25,66 +25,66 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 // End of user code imports
 
 /**
- * A section for the iconPath property of a PaneBasedSelectionWizardDescription
- * object.
+ * A section for the iconPath property of a PaneBasedSelectionWizardDescription object.
  */
-public class PaneBasedSelectionWizardDescriptionIconPathPropertySection extends AbstractTextWithButtonPropertySection {
+public class PaneBasedSelectionWizardDescriptionIconPathPropertySection extends AbstractTextWithButtonPropertySection  {
+	
+	
+	/**
+	 * @see org.eclipse.sirius.editor.properties.sections.AbstractTextWithButtonPropertySection#getDefaultLabelText()
+	 */
+	protected String getDefaultLabelText() {
+	    return "IconPath"; //$NON-NLS-1$
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.editor.properties.sections.AbstractTextWithButtonPropertySection#getLabelText()
+	 */
+	protected String getLabelText() {
+		String labelText;
+	    labelText = super.getLabelText() + "*:"; //$NON-NLS-1$
+		// Start of user code get label text
 
-    /**
-     * @see org.eclipse.sirius.editor.properties.sections.AbstractTextWithButtonPropertySection#getDefaultLabelText()
-     */
-    protected String getDefaultLabelText() {
-        return "IconPath"; //$NON-NLS-1$
-    }
+	    // End of user code get label text
+	    return labelText;
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.editor.properties.sections.AbstractTextWithButtonPropertySection#getFeature()
+	 */
+	public EAttribute getFeature() {
+		return ToolPackage.eINSTANCE.getPaneBasedSelectionWizardDescription_IconPath();
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.editor.properties.sections.AbstractTextWithButtonPropertySection#getFeatureValue(String)
+	 */
+	protected Object getFeatureValue(String newText) {
+		return newText;
+	}
+	
+	/**
+	 * @see org.eclipse.sirius.editor.properties.sections.AbstractTextWithButtonPropertySection#isEqual(String)
+	 */
+	protected boolean isEqual(String newText) {
+		return getFeatureAsText().equals(newText);
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
+	    super.createControls(parent, tabbedPropertySheetPage);
+	    
+	     nameLabel.setFont(SiriusEditor.getFontRegistry().get("required"));
+	    
+	    // Start of user code create controls
 
-    /**
-     * @see org.eclipse.sirius.editor.properties.sections.AbstractTextWithButtonPropertySection#getLabelText()
-     */
-    protected String getLabelText() {
-        String labelText;
-        labelText = super.getLabelText() + "*:"; //$NON-NLS-1$
-        // Start of user code get label text
+	    // End of user code create controls
+	    
+	}
 
-        // End of user code get label text
-        return labelText;
-    }
-
-    /**
-     * @see org.eclipse.sirius.editor.properties.sections.AbstractTextWithButtonPropertySection#getFeature()
-     */
-    public EAttribute getFeature() {
-        return ToolPackage.eINSTANCE.getPaneBasedSelectionWizardDescription_IconPath();
-    }
-
-    /**
-     * @see org.eclipse.sirius.editor.properties.sections.AbstractTextWithButtonPropertySection#getFeatureValue(String)
-     */
-    protected Object getFeatureValue(String newText) {
-        return newText;
-    }
-
-    /**
-     * @see org.eclipse.sirius.editor.properties.sections.AbstractTextWithButtonPropertySection#isEqual(String)
-     */
-    protected boolean isEqual(String newText) {
-        return getFeatureAsText().equals(newText);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
-        super.createControls(parent, tabbedPropertySheetPage);
-
-        nameLabel.setFont(SiriusEditor.getFontRegistry().get("required"));
-
-        // Start of user code create controls
-
-        // End of user code create controls
-
-    }
-
-    @Override
+	@Override
     protected SelectionListener createButtonListener() {
         return new SelectionAdapter() {
             public void widgetSelected(SelectionEvent e) {
@@ -96,15 +96,15 @@ public class PaneBasedSelectionWizardDescriptionIconPathPropertySection extends 
             }
         };
     }
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	protected String getPropertyDescription() {
+		return "";
+	}
+	
+	// Start of user code user operations
 
-    /**
-     * {@inheritDoc}
-     */
-    protected String getPropertyDescription() {
-        return "";
-    }
-
-    // Start of user code user operations
-
-    // End of user code user operations
+	// End of user code user operations
 }
