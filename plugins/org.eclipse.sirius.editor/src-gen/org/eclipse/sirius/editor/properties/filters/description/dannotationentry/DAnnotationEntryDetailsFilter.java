@@ -17,30 +17,27 @@ import org.eclipse.sirius.viewpoint.description.DescriptionPackage;
 
 // End of user code specific imports
 
-
 /**
  * A filter for the details property section.
  */
 public class DAnnotationEntryDetailsFilter extends ViewpointPropertyFilter {
 
-	/**
-	 * {@inheritDoc}
-	 */
-	protected EStructuralFeature getFeature() {
-		return DescriptionPackage.eINSTANCE.getDAnnotationEntry_Details();
-	}
-	
-	/**
-	 * {@inheritDoc}
-	 */
-	protected boolean isRightInputType(Object arg0) {
+    /**
+     * {@inheritDoc}
+     */
+    protected EStructuralFeature getFeature() {
+        return DescriptionPackage.eINSTANCE.getDAnnotationEntry_Details();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    protected boolean isRightInputType(Object arg0) {
         return arg0 instanceof org.eclipse.sirius.viewpoint.description.DAnnotationEntry;
     }
-	
-	// Start of user code user methods
+
+    // Start of user code user methods
 
     // End of user code user methods
-	
-	
 
 }

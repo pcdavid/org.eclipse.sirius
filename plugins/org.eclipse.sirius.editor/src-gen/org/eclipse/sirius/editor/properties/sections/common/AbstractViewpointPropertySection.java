@@ -40,45 +40,51 @@ import org.eclipse.ui.views.properties.tabbed.AbstractPropertySection;
 
 // End of user code imports
 
-
 /**
  * An abstract implementation of a property tab section for the property sheet.
  */
 public abstract class AbstractViewpointPropertySection extends AbstractPropertySection {
-	/** The label width that will be used for section names. */
-	public final static int LABEL_WIDTH = 232;
+    /** The label width that will be used for section names. */
+    public final static int LABEL_WIDTH = 232;
 
-	/** The property sheet page for this section. */
-	protected ViewpointPropertySheetPage propertySheetPage;
+    /** The property sheet page for this section. */
+    protected ViewpointPropertySheetPage propertySheetPage;
 
-	/** Current selected object or first object in the selection when multiple objects are selected. */
-	protected EObject eObject;
+    /**
+     * Current selected object or first object in the selection when multiple
+     * objects are selected.
+     */
+    protected EObject eObject;
 
-	/** The list of currently selected objects. */
-	protected List<EObject> eObjectList;
-	
-	/** Plugin's {@link org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider AdapterFactoryLabelProvider}. */
-	protected AdapterFactoryLabelProvider adapterFactoryLabelProvider;
+    /** The list of currently selected objects. */
+    protected List<EObject> eObjectList;
 
-	/** is true if the feature is required **/
-	protected boolean isRequired = false;
-	
-	/**
-	 * @see org.eclipse.ui.views.properties.tabbed.ISection#createControls(org.eclipse.swt.widgets.Composite,
-	 *      org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage)
-	 */
-	public void createControls(Composite parent, ViewpointPropertySheetPage aTabbedPropertySheetPage) {
-		super.createControls(parent, aTabbedPropertySheetPage);
-		this.propertySheetPage = aTabbedPropertySheetPage;
-		
-		SiriusEditor editor = this.propertySheetPage.getEditor();
+    /**
+     * Plugin's
+     * {@link org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider
+     * AdapterFactoryLabelProvider}.
+     */
+    protected AdapterFactoryLabelProvider adapterFactoryLabelProvider;
+
+    /** is true if the feature is required **/
+    protected boolean isRequired = false;
+
+    /**
+     * @see org.eclipse.ui.views.properties.tabbed.ISection#createControls(org.eclipse.swt.widgets.Composite,
+     *      org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage)
+     */
+    public void createControls(Composite parent, ViewpointPropertySheetPage aTabbedPropertySheetPage) {
+        super.createControls(parent, aTabbedPropertySheetPage);
+        this.propertySheetPage = aTabbedPropertySheetPage;
+
+        SiriusEditor editor = this.propertySheetPage.getEditor();
         IWorkbenchPart activePart = editor.getEditorSite().getPage().getActivePart();
         if (activePart instanceof ContentOutline && ((ContentOutline) activePart).getCurrentPage() == editor.getContentOutlinePage()) {
             updateSelection(editor.getContentOutlinePage().getSelection());
         } else {
             updateSelection(editor.getSelection());
         }
-	}
+    }
 
     private boolean updateSelection(ISelection selection) {
         if (!(selection instanceof IStructuredSelection)) {
@@ -96,14 +102,14 @@ public abstract class AbstractViewpointPropertySection extends AbstractPropertyS
         return false;
     }
 
-	  /**
+    /**
      * @see org.eclipse.ui.views.properties.tabbed.ISection#setInput(org.eclipse.ui.IWorkbenchPart,
      *      org.eclipse.jface.viewers.ISelection)
      */
     public void setInput(IWorkbenchPart part, ISelection selection) {
         super.setInput(part, selection);
         if (updateSelection(selection))
-        	updateReadOnlyStatus();
+            updateReadOnlyStatus();
     }
 
     /**
@@ -136,27 +142,28 @@ public abstract class AbstractViewpointPropertySection extends AbstractPropertyS
         // End of user code common readonly
         return readonly;
     }
-    
+
     /**
-	 * Get the feature for the text field of this section.
-	 * 
-	 * @return
-	 * 			The feature for the text.
-	 */
-	protected abstract EStructuralFeature getFeature();
-	
-	/**
-	 * Fetches the {@link org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider AdapterFactoryLabelProvider}
-	 * adapted to the given object.
-	 * 
-	 * @return
-	 * 			The plugin's {@link org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider AdapterFactoryLabelProvider}}.
-	 */
-	protected AdapterFactoryLabelProvider getAdapterFactoryLabelProvider(EObject eObj) {
-		if (adapterFactoryLabelProvider == null) {
+     * Get the feature for the text field of this section.
+     * 
+     * @return The feature for the text.
+     */
+    protected abstract EStructuralFeature getFeature();
+
+    /**
+     * Fetches the
+     * {@link org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider
+     * AdapterFactoryLabelProvider} adapted to the given object.
+     * 
+     * @return The plugin's
+     *         {@link org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider
+     *         AdapterFactoryLabelProvider}}.
+     */
+    protected AdapterFactoryLabelProvider getAdapterFactoryLabelProvider(EObject eObj) {
+        if (adapterFactoryLabelProvider == null) {
             if (getPart() instanceof IAdapterFactoryProvider) {
                 adapterFactoryLabelProvider = new AdapterFactoryLabelProvider(((IAdapterFactoryProvider) getPart()).getAdapterFactory());
-                  } else {
+            } else {
                 return new AdapterFactoryLabelProvider(rescueAdapterFactory());
             }
         }
@@ -168,18 +175,21 @@ public abstract class AbstractViewpointPropertySection extends AbstractPropertyS
         factories.add(new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE));
         return new ComposedAdapterFactory(factories);
     }
-	
-	/**
-	 * Fetches the plugin's {@link org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider AdapterFactoryLabelProvider}.
-	 * 
-	 * @return
-	 * 			The plugin's {@link org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider AdapterFactoryLabelProvider}}.
-	 */
-	protected AdapterFactoryLabelProvider getAdapterFactoryLabelProvider() {
-		return getAdapterFactoryLabelProvider(null);
-	}
-	
-	    /**
+
+    /**
+     * Fetches the plugin's
+     * {@link org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider
+     * AdapterFactoryLabelProvider}.
+     * 
+     * @return The plugin's
+     *         {@link org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider
+     *         AdapterFactoryLabelProvider}}.
+     */
+    protected AdapterFactoryLabelProvider getAdapterFactoryLabelProvider() {
+        return getAdapterFactoryLabelProvider(null);
+    }
+
+    /**
      * Get all property descriptors associated with the current semantic object.
      * 
      * @return the property descriptors list
@@ -189,7 +199,7 @@ public abstract class AbstractViewpointPropertySection extends AbstractPropertyS
         ItemProviderAdapter providerAdapter = (ItemProviderAdapter) adapterFactory.adapt(eObject, IItemPropertySource.class);
         return providerAdapter.getPropertyDescriptors(eObject);
     }
-    
+
     /**
      * Get the property descriptor associated with the current semantic object
      * for the feature given as parameter.
@@ -207,8 +217,8 @@ public abstract class AbstractViewpointPropertySection extends AbstractPropertyS
         }
         return null;
     }
-	
-	 /**
+
+    /**
      * Creates and return the help icon to show in our label.
      * 
      * @return The help icon to show in our label.

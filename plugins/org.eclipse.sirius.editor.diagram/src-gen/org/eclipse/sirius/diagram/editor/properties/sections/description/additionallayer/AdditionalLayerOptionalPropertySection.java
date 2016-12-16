@@ -27,88 +27,87 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
  * A section for the optional property of a AdditionalLayer object.
  */
 public class AdditionalLayerOptionalPropertySection extends AbstractCheckBoxPropertySection {
-	/**
-	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractCheckBoxPropertySection#getDefaultLabelText()
-	 */
-	protected String getDefaultLabelText() {
-	    return "Optional"; //$NON-NLS-1$
-	}
-	
-	/**
-	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractCheckBoxPropertySection#getLabelText()
-	 */
-	protected String getLabelText() {
-		String labelText;
-		labelText = super.getLabelText() + ":"; //$NON-NLS-1$
-		// Start of user code get label text
+    /**
+     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractCheckBoxPropertySection#getDefaultLabelText()
+     */
+    protected String getDefaultLabelText() {
+        return "Optional"; //$NON-NLS-1$
+    }
 
-	    // End of user code get label text
-	    return labelText;
-	}
-	
-	/**
-	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractCheckBoxPropertySection#getFeature()
-	 */
-	protected EAttribute getFeature() {
-		return DescriptionPackage.eINSTANCE.getAdditionalLayer_Optional();
-	}
-	
-	/**
-	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractCheckBoxPropertySection#getFeatureAsInteger()
-	 */
-	protected String getDefaultFeatureAsText() {
-		String value = new String();
-		if (eObject.eGet(getFeature()) != null)
-			value = toBoolean(eObject.eGet(getFeature()).toString()).toString();
-		return value;
-	}
-	
-	/**
-	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractCheckBoxPropertySection#getFeatureValue(int)
-	 */
-	protected Object getFeatureValue(String newText) {
-		return toBoolean(newText);
-	}
-	
-	/**
-	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractCheckBoxPropertySection#isEqual(int)
-	 */
-	protected boolean isEqual(String newText) {
-		boolean equal = true;
-		if (toBoolean(newText) != null)
-			equal = getFeatureAsText().equals(toBoolean(newText).toString());
-		else
-			refresh();
-		return equal;
-	}
-	
-	/**
-	 * Converts the given text to the boolean it represents if applicable.
-	 * 
-	 * @return
-	 *			The boolean the given text represents if applicable, <code>null</code>
-	 *			otherwise.
-	 */
-	private Boolean toBoolean(String text) {
-		Boolean booleanValue = null;
-		if (text.toLowerCase().matches("true|false"))
-			booleanValue = Boolean.parseBoolean(text);
-		return booleanValue;
-	}
-	
-	/**
-	 * {@inheritDoc}
-	 */
-	public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
-	    super.createControls(parent, tabbedPropertySheetPage);	  	    
-	    checkbox.setToolTipText("If true, the end-user can deactivate this layer.");	    
-	    
-	    CLabel help = getWidgetFactory().createCLabel(composite,"");
-	    FormData data = new FormData();
+    /**
+     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractCheckBoxPropertySection#getLabelText()
+     */
+    protected String getLabelText() {
+        String labelText;
+        labelText = super.getLabelText() + ":"; //$NON-NLS-1$
+        // Start of user code get label text
+
+        // End of user code get label text
+        return labelText;
+    }
+
+    /**
+     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractCheckBoxPropertySection#getFeature()
+     */
+    protected EAttribute getFeature() {
+        return DescriptionPackage.eINSTANCE.getAdditionalLayer_Optional();
+    }
+
+    /**
+     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractCheckBoxPropertySection#getFeatureAsInteger()
+     */
+    protected String getDefaultFeatureAsText() {
+        String value = new String();
+        if (eObject.eGet(getFeature()) != null)
+            value = toBoolean(eObject.eGet(getFeature()).toString()).toString();
+        return value;
+    }
+
+    /**
+     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractCheckBoxPropertySection#getFeatureValue(int)
+     */
+    protected Object getFeatureValue(String newText) {
+        return toBoolean(newText);
+    }
+
+    /**
+     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractCheckBoxPropertySection#isEqual(int)
+     */
+    protected boolean isEqual(String newText) {
+        boolean equal = true;
+        if (toBoolean(newText) != null)
+            equal = getFeatureAsText().equals(toBoolean(newText).toString());
+        else
+            refresh();
+        return equal;
+    }
+
+    /**
+     * Converts the given text to the boolean it represents if applicable.
+     * 
+     * @return The boolean the given text represents if applicable,
+     *         <code>null</code> otherwise.
+     */
+    private Boolean toBoolean(String text) {
+        Boolean booleanValue = null;
+        if (text.toLowerCase().matches("true|false"))
+            booleanValue = Boolean.parseBoolean(text);
+        return booleanValue;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
+        super.createControls(parent, tabbedPropertySheetPage);
+        checkbox.setToolTipText("If true, the end-user can deactivate this layer.");
+
+        CLabel help = getWidgetFactory().createCLabel(composite, "");
+        FormData data = new FormData();
         data.top = new FormAttachment(checkbox, 0, SWT.TOP);
-        data.left = new FormAttachment(nameLabel);     
+        data.left = new FormAttachment(nameLabel);
         help.setLayoutData(data);
         help.setImage(getHelpIcon());
-        help.setToolTipText("If true, the end-user can deactivate this layer.");	  
-	}
+        help.setToolTipText("If true, the end-user can deactivate this layer.");
+    }
 }

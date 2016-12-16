@@ -24,71 +24,69 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 /**
  * A section for the details property of a DAnnotationEntry object.
  */
-public class DAnnotationEntryDetailsPropertySection extends AbstractTextPropertySection  {
-	
-	
-	/**
-	 * @see org.eclipse.sirius.editor.properties.sections.AbstractTextPropertySection#getDefaultLabelText()
-	 */
-	protected String getDefaultLabelText() {
-	    return "Details"; //$NON-NLS-1$
-	}
-	
-	/**
-	 * @see org.eclipse.sirius.editor.properties.sections.AbstractTextPropertySection#getLabelText()
-	 */
-	protected String getLabelText() {
-		String labelText;
-		labelText = super.getLabelText() + ":"; //$NON-NLS-1$
-		// Start of user code get label text
+public class DAnnotationEntryDetailsPropertySection extends AbstractTextPropertySection {
 
-	    // End of user code get label text
-	    return labelText;
-	}
-	
-	/**
-	 * @see org.eclipse.sirius.editor.properties.sections.AbstractTextPropertySection#getFeature()
-	 */
-	public EAttribute getFeature() {
-		return DescriptionPackage.eINSTANCE.getDAnnotationEntry_Details();
-	}
-	
-	/**
-	 * @see org.eclipse.sirius.editor.properties.sections.AbstractTextPropertySection#getFeatureValue(String)
-	 */
-	protected Object getFeatureValue(String newText) {
-		String[] values = newText.substring(1, newText.length() - 1).split(", ");
-		return Arrays.asList(values);
-	}
-	
-	/**
-	 * @see org.eclipse.sirius.editor.properties.sections.AbstractTextPropertySection#isEqual(String)
-	 */
-	protected boolean isEqual(String newText) {
-		return getFeatureAsText().equals(newText);
-	}
-	
-	/**
-	 * {@inheritDoc}
-	 */
-	public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
-	    super.createControls(parent, tabbedPropertySheetPage);
-	    
-	    
-	    // Start of user code create controls
+    /**
+     * @see org.eclipse.sirius.editor.properties.sections.AbstractTextPropertySection#getDefaultLabelText()
+     */
+    protected String getDefaultLabelText() {
+        return "Details"; //$NON-NLS-1$
+    }
 
-	    // End of user code create controls
-	    
-	}
-	
-	/**
-	 * {@inheritDoc}
-	 */
-	protected String getPropertyDescription() {
-		return "";
-	}
-	
-	// Start of user code user operations
+    /**
+     * @see org.eclipse.sirius.editor.properties.sections.AbstractTextPropertySection#getLabelText()
+     */
+    protected String getLabelText() {
+        String labelText;
+        labelText = super.getLabelText() + ":"; //$NON-NLS-1$
+        // Start of user code get label text
 
-	// End of user code user operations
+        // End of user code get label text
+        return labelText;
+    }
+
+    /**
+     * @see org.eclipse.sirius.editor.properties.sections.AbstractTextPropertySection#getFeature()
+     */
+    public EAttribute getFeature() {
+        return DescriptionPackage.eINSTANCE.getDAnnotationEntry_Details();
+    }
+
+    /**
+     * @see org.eclipse.sirius.editor.properties.sections.AbstractTextPropertySection#getFeatureValue(String)
+     */
+    protected Object getFeatureValue(String newText) {
+        String[] values = newText.substring(1, newText.length() - 1).split(", ");
+        return Arrays.asList(values);
+    }
+
+    /**
+     * @see org.eclipse.sirius.editor.properties.sections.AbstractTextPropertySection#isEqual(String)
+     */
+    protected boolean isEqual(String newText) {
+        return getFeatureAsText().equals(newText);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
+        super.createControls(parent, tabbedPropertySheetPage);
+
+        // Start of user code create controls
+
+        // End of user code create controls
+
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    protected String getPropertyDescription() {
+        return "";
+    }
+
+    // Start of user code user operations
+
+    // End of user code user operations
 }

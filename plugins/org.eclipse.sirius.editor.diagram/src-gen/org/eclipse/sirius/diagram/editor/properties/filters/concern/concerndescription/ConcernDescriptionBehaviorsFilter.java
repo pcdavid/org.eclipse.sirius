@@ -17,30 +17,27 @@ import org.eclipse.sirius.editor.properties.filters.common.ViewpointPropertyFilt
 
 // End of user code specific imports
 
-
 /**
  * A filter for the behaviors property section.
  */
 public class ConcernDescriptionBehaviorsFilter extends ViewpointPropertyFilter {
 
-	/**
-	 * {@inheritDoc}
-	 */
-	protected EStructuralFeature getFeature() {
-		return ConcernPackage.eINSTANCE.getConcernDescription_Behaviors();
-	}
-	
-	/**
-	 * {@inheritDoc}
-	 */
-	protected boolean isRightInputType(Object arg0) {
+    /**
+     * {@inheritDoc}
+     */
+    protected EStructuralFeature getFeature() {
+        return ConcernPackage.eINSTANCE.getConcernDescription_Behaviors();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    protected boolean isRightInputType(Object arg0) {
         return arg0 instanceof org.eclipse.sirius.diagram.description.concern.ConcernDescription;
     }
-	
-	// Start of user code user methods
+
+    // Start of user code user methods
 
     // End of user code user methods
-	
-	
 
 }

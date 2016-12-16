@@ -17,30 +17,27 @@ import org.eclipse.sirius.tree.description.DescriptionPackage;
 
 // End of user code specific imports
 
-
 /**
  * A filter for the dragSource property section.
  */
 public class TreeItemContainerDropToolDragSourceFilter extends ViewpointPropertyFilter {
 
-	/**
-	 * {@inheritDoc}
-	 */
-	protected EStructuralFeature getFeature() {
-		return DescriptionPackage.eINSTANCE.getTreeItemContainerDropTool_DragSource();
-	}
-	
-	/**
-	 * {@inheritDoc}
-	 */
-	protected boolean isRightInputType(Object arg0) {
+    /**
+     * {@inheritDoc}
+     */
+    protected EStructuralFeature getFeature() {
+        return DescriptionPackage.eINSTANCE.getTreeItemContainerDropTool_DragSource();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    protected boolean isRightInputType(Object arg0) {
         return arg0 instanceof org.eclipse.sirius.tree.description.TreeItemContainerDropTool;
     }
-	
-	// Start of user code user methods
+
+    // Start of user code user methods
 
     // End of user code user methods
-	
-	
 
 }

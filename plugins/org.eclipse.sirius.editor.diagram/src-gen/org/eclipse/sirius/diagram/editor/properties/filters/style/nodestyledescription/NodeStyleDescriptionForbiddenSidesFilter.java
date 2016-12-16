@@ -9,6 +9,8 @@
  *******************************************************************************/
 package org.eclipse.sirius.diagram.editor.properties.filters.style.nodestyledescription;
 
+import org.eclipse.emf.ecore.EObject;
+
 // Start of user code specific imports
 
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -20,27 +22,26 @@ import org.eclipse.sirius.editor.properties.filters.common.ViewpointPropertyFilt
 
 // End of user code specific imports
 
-
 /**
  * A filter for the forbiddenSides property section.
  */
 public class NodeStyleDescriptionForbiddenSidesFilter extends ViewpointPropertyFilter {
 
-	/**
-	 * {@inheritDoc}
-	 */
-	protected EStructuralFeature getFeature() {
-		return StylePackage.eINSTANCE.getNodeStyleDescription_ForbiddenSides();
-	}
-	
-	/**
-	 * {@inheritDoc}
-	 */
-	protected boolean isRightInputType(Object arg0) {
+    /**
+     * {@inheritDoc}
+     */
+    protected EStructuralFeature getFeature() {
+        return StylePackage.eINSTANCE.getNodeStyleDescription_ForbiddenSides();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    protected boolean isRightInputType(Object arg0) {
         return arg0 instanceof org.eclipse.sirius.diagram.description.style.NodeStyleDescription;
     }
-	
-	// Start of user code user methods
+
+    // Start of user code user methods
 
     @Override
     public boolean select(Object object) {
@@ -57,7 +58,5 @@ public class NodeStyleDescriptionForbiddenSidesFilter extends ViewpointPropertyF
         return false;
     }
     // End of user code user methods
-	
-	
 
 }

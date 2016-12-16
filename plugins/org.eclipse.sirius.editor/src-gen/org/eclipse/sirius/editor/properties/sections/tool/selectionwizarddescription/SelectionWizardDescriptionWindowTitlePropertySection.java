@@ -25,100 +25,101 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 // End of user code imports
 
 /**
- * A section for the windowTitle property of a SelectionWizardDescription object.
+ * A section for the windowTitle property of a SelectionWizardDescription
+ * object.
  */
-public class SelectionWizardDescriptionWindowTitlePropertySection extends AbstractTextPropertySection  {
-	
-	/** Help control of the section. */
-	protected CLabel help;
-	
-	/**
-	 * @see org.eclipse.ui.views.properties.tabbed.view.ITabbedPropertySection#refresh()
-	 */
-	public void refresh() {
-		super.refresh();
+public class SelectionWizardDescriptionWindowTitlePropertySection extends AbstractTextPropertySection {
 
-		final String tooltip = getToolTipText();
-		if (tooltip != null && help != null) {
-			help.setToolTipText(getToolTipText());
-		}
-	}
-	
-	/**
-	 * @see org.eclipse.sirius.editor.properties.sections.AbstractTextPropertySection#getDefaultLabelText()
-	 */
-	protected String getDefaultLabelText() {
-	    return "WindowTitle"; //$NON-NLS-1$
-	}
-	
-	/**
-	 * @see org.eclipse.sirius.editor.properties.sections.AbstractTextPropertySection#getLabelText()
-	 */
-	protected String getLabelText() {
-		String labelText;
-	    labelText = super.getLabelText() + "*:"; //$NON-NLS-1$
-		// Start of user code get label text
+    /** Help control of the section. */
+    protected CLabel help;
 
-	    // End of user code get label text
-	    return labelText;
-	}
-	
-	/**
-	 * @see org.eclipse.sirius.editor.properties.sections.AbstractTextPropertySection#getFeature()
-	 */
-	public EAttribute getFeature() {
-		return ToolPackage.eINSTANCE.getSelectionWizardDescription_WindowTitle();
-	}
-	
-	/**
-	 * @see org.eclipse.sirius.editor.properties.sections.AbstractTextPropertySection#getFeatureValue(String)
-	 */
-	protected Object getFeatureValue(String newText) {
-		return newText;
-	}
-	
-	/**
-	 * @see org.eclipse.sirius.editor.properties.sections.AbstractTextPropertySection#isEqual(String)
-	 */
-	protected boolean isEqual(String newText) {
-		return getFeatureAsText().equals(newText);
-	}
-	
-	/**
-	 * {@inheritDoc}
-	 */
-	public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
-	    super.createControls(parent, tabbedPropertySheetPage);
-	    /*
-	     * We set the color as it's a TranslatableMessage
-	     */
-	    text.setBackground(SiriusEditor.getColorRegistry().get("light_blue"));
-	    
-	    text.setToolTipText(getToolTipText());
-	    	    
-	    help = getWidgetFactory().createCLabel(composite,"");
-	    FormData data = new FormData();
+    /**
+     * @see org.eclipse.ui.views.properties.tabbed.view.ITabbedPropertySection#refresh()
+     */
+    public void refresh() {
+        super.refresh();
+
+        final String tooltip = getToolTipText();
+        if (tooltip != null && help != null) {
+            help.setToolTipText(getToolTipText());
+        }
+    }
+
+    /**
+     * @see org.eclipse.sirius.editor.properties.sections.AbstractTextPropertySection#getDefaultLabelText()
+     */
+    protected String getDefaultLabelText() {
+        return "WindowTitle"; //$NON-NLS-1$
+    }
+
+    /**
+     * @see org.eclipse.sirius.editor.properties.sections.AbstractTextPropertySection#getLabelText()
+     */
+    protected String getLabelText() {
+        String labelText;
+        labelText = super.getLabelText() + "*:"; //$NON-NLS-1$
+        // Start of user code get label text
+
+        // End of user code get label text
+        return labelText;
+    }
+
+    /**
+     * @see org.eclipse.sirius.editor.properties.sections.AbstractTextPropertySection#getFeature()
+     */
+    public EAttribute getFeature() {
+        return ToolPackage.eINSTANCE.getSelectionWizardDescription_WindowTitle();
+    }
+
+    /**
+     * @see org.eclipse.sirius.editor.properties.sections.AbstractTextPropertySection#getFeatureValue(String)
+     */
+    protected Object getFeatureValue(String newText) {
+        return newText;
+    }
+
+    /**
+     * @see org.eclipse.sirius.editor.properties.sections.AbstractTextPropertySection#isEqual(String)
+     */
+    protected boolean isEqual(String newText) {
+        return getFeatureAsText().equals(newText);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
+        super.createControls(parent, tabbedPropertySheetPage);
+        /*
+         * We set the color as it's a TranslatableMessage
+         */
+        text.setBackground(SiriusEditor.getColorRegistry().get("light_blue"));
+
+        text.setToolTipText(getToolTipText());
+
+        help = getWidgetFactory().createCLabel(composite, "");
+        FormData data = new FormData();
         data.top = new FormAttachment(text, 0, SWT.TOP);
-        data.left = new FormAttachment(nameLabel);     
+        data.left = new FormAttachment(nameLabel);
         help.setLayoutData(data);
         help.setImage(getHelpIcon());
-        help.setToolTipText(getToolTipText());	    
-	     nameLabel.setFont(SiriusEditor.getFontRegistry().get("required"));
-	    
-	    // Start of user code create controls
+        help.setToolTipText(getToolTipText());
+        nameLabel.setFont(SiriusEditor.getFontRegistry().get("required"));
 
-	    // End of user code create controls
-	    
-	}
-	
-	/**
-	 * {@inheritDoc}
-	 */
-	protected String getPropertyDescription() {
-		return "The title of the window";
-	}
-	
-	// Start of user code user operations
+        // Start of user code create controls
 
-	// End of user code user operations
+        // End of user code create controls
+
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    protected String getPropertyDescription() {
+        return "The title of the window";
+    }
+
+    // Start of user code user operations
+
+    // End of user code user operations
 }

@@ -26,59 +26,58 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
  * A section for the lineStyle property of a EdgeStyleDescription object.
  */
 public class EdgeStyleDescriptionLineStylePropertySection extends AbstractComboPropertySection {
-	/**
-	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractComboPropertySection#getDefaultLabelText()
-	 */
-	protected String getDefaultLabelText() {
-	    return "LineStyle"; //$NON-NLS-1$
-	}
-	
-	/**
-	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractComboPropertySection#getLabelText()
-	 */
-	protected String getLabelText() {
-		String labelText;
-		labelText = super.getLabelText() + ":"; //$NON-NLS-1$
-		// Start of user code get label text
+    /**
+     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractComboPropertySection#getDefaultLabelText()
+     */
+    protected String getDefaultLabelText() {
+        return "LineStyle"; //$NON-NLS-1$
+    }
 
-	    // End of user code get label text
-	    return labelText;
-	}
-	
-	/**
-	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractComboPropertySection#getFeature()
-	 */
-	protected EAttribute getFeature() {
-		return StylePackage.eINSTANCE.getEdgeStyleDescription_LineStyle();
-	}
+    /**
+     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractComboPropertySection#getLabelText()
+     */
+    protected String getLabelText() {
+        String labelText;
+        labelText = super.getLabelText() + ":"; //$NON-NLS-1$
+        // Start of user code get label text
 
-	/**
-	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractComboPropertySection#getFeatureValue(int)
-	 */
-	protected Object getFeatureValue(int index) {
-		return getChoiceOfValues().get(index);
-	}
+        // End of user code get label text
+        return labelText;
+    }
 
-	/**
-	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractComboPropertySection#isEqual(int)
-	 */
-	protected boolean isEqual(int index) {
-		return getChoiceOfValues().get(index).equals(eObject.eGet(getFeature()));
-	}
+    /**
+     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractComboPropertySection#getFeature()
+     */
+    protected EAttribute getFeature() {
+        return StylePackage.eINSTANCE.getEdgeStyleDescription_LineStyle();
+    }
 
-	/**
-	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractComboPropertySection#getEnumerationFeatureValues()
-	 */
-	protected List<?> getChoiceOfValues() {
-		return LineStyle.VALUES;
-	}
+    /**
+     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractComboPropertySection#getFeatureValue(int)
+     */
+    protected Object getFeatureValue(int index) {
+        return getChoiceOfValues().get(index);
+    }
 
-	/**
-	 * {@inheritDoc}
-	 */
-	public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
-	    super.createControls(parent, tabbedPropertySheetPage);	  	    
-	   
-	
-	}
+    /**
+     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractComboPropertySection#isEqual(int)
+     */
+    protected boolean isEqual(int index) {
+        return getChoiceOfValues().get(index).equals(eObject.eGet(getFeature()));
+    }
+
+    /**
+     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractComboPropertySection#getEnumerationFeatureValues()
+     */
+    protected List<?> getChoiceOfValues() {
+        return LineStyle.VALUES;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
+        super.createControls(parent, tabbedPropertySheetPage);
+
+    }
 }

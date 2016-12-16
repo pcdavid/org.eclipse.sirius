@@ -31,95 +31,96 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 // End of user code imports
 
 /**
- * A section for the minValueComputationExpression property of a InterpolatedColor object.
+ * A section for the minValueComputationExpression property of a
+ * InterpolatedColor object.
  */
 public class InterpolatedColorMinValueComputationExpressionPropertySection extends AbstractTextWithButtonPropertySection implements ContentProposalClient {
-	
-	/** Help control of the section. */
-	protected CLabel help;
-	
-	/**
-	 * @see org.eclipse.ui.views.properties.tabbed.view.ITabbedPropertySection#refresh()
-	 */
-	public void refresh() {
-		super.refresh();
 
-		final String tooltip = getToolTipText();
-		if (tooltip != null && help != null) {
-			help.setToolTipText(getToolTipText());
-		}
-	}
-	
-	/**
-	 * @see org.eclipse.sirius.editor.properties.sections.AbstractTextWithButtonPropertySection#getDefaultLabelText()
-	 */
-	protected String getDefaultLabelText() {
-	    return "MinValueComputationExpression"; //$NON-NLS-1$
-	}
-	
-	/**
-	 * @see org.eclipse.sirius.editor.properties.sections.AbstractTextWithButtonPropertySection#getLabelText()
-	 */
-	protected String getLabelText() {
-		String labelText;
-	    labelText = super.getLabelText() + "*:"; //$NON-NLS-1$
-		// Start of user code get label text
+    /** Help control of the section. */
+    protected CLabel help;
 
-	    // End of user code get label text
-	    return labelText;
-	}
-	
-	/**
-	 * @see org.eclipse.sirius.editor.properties.sections.AbstractTextWithButtonPropertySection#getFeature()
-	 */
-	public EAttribute getFeature() {
-		return DescriptionPackage.eINSTANCE.getInterpolatedColor_MinValueComputationExpression();
-	}
-	
-	/**
-	 * @see org.eclipse.sirius.editor.properties.sections.AbstractTextWithButtonPropertySection#getFeatureValue(String)
-	 */
-	protected Object getFeatureValue(String newText) {
-		return newText;
-	}
-	
-	/**
-	 * @see org.eclipse.sirius.editor.properties.sections.AbstractTextWithButtonPropertySection#isEqual(String)
-	 */
-	protected boolean isEqual(String newText) {
-		return getFeatureAsText().equals(newText);
-	}
-	
-	/**
-	 * {@inheritDoc}
-	 */
-	public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
-	    super.createControls(parent, tabbedPropertySheetPage);
-	    /*
-	     * We set the color as it's a InterpretedExpression
-	     */
-	    text.setBackground(SiriusEditor.getColorRegistry().get("yellow"));
-	    
-	    text.setToolTipText(getToolTipText());
-	    	    
-	    help = getWidgetFactory().createCLabel(composite,"");
-	    FormData data = new FormData();
+    /**
+     * @see org.eclipse.ui.views.properties.tabbed.view.ITabbedPropertySection#refresh()
+     */
+    public void refresh() {
+        super.refresh();
+
+        final String tooltip = getToolTipText();
+        if (tooltip != null && help != null) {
+            help.setToolTipText(getToolTipText());
+        }
+    }
+
+    /**
+     * @see org.eclipse.sirius.editor.properties.sections.AbstractTextWithButtonPropertySection#getDefaultLabelText()
+     */
+    protected String getDefaultLabelText() {
+        return "MinValueComputationExpression"; //$NON-NLS-1$
+    }
+
+    /**
+     * @see org.eclipse.sirius.editor.properties.sections.AbstractTextWithButtonPropertySection#getLabelText()
+     */
+    protected String getLabelText() {
+        String labelText;
+        labelText = super.getLabelText() + "*:"; //$NON-NLS-1$
+        // Start of user code get label text
+
+        // End of user code get label text
+        return labelText;
+    }
+
+    /**
+     * @see org.eclipse.sirius.editor.properties.sections.AbstractTextWithButtonPropertySection#getFeature()
+     */
+    public EAttribute getFeature() {
+        return DescriptionPackage.eINSTANCE.getInterpolatedColor_MinValueComputationExpression();
+    }
+
+    /**
+     * @see org.eclipse.sirius.editor.properties.sections.AbstractTextWithButtonPropertySection#getFeatureValue(String)
+     */
+    protected Object getFeatureValue(String newText) {
+        return newText;
+    }
+
+    /**
+     * @see org.eclipse.sirius.editor.properties.sections.AbstractTextWithButtonPropertySection#isEqual(String)
+     */
+    protected boolean isEqual(String newText) {
+        return getFeatureAsText().equals(newText);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
+        super.createControls(parent, tabbedPropertySheetPage);
+        /*
+         * We set the color as it's a InterpretedExpression
+         */
+        text.setBackground(SiriusEditor.getColorRegistry().get("yellow"));
+
+        text.setToolTipText(getToolTipText());
+
+        help = getWidgetFactory().createCLabel(composite, "");
+        FormData data = new FormData();
         data.top = new FormAttachment(text, 0, SWT.TOP);
-        data.left = new FormAttachment(nameLabel);     
+        data.left = new FormAttachment(nameLabel);
         help.setLayoutData(data);
         help.setImage(getHelpIcon());
-        help.setToolTipText(getToolTipText());	    
-	     nameLabel.setFont(SiriusEditor.getFontRegistry().get("required"));
-	    
-         TypeContentProposalProvider.bindPluginsCompletionProcessors(this, text);
-	    
-	    // Start of user code create controls
+        help.setToolTipText(getToolTipText());
+        nameLabel.setFont(SiriusEditor.getFontRegistry().get("required"));
 
-	    // End of user code create controls
-	    
-	}
+        TypeContentProposalProvider.bindPluginsCompletionProcessors(this, text);
 
-	@Override
+        // Start of user code create controls
+
+        // End of user code create controls
+
+    }
+
+    @Override
     protected SelectionListener createButtonListener() {
         return new SelectionAdapter() {
             public void widgetSelected(SelectionEvent e) {
@@ -130,15 +131,15 @@ public class InterpolatedColorMinValueComputationExpressionPropertySection exten
             }
         };
     }
-	
-	/**
-	 * {@inheritDoc}
-	 */
-	protected String getPropertyDescription() {
-		return "";
-	}
-	
-	// Start of user code user operations
 
-	// End of user code user operations
+    /**
+     * {@inheritDoc}
+     */
+    protected String getPropertyDescription() {
+        return "";
+    }
+
+    // Start of user code user operations
+
+    // End of user code user operations
 }

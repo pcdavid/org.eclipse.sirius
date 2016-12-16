@@ -17,30 +17,27 @@ import org.eclipse.sirius.properties.PropertiesPackage;
 
 // End of user code specific imports
 
-
 /**
  * A filter for the domainClass property section.
  */
 public class GroupDescriptionDomainClassFilter extends ViewpointPropertyFilter {
 
-	/**
-	 * {@inheritDoc}
-	 */
-	protected EStructuralFeature getFeature() {
-		return PropertiesPackage.eINSTANCE.getGroupDescription_DomainClass();
-	}
-	
-	/**
-	 * {@inheritDoc}
-	 */
-	protected boolean isRightInputType(Object arg0) {
+    /**
+     * {@inheritDoc}
+     */
+    protected EStructuralFeature getFeature() {
+        return PropertiesPackage.eINSTANCE.getGroupDescription_DomainClass();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    protected boolean isRightInputType(Object arg0) {
         return arg0 instanceof org.eclipse.sirius.properties.GroupDescription;
     }
-	
-	// Start of user code user methods
+
+    // Start of user code user methods
 
     // End of user code user methods
-	
-	
 
 }

@@ -17,30 +17,27 @@ import org.eclipse.sirius.tree.description.DescriptionPackage;
 
 // End of user code specific imports
 
-
 /**
  * A filter for the treeDescription property section.
  */
 public class TreeNavigationDescriptionTreeDescriptionFilter extends ViewpointPropertyFilter {
 
-	/**
-	 * {@inheritDoc}
-	 */
-	protected EStructuralFeature getFeature() {
-		return DescriptionPackage.eINSTANCE.getTreeNavigationDescription_TreeDescription();
-	}
-	
-	/**
-	 * {@inheritDoc}
-	 */
-	protected boolean isRightInputType(Object arg0) {
+    /**
+     * {@inheritDoc}
+     */
+    protected EStructuralFeature getFeature() {
+        return DescriptionPackage.eINSTANCE.getTreeNavigationDescription_TreeDescription();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    protected boolean isRightInputType(Object arg0) {
         return arg0 instanceof org.eclipse.sirius.tree.description.TreeNavigationDescription;
     }
-	
-	// Start of user code user methods
+
+    // Start of user code user methods
 
     // End of user code user methods
-	
-	
 
 }

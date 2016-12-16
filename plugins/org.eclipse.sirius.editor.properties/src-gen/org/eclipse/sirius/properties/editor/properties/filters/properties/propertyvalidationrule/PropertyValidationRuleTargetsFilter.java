@@ -17,30 +17,27 @@ import org.eclipse.sirius.properties.PropertiesPackage;
 
 // End of user code specific imports
 
-
 /**
  * A filter for the targets property section.
  */
 public class PropertyValidationRuleTargetsFilter extends ViewpointPropertyFilter {
 
-	/**
-	 * {@inheritDoc}
-	 */
-	protected EStructuralFeature getFeature() {
-		return PropertiesPackage.eINSTANCE.getPropertyValidationRule_Targets();
-	}
-	
-	/**
-	 * {@inheritDoc}
-	 */
-	protected boolean isRightInputType(Object arg0) {
+    /**
+     * {@inheritDoc}
+     */
+    protected EStructuralFeature getFeature() {
+        return PropertiesPackage.eINSTANCE.getPropertyValidationRule_Targets();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    protected boolean isRightInputType(Object arg0) {
         return arg0 instanceof org.eclipse.sirius.properties.PropertyValidationRule;
     }
-	
-	// Start of user code user methods
+
+    // Start of user code user methods
 
     // End of user code user methods
-	
-	
 
 }

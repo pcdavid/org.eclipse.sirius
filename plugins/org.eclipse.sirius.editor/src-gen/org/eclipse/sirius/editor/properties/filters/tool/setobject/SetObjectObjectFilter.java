@@ -17,30 +17,27 @@ import org.eclipse.sirius.viewpoint.description.tool.ToolPackage;
 
 // End of user code specific imports
 
-
 /**
  * A filter for the object property section.
  */
 public class SetObjectObjectFilter extends ViewpointPropertyFilter {
 
-	/**
-	 * {@inheritDoc}
-	 */
-	protected EStructuralFeature getFeature() {
-		return ToolPackage.eINSTANCE.getSetObject_Object();
-	}
-	
-	/**
-	 * {@inheritDoc}
-	 */
-	protected boolean isRightInputType(Object arg0) {
+    /**
+     * {@inheritDoc}
+     */
+    protected EStructuralFeature getFeature() {
+        return ToolPackage.eINSTANCE.getSetObject_Object();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    protected boolean isRightInputType(Object arg0) {
         return arg0 instanceof org.eclipse.sirius.viewpoint.description.tool.SetObject;
     }
-	
-	// Start of user code user methods
+
+    // Start of user code user methods
 
     // End of user code user methods
-	
-	
 
 }

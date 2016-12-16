@@ -17,30 +17,27 @@ import org.eclipse.sirius.tree.description.DescriptionPackage;
 
 // End of user code specific imports
 
-
 /**
  * A filter for the containers property section.
  */
 public class TreeItemDragToolContainersFilter extends ViewpointPropertyFilter {
 
-	/**
-	 * {@inheritDoc}
-	 */
-	protected EStructuralFeature getFeature() {
-		return DescriptionPackage.eINSTANCE.getTreeItemDragTool_Containers();
-	}
-	
-	/**
-	 * {@inheritDoc}
-	 */
-	protected boolean isRightInputType(Object arg0) {
+    /**
+     * {@inheritDoc}
+     */
+    protected EStructuralFeature getFeature() {
+        return DescriptionPackage.eINSTANCE.getTreeItemDragTool_Containers();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    protected boolean isRightInputType(Object arg0) {
         return arg0 instanceof org.eclipse.sirius.tree.description.TreeItemDragTool;
     }
-	
-	// Start of user code user methods
+
+    // Start of user code user methods
 
     // End of user code user methods
-	
-	
 
 }

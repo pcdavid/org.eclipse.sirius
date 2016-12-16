@@ -7,7 +7,7 @@
  * Contributors:
  *    Obeo - initial API and implementation
  *******************************************************************************/
- package org.eclipse.sirius.editor.editorPlugin;
+package org.eclipse.sirius.editor.editorPlugin;
 
 // Start of user code imports
 
@@ -38,14 +38,14 @@ import com.google.common.collect.Sets;
  * This is the central singleton for the Viewpoint editor plugin.
  */
 public final class SiriusEditorPlugin extends EMFPlugin {
-	/**
-	 * Keep track of the singleton.
-	 */
-	public static final SiriusEditorPlugin INSTANCE = new SiriusEditorPlugin();
-	
+    /**
+     * Keep track of the singleton.
+     */
+    public static final SiriusEditorPlugin INSTANCE = new SiriusEditorPlugin();
+
     /** the plugin ID **/
     public static final String PLUGIN_ID = "org.eclipse.sirius.editor";
-    
+
     /** Full path of the help icon. */
     public static final String ICONS_PREFERENCES_HELP = "icons/full/help.gif"; //$NON-NLS-1$
 
@@ -55,43 +55,43 @@ public final class SiriusEditorPlugin extends EMFPlugin {
      */
     private ImageRegistry imageRegistry = null;
 
-	/**
-	 * Keep track of the singleton.
-	 */
-	private static Implementation plugin;
-	
+    /**
+     * Keep track of the singleton.
+     */
+    private static Implementation plugin;
+
     private static Set<String> siriusRuntimeBundles = Sets.newLinkedHashSet();
-	
-	// Start of user code fields
+
+    // Start of user code fields
 
     private static WorkspaceEPackageRegistry workspaceEPackageRegistry;
 
-	// End of user code fields
+    // End of user code fields
 
-	/**
-	 * Create the instance.
-	 */
-	public SiriusEditorPlugin() {
-		super
-		  (new ResourceLocator [] {
-		   });
-	}
+    /**
+     * Create the instance.
+     */
+    public SiriusEditorPlugin() {
+        super(new ResourceLocator[] {});
+    }
 
-	/**
-	 * Returns the singleton instance of the Eclipse plugin.
-	 * @return the singleton instance.
-	 */
-	public ResourceLocator getPluginResourceLocator() {
-		return plugin;
-	}
+    /**
+     * Returns the singleton instance of the Eclipse plugin.
+     * 
+     * @return the singleton instance.
+     */
+    public ResourceLocator getPluginResourceLocator() {
+        return plugin;
+    }
 
-	/**
-	 * Returns the singleton instance of the Eclipse plugin.
-	 * @return the singleton instance.
-	 */
-	public static Implementation getPlugin() {
-		return plugin;
-	}
+    /**
+     * Returns the singleton instance of the Eclipse plugin.
+     * 
+     * @return the singleton instance.
+     */
+    public static Implementation getPlugin() {
+        return plugin;
+    }
 
     /**
      * Returns the image registry for this UI plug-in.
@@ -174,7 +174,7 @@ public final class SiriusEditorPlugin extends EMFPlugin {
     public static ImageDescriptor getBundledImageDescriptor(String path) {
         return AbstractUIPlugin.imageDescriptorFromPlugin(PLUGIN_ID, path);
     }
-    
+
     /**
      * return a set containing all the symbolic names of bundles which are part
      * of the Sirius runtime and are currently installed in the platform.
@@ -187,22 +187,22 @@ public final class SiriusEditorPlugin extends EMFPlugin {
         return siriusRuntimeBundles;
     }
 
-	/**
-	 * The actual implementation of the Eclipse <b>Plugin</b>.
-	 */
-	public static class Implementation extends EclipseUIPlugin {
-		/**
-		 * Creates an instance.
-		 */
-		public Implementation() {
-			super();
+    /**
+     * The actual implementation of the Eclipse <b>Plugin</b>.
+     */
+    public static class Implementation extends EclipseUIPlugin {
+        /**
+         * Creates an instance.
+         */
+        public Implementation() {
+            super();
 
-			// Remember the static instance.
-			//
-			plugin = this;
-		}
-		
-		// Start of user code Implementation specifics
+            // Remember the static instance.
+            //
+            plugin = this;
+        }
+
+        // Start of user code Implementation specifics
         @Override
         public void start(BundleContext context) throws Exception {
             super.start(context);
@@ -240,6 +240,6 @@ public final class SiriusEditorPlugin extends EMFPlugin {
             return workspaceEPackageRegistry;
         }
 
-		// End of user code Implementation specifics
-	}
+        // End of user code Implementation specifics
+    }
 }

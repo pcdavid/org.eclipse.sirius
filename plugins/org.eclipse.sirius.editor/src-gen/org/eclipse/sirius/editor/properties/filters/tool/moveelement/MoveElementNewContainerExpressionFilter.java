@@ -17,30 +17,27 @@ import org.eclipse.sirius.viewpoint.description.tool.ToolPackage;
 
 // End of user code specific imports
 
-
 /**
  * A filter for the newContainerExpression property section.
  */
 public class MoveElementNewContainerExpressionFilter extends ViewpointPropertyFilter {
 
-	/**
-	 * {@inheritDoc}
-	 */
-	protected EStructuralFeature getFeature() {
-		return ToolPackage.eINSTANCE.getMoveElement_NewContainerExpression();
-	}
-	
-	/**
-	 * {@inheritDoc}
-	 */
-	protected boolean isRightInputType(Object arg0) {
+    /**
+     * {@inheritDoc}
+     */
+    protected EStructuralFeature getFeature() {
+        return ToolPackage.eINSTANCE.getMoveElement_NewContainerExpression();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    protected boolean isRightInputType(Object arg0) {
         return arg0 instanceof org.eclipse.sirius.viewpoint.description.tool.MoveElement;
     }
-	
-	// Start of user code user methods
+
+    // Start of user code user methods
 
     // End of user code user methods
-	
-	
 
 }

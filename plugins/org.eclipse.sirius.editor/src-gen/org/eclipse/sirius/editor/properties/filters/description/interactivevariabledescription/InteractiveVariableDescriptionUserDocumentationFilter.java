@@ -17,30 +17,27 @@ import org.eclipse.sirius.viewpoint.description.DescriptionPackage;
 
 // End of user code specific imports
 
-
 /**
  * A filter for the userDocumentation property section.
  */
 public class InteractiveVariableDescriptionUserDocumentationFilter extends ViewpointPropertyFilter {
 
-	/**
-	 * {@inheritDoc}
-	 */
-	protected EStructuralFeature getFeature() {
-		return DescriptionPackage.eINSTANCE.getInteractiveVariableDescription_UserDocumentation();
-	}
-	
-	/**
-	 * {@inheritDoc}
-	 */
-	protected boolean isRightInputType(Object arg0) {
+    /**
+     * {@inheritDoc}
+     */
+    protected EStructuralFeature getFeature() {
+        return DescriptionPackage.eINSTANCE.getInteractiveVariableDescription_UserDocumentation();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    protected boolean isRightInputType(Object arg0) {
         return arg0 instanceof org.eclipse.sirius.viewpoint.description.InteractiveVariableDescription;
     }
-	
-	// Start of user code user methods
+
+    // Start of user code user methods
 
     // End of user code user methods
-	
-	
 
 }

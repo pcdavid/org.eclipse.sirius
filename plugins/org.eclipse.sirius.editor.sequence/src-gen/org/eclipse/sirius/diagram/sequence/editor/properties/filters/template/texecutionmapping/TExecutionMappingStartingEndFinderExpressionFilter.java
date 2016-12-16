@@ -17,30 +17,27 @@ import org.eclipse.sirius.editor.properties.filters.common.ViewpointPropertyFilt
 
 // End of user code specific imports
 
-
 /**
  * A filter for the startingEndFinderExpression property section.
  */
 public class TExecutionMappingStartingEndFinderExpressionFilter extends ViewpointPropertyFilter {
 
-	/**
-	 * {@inheritDoc}
-	 */
-	protected EStructuralFeature getFeature() {
-		return TemplatePackage.eINSTANCE.getTExecutionMapping_StartingEndFinderExpression();
-	}
-	
-	/**
-	 * {@inheritDoc}
-	 */
-	protected boolean isRightInputType(Object arg0) {
+    /**
+     * {@inheritDoc}
+     */
+    protected EStructuralFeature getFeature() {
+        return TemplatePackage.eINSTANCE.getTExecutionMapping_StartingEndFinderExpression();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    protected boolean isRightInputType(Object arg0) {
         return arg0 instanceof org.eclipse.sirius.diagram.sequence.template.TExecutionMapping;
     }
-	
-	// Start of user code user methods
+
+    // Start of user code user methods
 
     // End of user code user methods
-	
-	
 
 }

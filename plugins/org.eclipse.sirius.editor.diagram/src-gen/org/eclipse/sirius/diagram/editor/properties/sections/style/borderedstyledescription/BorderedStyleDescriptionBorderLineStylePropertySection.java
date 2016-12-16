@@ -27,71 +27,72 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 // End of user code imports
 
 /**
- * A section for the borderLineStyle property of a BorderedStyleDescription object.
+ * A section for the borderLineStyle property of a BorderedStyleDescription
+ * object.
  */
 public class BorderedStyleDescriptionBorderLineStylePropertySection extends AbstractComboPropertySection {
-	/**
-	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractComboPropertySection#getDefaultLabelText()
-	 */
-	protected String getDefaultLabelText() {
-	    return "BorderLineStyle"; //$NON-NLS-1$
-	}
-	
-	/**
-	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractComboPropertySection#getLabelText()
-	 */
-	protected String getLabelText() {
-		String labelText;
-		labelText = super.getLabelText() + ":"; //$NON-NLS-1$
-		// Start of user code get label text
+    /**
+     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractComboPropertySection#getDefaultLabelText()
+     */
+    protected String getDefaultLabelText() {
+        return "BorderLineStyle"; //$NON-NLS-1$
+    }
 
-	    // End of user code get label text
-	    return labelText;
-	}
-	
-	/**
-	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractComboPropertySection#getFeature()
-	 */
-	protected EAttribute getFeature() {
-		return StylePackage.eINSTANCE.getBorderedStyleDescription_BorderLineStyle();
-	}
+    /**
+     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractComboPropertySection#getLabelText()
+     */
+    protected String getLabelText() {
+        String labelText;
+        labelText = super.getLabelText() + ":"; //$NON-NLS-1$
+        // Start of user code get label text
 
-	/**
-	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractComboPropertySection#getFeatureValue(int)
-	 */
-	protected Object getFeatureValue(int index) {
-		return getChoiceOfValues().get(index);
-	}
+        // End of user code get label text
+        return labelText;
+    }
 
-	/**
-	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractComboPropertySection#isEqual(int)
-	 */
-	protected boolean isEqual(int index) {
-		return getChoiceOfValues().get(index).equals(eObject.eGet(getFeature()));
-	}
+    /**
+     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractComboPropertySection#getFeature()
+     */
+    protected EAttribute getFeature() {
+        return StylePackage.eINSTANCE.getBorderedStyleDescription_BorderLineStyle();
+    }
 
-	/**
-	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractComboPropertySection#getEnumerationFeatureValues()
-	 */
-	protected List<?> getChoiceOfValues() {
-		return LineStyle.VALUES;
-	}
+    /**
+     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractComboPropertySection#getFeatureValue(int)
+     */
+    protected Object getFeatureValue(int index) {
+        return getChoiceOfValues().get(index);
+    }
 
-	/**
-	 * {@inheritDoc}
-	 */
-	public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
-	    super.createControls(parent, tabbedPropertySheetPage);	  	    
-	   
-	    nameLabel.setToolTipText("The style of the border line.");
-	    	    
-	    CLabel help = getWidgetFactory().createCLabel(composite,"");
-	    FormData data = new FormData();
+    /**
+     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractComboPropertySection#isEqual(int)
+     */
+    protected boolean isEqual(int index) {
+        return getChoiceOfValues().get(index).equals(eObject.eGet(getFeature()));
+    }
+
+    /**
+     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractComboPropertySection#getEnumerationFeatureValues()
+     */
+    protected List<?> getChoiceOfValues() {
+        return LineStyle.VALUES;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
+        super.createControls(parent, tabbedPropertySheetPage);
+
+        nameLabel.setToolTipText("The style of the border line.");
+
+        CLabel help = getWidgetFactory().createCLabel(composite, "");
+        FormData data = new FormData();
         data.top = new FormAttachment(nameLabel, 0, SWT.TOP);
-        data.left = new FormAttachment(nameLabel);     
+        data.left = new FormAttachment(nameLabel);
         help.setLayoutData(data);
         help.setImage(getHelpIcon());
-        help.setToolTipText("The style of the border line.");	    
-	
-	}
+        help.setToolTipText("The style of the border line.");
+
+    }
 }

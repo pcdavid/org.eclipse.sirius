@@ -32,95 +32,96 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 // End of user code imports
 
 /**
- * A section for the startingEndFinderExpression property of a DelimitedEventMapping object.
+ * A section for the startingEndFinderExpression property of a
+ * DelimitedEventMapping object.
  */
 public class DelimitedEventMappingStartingEndFinderExpressionPropertySection extends AbstractTextWithButtonPropertySection implements ContentProposalClient {
-	
-	/** Help control of the section. */
-	protected CLabel help;
-	
-	/**
-	 * @see org.eclipse.ui.views.properties.tabbed.view.ITabbedPropertySection#refresh()
-	 */
-	public void refresh() {
-		super.refresh();
 
-		final String tooltip = getToolTipText();
-		if (tooltip != null && help != null) {
-			help.setToolTipText(getToolTipText());
-		}
-	}
-	
-	/**
-	 * @see org.eclipse.sirius.diagram.sequence.editor.properties.sections.AbstractTextWithButtonPropertySection#getDefaultLabelText()
-	 */
-	protected String getDefaultLabelText() {
-	    return "StartingEndFinderExpression"; //$NON-NLS-1$
-	}
-	
-	/**
-	 * @see org.eclipse.sirius.diagram.sequence.editor.properties.sections.AbstractTextWithButtonPropertySection#getLabelText()
-	 */
-	protected String getLabelText() {
-		String labelText;
-	    labelText = super.getLabelText() + "*:"; //$NON-NLS-1$
-		// Start of user code get label text
+    /** Help control of the section. */
+    protected CLabel help;
 
-	    // End of user code get label text
-	    return labelText;
-	}
-	
-	/**
-	 * @see org.eclipse.sirius.diagram.sequence.editor.properties.sections.AbstractTextWithButtonPropertySection#getFeature()
-	 */
-	public EAttribute getFeature() {
-		return DescriptionPackage.eINSTANCE.getDelimitedEventMapping_StartingEndFinderExpression();
-	}
-	
-	/**
-	 * @see org.eclipse.sirius.diagram.sequence.editor.properties.sections.AbstractTextWithButtonPropertySection#getFeatureValue(String)
-	 */
-	protected Object getFeatureValue(String newText) {
-		return newText;
-	}
-	
-	/**
-	 * @see org.eclipse.sirius.diagram.sequence.editor.properties.sections.AbstractTextWithButtonPropertySection#isEqual(String)
-	 */
-	protected boolean isEqual(String newText) {
-		return getFeatureAsText().equals(newText);
-	}
-	
-	/**
-	 * {@inheritDoc}
-	 */
-	public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
-	    super.createControls(parent, tabbedPropertySheetPage);
-	    /*
-	     * We set the color as it's a InterpretedExpression
-	     */
-	    text.setBackground(SiriusEditor.getColorRegistry().get("yellow"));
-	    
-	    text.setToolTipText(getToolTipText());
-	    	    
-	    help = getWidgetFactory().createCLabel(composite,"");
-	    FormData data = new FormData();
+    /**
+     * @see org.eclipse.ui.views.properties.tabbed.view.ITabbedPropertySection#refresh()
+     */
+    public void refresh() {
+        super.refresh();
+
+        final String tooltip = getToolTipText();
+        if (tooltip != null && help != null) {
+            help.setToolTipText(getToolTipText());
+        }
+    }
+
+    /**
+     * @see org.eclipse.sirius.diagram.sequence.editor.properties.sections.AbstractTextWithButtonPropertySection#getDefaultLabelText()
+     */
+    protected String getDefaultLabelText() {
+        return "StartingEndFinderExpression"; //$NON-NLS-1$
+    }
+
+    /**
+     * @see org.eclipse.sirius.diagram.sequence.editor.properties.sections.AbstractTextWithButtonPropertySection#getLabelText()
+     */
+    protected String getLabelText() {
+        String labelText;
+        labelText = super.getLabelText() + "*:"; //$NON-NLS-1$
+        // Start of user code get label text
+
+        // End of user code get label text
+        return labelText;
+    }
+
+    /**
+     * @see org.eclipse.sirius.diagram.sequence.editor.properties.sections.AbstractTextWithButtonPropertySection#getFeature()
+     */
+    public EAttribute getFeature() {
+        return DescriptionPackage.eINSTANCE.getDelimitedEventMapping_StartingEndFinderExpression();
+    }
+
+    /**
+     * @see org.eclipse.sirius.diagram.sequence.editor.properties.sections.AbstractTextWithButtonPropertySection#getFeatureValue(String)
+     */
+    protected Object getFeatureValue(String newText) {
+        return newText;
+    }
+
+    /**
+     * @see org.eclipse.sirius.diagram.sequence.editor.properties.sections.AbstractTextWithButtonPropertySection#isEqual(String)
+     */
+    protected boolean isEqual(String newText) {
+        return getFeatureAsText().equals(newText);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
+        super.createControls(parent, tabbedPropertySheetPage);
+        /*
+         * We set the color as it's a InterpretedExpression
+         */
+        text.setBackground(SiriusEditor.getColorRegistry().get("yellow"));
+
+        text.setToolTipText(getToolTipText());
+
+        help = getWidgetFactory().createCLabel(composite, "");
+        FormData data = new FormData();
         data.top = new FormAttachment(text, 0, SWT.TOP);
-        data.left = new FormAttachment(nameLabel);     
+        data.left = new FormAttachment(nameLabel);
         help.setLayoutData(data);
         help.setImage(getHelpIcon());
-        help.setToolTipText(getToolTipText());	    
-	     nameLabel.setFont(SiriusEditor.getFontRegistry().get("required"));
-	    
-         TypeContentProposalProvider.bindPluginsCompletionProcessors(this, text);
-	    
-	    // Start of user code create controls
+        help.setToolTipText(getToolTipText());
+        nameLabel.setFont(SiriusEditor.getFontRegistry().get("required"));
 
-	    // End of user code create controls
-	    
-	}
+        TypeContentProposalProvider.bindPluginsCompletionProcessors(this, text);
 
-	@Override
+        // Start of user code create controls
+
+        // End of user code create controls
+
+    }
+
+    @Override
     protected SelectionListener createButtonListener() {
         return new SelectionAdapter() {
             public void widgetSelected(SelectionEvent e) {
@@ -131,15 +132,15 @@ public class DelimitedEventMappingStartingEndFinderExpressionPropertySection ext
             }
         };
     }
-	
-	/**
-	 * {@inheritDoc}
-	 */
-	protected String getPropertyDescription() {
-		return "The starting and finishing ends must not be the same semantic object.";
-	}
-	
-	// Start of user code user operations
+
+    /**
+     * {@inheritDoc}
+     */
+    protected String getPropertyDescription() {
+        return "The starting and finishing ends must not be the same semantic object.";
+    }
+
+    // Start of user code user operations
 
     /**
      * {@inheritDoc}
@@ -164,5 +165,5 @@ public class DelimitedEventMappingStartingEndFinderExpressionPropertySection ext
         return "The starting and finishing ends can be the same semantic object, in order to represent punctual states.";
     }
 
-	// End of user code user operations
+    // End of user code user operations
 }

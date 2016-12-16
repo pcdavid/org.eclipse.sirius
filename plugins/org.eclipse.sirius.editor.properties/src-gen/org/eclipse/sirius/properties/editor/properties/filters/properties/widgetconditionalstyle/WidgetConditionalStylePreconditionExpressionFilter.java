@@ -17,30 +17,27 @@ import org.eclipse.sirius.properties.PropertiesPackage;
 
 // End of user code specific imports
 
-
 /**
  * A filter for the preconditionExpression property section.
  */
 public class WidgetConditionalStylePreconditionExpressionFilter extends ViewpointPropertyFilter {
 
-	/**
-	 * {@inheritDoc}
-	 */
-	protected EStructuralFeature getFeature() {
-		return PropertiesPackage.eINSTANCE.getWidgetConditionalStyle_PreconditionExpression();
-	}
-	
-	/**
-	 * {@inheritDoc}
-	 */
-	protected boolean isRightInputType(Object arg0) {
+    /**
+     * {@inheritDoc}
+     */
+    protected EStructuralFeature getFeature() {
+        return PropertiesPackage.eINSTANCE.getWidgetConditionalStyle_PreconditionExpression();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    protected boolean isRightInputType(Object arg0) {
         return arg0 instanceof org.eclipse.sirius.properties.WidgetConditionalStyle;
     }
-	
-	// Start of user code user methods
+
+    // Start of user code user methods
 
     // End of user code user methods
-	
-	
 
 }

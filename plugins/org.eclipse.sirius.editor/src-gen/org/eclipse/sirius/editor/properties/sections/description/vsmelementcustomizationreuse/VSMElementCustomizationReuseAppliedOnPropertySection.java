@@ -37,83 +37,84 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 // End of user code imports
 
 /**
- * A section for the appliedOn property of a VSMElementCustomizationReuse object.
+ * A section for the appliedOn property of a VSMElementCustomizationReuse
+ * object.
  */
 public class VSMElementCustomizationReuseAppliedOnPropertySection extends AbstractEditorDialogPropertySection {
-	/**
-	 * @see org.eclipse.sirius.editor.properties.sections.AbstractEditorDialogPropertySection#getDefaultLabelText()
-	 */
-	protected String getDefaultLabelText() {
-	    return "AppliedOn"; //$NON-NLS-1$
-	}
-	
-	/**
-	 * @see org.eclipse.sirius.editor.properties.sections.AbstractEditorDialogPropertySection#getLabelText()
-	 */
-	protected String getLabelText() {
-		String labelText;
-	    labelText = super.getLabelText() + "*:"; //$NON-NLS-1$
-		// Start of user code get label text
+    /**
+     * @see org.eclipse.sirius.editor.properties.sections.AbstractEditorDialogPropertySection#getDefaultLabelText()
+     */
+    protected String getDefaultLabelText() {
+        return "AppliedOn"; //$NON-NLS-1$
+    }
 
-	    // End of user code get label text
-	    return labelText;
-	}
-	
-	/**
-	 * @see org.eclipse.sirius.editor.properties.sections.AbstractEditorDialogPropertySection#getFeature()
-	 */
-	protected EReference getFeature() {
-		return DescriptionPackage.eINSTANCE.getVSMElementCustomizationReuse_AppliedOn();
-	}
+    /**
+     * @see org.eclipse.sirius.editor.properties.sections.AbstractEditorDialogPropertySection#getLabelText()
+     */
+    protected String getLabelText() {
+        String labelText;
+        labelText = super.getLabelText() + "*:"; //$NON-NLS-1$
+        // Start of user code get label text
 
-	/**
-	 * @see org.eclipse.sirius.editor.properties.sections.AbstractEditorDialogPropertySection#getFeatureAsText()
-	 */
-	protected String getFeatureAsText() {
-		String string = new String();
-		
-		if (eObject.eGet(getFeature()) != null) {
-			List<?> values = (List<?>)eObject.eGet(getFeature());
-			for (Iterator<?> iterator = values.iterator(); iterator.hasNext(); ) {
-				EObject eObj = (EObject)iterator.next();
-				string += getAdapterFactoryLabelProvider(eObj).getText(eObj);
-				if (iterator.hasNext())
-					string += ", ";
-			}
-		}
-		
-		return string;
-	}
+        // End of user code get label text
+        return labelText;
+    }
 
-	/**
-	 * @see org.eclipse.sirius.editor.properties.sections.AbstractEditorDialogPropertySection#isEqual(java.util.List)
-	 */
-	protected boolean isEqual(List<?> newList) {
-		return newList.equals(eObject.eGet(getFeature()));
-	}
-	
-	/**
-	 * {@inheritDoc}
-	 */
-	public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
-	    super.createControls(parent, tabbedPropertySheetPage);	  	    
-	    text.setToolTipText("The style to customize.");
-	    	    
-	    CLabel help = getWidgetFactory().createCLabel(composite,"");
-	    FormData data = new FormData();
+    /**
+     * @see org.eclipse.sirius.editor.properties.sections.AbstractEditorDialogPropertySection#getFeature()
+     */
+    protected EReference getFeature() {
+        return DescriptionPackage.eINSTANCE.getVSMElementCustomizationReuse_AppliedOn();
+    }
+
+    /**
+     * @see org.eclipse.sirius.editor.properties.sections.AbstractEditorDialogPropertySection#getFeatureAsText()
+     */
+    protected String getFeatureAsText() {
+        String string = new String();
+
+        if (eObject.eGet(getFeature()) != null) {
+            List<?> values = (List<?>) eObject.eGet(getFeature());
+            for (Iterator<?> iterator = values.iterator(); iterator.hasNext();) {
+                EObject eObj = (EObject) iterator.next();
+                string += getAdapterFactoryLabelProvider(eObj).getText(eObj);
+                if (iterator.hasNext())
+                    string += ", ";
+            }
+        }
+
+        return string;
+    }
+
+    /**
+     * @see org.eclipse.sirius.editor.properties.sections.AbstractEditorDialogPropertySection#isEqual(java.util.List)
+     */
+    protected boolean isEqual(List<?> newList) {
+        return newList.equals(eObject.eGet(getFeature()));
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
+        super.createControls(parent, tabbedPropertySheetPage);
+        text.setToolTipText("The style to customize.");
+
+        CLabel help = getWidgetFactory().createCLabel(composite, "");
+        FormData data = new FormData();
         data.top = new FormAttachment(text, 0, SWT.TOP);
-        data.left = new FormAttachment(nameLabel);     
+        data.left = new FormAttachment(nameLabel);
         help.setLayoutData(data);
         help.setImage(getHelpIcon());
-        help.setToolTipText("The style to customize.");	    
-	    
-	     nameLabel.setFont(SiriusEditor.getFontRegistry().get("required"));
-	    // Start of user code create controls
+        help.setToolTipText("The style to customize.");
 
-	    // End of user code create controls	    
-	}
-	
-	// Start of user code user operations
+        nameLabel.setFont(SiriusEditor.getFontRegistry().get("required"));
+        // Start of user code create controls
+
+        // End of user code create controls
+    }
+
+    // Start of user code user operations
     /**
      * Overridden to limit the choice to {@link StyleDescription}s and its
      * content, owned or referenced by the current
@@ -165,5 +166,5 @@ public class VSMElementCustomizationReuseAppliedOnPropertySection extends Abstra
         return isStyleDescriptionEltConformToVSMElementCustomizationReuse;
     }
 
-	// End of user code user operations
+    // End of user code user operations
 }

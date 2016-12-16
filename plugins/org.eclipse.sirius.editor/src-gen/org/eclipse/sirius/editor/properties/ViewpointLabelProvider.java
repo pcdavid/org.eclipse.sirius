@@ -18,44 +18,47 @@ import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.viewers.StructuredSelection;
+import org.eclipse.sirius.editor.editorPlugin.SiriusEditor;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.PlatformUI;
-
-import org.eclipse.sirius.editor.editorPlugin.SiriusEditor;
 
 /**
  * Label provider of the tabbed property sheet page.
  */
 public class ViewpointLabelProvider extends LabelProvider {
-	/** Plugin's {@link org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider AdapterFactoryLabelProvider}. */
-	private AdapterFactoryLabelProvider adapterFactoryLabelProvider;
-	
-	/**
-	 * @see org.eclipse.jface.viewers.ILabelProvider#getImage(java.lang.Object)
-	 */
-	public Image getImage(Object object) {
-		Image labelImage = null;
-		
-		if (object != null && !object.equals(StructuredSelection.EMPTY)) {
-			if (object instanceof IStructuredSelection) {
-				IStructuredSelection structuredSelection = (IStructuredSelection)object;
-				if (!containsDifferentTypes(structuredSelection))
-					object = structuredSelection.getFirstElement();
-			}
-			
-			if (object instanceof EObject || object instanceof Resource) {
-				labelImage = getAdapterFactoryLabelProvider().getImage(object);
-			}
-		}
-		
-		return labelImage;
-	}
-	
-	/**
-	 * @see org.eclipse.jface.viewers.ILabelProvider#getText(java.lang.Object)
-	 */
-	public String getText(Object object) {
-	 String text = null;
+    /**
+     * Plugin's
+     * {@link org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider
+     * AdapterFactoryLabelProvider}.
+     */
+    private AdapterFactoryLabelProvider adapterFactoryLabelProvider;
+
+    /**
+     * @see org.eclipse.jface.viewers.ILabelProvider#getImage(java.lang.Object)
+     */
+    public Image getImage(Object object) {
+        Image labelImage = null;
+
+        if (object != null && !object.equals(StructuredSelection.EMPTY)) {
+            if (object instanceof IStructuredSelection) {
+                IStructuredSelection structuredSelection = (IStructuredSelection) object;
+                if (!containsDifferentTypes(structuredSelection))
+                    object = structuredSelection.getFirstElement();
+            }
+
+            if (object instanceof EObject || object instanceof Resource) {
+                labelImage = getAdapterFactoryLabelProvider().getImage(object);
+            }
+        }
+
+        return labelImage;
+    }
+
+    /**
+     * @see org.eclipse.jface.viewers.ILabelProvider#getText(java.lang.Object)
+     */
+    public String getText(Object object) {
+        String text = null;
         int selectionSize = 0;
 
         if (object != null && !object.equals(StructuredSelection.EMPTY)) {
@@ -83,52 +86,53 @@ public class ViewpointLabelProvider extends LabelProvider {
         }
 
         return text;
-	}
-	
-	/**
-	 * Fetches the plugin's {@link org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider AdapterFactoryLabelProvider}}.
-	 * @return
-	 * 			The plugin's {@link org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider AdapterFactoryLabelProvider}}.
-	 */
-	private AdapterFactoryLabelProvider getAdapterFactoryLabelProvider() {
-		if (adapterFactoryLabelProvider == null) {
-			adapterFactoryLabelProvider = new AdapterFactoryLabelProvider(
-					((SiriusEditor)PlatformUI.getWorkbench().getActiveWorkbenchWindow()
-					.getActivePage().getActiveEditor()).getAdapterFactory());
-		}
-		return adapterFactoryLabelProvider;
-	}
-	
-	/**
-	 * Determines if the objects contained by a given 
-	 * {@link org.eclipse.jface.viewers.IStructuredSelection structured selection} 
-	 * are of different types.
-	 * 
-	 * @param structuredSelection
-	 * 			The structured selection.
-	 * @return 
-	 * 			<code>True</code> if there are objects of different types in the 
-	 * 			structured selection, <code>false</code> otherwise.
-	 */
-	private boolean containsDifferentTypes(IStructuredSelection structuredSelection) {
-		boolean areDistinct = false;
-		final List selectionList = structuredSelection.toList(); 
-		
-		if (selectionList.size() > 1) {
-			for (Iterator iterator = selectionList.iterator(); iterator.hasNext(); ) {
-				Object element = iterator.next();
-				if(iterator.hasNext()){
-					if (iterator.next().getClass() != element.getClass())
-						areDistinct = true;
-				}
-			}	
-		}
+    }
 
-		return areDistinct;
-	}
-	
-	// Start of user code methods
+    /**
+     * Fetches the plugin's
+     * {@link org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider
+     * AdapterFactoryLabelProvider}}.
+     * 
+     * @return The plugin's
+     *         {@link org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider
+     *         AdapterFactoryLabelProvider}}.
+     */
+    private AdapterFactoryLabelProvider getAdapterFactoryLabelProvider() {
+        if (adapterFactoryLabelProvider == null) {
+            adapterFactoryLabelProvider = new AdapterFactoryLabelProvider(((SiriusEditor) PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor()).getAdapterFactory());
+        }
+        return adapterFactoryLabelProvider;
+    }
 
-	// End of user code methods
-	
+    /**
+     * Determines if the objects contained by a given
+     * {@link org.eclipse.jface.viewers.IStructuredSelection structured
+     * selection} are of different types.
+     * 
+     * @param structuredSelection
+     *            The structured selection.
+     * @return <code>True</code> if there are objects of different types in the
+     *         structured selection, <code>false</code> otherwise.
+     */
+    private boolean containsDifferentTypes(IStructuredSelection structuredSelection) {
+        boolean areDistinct = false;
+        final List selectionList = structuredSelection.toList();
+
+        if (selectionList.size() > 1) {
+            for (Iterator iterator = selectionList.iterator(); iterator.hasNext();) {
+                Object element = iterator.next();
+                if (iterator.hasNext()) {
+                    if (iterator.next().getClass() != element.getClass())
+                        areDistinct = true;
+                }
+            }
+        }
+
+        return areDistinct;
+    }
+
+    // Start of user code methods
+
+    // End of user code methods
+
 }

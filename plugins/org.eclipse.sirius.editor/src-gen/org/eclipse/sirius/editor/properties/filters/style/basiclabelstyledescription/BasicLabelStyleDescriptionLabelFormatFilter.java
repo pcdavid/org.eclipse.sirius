@@ -17,30 +17,27 @@ import org.eclipse.sirius.viewpoint.description.style.StylePackage;
 
 // End of user code specific imports
 
-
 /**
  * A filter for the labelFormat property section.
  */
 public class BasicLabelStyleDescriptionLabelFormatFilter extends ViewpointPropertyFilter {
 
-	/**
-	 * {@inheritDoc}
-	 */
-	protected EStructuralFeature getFeature() {
-		return StylePackage.eINSTANCE.getBasicLabelStyleDescription_LabelFormat();
-	}
-	
-	/**
-	 * {@inheritDoc}
-	 */
-	protected boolean isRightInputType(Object arg0) {
+    /**
+     * {@inheritDoc}
+     */
+    protected EStructuralFeature getFeature() {
+        return StylePackage.eINSTANCE.getBasicLabelStyleDescription_LabelFormat();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    protected boolean isRightInputType(Object arg0) {
         return arg0 instanceof org.eclipse.sirius.viewpoint.description.style.BasicLabelStyleDescription;
     }
-	
-	// Start of user code user methods
+
+    // Start of user code user methods
 
     // End of user code user methods
-	
-	
 
 }

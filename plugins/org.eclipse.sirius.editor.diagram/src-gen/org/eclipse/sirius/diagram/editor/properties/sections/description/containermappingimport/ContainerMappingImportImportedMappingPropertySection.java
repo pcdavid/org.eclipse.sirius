@@ -49,108 +49,107 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 // End of user code imports
 
 /**
- * A section for the importedMapping property of a ContainerMappingImport object.
+ * A section for the importedMapping property of a ContainerMappingImport
+ * object.
  */
 public class ContainerMappingImportImportedMappingPropertySection extends AbstractComboPropertySection {
-	/**
-	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractComboPropertySection#getDefaultLabelText()
-	 */
-	protected String getDefaultLabelText() {
-	    return "ImportedMapping"; //$NON-NLS-1$
-	}
-	
-	/**
-	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractComboPropertySection#getLabelText()
-	 */
-	protected String getLabelText() {
-		String labelText;
-	    labelText = super.getLabelText() + "*:"; //$NON-NLS-1$
-		// Start of user code get label text
+    /**
+     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractComboPropertySection#getDefaultLabelText()
+     */
+    protected String getDefaultLabelText() {
+        return "ImportedMapping"; //$NON-NLS-1$
+    }
 
-	    // End of user code get label text
-	    return labelText;
-	}
-	
-	/**
-	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractComboPropertySection#getFeature()
-	 */
-	protected EReference getFeature() {
-		return DescriptionPackage.eINSTANCE.getContainerMappingImport_ImportedMapping();
-	}
+    /**
+     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractComboPropertySection#getLabelText()
+     */
+    protected String getLabelText() {
+        String labelText;
+        labelText = super.getLabelText() + "*:"; //$NON-NLS-1$
+        // Start of user code get label text
 
-	/**
-	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractComboPropertySection#getFeatureValue(int)
-	 */
-	protected Object getFeatureValue(int index) {
-		return getFeatureValueAt(index);
-	}
+        // End of user code get label text
+        return labelText;
+    }
 
-	/**
-	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractComboPropertySection#isEqual(int)
-	 */
-	protected boolean isEqual(int index) {
-		boolean isEqual = false;
-		if (getFeatureValueAt(index) == null)
-			isEqual = eObject.eGet(getFeature()) == null;
-		else
-			isEqual = getFeatureValueAt(index).equals(eObject.eGet(getFeature()));
-		return isEqual;
-	}
-	
-	/**
-	 * Returns the value at the specified index in the choice of values for the
-	 * feature.
-	 * 
-	 * @param index
-	 * 			Index of the value.
-	 * @return
-	 * 			the value at the specified index in the choice of values.
-	 */
-	protected Object getFeatureValueAt(int index) {
-		List<?> values = getChoiceOfValues();
-		if (values.size() < index || values.size() == 0 || index == -1) {
+    /**
+     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractComboPropertySection#getFeature()
+     */
+    protected EReference getFeature() {
+        return DescriptionPackage.eINSTANCE.getContainerMappingImport_ImportedMapping();
+    }
+
+    /**
+     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractComboPropertySection#getFeatureValue(int)
+     */
+    protected Object getFeatureValue(int index) {
+        return getFeatureValueAt(index);
+    }
+
+    /**
+     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractComboPropertySection#isEqual(int)
+     */
+    protected boolean isEqual(int index) {
+        boolean isEqual = false;
+        if (getFeatureValueAt(index) == null)
+            isEqual = eObject.eGet(getFeature()) == null;
+        else
+            isEqual = getFeatureValueAt(index).equals(eObject.eGet(getFeature()));
+        return isEqual;
+    }
+
+    /**
+     * Returns the value at the specified index in the choice of values for the
+     * feature.
+     * 
+     * @param index
+     *            Index of the value.
+     * @return the value at the specified index in the choice of values.
+     */
+    protected Object getFeatureValueAt(int index) {
+        List<?> values = getChoiceOfValues();
+        if (values.size() < index || values.size() == 0 || index == -1) {
             return null;
         }
-		return values.get(index);
-	}
+        return values.get(index);
+    }
 
-	/**
-	 * Fetches the list of available values for the feature.
-	 * 
-	 * @return
-	 * 			The list of available values for the feature.
-	 */
-	protected List<?> getChoiceOfValues() {
-		List<?> values = Collections.emptyList();
-		List<IItemPropertyDescriptor> propertyDescriptors = getDescriptors();
-	    for (Iterator<IItemPropertyDescriptor> iterator = propertyDescriptors.iterator(); iterator.hasNext(); ) {
-	    	IItemPropertyDescriptor propertyDescriptor = iterator.next();
-	    	if (((EStructuralFeature)propertyDescriptor.getFeature(eObject)) == getFeature())
-	    	    values = new ArrayList<Object>(propertyDescriptor.getChoiceOfValues(eObject));
-	    } 		
-	    
-	    // Start of user code choice of values
+    /**
+     * Fetches the list of available values for the feature.
+     * 
+     * @return The list of available values for the feature.
+     */
+    protected List<?> getChoiceOfValues() {
+        List<?> values = Collections.emptyList();
+        List<IItemPropertyDescriptor> propertyDescriptors = getDescriptors();
+        for (Iterator<IItemPropertyDescriptor> iterator = propertyDescriptors.iterator(); iterator.hasNext();) {
+            IItemPropertyDescriptor propertyDescriptor = iterator.next();
+            if (((EStructuralFeature) propertyDescriptor.getFeature(eObject)) == getFeature())
+                values = new ArrayList<Object>(propertyDescriptor.getChoiceOfValues(eObject));
+        }
+
+        // Start of user code choice of values
         values.remove(eObject);
-	    // End of user code choice of values
-		return values;
-	}
-	
-	/**
-	 * {@inheritDoc}
-	 */
-	public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
-	    super.createControls(parent, tabbedPropertySheetPage);	  	    
-	    combo.setToolTipText("Imported container mapping");	    
-	    
-	    CLabel help = getWidgetFactory().createCLabel(composite,"");
-	    FormData data = new FormData();
+        // End of user code choice of values
+        return values;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
+        super.createControls(parent, tabbedPropertySheetPage);
+        combo.setToolTipText("Imported container mapping");
+
+        CLabel help = getWidgetFactory().createCLabel(composite, "");
+        FormData data = new FormData();
         data.top = new FormAttachment(combo, 0, SWT.TOP);
-        data.left = new FormAttachment(nameLabel);     
+        data.left = new FormAttachment(nameLabel);
         help.setLayoutData(data);
         help.setImage(getHelpIcon());
-        help.setToolTipText("Imported container mapping");	  
-	     nameLabel.setFont(SiriusEditor.getFontRegistry().get("required"));
-	    // Start of user code create controls
+        help.setToolTipText("Imported container mapping");
+        nameLabel.setFont(SiriusEditor.getFontRegistry().get("required"));
+        // Start of user code create controls
         data = new FormData();
         data.left = new FormAttachment(0, LABEL_WIDTH);
         data.right = new FormAttachment(95, 0);
@@ -173,8 +172,8 @@ public class ContainerMappingImportImportedMappingPropertySection extends Abstra
         button.addSelectionListener(new SelectionAdapter() {
             @Override
             public void widgetSelected(final SelectionEvent e) {
-                final ContainerMappingImportSelectionWizardItemsBuilder builder = new ContainerMappingImportSelectionWizardItemsBuilder((ContainerMapping) eObject, new EObjectQuery(eObject)
-                        .getAvailableViewpointsInResourceSet());
+                final ContainerMappingImportSelectionWizardItemsBuilder builder = new ContainerMappingImportSelectionWizardItemsBuilder((ContainerMapping) eObject,
+                        new EObjectQuery(eObject).getAvailableViewpointsInResourceSet());
                 final TreeItemWrapper input = builder.buildMappingInput();
 
                 final Shell shell = PlatformUI.getWorkbench().getDisplay().getActiveShell();
@@ -186,15 +185,15 @@ public class ContainerMappingImportImportedMappingPropertySection extends Abstra
                     final WizardDialog dlg = new WizardDialog(shell, wizard);
                     if (dlg.open() == Window.OK) {
                         final EditingDomain editingDomain = ((IEditingDomainProvider) getPart()).getEditingDomain();
-                        editingDomain.getCommandStack().execute(
-                                SetCommand.create(editingDomain, eObject, DescriptionPackage.eINSTANCE.getContainerMappingImport_ImportedMapping(), wizard.getSelectedEObject()));
+                        editingDomain.getCommandStack()
+                                .execute(SetCommand.create(editingDomain, eObject, DescriptionPackage.eINSTANCE.getContainerMappingImport_ImportedMapping(), wizard.getSelectedEObject()));
                     }
                 }
 
             }
         });
-	    // End of user code create controls	    
-	}		
-	// Start of user code user operations
-	// End of user code user operations
+        // End of user code create controls
+    }
+    // Start of user code user operations
+    // End of user code user operations
 }

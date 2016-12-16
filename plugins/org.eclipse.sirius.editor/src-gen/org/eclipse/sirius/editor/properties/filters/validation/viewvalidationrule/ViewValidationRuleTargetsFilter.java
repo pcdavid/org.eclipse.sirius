@@ -17,30 +17,27 @@ import org.eclipse.sirius.viewpoint.description.validation.ValidationPackage;
 
 // End of user code specific imports
 
-
 /**
  * A filter for the targets property section.
  */
 public class ViewValidationRuleTargetsFilter extends ViewpointPropertyFilter {
 
-	/**
-	 * {@inheritDoc}
-	 */
-	protected EStructuralFeature getFeature() {
-		return ValidationPackage.eINSTANCE.getViewValidationRule_Targets();
-	}
-	
-	/**
-	 * {@inheritDoc}
-	 */
-	protected boolean isRightInputType(Object arg0) {
+    /**
+     * {@inheritDoc}
+     */
+    protected EStructuralFeature getFeature() {
+        return ValidationPackage.eINSTANCE.getViewValidationRule_Targets();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    protected boolean isRightInputType(Object arg0) {
         return arg0 instanceof org.eclipse.sirius.viewpoint.description.validation.ViewValidationRule;
     }
-	
-	// Start of user code user methods
+
+    // Start of user code user methods
 
     // End of user code user methods
-	
-	
 
 }

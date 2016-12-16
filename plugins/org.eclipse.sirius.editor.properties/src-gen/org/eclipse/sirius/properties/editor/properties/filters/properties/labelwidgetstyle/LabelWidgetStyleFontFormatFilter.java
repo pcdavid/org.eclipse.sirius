@@ -17,30 +17,27 @@ import org.eclipse.sirius.properties.PropertiesPackage;
 
 // End of user code specific imports
 
-
 /**
  * A filter for the fontFormat property section.
  */
 public class LabelWidgetStyleFontFormatFilter extends ViewpointPropertyFilter {
 
-	/**
-	 * {@inheritDoc}
-	 */
-	protected EStructuralFeature getFeature() {
-		return PropertiesPackage.eINSTANCE.getLabelWidgetStyle_FontFormat();
-	}
-	
-	/**
-	 * {@inheritDoc}
-	 */
-	protected boolean isRightInputType(Object arg0) {
+    /**
+     * {@inheritDoc}
+     */
+    protected EStructuralFeature getFeature() {
+        return PropertiesPackage.eINSTANCE.getLabelWidgetStyle_FontFormat();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    protected boolean isRightInputType(Object arg0) {
         return arg0 instanceof org.eclipse.sirius.properties.LabelWidgetStyle;
     }
-	
-	// Start of user code user methods
+
+    // Start of user code user methods
 
     // End of user code user methods
-	
-	
 
 }

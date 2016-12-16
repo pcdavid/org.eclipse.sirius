@@ -17,30 +17,27 @@ import org.eclipse.sirius.viewpoint.description.style.StylePackage;
 
 // End of user code specific imports
 
-
 /**
  * A filter for the id property section.
  */
 public class LabelBorderStyleDescriptionIdFilter extends ViewpointPropertyFilter {
 
-	/**
-	 * {@inheritDoc}
-	 */
-	protected EStructuralFeature getFeature() {
-		return StylePackage.eINSTANCE.getLabelBorderStyleDescription_Id();
-	}
-	
-	/**
-	 * {@inheritDoc}
-	 */
-	protected boolean isRightInputType(Object arg0) {
+    /**
+     * {@inheritDoc}
+     */
+    protected EStructuralFeature getFeature() {
+        return StylePackage.eINSTANCE.getLabelBorderStyleDescription_Id();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    protected boolean isRightInputType(Object arg0) {
         return arg0 instanceof org.eclipse.sirius.viewpoint.description.style.LabelBorderStyleDescription;
     }
-	
-	// Start of user code user methods
+
+    // Start of user code user methods
 
     // End of user code user methods
-	
-	
 
 }

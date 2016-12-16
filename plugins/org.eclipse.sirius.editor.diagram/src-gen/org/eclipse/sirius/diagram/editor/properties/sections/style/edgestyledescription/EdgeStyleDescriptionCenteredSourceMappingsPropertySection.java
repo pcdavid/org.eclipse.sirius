@@ -39,82 +39,83 @@ import com.google.common.collect.Collections2;
 // End of user code imports
 
 /**
- * A section for the centeredSourceMappings property of a EdgeStyleDescription object.
+ * A section for the centeredSourceMappings property of a EdgeStyleDescription
+ * object.
  */
 public class EdgeStyleDescriptionCenteredSourceMappingsPropertySection extends AbstractEditorDialogPropertySection {
-	/**
-	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractEditorDialogPropertySection#getDefaultLabelText()
-	 */
-	protected String getDefaultLabelText() {
-	    return "CenteredSourceMappings"; //$NON-NLS-1$
-	}
-	
-	/**
-	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractEditorDialogPropertySection#getLabelText()
-	 */
-	protected String getLabelText() {
-		String labelText;
-		labelText = super.getLabelText() + ":"; //$NON-NLS-1$
-		// Start of user code get label text
+    /**
+     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractEditorDialogPropertySection#getDefaultLabelText()
+     */
+    protected String getDefaultLabelText() {
+        return "CenteredSourceMappings"; //$NON-NLS-1$
+    }
 
-	    // End of user code get label text
-	    return labelText;
-	}
-	
-	/**
-	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractEditorDialogPropertySection#getFeature()
-	 */
-	protected EReference getFeature() {
-		return StylePackage.eINSTANCE.getEdgeStyleDescription_CenteredSourceMappings();
-	}
+    /**
+     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractEditorDialogPropertySection#getLabelText()
+     */
+    protected String getLabelText() {
+        String labelText;
+        labelText = super.getLabelText() + ":"; //$NON-NLS-1$
+        // Start of user code get label text
 
-	/**
-	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractEditorDialogPropertySection#getFeatureAsText()
-	 */
-	protected String getFeatureAsText() {
-		String string = new String();
-		
-		if (eObject.eGet(getFeature()) != null) {
-			List<?> values = (List<?>)eObject.eGet(getFeature());
-			for (Iterator<?> iterator = values.iterator(); iterator.hasNext(); ) {
-				EObject eObj = (EObject)iterator.next();
-				string += getAdapterFactoryLabelProvider(eObj).getText(eObj);
-				if (iterator.hasNext())
-					string += ", ";
-			}
-		}
-		
-		return string;
-	}
+        // End of user code get label text
+        return labelText;
+    }
 
-	/**
-	 * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractEditorDialogPropertySection#isEqual(java.util.List)
-	 */
-	protected boolean isEqual(List<?> newList) {
-		return newList.equals(eObject.eGet(getFeature()));
-	}
-	
-	/**
-	 * {@inheritDoc}
-	 */
-	public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
-	    super.createControls(parent, tabbedPropertySheetPage);	  	    
-	    text.setToolTipText("The mappings for which the edge source will be centered. Deactivated if ends Centering value is \"Both\" or \"Source\" (that means the source is always centered)");
-	    	    
-	    CLabel help = getWidgetFactory().createCLabel(composite,"");
-	    FormData data = new FormData();
+    /**
+     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractEditorDialogPropertySection#getFeature()
+     */
+    protected EReference getFeature() {
+        return StylePackage.eINSTANCE.getEdgeStyleDescription_CenteredSourceMappings();
+    }
+
+    /**
+     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractEditorDialogPropertySection#getFeatureAsText()
+     */
+    protected String getFeatureAsText() {
+        String string = new String();
+
+        if (eObject.eGet(getFeature()) != null) {
+            List<?> values = (List<?>) eObject.eGet(getFeature());
+            for (Iterator<?> iterator = values.iterator(); iterator.hasNext();) {
+                EObject eObj = (EObject) iterator.next();
+                string += getAdapterFactoryLabelProvider(eObj).getText(eObj);
+                if (iterator.hasNext())
+                    string += ", ";
+            }
+        }
+
+        return string;
+    }
+
+    /**
+     * @see org.eclipse.sirius.diagram.editor.properties.sections.AbstractEditorDialogPropertySection#isEqual(java.util.List)
+     */
+    protected boolean isEqual(List<?> newList) {
+        return newList.equals(eObject.eGet(getFeature()));
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
+        super.createControls(parent, tabbedPropertySheetPage);
+        text.setToolTipText("The mappings for which the edge source will be centered. Deactivated if ends Centering value is \"Both\" or \"Source\" (that means the source is always centered)");
+
+        CLabel help = getWidgetFactory().createCLabel(composite, "");
+        FormData data = new FormData();
         data.top = new FormAttachment(text, 0, SWT.TOP);
-        data.left = new FormAttachment(nameLabel);     
+        data.left = new FormAttachment(nameLabel);
         help.setLayoutData(data);
         help.setImage(getHelpIcon());
-        help.setToolTipText("The mappings for which the edge source will be centered. Deactivated if ends Centering value is \"Both\" or \"Source\" (that means the source is always centered)");	    
-	    
-	    // Start of user code create controls
+        help.setToolTipText("The mappings for which the edge source will be centered. Deactivated if ends Centering value is \"Both\" or \"Source\" (that means the source is always centered)");
 
-	    // End of user code create controls	    
-	}
-	
-	// Start of user code user operations
+        // Start of user code create controls
+
+        // End of user code create controls
+    }
+
+    // Start of user code user operations
 
     @Override
     protected boolean shouldBeReadOnly() {
@@ -155,5 +156,5 @@ public class EdgeStyleDescriptionCenteredSourceMappingsPropertySection extends A
         }
     }
 
-	// End of user code user operations
+    // End of user code user operations
 }

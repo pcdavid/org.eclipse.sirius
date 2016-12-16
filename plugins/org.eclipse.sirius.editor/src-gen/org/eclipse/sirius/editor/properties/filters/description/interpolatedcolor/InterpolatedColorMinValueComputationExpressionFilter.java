@@ -18,27 +18,26 @@ import org.eclipse.sirius.viewpoint.description.InterpolatedColor;
 
 // End of user code specific imports
 
-
 /**
  * A filter for the minValueComputationExpression property section.
  */
 public class InterpolatedColorMinValueComputationExpressionFilter extends ViewpointPropertyFilter {
 
-	/**
-	 * {@inheritDoc}
-	 */
-	protected EStructuralFeature getFeature() {
-		return DescriptionPackage.eINSTANCE.getInterpolatedColor_MinValueComputationExpression();
-	}
-	
-	/**
-	 * {@inheritDoc}
-	 */
-	protected boolean isRightInputType(Object arg0) {
+    /**
+     * {@inheritDoc}
+     */
+    protected EStructuralFeature getFeature() {
+        return DescriptionPackage.eINSTANCE.getInterpolatedColor_MinValueComputationExpression();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    protected boolean isRightInputType(Object arg0) {
         return arg0 instanceof org.eclipse.sirius.viewpoint.description.InterpolatedColor;
     }
-	
-	// Start of user code user methods
+
+    // Start of user code user methods
 
     private InterpolatedColor InterpolatedColor;
 
@@ -62,7 +61,5 @@ public class InterpolatedColorMinValueComputationExpressionFilter extends Viewpo
     }
 
     // End of user code user methods
-	
-	
 
 }
