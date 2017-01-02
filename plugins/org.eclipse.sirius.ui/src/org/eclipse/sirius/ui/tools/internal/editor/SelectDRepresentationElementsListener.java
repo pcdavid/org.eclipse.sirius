@@ -287,7 +287,7 @@ public class SelectDRepresentationElementsListener extends ResourceSetListenerIm
                         }
                         // EcoreUtil.isAncestor() used to only select top level
                         // created views.
-                        if ((!selectOnlyViewWithNewSemanticTarget || isViewWithNewSemanticTarget(attachedEObjects, elt)) && !EcoreUtil.isAncestor(keptNotifiedElements, elt)) {
+                        if (!EcoreUtil.isAncestor(keptNotifiedElements, elt) && (!selectOnlyViewWithNewSemanticTarget || isViewWithNewSemanticTarget(attachedEObjects, elt))) {
                             keptNotifiedElements.add(elt);
                         }
                     }
