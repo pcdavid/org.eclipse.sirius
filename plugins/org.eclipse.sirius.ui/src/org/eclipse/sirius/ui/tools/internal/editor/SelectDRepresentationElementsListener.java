@@ -46,12 +46,15 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IEditorPart;
 
 import com.google.common.base.Preconditions;
+import com.google.common.base.Supplier;
+import com.google.common.base.Suppliers;
 import com.google.common.collect.Iterables;
 
 /**
  * A post commit listener which select the representation elements specified
  * through the "Elements To Select" expression and "Inverse Selection Order" tag
- * of the tool. </br> Elements will be selected only on the active editor.
+ * of the tool. </br>
+ * Elements will be selected only on the active editor.
  * 
  * Each dialect is responsible to add this post commit listener or one
  * specializing this one.
@@ -65,10 +68,9 @@ public class SelectDRepresentationElementsListener extends ResourceSetListenerIm
      * {@link DRepresentationElement} creation or specified "Elements To Select"
      * list.
      */
-    private static final NotificationFilter DEFAULT_NOTIFICATION_FILTER = NotificationFilter.createFeatureFilter(ViewpointPackage.Literals.UI_STATE__ELEMENTS_TO_SELECT).or(
-            NotificationFilter.NOT_TOUCH.and(SessionEventBrokerImpl.asFilter(DanglingRefRemovalTrigger.IS_ATTACHMENT)).and(
-                    NotificationFilter.createNotifierTypeFilter(ViewpointPackage.Literals.DREPRESENTATION).or(
-                            NotificationFilter.createNotifierTypeFilter(ViewpointPackage.Literals.DREPRESENTATION_ELEMENT))));
+    private static final NotificationFilter DEFAULT_NOTIFICATION_FILTER = NotificationFilter.createFeatureFilter(ViewpointPackage.Literals.UI_STATE__ELEMENTS_TO_SELECT)
+            .or(NotificationFilter.NOT_TOUCH.and(SessionEventBrokerImpl.asFilter(DanglingRefRemovalTrigger.IS_ATTACHMENT)).and(NotificationFilter
+                    .createNotifierTypeFilter(ViewpointPackage.Literals.DREPRESENTATION).or(NotificationFilter.createNotifierTypeFilter(ViewpointPackage.Literals.DREPRESENTATION_ELEMENT))));
 
     /**
      * The dialect editor.
@@ -170,14 +172,11 @@ public class SelectDRepresentationElementsListener extends ResourceSetListenerIm
             List<DRepresentationElement> elementsToSelectFromUiState = extractSelectionFromUIState(currentRep, notifiedElements);
             if (elementsToSelectFromUiState != null) {
                 elementsToSelect = elementsToSelectFromUiState;
-            } else { // keep default selection and reverse it if necessary
-                if (notifiedElements.size() > 0) {
-                    // Select created elements
-                    elementsToSelect = notifiedElements;
-                } else {
-                    // do not change the selection if there is no created
-                    // elements
+            } else {
+                if (notifiedElements.isEmpty()) {
                     elementsToSelect = null;
+                } else {
+                    elementsToSelect = notifiedElements;
                 }
             }
         } else {
@@ -301,39 +300,43 @@ public class SelectDRepresentationElementsListener extends ResourceSetListenerIm
         return isViewWithNewSemanticTarget;
     }
 
-    private boolean analyseNotifications(ResourceSetChangeEvent event, DRepresentation currentRep, List<DRepresentationElement> keptNotifiedElements) {
+    private boolean analyseNotifications(final ResourceSetChangeEvent event, DRepresentation currentRep, List<DRepresentationElement> keptNotifiedElements) {
         boolean elementsToSelectUpdated = false;
-        Collection<EObject> attachedEObjects = null;
-        for (Notification n : event.getNotifications()) {
-            Object feature = n.getFeature();
+        Supplier<Collection<EObject>> attachedEObjects = Suppliers.memoize(new Supplier<Collection<EObject>>() {
+            @Override
+            public Collection<EObject> get() {
             if (!ViewpointPackage.Literals.UI_STATE__ELEMENTS_TO_SELECT.equals(feature) && !ViewpointPackage.Literals.DREPRESENTATION__UI_STATE.equals(feature)) {
-                Set<DRepresentationElement> notificationValues = getNotificationValues(n);
-                for (DRepresentationElement elt : notificationValues) {
+                TransactionChangeDescription changeDescription = event.getTransaction().getChangeDescription();
+                // Get the objects attached during the current
+                // transaction from the change description. The
+                // getObjectsToDetach() compute those elements which
+                // will be detached in case of rollback or undo.
+                return changeDescription.getObjectsToDetach();
+            }
+        });
+
+        for (Notification n : event.getNotifications()) {
+            if (concernsUIState(n)) {
+                elementsToSelectUpdated = true;
+            } else {
+                for (DRepresentationElement elt : getModifiedRepresentationElements(n)) {
                     if (currentRep == new DRepresentationElementQuery(elt).getParentRepresentation()) {
-                        if (attachedEObjects == null && selectOnlyViewWithNewSemanticTarget) {
-                            // Compute the change description effect only once.
-                            TransactionChangeDescription changeDescription = event.getTransaction().getChangeDescription();
-                            // Get the objects attached during the current
-                            // transaction from the change description. The
-                            // getObjectsToDetach() compute those elements which
-                            // will be detached in case of rollback or undo.
-                            attachedEObjects = changeDescription.getObjectsToDetach();
-                        }
-                        // EcoreUtil.isAncestor() used to only select top level
-                        // created views.
-                        if ((!selectOnlyViewWithNewSemanticTarget || isViewWithNewSemanticTarget(attachedEObjects, elt)) && !EcoreUtil.isAncestor(keptNotifiedElements, elt)) {
+                        if (!EcoreUtil.isAncestor(keptNotifiedElements, elt) && (!selectOnlyViewWithNewSemanticTarget || isViewWithNewSemanticTarget(attachedEObjects.get(), elt))) {
                             keptNotifiedElements.add(elt);
                         }
                     }
                 }
-            } else {
-                elementsToSelectUpdated = true;
             }
         }
         return elementsToSelectUpdated;
     }
 
-    private Set<DRepresentationElement> getNotificationValues(Notification notification) {
+    private boolean concernsUIState(Notification n) {
+        Object feature = n.getFeature();
+        return feature.equals(ViewpointPackage.Literals.UI_STATE__ELEMENTS_TO_SELECT) || feature.equals(ViewpointPackage.Literals.DREPRESENTATION__UI_STATE);
+    }
+
+    private Set<DRepresentationElement> getModifiedRepresentationElements(Notification notification) {
         final Set<DRepresentationElement> values = new LinkedHashSet<>();
         Object value = notification.getNewValue();
         if (value instanceof Collection) {
