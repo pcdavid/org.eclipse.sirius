@@ -10,10 +10,12 @@
  *******************************************************************************/
 package org.eclipse.sirius.diagram.ui.tools.internal.graphical.edit.part;
 
+import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.FreeformLayer;
 import org.eclipse.draw2d.FreeformLayeredPane;
 import org.eclipse.draw2d.Layer;
 import org.eclipse.draw2d.LayeredPane;
+import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.ScalableFigure;
 import org.eclipse.draw2d.ScalableFreeformLayeredPane;
 import org.eclipse.draw2d.Viewport;
@@ -39,6 +41,8 @@ import org.eclipse.sirius.diagram.ui.tools.internal.handler.SiriusAnimatableZoom
 @SuppressWarnings("restriction")
 public class DDiagramRootEditPart extends RenderedDiagramRootEditPart {
 
+    private static final String HIGHLIGHTS = "Highlights"; //$NON-NLS-1$
+
     private SiriusAnimatableZoomManager siriusZoomManager;
 
     /**
@@ -46,6 +50,8 @@ public class DDiagramRootEditPart extends RenderedDiagramRootEditPart {
      * zoomLevels
      */
     private double[] siriusZoomLevels = { .05, .1, .25, .5, .75, 1, 1.25, 1.5, 1.75, 2, 4 };
+
+    private FreeformLayer highlightLayer;
 
     /**
      * Constructor.
@@ -84,6 +90,14 @@ public class DDiagramRootEditPart extends RenderedDiagramRootEditPart {
         Layer feedbackLayer = new FreeformLayer();
         feedbackLayer.setEnabled(false);
         layers.add(feedbackLayer, LayerConstants.SCALED_FEEDBACK_LAYER);
+        highlightLayer = new FreeformLayer();
+        RectangleFigure testRect = new RectangleFigure();
+        testRect.setAlpha(70);
+        testRect.setBackgroundColor(ColorConstants.yellow);
+        testRect.setForegroundColor(ColorConstants.orange);
+        testRect.setBounds(new Rectangle(100, 100, 100, 100));
+        highlightLayer.add(testRect);
+        layers.add(highlightLayer, HIGHLIGHTS);
         return layers;
     }
 
@@ -140,6 +154,19 @@ public class DDiagramRootEditPart extends RenderedDiagramRootEditPart {
     @Override
     public void zoomTo(Rectangle rect) {
         getZoomManager().zoomTo(rect);
+    }
+    
+    @Override
+    public void refreshVisuals() {
+        super.refreshVisuals();
+        if (highlightLayer.getChildren().isEmpty()) {
+            RectangleFigure testRect = new RectangleFigure();
+            testRect.setAlpha(125);
+            testRect.setBackgroundColor(ColorConstants.red);
+            testRect.setBounds(new Rectangle(100, 100, 100, 100));
+            highlightLayer.add(testRect);
+        }
+        highlightLayer.repaint();
     }
 
     /**
