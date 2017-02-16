@@ -31,6 +31,8 @@ import org.eclipse.swtbot.eclipse.gef.finder.widgets.SWTBotGefEditPart;
 import org.eclipse.swtbot.swt.finder.SWTBot;
 import org.eclipse.swtbot.swt.finder.widgets.SWTBotTree;
 import org.eclipse.swtbot.swt.finder.widgets.SWTBotTreeItem;
+import org.eclipse.ui.IWorkbenchPage;
+import org.eclipse.ui.PlatformUI;
 
 import com.google.common.base.Function;
 import com.google.common.collect.Lists;
@@ -116,7 +118,8 @@ public final class SWTBotCommonHelper {
      * Close the current editor.
      */
     public static void closeCurrentEditor() {
-        SWTBotCommonHelper.bot.menu(SWTBotCommonHelper.FILE).menu("Close").click();
+        IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
+        page.closeEditor(page.getActiveEditor(), false);
     }
 
     /**
