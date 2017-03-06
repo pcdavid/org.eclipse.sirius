@@ -519,7 +519,7 @@
          <properties>
              <tests.junit.skip>false</tests.junit.skip>
              <tests.timeout>${tests.timeout.junit}</tests.timeout>
-             <tests.junit.include>org/eclipse/sirius/tests/suite/AllSiriusTestSuite.java, org/eclipse/sirius/tests/suite/tree/AllSiriusTestSuite.java</tests.junit.include>
+             <tests.junit.include>org/eclipse/sirius/tests/suite/AllSiriusTestSuite.java, org/eclipse/sirius/tests/suite/tree/AllSiriusTestSuite.java, org/eclipse/sirius/tests/ui/properties/internal/AllTests.java</tests.junit.include>
              <tests.vmargs>${tests.vmargs.mac} -Xmx1024m -XX:+HeapDumpOnOutOfMemoryError</tests.vmargs>
          </properties>
      </profile>

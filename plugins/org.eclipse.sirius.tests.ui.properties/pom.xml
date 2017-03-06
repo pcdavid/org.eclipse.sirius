@@ -35,7 +35,19 @@
         <artifactId>tycho-surefire-plugin</artifactId>
         <version>${tycho-version}</version>
         <configuration>
-          <testClass>org.eclipse.sirius.tests.ui.properties.internal.AllTests</testClass>
+          <systemProperties>
+            <org.eclipse.sirius.tests.skipLongTests>${tests.skipLongTests}</org.eclipse.sirius.tests.skipLongTests>
+            <org.eclipse.sirius.tests.skipUnreliableTests>${tests.skipUnreliableTests}</org.eclipse.sirius.tests.skipUnreliableTests>
+          </systemProperties>
+          <skipTests>${tests.junit.skip}</skipTests>
+          <includes>
+            <include>${tests.junit.include}</include>
+          </includes>
+          <useUIHarness>true</useUIHarness>
+          <useUIThread>true</useUIThread>
+          <argLine>${tests.vmargs}</argLine>
+          <testFailureIgnore>${tests.ignoreFailures}</testFailureIgnore>
+          <forkedProcessTimeoutInSeconds>${tests.timeout}</forkedProcessTimeoutInSeconds>
         </configuration>
       </plugin>
     </plugins>
