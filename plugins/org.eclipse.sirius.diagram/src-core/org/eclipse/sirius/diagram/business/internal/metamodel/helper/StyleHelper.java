@@ -10,6 +10,8 @@
  *******************************************************************************/
 package org.eclipse.sirius.diagram.business.internal.metamodel.helper;
 
+import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
 
 import org.eclipse.core.runtime.Platform;
@@ -105,9 +107,8 @@ import org.eclipse.sirius.viewpoint.description.style.StyleDescription;
 import com.google.common.base.Objects;
 
 /**
- * This helper class contains utility methods to create and update (refresh)
- * concrete style instances from a style description. This helper modify
- * sometimes the diagram element to which apply the style (width, height, ...).
+ * This helper class contains utility methods to create and update (refresh) concrete style instances from a style
+ * description. This helper modify sometimes the diagram element to which apply the style (width, height, ...).
  * 
  * @author mchauvin
  */
@@ -137,8 +138,8 @@ public final class StyleHelper {
     }
 
     /**
-     * Refresh a style based on its description. This style is considered as the
-     * previous style to used to look its the customizations.
+     * Refresh a style based on its description. This style is considered as the previous style to used to look its the
+     * customizations.
      * 
      * @param style
      *            the style to refresh.
@@ -153,8 +154,7 @@ public final class StyleHelper {
      * @param style
      *            the style to refresh.
      * @param previousStyle
-     *            the previous style (if existing) to keep compatible
-     *            customization.
+     *            the previous style (if existing) to keep compatible customization.
      */
     public void refreshStyle(final Style style, final Option<? extends Style> previousStyle) {
         if (style != null && !isWorkspaceImageStyleWithNotWorkspaceImageDescription(style)) {
@@ -187,9 +187,8 @@ public final class StyleHelper {
     }
 
     /**
-     * Create a new style from its description. All the variable fields are not
-     * computed during the creation. Indeed, they need a context that is not
-     * known at present.
+     * Create a new style from its description. All the variable fields are not computed during the creation. Indeed,
+     * they need a context that is not known at present.
      * 
      * @param description
      *            the style description.
@@ -209,9 +208,8 @@ public final class StyleHelper {
 
     /**
      * 
-     * Create a new edge style from its description. All the variable fields are
-     * not computed during the creation. Indeed, they need a context that is not
-     * known at present.
+     * Create a new edge style from its description. All the variable fields are not computed during the creation.
+     * Indeed, they need a context that is not known at present.
      * 
      * @param description
      *            the edge style description
@@ -245,59 +243,53 @@ public final class StyleHelper {
         if (edgeStyle.getDescription() != edgeDescription) {
             edgeStyle.setDescription(edgeDescription);
         }
+        Collection<String> customizedFeatures = new HashSet<>();
+        if (previousStyle.some()) {
+            customizedFeatures.addAll(previousStyle.get().getCustomFeatures());
+        }
         if (edgeDescription != null) {
-            if (previousStyle.some() && previousStyle.get().getCustomFeatures().contains(DiagramPackage.Literals.EDGE_STYLE__SOURCE_ARROW.getName())) {
+            if (customizedFeatures.contains(DiagramPackage.Literals.EDGE_STYLE__SOURCE_ARROW.getName())) {
                 edgeStyle.setSourceArrow(previousStyle.get().getSourceArrow());
                 edgeStyle.getCustomFeatures().add(DiagramPackage.Literals.EDGE_STYLE__SOURCE_ARROW.getName());
-            } else {
-                if (edgeStyle.getSourceArrow().getValue() != edgeDescription.getSourceArrow().getValue()
-                        && !edgeStyle.getCustomFeatures().contains(DiagramPackage.Literals.EDGE_STYLE__SOURCE_ARROW.getName())) {
-                    edgeStyle.setSourceArrow(edgeDescription.getSourceArrow());
-                }
+            } else if (edgeStyle.getSourceArrow().getValue() != edgeDescription.getSourceArrow().getValue()
+                    && !edgeStyle.getCustomFeatures().contains(DiagramPackage.Literals.EDGE_STYLE__SOURCE_ARROW.getName())) {
+                edgeStyle.setSourceArrow(edgeDescription.getSourceArrow());
             }
-            if (previousStyle.some() && previousStyle.get().getCustomFeatures().contains(DiagramPackage.Literals.EDGE_STYLE__TARGET_ARROW.getName())) {
+            if (customizedFeatures.contains(DiagramPackage.Literals.EDGE_STYLE__TARGET_ARROW.getName())) {
                 edgeStyle.setTargetArrow(previousStyle.get().getTargetArrow());
                 edgeStyle.getCustomFeatures().add(DiagramPackage.Literals.EDGE_STYLE__TARGET_ARROW.getName());
-            } else {
-                if (edgeStyle.getTargetArrow().getValue() != edgeDescription.getTargetArrow().getValue()
-                        && !edgeStyle.getCustomFeatures().contains(DiagramPackage.Literals.EDGE_STYLE__TARGET_ARROW.getName())) {
-                    edgeStyle.setTargetArrow(edgeDescription.getTargetArrow());
-                }
+            } else if (edgeStyle.getTargetArrow().getValue() != edgeDescription.getTargetArrow().getValue()
+                    && !edgeStyle.getCustomFeatures().contains(DiagramPackage.Literals.EDGE_STYLE__TARGET_ARROW.getName())) {
+                edgeStyle.setTargetArrow(edgeDescription.getTargetArrow());
             }
 
-            if (previousStyle.some() && previousStyle.get().getCustomFeatures().contains(DiagramPackage.Literals.EDGE_STYLE__LINE_STYLE.getName())) {
+            if (customizedFeatures.contains(DiagramPackage.Literals.EDGE_STYLE__LINE_STYLE.getName())) {
                 edgeStyle.setLineStyle(previousStyle.get().getLineStyle());
                 edgeStyle.getCustomFeatures().add(DiagramPackage.Literals.EDGE_STYLE__LINE_STYLE.getName());
-            } else {
-                if (edgeStyle.getLineStyle().getValue() != edgeDescription.getLineStyle().getValue()
-                        && !edgeStyle.getCustomFeatures().contains(DiagramPackage.Literals.EDGE_STYLE__LINE_STYLE.getName())) {
-                    edgeStyle.setLineStyle(edgeDescription.getLineStyle());
-                }
+            } else if (edgeStyle.getLineStyle().getValue() != edgeDescription.getLineStyle().getValue()
+                    && !edgeStyle.getCustomFeatures().contains(DiagramPackage.Literals.EDGE_STYLE__LINE_STYLE.getName())) {
+                edgeStyle.setLineStyle(edgeDescription.getLineStyle());
             }
-            if (previousStyle.some() && previousStyle.get().getCustomFeatures().contains(DiagramPackage.Literals.EDGE_STYLE__FOLDING_STYLE.getName())) {
+            if (customizedFeatures.contains(DiagramPackage.Literals.EDGE_STYLE__FOLDING_STYLE.getName())) {
                 edgeStyle.setFoldingStyle(previousStyle.get().getFoldingStyle());
                 edgeStyle.getCustomFeatures().add(DiagramPackage.Literals.EDGE_STYLE__FOLDING_STYLE.getName());
-            } else {
-                if (edgeStyle.getFoldingStyle().getValue() != edgeDescription.getFoldingStyle().getValue()
-                        && !edgeStyle.getCustomFeatures().contains(DiagramPackage.Literals.EDGE_STYLE__FOLDING_STYLE.getName())) {
-                    edgeStyle.setFoldingStyle(edgeDescription.getFoldingStyle());
-                }
+            } else if (edgeStyle.getFoldingStyle().getValue() != edgeDescription.getFoldingStyle().getValue()
+                    && !edgeStyle.getCustomFeatures().contains(DiagramPackage.Literals.EDGE_STYLE__FOLDING_STYLE.getName())) {
+                edgeStyle.setFoldingStyle(edgeDescription.getFoldingStyle());
             }
-            if (previousStyle.some() && previousStyle.get().getCustomFeatures().contains(DiagramPackage.Literals.EDGE_STYLE__SIZE.getName())) {
+            if (customizedFeatures.contains(DiagramPackage.Literals.EDGE_STYLE__SIZE.getName())) {
                 edgeStyle.setSize(previousStyle.get().getSize());
                 edgeStyle.getCustomFeatures().add(DiagramPackage.Literals.EDGE_STYLE__SIZE.getName());
-            } else {
-                if (edgeDescription.getSizeComputationExpression() != null && edgeStyle.eContainer() != null
-                        && !edgeStyle.getCustomFeatures().contains(DiagramPackage.Literals.EDGE_STYLE__SIZE.getName())) {
-                    Integer size = Integer.valueOf(1);
-                    try {
-                        size = interpreter.evaluateInteger(((DSemanticDecorator) edgeStyle.eContainer()).getTarget(), edgeDescription.getSizeComputationExpression());
-                    } catch (final EvaluationException e) {
-                        // silent.
-                    }
-                    if (!Objects.equal(size, edgeStyle.getSize())) {
-                        edgeStyle.setSize(size);
-                    }
+            } else if (edgeDescription.getSizeComputationExpression() != null && edgeStyle.eContainer() != null
+                    && !edgeStyle.getCustomFeatures().contains(DiagramPackage.Literals.EDGE_STYLE__SIZE.getName())) {
+                Integer size = Integer.valueOf(1);
+                try {
+                    size = interpreter.evaluateInteger(((DSemanticDecorator) edgeStyle.eContainer()).getTarget(), edgeDescription.getSizeComputationExpression());
+                } catch (final EvaluationException e) {
+                    // silent.
+                }
+                if (!Objects.equal(size, edgeStyle.getSize())) {
+                    edgeStyle.setSize(size);
                 }
             }
             // Get the override edge routing from the diagram preferences. If
@@ -550,9 +542,8 @@ public final class StyleHelper {
     }
 
     /**
-     * Create a new container style from its description. All the variable
-     * fields are not computed during the creation. Indeed, they need a context
-     * that is not known at present.
+     * Create a new container style from its description. All the variable fields are not computed during the creation.
+     * Indeed, they need a context that is not known at present.
      * 
      * @param description
      *            the container style description
@@ -580,12 +571,9 @@ public final class StyleHelper {
      * @param description
      * @param style
      * @param previousStyle
-     *            Could be a NodeStyle if the style is a
-     *            WorkspaceImageDescription. This style is both a ContainerStyle
-     *            and a NodeStyle (example we passed from a NodeStyle to a
-     *            WorkspaceImageDescription). If the style is not a
-     *            WorkspaceImageDescription, the previousStyle is inevitably a
-     *            ContainerStyle.
+     *            Could be a NodeStyle if the style is a WorkspaceImageDescription. This style is both a ContainerStyle
+     *            and a NodeStyle (example we passed from a NodeStyle to a WorkspaceImageDescription). If the style is
+     *            not a WorkspaceImageDescription, the previousStyle is inevitably a ContainerStyle.
      */
     private void updateContainerStyle(final ContainerStyleDescription description, final ContainerStyle style, Option<? extends Style> previousStyle) {
         if (description instanceof FlatContainerStyleDescription && style instanceof FlatContainerStyle) {
@@ -632,9 +620,8 @@ public final class StyleHelper {
     }
 
     /**
-     * Create a new node style from its description. All the variable fields are
-     * not computed during the creation. Indeed, they need a context that is not
-     * known at present.
+     * Create a new node style from its description. All the variable fields are not computed during the creation.
+     * Indeed, they need a context that is not known at present.
      * 
      * @param description
      *            the container style description
@@ -676,12 +663,10 @@ public final class StyleHelper {
      * @param description
      * @param style
      * @param previousStyle
-     *            Could be a ContainerStyle if the style is a
-     *            WorkspaceImageDescription. This style is both a ContainerStyle
-     *            and a NodeStyle (example we passed from a ContainerStyle to a
-     *            WorkspaceImageDescription). If the style is not a
-     *            WorkspaceImageDescription, the previousStyle is inevitably a
-     *            NodeStyle.
+     *            Could be a ContainerStyle if the style is a WorkspaceImageDescription. This style is both a
+     *            ContainerStyle and a NodeStyle (example we passed from a ContainerStyle to a
+     *            WorkspaceImageDescription). If the style is not a WorkspaceImageDescription, the previousStyle is
+     *            inevitably a NodeStyle.
      */
     private void updateNodeStyle(final NodeStyleDescription description, final NodeStyle style, Option<? extends Style> previousStyle) {
         boolean brokenStyle = false;
@@ -902,11 +887,10 @@ public final class StyleHelper {
     }
 
     /**
-     * To avoid abusive dirty because of the new "width" and "height" attributes
-     * on {@link DDiagramElementContainer}, we have to check whether the VSM
-     * width and height computation expression are different of the default
-     * value (-1) before to set them. By default, if the width or height
-     * features are unset, we keep the same auto-size behavior than before.
+     * To avoid abusive dirty because of the new "width" and "height" attributes on {@link DDiagramElementContainer}, we
+     * have to check whether the VSM width and height computation expression are different of the default value (-1)
+     * before to set them. By default, if the width or height features are unset, we keep the same auto-size behavior
+     * than before.
      * 
      * @param value
      *            the value, already evaluated.
@@ -1319,14 +1303,12 @@ public final class StyleHelper {
      * @param style
      *            the style.
      * @param previousStyle
-     *            the previous style (if existing) to keep compatible
-     *            customization.
+     *            the previous style (if existing) to keep compatible customization.
      */
     protected void refreshColors(StyleDescription description, final Style style, Option<? extends Style> previousStyle) {
         EObject context = style.eContainer();
         /*
-         * If there is no description we won't have a lot of chance to update
-         * anything..
+         * If there is no description we won't have a lot of chance to update anything..
          */
         if (description != null) {
             if (context != null) {
@@ -1511,8 +1493,7 @@ public final class StyleHelper {
          * Default constructor.
          * 
          * @param previousStyle
-         *            the previous style (if existing) to keep compatible
-         *            customization.
+         *            the previous style (if existing) to keep compatible customization.
          * 
          */
         private RefreshStyleSwitch(Option<? extends Style> previousStyle) {
