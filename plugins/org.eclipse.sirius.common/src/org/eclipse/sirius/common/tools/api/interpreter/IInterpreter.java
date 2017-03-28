@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.sirius.ecore.extender.business.api.accessor.MetamodelDescriptor;
 import org.eclipse.sirius.ecore.extender.business.api.accessor.ModelAccessor;
+import org.eclipse.sirius.ext.emf.InverseReferenceFinder;
 
 /**
  * The contract of an interpreter for EMF Model.
@@ -293,5 +294,13 @@ public interface IInterpreter {
      *            The new metamodels.
      */
     void activateMetamodels(Collection<MetamodelDescriptor> metamodels);
+    
+    /**
+     * Set the InverseReferenceFinder to use.
+     * 
+     * @param irf
+     *            the InverseReferenceFinder to use.
+     */
+    void setInverseReferenceFinder(InverseReferenceFinder irf);
 
 }

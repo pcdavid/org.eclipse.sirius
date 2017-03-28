@@ -123,11 +123,10 @@ public final class CompoundInterpreter implements IInterpreter, IProposalProvide
      *
      * @return the created interpreter.
      */
-    public static IInterpreter2 createGenericInterpreter() {
+    public static IInterpreter createGenericInterpreter() {
         return new CompoundInterpreter();
     }
 
-    @Override
     @Override
     public Object evaluate(final EObject target, final String expression) throws EvaluationException {
         final IInterpreter interpreter = getInterpreterForExpression(expression);
@@ -166,13 +165,11 @@ public final class CompoundInterpreter implements IInterpreter, IProposalProvide
     }
 
     @Override
-    @Override
     public EObject evaluateEObject(final EObject target, final String expression) throws EvaluationException {
         final IInterpreter interpreter = getInterpreterForExpression(expression);
         return interpreter.evaluateEObject(target, expression);
     }
 
-    @Override
     @Override
     public Integer evaluateInteger(final EObject target, final String expression) throws EvaluationException {
         final IInterpreter interpreter = getInterpreterForExpression(expression);
@@ -180,20 +177,17 @@ public final class CompoundInterpreter implements IInterpreter, IProposalProvide
     }
 
     @Override
-    @Override
     public Collection<EObject> evaluateCollection(final EObject target, final String expression) throws EvaluationException {
         final IInterpreter interpreter = getInterpreterForExpression(expression);
         return interpreter.evaluateCollection(target, expression);
     }
 
     @Override
-    @Override
     public String evaluateString(final EObject target, final String expression) throws EvaluationException {
         final IInterpreter interpreter = getInterpreterForExpression(expression);
         return interpreter.evaluateString(target, expression);
     }
 
-    @Override
     @Override
     public boolean provides(final String expression) {
         return getProviderForExpression(expression) != null;
@@ -364,7 +358,6 @@ public final class CompoundInterpreter implements IInterpreter, IProposalProvide
     }
 
     @Override
-    @Override
     public void activateMetamodels(Collection<MetamodelDescriptor> metamodels) {
         this.additionalMetamodels.addAll(metamodels);
         for (final IInterpreter interpreter : this.providers.values()) {
@@ -374,7 +367,6 @@ public final class CompoundInterpreter implements IInterpreter, IProposalProvide
         }
     }
 
-    @Override
     @Override
     public void addImport(final String dependency) {
         this.dependencies.add(dependency);
@@ -386,7 +378,6 @@ public final class CompoundInterpreter implements IInterpreter, IProposalProvide
     }
 
     @Override
-    @Override
     public void clearImports() {
         this.dependencies.clear();
         for (final IInterpreter interpreter : this.providers.values()) {
@@ -396,7 +387,6 @@ public final class CompoundInterpreter implements IInterpreter, IProposalProvide
         }
     }
 
-    @Override
     @Override
     public void setProperty(final Object key, final Object value) {
         this.properties.put(key, value);
@@ -408,7 +398,6 @@ public final class CompoundInterpreter implements IInterpreter, IProposalProvide
     }
 
     @Override
-    @Override
     public void clearVariables() {
         this.variableManager.clearVariables();
         for (final IInterpreter interpreter : this.providers.values()) {
@@ -418,7 +407,6 @@ public final class CompoundInterpreter implements IInterpreter, IProposalProvide
         }
     }
 
-    @Override
     @Override
     public void dispose() {
         for (final IInterpreter interpreter : this.providers.values()) {
@@ -436,12 +424,10 @@ public final class CompoundInterpreter implements IInterpreter, IProposalProvide
     }
 
     @Override
-    @Override
     public Object getVariable(final String name) {
         return this.variableManager.getVariable(name);
     }
 
-    @Override
     @Override
     public void setVariable(final String name, final Object value) {
         this.variableManager.setVariable(name, value);
@@ -453,7 +439,6 @@ public final class CompoundInterpreter implements IInterpreter, IProposalProvide
     }
 
     @Override
-    @Override
     public void unSetVariable(final String name) {
         this.variableManager.unSetVariable(name);
         for (final IInterpreter interpreter : this.providers.values()) {
@@ -464,7 +449,6 @@ public final class CompoundInterpreter implements IInterpreter, IProposalProvide
     }
 
     @Override
-    @Override
     public void addVariableStatusListener(final IVariableStatusListener newListener) {
         this.listeners.add(newListener);
         for (final IInterpreter interpreter : this.providers.values()) {
@@ -474,7 +458,6 @@ public final class CompoundInterpreter implements IInterpreter, IProposalProvide
         }
     }
 
-    @Override
     @Override
     public Map<String, ?> getVariables() {
         final Map<String, Object> result = this.variableManager.getVariables();
@@ -489,7 +472,6 @@ public final class CompoundInterpreter implements IInterpreter, IProposalProvide
     }
 
     @Override
-    @Override
     public void removeVariableStatusListener(final IVariableStatusListener listener) {
         this.listeners.remove(listener);
         for (final IInterpreter interpreter : this.providers.values()) {
@@ -499,7 +481,6 @@ public final class CompoundInterpreter implements IInterpreter, IProposalProvide
         }
     }
 
-    @Override
     @Override
     public void setModelAccessor(final ModelAccessor modelAccessor) {
         this.modelAccessor = modelAccessor;
@@ -515,60 +496,51 @@ public final class CompoundInterpreter implements IInterpreter, IProposalProvide
      *
      * @author ymortier
      */
-    private static class DefaultInterpreterProvider implements IInterpreterProvider, IInterpreter, IInterpreter2, TypedValidation {
+    private static class DefaultInterpreterProvider implements IInterpreterProvider, IInterpreter, TypedValidation {
 
         /** The shared instance. */
         public static final DefaultInterpreterProvider INSTANCE = new DefaultInterpreterProvider();
 
-        @Override
         @Override
         public IInterpreter createInterpreter() {
             return this;
         }
 
         @Override
-        @Override
         public void dispose() {
             // nothing to dispose
         }
 
-        @Override
         @Override
         public boolean provides(final String expression) {
             return true;
         }
 
         @Override
-        @Override
         public void activateMetamodels(Collection<MetamodelDescriptor> metamodels) {
             // empty
         }
 
-        @Override
         @Override
         public void addImport(final String dependency) {
             // empty.
         }
 
         @Override
-        @Override
         public void addVariableStatusListener(final IVariableStatusListener newListener) {
             // empty.
         }
 
-        @Override
         @Override
         public void clearImports() {
             // empty.
         }
 
         @Override
-        @Override
         public void clearVariables() {
             // empty.
         }
 
-        @Override
         @Override
         public Object evaluate(final EObject target, final String expression) throws EvaluationException {
             Object result = evaluateInteger(target, expression);
@@ -580,24 +552,20 @@ public final class CompoundInterpreter implements IInterpreter, IProposalProvide
         }
 
         @Override
-        @Override
         public boolean evaluateBoolean(final EObject context, final String expression) throws EvaluationException {
             return Boolean.parseBoolean(expression);
         }
 
-        @Override
         @Override
         public Collection<EObject> evaluateCollection(final EObject context, final String expression) throws EvaluationException {
             return Collections.<EObject> emptyList();
         }
 
         @Override
-        @Override
         public EObject evaluateEObject(final EObject context, final String expression) throws EvaluationException {
             return context;
         }
 
-        @Override
         @Override
         public Integer evaluateInteger(final EObject context, final String expression) throws EvaluationException {
             try {
@@ -608,60 +576,50 @@ public final class CompoundInterpreter implements IInterpreter, IProposalProvide
         }
 
         @Override
-        @Override
         public String evaluateString(final EObject context, final String expression) throws EvaluationException {
             return expression;
         }
 
-        @Override
         @Override
         public Object getVariable(final String name) {
             return null;
         }
 
         @Override
-        @Override
         public Map<String, Object> getVariables() {
             return Collections.<String, Object> emptyMap();
         }
 
-        @Override
         @Override
         public void removeVariableStatusListener(final IVariableStatusListener listener) {
             // empty
         }
 
         @Override
-        @Override
         public void setModelAccessor(final ModelAccessor modelAccessor) {
             // empty
         }
 
-        @Override
         @Override
         public void setProperty(final Object key, final Object value) {
             // empty
         }
 
         @Override
-        @Override
         public void setVariable(final String name, final Object value) {
             // empty.
         }
 
-        @Override
         @Override
         public void unSetVariable(final String name) {
             // empty
         }
 
         @Override
-        @Override
         public String getPrefix() {
             return null;
         }
 
-        @Override
         @Override
         public String getVariablePrefix() {
             return null;
@@ -830,7 +788,6 @@ public final class CompoundInterpreter implements IInterpreter, IProposalProvide
     }
 
     @Override
-    @Override
     public void setCrossReferencer(final ECrossReferenceAdapter crossReferencer) {
         this.crossReferencer = crossReferencer;
         for (final IInterpreter interpreter : this.providers.values()) {
@@ -844,9 +801,7 @@ public final class CompoundInterpreter implements IInterpreter, IProposalProvide
     public void setInverseReferenceFinder(InverseReferenceFinder irf) {
         this.inverseReferenceFinder = irf;
         for (final IInterpreter interpreter : this.providers.values()) {
-            if (interpreter instanceof IInterpreter2) {
-                ((IInterpreter2) interpreter).setInverseReferenceFinder(this.inverseReferenceFinder);
-            }
+            interpreter.setInverseReferenceFinder(this.inverseReferenceFinder);
         }
     }
 
@@ -881,12 +836,10 @@ public final class CompoundInterpreter implements IInterpreter, IProposalProvide
     }
 
     @Override
-    @Override
     public Collection<String> getImports() {
         return Collections.<String> unmodifiableCollection(this.dependencies);
     }
 
-    @Override
     @Override
     public void removeImport(String dependency) {
         this.dependencies.remove(dependency);
@@ -897,7 +850,6 @@ public final class CompoundInterpreter implements IInterpreter, IProposalProvide
         }
     }
 
-    @Override
     @Override
     public Collection<IInterpreterStatus> validateExpression(IInterpreterContext context, String expression) {
         final IInterpreter interpreter = getInterpreterForExpression(expression);
@@ -915,7 +867,6 @@ public final class CompoundInterpreter implements IInterpreter, IProposalProvide
         return result;
     }
 
-    @Override
     @Override
     public boolean supportsValidation() {
         return true;
