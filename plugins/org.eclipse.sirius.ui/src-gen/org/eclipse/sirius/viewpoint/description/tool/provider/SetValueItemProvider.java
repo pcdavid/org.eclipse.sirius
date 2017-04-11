@@ -20,6 +20,7 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.eclipse.sirius.common.tools.api.util.StringUtil;
 import org.eclipse.sirius.viewpoint.description.tool.SetValue;
 import org.eclipse.sirius.viewpoint.description.tool.ToolPackage;
 
@@ -94,14 +95,21 @@ public class SetValueItemProvider extends ContainerModelOperationItemProvider {
     /**
      * This returns the label text for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc -->
      * 
-     * @generated
-     */
-    @Override
-    public String getText(Object object) {
-        String label = ((SetValue) object).getFeatureName();
-        return label == null || label.length() == 0 ? getString("_UI_SetValue_type") : //$NON-NLS-1$
-                getString("_UI_SetValue_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
-    }
+    * @generated NOT
+    */
+   @Override
+   public String getText(Object object) {
+       String typeName = getString("_UI_SetValue_type"); //$NON-NLS-1$
+       String featureName = ((SetValue) object).getFeatureName();
+       String varValue = ((SetValue) object).getValueExpression();
+       if (StringUtil.isEmpty(featureName)) {
+           return typeName;
+       } else if (StringUtil.isEmpty(varValue)) {
+           return typeName + " " + featureName; //$NON-NLS-1$ 
+       } else {
+           return typeName + " " + featureName + " \u2190 " + varValue; //$NON-NLS-1$ //$NON-NLS-2$
+       }
+   }
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached children and by creating
