@@ -16,10 +16,12 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.StyledString;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.eclipse.sirius.table.metamodel.table.description.DescriptionPackage;
 import org.eclipse.sirius.table.metamodel.table.description.TableVariable;
@@ -120,8 +122,15 @@ public class TableVariableItemProvider extends AbstractVariableItemProvider {
      */
     @Override
     public String getText(Object object) {
-        String label = ((TableVariable) object).getName();
+        String label = ((TableVariable) object).getName() + ": " + ((TableVariable) object).getDocumentation(); //$NON-NLS-1$
         return label == null || label.length() == 0 ? getString("_UI_TableVariable_type") : label; //$NON-NLS-1$
+    }
+    
+    @Override
+    public Object getStyledText(Object object) {
+        StyledString result = (StyledString) super.getStyledText(object);
+        result.append(" : " + ((TableVariable) object).getDocumentation(), StyledString.Style.newBuilder().setForegroundColor(URI.createURI("color://rgb/64/64/64")).toStyle()); //$NON-NLS-1$ //$NON-NLS-2$
+        return result;
     }
 
     /**
