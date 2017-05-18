@@ -667,4 +667,18 @@
        </command>
     </menuContribution>
  </extension>
+ <extension
+         point="org.eclipse.ui.decorators">
+      <decorator
+            class="org.eclipse.sirius.ui.tools.internal.views.common.labeldecorator.AirdLabelDecorator"
+            id="org.eclipse.sirius.ui.tools.internal.views.common.sessionlabeldecorator"
+            label="%_UI_SessionLabelDecoration_label"
+            state="true">
+         <enablement>
+            <objectClass
+                  name="org.eclipse.core.resources.IFile">
+            </objectClass>
+         </enablement>
+      </decorator>
+   </extension>
 </plugin>
