@@ -11,6 +11,7 @@
 package org.eclipse.sirius.tree.ui.tools.internal.editor.provider;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
@@ -126,18 +127,17 @@ public class TreeUIUpdater extends ResourceSetListenerImpl {
             // By default the refresh only add DTreeItem collapsed by
             // default,
             // but we can't do this assumption.
-            if (dTreeItem.isExpanded()) {
-                toExpands.add(dTreeItem);
-                analyseExpansionStateOfCreatedChildren(dTreeItem.getOwnedTreeItems());
-            }
+            analyseExpansionStateOfCreatedChildren(Collections.singleton(dTreeItem));
         }
     }
 
     private void analyseExpansionStateOfCreatedChildren(Collection<DTreeItem> ownedTreeItems) {
         for (DTreeItem dTreeItem : ownedTreeItems) {
             if (dTreeItem.isExpanded()) {
-                toExpands.add(dTreeItem);
-                analyseExpansionStateOfCreatedChildren(dTreeItem.getOwnedTreeItems());
+                boolean wasNew = toExpands.add(dTreeItem);
+                if (wasNew) {
+                    analyseExpansionStateOfCreatedChildren(dTreeItem.getOwnedTreeItems());
+                }
             }
         }
     }
