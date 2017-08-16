@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/sequence/description/2.0.0" xmlns:filter="http://www.eclipse.org/sirius/diagram/description/filter/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/sequence/description/tool/2.0.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" xmlns:tool_2="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" name="Interaction" version="11.1.1.201612201200">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/sequence/description/2.0.0" xmlns:filter="http://www.eclipse.org/sirius/diagram/description/filter/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/sequence/description/tool/2.0.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" xmlns:tool_2="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" name="Interaction" version="12.0.0.2017041100">
   <ownedViewpoints endUserDocumentation="Provides diagrams to model interactions between Ecore elements." name="Interactions" label="Interactions" modelFileExtension="interactions">
-    <ownedRepresentations xsi:type="description_1:SequenceDiagramDescription" endUserDocumentation="Sequence diagram for Ecore interactions." name="Sequence Diagram on Interaction" label="Sequence Diagram on Interaction" titleExpression="aql:'Sequence Diagram on ' + self.name" domainClass="interactions.Interaction" endsOrdering="feature:ends">
+    <ownedRepresentations xsi:type="description_1:SequenceDiagramDescription" endUserDocumentation="Sequence diagram for Ecore interactions." name="Sequence Diagram on Interaction" label="Sequence Diagram on Interaction" titleExpression="aql:'Sequence Diagram on ' + self.name" domainClass="interactions.Interaction" endsOrdering="aql:self.ends">
       <metamodel href="http://www.eclipse.org/sirius/sample/interactions#/"/>
       <metamodel href="http://www.eclipse.org/emf/2002/Ecore#/"/>
       <filters xsi:type="filter:CompositeFilterDescription" name="CollapseExec" label="Collapse Executions">
@@ -801,11 +801,11 @@
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="coveredParticipants" valueExpression="var:coverage"/>
                 </subModelOperations>
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="interactions.InteractionUseEnd" referenceName="ends" variableName="startingEnd">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'start_' + instance.name"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'start_' + newIU.name"/>
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="owner" valueExpression="var:newIU"/>
                 </subModelOperations>
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="interactions.InteractionUseEnd" referenceName="ends" variableName="finishingEnd">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'finish_' + instance.name"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'finish_' + newIU.name"/>
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="owner" valueExpression="var:newIU"/>
                 </subModelOperations>
                 <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:newIU">
@@ -858,14 +858,14 @@
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="owner" valueExpression="var:newCF"/>
                 </subModelOperations>
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="interactions.OperandEnd" referenceName="ends" variableName="newOpEnd">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'start_' + newOperand.name"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="owner" valueExpression="var:newOperand"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'start_' + newOpEnd.name"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="owner" valueExpression="var:newOpEnd"/>
                 </subModelOperations>
                 <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:newCF">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="start" valueExpression="var:startCF"/>
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="finish" valueExpression="var:finishCF"/>
                 </subModelOperations>
-                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:newOperand">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:newOpEnd.owner">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="start" valueExpression="var:newOpEnd"/>
                 </subModelOperations>
                 <subModelOperations xsi:type="tool_1:ExternalJavaAction" name="Move finishCF" icon="" id="org.eclipse.sirius.business.api.action.moveElement">
@@ -907,10 +907,10 @@
                   </subModelOperations>
                 </subModelOperations>
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="interactions.OperandEnd" referenceName="ends" variableName="newOpEnd">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'start_' + newOperand.name"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="owner" valueExpression="var:newOperand"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'start_' + newOpEnd.name"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="owner" valueExpression="var:newOpEnd"/>
                 </subModelOperations>
-                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:newOperand">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:newOpEnd">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="start" valueExpression="var:newOpEnd"/>
                 </subModelOperations>
                 <subModelOperations xsi:type="tool_1:ExternalJavaAction" name="Move operand start end" id="org.eclipse.sirius.business.api.action.moveElement">
@@ -922,7 +922,7 @@
                 <subModelOperations xsi:type="tool_1:ExternalJavaAction" name="Move operand" id="org.eclipse.sirius.business.api.action.moveElement">
                   <parameters name="referenceOwner" value="aql:newOperand.eContainer()"/>
                   <parameters name="referenceName" value="ownedOperands"/>
-                  <parameters name="element" value="var:newOperand"/>
+                  <parameters name="element" value="var:newOpEnd"/>
                   <parameters name="predecessor" value="aql:newOperand.start.precedingSiblings()->reverse()->filter(interactions::OperandEnd)->asSet()->intersection(newOperand.eContainer().ownedOperands.start->asSet())->first().owner"/>
                 </subModelOperations>
               </firstModelOperations>
@@ -1277,7 +1277,13 @@
         </toolSections>
       </defaultLayer>
       <additionalLayers name="Lost Found" label="Lost and found messages creation">
-        <nodeMappings name="pipoToKeepTheLayerNonTransient"/>
+        <nodeMappings name="pipoToKeepTheLayerNonTransient" preconditionExpression="aql:false" domainClass="EObject">
+          <style xsi:type="style:BundledImageDescription" labelExpression="" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
         <toolSections name="Lost Messages">
           <ownedTools xsi:type="tool_1:ToolDescription" name="Lost Sync/ASync Call" precondition="aql:(element.oclIsKindOf(interactions::Participant) and elementView.eContainer().oclIsKindOf(diagram::DNode)) or element.oclIsKindOf(interactions::Execution)" forceRefresh="true">
             <element name="element"/>
@@ -1623,7 +1629,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool_1:ToolDescription" name="Found Create" precondition="aql:element.oclIsKindOf(interactions::Participant) and elementview.eContainer().oclIsKindOf(diagram::DNode) and elementView.eContainer().eContainer().oclIsKindOf(diagram::DDiagram) and element.canCreate(endBefore)" forceRefresh="true">
+          <ownedTools xsi:type="tool_1:ToolDescription" name="Found Create" precondition="aql:element.oclIsKindOf(interactions::Participant) and elementView.eContainer().oclIsKindOf(diagram::DNode) and elementView.eContainer().eContainer().oclIsKindOf(diagram::DDiagram) and element.canCreate(endBefore)" forceRefresh="true">
             <element name="element"/>
             <elementView name="elementView"/>
             <initialOperation>
