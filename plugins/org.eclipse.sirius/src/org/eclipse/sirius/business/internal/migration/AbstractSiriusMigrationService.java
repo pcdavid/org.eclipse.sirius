@@ -36,6 +36,8 @@ import org.eclipse.sirius.viewpoint.SiriusPlugin;
 import org.osgi.framework.Version;
 import org.xml.sax.Attributes;
 
+import com.google.common.collect.Lists;
+
 /**
  * Abstract migration service. Provides services to load and delegate to migration participants.
  * 
@@ -85,8 +87,31 @@ public abstract class AbstractSiriusMigrationService implements IMigrationPartic
                 SiriusPlugin.getDefault().getLog().log(new Status(Status.WARNING, SiriusPlugin.ID, Messages.AbstractSiriusMigrationService_contributionInstantiationErrorMsg, e));
             }
         }
-        delegatesParticipants.sort((p1, p2) -> p1.getMigrationVersion().compareTo(p2.getMigrationVersion()));
+        ArrayList<IMigrationParticipant> sorted = Lists.newArrayList(delegatesParticipants);
+        sorted.sort((p1, p2) -> {
+            return compare(p1, p2);
+        });
+        System.out.println("Unsorted:\n"); //$NON-NLS-1$
+        delegatesParticipants.forEach(p -> {
+            System.out.println(p.toString() + " [" + p.getMigrationVersion() + "]"); //$NON-NLS-1$//$NON-NLS-2$
+        });
+        System.out.println("\nSorted:\n"); //$NON-NLS-1$
+        sorted.forEach(p -> {
+            System.out.println(p.toString() + " [" + p.getMigrationVersion() + "]"); //$NON-NLS-1$//$NON-NLS-2$
+        });
     }
+
+    // CHECKSTYLE:OFF
+    private int compare(IMigrationParticipant p1, IMigrationParticipant p2) {
+        if (p1.toString().contains("DRepInDViewToRootObjectsAndWithDRepDescRepPathMigrationParticipant") && p2.toString().contains("NoteShapeDefaultLabelAlignmentMigrationParticipant")) { //$NON-NLS-1$ //$NON-NLS-2$
+            return 1;
+        } else if (p2.toString().contains("DRepInDViewToRootObjectsAndWithDRepDescRepPathMigrationParticipant") && p1.toString().contains("NoteShapeDefaultLabelAlignmentMigrationParticipant")) { //$NON-NLS-1$ //$NON-NLS-2$
+            return -1;
+        } else {
+            return p1.getMigrationVersion().compareTo(p2.getMigrationVersion());
+        }
+    }
+    // CHECKSTYLE:ON
 
     /**
      * {@inheritDoc}
