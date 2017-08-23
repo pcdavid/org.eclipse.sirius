@@ -18,6 +18,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.eclipse.core.commands.operations.IOperationHistoryListener;
 import org.eclipse.core.commands.operations.IUndoContext;
@@ -33,6 +34,8 @@ import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
+import org.eclipse.draw2d.PositionConstants;
+import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.command.CompoundCommand;
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -71,6 +74,8 @@ import org.eclipse.gmf.runtime.diagram.ui.actions.ActionIds;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.internal.parts.DiagramGraphicalViewerKeyHandler;
+import org.eclipse.gmf.runtime.diagram.ui.internal.parts.DirectEditKeyHandler;
 import org.eclipse.gmf.runtime.diagram.ui.l10n.DiagramUIMessages;
 import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramCommandStack;
 import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramEditor;
@@ -132,6 +137,7 @@ import org.eclipse.sirius.diagram.ui.edit.api.part.AbstractDiagramNameEditPart;
 import org.eclipse.sirius.diagram.ui.edit.internal.part.listener.DiagramHeaderPostCommitListener;
 import org.eclipse.sirius.diagram.ui.edit.internal.part.listener.SynchronizedStatusPostCommitListener;
 import org.eclipse.sirius.diagram.ui.edit.internal.part.listener.VisibilityPostCommitListener;
+import org.eclipse.sirius.diagram.ui.internal.edit.parts.DNodeListElementEditPart;
 import org.eclipse.sirius.diagram.ui.internal.refresh.SiriusDiagramSessionEventBroker;
 import org.eclipse.sirius.diagram.ui.internal.refresh.SynchronizeGMFModelCommand;
 import org.eclipse.sirius.diagram.ui.internal.refresh.layout.SiriusCanonicalLayoutHandler;
@@ -200,6 +206,7 @@ import org.eclipse.swt.dnd.DND;
 import org.eclipse.swt.dnd.DropTarget;
 import org.eclipse.swt.dnd.DropTargetEvent;
 import org.eclipse.swt.dnd.Transfer;
+import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.layout.GridData;
@@ -237,6 +244,152 @@ import com.google.common.collect.Sets;
  * @since 0.9.0
  */
 public class DDiagramEditorImpl extends SiriusDiagramEditor implements DDiagramEditor, ISelectionListener, SessionListener {
+
+    // CHECKSTYLE:OFF
+    private static final class DiagramGraphicalViewerKeyHandlerExtension extends DiagramGraphicalViewerKeyHandler {
+        private DiagramGraphicalViewerKeyHandlerExtension(GraphicalViewer viewer) {
+            super(viewer);
+        }
+
+        public boolean keyPressed(org.eclipse.swt.events.KeyEvent event) {
+            switch (event.keyCode) {
+            case SWT.ARROW_LEFT:
+                if (navigateNextSibling(event, isViewerMirrored() ? PositionConstants.EAST : PositionConstants.WEST))
+                    return true;
+                break;
+            case SWT.ARROW_RIGHT:
+                if (navigateNextSibling(event, isViewerMirrored() ? PositionConstants.WEST : PositionConstants.EAST))
+                    return true;
+                break;
+            case SWT.ARROW_UP:
+                if (navigateNextSibling(event, PositionConstants.NORTH))
+                    return true;
+                break;
+            case SWT.ARROW_DOWN:
+                if (navigateNextSibling(event, PositionConstants.SOUTH))
+                    return true;
+                break;
+            }
+            return super.keyPressed(event);
+        }
+
+        /**
+         * Traverses to the next sibling in the given direction.
+         * 
+         * @param event
+         *            the KeyEvent for the keys that were pressed to trigger this traversal
+         * @param direction
+         *            PositionConstants.* indicating the direction in which to traverse
+         */
+        boolean navigateNextSibling(KeyEvent event, int direction) {
+            List<?> navigationSiblings = getNavigationSiblings();
+            List<GraphicalEditPart> navigationSiblingsParts = navigationSiblings.stream().filter(GraphicalEditPart.class::isInstance).map(GraphicalEditPart.class::cast)
+                    .collect(Collectors.toList());
+            return navigateNextSibling(event, direction, navigationSiblingsParts);
+        }
+
+        /**
+         * Traverses to the closest EditPart in the given list that is also in the given direction.
+         * 
+         * @param event
+         *            the KeyEvent for the keys that were pressed to trigger this traversal
+         * @param direction
+         *            PositionConstants.* indicating the direction in which to traverse
+         */
+        boolean navigateNextSibling(KeyEvent event, int direction, List<GraphicalEditPart> list) {
+            org.eclipse.gef.GraphicalEditPart epStart = getFocusEditPart();
+            IFigure figure = epStart.getFigure();
+            Point pStart = getNavigationPoint(figure);
+            figure.translateToAbsolute(pStart);
+            EditPart next = findSibling(list, pStart, direction, epStart);
+            if (next == null)
+                return false;
+            navigateTo(next, event);
+            return true;
+        }
+
+        /**
+         * Given an absolute point (pStart) and a list of EditParts, this method finds the closest EditPart (except for
+         * the one to be excluded) in the given direction.
+         * 
+         * @param siblings
+         *            List of sibling EditParts
+         * @param pStart
+         *            The starting point (must be in absolute coordinates) from which the next sibling is to be found.
+         * @param direction
+         *            PositionConstants
+         * @param exclude
+         *            The EditPart to be excluded from the search
+         * 
+         */
+        GraphicalEditPart findSibling(List<GraphicalEditPart> siblings, Point pStart, int direction, EditPart exclude) {
+            GraphicalEditPart epCurrent;
+            GraphicalEditPart epFinal = null;
+            IFigure figure;
+            Point pCurrent;
+            int distance = Integer.MAX_VALUE;
+            
+            List<GraphicalEditPart> targets = getValidNavigationTargets(siblings).stream().filter(GraphicalEditPart.class::isInstance).map(GraphicalEditPart.class::cast)
+                    .collect(Collectors.toList());
+            /*
+             * Special case for navigating up/down between list items: ignore their graphical bounds and navigate by index. See http://eclip.se/521225.
+             */
+            if (siblings.stream().allMatch(DNodeListElementEditPart.class::isInstance) && (direction == PositionConstants.NORTH || direction == PositionConstants.SOUTH)) {
+                int currentIndex = targets.indexOf(exclude);
+                if (currentIndex >= 1 && direction == PositionConstants.NORTH) {
+                    return targets.get(currentIndex - 1);
+                } else if (0 <= currentIndex && currentIndex < targets.size() -1 && direction == PositionConstants.SOUTH) {
+                    return targets.get(currentIndex + 1);
+                }
+            }
+
+            Iterator iter = targets.iterator();
+            while (iter.hasNext()) {
+                epCurrent = (GraphicalEditPart) iter.next();
+                if (epCurrent == exclude)
+                    continue;
+                figure = epCurrent.getFigure();
+                pCurrent = getNavigationPoint(figure);
+                figure.translateToAbsolute(pCurrent);
+                if (pStart.getPosition(pCurrent) != direction)
+                    continue;
+
+                int d = pCurrent.getDistanceOrthogonal(pStart);
+                if (d < distance) {
+                    distance = d;
+                    epFinal = epCurrent;
+                }
+            }
+            return epFinal;
+        }
+
+        private List<?> getValidNavigationTargets(List candidateEditParts) {
+            List validNavigationTargetEditParts = new ArrayList();
+            for (int i = 0; i < candidateEditParts.size(); i++) {
+                EditPart candidate = (EditPart) candidateEditParts.get(i);
+                if (isValidNavigationTarget(candidate)) {
+                    validNavigationTargetEditParts.add(candidate);
+                }
+            }
+            return validNavigationTargetEditParts;
+        }
+
+        private boolean isValidNavigationTarget(EditPart editPart) {
+            return editPart.isSelectable();
+        }
+
+        /**
+         * Figures' navigation points are used to determine their direction compared
+         * to one another, and the distance between them.
+         * 
+         * @return the center of the given figure
+         */
+        Point getNavigationPoint(IFigure figure) {
+            return figure.getBounds().getCenter();
+        }
+    }
+    // CHECKSTYLE:ON
+
     /**
      * This class has the responsibility to open the editing session corresponding to a session added to the session
      * manager and attaching to it the current editor so it can be handled correctly.
@@ -870,6 +1023,8 @@ public class DDiagramEditorImpl extends SiriusDiagramEditor implements DDiagramE
     protected void configureGraphicalViewer() {
         if (getDiagram() != null) {
             super.configureGraphicalViewer();
+            /* Custom key handler */
+            setupCustomKeyHandler();
 
             /* register our menu provider to provide our custom delete action */
             final DiagramEditorContextMenuProvider provider = new DiagramEditorContextMenuProvider(this, getDiagramGraphicalViewer());
@@ -883,6 +1038,12 @@ public class DDiagramEditorImpl extends SiriusDiagramEditor implements DDiagramE
                 ((DiagramGraphicalViewer) getDiagramGraphicalViewer()).hookWorkspacePreferenceStore(getWorkspaceViewerPreferenceStore());
             }
         }
+    }
+
+    private void setupCustomKeyHandler() {
+        IDiagramGraphicalViewer viewer = getDiagramGraphicalViewer();
+        KeyHandler viewerKeyHandler = new DiagramGraphicalViewerKeyHandlerExtension(viewer).setParent(getKeyHandler());
+        viewer.setKeyHandler(new DirectEditKeyHandler(viewer).setParent(viewerKeyHandler));
     }
 
     private DiagramOutlinePage initOutline() {
