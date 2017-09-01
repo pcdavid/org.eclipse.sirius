@@ -115,6 +115,8 @@ public class SimpleImageTranscoder extends SVGAbstractTranscoder {
             bufferedImage = renderer.getOffScreen();
         } catch (Exception ex) {
             throw new TranscoderException(ex);
+        } finally {
+            renderer.dispose();
         }
     }
 
