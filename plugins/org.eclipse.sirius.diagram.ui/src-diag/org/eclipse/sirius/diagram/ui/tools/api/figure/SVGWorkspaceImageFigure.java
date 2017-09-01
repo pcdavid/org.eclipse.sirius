@@ -11,6 +11,7 @@
 package org.eclipse.sirius.diagram.ui.tools.api.figure;
 
 import java.io.File;
+import java.util.Objects;
 
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.Path;
@@ -111,13 +112,18 @@ public class SVGWorkspaceImageFigure extends SVGFigure implements IWorkspaceImag
 
     private boolean updateImageURI(String workspacePath) {
         if (workspacePath != null) {
+            String oldURI = getURI();
+            String newURI;
             Option<String> existingImageUri = SVGWorkspaceImageFigure.getImageUri(workspacePath, false);
-            if (existingImageUri.some()) {
-                setURI(existingImageUri.get());
+            if (existingImageUri.some())  {
+                newURI = existingImageUri.get();
             } else {
-                setURI(SVGFigure.IMAGE_NOT_FOUND_URI);
+                newURI = SVGFigure.IMAGE_NOT_FOUND_URI;
             }
-            return true;
+            if (!Objects.equals(oldURI, newURI)) {
+                setURI(newURI);
+                return true;
+            }
         }
         return false;
     }
@@ -155,8 +161,10 @@ public class SVGWorkspaceImageFigure extends SVGFigure implements IWorkspaceImag
      */
     public static Image flyWeightImage(String path) {
         SVGWorkspaceImageFigure fig = new SVGWorkspaceImageFigure();
-        fig.updateImageURI(path);
-        fig.contentChanged();
+        boolean changed = fig.updateImageURI(path);
+        if (changed) {
+            fig.contentChanged();
+        }
         return fig.getImage(new PrecisionRectangle(0, 0, -1, -1), null);
     }
 
