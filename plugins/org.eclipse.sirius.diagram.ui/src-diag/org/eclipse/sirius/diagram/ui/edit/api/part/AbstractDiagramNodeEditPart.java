@@ -120,7 +120,7 @@ public abstract class AbstractDiagramNodeEditPart extends AbstractBorderedDiagra
     @Override
     public void refresh() {
         super.refresh();
-        this.refreshVisuals();
+//        this.refreshVisuals();
 
         Iterable<EditPart> children = Iterables.filter(getChildren(), EditPart.class);
         for (EditPart childEditPart : children) {
