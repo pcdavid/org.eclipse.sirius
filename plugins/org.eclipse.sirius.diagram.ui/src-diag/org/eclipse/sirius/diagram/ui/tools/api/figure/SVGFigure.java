@@ -110,7 +110,7 @@ public class SVGFigure extends Figure implements StyledFigure, ITransparentFigur
          * @return an image store in a cache
          */
         public synchronized Image getImage(SVGFigure fig, Rectangle clientArea, Graphics graphics) {
-            String key = fig.getKey(graphics);
+            String key = fig.getKey(graphics, clientArea);
             Image result = images.getIfPresent(key);
             if (result == null || result.isDisposed()) {
                 if (fig.transcoder != null) {
@@ -343,7 +343,7 @@ public class SVGFigure extends Figure implements StyledFigure, ITransparentFigur
      *
      * @return The key corresponding to this BundleImageFigure.
      */
-    protected String getKey(Graphics graphics) {
+    protected String getKey(Graphics graphics, Rectangle clientArea) {
         int aaText = SWT.DEFAULT;
         try {
             aaText = graphics.getTextAntialias();
@@ -358,7 +358,7 @@ public class SVGFigure extends Figure implements StyledFigure, ITransparentFigur
         result.append(SVGFigure.SEPARATOR);
         result.append(aaText);
         result.append(SVGFigure.SEPARATOR);
-        Rectangle r = new PrecisionRectangle(getClientArea());
+        Rectangle r = new PrecisionRectangle(clientArea);
         if (CACHE_SCALED_IMAGES && graphics != null) {
             r.performScale(graphics.getAbsoluteScale());
         }

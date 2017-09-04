@@ -41,6 +41,8 @@ public class SimpleImageTranscoder extends SVGAbstractTranscoder {
 
     private Document document;
 
+    private int imageWidth = -1, imageHeight = -1;
+    
     private int canvasWidth = -1, canvasHeight = -1;
 
     private RenderingHints renderingHints;
@@ -56,7 +58,9 @@ public class SimpleImageTranscoder extends SVGAbstractTranscoder {
 
     public int getImageHeight() {
         int height = 0;
-        if (canvasHeight == -1) {
+        if (imageHeight!= -1) {
+            height = imageHeight;
+        } else if (canvasHeight == -1) {
             height = getBufferedImage().getHeight();
         } else {
             height = canvasHeight;
@@ -66,7 +70,9 @@ public class SimpleImageTranscoder extends SVGAbstractTranscoder {
 
     public int getImageWidth() {
         int width = 0;
-        if (canvasWidth == -1) {
+        if (imageWidth != -1) {
+            width = imageWidth;
+        } else if (canvasWidth == -1) {
             width = getBufferedImage().getWidth();
         } else {
             width = canvasWidth;
@@ -75,16 +81,18 @@ public class SimpleImageTranscoder extends SVGAbstractTranscoder {
     }
 
     public int getImageAlphaValue(int x, int y) {
-        BufferedImage bufferedImage = getBufferedImage();
-        if (bufferedImage != null && bufferedImage.getWidth() >= x && bufferedImage.getHeight() >= y) {
-            int[] result = bufferedImage.getAlphaRaster().getPixel(x, y, new int[1]);
-            return result[0];
-        }
+//        BufferedImage bufferedImage = getBufferedImage();
+//        if (bufferedImage != null && bufferedImage.getWidth() >= x && bufferedImage.getHeight() >= y) {
+//            int[] result = bufferedImage.getAlphaRaster().getPixel(x, y, new int[1]);
+//            return result[0];
+//        }
         return 255;
     }
 
     public double getAspectRatio() {
-        if (canvasHeight == -1 || canvasWidth == -1) {
+        if (imageWidth != -1 && imageHeight != -1) {
+            return (double) imageWidth / (double) imageHeight;
+        } else if (canvasHeight == -1 || canvasWidth == -1) {
             BufferedImage img = getBufferedImage();
             if (img != null) {
                 int width = img.getWidth();
@@ -113,6 +121,8 @@ public class SimpleImageTranscoder extends SVGAbstractTranscoder {
             Shape raoi = new Rectangle2D.Float(0, 0, width, height);
             renderer.repaint(curTxf.createInverse().createTransformedShape(raoi));
             bufferedImage = renderer.getOffScreen();
+            imageWidth = bufferedImage.getWidth();
+            imageHeight = bufferedImage.getHeight();
         } catch (Exception ex) {
             throw new TranscoderException(ex);
         } finally {
