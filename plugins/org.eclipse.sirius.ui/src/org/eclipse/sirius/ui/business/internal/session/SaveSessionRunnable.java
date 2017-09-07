@@ -11,17 +11,18 @@
 package org.eclipse.sirius.ui.business.internal.session;
 
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Optional;
 
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.sirius.business.api.session.Session;
-import org.eclipse.sirius.ui.business.api.dialect.DialectEditor;
+import org.eclipse.sirius.common.ui.tools.api.util.EclipseUIUtil;
+import org.eclipse.sirius.ui.business.api.editor.ISiriusEditor;
 import org.eclipse.sirius.ui.business.api.session.IEditingSession;
 import org.eclipse.sirius.ui.business.api.session.SessionUIManager;
 import org.eclipse.ui.IEditorPart;
-import org.eclipse.ui.IWorkbenchWindow;
-import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.progress.IJobRunnable;
 
 /**
@@ -47,23 +48,27 @@ public class SaveSessionRunnable implements IJobRunnable {
     @Override
     public IStatus run(IProgressMonitor monitor) {
         if (session != null) {
-            IEditingSession uiSession = SessionUIManager.INSTANCE.getUISession(session);
-            Collection<DialectEditor> editors = uiSession.getEditors();
-            if (editors.isEmpty()) {
-                session.save(monitor);
+            Optional<IEditingSession> uiSession = Optional.ofNullable(SessionUIManager.INSTANCE.getUISession(session));
+            Collection<ISiriusEditor> attachedEditors = uiSession.map(IEditingSession::getSiriusEditors).orElse(Collections.emptyList());
+            IEditorPart activeEditor = EclipseUIUtil.getActiveEditor();
+            if (attachedEditors.contains(activeEditor)) {
+                /*
+                 * If the active editor is an ISiriusEditor attached to this session: forward the save request to it.
+                 */
+                activeEditor.doSave(monitor);
+            } else if (!attachedEditors.isEmpty()) {
+                /*
+                 * The active editor is not an ISiriusEditor, but there's at least one opened editor attached to the
+                 * session: forward the the first (arbitrary choice).
+                 */
+                attachedEditors.iterator().next().doSave(monitor);
             } else {
-                IWorkbenchWindow activeWorkbenchWindow = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
-                if (activeWorkbenchWindow != null) {
-                    IEditorPart activeEditor = activeWorkbenchWindow.getActivePage().getActiveEditor();
-                    if (editors.contains(activeEditor)) {
-                        activeEditor.doSave(monitor);
-                    }
-                } else {
-                    editors.iterator().next().doSave(monitor);
-                }
+                /*
+                 * No editors associated with the session currently opened: save the session directly.
+                 */
+                session.save(monitor);
             }
         }
         return Status.OK_STATUS;
     }
-
 }
