@@ -520,4 +520,36 @@ public class DialectManagerImpl implements DialectManager {
         return requiredViewpoints;
     }
 
+    @Override
+    public DRepresentation createTransientRepresentation(String name, EObject semantic, RepresentationDescription description, IProgressMonitor monitor) {
+        DRepresentation created = null;
+        try {
+            monitor.beginTask(MessageFormat.format(Messages.AbstractRepresentationDialectServices_createRepresentationMsg, name), 12);
+            Dialect invokedDialect = null;
+
+            for (final Dialect dialect : dialects.values()) {
+                if (dialect.getServices().canCreate(semantic, description)) {
+                    invokedDialect = dialect;
+                    break;
+                }
+            }
+            monitor.worked(1);
+            if (invokedDialect != null) {
+                    created = invokedDialect.getServices().createTransientRepresentation(name, semantic, description, new SubProgressMonitor(monitor, 10));
+                if (created != null) {
+                    final RepresentationNotification notif = new RepresentationNotification(created, RepresentationNotification.ADD);
+                    for (final Dialect dialect : dialects.values()) {
+                        if (dialect != invokedDialect) {
+                            dialect.getServices().notify(notif);
+                        }
+                    }
+                    monitor.worked(1);
+                }
+            }
+        } finally {
+            monitor.done();
+        }
+        return created;
+    }
+
 }

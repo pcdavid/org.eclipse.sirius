@@ -61,6 +61,17 @@ public class BestMappingGetter {
     private EdgeTarget targetView;
 
     private EObject semanticElt;
+    
+    // CHECKSTYLE:OFF
+    public BestMappingGetter(Session s, DSemanticDecorator containerView, EObject semanticElt) {
+        EObjectQuery eObjectQuery = new EObjectQuery(containerView);
+        this.session = s;
+        this.containerView = containerView;
+        this.semanticElt = semanticElt;
+        this.parentDDiagram = (DSemanticDiagram) eObjectQuery.getParentDiagram().get();
+        this.interpreter = session.getInterpreter();
+        this.modelAccessor = session.getModelAccessor();
+    }
 
     /**
      * Constructor to get a {@link AbstractNodeMapping}.

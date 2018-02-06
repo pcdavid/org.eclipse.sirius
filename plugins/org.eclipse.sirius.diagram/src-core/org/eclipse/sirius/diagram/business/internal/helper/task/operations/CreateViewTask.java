@@ -111,7 +111,7 @@ public class CreateViewTask extends AbstractOperationTask {
         DSemanticDecorator containerView = evaluateContainerViewExpression();
         DSemanticDiagram parentDDiagram = getDSemanticDiagram(containerView);
         Session session = new EObjectQuery(parentDDiagram).getSession();
-        DDiagramElement createView = createView(parentDDiagram, containerView, session);
+        DDiagramElement createView = createView(parentDDiagram, containerView, session, createViewOp.getMapping());
         if (createView != null) {
             initCreatedViewVariable(createView);
             setInitialVisibility(parentDDiagram, createView);
@@ -142,7 +142,7 @@ public class CreateViewTask extends AbstractOperationTask {
         return dSemanticDiagram;
     }
 
-    private DDiagramElement createView(DSemanticDiagram parentDDiagram, DSemanticDecorator containerView, Session session) {
+    private DDiagramElement createView(DSemanticDiagram parentDDiagram, DSemanticDecorator containerView, Session session, DiagramElementMapping mapping) {
         DDiagramElement createdView = null;
         EObject semanticElt = context.getCurrentTarget();
         if (createViewOp instanceof CreateEdgeView) {
@@ -150,14 +150,14 @@ public class CreateViewTask extends AbstractOperationTask {
             createdView = createEdgeView(parentDDiagram, createEdgeView, session);
         } else if (containerView != null) {
             BestMappingGetter bestMappingGetter = new BestMappingGetter(containerView, semanticElt);
-            DiagramElementMapping bestMapping = createViewOp.getMapping();
+            DiagramElementMapping bestMapping = mapping;
             if (bestMapping instanceof NodeMapping) {
                 bestMapping = bestMappingGetter.getBestNodeMapping(Collections.singletonList((NodeMapping) createViewOp.getMapping()));
             } else if (bestMapping instanceof ContainerMapping) {
-                bestMapping = bestMappingGetter.getBestContainerMapping(Collections.singletonList((ContainerMapping) createViewOp.getMapping()));
+                bestMapping = bestMappingGetter.getBestContainerMapping(Collections.singletonList((ContainerMapping) mapping));
             }
             if (bestMapping == null) {
-                bestMapping = createViewOp.getMapping();
+                bestMapping = mapping;
             }
 
             if (bestMapping instanceof AbstractNodeMapping) {
@@ -176,6 +176,38 @@ public class CreateViewTask extends AbstractOperationTask {
                         createdAbstractDNode.getArrangeConstraints().add(ArrangeConstraint.KEEP_RATIO);
                         createdAbstractDNode.getArrangeConstraints().add(ArrangeConstraint.KEEP_SIZE);
                     }
+                }
+            }
+        }
+        return createdView;
+    }
+    
+    // CHECKSTYLE:OFF
+    public static DDiagramElement createNodeView(DSemanticDiagram parentDDiagram, DSemanticDecorator containerView, EObject semanticElt, Session session, DiagramElementMapping mapping) {
+        DDiagramElement createdView = null;
+        if (containerView != null) {
+            BestMappingGetter bestMappingGetter = new BestMappingGetter(session, containerView, semanticElt);
+            DiagramElementMapping bestMapping = mapping;
+            if (bestMapping instanceof NodeMapping) {
+                bestMapping = bestMappingGetter.getBestNodeMapping(Collections.singletonList((NodeMapping) mapping));
+            } else if (bestMapping instanceof ContainerMapping) {
+                bestMapping = bestMappingGetter.getBestContainerMapping(Collections.singletonList((ContainerMapping) mapping));
+            }
+            if (bestMapping == null) {
+                bestMapping = mapping;
+            }
+
+            if (bestMapping instanceof AbstractNodeMapping) {
+                AbstractNodeMapping abstractNodeMapping = (AbstractNodeMapping) bestMapping;
+                if (session.getModelAccessor().eInstanceOf(semanticElt, abstractNodeMapping.getDomainClass())) {
+                    AbstractDNodeCandidate abstractDNodeCandidate = new AbstractDNodeCandidate(abstractNodeMapping, semanticElt, (DragAndDropTarget) containerView,
+                            RefreshIdsHolder.getOrCreateHolder(parentDDiagram));
+                    DDiagramElementSynchronizer dDiagramElementSynchronizer = new DDiagramElementSynchronizer(parentDDiagram, session.getInterpreter(), session.getModelAccessor());
+                    DiagramMappingsManager mappingManager = DiagramMappingsManagerRegistry.INSTANCE.getDiagramMappingsManager(session, parentDDiagram);
+                    AbstractDNode createdAbstractDNode = dDiagramElementSynchronizer.createNewNode(mappingManager, abstractDNodeCandidate,
+                            abstractNodeMapping.eContainingFeature() == DescriptionPackage.Literals.ABSTRACT_NODE_MAPPING__BORDERED_NODE_MAPPINGS);
+                    AbstractNodeMappingSpecOperations.createBorderingNodes(abstractNodeMapping, semanticElt, createdAbstractDNode, Collections.emptyList(), parentDDiagram);
+                    createdView = createdAbstractDNode;
                 }
             }
         }

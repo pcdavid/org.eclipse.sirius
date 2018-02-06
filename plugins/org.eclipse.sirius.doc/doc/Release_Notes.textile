@@ -25,6 +25,7 @@ h4. Changes in @org.eclipse.sirius.common@
 h4. Changes in @org.eclipse.sirius@
 
 * <span class="label label-success">Added</span> The method @org.eclipse.sirius.business.api.componentization.ViewpointRegistry.reloadAllFromPlugins()@ has been added to reload, from the runtime, all the VSMs of installed plug-ins and have the effect dynamically in the runtime.
+* <span class="label label-success">Added</span> The method @org.eclipse.sirius.business.api.dialect.DialectServices.createTransientRepresentation()@ has been added. It is similar to @createRepresentation()@ except that the new representation is not stored in the session and will neither get saved or updated/refreshed automatically. 
 * <span class="label label-info">Modified</span> The class @org.eclipse.sirius.business.api.componentization.ViewpointRegistryImpl()@ has been moved to @org.eclipse.sirius.business.internal.componentization@ package.
 
 h4. Migrations

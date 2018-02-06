@@ -92,14 +92,11 @@ import com.google.common.collect.Iterables;
 
 /**
  * Services for diagram.
- * 
+ *
  * @author cbrun
  */
 public class DiagramDialectServices extends AbstractRepresentationDialectServices {
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     protected boolean isSupported(DRepresentation representation) {
         return representation instanceof DDiagram;
@@ -110,9 +107,6 @@ public class DiagramDialectServices extends AbstractRepresentationDialectService
         return representationDescriptor.getDescription() instanceof DiagramDescription;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     protected boolean isSupported(RepresentationDescription description) {
         return description instanceof DiagramDescription;
@@ -151,51 +145,46 @@ public class DiagramDialectServices extends AbstractRepresentationDialectService
         return result;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
-    public DRepresentation createRepresentation(final String name, final EObject semantic, final RepresentationDescription description, final IProgressMonitor monitor) {
-        // TODO ensure that the given description is contained in the same
-        // resource set as the given semantic element
-        final DiagramDescription diagDesc = (DiagramDescription) description;
-        final IInterpreter interpreter = SiriusPlugin.getDefault().getInterpreterRegistry().getInterpreter(semantic);
-        final ModelAccessor accessor = SiriusPlugin.getDefault().getModelAccessorRegistry().getModelAccessor(semantic);
-        final DDiagramSynchronizer sync = new DDiagramSynchronizer(interpreter, diagDesc, accessor);
-
-        sync.initDiagram(name, semantic, monitor);
-        return sync.getDiagram();
+    public DRepresentation createRepresentation(String name, EObject semantic, RepresentationDescription description, Session session, IProgressMonitor monitor) {
+        DRepresentation diagram = null;
+        try {
+            diagram = createTransientRepresentation(name, semantic, description, monitor);
+            session.getServices().putCustomData(CustomDataConstants.DREPRESENTATION, semantic, diagram);
+            monitor.worked(1);
+            Diagram gmfDiag = DiagramDialectServices.createAndStoreGMFDiagram(session, (DSemanticDiagram) diagram);
+            monitor.worked(1);
+            // Synchronizes the GMF diagram model according to the viewpoint
+            // DSemanticDiagram model.
+            CanonicalSynchronizer canonicalSynchronizer = CanonicalSynchronizerFactory.INSTANCE.createCanonicalSynchronizer(gmfDiag);
+            canonicalSynchronizer.storeViewsToArrange(true);
+            canonicalSynchronizer.synchronize();
+            canonicalSynchronizer.postCreation();
+            monitor.worked(10);
+        } finally {
+            monitor.done();
+        }
+        return diagram;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
-    public DRepresentation createRepresentation(final String name, final EObject semantic, final RepresentationDescription description, final Session session, final IProgressMonitor monitor) {
+    public DRepresentation createTransientRepresentation(String name, EObject semantic, RepresentationDescription description, IProgressMonitor monitor) {
         DRepresentation diagram = null;
         try {
             monitor.beginTask(MessageFormat.format(Messages.DiagramDialectServices_createDiagramMsg, name), 6);
             monitor.subTask(MessageFormat.format(Messages.DiagramDialectServices_createDiagramMsg, name));
-            diagram = createRepresentation(name, semantic, description, new SubProgressMonitor(monitor, 2));
+            final DiagramDescription diagDesc = (DiagramDescription) description;
+            final IInterpreter interpreter = SiriusPlugin.getDefault().getInterpreterRegistry().getInterpreter(semantic);
+            final ModelAccessor accessor = SiriusPlugin.getDefault().getModelAccessorRegistry().getModelAccessor(semantic);
+            final DDiagramSynchronizer sync = new DDiagramSynchronizer(interpreter, diagDesc, accessor);
+            sync.initDiagram(name, semantic, monitor);
+            diagram = sync.getDiagram();
             if (diagram != null) {
                 DialectManager.INSTANCE.refresh(diagram, new SubProgressMonitor(monitor, 26));
                 if (DisplayMode.NORMAL.equals(DisplayServiceManager.INSTANCE.getMode())) {
                     DisplayServiceManager.INSTANCE.getDisplayService().refreshAllElementsVisibility((DDiagram) diagram);
                     monitor.worked(1);
                 }
-
-                session.getServices().putCustomData(CustomDataConstants.DREPRESENTATION, semantic, diagram);
-                monitor.worked(1);
-                Diagram gmfDiag = DiagramDialectServices.createAndStoreGMFDiagram(session, (DSemanticDiagram) diagram);
-                monitor.worked(1);
-                // Synchronizes the GMF diagram model according to the viewpoint
-                // DSemanticDiagram model.
-                CanonicalSynchronizer canonicalSynchronizer = CanonicalSynchronizerFactory.INSTANCE.createCanonicalSynchronizer(gmfDiag);
-                canonicalSynchronizer.storeViewsToArrange(true);
-                canonicalSynchronizer.synchronize();
-                canonicalSynchronizer.postCreation();
-                monitor.worked(10);
-
             }
         } finally {
             monitor.done();
@@ -205,14 +194,14 @@ public class DiagramDialectServices extends AbstractRepresentationDialectService
 
     /**
      * Create and store a gmf diagram from a Sirius one.
-     * 
+     *
      * @param session
      *            the session
      * @param diagram
      *            the Sirius diagram
      * @return gmfDiagram created
      */
-    public static Diagram createAndStoreGMFDiagram(final Session session, final DSemanticDiagram diagram) {
+    public static Diagram createAndStoreGMFDiagram(Session session, DSemanticDiagram diagram) {
         final DiagramCreationUtil util = new DiagramCreationUtil(diagram);
         if (!util.findAssociatedGMFDiagram()) {
             util.createNewGMFDiagram();
@@ -225,27 +214,20 @@ public class DiagramDialectServices extends AbstractRepresentationDialectService
         return gmfDiag;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
-    public DRepresentation copyRepresentation(final DRepresentation representation, final String name, final Session session, final IProgressMonitor monitor) {
-
+    public DRepresentation copyRepresentation(DRepresentation representation, String name, Session session, IProgressMonitor monitor) {
         final DRepresentation newRepresentation = super.copyRepresentation(representation, name, session, monitor);
-
-        /* associate the one */
         session.getServices().putCustomData(CustomDataConstants.DREPRESENTATION, ((DSemanticDecorator) representation).getTarget(), newRepresentation);
-
         return newRepresentation;
     }
 
     /**
      * The <code>fullRefresh</code> is not taken into account for diagram dialect.
-     * 
+     *
      * {@inheritDoc}
      */
     @Override
-    public void refresh(final DRepresentation representation, final boolean fullRefresh, final IProgressMonitor monitor) {
+    public void refresh(DRepresentation representation, boolean fullRefresh, IProgressMonitor monitor) {
         try {
             monitor.beginTask(Messages.DiagramDialectServices_refreshDiagramMsg, 10);
             final DSemanticDiagram diagram = (DSemanticDiagram) representation;
@@ -284,31 +266,18 @@ public class DiagramDialectServices extends AbstractRepresentationDialectService
     }
 
     @Override
-    public RepresentationDescription getDescription(final DRepresentation representation) {
+    public RepresentationDescription getDescription(DRepresentation representation) {
         if (representation instanceof DDiagram) {
             return ((DDiagram) representation).getDescription();
         }
         return null;
     }
 
-    /**
-     * {@inheritDoc}
-     */
-    public void initRepresentations(final Viewpoint vp, final EObject semantic) {
-        super.initRepresentations(semantic, vp, DiagramDescription.class);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
     @Override
-    public void initRepresentations(final Viewpoint vp, final EObject semantic, IProgressMonitor monitor) {
+    public void initRepresentations(Viewpoint vp, EObject semantic, IProgressMonitor monitor) {
         super.initRepresentations(semantic, vp, DiagramDescription.class, monitor);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     protected <T extends RepresentationDescription> void initRepresentationForElement(T representationDescription, EObject semanticElement, IProgressMonitor monitor) {
         if (representationDescription instanceof DiagramDescription) {
@@ -333,17 +302,14 @@ public class DiagramDialectServices extends AbstractRepresentationDialectService
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
-    public void updateRepresentationsExtendedBy(final Session session, final Viewpoint viewpoint, final boolean activated) {
+    public void updateRepresentationsExtendedBy(Session session, Viewpoint viewpoint, boolean activated) {
         final EList<RepresentationExtensionDescription> extensions = viewpoint.getOwnedRepresentationExtensions();
 
-        for (final DView view : session.getOwnedViews()) {
-            for (final DRepresentation representation : new DViewQuery(view).getLoadedRepresentations()) {
+        for (DView view : session.getOwnedViews()) {
+            for (DRepresentation representation : new DViewQuery(view).getLoadedRepresentations()) {
                 if (representation instanceof DSemanticDiagram) {
-                    for (final RepresentationExtensionDescription ext : extensions) {
+                    for (RepresentationExtensionDescription ext : extensions) {
                         if (ComponentizationHelper.extensionAppliesTo(ext, representation) && ext instanceof DiagramExtensionDescription) {
                             updateDiagram((DSemanticDiagram) representation, (DiagramExtensionDescription) ext, activated, session);
                         }
@@ -355,14 +321,14 @@ public class DiagramDialectServices extends AbstractRepresentationDialectService
 
     /**
      * Update an existing diagram using a newly activated diagram extension.
-     * 
+     *
      * @param diagram
      *            the diagram to update
      * @param ext
      *            the newly activated extension which applies to the diagram.
      */
-    private void updateDiagram(final DSemanticDiagram diagram, final DiagramExtensionDescription ext, final boolean activated, final Session session) {
-        for (final Layer layer : ext.getLayers()) {
+    private void updateDiagram(DSemanticDiagram diagram, DiagramExtensionDescription ext, boolean activated, Session session) {
+        for (Layer layer : ext.getLayers()) {
             if (layer instanceof AdditionalLayer) {
                 AdditionalLayer additionalLayer = (AdditionalLayer) layer;
 
@@ -381,49 +347,26 @@ public class DiagramDialectServices extends AbstractRepresentationDialectService
         }
     }
 
-    /**
-     * 
-     * {@inheritDoc}
-     * 
-     * @see org.eclipse.sirius.business.api.dialect.DialectServices#createInterpretedExpressionQuery(org.eclipse.emf.ecore.EObject,
-     *      org.eclipse.emf.ecore.EStructuralFeature)
-     */
     @Override
     public IInterpretedExpressionQuery createInterpretedExpressionQuery(EObject target, EStructuralFeature feature) {
         return new DiagramInterpretedExpressionQuery(target, feature);
     }
 
-    /**
-     * {@inheritDoc}
-     * 
-     * @see org.eclipse.sirius.business.api.dialect.DialectServices#handles(org.eclipse.sirius.viewpoint.description.RepresentationDescription)
-     */
     @Override
     public boolean handles(RepresentationDescription representationDescription) {
         return (representationDescription instanceof DiagramDescription) || (representationDescription instanceof DiagramImportDescription);
     }
 
-    /**
-     * {@inheritDoc}
-     * 
-     * @see org.eclipse.sirius.business.api.dialect.DialectServices#handles(org.eclipse.sirius.viewpoint.description.RepresentationExtensionDescription)
-     */
     @Override
     public boolean handles(RepresentationExtensionDescription representationExtensionDescription) {
         return representationExtensionDescription instanceof DiagramExtensionDescription;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void invalidateMappingCache() {
         DiagramDescriptionMappingsRegistry.INSTANCE.computeMappings();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public Option<? extends AbstractCommandTask> createTask(CommandContext context, ModelAccessor extPackage, ModelOperation op, Session session, UICallBack uiCallback) {
         Option<? extends AbstractCommandTask> task = Options.newNone();
@@ -439,7 +382,7 @@ public class DiagramDialectServices extends AbstractRepresentationDialectService
 
     /**
      * {@inheritDoc}
-     * 
+     *
      * The diagram dialect allows the feature customizations on style descriptions.
      */
     @Override
@@ -508,7 +451,7 @@ public class DiagramDialectServices extends AbstractRepresentationDialectService
             });
             // Get the list of notifiers that have been changed
             List<EObject> changedNotifiers = new ArrayList<>();
-            for (final Map.Entry<EObject, List<Notification>> entry : notificationsByNotifer.entrySet()) {
+            for (Map.Entry<EObject, List<Notification>> entry : notificationsByNotifer.entrySet()) {
                 if (Iterables.any(entry.getValue(), new Predicate<Notification>() {
                     @Override
                     public boolean apply(Notification notification) {
@@ -524,7 +467,7 @@ public class DiagramDialectServices extends AbstractRepresentationDialectService
             // Get all diagram elements corresponding to the changed notifiers
             // after checking that each notifier is not indicated as removed
             // from another notification
-            for (final EObject changedNotifier : changedNotifiers) {
+            for (EObject changedNotifier : changedNotifiers) {
                 if (!(Iterables.any(removeNotificationsIterable, new Predicate<Notification>() {
                     @Override
                     public boolean apply(Notification notification) {

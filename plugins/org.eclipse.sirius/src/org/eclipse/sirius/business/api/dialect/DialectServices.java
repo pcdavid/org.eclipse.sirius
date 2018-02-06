@@ -69,6 +69,23 @@ public interface DialectServices {
     DRepresentation createRepresentation(String name, EObject semantic, RepresentationDescription description, Session session, IProgressMonitor monitor);
 
     /**
+     * Create a new transient representation using the representation description. The new representation is refreshed,
+     * but is not stored in the session. It is the responsibility of the caller to keep a reference to it and explicitly
+     * refresh it as needed after the creation.
+     * 
+     * @param name
+     *            name of the representation to create.
+     * @param semantic
+     *            semantic root used to create the representation.
+     * @param description
+     *            representation description to use.
+     * @param monitor
+     *            to track progress.
+     * @return the new representation.
+     */
+    DRepresentation createTransientRepresentation(String name, EObject semantic, RepresentationDescription description, IProgressMonitor monitor);
+
+    /**
      * Create a new representation from a given one (copy) and keep it in the given session.
      * 
      * @param representation

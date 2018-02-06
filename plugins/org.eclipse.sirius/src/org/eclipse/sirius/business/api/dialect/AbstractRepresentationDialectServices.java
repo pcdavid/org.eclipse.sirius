@@ -107,25 +107,16 @@ public abstract class AbstractRepresentationDialectServices implements DialectSe
      */
     protected abstract boolean isSupported(RepresentationDescription description);
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void notify(RepresentationNotification notification) {
         // Empty default implementation.
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void updateRepresentationsExtendedBy(Session session, Viewpoint viewpoint, boolean activated) {
         // No support for representation extension by default.
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void refreshEffectiveRepresentationDescription(DRepresentation representation, IProgressMonitor monitor) {
         // Do nothing by default, not all dialects have effective representation
@@ -234,15 +225,12 @@ public abstract class AbstractRepresentationDialectServices implements DialectSe
         return false;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public DRepresentation createRepresentation(String name, EObject semantic, RepresentationDescription description, Session session, IProgressMonitor monitor) {
         DRepresentation representation = null;
         try {
             monitor.beginTask(MessageFormat.format(Messages.AbstractRepresentationDialectServices_createRepresentationMsg, name), 2);
-            representation = createRepresentation(name, semantic, description, new SubProgressMonitor(monitor, 1));
+            representation = createTransientRepresentation(name, semantic, description, new SubProgressMonitor(monitor, 1));
             if (representation != null) {
                 session.getServices().putCustomData(CustomDataConstants.DREPRESENTATION, semantic, representation);
             }
@@ -253,26 +241,6 @@ public abstract class AbstractRepresentationDialectServices implements DialectSe
         return representation;
     }
 
-    /**
-     * Create a new representation using the representation description. As no session is passed to this method the
-     * created representation will not be kept.
-     * 
-     * @param name
-     *            name of the representation to create.
-     * 
-     * @param semantic
-     *            semantic root used to create the representation.
-     * @param description
-     *            representation description to use.
-     * @param monitor
-     *            to track progress.
-     * @return the new representation .
-     */
-    protected abstract DRepresentation createRepresentation(String name, EObject semantic, RepresentationDescription description, IProgressMonitor monitor);
-
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public Collection<RepresentationDescription> getAvailableRepresentationDescriptions(Collection<Viewpoint> vps, EObject semantic) {
         final Collection<RepresentationDescription> result = new ArrayList<>();
@@ -492,25 +460,16 @@ public abstract class AbstractRepresentationDialectServices implements DialectSe
         return shouldInitializeRepresentation;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void invalidateMappingCache() {
         // No cache to invalidate by default
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public Option<? extends AbstractCommandTask> createTask(CommandContext context, ModelAccessor extPackage, ModelOperation op, Session session, UICallBack uiCallback) {
         return Options.newNone();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public boolean allowsEStructuralFeatureCustomization(EObject choice) {
         // Do not support structural feature customization by default

@@ -134,7 +134,7 @@ public class TableDialectServices extends AbstractRepresentationDialectServices 
     }
 
     @Override
-    public DRepresentation createRepresentation(String name, EObject semantic, RepresentationDescription description, IProgressMonitor monitor) {
+    public DRepresentation createTransientRepresentation(String name, EObject semantic, RepresentationDescription description, IProgressMonitor monitor) {
         DTable table = null;
         try {
             monitor.beginTask(MessageFormat.format(Messages.TableDialectServices_CreateTable, name), 11);
