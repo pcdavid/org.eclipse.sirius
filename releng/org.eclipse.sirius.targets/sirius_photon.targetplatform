@@ -18,6 +18,7 @@ location Eclipse-Photon "http://download.eclipse.org/releases/photon" {
 	org.eclipse.draw2d.sdk.feature.group lazy
 	org.eclipse.emf.common.feature.group lazy
 	org.eclipse.emf.compare.feature.group lazy
+    org.eclipse.emf.compare.diagram.sirius.feature.group lazy
 	org.eclipse.emf.ecore.feature.group lazy
 	org.eclipse.emf.edit.feature.group lazy
 	org.eclipse.emf.eef.runtime lazy
