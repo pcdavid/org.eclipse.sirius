@@ -40,7 +40,7 @@ public interface VSMElementCustomizationReuse extends IVSMElementCustomization {
      * here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Reuse</em>' reference list.
      * @see org.eclipse.sirius.viewpoint.description.DescriptionPackage#getVSMElementCustomizationReuse_Reuse()
      * @model required="true"
@@ -56,7 +56,7 @@ public interface VSMElementCustomizationReuse extends IVSMElementCustomization {
      * description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Applied On</em>' reference list.
      * @see org.eclipse.sirius.viewpoint.description.DescriptionPackage#getVSMElementCustomizationReuse_AppliedOn()
      * @model required="true"

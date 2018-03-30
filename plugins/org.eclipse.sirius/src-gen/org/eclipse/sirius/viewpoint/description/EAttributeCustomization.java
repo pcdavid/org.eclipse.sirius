@@ -36,7 +36,7 @@ public interface EAttributeCustomization extends EStructuralFeatureCustomization
      * description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Attribute Name</em>' attribute.
      * @see #setAttributeName(String)
      * @see org.eclipse.sirius.viewpoint.description.DescriptionPackage#getEAttributeCustomization_AttributeName()
@@ -48,7 +48,7 @@ public interface EAttributeCustomization extends EStructuralFeatureCustomization
     /**
      * Sets the value of the '{@link org.eclipse.sirius.viewpoint.description.EAttributeCustomization#getAttributeName
      * <em>Attribute Name</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Attribute Name</em>' attribute.
      * @see #getAttributeName()
@@ -63,7 +63,7 @@ public interface EAttributeCustomization extends EStructuralFeatureCustomization
      * here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Value</em>' attribute.
      * @see #setValue(String)
      * @see org.eclipse.sirius.viewpoint.description.DescriptionPackage#getEAttributeCustomization_Value()
@@ -79,7 +79,7 @@ public interface EAttributeCustomization extends EStructuralFeatureCustomization
     /**
      * Sets the value of the '{@link org.eclipse.sirius.viewpoint.description.EAttributeCustomization#getValue
      * <em>Value</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Value</em>' attribute.
      * @see #getValue()

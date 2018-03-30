@@ -143,7 +143,7 @@ public interface GaugeSection extends Customizable {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.diagram.GaugeSection#getBackgroundColor <em>Background
      * Color</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Background Color</em>' attribute.
      * @see #getBackgroundColor()
@@ -166,7 +166,7 @@ public interface GaugeSection extends Customizable {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.diagram.GaugeSection#getForegroundColor <em>Foreground
      * Color</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Foreground Color</em>' attribute.
      * @see #getForegroundColor()

@@ -46,7 +46,7 @@ import org.eclipse.sirius.viewpoint.description.impl.DocumentedElementImpl;
 public class CustomLayoutConfigurationImpl extends DocumentedElementImpl implements CustomLayoutConfiguration {
     /**
      * The default value of the '{@link #getId() <em>Id</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getId()
      * @generated
      * @ordered
@@ -55,7 +55,7 @@ public class CustomLayoutConfigurationImpl extends DocumentedElementImpl impleme
 
     /**
      * The cached value of the '{@link #getId() <em>Id</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getId()
      * @generated
      * @ordered
@@ -65,7 +65,7 @@ public class CustomLayoutConfigurationImpl extends DocumentedElementImpl impleme
     /**
      * The default value of the '{@link #getLabel() <em>Label</em>}' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @see #getLabel()
      * @generated
      * @ordered
@@ -85,7 +85,7 @@ public class CustomLayoutConfigurationImpl extends DocumentedElementImpl impleme
     /**
      * The default value of the '{@link #getDescription() <em>Description</em>}' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @see #getDescription()
      * @generated
      * @ordered
@@ -95,7 +95,7 @@ public class CustomLayoutConfigurationImpl extends DocumentedElementImpl impleme
     /**
      * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @see #getDescription()
      * @generated
      * @ordered
@@ -114,7 +114,7 @@ public class CustomLayoutConfigurationImpl extends DocumentedElementImpl impleme
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected CustomLayoutConfigurationImpl() {
@@ -123,7 +123,7 @@ public class CustomLayoutConfigurationImpl extends DocumentedElementImpl impleme
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -133,7 +133,7 @@ public class CustomLayoutConfigurationImpl extends DocumentedElementImpl impleme
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -143,7 +143,7 @@ public class CustomLayoutConfigurationImpl extends DocumentedElementImpl impleme
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -157,7 +157,7 @@ public class CustomLayoutConfigurationImpl extends DocumentedElementImpl impleme
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -167,7 +167,7 @@ public class CustomLayoutConfigurationImpl extends DocumentedElementImpl impleme
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -181,7 +181,7 @@ public class CustomLayoutConfigurationImpl extends DocumentedElementImpl impleme
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -191,7 +191,7 @@ public class CustomLayoutConfigurationImpl extends DocumentedElementImpl impleme
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -205,7 +205,7 @@ public class CustomLayoutConfigurationImpl extends DocumentedElementImpl impleme
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -218,7 +218,7 @@ public class CustomLayoutConfigurationImpl extends DocumentedElementImpl impleme
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -232,7 +232,7 @@ public class CustomLayoutConfigurationImpl extends DocumentedElementImpl impleme
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -252,7 +252,7 @@ public class CustomLayoutConfigurationImpl extends DocumentedElementImpl impleme
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -278,7 +278,7 @@ public class CustomLayoutConfigurationImpl extends DocumentedElementImpl impleme
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -302,7 +302,7 @@ public class CustomLayoutConfigurationImpl extends DocumentedElementImpl impleme
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -322,7 +322,7 @@ public class CustomLayoutConfigurationImpl extends DocumentedElementImpl impleme
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

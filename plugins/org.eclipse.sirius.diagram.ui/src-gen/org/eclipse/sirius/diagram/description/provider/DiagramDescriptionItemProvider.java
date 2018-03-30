@@ -46,13 +46,13 @@ import org.eclipse.sirius.viewpoint.description.validation.ValidationFactory;
 /**
  * This is the item provider adapter for a {@link org.eclipse.sirius.diagram.description.DiagramDescription} object.
  * <!-- begin-user-doc --> <!-- end-user-doc -->
- *
+ * 
  * @generated
  */
 public class DiagramDescriptionItemProvider extends DragAndDropTargetDescriptionItemProvider {
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public DiagramDescriptionItemProvider(AdapterFactory adapterFactory) {
@@ -61,7 +61,7 @@ public class DiagramDescriptionItemProvider extends DragAndDropTargetDescription
 
     /**
      * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -99,7 +99,7 @@ public class DiagramDescriptionItemProvider extends DragAndDropTargetDescription
 
     /**
      * This adds a property descriptor for the Documentation feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addDocumentationPropertyDescriptor(Object object) {
@@ -127,7 +127,7 @@ public class DiagramDescriptionItemProvider extends DragAndDropTargetDescription
 
     /**
      * This adds a property descriptor for the Name feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addNamePropertyDescriptor(Object object) {
@@ -140,7 +140,7 @@ public class DiagramDescriptionItemProvider extends DragAndDropTargetDescription
 
     /**
      * This adds a property descriptor for the Label feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addLabelPropertyDescriptor(Object object) {
@@ -153,7 +153,7 @@ public class DiagramDescriptionItemProvider extends DragAndDropTargetDescription
 
     /**
      * This adds a property descriptor for the Title Expression feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addTitleExpressionPropertyDescriptor(Object object) {
@@ -166,7 +166,7 @@ public class DiagramDescriptionItemProvider extends DragAndDropTargetDescription
 
     /**
      * This adds a property descriptor for the Initialisation feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addInitialisationPropertyDescriptor(Object object) {
@@ -179,7 +179,7 @@ public class DiagramDescriptionItemProvider extends DragAndDropTargetDescription
 
     /**
      * This adds a property descriptor for the Metamodel feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addMetamodelPropertyDescriptor(Object object) {
@@ -206,7 +206,7 @@ public class DiagramDescriptionItemProvider extends DragAndDropTargetDescription
 
     /**
      * This adds a property descriptor for the Paste Descriptions feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addPasteDescriptionsPropertyDescriptor(Object object) {
@@ -219,7 +219,7 @@ public class DiagramDescriptionItemProvider extends DragAndDropTargetDescription
 
     /**
      * This adds a property descriptor for the All Edge Mappings feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addAllEdgeMappingsPropertyDescriptor(Object object) {
@@ -231,7 +231,7 @@ public class DiagramDescriptionItemProvider extends DragAndDropTargetDescription
 
     /**
      * This adds a property descriptor for the All Node Mappings feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addAllNodeMappingsPropertyDescriptor(Object object) {
@@ -256,7 +256,7 @@ public class DiagramDescriptionItemProvider extends DragAndDropTargetDescription
 
     /**
      * This adds a property descriptor for the All Tools feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addAllToolsPropertyDescriptor(Object object) {
@@ -268,7 +268,7 @@ public class DiagramDescriptionItemProvider extends DragAndDropTargetDescription
 
     /**
      * This adds a property descriptor for the Domain Class feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addDomainClassPropertyDescriptor(Object object) {
@@ -283,7 +283,7 @@ public class DiagramDescriptionItemProvider extends DragAndDropTargetDescription
     /**
      * This adds a property descriptor for the Precondition Expression feature. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addPreconditionExpressionPropertyDescriptor(Object object) {
@@ -297,7 +297,7 @@ public class DiagramDescriptionItemProvider extends DragAndDropTargetDescription
 
     /**
      * This adds a property descriptor for the Default Concern feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addDefaultConcernPropertyDescriptor(Object object) {
@@ -310,7 +310,7 @@ public class DiagramDescriptionItemProvider extends DragAndDropTargetDescription
 
     /**
      * This adds a property descriptor for the Root Expression feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addRootExpressionPropertyDescriptor(Object object) {
@@ -324,7 +324,7 @@ public class DiagramDescriptionItemProvider extends DragAndDropTargetDescription
 
     /**
      * This adds a property descriptor for the Init feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addInitPropertyDescriptor(Object object) {
@@ -337,7 +337,7 @@ public class DiagramDescriptionItemProvider extends DragAndDropTargetDescription
 
     /**
      * This adds a property descriptor for the All Layers feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addAllLayersPropertyDescriptor(Object object) {
@@ -362,7 +362,7 @@ public class DiagramDescriptionItemProvider extends DragAndDropTargetDescription
 
     /**
      * This adds a property descriptor for the Reused Mappings feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addReusedMappingsPropertyDescriptor(Object object) {
@@ -375,7 +375,7 @@ public class DiagramDescriptionItemProvider extends DragAndDropTargetDescription
 
     /**
      * This adds a property descriptor for the Reused Tools feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addReusedToolsPropertyDescriptor(Object object) {
@@ -403,7 +403,7 @@ public class DiagramDescriptionItemProvider extends DragAndDropTargetDescription
 
     /**
      * This adds a property descriptor for the Background Color feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addBackgroundColorPropertyDescriptor(Object object) {
@@ -419,7 +419,7 @@ public class DiagramDescriptionItemProvider extends DragAndDropTargetDescription
      * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
      * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -461,7 +461,7 @@ public class DiagramDescriptionItemProvider extends DragAndDropTargetDescription
 
     /**
      * This returns DiagramDescription.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

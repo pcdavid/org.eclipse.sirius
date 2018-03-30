@@ -38,7 +38,7 @@ public interface SequenceDiagramDescription extends DiagramDescription {
      * description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Ends Ordering</em>' attribute.
      * @see #setEndsOrdering(String)
      * @see org.eclipse.sirius.diagram.sequence.description.DescriptionPackage#getSequenceDiagramDescription_EndsOrdering()
@@ -55,7 +55,7 @@ public interface SequenceDiagramDescription extends DiagramDescription {
      * Sets the value of the
      * '{@link org.eclipse.sirius.diagram.sequence.description.SequenceDiagramDescription#getEndsOrdering <em>Ends
      * Ordering</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Ends Ordering</em>' attribute.
      * @see #getEndsOrdering()
@@ -70,7 +70,7 @@ public interface SequenceDiagramDescription extends DiagramDescription {
      * description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Instance Roles Ordering</em>' attribute.
      * @see #setInstanceRolesOrdering(String)
      * @see org.eclipse.sirius.diagram.sequence.description.DescriptionPackage#getSequenceDiagramDescription_InstanceRolesOrdering()
@@ -85,7 +85,7 @@ public interface SequenceDiagramDescription extends DiagramDescription {
      * Sets the value of the
      * '{@link org.eclipse.sirius.diagram.sequence.description.SequenceDiagramDescription#getInstanceRolesOrdering
      * <em>Instance Roles Ordering</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Instance Roles Ordering</em>' attribute.
      * @see #getInstanceRolesOrdering()

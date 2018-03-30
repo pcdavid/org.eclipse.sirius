@@ -42,7 +42,7 @@ public interface TSourceTargetMessageMapping extends TMessageMapping {
      * here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Source</em>' reference list.
      * @see org.eclipse.sirius.diagram.sequence.template.TemplatePackage#getTSourceTargetMessageMapping_Source()
      * @model required="true"
@@ -72,7 +72,7 @@ public interface TSourceTargetMessageMapping extends TMessageMapping {
      * Sets the value of the
      * '{@link org.eclipse.sirius.diagram.sequence.template.TSourceTargetMessageMapping#getSourceFinderExpression
      * <em>Source Finder Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Source Finder Expression</em>' attribute.
      * @see #getSourceFinderExpression()
@@ -102,7 +102,7 @@ public interface TSourceTargetMessageMapping extends TMessageMapping {
      * Sets the value of the
      * '{@link org.eclipse.sirius.diagram.sequence.template.TSourceTargetMessageMapping#getTargetFinderExpression
      * <em>Target Finder Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Target Finder Expression</em>' attribute.
      * @see #getTargetFinderExpression()
@@ -118,7 +118,7 @@ public interface TSourceTargetMessageMapping extends TMessageMapping {
      * description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Use Domain Element</em>' attribute.
      * @see #setUseDomainElement(boolean)
      * @see org.eclipse.sirius.diagram.sequence.template.TemplatePackage#getTSourceTargetMessageMapping_UseDomainElement()
@@ -131,7 +131,7 @@ public interface TSourceTargetMessageMapping extends TMessageMapping {
      * Sets the value of the
      * '{@link org.eclipse.sirius.diagram.sequence.template.TSourceTargetMessageMapping#isUseDomainElement <em>Use
      * Domain Element</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Use Domain Element</em>' attribute.
      * @see #isUseDomainElement()

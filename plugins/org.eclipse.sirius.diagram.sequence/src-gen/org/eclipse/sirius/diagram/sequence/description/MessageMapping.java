@@ -39,7 +39,7 @@ public interface MessageMapping extends EdgeMapping, EventMapping {
      * of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Sending End Finder Expression</em>' attribute.
      * @see #setSendingEndFinderExpression(String)
      * @see org.eclipse.sirius.diagram.sequence.description.DescriptionPackage#getMessageMapping_SendingEndFinderExpression()
@@ -53,7 +53,7 @@ public interface MessageMapping extends EdgeMapping, EventMapping {
      * Sets the value of the
      * '{@link org.eclipse.sirius.diagram.sequence.description.MessageMapping#getSendingEndFinderExpression <em>Sending
      * End Finder Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Sending End Finder Expression</em>' attribute.
      * @see #getSendingEndFinderExpression()
@@ -68,7 +68,7 @@ public interface MessageMapping extends EdgeMapping, EventMapping {
      * more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Receiving End Finder Expression</em>' attribute.
      * @see #setReceivingEndFinderExpression(String)
      * @see org.eclipse.sirius.diagram.sequence.description.DescriptionPackage#getMessageMapping_ReceivingEndFinderExpression()
@@ -82,7 +82,7 @@ public interface MessageMapping extends EdgeMapping, EventMapping {
      * Sets the value of the
      * '{@link org.eclipse.sirius.diagram.sequence.description.MessageMapping#getReceivingEndFinderExpression
      * <em>Receiving End Finder Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Receiving End Finder Expression</em>' attribute.
      * @see #getReceivingEndFinderExpression()

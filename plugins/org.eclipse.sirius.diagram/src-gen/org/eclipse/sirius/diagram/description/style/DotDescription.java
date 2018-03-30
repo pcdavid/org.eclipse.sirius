@@ -49,7 +49,7 @@ public interface DotDescription extends NodeStyleDescription {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.diagram.description.style.DotDescription#getBackgroundColor
      * <em>Background Color</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Background Color</em>' reference.
      * @see #getBackgroundColor()
@@ -75,7 +75,7 @@ public interface DotDescription extends NodeStyleDescription {
      * Sets the value of the
      * '{@link org.eclipse.sirius.diagram.description.style.DotDescription#getStrokeSizeComputationExpression <em>Stroke
      * Size Computation Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Stroke Size Computation Expression</em>' attribute.
      * @see #getStrokeSizeComputationExpression()

@@ -56,7 +56,7 @@ public interface DRepresentationDescriptor extends DModelElement {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.viewpoint.DRepresentationDescriptor#getName <em>Name</em>}'
      * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Name</em>' attribute.
      * @see #getName()
@@ -68,7 +68,7 @@ public interface DRepresentationDescriptor extends DModelElement {
      * Returns the value of the '<em><b>Description</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
      * <!-- begin-model-doc --> The description of the representation targeted by this descriptor. <!-- end-model-doc
      * -->
-     *
+     * 
      * @return the value of the '<em>Description</em>' reference.
      * @see #setDescription(RepresentationDescription)
      * @see org.eclipse.sirius.viewpoint.ViewpointPackage#getDRepresentationDescriptor_Description()
@@ -80,7 +80,7 @@ public interface DRepresentationDescriptor extends DModelElement {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.viewpoint.DRepresentationDescriptor#getDescription
      * <em>Description</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Description</em>' reference.
      * @see #getDescription()
@@ -103,7 +103,7 @@ public interface DRepresentationDescriptor extends DModelElement {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.viewpoint.DRepresentationDescriptor#getTarget <em>Target</em>}'
      * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Target</em>' reference.
      * @see #getTarget()
@@ -138,7 +138,7 @@ public interface DRepresentationDescriptor extends DModelElement {
      * Sets the value of the '{@link org.eclipse.sirius.viewpoint.DRepresentationDescriptor#getRepresentation
      * <em>Representation</em>}' reference. <!-- begin-user-doc -->If the newRepresentation value is not null, the
      * newRepresentation.eResource must not be null.<!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Representation</em>' reference.
      * @see #getRepresentation()
@@ -166,7 +166,7 @@ public interface DRepresentationDescriptor extends DModelElement {
      * here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Rep Path</em>' attribute.
      * @see #setRepPath(ResourceDescriptor)
      * @see org.eclipse.sirius.viewpoint.ViewpointPackage#getDRepresentationDescriptor_RepPath()
@@ -178,7 +178,7 @@ public interface DRepresentationDescriptor extends DModelElement {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.viewpoint.DRepresentationDescriptor#getRepPath <em>Rep
      * Path</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Rep Path</em>' attribute.
      * @see #getRepPath()

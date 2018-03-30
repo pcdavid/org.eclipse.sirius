@@ -38,7 +38,7 @@ public abstract class EnumOptionImpl extends LayoutOptionImpl implements EnumOpt
     /**
      * The cached value of the '{@link #getChoices() <em>Choices</em>}' containment reference list. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getChoices()
      * @generated
      * @ordered
@@ -47,7 +47,7 @@ public abstract class EnumOptionImpl extends LayoutOptionImpl implements EnumOpt
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected EnumOptionImpl() {
@@ -56,7 +56,7 @@ public abstract class EnumOptionImpl extends LayoutOptionImpl implements EnumOpt
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -66,7 +66,7 @@ public abstract class EnumOptionImpl extends LayoutOptionImpl implements EnumOpt
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -79,7 +79,7 @@ public abstract class EnumOptionImpl extends LayoutOptionImpl implements EnumOpt
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -93,7 +93,7 @@ public abstract class EnumOptionImpl extends LayoutOptionImpl implements EnumOpt
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -107,7 +107,7 @@ public abstract class EnumOptionImpl extends LayoutOptionImpl implements EnumOpt
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -124,7 +124,7 @@ public abstract class EnumOptionImpl extends LayoutOptionImpl implements EnumOpt
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -139,7 +139,7 @@ public abstract class EnumOptionImpl extends LayoutOptionImpl implements EnumOpt
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

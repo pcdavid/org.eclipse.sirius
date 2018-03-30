@@ -66,7 +66,6 @@ import org.eclipse.sirius.diagram.WorkspaceImage;
 import org.eclipse.sirius.viewpoint.BasicLabelStyle;
 import org.eclipse.sirius.viewpoint.Customizable;
 import org.eclipse.sirius.viewpoint.DMappingBased;
-import org.eclipse.sirius.viewpoint.DRefreshable;
 import org.eclipse.sirius.viewpoint.DRepresentation;
 import org.eclipse.sirius.viewpoint.DRepresentationElement;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
@@ -81,21 +80,21 @@ import org.eclipse.sirius.viewpoint.description.DocumentedElement;
  * {@link #doSwitch(EObject) doSwitch(object)} to invoke the <code>caseXXX</code> method for each class of the model,
  * starting with the actual class of the object and proceeding up the inheritance hierarchy until a non-null result is
  * returned, which is the result of the switch. <!-- end-user-doc -->
- *
+ * 
  * @see org.eclipse.sirius.diagram.DiagramPackage
  * @generated
  */
 public class DiagramSwitch<T> {
     /**
      * The cached model package <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected static DiagramPackage modelPackage;
 
     /**
      * Creates an instance of the switch. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public DiagramSwitch() {
@@ -107,7 +106,7 @@ public class DiagramSwitch<T> {
     /**
      * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that
      * result. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the first non-null result returned by a <code>caseXXX</code> call.
      * @generated
      */
@@ -118,7 +117,7 @@ public class DiagramSwitch<T> {
     /**
      * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that
      * result. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the first non-null result returned by a <code>caseXXX</code> call.
      * @generated
      */
@@ -134,7 +133,7 @@ public class DiagramSwitch<T> {
     /**
      * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that
      * result. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the first non-null result returned by a <code>caseXXX</code> call.
      * @generated
      */
@@ -151,9 +150,6 @@ public class DiagramSwitch<T> {
             }
             if (result == null) {
                 result = caseDocumentedElement(dDiagram);
-            }
-            if (result == null) {
-                result = caseDRefreshable(dDiagram);
             }
             if (result == null) {
                 result = caseDModelElement(dDiagram);
@@ -182,9 +178,6 @@ public class DiagramSwitch<T> {
                 result = caseDocumentedElement(dSemanticDiagram);
             }
             if (result == null) {
-                result = caseDRefreshable(dSemanticDiagram);
-            }
-            if (result == null) {
                 result = caseDModelElement(dSemanticDiagram);
             }
             if (result == null) {
@@ -203,9 +196,6 @@ public class DiagramSwitch<T> {
             }
             if (result == null) {
                 result = caseDStylizable(dDiagramElement);
-            }
-            if (result == null) {
-                result = caseDRefreshable(dDiagramElement);
             }
             if (result == null) {
                 result = caseDSemanticDecorator(dDiagramElement);
@@ -305,9 +295,6 @@ public class DiagramSwitch<T> {
                 result = caseDStylizable(abstractDNode);
             }
             if (result == null) {
-                result = caseDRefreshable(abstractDNode);
-            }
-            if (result == null) {
                 result = caseDSemanticDecorator(abstractDNode);
             }
             if (result == null) {
@@ -340,9 +327,6 @@ public class DiagramSwitch<T> {
                 result = caseDStylizable(dNode);
             }
             if (result == null) {
-                result = caseDRefreshable(dNode);
-            }
-            if (result == null) {
                 result = caseDSemanticDecorator(dNode);
             }
             if (result == null) {
@@ -373,9 +357,6 @@ public class DiagramSwitch<T> {
             }
             if (result == null) {
                 result = caseDStylizable(dDiagramElementContainer);
-            }
-            if (result == null) {
-                result = caseDRefreshable(dDiagramElementContainer);
             }
             if (result == null) {
                 result = caseDSemanticDecorator(dDiagramElementContainer);
@@ -413,9 +394,6 @@ public class DiagramSwitch<T> {
                 result = caseDStylizable(dNodeContainer);
             }
             if (result == null) {
-                result = caseDRefreshable(dNodeContainer);
-            }
-            if (result == null) {
                 result = caseDSemanticDecorator(dNodeContainer);
             }
             if (result == null) {
@@ -451,9 +429,6 @@ public class DiagramSwitch<T> {
                 result = caseDStylizable(dNodeList);
             }
             if (result == null) {
-                result = caseDRefreshable(dNodeList);
-            }
-            if (result == null) {
                 result = caseDSemanticDecorator(dNodeList);
             }
             if (result == null) {
@@ -478,9 +453,6 @@ public class DiagramSwitch<T> {
             }
             if (result == null) {
                 result = caseDStylizable(dNodeListElement);
-            }
-            if (result == null) {
-                result = caseDRefreshable(dNodeListElement);
             }
             if (result == null) {
                 result = caseDSemanticDecorator(dNodeListElement);
@@ -509,9 +481,6 @@ public class DiagramSwitch<T> {
                 result = caseDStylizable(dEdge);
             }
             if (result == null) {
-                result = caseDRefreshable(dEdge);
-            }
-            if (result == null) {
                 result = caseDSemanticDecorator(dEdge);
             }
             if (result == null) {
@@ -536,9 +505,6 @@ public class DiagramSwitch<T> {
             }
             if (result == null) {
                 result = caseStyle(nodeStyle);
-            }
-            if (result == null) {
-                result = caseDRefreshable(nodeStyle);
             }
             if (result == null) {
                 result = caseCustomizable(nodeStyle);
@@ -568,9 +534,6 @@ public class DiagramSwitch<T> {
             }
             if (result == null) {
                 result = caseStyle(dot);
-            }
-            if (result == null) {
-                result = caseDRefreshable(dot);
             }
             if (result == null) {
                 result = caseCustomizable(dot);
@@ -610,9 +573,6 @@ public class DiagramSwitch<T> {
                 result = caseStyle(containerStyle);
             }
             if (result == null) {
-                result = caseDRefreshable(containerStyle);
-            }
-            if (result == null) {
                 result = caseCustomizable(containerStyle);
             }
             if (result == null) {
@@ -640,9 +600,6 @@ public class DiagramSwitch<T> {
             }
             if (result == null) {
                 result = caseStyle(flatContainerStyle);
-            }
-            if (result == null) {
-                result = caseDRefreshable(flatContainerStyle);
             }
             if (result == null) {
                 result = caseCustomizable(flatContainerStyle);
@@ -674,9 +631,6 @@ public class DiagramSwitch<T> {
                 result = caseStyle(shapeContainerStyle);
             }
             if (result == null) {
-                result = caseDRefreshable(shapeContainerStyle);
-            }
-            if (result == null) {
                 result = caseCustomizable(shapeContainerStyle);
             }
             if (result == null) {
@@ -704,9 +658,6 @@ public class DiagramSwitch<T> {
             }
             if (result == null) {
                 result = caseStyle(square);
-            }
-            if (result == null) {
-                result = caseDRefreshable(square);
             }
             if (result == null) {
                 result = caseCustomizable(square);
@@ -738,9 +689,6 @@ public class DiagramSwitch<T> {
                 result = caseStyle(ellipse);
             }
             if (result == null) {
-                result = caseDRefreshable(ellipse);
-            }
-            if (result == null) {
                 result = caseCustomizable(ellipse);
             }
             if (result == null) {
@@ -770,9 +718,6 @@ public class DiagramSwitch<T> {
                 result = caseStyle(lozenge);
             }
             if (result == null) {
-                result = caseDRefreshable(lozenge);
-            }
-            if (result == null) {
                 result = caseCustomizable(lozenge);
             }
             if (result == null) {
@@ -800,9 +745,6 @@ public class DiagramSwitch<T> {
             }
             if (result == null) {
                 result = caseStyle(bundledImage);
-            }
-            if (result == null) {
-                result = caseDRefreshable(bundledImage);
             }
             if (result == null) {
                 result = caseCustomizable(bundledImage);
@@ -837,9 +779,6 @@ public class DiagramSwitch<T> {
                 result = caseStyle(workspaceImage);
             }
             if (result == null) {
-                result = caseDRefreshable(workspaceImage);
-            }
-            if (result == null) {
                 result = caseCustomizable(workspaceImage);
             }
             if (result == null) {
@@ -869,9 +808,6 @@ public class DiagramSwitch<T> {
                 result = caseStyle(customStyle);
             }
             if (result == null) {
-                result = caseDRefreshable(customStyle);
-            }
-            if (result == null) {
                 result = caseCustomizable(customStyle);
             }
             if (result == null) {
@@ -892,9 +828,6 @@ public class DiagramSwitch<T> {
             T result = caseEdgeStyle(edgeStyle);
             if (result == null) {
                 result = caseStyle(edgeStyle);
-            }
-            if (result == null) {
-                result = caseDRefreshable(edgeStyle);
             }
             if (result == null) {
                 result = caseCustomizable(edgeStyle);
@@ -926,9 +859,6 @@ public class DiagramSwitch<T> {
                 result = caseStyle(gaugeCompositeStyle);
             }
             if (result == null) {
-                result = caseDRefreshable(gaugeCompositeStyle);
-            }
-            if (result == null) {
                 result = caseCustomizable(gaugeCompositeStyle);
             }
             if (result == null) {
@@ -941,9 +871,6 @@ public class DiagramSwitch<T> {
             T result = caseBorderedStyle(borderedStyle);
             if (result == null) {
                 result = caseStyle(borderedStyle);
-            }
-            if (result == null) {
-                result = caseDRefreshable(borderedStyle);
             }
             if (result == null) {
                 result = caseCustomizable(borderedStyle);
@@ -973,9 +900,6 @@ public class DiagramSwitch<T> {
             }
             if (result == null) {
                 result = caseStyle(note);
-            }
-            if (result == null) {
-                result = caseDRefreshable(note);
             }
             if (result == null) {
                 result = caseCustomizable(note);
@@ -1070,9 +994,6 @@ public class DiagramSwitch<T> {
                 result = caseStyle(bracketEdgeStyle);
             }
             if (result == null) {
-                result = caseDRefreshable(bracketEdgeStyle);
-            }
-            if (result == null) {
                 result = caseCustomizable(bracketEdgeStyle);
             }
             if (result == null) {
@@ -1142,7 +1063,7 @@ public class DiagramSwitch<T> {
     /**
      * Returns the result of interpreting the object as an instance of '<em>DDiagram</em>'. <!-- begin-user-doc --> This
      * implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     *
+     * 
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>DDiagram</em>'.
@@ -1201,7 +1122,7 @@ public class DiagramSwitch<T> {
     /**
      * Returns the result of interpreting the object as an instance of '<em>Hide Filter</em>'. <!-- begin-user-doc -->
      * This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     *
+     * 
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>Hide Filter</em>'.
@@ -1305,7 +1226,7 @@ public class DiagramSwitch<T> {
     /**
      * Returns the result of interpreting the object as an instance of '<em>DNode</em>'. <!-- begin-user-doc --> This
      * implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     *
+     * 
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>DNode</em>'.
@@ -1349,7 +1270,7 @@ public class DiagramSwitch<T> {
     /**
      * Returns the result of interpreting the object as an instance of '<em>DNode List</em>'. <!-- begin-user-doc -->
      * This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     *
+     * 
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>DNode List</em>'.
@@ -1378,7 +1299,7 @@ public class DiagramSwitch<T> {
     /**
      * Returns the result of interpreting the object as an instance of '<em>DEdge</em>'. <!-- begin-user-doc --> This
      * implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     *
+     * 
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>DEdge</em>'.
@@ -1392,7 +1313,7 @@ public class DiagramSwitch<T> {
     /**
      * Returns the result of interpreting the object as an instance of '<em>Node Style</em>'. <!-- begin-user-doc -->
      * This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     *
+     * 
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>Node Style</em>'.
@@ -1406,7 +1327,7 @@ public class DiagramSwitch<T> {
     /**
      * Returns the result of interpreting the object as an instance of '<em>Dot</em>'. <!-- begin-user-doc --> This
      * implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     *
+     * 
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>Dot</em>'.
@@ -1420,7 +1341,7 @@ public class DiagramSwitch<T> {
     /**
      * Returns the result of interpreting the object as an instance of '<em>Gauge Section</em>'. <!-- begin-user-doc -->
      * This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     *
+     * 
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>Gauge Section</em>'.
@@ -1479,7 +1400,7 @@ public class DiagramSwitch<T> {
     /**
      * Returns the result of interpreting the object as an instance of '<em>Square</em>'. <!-- begin-user-doc --> This
      * implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     *
+     * 
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>Square</em>'.
@@ -1493,7 +1414,7 @@ public class DiagramSwitch<T> {
     /**
      * Returns the result of interpreting the object as an instance of '<em>Ellipse</em>'. <!-- begin-user-doc --> This
      * implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     *
+     * 
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>Ellipse</em>'.
@@ -1507,7 +1428,7 @@ public class DiagramSwitch<T> {
     /**
      * Returns the result of interpreting the object as an instance of '<em>Lozenge</em>'. <!-- begin-user-doc --> This
      * implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     *
+     * 
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>Lozenge</em>'.
@@ -1521,7 +1442,7 @@ public class DiagramSwitch<T> {
     /**
      * Returns the result of interpreting the object as an instance of '<em>Bundled Image</em>'. <!-- begin-user-doc -->
      * This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     *
+     * 
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>Bundled Image</em>'.
@@ -1550,7 +1471,7 @@ public class DiagramSwitch<T> {
     /**
      * Returns the result of interpreting the object as an instance of '<em>Custom Style</em>'. <!-- begin-user-doc -->
      * This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     *
+     * 
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>Custom Style</em>'.
@@ -1564,7 +1485,7 @@ public class DiagramSwitch<T> {
     /**
      * Returns the result of interpreting the object as an instance of '<em>Edge Target</em>'. <!-- begin-user-doc -->
      * This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     *
+     * 
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>Edge Target</em>'.
@@ -1578,7 +1499,7 @@ public class DiagramSwitch<T> {
     /**
      * Returns the result of interpreting the object as an instance of '<em>Edge Style</em>'. <!-- begin-user-doc -->
      * This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     *
+     * 
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>Edge Style</em>'.
@@ -1622,7 +1543,7 @@ public class DiagramSwitch<T> {
     /**
      * Returns the result of interpreting the object as an instance of '<em>Note</em>'. <!-- begin-user-doc --> This
      * implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     *
+     * 
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>Note</em>'.
@@ -1742,7 +1663,7 @@ public class DiagramSwitch<T> {
      * Returns the result of interpreting the object as an instance of '<em>Computed Style Description Registry</em>'.
      * <!-- begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch.
      * <!-- end-user-doc -->
-     *
+     * 
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>Computed Style Description Registry</em>'.
@@ -1844,20 +1765,6 @@ public class DiagramSwitch<T> {
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '<em>DRefreshable</em>'. <!-- begin-user-doc -->
-     * This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     *
-     * @param object
-     *            the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>DRefreshable</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseDRefreshable(DRefreshable object) {
-        return null;
-    }
-
-    /**
      * Returns the result of interpreting the object as an instance of '<em>DModel Element</em>'. <!-- begin-user-doc
      * --> This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc
      * -->
@@ -1920,7 +1827,7 @@ public class DiagramSwitch<T> {
     /**
      * Returns the result of interpreting the object as an instance of '<em>DStylizable</em>'. <!-- begin-user-doc -->
      * This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     *
+     * 
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>DStylizable</em>'.
@@ -1949,7 +1856,7 @@ public class DiagramSwitch<T> {
     /**
      * Returns the result of interpreting the object as an instance of '<em>Customizable</em>'. <!-- begin-user-doc -->
      * This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     *
+     * 
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>Customizable</em>'.
@@ -1978,7 +1885,7 @@ public class DiagramSwitch<T> {
     /**
      * Returns the result of interpreting the object as an instance of '<em>Label Style</em>'. <!-- begin-user-doc -->
      * This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     *
+     * 
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>Label Style</em>'.
@@ -1992,7 +1899,7 @@ public class DiagramSwitch<T> {
     /**
      * Returns the result of interpreting the object as an instance of '<em>Style</em>'. <!-- begin-user-doc --> This
      * implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     *
+     * 
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>Style</em>'.
@@ -2007,7 +1914,7 @@ public class DiagramSwitch<T> {
      * Returns the result of interpreting the object as an instance of '<em>EObject</em>'. <!-- begin-user-doc --> This
      * implementation returns null; returning a non-null result will terminate the switch, but this is the last case
      * anyway. <!-- end-user-doc -->
-     *
+     * 
      * @param object
      *            the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>EObject</em>'.

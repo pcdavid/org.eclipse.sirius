@@ -51,7 +51,7 @@ public interface ContainerStyleDescription extends RoundedCornerStyleDescription
      * Sets the value of the
      * '{@link org.eclipse.sirius.diagram.description.style.ContainerStyleDescription#isRoundedCorner <em>Rounded
      * Corner</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Rounded Corner</em>' attribute.
      * @see #isRoundedCorner()

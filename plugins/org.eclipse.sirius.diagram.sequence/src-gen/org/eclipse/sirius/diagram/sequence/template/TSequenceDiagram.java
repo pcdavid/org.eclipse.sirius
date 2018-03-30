@@ -41,7 +41,7 @@ public interface TSequenceDiagram extends RepresentationTemplate, TTransformer {
      * description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Ends Ordering</em>' attribute.
      * @see #setEndsOrdering(String)
      * @see org.eclipse.sirius.diagram.sequence.template.TemplatePackage#getTSequenceDiagram_EndsOrdering()
@@ -57,7 +57,7 @@ public interface TSequenceDiagram extends RepresentationTemplate, TTransformer {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.diagram.sequence.template.TSequenceDiagram#getEndsOrdering
      * <em>Ends Ordering</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Ends Ordering</em>' attribute.
      * @see #getEndsOrdering()
@@ -73,7 +73,7 @@ public interface TSequenceDiagram extends RepresentationTemplate, TTransformer {
      * more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Lifeline Mappings</em>' containment reference list.
      * @see org.eclipse.sirius.diagram.sequence.template.TemplatePackage#getTSequenceDiagram_LifelineMappings()
      * @model containment="true"
@@ -89,7 +89,7 @@ public interface TSequenceDiagram extends RepresentationTemplate, TTransformer {
      * more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Message Mappings</em>' containment reference list.
      * @see org.eclipse.sirius.diagram.sequence.template.TemplatePackage#getTSequenceDiagram_MessageMappings()
      * @model containment="true"
@@ -100,7 +100,7 @@ public interface TSequenceDiagram extends RepresentationTemplate, TTransformer {
     /**
      * Returns the value of the '<em><b>Domain Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
      * <!-- begin-model-doc --> The domain class of the mapping. <!-- end-model-doc -->
-     *
+     * 
      * @return the value of the '<em>Domain Class</em>' attribute.
      * @see #setDomainClass(String)
      * @see org.eclipse.sirius.diagram.sequence.template.TemplatePackage#getTSequenceDiagram_DomainClass()
@@ -112,7 +112,7 @@ public interface TSequenceDiagram extends RepresentationTemplate, TTransformer {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.diagram.sequence.template.TSequenceDiagram#getDomainClass
      * <em>Domain Class</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Domain Class</em>' attribute.
      * @see #getDomainClass()

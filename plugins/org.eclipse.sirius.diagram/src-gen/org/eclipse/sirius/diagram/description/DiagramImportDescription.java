@@ -45,7 +45,7 @@ public interface DiagramImportDescription extends RepresentationImportDescriptio
     /**
      * Sets the value of the '{@link org.eclipse.sirius.diagram.description.DiagramImportDescription#getImportedDiagram
      * <em>Imported Diagram</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Imported Diagram</em>' reference.
      * @see #getImportedDiagram()

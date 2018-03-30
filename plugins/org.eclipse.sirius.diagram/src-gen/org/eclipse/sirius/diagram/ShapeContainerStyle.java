@@ -38,7 +38,7 @@ public interface ShapeContainerStyle extends ContainerStyle {
      * here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Shape</em>' attribute.
      * @see org.eclipse.sirius.diagram.ContainerShape
      * @see #setShape(ContainerShape)
@@ -51,7 +51,7 @@ public interface ShapeContainerStyle extends ContainerStyle {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.diagram.ShapeContainerStyle#getShape <em>Shape</em>}' attribute.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Shape</em>' attribute.
      * @see org.eclipse.sirius.diagram.ContainerShape
@@ -79,7 +79,7 @@ public interface ShapeContainerStyle extends ContainerStyle {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.diagram.ShapeContainerStyle#getBackgroundColor <em>Background
      * Color</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Background Color</em>' attribute.
      * @see #getBackgroundColor()

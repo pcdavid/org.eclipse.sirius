@@ -47,7 +47,7 @@ public interface Dot extends NodeStyle {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.diagram.Dot#getBackgroundColor <em>Background Color</em>}'
      * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Background Color</em>' attribute.
      * @see #getBackgroundColor()
@@ -72,7 +72,7 @@ public interface Dot extends NodeStyle {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.diagram.Dot#getStrokeSizeComputationExpression <em>Stroke Size
      * Computation Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Stroke Size Computation Expression</em>' attribute.
      * @see #getStrokeSizeComputationExpression()

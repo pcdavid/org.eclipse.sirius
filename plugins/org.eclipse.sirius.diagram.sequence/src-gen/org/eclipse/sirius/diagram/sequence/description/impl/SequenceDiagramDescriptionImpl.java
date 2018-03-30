@@ -36,7 +36,7 @@ public class SequenceDiagramDescriptionImpl extends DiagramDescriptionImpl imple
     /**
      * The default value of the '{@link #getEndsOrdering() <em>Ends Ordering</em>}' attribute. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @see #getEndsOrdering()
      * @generated
      * @ordered
@@ -46,7 +46,7 @@ public class SequenceDiagramDescriptionImpl extends DiagramDescriptionImpl imple
     /**
      * The cached value of the '{@link #getEndsOrdering() <em>Ends Ordering</em>}' attribute. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @see #getEndsOrdering()
      * @generated
      * @ordered
@@ -75,7 +75,7 @@ public class SequenceDiagramDescriptionImpl extends DiagramDescriptionImpl imple
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected SequenceDiagramDescriptionImpl() {
@@ -84,7 +84,7 @@ public class SequenceDiagramDescriptionImpl extends DiagramDescriptionImpl imple
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -94,7 +94,7 @@ public class SequenceDiagramDescriptionImpl extends DiagramDescriptionImpl imple
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -104,7 +104,7 @@ public class SequenceDiagramDescriptionImpl extends DiagramDescriptionImpl imple
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -118,7 +118,7 @@ public class SequenceDiagramDescriptionImpl extends DiagramDescriptionImpl imple
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -128,7 +128,7 @@ public class SequenceDiagramDescriptionImpl extends DiagramDescriptionImpl imple
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -142,7 +142,7 @@ public class SequenceDiagramDescriptionImpl extends DiagramDescriptionImpl imple
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -158,7 +158,7 @@ public class SequenceDiagramDescriptionImpl extends DiagramDescriptionImpl imple
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -176,7 +176,7 @@ public class SequenceDiagramDescriptionImpl extends DiagramDescriptionImpl imple
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -194,7 +194,7 @@ public class SequenceDiagramDescriptionImpl extends DiagramDescriptionImpl imple
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -211,7 +211,7 @@ public class SequenceDiagramDescriptionImpl extends DiagramDescriptionImpl imple
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

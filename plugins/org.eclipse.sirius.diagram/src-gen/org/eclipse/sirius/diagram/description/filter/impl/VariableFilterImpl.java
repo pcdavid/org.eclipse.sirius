@@ -54,7 +54,7 @@ public class VariableFilterImpl extends FilterImpl implements VariableFilter {
     /**
      * The default value of the '{@link #getSemanticConditionExpression() <em>Semantic Condition Expression</em>}'
      * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getSemanticConditionExpression()
      * @generated
      * @ordered
@@ -64,7 +64,7 @@ public class VariableFilterImpl extends FilterImpl implements VariableFilter {
     /**
      * The cached value of the '{@link #getSemanticConditionExpression() <em>Semantic Condition Expression</em>}'
      * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getSemanticConditionExpression()
      * @generated
      * @ordered
@@ -73,7 +73,7 @@ public class VariableFilterImpl extends FilterImpl implements VariableFilter {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected VariableFilterImpl() {
@@ -82,7 +82,7 @@ public class VariableFilterImpl extends FilterImpl implements VariableFilter {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -92,7 +92,7 @@ public class VariableFilterImpl extends FilterImpl implements VariableFilter {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -105,7 +105,7 @@ public class VariableFilterImpl extends FilterImpl implements VariableFilter {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -115,7 +115,7 @@ public class VariableFilterImpl extends FilterImpl implements VariableFilter {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -129,7 +129,7 @@ public class VariableFilterImpl extends FilterImpl implements VariableFilter {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -141,7 +141,7 @@ public class VariableFilterImpl extends FilterImpl implements VariableFilter {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -155,7 +155,7 @@ public class VariableFilterImpl extends FilterImpl implements VariableFilter {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -171,7 +171,7 @@ public class VariableFilterImpl extends FilterImpl implements VariableFilter {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -191,7 +191,7 @@ public class VariableFilterImpl extends FilterImpl implements VariableFilter {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -209,7 +209,7 @@ public class VariableFilterImpl extends FilterImpl implements VariableFilter {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -226,7 +226,7 @@ public class VariableFilterImpl extends FilterImpl implements VariableFilter {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

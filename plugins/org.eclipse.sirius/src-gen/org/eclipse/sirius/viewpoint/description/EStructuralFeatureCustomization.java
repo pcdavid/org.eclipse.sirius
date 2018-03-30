@@ -41,7 +41,7 @@ public interface EStructuralFeatureCustomization extends EObject {
      * description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Applied On</em>' reference list.
      * @see org.eclipse.sirius.viewpoint.description.DescriptionPackage#getEStructuralFeatureCustomization_AppliedOn()
      * @model
@@ -56,7 +56,7 @@ public interface EStructuralFeatureCustomization extends EObject {
      * here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Apply On All</em>' attribute.
      * @see #setApplyOnAll(boolean)
      * @see org.eclipse.sirius.viewpoint.description.DescriptionPackage#getEStructuralFeatureCustomization_ApplyOnAll()
@@ -69,7 +69,7 @@ public interface EStructuralFeatureCustomization extends EObject {
      * Sets the value of the
      * '{@link org.eclipse.sirius.viewpoint.description.EStructuralFeatureCustomization#isApplyOnAll <em>Apply On
      * All</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Apply On All</em>' attribute.
      * @see #isApplyOnAll()

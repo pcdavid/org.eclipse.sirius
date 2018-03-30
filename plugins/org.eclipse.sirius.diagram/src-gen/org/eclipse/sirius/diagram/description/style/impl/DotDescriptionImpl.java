@@ -38,7 +38,7 @@ public class DotDescriptionImpl extends NodeStyleDescriptionImpl implements DotD
     /**
      * The cached value of the '{@link #getBackgroundColor() <em>Background Color</em>}' reference. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getBackgroundColor()
      * @generated
      * @ordered
@@ -48,7 +48,7 @@ public class DotDescriptionImpl extends NodeStyleDescriptionImpl implements DotD
     /**
      * The default value of the '{@link #getStrokeSizeComputationExpression() <em>Stroke Size Computation
      * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getStrokeSizeComputationExpression()
      * @generated
      * @ordered
@@ -58,7 +58,7 @@ public class DotDescriptionImpl extends NodeStyleDescriptionImpl implements DotD
     /**
      * The cached value of the '{@link #getStrokeSizeComputationExpression() <em>Stroke Size Computation
      * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getStrokeSizeComputationExpression()
      * @generated
      * @ordered
@@ -67,7 +67,7 @@ public class DotDescriptionImpl extends NodeStyleDescriptionImpl implements DotD
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected DotDescriptionImpl() {
@@ -76,7 +76,7 @@ public class DotDescriptionImpl extends NodeStyleDescriptionImpl implements DotD
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -86,7 +86,7 @@ public class DotDescriptionImpl extends NodeStyleDescriptionImpl implements DotD
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -105,7 +105,7 @@ public class DotDescriptionImpl extends NodeStyleDescriptionImpl implements DotD
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public ColorDescription basicGetBackgroundColor() {
@@ -114,7 +114,7 @@ public class DotDescriptionImpl extends NodeStyleDescriptionImpl implements DotD
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -128,7 +128,7 @@ public class DotDescriptionImpl extends NodeStyleDescriptionImpl implements DotD
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -138,7 +138,7 @@ public class DotDescriptionImpl extends NodeStyleDescriptionImpl implements DotD
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -153,7 +153,7 @@ public class DotDescriptionImpl extends NodeStyleDescriptionImpl implements DotD
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -172,7 +172,7 @@ public class DotDescriptionImpl extends NodeStyleDescriptionImpl implements DotD
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -190,7 +190,7 @@ public class DotDescriptionImpl extends NodeStyleDescriptionImpl implements DotD
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -208,7 +208,7 @@ public class DotDescriptionImpl extends NodeStyleDescriptionImpl implements DotD
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -225,7 +225,7 @@ public class DotDescriptionImpl extends NodeStyleDescriptionImpl implements DotD
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

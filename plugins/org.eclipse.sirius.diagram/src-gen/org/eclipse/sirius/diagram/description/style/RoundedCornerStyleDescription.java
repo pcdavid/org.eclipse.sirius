@@ -49,7 +49,7 @@ public interface RoundedCornerStyleDescription extends StyleDescription {
      * Sets the value of the
      * '{@link org.eclipse.sirius.diagram.description.style.RoundedCornerStyleDescription#getArcWidth <em>Arc
      * Width</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Arc Width</em>' attribute.
      * @see #getArcWidth()
@@ -74,7 +74,7 @@ public interface RoundedCornerStyleDescription extends StyleDescription {
      * Sets the value of the
      * '{@link org.eclipse.sirius.diagram.description.style.RoundedCornerStyleDescription#getArcHeight <em>Arc
      * Height</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Arc Height</em>' attribute.
      * @see #getArcHeight()

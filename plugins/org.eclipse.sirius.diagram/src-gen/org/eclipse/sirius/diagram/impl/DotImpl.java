@@ -37,7 +37,7 @@ public class DotImpl extends NodeStyleImpl implements Dot {
     /**
      * The default value of the '{@link #getStrokeSizeComputationExpression() <em>Stroke Size Computation
      * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getStrokeSizeComputationExpression()
      * @generated
      * @ordered
@@ -47,7 +47,7 @@ public class DotImpl extends NodeStyleImpl implements Dot {
     /**
      * The cached value of the '{@link #getStrokeSizeComputationExpression() <em>Stroke Size Computation
      * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getStrokeSizeComputationExpression()
      * @generated
      * @ordered
@@ -57,7 +57,7 @@ public class DotImpl extends NodeStyleImpl implements Dot {
     /**
      * The default value of the '{@link #getBackgroundColor() <em>Background Color</em>}' attribute. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getBackgroundColor()
      * @generated
      * @ordered
@@ -67,7 +67,7 @@ public class DotImpl extends NodeStyleImpl implements Dot {
     /**
      * The cached value of the '{@link #getBackgroundColor() <em>Background Color</em>}' attribute. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getBackgroundColor()
      * @generated
      * @ordered
@@ -76,7 +76,7 @@ public class DotImpl extends NodeStyleImpl implements Dot {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected DotImpl() {
@@ -85,7 +85,7 @@ public class DotImpl extends NodeStyleImpl implements Dot {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -95,7 +95,7 @@ public class DotImpl extends NodeStyleImpl implements Dot {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -105,7 +105,7 @@ public class DotImpl extends NodeStyleImpl implements Dot {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -119,7 +119,7 @@ public class DotImpl extends NodeStyleImpl implements Dot {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -129,7 +129,7 @@ public class DotImpl extends NodeStyleImpl implements Dot {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -143,7 +143,7 @@ public class DotImpl extends NodeStyleImpl implements Dot {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -159,7 +159,7 @@ public class DotImpl extends NodeStyleImpl implements Dot {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -177,7 +177,7 @@ public class DotImpl extends NodeStyleImpl implements Dot {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -195,7 +195,7 @@ public class DotImpl extends NodeStyleImpl implements Dot {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -212,7 +212,7 @@ public class DotImpl extends NodeStyleImpl implements Dot {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

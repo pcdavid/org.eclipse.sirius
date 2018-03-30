@@ -37,7 +37,7 @@ public interface CreateEdgeView extends CreateView {
      * description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Source Expression</em>' attribute.
      * @see #setSourceExpression(String)
      * @see org.eclipse.sirius.diagram.description.tool.ToolPackage#getCreateEdgeView_SourceExpression()
@@ -51,7 +51,7 @@ public interface CreateEdgeView extends CreateView {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.diagram.description.tool.CreateEdgeView#getSourceExpression
      * <em>Source Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Source Expression</em>' attribute.
      * @see #getSourceExpression()
@@ -66,7 +66,7 @@ public interface CreateEdgeView extends CreateView {
      * description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Target Expression</em>' attribute.
      * @see #setTargetExpression(String)
      * @see org.eclipse.sirius.diagram.description.tool.ToolPackage#getCreateEdgeView_TargetExpression()
@@ -80,7 +80,7 @@ public interface CreateEdgeView extends CreateView {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.diagram.description.tool.CreateEdgeView#getTargetExpression
      * <em>Target Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Target Expression</em>' attribute.
      * @see #getTargetExpression()

@@ -48,7 +48,7 @@ public interface TConditionalExecutionStyle extends TTransformer {
      * Sets the value of the
      * '{@link org.eclipse.sirius.diagram.sequence.template.TConditionalExecutionStyle#getPredicateExpression
      * <em>Predicate Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Predicate Expression</em>' attribute.
      * @see #getPredicateExpression()
@@ -63,7 +63,7 @@ public interface TConditionalExecutionStyle extends TTransformer {
      * description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Style</em>' containment reference.
      * @see #setStyle(TExecutionStyle)
      * @see org.eclipse.sirius.diagram.sequence.template.TemplatePackage#getTConditionalExecutionStyle_Style()
@@ -75,7 +75,7 @@ public interface TConditionalExecutionStyle extends TTransformer {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.diagram.sequence.template.TConditionalExecutionStyle#getStyle
      * <em>Style</em>}' containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Style</em>' containment reference.
      * @see #getStyle()

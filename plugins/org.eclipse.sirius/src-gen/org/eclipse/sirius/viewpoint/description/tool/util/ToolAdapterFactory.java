@@ -80,21 +80,21 @@ import org.eclipse.sirius.viewpoint.description.tool.VariableContainer;
 /**
  * <!-- begin-user-doc --> The <b>Adapter Factory</b> for the model. It provides an adapter <code>createXXX</code>
  * method for each class of the model. <!-- end-user-doc -->
- *
+ * 
  * @see org.eclipse.sirius.viewpoint.description.tool.ToolPackage
  * @generated
  */
 public class ToolAdapterFactory extends AdapterFactoryImpl {
     /**
      * The cached model package. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected static ToolPackage modelPackage;
 
     /**
      * Creates an instance of the adapter factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public ToolAdapterFactory() {
@@ -107,7 +107,7 @@ public class ToolAdapterFactory extends AdapterFactoryImpl {
      * Returns whether this factory is applicable for the type of the object. <!-- begin-user-doc --> This
      * implementation returns <code>true</code> if the object is either the model's package or is an instance object of
      * the model. <!-- end-user-doc -->
-     *
+     * 
      * @return whether this factory is applicable for the type of the object.
      * @generated
      */
@@ -124,7 +124,7 @@ public class ToolAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * The switch that delegates to the <code>createXXX</code> methods. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected ToolSwitch<Adapter> modelSwitch = new ToolSwitch<Adapter>() {
@@ -436,7 +436,7 @@ public class ToolAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates an adapter for the <code>target</code>. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param target
      *            the object to adapt.
      * @return the adapter for the <code>target</code>.
@@ -451,7 +451,7 @@ public class ToolAdapterFactory extends AdapterFactoryImpl {
      * Creates a new adapter for an object of class '{@link org.eclipse.sirius.viewpoint.description.tool.ToolEntry
      * <em>Entry</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
      * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.eclipse.sirius.viewpoint.description.tool.ToolEntry
      * @generated
@@ -465,7 +465,7 @@ public class ToolAdapterFactory extends AdapterFactoryImpl {
      * '{@link org.eclipse.sirius.viewpoint.description.tool.AbstractToolDescription <em>Abstract Tool
      * Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
      * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.eclipse.sirius.viewpoint.description.tool.AbstractToolDescription
      * @generated
@@ -479,7 +479,7 @@ public class ToolAdapterFactory extends AdapterFactoryImpl {
      * '{@link org.eclipse.sirius.viewpoint.description.tool.MappingBasedToolDescription <em>Mapping Based Tool
      * Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
      * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.eclipse.sirius.viewpoint.description.tool.MappingBasedToolDescription
      * @generated
@@ -493,7 +493,7 @@ public class ToolAdapterFactory extends AdapterFactoryImpl {
      * '{@link org.eclipse.sirius.viewpoint.description.tool.ToolDescription <em>Description</em>}'. <!-- begin-user-doc
      * --> This default implementation returns null so that we can easily ignore cases; it's useful to ignore a case
      * when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.eclipse.sirius.viewpoint.description.tool.ToolDescription
      * @generated
@@ -521,7 +521,7 @@ public class ToolAdapterFactory extends AdapterFactoryImpl {
      * '{@link org.eclipse.sirius.viewpoint.description.tool.SelectionWizardDescription <em>Selection Wizard
      * Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
      * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.eclipse.sirius.viewpoint.description.tool.SelectionWizardDescription
      * @generated
@@ -536,7 +536,7 @@ public class ToolAdapterFactory extends AdapterFactoryImpl {
      * Selection Wizard Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we
      * can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
      * end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.eclipse.sirius.viewpoint.description.tool.PaneBasedSelectionWizardDescription
      * @generated
@@ -551,7 +551,7 @@ public class ToolAdapterFactory extends AdapterFactoryImpl {
      * Creation Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
      * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
      * end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.eclipse.sirius.viewpoint.description.tool.RepresentationCreationDescription
      * @generated
@@ -566,7 +566,7 @@ public class ToolAdapterFactory extends AdapterFactoryImpl {
      * Navigation Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
      * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
      * end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.eclipse.sirius.viewpoint.description.tool.RepresentationNavigationDescription
      * @generated
@@ -580,7 +580,7 @@ public class ToolAdapterFactory extends AdapterFactoryImpl {
      * <em>Menu Item Or Ref</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
      * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
      * end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.eclipse.sirius.viewpoint.description.tool.MenuItemOrRef
      * @generated
@@ -608,7 +608,7 @@ public class ToolAdapterFactory extends AdapterFactoryImpl {
      * '{@link org.eclipse.sirius.viewpoint.description.tool.MenuItemDescriptionReference <em>Menu Item Description
      * Reference</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
      * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.eclipse.sirius.viewpoint.description.tool.MenuItemDescriptionReference
      * @generated
@@ -650,7 +650,7 @@ public class ToolAdapterFactory extends AdapterFactoryImpl {
      * '{@link org.eclipse.sirius.viewpoint.description.tool.ExternalJavaActionCall <em>External Java Action
      * Call</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore cases;
      * it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.eclipse.sirius.viewpoint.description.tool.ExternalJavaActionCall
      * @generated
@@ -678,7 +678,7 @@ public class ToolAdapterFactory extends AdapterFactoryImpl {
      * <em>Abstract Variable</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
      * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
      * end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.eclipse.sirius.viewpoint.description.AbstractVariable
      * @generated
@@ -719,7 +719,7 @@ public class ToolAdapterFactory extends AdapterFactoryImpl {
      * Creates a new adapter for an object of class '{@link org.eclipse.sirius.viewpoint.description.SubVariable <em>Sub
      * Variable</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
      * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.eclipse.sirius.viewpoint.description.SubVariable
      * @generated
@@ -733,7 +733,7 @@ public class ToolAdapterFactory extends AdapterFactoryImpl {
      * '{@link org.eclipse.sirius.viewpoint.description.InteractiveVariableDescription <em>Interactive Variable
      * Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
      * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.eclipse.sirius.viewpoint.description.InteractiveVariableDescription
      * @generated
@@ -747,7 +747,7 @@ public class ToolAdapterFactory extends AdapterFactoryImpl {
      * <em>Dialog Variable</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
      * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
      * end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.eclipse.sirius.viewpoint.description.tool.DialogVariable
      * @generated
@@ -775,7 +775,7 @@ public class ToolAdapterFactory extends AdapterFactoryImpl {
      * '{@link org.eclipse.sirius.viewpoint.description.tool.ElementSelectVariable <em>Element Select Variable</em>}'.
      * <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore cases; it's useful
      * to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.eclipse.sirius.viewpoint.description.tool.ElementSelectVariable
      * @generated
@@ -817,7 +817,7 @@ public class ToolAdapterFactory extends AdapterFactoryImpl {
      * '{@link org.eclipse.sirius.viewpoint.description.tool.ElementDeleteVariable <em>Element Delete Variable</em>}'.
      * <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore cases; it's useful
      * to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.eclipse.sirius.viewpoint.description.tool.ElementDeleteVariable
      * @generated
@@ -831,7 +831,7 @@ public class ToolAdapterFactory extends AdapterFactoryImpl {
      * '{@link org.eclipse.sirius.viewpoint.description.tool.DropContainerVariable <em>Drop Container Variable</em>}'.
      * <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore cases; it's useful
      * to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.eclipse.sirius.viewpoint.description.tool.DropContainerVariable
      * @generated
@@ -845,7 +845,7 @@ public class ToolAdapterFactory extends AdapterFactoryImpl {
      * '{@link org.eclipse.sirius.viewpoint.description.tool.SelectContainerVariable <em>Select Container
      * Variable</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
      * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.eclipse.sirius.viewpoint.description.tool.SelectContainerVariable
      * @generated
@@ -859,7 +859,7 @@ public class ToolAdapterFactory extends AdapterFactoryImpl {
      * '{@link org.eclipse.sirius.viewpoint.description.tool.ContainerViewVariable <em>Container View Variable</em>}'.
      * <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore cases; it's useful
      * to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.eclipse.sirius.viewpoint.description.tool.ContainerViewVariable
      * @generated
@@ -873,7 +873,7 @@ public class ToolAdapterFactory extends AdapterFactoryImpl {
      * '{@link org.eclipse.sirius.viewpoint.description.tool.SelectModelElementVariable <em>Select Model Element
      * Variable</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
      * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.eclipse.sirius.viewpoint.description.tool.SelectModelElementVariable
      * @generated
@@ -901,7 +901,7 @@ public class ToolAdapterFactory extends AdapterFactoryImpl {
      * '{@link org.eclipse.sirius.viewpoint.description.tool.ContainerModelOperation <em>Container Model
      * Operation</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
      * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.eclipse.sirius.viewpoint.description.tool.ContainerModelOperation
      * @generated
@@ -915,7 +915,7 @@ public class ToolAdapterFactory extends AdapterFactoryImpl {
      * <em>Model Operation</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
      * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
      * end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.eclipse.sirius.viewpoint.description.tool.ModelOperation
      * @generated
@@ -929,7 +929,7 @@ public class ToolAdapterFactory extends AdapterFactoryImpl {
      * '{@link org.eclipse.sirius.viewpoint.description.tool.InitialNodeCreationOperation <em>Initial Node Creation
      * Operation</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
      * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.eclipse.sirius.viewpoint.description.tool.InitialNodeCreationOperation
      * @generated
@@ -957,7 +957,7 @@ public class ToolAdapterFactory extends AdapterFactoryImpl {
      * '{@link org.eclipse.sirius.viewpoint.description.tool.InitEdgeCreationOperation <em>Init Edge Creation
      * Operation</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
      * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.eclipse.sirius.viewpoint.description.tool.InitEdgeCreationOperation
      * @generated
@@ -971,7 +971,7 @@ public class ToolAdapterFactory extends AdapterFactoryImpl {
      * '{@link org.eclipse.sirius.viewpoint.description.tool.InitialContainerDropOperation <em>Initial Container Drop
      * Operation</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
      * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.eclipse.sirius.viewpoint.description.tool.InitialContainerDropOperation
      * @generated
@@ -985,7 +985,7 @@ public class ToolAdapterFactory extends AdapterFactoryImpl {
      * <em>Create Instance</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
      * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
      * end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.eclipse.sirius.viewpoint.description.tool.CreateInstance
      * @generated
@@ -1040,7 +1040,7 @@ public class ToolAdapterFactory extends AdapterFactoryImpl {
      * Creates a new adapter for an object of class '{@link org.eclipse.sirius.viewpoint.description.tool.Unset
      * <em>Unset</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
      * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.eclipse.sirius.viewpoint.description.tool.Unset
      * @generated
@@ -1081,7 +1081,7 @@ public class ToolAdapterFactory extends AdapterFactoryImpl {
      * Creates a new adapter for an object of class '{@link org.eclipse.sirius.viewpoint.description.tool.For
      * <em>For</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
      * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.eclipse.sirius.viewpoint.description.tool.For
      * @generated
@@ -1094,7 +1094,7 @@ public class ToolAdapterFactory extends AdapterFactoryImpl {
      * Creates a new adapter for an object of class '{@link org.eclipse.sirius.viewpoint.description.tool.If
      * <em>If</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
      * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.eclipse.sirius.viewpoint.description.tool.If
      * @generated
@@ -1136,7 +1136,7 @@ public class ToolAdapterFactory extends AdapterFactoryImpl {
      * '{@link org.eclipse.sirius.viewpoint.description.tool.ExternalJavaActionParameter <em>External Java Action
      * Parameter</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
      * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.eclipse.sirius.viewpoint.description.tool.ExternalJavaActionParameter
      * @generated
@@ -1164,7 +1164,7 @@ public class ToolAdapterFactory extends AdapterFactoryImpl {
      * '{@link org.eclipse.sirius.viewpoint.description.tool.FeatureChangeListener <em>Feature Change Listener</em>}'.
      * <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore cases; it's useful
      * to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.eclipse.sirius.viewpoint.description.tool.FeatureChangeListener
      * @generated
@@ -1177,7 +1177,7 @@ public class ToolAdapterFactory extends AdapterFactoryImpl {
      * Creates a new adapter for an object of class '{@link org.eclipse.sirius.viewpoint.description.tool.Case
      * <em>Case</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
      * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.eclipse.sirius.viewpoint.description.tool.Case
      * @generated
@@ -1204,7 +1204,7 @@ public class ToolAdapterFactory extends AdapterFactoryImpl {
      * Creates a new adapter for an object of class '{@link org.eclipse.sirius.viewpoint.description.tool.Default
      * <em>Default</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
      * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.eclipse.sirius.viewpoint.description.tool.Default
      * @generated
@@ -1217,7 +1217,7 @@ public class ToolAdapterFactory extends AdapterFactoryImpl {
      * Creates a new adapter for an object of class '{@link org.eclipse.sirius.viewpoint.description.tool.Switch
      * <em>Switch</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
      * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.eclipse.sirius.viewpoint.description.tool.Switch
      * @generated
@@ -1230,7 +1230,7 @@ public class ToolAdapterFactory extends AdapterFactoryImpl {
      * Creates a new adapter for an object of class '{@link org.eclipse.sirius.viewpoint.description.tool.Let
      * <em>Let</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
      * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.eclipse.sirius.viewpoint.description.tool.Let
      * @generated
@@ -1244,7 +1244,7 @@ public class ToolAdapterFactory extends AdapterFactoryImpl {
      * <em>Documented Element</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
      * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
      * end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.eclipse.sirius.viewpoint.description.DocumentedElement
      * @generated
@@ -1258,7 +1258,7 @@ public class ToolAdapterFactory extends AdapterFactoryImpl {
      * <em>Identified Element</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
      * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
      * end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.eclipse.sirius.viewpoint.description.IdentifiedElement
      * @generated
@@ -1284,7 +1284,7 @@ public class ToolAdapterFactory extends AdapterFactoryImpl {
     /**
      * Creates a new adapter for the default case. <!-- begin-user-doc --> This default implementation returns null.
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @generated
      */

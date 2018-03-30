@@ -53,7 +53,7 @@ public interface NodeMapping extends AbstractNodeMapping, DragAndDropTargetDescr
     /**
      * Sets the value of the '{@link org.eclipse.sirius.diagram.description.NodeMapping#getStyle <em>Style</em>}'
      * containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Style</em>' containment reference.
      * @see #getStyle()

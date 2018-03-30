@@ -39,7 +39,7 @@ public interface VSMElementCustomization extends IVSMElementCustomization {
      * description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Predicate Expression</em>' attribute.
      * @see #setPredicateExpression(String)
      * @see org.eclipse.sirius.viewpoint.description.DescriptionPackage#getVSMElementCustomization_PredicateExpression()
@@ -56,7 +56,7 @@ public interface VSMElementCustomization extends IVSMElementCustomization {
      * Sets the value of the
      * '{@link org.eclipse.sirius.viewpoint.description.VSMElementCustomization#getPredicateExpression <em>Predicate
      * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Predicate Expression</em>' attribute.
      * @see #getPredicateExpression()
@@ -73,7 +73,7 @@ public interface VSMElementCustomization extends IVSMElementCustomization {
      * should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Feature Customizations</em>' containment reference list.
      * @see org.eclipse.sirius.viewpoint.description.DescriptionPackage#getVSMElementCustomization_FeatureCustomizations()
      * @model containment="true" resolveProxies="true" required="true"

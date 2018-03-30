@@ -48,7 +48,7 @@ public interface TConditionalLifelineStyle extends TTransformer {
      * Sets the value of the
      * '{@link org.eclipse.sirius.diagram.sequence.template.TConditionalLifelineStyle#getPredicateExpression
      * <em>Predicate Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Predicate Expression</em>' attribute.
      * @see #getPredicateExpression()
@@ -63,7 +63,7 @@ public interface TConditionalLifelineStyle extends TTransformer {
      * description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Style</em>' containment reference.
      * @see #setStyle(TLifelineStyle)
      * @see org.eclipse.sirius.diagram.sequence.template.TemplatePackage#getTConditionalLifelineStyle_Style()
@@ -75,7 +75,7 @@ public interface TConditionalLifelineStyle extends TTransformer {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.diagram.sequence.template.TConditionalLifelineStyle#getStyle
      * <em>Style</em>}' containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Style</em>' containment reference.
      * @see #getStyle()

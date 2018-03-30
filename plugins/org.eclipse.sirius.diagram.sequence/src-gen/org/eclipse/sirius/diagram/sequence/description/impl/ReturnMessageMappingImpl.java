@@ -33,7 +33,7 @@ public class ReturnMessageMappingImpl extends MessageMappingImpl implements Retu
     /**
      * The default value of the '{@link #getInvocationMessageFinderExpression() <em>Invocation Message Finder
      * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getInvocationMessageFinderExpression()
      * @generated
      * @ordered
@@ -43,7 +43,7 @@ public class ReturnMessageMappingImpl extends MessageMappingImpl implements Retu
     /**
      * The cached value of the '{@link #getInvocationMessageFinderExpression() <em>Invocation Message Finder
      * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getInvocationMessageFinderExpression()
      * @generated
      * @ordered
@@ -52,7 +52,7 @@ public class ReturnMessageMappingImpl extends MessageMappingImpl implements Retu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected ReturnMessageMappingImpl() {
@@ -61,7 +61,7 @@ public class ReturnMessageMappingImpl extends MessageMappingImpl implements Retu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -71,7 +71,7 @@ public class ReturnMessageMappingImpl extends MessageMappingImpl implements Retu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -81,7 +81,7 @@ public class ReturnMessageMappingImpl extends MessageMappingImpl implements Retu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -96,7 +96,7 @@ public class ReturnMessageMappingImpl extends MessageMappingImpl implements Retu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -110,7 +110,7 @@ public class ReturnMessageMappingImpl extends MessageMappingImpl implements Retu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -125,7 +125,7 @@ public class ReturnMessageMappingImpl extends MessageMappingImpl implements Retu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -140,7 +140,7 @@ public class ReturnMessageMappingImpl extends MessageMappingImpl implements Retu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -155,7 +155,7 @@ public class ReturnMessageMappingImpl extends MessageMappingImpl implements Retu
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

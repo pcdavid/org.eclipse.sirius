@@ -26,13 +26,13 @@ import org.eclipse.sirius.diagram.description.DescriptionPackage;
 /**
  * This is the item provider adapter for a {@link org.eclipse.sirius.diagram.description.BooleanLayoutOption} object.
  * <!-- begin-user-doc --> <!-- end-user-doc -->
- *
+ * 
  * @generated
  */
 public class BooleanLayoutOptionItemProvider extends LayoutOptionItemProvider {
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public BooleanLayoutOptionItemProvider(AdapterFactory adapterFactory) {
@@ -41,7 +41,7 @@ public class BooleanLayoutOptionItemProvider extends LayoutOptionItemProvider {
 
     /**
      * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -56,7 +56,7 @@ public class BooleanLayoutOptionItemProvider extends LayoutOptionItemProvider {
 
     /**
      * This adds a property descriptor for the Value feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addValuePropertyDescriptor(Object object) {
@@ -68,7 +68,7 @@ public class BooleanLayoutOptionItemProvider extends LayoutOptionItemProvider {
 
     /**
      * This returns the label text for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -100,7 +100,7 @@ public class BooleanLayoutOptionItemProvider extends LayoutOptionItemProvider {
     /**
      * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that can be created
      * under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

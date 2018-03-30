@@ -94,7 +94,7 @@ public interface BundledImage extends NodeStyle {
      * description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Provided Shape ID</em>' attribute.
      * @see #setProvidedShapeID(String)
      * @see org.eclipse.sirius.diagram.DiagramPackage#getBundledImage_ProvidedShapeID()
@@ -106,7 +106,7 @@ public interface BundledImage extends NodeStyle {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.diagram.BundledImage#getProvidedShapeID <em>Provided Shape
      * ID</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Provided Shape ID</em>' attribute.
      * @see #getProvidedShapeID()

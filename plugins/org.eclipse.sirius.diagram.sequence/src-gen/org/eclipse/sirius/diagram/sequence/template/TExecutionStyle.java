@@ -50,7 +50,7 @@ public interface TExecutionStyle extends TTransformer {
      * Sets the value of the
      * '{@link org.eclipse.sirius.diagram.sequence.template.TExecutionStyle#getBorderSizeComputationExpression
      * <em>Border Size Computation Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Border Size Computation Expression</em>' attribute.
      * @see #getBorderSizeComputationExpression()
@@ -65,7 +65,7 @@ public interface TExecutionStyle extends TTransformer {
      * here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Border Color</em>' reference.
      * @see #setBorderColor(ColorDescription)
      * @see org.eclipse.sirius.diagram.sequence.template.TemplatePackage#getTExecutionStyle_BorderColor()
@@ -77,7 +77,7 @@ public interface TExecutionStyle extends TTransformer {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.diagram.sequence.template.TExecutionStyle#getBorderColor
      * <em>Border Color</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Border Color</em>' reference.
      * @see #getBorderColor()
@@ -92,7 +92,7 @@ public interface TExecutionStyle extends TTransformer {
      * description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Background Color</em>' reference.
      * @see #setBackgroundColor(ColorDescription)
      * @see org.eclipse.sirius.diagram.sequence.template.TemplatePackage#getTExecutionStyle_BackgroundColor()
@@ -104,7 +104,7 @@ public interface TExecutionStyle extends TTransformer {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.diagram.sequence.template.TExecutionStyle#getBackgroundColor
      * <em>Background Color</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Background Color</em>' reference.
      * @see #getBackgroundColor()

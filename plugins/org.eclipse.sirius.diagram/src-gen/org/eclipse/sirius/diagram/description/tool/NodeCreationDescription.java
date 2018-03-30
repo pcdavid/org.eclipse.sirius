@@ -75,7 +75,7 @@ public interface NodeCreationDescription extends MappingBasedToolDescription {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.diagram.description.tool.NodeCreationDescription#getVariable
      * <em>Variable</em>}' containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Variable</em>' containment reference.
      * @see #getVariable()
@@ -101,7 +101,7 @@ public interface NodeCreationDescription extends MappingBasedToolDescription {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.diagram.description.tool.NodeCreationDescription#getViewVariable
      * <em>View Variable</em>}' containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>View Variable</em>' containment reference.
      * @see #getViewVariable()
@@ -125,7 +125,7 @@ public interface NodeCreationDescription extends MappingBasedToolDescription {
      * Sets the value of the
      * '{@link org.eclipse.sirius.diagram.description.tool.NodeCreationDescription#getInitialOperation <em>Initial
      * Operation</em>}' containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Initial Operation</em>' containment reference.
      * @see #getInitialOperation()
@@ -150,7 +150,7 @@ public interface NodeCreationDescription extends MappingBasedToolDescription {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.diagram.description.tool.NodeCreationDescription#getIconPath
      * <em>Icon Path</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Icon Path</em>' attribute.
      * @see #getIconPath()
@@ -163,7 +163,7 @@ public interface NodeCreationDescription extends MappingBasedToolDescription {
      * {@link org.eclipse.sirius.diagram.description.AbstractNodeMapping}. <!-- begin-user-doc --> <!-- end-user-doc -->
      * <!-- begin-model-doc --> Add here any mapping in which you want to allow the tool execution. <!-- end-model-doc
      * -->
-     *
+     * 
      * @return the value of the '<em>Extra Mappings</em>' reference list.
      * @see org.eclipse.sirius.diagram.description.tool.ToolPackage#getNodeCreationDescription_ExtraMappings()
      * @model

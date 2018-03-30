@@ -44,7 +44,7 @@ public abstract class TSourceTargetMessageMappingImpl extends TMessageMappingImp
     /**
      * The cached value of the '{@link #getSource() <em>Source</em>}' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @see #getSource()
      * @generated
      * @ordered
@@ -113,7 +113,7 @@ public abstract class TSourceTargetMessageMappingImpl extends TMessageMappingImp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected TSourceTargetMessageMappingImpl() {
@@ -122,7 +122,7 @@ public abstract class TSourceTargetMessageMappingImpl extends TMessageMappingImp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -132,7 +132,7 @@ public abstract class TSourceTargetMessageMappingImpl extends TMessageMappingImp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -145,7 +145,7 @@ public abstract class TSourceTargetMessageMappingImpl extends TMessageMappingImp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -155,7 +155,7 @@ public abstract class TSourceTargetMessageMappingImpl extends TMessageMappingImp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -169,7 +169,7 @@ public abstract class TSourceTargetMessageMappingImpl extends TMessageMappingImp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -179,7 +179,7 @@ public abstract class TSourceTargetMessageMappingImpl extends TMessageMappingImp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -193,7 +193,7 @@ public abstract class TSourceTargetMessageMappingImpl extends TMessageMappingImp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -203,7 +203,7 @@ public abstract class TSourceTargetMessageMappingImpl extends TMessageMappingImp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -217,7 +217,7 @@ public abstract class TSourceTargetMessageMappingImpl extends TMessageMappingImp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -237,7 +237,7 @@ public abstract class TSourceTargetMessageMappingImpl extends TMessageMappingImp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -263,7 +263,7 @@ public abstract class TSourceTargetMessageMappingImpl extends TMessageMappingImp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -287,7 +287,7 @@ public abstract class TSourceTargetMessageMappingImpl extends TMessageMappingImp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -309,7 +309,7 @@ public abstract class TSourceTargetMessageMappingImpl extends TMessageMappingImp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

@@ -67,7 +67,7 @@ public class DRepresentationDescriptorImpl extends DModelElementImpl implements 
     /**
      * The cached value of the '{@link #getDescription() <em>Description</em>}' reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @see #getDescription()
      * @generated
      * @ordered
@@ -77,7 +77,7 @@ public class DRepresentationDescriptorImpl extends DModelElementImpl implements 
     /**
      * The cached value of the '{@link #getTarget() <em>Target</em>}' reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @see #getTarget()
      * @generated
      * @ordered
@@ -87,7 +87,7 @@ public class DRepresentationDescriptorImpl extends DModelElementImpl implements 
     /**
      * The default value of the '{@link #getRepPath() <em>Rep Path</em>}' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @see #getRepPath()
      * @generated
      * @ordered
@@ -97,7 +97,7 @@ public class DRepresentationDescriptorImpl extends DModelElementImpl implements 
     /**
      * The cached value of the '{@link #getRepPath() <em>Rep Path</em>}' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @see #getRepPath()
      * @generated
      * @ordered
@@ -106,7 +106,7 @@ public class DRepresentationDescriptorImpl extends DModelElementImpl implements 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected DRepresentationDescriptorImpl() {
@@ -115,7 +115,7 @@ public class DRepresentationDescriptorImpl extends DModelElementImpl implements 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -125,7 +125,7 @@ public class DRepresentationDescriptorImpl extends DModelElementImpl implements 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -135,7 +135,7 @@ public class DRepresentationDescriptorImpl extends DModelElementImpl implements 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -149,7 +149,7 @@ public class DRepresentationDescriptorImpl extends DModelElementImpl implements 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -168,7 +168,7 @@ public class DRepresentationDescriptorImpl extends DModelElementImpl implements 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public RepresentationDescription basicGetDescription() {
@@ -177,7 +177,7 @@ public class DRepresentationDescriptorImpl extends DModelElementImpl implements 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -191,7 +191,7 @@ public class DRepresentationDescriptorImpl extends DModelElementImpl implements 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -210,7 +210,7 @@ public class DRepresentationDescriptorImpl extends DModelElementImpl implements 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public EObject basicGetTarget() {
@@ -219,7 +219,7 @@ public class DRepresentationDescriptorImpl extends DModelElementImpl implements 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -270,7 +270,7 @@ public class DRepresentationDescriptorImpl extends DModelElementImpl implements 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -280,7 +280,7 @@ public class DRepresentationDescriptorImpl extends DModelElementImpl implements 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -294,7 +294,7 @@ public class DRepresentationDescriptorImpl extends DModelElementImpl implements 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -325,7 +325,7 @@ public class DRepresentationDescriptorImpl extends DModelElementImpl implements 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -352,7 +352,7 @@ public class DRepresentationDescriptorImpl extends DModelElementImpl implements 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -379,7 +379,7 @@ public class DRepresentationDescriptorImpl extends DModelElementImpl implements 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -401,7 +401,7 @@ public class DRepresentationDescriptorImpl extends DModelElementImpl implements 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

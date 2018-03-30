@@ -65,7 +65,7 @@ public interface MappingFilter extends Filter {
      * Sets the value of the
      * '{@link org.eclipse.sirius.diagram.description.filter.MappingFilter#getSemanticConditionExpression <em>Semantic
      * Condition Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Semantic Condition Expression</em>' attribute.
      * @see #getSemanticConditionExpression()
@@ -90,7 +90,7 @@ public interface MappingFilter extends Filter {
      * Sets the value of the
      * '{@link org.eclipse.sirius.diagram.description.filter.MappingFilter#getViewConditionExpression <em>View Condition
      * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>View Condition Expression</em>' attribute.
      * @see #getViewConditionExpression()

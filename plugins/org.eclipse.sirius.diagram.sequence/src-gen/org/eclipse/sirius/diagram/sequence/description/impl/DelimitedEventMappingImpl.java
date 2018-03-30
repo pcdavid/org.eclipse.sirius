@@ -35,7 +35,7 @@ public abstract class DelimitedEventMappingImpl extends EventMappingImpl impleme
     /**
      * The default value of the '{@link #getStartingEndFinderExpression() <em>Starting End Finder Expression</em>}'
      * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getStartingEndFinderExpression()
      * @generated
      * @ordered
@@ -45,7 +45,7 @@ public abstract class DelimitedEventMappingImpl extends EventMappingImpl impleme
     /**
      * The cached value of the '{@link #getStartingEndFinderExpression() <em>Starting End Finder Expression</em>}'
      * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getStartingEndFinderExpression()
      * @generated
      * @ordered
@@ -55,7 +55,7 @@ public abstract class DelimitedEventMappingImpl extends EventMappingImpl impleme
     /**
      * The default value of the '{@link #getFinishingEndFinderExpression() <em>Finishing End Finder Expression</em>}'
      * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getFinishingEndFinderExpression()
      * @generated
      * @ordered
@@ -65,7 +65,7 @@ public abstract class DelimitedEventMappingImpl extends EventMappingImpl impleme
     /**
      * The cached value of the '{@link #getFinishingEndFinderExpression() <em>Finishing End Finder Expression</em>}'
      * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getFinishingEndFinderExpression()
      * @generated
      * @ordered
@@ -74,7 +74,7 @@ public abstract class DelimitedEventMappingImpl extends EventMappingImpl impleme
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected DelimitedEventMappingImpl() {
@@ -83,7 +83,7 @@ public abstract class DelimitedEventMappingImpl extends EventMappingImpl impleme
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -93,7 +93,7 @@ public abstract class DelimitedEventMappingImpl extends EventMappingImpl impleme
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -103,7 +103,7 @@ public abstract class DelimitedEventMappingImpl extends EventMappingImpl impleme
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -118,7 +118,7 @@ public abstract class DelimitedEventMappingImpl extends EventMappingImpl impleme
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -128,7 +128,7 @@ public abstract class DelimitedEventMappingImpl extends EventMappingImpl impleme
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -143,7 +143,7 @@ public abstract class DelimitedEventMappingImpl extends EventMappingImpl impleme
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -159,7 +159,7 @@ public abstract class DelimitedEventMappingImpl extends EventMappingImpl impleme
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -177,7 +177,7 @@ public abstract class DelimitedEventMappingImpl extends EventMappingImpl impleme
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -195,7 +195,7 @@ public abstract class DelimitedEventMappingImpl extends EventMappingImpl impleme
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -213,7 +213,7 @@ public abstract class DelimitedEventMappingImpl extends EventMappingImpl impleme
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

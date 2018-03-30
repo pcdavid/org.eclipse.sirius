@@ -80,7 +80,7 @@ public interface DiagramElementMapping extends RepresentationElementMapping, Pas
      * Sets the value of the
      * '{@link org.eclipse.sirius.diagram.description.DiagramElementMapping#getPreconditionExpression <em>Precondition
      * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Precondition Expression</em>' attribute.
      * @see #getPreconditionExpression()
@@ -104,7 +104,7 @@ public interface DiagramElementMapping extends RepresentationElementMapping, Pas
     /**
      * Sets the value of the '{@link org.eclipse.sirius.diagram.description.DiagramElementMapping#getDeletionDescription
      * <em>Deletion Description</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Deletion Description</em>' reference.
      * @see #getDeletionDescription()
@@ -128,7 +128,7 @@ public interface DiagramElementMapping extends RepresentationElementMapping, Pas
     /**
      * Sets the value of the '{@link org.eclipse.sirius.diagram.description.DiagramElementMapping#getLabelDirectEdit
      * <em>Label Direct Edit</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Label Direct Edit</em>' reference.
      * @see #getLabelDirectEdit()
@@ -162,7 +162,7 @@ public interface DiagramElementMapping extends RepresentationElementMapping, Pas
      * Sets the value of the
      * '{@link org.eclipse.sirius.diagram.description.DiagramElementMapping#getSemanticCandidatesExpression <em>Semantic
      * Candidates Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Semantic Candidates Expression</em>' attribute.
      * @see #getSemanticCandidatesExpression()
@@ -186,7 +186,7 @@ public interface DiagramElementMapping extends RepresentationElementMapping, Pas
     /**
      * Sets the value of the '{@link org.eclipse.sirius.diagram.description.DiagramElementMapping#isCreateElements
      * <em>Create Elements</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Create Elements</em>' attribute.
      * @see #isCreateElements()
@@ -215,7 +215,7 @@ public interface DiagramElementMapping extends RepresentationElementMapping, Pas
     /**
      * Sets the value of the '{@link org.eclipse.sirius.diagram.description.DiagramElementMapping#getSemanticElements
      * <em>Semantic Elements</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Semantic Elements</em>' attribute.
      * @see #getSemanticElements()
@@ -232,7 +232,7 @@ public interface DiagramElementMapping extends RepresentationElementMapping, Pas
      * description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Double Click Description</em>' reference.
      * @see #setDoubleClickDescription(DoubleClickDescription)
      * @see org.eclipse.sirius.diagram.description.DescriptionPackage#getDiagramElementMapping_DoubleClickDescription()
@@ -246,7 +246,7 @@ public interface DiagramElementMapping extends RepresentationElementMapping, Pas
      * Sets the value of the
      * '{@link org.eclipse.sirius.diagram.description.DiagramElementMapping#getDoubleClickDescription <em>Double Click
      * Description</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Double Click Description</em>' reference.
      * @see #getDoubleClickDescription()
@@ -272,7 +272,7 @@ public interface DiagramElementMapping extends RepresentationElementMapping, Pas
     /**
      * Sets the value of the '{@link org.eclipse.sirius.diagram.description.DiagramElementMapping#isSynchronizationLock
      * <em>Synchronization Lock</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Synchronization Lock</em>' attribute.
      * @see #isSynchronizationLock()

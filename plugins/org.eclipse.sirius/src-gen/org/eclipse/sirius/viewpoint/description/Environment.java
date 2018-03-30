@@ -41,7 +41,7 @@ public interface Environment extends EObject {
      * a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>System Colors</em>' containment reference.
      * @see #setSystemColors(SytemColorsPalette)
      * @see org.eclipse.sirius.viewpoint.description.DescriptionPackage#getEnvironment_SystemColors()
@@ -53,7 +53,7 @@ public interface Environment extends EObject {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.viewpoint.description.Environment#getSystemColors <em>System
      * Colors</em>}' containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>System Colors</em>' containment reference.
      * @see #getSystemColors()
@@ -69,7 +69,7 @@ public interface Environment extends EObject {
      * more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Default Tools</em>' containment reference list.
      * @see org.eclipse.sirius.viewpoint.description.DescriptionPackage#getEnvironment_DefaultTools()
      * @model containment="true" resolveProxies="true"
@@ -84,7 +84,7 @@ public interface Environment extends EObject {
      * more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Label Border Styles</em>' containment reference.
      * @see #setLabelBorderStyles(LabelBorderStyles)
      * @see org.eclipse.sirius.viewpoint.description.DescriptionPackage#getEnvironment_LabelBorderStyles()
@@ -96,7 +96,7 @@ public interface Environment extends EObject {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.viewpoint.description.Environment#getLabelBorderStyles <em>Label
      * Border Styles</em>}' containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Label Border Styles</em>' containment reference.
      * @see #getLabelBorderStyles()

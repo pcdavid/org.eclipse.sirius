@@ -44,7 +44,7 @@ public interface TExecutionMapping extends TAbstractMapping, TMessageExtremity {
      * more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Starting End Finder Expression</em>' attribute.
      * @see #setStartingEndFinderExpression(String)
      * @see org.eclipse.sirius.diagram.sequence.template.TemplatePackage#getTExecutionMapping_StartingEndFinderExpression()
@@ -58,7 +58,7 @@ public interface TExecutionMapping extends TAbstractMapping, TMessageExtremity {
      * Sets the value of the
      * '{@link org.eclipse.sirius.diagram.sequence.template.TExecutionMapping#getStartingEndFinderExpression
      * <em>Starting End Finder Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Starting End Finder Expression</em>' attribute.
      * @see #getStartingEndFinderExpression()
@@ -73,7 +73,7 @@ public interface TExecutionMapping extends TAbstractMapping, TMessageExtremity {
      * more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Finishing End Finder Expression</em>' attribute.
      * @see #setFinishingEndFinderExpression(String)
      * @see org.eclipse.sirius.diagram.sequence.template.TemplatePackage#getTExecutionMapping_FinishingEndFinderExpression()
@@ -87,7 +87,7 @@ public interface TExecutionMapping extends TAbstractMapping, TMessageExtremity {
      * Sets the value of the
      * '{@link org.eclipse.sirius.diagram.sequence.template.TExecutionMapping#getFinishingEndFinderExpression
      * <em>Finishing End Finder Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Finishing End Finder Expression</em>' attribute.
      * @see #getFinishingEndFinderExpression()
@@ -102,7 +102,7 @@ public interface TExecutionMapping extends TAbstractMapping, TMessageExtremity {
      * here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Recursive</em>' attribute.
      * @see #setRecursive(boolean)
      * @see org.eclipse.sirius.diagram.sequence.template.TemplatePackage#getTExecutionMapping_Recursive()
@@ -114,7 +114,7 @@ public interface TExecutionMapping extends TAbstractMapping, TMessageExtremity {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.diagram.sequence.template.TExecutionMapping#isRecursive
      * <em>Recursive</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Recursive</em>' attribute.
      * @see #isRecursive()
@@ -130,7 +130,7 @@ public interface TExecutionMapping extends TAbstractMapping, TMessageExtremity {
      * be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Execution Mappings</em>' containment reference list.
      * @see org.eclipse.sirius.diagram.sequence.template.TemplatePackage#getTExecutionMapping_ExecutionMappings()
      * @model containment="true"
@@ -145,7 +145,7 @@ public interface TExecutionMapping extends TAbstractMapping, TMessageExtremity {
      * description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Style</em>' containment reference.
      * @see #setStyle(TExecutionStyle)
      * @see org.eclipse.sirius.diagram.sequence.template.TemplatePackage#getTExecutionMapping_Style()
@@ -157,7 +157,7 @@ public interface TExecutionMapping extends TAbstractMapping, TMessageExtremity {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.diagram.sequence.template.TExecutionMapping#getStyle
      * <em>Style</em>}' containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Style</em>' containment reference.
      * @see #getStyle()
@@ -173,7 +173,7 @@ public interface TExecutionMapping extends TAbstractMapping, TMessageExtremity {
      * be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Conditional Styles</em>' containment reference list.
      * @see org.eclipse.sirius.diagram.sequence.template.TemplatePackage#getTExecutionMapping_ConditionalStyles()
      * @model containment="true"

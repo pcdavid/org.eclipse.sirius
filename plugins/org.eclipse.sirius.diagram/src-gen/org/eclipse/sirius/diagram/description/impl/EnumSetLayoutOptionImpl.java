@@ -39,7 +39,7 @@ public class EnumSetLayoutOptionImpl extends EnumOptionImpl implements EnumSetLa
     /**
      * The cached value of the '{@link #getValues() <em>Values</em>}' containment reference list. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getValues()
      * @generated
      * @ordered
@@ -48,7 +48,7 @@ public class EnumSetLayoutOptionImpl extends EnumOptionImpl implements EnumSetLa
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected EnumSetLayoutOptionImpl() {
@@ -57,7 +57,7 @@ public class EnumSetLayoutOptionImpl extends EnumOptionImpl implements EnumSetLa
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -67,7 +67,7 @@ public class EnumSetLayoutOptionImpl extends EnumOptionImpl implements EnumSetLa
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -80,7 +80,7 @@ public class EnumSetLayoutOptionImpl extends EnumOptionImpl implements EnumSetLa
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -94,7 +94,7 @@ public class EnumSetLayoutOptionImpl extends EnumOptionImpl implements EnumSetLa
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -108,7 +108,7 @@ public class EnumSetLayoutOptionImpl extends EnumOptionImpl implements EnumSetLa
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -125,7 +125,7 @@ public class EnumSetLayoutOptionImpl extends EnumOptionImpl implements EnumSetLa
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -140,7 +140,7 @@ public class EnumSetLayoutOptionImpl extends EnumOptionImpl implements EnumSetLa
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

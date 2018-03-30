@@ -128,7 +128,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
     /**
      * The default value of the '{@link #getDocumentation() <em>Documentation</em>}' attribute. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @see #getDocumentation()
      * @generated
      * @ordered
@@ -138,7 +138,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
     /**
      * The cached value of the '{@link #getDocumentation() <em>Documentation</em>}' attribute. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @see #getDocumentation()
      * @generated
      * @ordered
@@ -188,7 +188,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
     /**
      * The default value of the '{@link #getLabel() <em>Label</em>}' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @see #getLabel()
      * @generated
      * @ordered
@@ -208,7 +208,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
     /**
      * The default value of the '{@link #getTitleExpression() <em>Title Expression</em>}' attribute. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getTitleExpression()
      * @generated
      * @ordered
@@ -218,7 +218,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
     /**
      * The cached value of the '{@link #getTitleExpression() <em>Title Expression</em>}' attribute. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getTitleExpression()
      * @generated
      * @ordered
@@ -228,7 +228,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
     /**
      * The default value of the '{@link #isInitialisation() <em>Initialisation</em>}' attribute. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @see #isInitialisation()
      * @generated
      * @ordered
@@ -238,7 +238,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
     /**
      * The cached value of the '{@link #isInitialisation() <em>Initialisation</em>}' attribute. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @see #isInitialisation()
      * @generated
      * @ordered
@@ -248,7 +248,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
     /**
      * The cached value of the '{@link #getMetamodel() <em>Metamodel</em>}' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @see #getMetamodel()
      * @generated
      * @ordered
@@ -258,7 +258,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
     /**
      * The default value of the '{@link #isShowOnStartup() <em>Show On Startup</em>}' attribute. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @see #isShowOnStartup()
      * @generated
      * @ordered
@@ -268,7 +268,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
     /**
      * The cached value of the '{@link #isShowOnStartup() <em>Show On Startup</em>}' attribute. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @see #isShowOnStartup()
      * @generated
      * @ordered
@@ -288,7 +288,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
     /**
      * The cached value of the '{@link #getFilters() <em>Filters</em>}' containment reference list. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getFilters()
      * @generated
      * @ordered
@@ -308,7 +308,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
     /**
      * The cached value of the '{@link #getConcerns() <em>Concerns</em>}' containment reference. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @see #getConcerns()
      * @generated
      * @ordered
@@ -318,7 +318,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
     /**
      * The default value of the '{@link #getDomainClass() <em>Domain Class</em>}' attribute. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @see #getDomainClass()
      * @generated
      * @ordered
@@ -328,7 +328,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
     /**
      * The cached value of the '{@link #getDomainClass() <em>Domain Class</em>}' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @see #getDomainClass()
      * @generated
      * @ordered
@@ -358,7 +358,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
     /**
      * The cached value of the '{@link #getDefaultConcern() <em>Default Concern</em>}' reference. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getDefaultConcern()
      * @generated
      * @ordered
@@ -368,7 +368,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
     /**
      * The default value of the '{@link #getRootExpression() <em>Root Expression</em>}' attribute. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getRootExpression()
      * @generated
      * @ordered
@@ -378,7 +378,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
     /**
      * The cached value of the '{@link #getRootExpression() <em>Root Expression</em>}' attribute. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getRootExpression()
      * @generated
      * @ordered
@@ -398,7 +398,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
     /**
      * The cached value of the '{@link #getLayout() <em>Layout</em>}' containment reference. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @see #getLayout()
      * @generated
      * @ordered
@@ -408,7 +408,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
     /**
      * The cached value of the '{@link #getDiagramInitialisation() <em>Diagram Initialisation</em>}' containment
      * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getDiagramInitialisation()
      * @generated
      * @ordered
@@ -428,7 +428,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
     /**
      * The cached value of the '{@link #getAdditionalLayers() <em>Additional Layers</em>}' containment reference list.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getAdditionalLayers()
      * @generated
      * @ordered
@@ -458,7 +458,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
     /**
      * The cached value of the '{@link #getEdgeMappingImports() <em>Edge Mapping Imports</em>}' containment reference
      * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getEdgeMappingImports()
      * @generated
      * @ordered
@@ -468,7 +468,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
     /**
      * The cached value of the '{@link #getContainerMappings() <em>Container Mappings</em>}' containment reference list.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getContainerMappings()
      * @generated
      * @ordered
@@ -498,7 +498,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
     /**
      * The cached value of the '{@link #getReusedTools() <em>Reused Tools</em>}' reference list. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @see #getReusedTools()
      * @generated
      * @ordered
@@ -508,7 +508,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
     /**
      * The default value of the '{@link #isEnablePopupBars() <em>Enable Popup Bars</em>}' attribute. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @see #isEnablePopupBars()
      * @generated
      * @ordered
@@ -518,7 +518,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
     /**
      * The cached value of the '{@link #isEnablePopupBars() <em>Enable Popup Bars</em>}' attribute. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @see #isEnablePopupBars()
      * @generated
      * @ordered
@@ -528,7 +528,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
     /**
      * The cached value of the '{@link #getBackgroundColor() <em>Background Color</em>}' reference. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getBackgroundColor()
      * @generated
      * @ordered
@@ -537,7 +537,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected DiagramDescriptionImpl() {
@@ -546,7 +546,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -556,7 +556,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -566,7 +566,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -580,7 +580,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -590,7 +590,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -604,7 +604,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -614,7 +614,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -628,7 +628,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -638,7 +638,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -652,7 +652,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -662,7 +662,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -676,7 +676,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -686,7 +686,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -700,7 +700,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -713,7 +713,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -723,7 +723,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -737,7 +737,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -750,7 +750,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -763,7 +763,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -778,7 +778,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -793,7 +793,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -808,7 +808,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -835,7 +835,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public ValidationSet basicGetValidationSet() {
@@ -844,7 +844,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public NotificationChain basicSetValidationSet(ValidationSet newValidationSet, NotificationChain msgs) {
@@ -863,7 +863,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -887,7 +887,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -914,7 +914,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public ConcernSet basicGetConcerns() {
@@ -923,7 +923,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public NotificationChain basicSetConcerns(ConcernSet newConcerns, NotificationChain msgs) {
@@ -942,7 +942,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -966,7 +966,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -981,7 +981,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -991,7 +991,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -1005,7 +1005,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -1015,7 +1015,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -1029,7 +1029,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -1048,7 +1048,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public ConcernDescription basicGetDefaultConcern() {
@@ -1057,7 +1057,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -1071,7 +1071,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -1081,7 +1081,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -1095,7 +1095,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -1114,7 +1114,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public RepresentationCreationDescription basicGetInit() {
@@ -1123,7 +1123,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -1137,7 +1137,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -1164,7 +1164,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public Layout basicGetLayout() {
@@ -1173,7 +1173,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public NotificationChain basicSetLayout(Layout newLayout, NotificationChain msgs) {
@@ -1192,7 +1192,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -1216,7 +1216,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -1244,7 +1244,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public InitialOperation basicGetDiagramInitialisation() {
@@ -1253,7 +1253,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public NotificationChain basicSetDiagramInitialisation(InitialOperation newDiagramInitialisation, NotificationChain msgs) {
@@ -1273,7 +1273,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -1299,7 +1299,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -1326,7 +1326,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public Layer basicGetDefaultLayer() {
@@ -1335,7 +1335,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public NotificationChain basicSetDefaultLayer(Layer newDefaultLayer, NotificationChain msgs) {
@@ -1354,7 +1354,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -1378,7 +1378,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -1391,7 +1391,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -1406,7 +1406,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -1421,7 +1421,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -1434,7 +1434,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -1447,7 +1447,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -1460,7 +1460,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -1473,7 +1473,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -1486,7 +1486,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -1513,7 +1513,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public ToolSection basicGetToolSection() {
@@ -1522,7 +1522,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public NotificationChain basicSetToolSection(ToolSection newToolSection, NotificationChain msgs) {
@@ -1541,7 +1541,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -1565,7 +1565,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -1578,7 +1578,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -1588,7 +1588,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -1602,7 +1602,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -1621,7 +1621,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public ColorDescription basicGetBackgroundColor() {
@@ -1630,7 +1630,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -1644,7 +1644,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -1656,7 +1656,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -1692,7 +1692,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -1803,7 +1803,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -1920,7 +1920,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -2025,7 +2025,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -2110,7 +2110,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -2168,7 +2168,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -2226,7 +2226,7 @@ public class DiagramDescriptionImpl extends DragAndDropTargetDescriptionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

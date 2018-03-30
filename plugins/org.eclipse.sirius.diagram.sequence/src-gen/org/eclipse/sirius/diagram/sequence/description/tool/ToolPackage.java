@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.EReference;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- *
+ * 
  * @see org.eclipse.sirius.diagram.sequence.description.tool.ToolFactory
  * @model kind="package"
  * @generated
@@ -31,28 +31,28 @@ import org.eclipse.emf.ecore.EReference;
 public interface ToolPackage extends EPackage {
     /**
      * The package name. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     String eNAME = "tool"; //$NON-NLS-1$
 
     /**
      * The package namespace URI. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     String eNS_URI = "http://www.eclipse.org/sirius/diagram/sequence/description/tool/2.0.0"; //$NON-NLS-1$
 
     /**
      * The package namespace name. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     String eNS_PREFIX = "tool"; //$NON-NLS-1$
 
     /**
      * The singleton instance of the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     ToolPackage eINSTANCE = org.eclipse.sirius.diagram.sequence.description.tool.impl.ToolPackageImpl.init();
@@ -61,7 +61,7 @@ public interface ToolPackage extends EPackage {
      * The meta object id for the
      * '{@link org.eclipse.sirius.diagram.sequence.description.tool.impl.SequenceDiagramToolDescriptionImpl <em>Sequence
      * Diagram Tool Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.SequenceDiagramToolDescriptionImpl
      * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.ToolPackageImpl#getSequenceDiagramToolDescription()
      * @generated
@@ -71,7 +71,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Sequence Diagram Tool Description</em>' class. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -81,7 +81,7 @@ public interface ToolPackage extends EPackage {
      * The meta object id for the
      * '{@link org.eclipse.sirius.diagram.sequence.description.tool.impl.OrderedElementCreationToolImpl <em>Ordered
      * Element Creation Tool</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.OrderedElementCreationToolImpl
      * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.ToolPackageImpl#getOrderedElementCreationTool()
      * @generated
@@ -91,7 +91,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Starting End Predecessor</b></em>' containment reference. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -100,7 +100,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Finishing End Predecessor</b></em>' containment reference. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -109,7 +109,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Ordered Element Creation Tool</em>' class. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -119,7 +119,7 @@ public interface ToolPackage extends EPackage {
      * The meta object id for the
      * '{@link org.eclipse.sirius.diagram.sequence.description.tool.impl.CoveringElementCreationToolImpl <em>Covering
      * Element Creation Tool</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.CoveringElementCreationToolImpl
      * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.ToolPackageImpl#getCoveringElementCreationTool()
      * @generated
@@ -129,7 +129,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Covered Lifelines</b></em>' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -138,7 +138,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Covering Element Creation Tool</em>' class. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -148,7 +148,7 @@ public interface ToolPackage extends EPackage {
      * The meta object id for the
      * '{@link org.eclipse.sirius.diagram.sequence.description.tool.impl.InstanceRoleCreationToolImpl <em>Instance Role
      * Creation Tool</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.InstanceRoleCreationToolImpl
      * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.ToolPackageImpl#getInstanceRoleCreationTool()
      * @generated
@@ -157,7 +157,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Documentation</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -165,7 +165,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -173,7 +173,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Label</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -181,7 +181,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Precondition</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -189,7 +189,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Force Refresh</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -198,7 +198,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Filters</b></em>' containment reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -216,7 +216,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Inverse Selection Order</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -234,7 +234,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Variable</b></em>' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -243,7 +243,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>View Variable</b></em>' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -252,7 +252,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Initial Operation</b></em>' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -260,7 +260,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Icon Path</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -278,7 +278,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Predecessor</b></em>' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -287,7 +287,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Instance Role Creation Tool</em>' class. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -297,7 +297,7 @@ public interface ToolPackage extends EPackage {
      * The meta object id for the
      * '{@link org.eclipse.sirius.diagram.sequence.description.tool.impl.LifelineCreationToolImpl <em>Lifeline Creation
      * Tool</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.LifelineCreationToolImpl
      * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.ToolPackageImpl#getLifelineCreationTool()
      * @generated
@@ -306,7 +306,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Documentation</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -314,7 +314,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -322,7 +322,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Label</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -330,7 +330,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Precondition</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -338,7 +338,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Force Refresh</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -347,7 +347,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Filters</b></em>' containment reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -365,7 +365,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Inverse Selection Order</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -374,7 +374,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Container Mappings</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -383,7 +383,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Variable</b></em>' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -392,7 +392,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>View Variable</b></em>' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -401,7 +401,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Initial Operation</b></em>' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -409,7 +409,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Icon Path</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -427,7 +427,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Lifeline Creation Tool</em>' class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -437,7 +437,7 @@ public interface ToolPackage extends EPackage {
      * The meta object id for the
      * '{@link org.eclipse.sirius.diagram.sequence.description.tool.impl.MessageCreationToolImpl <em>Message Creation
      * Tool</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.MessageCreationToolImpl
      * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.ToolPackageImpl#getMessageCreationTool()
      * @generated
@@ -446,7 +446,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Documentation</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -454,7 +454,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -462,7 +462,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Label</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -470,7 +470,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Precondition</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -478,7 +478,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Force Refresh</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -487,7 +487,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Filters</b></em>' containment reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -505,7 +505,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Inverse Selection Order</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -523,7 +523,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Source Variable</b></em>' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -532,7 +532,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Target Variable</b></em>' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -541,7 +541,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Source View Variable</b></em>' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -550,7 +550,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Target View Variable</b></em>' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -559,7 +559,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Initial Operation</b></em>' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -567,7 +567,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Icon Path</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -576,7 +576,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Extra Source Mappings</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -585,7 +585,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Extra Target Mappings</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -594,7 +594,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Connection Start Precondition</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -603,7 +603,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Starting End Predecessor</b></em>' containment reference. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -612,7 +612,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Finishing End Predecessor</b></em>' containment reference. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -621,7 +621,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Message Creation Tool</em>' class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -631,7 +631,7 @@ public interface ToolPackage extends EPackage {
      * The meta object id for the
      * '{@link org.eclipse.sirius.diagram.sequence.description.tool.impl.ExecutionCreationToolImpl <em>Execution
      * Creation Tool</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.ExecutionCreationToolImpl
      * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.ToolPackageImpl#getExecutionCreationTool()
      * @generated
@@ -640,7 +640,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Documentation</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -648,7 +648,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -656,7 +656,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Label</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -664,7 +664,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Precondition</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -672,7 +672,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Force Refresh</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -681,7 +681,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Filters</b></em>' containment reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -699,7 +699,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Inverse Selection Order</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -717,7 +717,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Variable</b></em>' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -726,7 +726,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>View Variable</b></em>' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -735,7 +735,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Initial Operation</b></em>' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -743,7 +743,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Icon Path</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -761,7 +761,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Starting End Predecessor</b></em>' containment reference. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -770,7 +770,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Finishing End Predecessor</b></em>' containment reference. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -779,7 +779,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Execution Creation Tool</em>' class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -789,7 +789,7 @@ public interface ToolPackage extends EPackage {
      * The meta object id for the
      * '{@link org.eclipse.sirius.diagram.sequence.description.tool.impl.StateCreationToolImpl <em>State Creation
      * Tool</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.StateCreationToolImpl
      * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.ToolPackageImpl#getStateCreationTool()
      * @generated
@@ -798,7 +798,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Documentation</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -806,7 +806,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -814,7 +814,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Label</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -822,7 +822,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Precondition</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -830,7 +830,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Force Refresh</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -839,7 +839,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Filters</b></em>' containment reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -857,7 +857,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Inverse Selection Order</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -875,7 +875,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Variable</b></em>' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -884,7 +884,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>View Variable</b></em>' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -893,7 +893,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Initial Operation</b></em>' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -901,7 +901,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Icon Path</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -919,7 +919,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Starting End Predecessor</b></em>' containment reference. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -928,7 +928,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Finishing End Predecessor</b></em>' containment reference. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -937,7 +937,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The number of structural features of the '<em>State Creation Tool</em>' class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -946,7 +946,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The meta object id for the '{@link org.eclipse.sirius.diagram.sequence.description.tool.impl.ReorderToolImpl
      * <em>Reorder Tool</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.ReorderToolImpl
      * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.ToolPackageImpl#getReorderTool()
      * @generated
@@ -957,7 +957,7 @@ public interface ToolPackage extends EPackage {
      * The meta object id for the
      * '{@link org.eclipse.sirius.diagram.sequence.description.tool.impl.InteractionUseCreationToolImpl <em>Interaction
      * Use Creation Tool</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.InteractionUseCreationToolImpl
      * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.ToolPackageImpl#getInteractionUseCreationTool()
      * @generated
@@ -966,7 +966,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Documentation</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -974,7 +974,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -982,7 +982,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Label</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -990,7 +990,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Precondition</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -998,7 +998,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Force Refresh</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1007,7 +1007,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Filters</b></em>' containment reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1025,7 +1025,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Inverse Selection Order</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1034,7 +1034,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Container Mappings</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1043,7 +1043,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Variable</b></em>' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1052,7 +1052,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>View Variable</b></em>' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1061,7 +1061,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Initial Operation</b></em>' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1069,7 +1069,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Icon Path</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1087,7 +1087,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Starting End Predecessor</b></em>' containment reference. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1096,7 +1096,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Finishing End Predecessor</b></em>' containment reference. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1105,7 +1105,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Covered Lifelines</b></em>' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1114,7 +1114,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Interaction Use Creation Tool</em>' class. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1124,7 +1124,7 @@ public interface ToolPackage extends EPackage {
      * The meta object id for the
      * '{@link org.eclipse.sirius.diagram.sequence.description.tool.impl.CombinedFragmentCreationToolImpl <em>Combined
      * Fragment Creation Tool</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.CombinedFragmentCreationToolImpl
      * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.ToolPackageImpl#getCombinedFragmentCreationTool()
      * @generated
@@ -1133,7 +1133,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Documentation</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1141,7 +1141,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1149,7 +1149,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Label</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1157,7 +1157,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Precondition</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1165,7 +1165,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Force Refresh</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1174,7 +1174,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Filters</b></em>' containment reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1192,7 +1192,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Inverse Selection Order</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1201,7 +1201,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Container Mappings</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1210,7 +1210,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Variable</b></em>' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1219,7 +1219,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>View Variable</b></em>' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1228,7 +1228,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Initial Operation</b></em>' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1236,7 +1236,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Icon Path</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1254,7 +1254,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Starting End Predecessor</b></em>' containment reference. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1263,7 +1263,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Finishing End Predecessor</b></em>' containment reference. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1272,7 +1272,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Covered Lifelines</b></em>' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1281,7 +1281,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Combined Fragment Creation Tool</em>' class. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1291,7 +1291,7 @@ public interface ToolPackage extends EPackage {
      * The meta object id for the
      * '{@link org.eclipse.sirius.diagram.sequence.description.tool.impl.OperandCreationToolImpl <em>Operand Creation
      * Tool</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.OperandCreationToolImpl
      * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.ToolPackageImpl#getOperandCreationTool()
      * @generated
@@ -1300,7 +1300,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Documentation</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1308,7 +1308,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1316,7 +1316,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Label</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1324,7 +1324,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Precondition</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1332,7 +1332,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Force Refresh</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1341,7 +1341,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Filters</b></em>' containment reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1359,7 +1359,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Inverse Selection Order</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1368,7 +1368,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Container Mappings</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1377,7 +1377,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Variable</b></em>' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1386,7 +1386,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>View Variable</b></em>' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1395,7 +1395,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Initial Operation</b></em>' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1403,7 +1403,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Icon Path</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1421,7 +1421,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Starting End Predecessor</b></em>' containment reference. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1430,7 +1430,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Finishing End Predecessor</b></em>' containment reference. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1439,7 +1439,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Operand Creation Tool</em>' class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1449,7 +1449,7 @@ public interface ToolPackage extends EPackage {
      * The meta object id for the
      * '{@link org.eclipse.sirius.diagram.sequence.description.tool.impl.ObservationPointCreationToolImpl
      * <em>Observation Point Creation Tool</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.ObservationPointCreationToolImpl
      * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.ToolPackageImpl#getObservationPointCreationTool()
      * @generated
@@ -1458,7 +1458,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Documentation</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1466,7 +1466,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1474,7 +1474,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Label</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1482,7 +1482,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Precondition</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1490,7 +1490,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Force Refresh</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1499,7 +1499,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Filters</b></em>' containment reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1517,7 +1517,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Inverse Selection Order</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1535,7 +1535,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Variable</b></em>' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1544,7 +1544,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>View Variable</b></em>' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1553,7 +1553,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Initial Operation</b></em>' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1561,7 +1561,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Icon Path</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1579,7 +1579,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Starting End Predecessor</b></em>' containment reference. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1588,7 +1588,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Finishing End Predecessor</b></em>' containment reference. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1597,7 +1597,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Observation Point Creation Tool</em>' class. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1605,7 +1605,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Documentation</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1613,7 +1613,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1621,7 +1621,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Label</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1629,7 +1629,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Precondition</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1637,7 +1637,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Force Refresh</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1646,7 +1646,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Filters</b></em>' containment reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1664,7 +1664,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Inverse Selection Order</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1672,7 +1672,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Mappings</b></em>' reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1717,7 +1717,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>On Event Moved Operation</b></em>' containment reference. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1736,7 +1736,7 @@ public interface ToolPackage extends EPackage {
      * The meta object id for the
      * '{@link org.eclipse.sirius.diagram.sequence.description.tool.impl.InstanceRoleReorderToolImpl <em>Instance Role
      * Reorder Tool</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.InstanceRoleReorderToolImpl
      * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.ToolPackageImpl#getInstanceRoleReorderTool()
      * @generated
@@ -1745,7 +1745,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Documentation</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1753,7 +1753,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1761,7 +1761,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Label</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1769,7 +1769,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Precondition</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1777,7 +1777,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Force Refresh</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1786,7 +1786,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Filters</b></em>' containment reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1804,7 +1804,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Inverse Selection Order</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1812,7 +1812,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Mappings</b></em>' reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1821,7 +1821,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Predecessor Before</b></em>' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1830,7 +1830,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Predecessor After</b></em>' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1839,7 +1839,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Instance Role Moved</b></em>' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1848,7 +1848,7 @@ public interface ToolPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Instance Role Reorder Tool</em>' class. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1858,7 +1858,7 @@ public interface ToolPackage extends EPackage {
      * Returns the meta object for class
      * '{@link org.eclipse.sirius.diagram.sequence.description.tool.SequenceDiagramToolDescription <em>Sequence Diagram
      * Tool Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Sequence Diagram Tool Description</em>'.
      * @see org.eclipse.sirius.diagram.sequence.description.tool.SequenceDiagramToolDescription
      * @generated
@@ -1869,7 +1869,7 @@ public interface ToolPackage extends EPackage {
      * Returns the meta object for class
      * '{@link org.eclipse.sirius.diagram.sequence.description.tool.OrderedElementCreationTool <em>Ordered Element
      * Creation Tool</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Ordered Element Creation Tool</em>'.
      * @see org.eclipse.sirius.diagram.sequence.description.tool.OrderedElementCreationTool
      * @generated
@@ -1880,7 +1880,7 @@ public interface ToolPackage extends EPackage {
      * Returns the meta object for the containment reference
      * '{@link org.eclipse.sirius.diagram.sequence.description.tool.OrderedElementCreationTool#getStartingEndPredecessor
      * <em>Starting End Predecessor</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference '<em>Starting End Predecessor</em>'.
      * @see org.eclipse.sirius.diagram.sequence.description.tool.OrderedElementCreationTool#getStartingEndPredecessor()
      * @see #getOrderedElementCreationTool()
@@ -1892,7 +1892,7 @@ public interface ToolPackage extends EPackage {
      * Returns the meta object for the containment reference
      * '{@link org.eclipse.sirius.diagram.sequence.description.tool.OrderedElementCreationTool#getFinishingEndPredecessor
      * <em>Finishing End Predecessor</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference '<em>Finishing End Predecessor</em>'.
      * @see org.eclipse.sirius.diagram.sequence.description.tool.OrderedElementCreationTool#getFinishingEndPredecessor()
      * @see #getOrderedElementCreationTool()
@@ -1904,7 +1904,7 @@ public interface ToolPackage extends EPackage {
      * Returns the meta object for class
      * '{@link org.eclipse.sirius.diagram.sequence.description.tool.CoveringElementCreationTool <em>Covering Element
      * Creation Tool</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Covering Element Creation Tool</em>'.
      * @see org.eclipse.sirius.diagram.sequence.description.tool.CoveringElementCreationTool
      * @generated
@@ -1915,7 +1915,7 @@ public interface ToolPackage extends EPackage {
      * Returns the meta object for the containment reference
      * '{@link org.eclipse.sirius.diagram.sequence.description.tool.CoveringElementCreationTool#getCoveredLifelines
      * <em>Covered Lifelines</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference '<em>Covered Lifelines</em>'.
      * @see org.eclipse.sirius.diagram.sequence.description.tool.CoveringElementCreationTool#getCoveredLifelines()
      * @see #getCoveringElementCreationTool()
@@ -1927,7 +1927,7 @@ public interface ToolPackage extends EPackage {
      * Returns the meta object for class
      * '{@link org.eclipse.sirius.diagram.sequence.description.tool.InstanceRoleCreationTool <em>Instance Role Creation
      * Tool</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Instance Role Creation Tool</em>'.
      * @see org.eclipse.sirius.diagram.sequence.description.tool.InstanceRoleCreationTool
      * @generated
@@ -1938,7 +1938,7 @@ public interface ToolPackage extends EPackage {
      * Returns the meta object for the containment reference
      * '{@link org.eclipse.sirius.diagram.sequence.description.tool.InstanceRoleCreationTool#getPredecessor
      * <em>Predecessor</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference '<em>Predecessor</em>'.
      * @see org.eclipse.sirius.diagram.sequence.description.tool.InstanceRoleCreationTool#getPredecessor()
      * @see #getInstanceRoleCreationTool()
@@ -1950,7 +1950,7 @@ public interface ToolPackage extends EPackage {
      * Returns the meta object for class
      * '{@link org.eclipse.sirius.diagram.sequence.description.tool.LifelineCreationTool <em>Lifeline Creation
      * Tool</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Lifeline Creation Tool</em>'.
      * @see org.eclipse.sirius.diagram.sequence.description.tool.LifelineCreationTool
      * @generated
@@ -1961,7 +1961,7 @@ public interface ToolPackage extends EPackage {
      * Returns the meta object for class
      * '{@link org.eclipse.sirius.diagram.sequence.description.tool.MessageCreationTool <em>Message Creation
      * Tool</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Message Creation Tool</em>'.
      * @see org.eclipse.sirius.diagram.sequence.description.tool.MessageCreationTool
      * @generated
@@ -1972,7 +1972,7 @@ public interface ToolPackage extends EPackage {
      * Returns the meta object for class
      * '{@link org.eclipse.sirius.diagram.sequence.description.tool.ExecutionCreationTool <em>Execution Creation
      * Tool</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Execution Creation Tool</em>'.
      * @see org.eclipse.sirius.diagram.sequence.description.tool.ExecutionCreationTool
      * @generated
@@ -1982,7 +1982,7 @@ public interface ToolPackage extends EPackage {
     /**
      * Returns the meta object for class '{@link org.eclipse.sirius.diagram.sequence.description.tool.StateCreationTool
      * <em>State Creation Tool</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>State Creation Tool</em>'.
      * @see org.eclipse.sirius.diagram.sequence.description.tool.StateCreationTool
      * @generated
@@ -1992,7 +1992,7 @@ public interface ToolPackage extends EPackage {
     /**
      * Returns the meta object for class '{@link org.eclipse.sirius.diagram.sequence.description.tool.ReorderTool
      * <em>Reorder Tool</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Reorder Tool</em>'.
      * @see org.eclipse.sirius.diagram.sequence.description.tool.ReorderTool
      * @generated
@@ -2015,7 +2015,7 @@ public interface ToolPackage extends EPackage {
      * Returns the meta object for the containment reference
      * '{@link org.eclipse.sirius.diagram.sequence.description.tool.ReorderTool#getStartingEndPredecessorBefore
      * <em>Starting End Predecessor Before</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference '<em>Starting End Predecessor Before</em>'.
      * @see org.eclipse.sirius.diagram.sequence.description.tool.ReorderTool#getStartingEndPredecessorBefore()
      * @see #getReorderTool()
@@ -2027,7 +2027,7 @@ public interface ToolPackage extends EPackage {
      * Returns the meta object for the containment reference
      * '{@link org.eclipse.sirius.diagram.sequence.description.tool.ReorderTool#getStartingEndPredecessorAfter
      * <em>Starting End Predecessor After</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference '<em>Starting End Predecessor After</em>'.
      * @see org.eclipse.sirius.diagram.sequence.description.tool.ReorderTool#getStartingEndPredecessorAfter()
      * @see #getReorderTool()
@@ -2039,7 +2039,7 @@ public interface ToolPackage extends EPackage {
      * Returns the meta object for the containment reference
      * '{@link org.eclipse.sirius.diagram.sequence.description.tool.ReorderTool#getFinishingEndPredecessorBefore
      * <em>Finishing End Predecessor Before</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference '<em>Finishing End Predecessor Before</em>'.
      * @see org.eclipse.sirius.diagram.sequence.description.tool.ReorderTool#getFinishingEndPredecessorBefore()
      * @see #getReorderTool()
@@ -2051,7 +2051,7 @@ public interface ToolPackage extends EPackage {
      * Returns the meta object for the containment reference
      * '{@link org.eclipse.sirius.diagram.sequence.description.tool.ReorderTool#getFinishingEndPredecessorAfter
      * <em>Finishing End Predecessor After</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference '<em>Finishing End Predecessor After</em>'.
      * @see org.eclipse.sirius.diagram.sequence.description.tool.ReorderTool#getFinishingEndPredecessorAfter()
      * @see #getReorderTool()
@@ -2063,7 +2063,7 @@ public interface ToolPackage extends EPackage {
      * Returns the meta object for the containment reference
      * '{@link org.eclipse.sirius.diagram.sequence.description.tool.ReorderTool#getOnEventMovedOperation <em>On Event
      * Moved Operation</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference '<em>On Event Moved Operation</em>'.
      * @see org.eclipse.sirius.diagram.sequence.description.tool.ReorderTool#getOnEventMovedOperation()
      * @see #getReorderTool()
@@ -2075,7 +2075,7 @@ public interface ToolPackage extends EPackage {
      * Returns the meta object for class
      * '{@link org.eclipse.sirius.diagram.sequence.description.tool.InstanceRoleReorderTool <em>Instance Role Reorder
      * Tool</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Instance Role Reorder Tool</em>'.
      * @see org.eclipse.sirius.diagram.sequence.description.tool.InstanceRoleReorderTool
      * @generated
@@ -2086,7 +2086,7 @@ public interface ToolPackage extends EPackage {
      * Returns the meta object for the reference list
      * '{@link org.eclipse.sirius.diagram.sequence.description.tool.InstanceRoleReorderTool#getMappings
      * <em>Mappings</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the reference list '<em>Mappings</em>'.
      * @see org.eclipse.sirius.diagram.sequence.description.tool.InstanceRoleReorderTool#getMappings()
      * @see #getInstanceRoleReorderTool()
@@ -2098,7 +2098,7 @@ public interface ToolPackage extends EPackage {
      * Returns the meta object for the containment reference
      * '{@link org.eclipse.sirius.diagram.sequence.description.tool.InstanceRoleReorderTool#getPredecessorBefore
      * <em>Predecessor Before</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference '<em>Predecessor Before</em>'.
      * @see org.eclipse.sirius.diagram.sequence.description.tool.InstanceRoleReorderTool#getPredecessorBefore()
      * @see #getInstanceRoleReorderTool()
@@ -2110,7 +2110,7 @@ public interface ToolPackage extends EPackage {
      * Returns the meta object for the containment reference
      * '{@link org.eclipse.sirius.diagram.sequence.description.tool.InstanceRoleReorderTool#getPredecessorAfter
      * <em>Predecessor After</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference '<em>Predecessor After</em>'.
      * @see org.eclipse.sirius.diagram.sequence.description.tool.InstanceRoleReorderTool#getPredecessorAfter()
      * @see #getInstanceRoleReorderTool()
@@ -2122,7 +2122,7 @@ public interface ToolPackage extends EPackage {
      * Returns the meta object for the containment reference
      * '{@link org.eclipse.sirius.diagram.sequence.description.tool.InstanceRoleReorderTool#getInstanceRoleMoved
      * <em>Instance Role Moved</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference '<em>Instance Role Moved</em>'.
      * @see org.eclipse.sirius.diagram.sequence.description.tool.InstanceRoleReorderTool#getInstanceRoleMoved()
      * @see #getInstanceRoleReorderTool()
@@ -2134,7 +2134,7 @@ public interface ToolPackage extends EPackage {
      * Returns the meta object for class
      * '{@link org.eclipse.sirius.diagram.sequence.description.tool.ObservationPointCreationTool <em>Observation Point
      * Creation Tool</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Observation Point Creation Tool</em>'.
      * @see org.eclipse.sirius.diagram.sequence.description.tool.ObservationPointCreationTool
      * @generated
@@ -2145,7 +2145,7 @@ public interface ToolPackage extends EPackage {
      * Returns the meta object for class
      * '{@link org.eclipse.sirius.diagram.sequence.description.tool.InteractionUseCreationTool <em>Interaction Use
      * Creation Tool</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Interaction Use Creation Tool</em>'.
      * @see org.eclipse.sirius.diagram.sequence.description.tool.InteractionUseCreationTool
      * @generated
@@ -2156,7 +2156,7 @@ public interface ToolPackage extends EPackage {
      * Returns the meta object for class
      * '{@link org.eclipse.sirius.diagram.sequence.description.tool.CombinedFragmentCreationTool <em>Combined Fragment
      * Creation Tool</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Combined Fragment Creation Tool</em>'.
      * @see org.eclipse.sirius.diagram.sequence.description.tool.CombinedFragmentCreationTool
      * @generated
@@ -2167,7 +2167,7 @@ public interface ToolPackage extends EPackage {
      * Returns the meta object for class
      * '{@link org.eclipse.sirius.diagram.sequence.description.tool.OperandCreationTool <em>Operand Creation
      * Tool</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Operand Creation Tool</em>'.
      * @see org.eclipse.sirius.diagram.sequence.description.tool.OperandCreationTool
      * @generated
@@ -2176,7 +2176,7 @@ public interface ToolPackage extends EPackage {
 
     /**
      * Returns the factory that creates the instances of the model. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the factory that creates the instances of the model.
      * @generated
      */
@@ -2191,7 +2191,7 @@ public interface ToolPackage extends EPackage {
      * <li>and each data type</li>
      * </ul>
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     interface Literals {
@@ -2199,7 +2199,7 @@ public interface ToolPackage extends EPackage {
          * The meta object literal for the
          * '{@link org.eclipse.sirius.diagram.sequence.description.tool.impl.SequenceDiagramToolDescriptionImpl
          * <em>Sequence Diagram Tool Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.SequenceDiagramToolDescriptionImpl
          * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.ToolPackageImpl#getSequenceDiagramToolDescription()
          * @generated
@@ -2210,7 +2210,7 @@ public interface ToolPackage extends EPackage {
          * The meta object literal for the
          * '{@link org.eclipse.sirius.diagram.sequence.description.tool.impl.OrderedElementCreationToolImpl <em>Ordered
          * Element Creation Tool</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.OrderedElementCreationToolImpl
          * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.ToolPackageImpl#getOrderedElementCreationTool()
          * @generated
@@ -2220,7 +2220,7 @@ public interface ToolPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Starting End Predecessor</b></em>' containment reference feature.
          * <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference ORDERED_ELEMENT_CREATION_TOOL__STARTING_END_PREDECESSOR = ToolPackage.eINSTANCE.getOrderedElementCreationTool_StartingEndPredecessor();
@@ -2228,7 +2228,7 @@ public interface ToolPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Finishing End Predecessor</b></em>' containment reference feature.
          * <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference ORDERED_ELEMENT_CREATION_TOOL__FINISHING_END_PREDECESSOR = ToolPackage.eINSTANCE.getOrderedElementCreationTool_FinishingEndPredecessor();
@@ -2237,7 +2237,7 @@ public interface ToolPackage extends EPackage {
          * The meta object literal for the
          * '{@link org.eclipse.sirius.diagram.sequence.description.tool.impl.CoveringElementCreationToolImpl
          * <em>Covering Element Creation Tool</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.CoveringElementCreationToolImpl
          * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.ToolPackageImpl#getCoveringElementCreationTool()
          * @generated
@@ -2256,7 +2256,7 @@ public interface ToolPackage extends EPackage {
          * The meta object literal for the
          * '{@link org.eclipse.sirius.diagram.sequence.description.tool.impl.InstanceRoleCreationToolImpl <em>Instance
          * Role Creation Tool</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.InstanceRoleCreationToolImpl
          * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.ToolPackageImpl#getInstanceRoleCreationTool()
          * @generated
@@ -2275,7 +2275,7 @@ public interface ToolPackage extends EPackage {
          * The meta object literal for the
          * '{@link org.eclipse.sirius.diagram.sequence.description.tool.impl.LifelineCreationToolImpl <em>Lifeline
          * Creation Tool</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.LifelineCreationToolImpl
          * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.ToolPackageImpl#getLifelineCreationTool()
          * @generated
@@ -2286,7 +2286,7 @@ public interface ToolPackage extends EPackage {
          * The meta object literal for the
          * '{@link org.eclipse.sirius.diagram.sequence.description.tool.impl.MessageCreationToolImpl <em>Message
          * Creation Tool</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.MessageCreationToolImpl
          * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.ToolPackageImpl#getMessageCreationTool()
          * @generated
@@ -2297,7 +2297,7 @@ public interface ToolPackage extends EPackage {
          * The meta object literal for the
          * '{@link org.eclipse.sirius.diagram.sequence.description.tool.impl.ExecutionCreationToolImpl <em>Execution
          * Creation Tool</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.ExecutionCreationToolImpl
          * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.ToolPackageImpl#getExecutionCreationTool()
          * @generated
@@ -2308,7 +2308,7 @@ public interface ToolPackage extends EPackage {
          * The meta object literal for the
          * '{@link org.eclipse.sirius.diagram.sequence.description.tool.impl.StateCreationToolImpl <em>State Creation
          * Tool</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.StateCreationToolImpl
          * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.ToolPackageImpl#getStateCreationTool()
          * @generated
@@ -2319,7 +2319,7 @@ public interface ToolPackage extends EPackage {
          * The meta object literal for the
          * '{@link org.eclipse.sirius.diagram.sequence.description.tool.impl.ReorderToolImpl <em>Reorder Tool</em>}'
          * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.ReorderToolImpl
          * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.ToolPackageImpl#getReorderTool()
          * @generated
@@ -2329,7 +2329,7 @@ public interface ToolPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Mappings</b></em>' reference list feature. <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference REORDER_TOOL__MAPPINGS = ToolPackage.eINSTANCE.getReorderTool_Mappings();
@@ -2337,7 +2337,7 @@ public interface ToolPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Starting End Predecessor Before</b></em>' containment reference
          * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference REORDER_TOOL__STARTING_END_PREDECESSOR_BEFORE = ToolPackage.eINSTANCE.getReorderTool_StartingEndPredecessorBefore();
@@ -2345,7 +2345,7 @@ public interface ToolPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Starting End Predecessor After</b></em>' containment reference
          * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference REORDER_TOOL__STARTING_END_PREDECESSOR_AFTER = ToolPackage.eINSTANCE.getReorderTool_StartingEndPredecessorAfter();
@@ -2353,7 +2353,7 @@ public interface ToolPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Finishing End Predecessor Before</b></em>' containment reference
          * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference REORDER_TOOL__FINISHING_END_PREDECESSOR_BEFORE = ToolPackage.eINSTANCE.getReorderTool_FinishingEndPredecessorBefore();
@@ -2361,7 +2361,7 @@ public interface ToolPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Finishing End Predecessor After</b></em>' containment reference
          * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference REORDER_TOOL__FINISHING_END_PREDECESSOR_AFTER = ToolPackage.eINSTANCE.getReorderTool_FinishingEndPredecessorAfter();
@@ -2369,7 +2369,7 @@ public interface ToolPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>On Event Moved Operation</b></em>' containment reference feature.
          * <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference REORDER_TOOL__ON_EVENT_MOVED_OPERATION = ToolPackage.eINSTANCE.getReorderTool_OnEventMovedOperation();
@@ -2378,7 +2378,7 @@ public interface ToolPackage extends EPackage {
          * The meta object literal for the
          * '{@link org.eclipse.sirius.diagram.sequence.description.tool.impl.InstanceRoleReorderToolImpl <em>Instance
          * Role Reorder Tool</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.InstanceRoleReorderToolImpl
          * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.ToolPackageImpl#getInstanceRoleReorderTool()
          * @generated
@@ -2388,7 +2388,7 @@ public interface ToolPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Mappings</b></em>' reference list feature. <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference INSTANCE_ROLE_REORDER_TOOL__MAPPINGS = ToolPackage.eINSTANCE.getInstanceRoleReorderTool_Mappings();
@@ -2421,7 +2421,7 @@ public interface ToolPackage extends EPackage {
          * The meta object literal for the
          * '{@link org.eclipse.sirius.diagram.sequence.description.tool.impl.ObservationPointCreationToolImpl
          * <em>Observation Point Creation Tool</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.ObservationPointCreationToolImpl
          * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.ToolPackageImpl#getObservationPointCreationTool()
          * @generated
@@ -2432,7 +2432,7 @@ public interface ToolPackage extends EPackage {
          * The meta object literal for the
          * '{@link org.eclipse.sirius.diagram.sequence.description.tool.impl.InteractionUseCreationToolImpl
          * <em>Interaction Use Creation Tool</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.InteractionUseCreationToolImpl
          * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.ToolPackageImpl#getInteractionUseCreationTool()
          * @generated
@@ -2443,7 +2443,7 @@ public interface ToolPackage extends EPackage {
          * The meta object literal for the
          * '{@link org.eclipse.sirius.diagram.sequence.description.tool.impl.CombinedFragmentCreationToolImpl
          * <em>Combined Fragment Creation Tool</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.CombinedFragmentCreationToolImpl
          * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.ToolPackageImpl#getCombinedFragmentCreationTool()
          * @generated
@@ -2454,7 +2454,7 @@ public interface ToolPackage extends EPackage {
          * The meta object literal for the
          * '{@link org.eclipse.sirius.diagram.sequence.description.tool.impl.OperandCreationToolImpl <em>Operand
          * Creation Tool</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.OperandCreationToolImpl
          * @see org.eclipse.sirius.diagram.sequence.description.tool.impl.ToolPackageImpl#getOperandCreationTool()
          * @generated

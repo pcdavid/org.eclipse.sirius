@@ -37,7 +37,7 @@ public interface FrameMapping extends ContainerMapping, DelimitedEventMapping {
      * of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Covered Lifelines Expression</em>' attribute.
      * @see #setCoveredLifelinesExpression(String)
      * @see org.eclipse.sirius.diagram.sequence.description.DescriptionPackage#getFrameMapping_CoveredLifelinesExpression()
@@ -52,7 +52,7 @@ public interface FrameMapping extends ContainerMapping, DelimitedEventMapping {
      * Sets the value of the
      * '{@link org.eclipse.sirius.diagram.sequence.description.FrameMapping#getCoveredLifelinesExpression <em>Covered
      * Lifelines Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Covered Lifelines Expression</em>' attribute.
      * @see #getCoveredLifelinesExpression()
@@ -67,7 +67,7 @@ public interface FrameMapping extends ContainerMapping, DelimitedEventMapping {
      * description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Center Label Expression</em>' attribute.
      * @see #setCenterLabelExpression(String)
      * @see org.eclipse.sirius.diagram.sequence.description.DescriptionPackage#getFrameMapping_CenterLabelExpression()
@@ -82,7 +82,7 @@ public interface FrameMapping extends ContainerMapping, DelimitedEventMapping {
      * Sets the value of the
      * '{@link org.eclipse.sirius.diagram.sequence.description.FrameMapping#getCenterLabelExpression <em>Center Label
      * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Center Label Expression</em>' attribute.
      * @see #getCenterLabelExpression()

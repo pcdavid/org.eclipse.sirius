@@ -75,7 +75,7 @@ public class UIStateImpl extends MinimalEObjectImpl.Container implements UIState
     /**
      * The cached value of the '{@link #getDecorationImage() <em>Decoration Image</em>}' attribute. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getDecorationImage()
      * @generated
      * @ordered
@@ -94,7 +94,7 @@ public class UIStateImpl extends MinimalEObjectImpl.Container implements UIState
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -104,7 +104,7 @@ public class UIStateImpl extends MinimalEObjectImpl.Container implements UIState
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -114,7 +114,7 @@ public class UIStateImpl extends MinimalEObjectImpl.Container implements UIState
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -128,7 +128,7 @@ public class UIStateImpl extends MinimalEObjectImpl.Container implements UIState
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -141,7 +141,7 @@ public class UIStateImpl extends MinimalEObjectImpl.Container implements UIState
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -153,7 +153,7 @@ public class UIStateImpl extends MinimalEObjectImpl.Container implements UIState
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -163,7 +163,7 @@ public class UIStateImpl extends MinimalEObjectImpl.Container implements UIState
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -173,7 +173,7 @@ public class UIStateImpl extends MinimalEObjectImpl.Container implements UIState
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -187,7 +187,7 @@ public class UIStateImpl extends MinimalEObjectImpl.Container implements UIState
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -205,7 +205,7 @@ public class UIStateImpl extends MinimalEObjectImpl.Container implements UIState
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -228,7 +228,7 @@ public class UIStateImpl extends MinimalEObjectImpl.Container implements UIState
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -249,7 +249,7 @@ public class UIStateImpl extends MinimalEObjectImpl.Container implements UIState
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -267,7 +267,7 @@ public class UIStateImpl extends MinimalEObjectImpl.Container implements UIState
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

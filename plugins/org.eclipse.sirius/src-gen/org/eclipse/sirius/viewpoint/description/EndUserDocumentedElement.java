@@ -38,7 +38,7 @@ public interface EndUserDocumentedElement extends EObject {
      * description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>End User Documentation</em>' attribute.
      * @see #setEndUserDocumentation(String)
      * @see org.eclipse.sirius.viewpoint.description.DescriptionPackage#getEndUserDocumentedElement_EndUserDocumentation()
@@ -51,7 +51,7 @@ public interface EndUserDocumentedElement extends EObject {
      * Sets the value of the
      * '{@link org.eclipse.sirius.viewpoint.description.EndUserDocumentedElement#getEndUserDocumentation <em>End User
      * Documentation</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>End User Documentation</em>' attribute.
      * @see #getEndUserDocumentation()

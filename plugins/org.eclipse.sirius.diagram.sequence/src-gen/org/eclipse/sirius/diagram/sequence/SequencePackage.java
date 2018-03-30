@@ -24,7 +24,7 @@ import org.eclipse.sirius.diagram.DiagramPackage;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- *
+ * 
  * @see org.eclipse.sirius.diagram.sequence.SequenceFactory
  * @model kind="package"
  * @generated
@@ -32,28 +32,28 @@ import org.eclipse.sirius.diagram.DiagramPackage;
 public interface SequencePackage extends EPackage {
     /**
      * The package name. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     String eNAME = "sequence"; //$NON-NLS-1$
 
     /**
      * The package namespace URI. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     String eNS_URI = "http://www.eclipse.org/sirius/diagram/sequence/2.0.0"; //$NON-NLS-1$
 
     /**
      * The package namespace name. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     String eNS_PREFIX = "sequence"; //$NON-NLS-1$
 
     /**
      * The singleton instance of the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     SequencePackage eINSTANCE = org.eclipse.sirius.diagram.sequence.impl.SequencePackageImpl.init();
@@ -61,7 +61,7 @@ public interface SequencePackage extends EPackage {
     /**
      * The meta object id for the '{@link org.eclipse.sirius.diagram.sequence.impl.SequenceDDiagramImpl
      * <em>DDiagram</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.sirius.diagram.sequence.impl.SequenceDDiagramImpl
      * @see org.eclipse.sirius.diagram.sequence.impl.SequencePackageImpl#getSequenceDDiagram()
      * @generated
@@ -70,7 +70,7 @@ public interface SequencePackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Documentation</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -79,7 +79,7 @@ public interface SequencePackage extends EPackage {
     /**
      * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -88,7 +88,7 @@ public interface SequencePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Owned Representation Elements</b></em>' reference list. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -97,7 +97,7 @@ public interface SequencePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Representation Elements</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -105,7 +105,7 @@ public interface SequencePackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -114,7 +114,7 @@ public interface SequencePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Owned Annotation Entries</b></em>' containment reference list. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -123,7 +123,7 @@ public interface SequencePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Ui State</b></em>' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -131,7 +131,7 @@ public interface SequencePackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Uid</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -140,7 +140,7 @@ public interface SequencePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Owned Diagram Elements</b></em>' containment reference list. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -149,7 +149,7 @@ public interface SequencePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Diagram Elements</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -157,7 +157,7 @@ public interface SequencePackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Description</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -165,7 +165,7 @@ public interface SequencePackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Edges</b></em>' reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -173,7 +173,7 @@ public interface SequencePackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Nodes</b></em>' reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -182,7 +182,7 @@ public interface SequencePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Node List Elements</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -190,7 +190,7 @@ public interface SequencePackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Containers</b></em>' reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -198,7 +198,7 @@ public interface SequencePackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Current Concern</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -207,7 +207,7 @@ public interface SequencePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Activated Filters</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -216,7 +216,7 @@ public interface SequencePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Activated Transient Layers</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -234,7 +234,7 @@ public interface SequencePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Activated Rules</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -243,7 +243,7 @@ public interface SequencePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Activate Behaviors</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -252,7 +252,7 @@ public interface SequencePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Filter Variable History</b></em>' containment reference. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -261,7 +261,7 @@ public interface SequencePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Activated Layers</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -269,7 +269,7 @@ public interface SequencePackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Synchronized</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -278,7 +278,7 @@ public interface SequencePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Hidden Elements</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -287,7 +287,7 @@ public interface SequencePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Is In Layouting Mode</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -304,7 +304,7 @@ public interface SequencePackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Header Height</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -312,7 +312,7 @@ public interface SequencePackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Target</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -321,7 +321,7 @@ public interface SequencePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Semantic Ordering</b></em>' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -330,7 +330,7 @@ public interface SequencePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Graphical Ordering</b></em>' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -347,7 +347,7 @@ public interface SequencePackage extends EPackage {
 
     /**
      * The number of structural features of the '<em>DDiagram</em>' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -356,7 +356,7 @@ public interface SequencePackage extends EPackage {
     /**
      * Returns the meta object for class '{@link org.eclipse.sirius.diagram.sequence.SequenceDDiagram
      * <em>DDiagram</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>DDiagram</em>'.
      * @see org.eclipse.sirius.diagram.sequence.SequenceDDiagram
      * @generated
@@ -367,7 +367,7 @@ public interface SequencePackage extends EPackage {
      * Returns the meta object for the containment reference
      * '{@link org.eclipse.sirius.diagram.sequence.SequenceDDiagram#getSemanticOrdering <em>Semantic Ordering</em>}'.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference '<em>Semantic Ordering</em>'.
      * @see org.eclipse.sirius.diagram.sequence.SequenceDDiagram#getSemanticOrdering()
      * @see #getSequenceDDiagram()
@@ -379,7 +379,7 @@ public interface SequencePackage extends EPackage {
      * Returns the meta object for the containment reference
      * '{@link org.eclipse.sirius.diagram.sequence.SequenceDDiagram#getGraphicalOrdering <em>Graphical Ordering</em>}'.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference '<em>Graphical Ordering</em>'.
      * @see org.eclipse.sirius.diagram.sequence.SequenceDDiagram#getGraphicalOrdering()
      * @see #getSequenceDDiagram()
@@ -391,7 +391,7 @@ public interface SequencePackage extends EPackage {
      * Returns the meta object for the containment reference
      * '{@link org.eclipse.sirius.diagram.sequence.SequenceDDiagram#getInstanceRoleSemanticOrdering <em>Instance Role
      * Semantic Ordering</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference '<em>Instance Role Semantic Ordering</em>'.
      * @see org.eclipse.sirius.diagram.sequence.SequenceDDiagram#getInstanceRoleSemanticOrdering()
      * @see #getSequenceDDiagram()
@@ -401,7 +401,7 @@ public interface SequencePackage extends EPackage {
 
     /**
      * Returns the factory that creates the instances of the model. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the factory that creates the instances of the model.
      * @generated
      */
@@ -416,14 +416,14 @@ public interface SequencePackage extends EPackage {
      * <li>and each data type</li>
      * </ul>
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     interface Literals {
         /**
          * The meta object literal for the '{@link org.eclipse.sirius.diagram.sequence.impl.SequenceDDiagramImpl
          * <em>DDiagram</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.eclipse.sirius.diagram.sequence.impl.SequenceDDiagramImpl
          * @see org.eclipse.sirius.diagram.sequence.impl.SequencePackageImpl#getSequenceDDiagram()
          * @generated
@@ -449,7 +449,7 @@ public interface SequencePackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Instance Role Semantic Ordering</b></em>' containment reference
          * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference SEQUENCE_DDIAGRAM__INSTANCE_ROLE_SEMANTIC_ORDERING = SequencePackage.eINSTANCE.getSequenceDDiagram_InstanceRoleSemanticOrdering();

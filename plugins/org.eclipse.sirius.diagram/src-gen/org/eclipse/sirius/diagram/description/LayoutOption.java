@@ -36,7 +36,7 @@ public interface LayoutOption extends EObject {
      * If the meaning of the '<em>Id</em>' attribute isn't clear, there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Id</em>' attribute.
      * @see #setId(String)
      * @see org.eclipse.sirius.diagram.description.DescriptionPackage#getLayoutOption_Id()
@@ -48,7 +48,7 @@ public interface LayoutOption extends EObject {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.diagram.description.LayoutOption#getId <em>Id</em>}' attribute.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Id</em>' attribute.
      * @see #getId()
@@ -63,7 +63,7 @@ public interface LayoutOption extends EObject {
      * here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Label</em>' attribute.
      * @see #setLabel(String)
      * @see org.eclipse.sirius.diagram.description.DescriptionPackage#getLayoutOption_Label()
@@ -75,7 +75,7 @@ public interface LayoutOption extends EObject {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.diagram.description.LayoutOption#getLabel <em>Label</em>}'
      * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Label</em>' attribute.
      * @see #getLabel()
@@ -90,7 +90,7 @@ public interface LayoutOption extends EObject {
      * here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Description</em>' attribute.
      * @see #setDescription(String)
      * @see org.eclipse.sirius.diagram.description.DescriptionPackage#getLayoutOption_Description()
@@ -102,7 +102,7 @@ public interface LayoutOption extends EObject {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.diagram.description.LayoutOption#getDescription
      * <em>Description</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Description</em>' attribute.
      * @see #getDescription()

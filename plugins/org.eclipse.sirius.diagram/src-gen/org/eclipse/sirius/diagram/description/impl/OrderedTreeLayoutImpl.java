@@ -62,7 +62,7 @@ public class OrderedTreeLayoutImpl extends DocumentedElementImpl implements Orde
     /**
      * The cached value of the '{@link #getNodeMapping() <em>Node Mapping</em>}' reference list. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @see #getNodeMapping()
      * @generated
      * @ordered
@@ -71,7 +71,7 @@ public class OrderedTreeLayoutImpl extends DocumentedElementImpl implements Orde
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected OrderedTreeLayoutImpl() {
@@ -80,7 +80,7 @@ public class OrderedTreeLayoutImpl extends DocumentedElementImpl implements Orde
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -90,7 +90,7 @@ public class OrderedTreeLayoutImpl extends DocumentedElementImpl implements Orde
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -100,7 +100,7 @@ public class OrderedTreeLayoutImpl extends DocumentedElementImpl implements Orde
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -114,7 +114,7 @@ public class OrderedTreeLayoutImpl extends DocumentedElementImpl implements Orde
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -127,7 +127,7 @@ public class OrderedTreeLayoutImpl extends DocumentedElementImpl implements Orde
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -143,7 +143,7 @@ public class OrderedTreeLayoutImpl extends DocumentedElementImpl implements Orde
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -163,7 +163,7 @@ public class OrderedTreeLayoutImpl extends DocumentedElementImpl implements Orde
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -181,7 +181,7 @@ public class OrderedTreeLayoutImpl extends DocumentedElementImpl implements Orde
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -197,7 +197,7 @@ public class OrderedTreeLayoutImpl extends DocumentedElementImpl implements Orde
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

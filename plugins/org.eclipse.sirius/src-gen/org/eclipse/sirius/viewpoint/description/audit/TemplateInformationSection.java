@@ -33,7 +33,7 @@ public interface TemplateInformationSection extends InformationSection {
     /**
      * Returns the value of the '<em><b>Template Path</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
      * <!-- begin-model-doc --> The file path of the template. <!-- end-model-doc -->
-     *
+     * 
      * @return the value of the '<em>Template Path</em>' attribute.
      * @see #setTemplatePath(String)
      * @see org.eclipse.sirius.viewpoint.description.audit.AuditPackage#getTemplateInformationSection_TemplatePath()
@@ -46,7 +46,7 @@ public interface TemplateInformationSection extends InformationSection {
      * Sets the value of the
      * '{@link org.eclipse.sirius.viewpoint.description.audit.TemplateInformationSection#getTemplatePath <em>Template
      * Path</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Template Path</em>' attribute.
      * @see #getTemplatePath()

@@ -36,7 +36,7 @@ public interface EnumOption extends LayoutOption {
      * description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Choices</em>' containment reference list.
      * @see org.eclipse.sirius.diagram.description.DescriptionPackage#getEnumOption_Choices()
      * @model containment="true" resolveProxies="true"

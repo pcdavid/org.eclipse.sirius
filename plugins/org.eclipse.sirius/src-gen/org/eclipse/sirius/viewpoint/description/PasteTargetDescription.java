@@ -43,7 +43,7 @@ public interface PasteTargetDescription extends EObject {
      * description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Paste Descriptions</em>' reference list.
      * @see org.eclipse.sirius.viewpoint.description.DescriptionPackage#getPasteTargetDescription_PasteDescriptions()
      * @model

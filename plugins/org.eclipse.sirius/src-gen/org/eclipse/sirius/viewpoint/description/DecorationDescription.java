@@ -53,7 +53,7 @@ public interface DecorationDescription extends EObject {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.viewpoint.description.DecorationDescription#getName
      * <em>Name</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Name</em>' attribute.
      * @see #getName()
@@ -83,7 +83,7 @@ public interface DecorationDescription extends EObject {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.viewpoint.description.DecorationDescription#getPosition
      * <em>Position</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Position</em>' attribute.
      * @see org.eclipse.sirius.viewpoint.description.Position
@@ -101,7 +101,7 @@ public interface DecorationDescription extends EObject {
      * description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Distribution Direction</em>' attribute.
      * @see org.eclipse.sirius.viewpoint.description.DecorationDistributionDirection
      * @see #setDistributionDirection(DecorationDistributionDirection)
@@ -115,7 +115,7 @@ public interface DecorationDescription extends EObject {
      * Sets the value of the
      * '{@link org.eclipse.sirius.viewpoint.description.DecorationDescription#getDistributionDirection <em>Distribution
      * Direction</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Distribution Direction</em>' attribute.
      * @see org.eclipse.sirius.viewpoint.description.DecorationDistributionDirection
@@ -148,7 +148,7 @@ public interface DecorationDescription extends EObject {
      * Sets the value of the
      * '{@link org.eclipse.sirius.viewpoint.description.DecorationDescription#getPreconditionExpression <em>Precondition
      * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Precondition Expression</em>' attribute.
      * @see #getPreconditionExpression()
@@ -179,7 +179,7 @@ public interface DecorationDescription extends EObject {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.viewpoint.description.DecorationDescription#getImageExpression
      * <em>Image Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Image Expression</em>' attribute.
      * @see #getImageExpression()
@@ -209,7 +209,7 @@ public interface DecorationDescription extends EObject {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.viewpoint.description.DecorationDescription#getTooltipExpression
      * <em>Tooltip Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Tooltip Expression</em>' attribute.
      * @see #getTooltipExpression()

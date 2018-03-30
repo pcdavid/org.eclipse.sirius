@@ -34,7 +34,7 @@ public interface DoubleLayoutOption extends LayoutOption {
      * here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Value</em>' attribute.
      * @see #setValue(double)
      * @see org.eclipse.sirius.diagram.description.DescriptionPackage#getDoubleLayoutOption_Value()
@@ -46,7 +46,7 @@ public interface DoubleLayoutOption extends LayoutOption {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.diagram.description.DoubleLayoutOption#getValue <em>Value</em>}'
      * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Value</em>' attribute.
      * @see #getValue()

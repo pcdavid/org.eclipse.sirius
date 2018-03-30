@@ -63,7 +63,7 @@ public interface PaneBasedSelectionWizardDescription extends AbstractToolDescrip
      * description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Element</em>' containment reference.
      * @see #setElement(ElementSelectVariable)
      * @see org.eclipse.sirius.viewpoint.description.tool.ToolPackage#getPaneBasedSelectionWizardDescription_Element()
@@ -76,7 +76,7 @@ public interface PaneBasedSelectionWizardDescription extends AbstractToolDescrip
      * Sets the value of the
      * '{@link org.eclipse.sirius.viewpoint.description.tool.PaneBasedSelectionWizardDescription#getElement
      * <em>Element</em>}' containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Element</em>' containment reference.
      * @see #getElement()
@@ -91,7 +91,7 @@ public interface PaneBasedSelectionWizardDescription extends AbstractToolDescrip
      * a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Container View</em>' containment reference.
      * @see #setContainerView(ContainerViewVariable)
      * @see org.eclipse.sirius.viewpoint.description.tool.ToolPackage#getPaneBasedSelectionWizardDescription_ContainerView()
@@ -104,7 +104,7 @@ public interface PaneBasedSelectionWizardDescription extends AbstractToolDescrip
      * Sets the value of the
      * '{@link org.eclipse.sirius.viewpoint.description.tool.PaneBasedSelectionWizardDescription#getContainerView
      * <em>Container View</em>}' containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Container View</em>' containment reference.
      * @see #getContainerView()
@@ -119,7 +119,7 @@ public interface PaneBasedSelectionWizardDescription extends AbstractToolDescrip
      * description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Container</em>' containment reference.
      * @see #setContainer(SelectContainerVariable)
      * @see org.eclipse.sirius.viewpoint.description.tool.ToolPackage#getPaneBasedSelectionWizardDescription_Container()
@@ -132,7 +132,7 @@ public interface PaneBasedSelectionWizardDescription extends AbstractToolDescrip
      * Sets the value of the
      * '{@link org.eclipse.sirius.viewpoint.description.tool.PaneBasedSelectionWizardDescription#getContainer
      * <em>Container</em>}' containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Container</em>' containment reference.
      * @see #getContainer()
@@ -147,7 +147,7 @@ public interface PaneBasedSelectionWizardDescription extends AbstractToolDescrip
      * of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Initial Operation</em>' containment reference.
      * @see #setInitialOperation(InitialOperation)
      * @see org.eclipse.sirius.viewpoint.description.tool.ToolPackage#getPaneBasedSelectionWizardDescription_InitialOperation()
@@ -160,7 +160,7 @@ public interface PaneBasedSelectionWizardDescription extends AbstractToolDescrip
      * Sets the value of the
      * '{@link org.eclipse.sirius.viewpoint.description.tool.PaneBasedSelectionWizardDescription#getInitialOperation
      * <em>Initial Operation</em>}' containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Initial Operation</em>' containment reference.
      * @see #getInitialOperation()
@@ -191,7 +191,7 @@ public interface PaneBasedSelectionWizardDescription extends AbstractToolDescrip
      * Sets the value of the
      * '{@link org.eclipse.sirius.viewpoint.description.tool.PaneBasedSelectionWizardDescription#getIconPath <em>Icon
      * Path</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Icon Path</em>' attribute.
      * @see #getIconPath()
@@ -216,7 +216,7 @@ public interface PaneBasedSelectionWizardDescription extends AbstractToolDescrip
      * Sets the value of the
      * '{@link org.eclipse.sirius.viewpoint.description.tool.PaneBasedSelectionWizardDescription#getWindowTitle
      * <em>Window Title</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Window Title</em>' attribute.
      * @see #getWindowTitle()
@@ -231,7 +231,7 @@ public interface PaneBasedSelectionWizardDescription extends AbstractToolDescrip
      * description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Window Image Path</em>' attribute.
      * @see #setWindowImagePath(String)
      * @see org.eclipse.sirius.viewpoint.description.tool.ToolPackage#getPaneBasedSelectionWizardDescription_WindowImagePath()
@@ -244,7 +244,7 @@ public interface PaneBasedSelectionWizardDescription extends AbstractToolDescrip
      * Sets the value of the
      * '{@link org.eclipse.sirius.viewpoint.description.tool.PaneBasedSelectionWizardDescription#getWindowImagePath
      * <em>Window Image Path</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Window Image Path</em>' attribute.
      * @see #getWindowImagePath()
@@ -259,7 +259,7 @@ public interface PaneBasedSelectionWizardDescription extends AbstractToolDescrip
      * here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Message</em>' attribute.
      * @see #setMessage(String)
      * @see org.eclipse.sirius.viewpoint.description.tool.ToolPackage#getPaneBasedSelectionWizardDescription_Message()
@@ -272,7 +272,7 @@ public interface PaneBasedSelectionWizardDescription extends AbstractToolDescrip
      * Sets the value of the
      * '{@link org.eclipse.sirius.viewpoint.description.tool.PaneBasedSelectionWizardDescription#getMessage
      * <em>Message</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Message</em>' attribute.
      * @see #getMessage()
@@ -288,7 +288,7 @@ public interface PaneBasedSelectionWizardDescription extends AbstractToolDescrip
      * description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Choice Of Values Message</em>' attribute.
      * @see #setChoiceOfValuesMessage(String)
      * @see org.eclipse.sirius.viewpoint.description.tool.ToolPackage#getPaneBasedSelectionWizardDescription_ChoiceOfValuesMessage()
@@ -301,7 +301,7 @@ public interface PaneBasedSelectionWizardDescription extends AbstractToolDescrip
      * Sets the value of the
      * '{@link org.eclipse.sirius.viewpoint.description.tool.PaneBasedSelectionWizardDescription#getChoiceOfValuesMessage
      * <em>Choice Of Values Message</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Choice Of Values Message</em>' attribute.
      * @see #getChoiceOfValuesMessage()
@@ -316,7 +316,7 @@ public interface PaneBasedSelectionWizardDescription extends AbstractToolDescrip
      * description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Candidates Expression</em>' attribute.
      * @see #setCandidatesExpression(String)
      * @see org.eclipse.sirius.viewpoint.description.tool.ToolPackage#getPaneBasedSelectionWizardDescription_CandidatesExpression()
@@ -334,7 +334,7 @@ public interface PaneBasedSelectionWizardDescription extends AbstractToolDescrip
      * Sets the value of the
      * '{@link org.eclipse.sirius.viewpoint.description.tool.PaneBasedSelectionWizardDescription#getCandidatesExpression
      * <em>Candidates Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Candidates Expression</em>' attribute.
      * @see #getCandidatesExpression()
@@ -359,7 +359,7 @@ public interface PaneBasedSelectionWizardDescription extends AbstractToolDescrip
      * Sets the value of the
      * '{@link org.eclipse.sirius.viewpoint.description.tool.PaneBasedSelectionWizardDescription#isTree <em>Tree</em>}'
      * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Tree</em>' attribute.
      * @see #isTree()
@@ -374,7 +374,7 @@ public interface PaneBasedSelectionWizardDescription extends AbstractToolDescrip
      * description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Root Expression</em>' attribute.
      * @see #setRootExpression(String)
      * @see org.eclipse.sirius.viewpoint.description.tool.ToolPackage#getPaneBasedSelectionWizardDescription_RootExpression()
@@ -392,7 +392,7 @@ public interface PaneBasedSelectionWizardDescription extends AbstractToolDescrip
      * Sets the value of the
      * '{@link org.eclipse.sirius.viewpoint.description.tool.PaneBasedSelectionWizardDescription#getRootExpression
      * <em>Root Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Root Expression</em>' attribute.
      * @see #getRootExpression()
@@ -407,7 +407,7 @@ public interface PaneBasedSelectionWizardDescription extends AbstractToolDescrip
      * description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Children Expression</em>' attribute.
      * @see #setChildrenExpression(String)
      * @see org.eclipse.sirius.viewpoint.description.tool.ToolPackage#getPaneBasedSelectionWizardDescription_ChildrenExpression()
@@ -425,7 +425,7 @@ public interface PaneBasedSelectionWizardDescription extends AbstractToolDescrip
      * Sets the value of the
      * '{@link org.eclipse.sirius.viewpoint.description.tool.PaneBasedSelectionWizardDescription#getChildrenExpression
      * <em>Children Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Children Expression</em>' attribute.
      * @see #getChildrenExpression()
@@ -441,7 +441,7 @@ public interface PaneBasedSelectionWizardDescription extends AbstractToolDescrip
      * description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Selected Values Message</em>' attribute.
      * @see #setSelectedValuesMessage(String)
      * @see org.eclipse.sirius.viewpoint.description.tool.ToolPackage#getPaneBasedSelectionWizardDescription_SelectedValuesMessage()
@@ -454,7 +454,7 @@ public interface PaneBasedSelectionWizardDescription extends AbstractToolDescrip
      * Sets the value of the
      * '{@link org.eclipse.sirius.viewpoint.description.tool.PaneBasedSelectionWizardDescription#getSelectedValuesMessage
      * <em>Selected Values Message</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Selected Values Message</em>' attribute.
      * @see #getSelectedValuesMessage()
@@ -469,7 +469,7 @@ public interface PaneBasedSelectionWizardDescription extends AbstractToolDescrip
      * more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Pre Selected Candidates Expression</em>' attribute.
      * @see #setPreSelectedCandidatesExpression(String)
      * @see org.eclipse.sirius.viewpoint.description.tool.ToolPackage#getPaneBasedSelectionWizardDescription_PreSelectedCandidatesExpression()
@@ -487,7 +487,7 @@ public interface PaneBasedSelectionWizardDescription extends AbstractToolDescrip
      * Sets the value of the
      * '{@link org.eclipse.sirius.viewpoint.description.tool.PaneBasedSelectionWizardDescription#getPreSelectedCandidatesExpression
      * <em>Pre Selected Candidates Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Pre Selected Candidates Expression</em>' attribute.
      * @see #getPreSelectedCandidatesExpression()

@@ -48,7 +48,7 @@ public interface MetamodelExtensionSetting extends EObject {
      * Sets the value of the
      * '{@link org.eclipse.sirius.viewpoint.description.MetamodelExtensionSetting#getExtensionGroup <em>Extension
      * Group</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Extension Group</em>' reference.
      * @see #getExtensionGroup()

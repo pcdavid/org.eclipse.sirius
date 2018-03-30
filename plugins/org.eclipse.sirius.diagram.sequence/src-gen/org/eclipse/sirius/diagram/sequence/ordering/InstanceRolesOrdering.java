@@ -38,7 +38,7 @@ public interface InstanceRolesOrdering extends EObject {
      * of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Semantic Instance Roles</em>' reference list.
      * @see org.eclipse.sirius.diagram.sequence.ordering.OrderingPackage#getInstanceRolesOrdering_SemanticInstanceRoles()
      * @model

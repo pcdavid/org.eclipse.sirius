@@ -48,7 +48,7 @@ public interface HideLabelCapabilityStyleDescription extends EObject {
      * Sets the value of the
      * '{@link org.eclipse.sirius.diagram.description.style.HideLabelCapabilityStyleDescription#isHideLabelByDefault
      * <em>Hide Label By Default</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Hide Label By Default</em>' attribute.
      * @see #isHideLabelByDefault()

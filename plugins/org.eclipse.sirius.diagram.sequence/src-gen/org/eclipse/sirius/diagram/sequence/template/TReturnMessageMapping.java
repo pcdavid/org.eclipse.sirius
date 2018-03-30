@@ -36,7 +36,7 @@ public interface TReturnMessageMapping extends TMessageMapping {
      * description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Invocation Mapping</em>' reference.
      * @see #setInvocationMapping(TBasicMessageMapping)
      * @see org.eclipse.sirius.diagram.sequence.template.TemplatePackage#getTReturnMessageMapping_InvocationMapping()
@@ -49,7 +49,7 @@ public interface TReturnMessageMapping extends TMessageMapping {
      * Sets the value of the
      * '{@link org.eclipse.sirius.diagram.sequence.template.TReturnMessageMapping#getInvocationMapping <em>Invocation
      * Mapping</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Invocation Mapping</em>' reference.
      * @see #getInvocationMapping()
@@ -65,7 +65,7 @@ public interface TReturnMessageMapping extends TMessageMapping {
      * be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Invocation Message Finder Expression</em>' attribute.
      * @see #setInvocationMessageFinderExpression(String)
      * @see org.eclipse.sirius.diagram.sequence.template.TemplatePackage#getTReturnMessageMapping_InvocationMessageFinderExpression()
@@ -79,7 +79,7 @@ public interface TReturnMessageMapping extends TMessageMapping {
      * Sets the value of the
      * '{@link org.eclipse.sirius.diagram.sequence.template.TReturnMessageMapping#getInvocationMessageFinderExpression
      * <em>Invocation Message Finder Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Invocation Message Finder Expression</em>' attribute.
      * @see #getInvocationMessageFinderExpression()

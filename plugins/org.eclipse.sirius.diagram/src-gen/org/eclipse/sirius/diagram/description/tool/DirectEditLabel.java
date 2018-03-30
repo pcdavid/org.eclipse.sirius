@@ -54,7 +54,7 @@ public interface DirectEditLabel extends MappingBasedToolDescription {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.diagram.description.tool.DirectEditLabel#getMask <em>Mask</em>}'
      * containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Mask</em>' containment reference.
      * @see #getMask()
@@ -77,7 +77,7 @@ public interface DirectEditLabel extends MappingBasedToolDescription {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.diagram.description.tool.DirectEditLabel#getInitialOperation
      * <em>Initial Operation</em>}' containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Initial Operation</em>' containment reference.
      * @see #getInitialOperation()
@@ -105,7 +105,7 @@ public interface DirectEditLabel extends MappingBasedToolDescription {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.diagram.description.tool.DirectEditLabel#getInputLabelExpression
      * <em>Input Label Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Input Label Expression</em>' attribute.
      * @see #getInputLabelExpression()
@@ -115,7 +115,7 @@ public interface DirectEditLabel extends MappingBasedToolDescription {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @model kind="operation" required="true"
      * @generated
      */

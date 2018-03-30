@@ -36,7 +36,7 @@ public class EnumLayoutOptionImpl extends EnumOptionImpl implements EnumLayoutOp
     /**
      * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @see #getValue()
      * @generated
      * @ordered
@@ -45,7 +45,7 @@ public class EnumLayoutOptionImpl extends EnumOptionImpl implements EnumLayoutOp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected EnumLayoutOptionImpl() {
@@ -54,7 +54,7 @@ public class EnumLayoutOptionImpl extends EnumOptionImpl implements EnumLayoutOp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -64,7 +64,7 @@ public class EnumLayoutOptionImpl extends EnumOptionImpl implements EnumLayoutOp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -91,7 +91,7 @@ public class EnumLayoutOptionImpl extends EnumOptionImpl implements EnumLayoutOp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public EnumLayoutValue basicGetValue() {
@@ -100,7 +100,7 @@ public class EnumLayoutOptionImpl extends EnumOptionImpl implements EnumLayoutOp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public NotificationChain basicSetValue(EnumLayoutValue newValue, NotificationChain msgs) {
@@ -119,7 +119,7 @@ public class EnumLayoutOptionImpl extends EnumOptionImpl implements EnumLayoutOp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -143,7 +143,7 @@ public class EnumLayoutOptionImpl extends EnumOptionImpl implements EnumLayoutOp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -157,7 +157,7 @@ public class EnumLayoutOptionImpl extends EnumOptionImpl implements EnumLayoutOp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -174,7 +174,7 @@ public class EnumLayoutOptionImpl extends EnumOptionImpl implements EnumLayoutOp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -190,7 +190,7 @@ public class EnumLayoutOptionImpl extends EnumOptionImpl implements EnumLayoutOp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -205,7 +205,7 @@ public class EnumLayoutOptionImpl extends EnumOptionImpl implements EnumLayoutOp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

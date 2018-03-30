@@ -47,7 +47,7 @@ public interface TypedVariable extends InteractiveVariableDescription, SubVariab
     /**
      * Sets the value of the '{@link org.eclipse.sirius.viewpoint.description.TypedVariable#getDefaultValueExpression
      * <em>Default Value Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Default Value Expression</em>' attribute.
      * @see #getDefaultValueExpression()
@@ -74,7 +74,7 @@ public interface TypedVariable extends InteractiveVariableDescription, SubVariab
     /**
      * Sets the value of the '{@link org.eclipse.sirius.viewpoint.description.TypedVariable#getValueType <em>Value
      * Type</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Value Type</em>' reference.
      * @see #getValueType()

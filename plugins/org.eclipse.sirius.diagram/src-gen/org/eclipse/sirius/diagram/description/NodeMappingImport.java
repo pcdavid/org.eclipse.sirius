@@ -49,7 +49,7 @@ public interface NodeMappingImport extends NodeMapping, AbstractMappingImport {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.diagram.description.NodeMappingImport#getImportedMapping
      * <em>Imported Mapping</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Imported Mapping</em>' reference.
      * @see #getImportedMapping()

@@ -38,7 +38,7 @@ public class ConditionalNodeStyleDescriptionImpl extends ConditionalStyleDescrip
     /**
      * The cached value of the '{@link #getStyle() <em>Style</em>}' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @see #getStyle()
      * @generated
      * @ordered
@@ -47,7 +47,7 @@ public class ConditionalNodeStyleDescriptionImpl extends ConditionalStyleDescrip
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected ConditionalNodeStyleDescriptionImpl() {
@@ -56,7 +56,7 @@ public class ConditionalNodeStyleDescriptionImpl extends ConditionalStyleDescrip
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -66,7 +66,7 @@ public class ConditionalNodeStyleDescriptionImpl extends ConditionalStyleDescrip
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -93,7 +93,7 @@ public class ConditionalNodeStyleDescriptionImpl extends ConditionalStyleDescrip
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public NodeStyleDescription basicGetStyle() {
@@ -102,7 +102,7 @@ public class ConditionalNodeStyleDescriptionImpl extends ConditionalStyleDescrip
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public NotificationChain basicSetStyle(NodeStyleDescription newStyle, NotificationChain msgs) {
@@ -121,7 +121,7 @@ public class ConditionalNodeStyleDescriptionImpl extends ConditionalStyleDescrip
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -145,7 +145,7 @@ public class ConditionalNodeStyleDescriptionImpl extends ConditionalStyleDescrip
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -159,7 +159,7 @@ public class ConditionalNodeStyleDescriptionImpl extends ConditionalStyleDescrip
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -176,7 +176,7 @@ public class ConditionalNodeStyleDescriptionImpl extends ConditionalStyleDescrip
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -191,7 +191,7 @@ public class ConditionalNodeStyleDescriptionImpl extends ConditionalStyleDescrip
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -206,7 +206,7 @@ public class ConditionalNodeStyleDescriptionImpl extends ConditionalStyleDescrip
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

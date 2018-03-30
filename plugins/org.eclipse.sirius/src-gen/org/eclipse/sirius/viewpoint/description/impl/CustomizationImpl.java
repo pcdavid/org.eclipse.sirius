@@ -40,7 +40,7 @@ public class CustomizationImpl extends MinimalEObjectImpl.Container implements C
     /**
      * The cached value of the '{@link #getVsmElementCustomizations() <em>Vsm Element Customizations</em>}' containment
      * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getVsmElementCustomizations()
      * @generated
      * @ordered
@@ -49,7 +49,7 @@ public class CustomizationImpl extends MinimalEObjectImpl.Container implements C
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected CustomizationImpl() {
@@ -58,7 +58,7 @@ public class CustomizationImpl extends MinimalEObjectImpl.Container implements C
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -68,7 +68,7 @@ public class CustomizationImpl extends MinimalEObjectImpl.Container implements C
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -82,7 +82,7 @@ public class CustomizationImpl extends MinimalEObjectImpl.Container implements C
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -96,7 +96,7 @@ public class CustomizationImpl extends MinimalEObjectImpl.Container implements C
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -110,7 +110,7 @@ public class CustomizationImpl extends MinimalEObjectImpl.Container implements C
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -127,7 +127,7 @@ public class CustomizationImpl extends MinimalEObjectImpl.Container implements C
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -142,7 +142,7 @@ public class CustomizationImpl extends MinimalEObjectImpl.Container implements C
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

@@ -66,7 +66,7 @@ public interface EdgeStyleDescription extends StyleDescription {
     /**
      * Returns the value of the '<em><b>Stroke Color</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
      * <!-- begin-model-doc --> The color of the edge. <!-- end-model-doc -->
-     *
+     * 
      * @return the value of the '<em>Stroke Color</em>' reference.
      * @see #setStrokeColor(ColorDescription)
      * @see org.eclipse.sirius.diagram.description.style.StylePackage#getEdgeStyleDescription_StrokeColor()
@@ -78,7 +78,7 @@ public interface EdgeStyleDescription extends StyleDescription {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.diagram.description.style.EdgeStyleDescription#getStrokeColor
      * <em>Stroke Color</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Stroke Color</em>' reference.
      * @see #getStrokeColor()
@@ -103,7 +103,7 @@ public interface EdgeStyleDescription extends StyleDescription {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.diagram.description.style.EdgeStyleDescription#getLineStyle
      * <em>Line Style</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Line Style</em>' attribute.
      * @see org.eclipse.sirius.diagram.LineStyle
@@ -130,7 +130,7 @@ public interface EdgeStyleDescription extends StyleDescription {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.diagram.description.style.EdgeStyleDescription#getSourceArrow
      * <em>Source Arrow</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Source Arrow</em>' attribute.
      * @see org.eclipse.sirius.diagram.EdgeArrows
@@ -156,7 +156,7 @@ public interface EdgeStyleDescription extends StyleDescription {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.diagram.description.style.EdgeStyleDescription#getTargetArrow
      * <em>Target Arrow</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Target Arrow</em>' attribute.
      * @see org.eclipse.sirius.diagram.EdgeArrows
@@ -187,7 +187,7 @@ public interface EdgeStyleDescription extends StyleDescription {
      * Sets the value of the
      * '{@link org.eclipse.sirius.diagram.description.style.EdgeStyleDescription#getSizeComputationExpression <em>Size
      * Computation Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Size Computation Expression</em>' attribute.
      * @see #getSizeComputationExpression()
@@ -212,7 +212,7 @@ public interface EdgeStyleDescription extends StyleDescription {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.diagram.description.style.EdgeStyleDescription#getRoutingStyle
      * <em>Routing Style</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Routing Style</em>' attribute.
      * @see org.eclipse.sirius.diagram.EdgeRouting
@@ -238,7 +238,7 @@ public interface EdgeStyleDescription extends StyleDescription {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.diagram.description.style.EdgeStyleDescription#getFoldingStyle
      * <em>Folding Style</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Folding Style</em>' attribute.
      * @see org.eclipse.sirius.diagram.description.FoldingStyle
@@ -268,7 +268,7 @@ public interface EdgeStyleDescription extends StyleDescription {
      * Sets the value of the
      * '{@link org.eclipse.sirius.diagram.description.style.EdgeStyleDescription#getBeginLabelStyleDescription <em>Begin
      * Label Style Description</em>}' containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Begin Label Style Description</em>' containment reference.
      * @see #getBeginLabelStyleDescription()
@@ -297,7 +297,7 @@ public interface EdgeStyleDescription extends StyleDescription {
      * Sets the value of the
      * '{@link org.eclipse.sirius.diagram.description.style.EdgeStyleDescription#getCenterLabelStyleDescription
      * <em>Center Label Style Description</em>}' containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Center Label Style Description</em>' containment reference.
      * @see #getCenterLabelStyleDescription()
@@ -313,7 +313,7 @@ public interface EdgeStyleDescription extends StyleDescription {
      * should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>End Label Style Description</em>' containment reference.
      * @see #setEndLabelStyleDescription(EndLabelStyleDescription)
      * @see org.eclipse.sirius.diagram.description.style.StylePackage#getEdgeStyleDescription_EndLabelStyleDescription()
@@ -326,7 +326,7 @@ public interface EdgeStyleDescription extends StyleDescription {
      * Sets the value of the
      * '{@link org.eclipse.sirius.diagram.description.style.EdgeStyleDescription#getEndLabelStyleDescription <em>End
      * Label Style Description</em>}' containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>End Label Style Description</em>' containment reference.
      * @see #getEndLabelStyleDescription()
@@ -352,7 +352,7 @@ public interface EdgeStyleDescription extends StyleDescription {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.diagram.description.style.EdgeStyleDescription#getEndsCentering
      * <em>Ends Centering</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Ends Centering</em>' attribute.
      * @see org.eclipse.sirius.diagram.description.CenteringStyle

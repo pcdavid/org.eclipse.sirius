@@ -36,7 +36,7 @@ public interface DNodeContainer extends DDiagramElementContainer {
      * Returns the value of the '<em><b>Owned Diagram Elements</b></em>' containment reference list. The list contents
      * are of type {@link org.eclipse.sirius.diagram.DDiagramElement}. <!-- begin-user-doc --> <!-- end-user-doc -->
      * <!-- begin-model-doc --> elements owned by this container. <!-- end-model-doc -->
-     *
+     * 
      * @return the value of the '<em>Owned Diagram Elements</em>' containment reference list.
      * @see org.eclipse.sirius.diagram.DiagramPackage#getDNodeContainer_OwnedDiagramElements()
      * @model containment="true" resolveProxies="true"
@@ -53,7 +53,7 @@ public interface DNodeContainer extends DDiagramElementContainer {
      * description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Children Presentation</em>' attribute.
      * @see org.eclipse.sirius.diagram.ContainerLayout
      * @see #setChildrenPresentation(ContainerLayout)
@@ -66,7 +66,7 @@ public interface DNodeContainer extends DDiagramElementContainer {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.diagram.DNodeContainer#getChildrenPresentation <em>Children
      * Presentation</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Children Presentation</em>' attribute.
      * @see org.eclipse.sirius.diagram.ContainerLayout

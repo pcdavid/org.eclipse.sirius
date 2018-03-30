@@ -51,7 +51,7 @@ public interface ContainerCreationDescription extends MappingBasedToolDescriptio
      * Returns the value of the '<em><b>Container Mappings</b></em>' reference list. The list contents are of type
      * {@link org.eclipse.sirius.diagram.description.ContainerMapping}. <!-- begin-user-doc --> <!-- end-user-doc -->
      * <!-- begin-model-doc --> The ContainerMapping to use. <!-- end-model-doc -->
-     *
+     * 
      * @return the value of the '<em>Container Mappings</em>' reference list.
      * @see org.eclipse.sirius.diagram.description.tool.ToolPackage#getContainerCreationDescription_ContainerMappings()
      * @model required="true"
@@ -76,7 +76,7 @@ public interface ContainerCreationDescription extends MappingBasedToolDescriptio
      * Sets the value of the
      * '{@link org.eclipse.sirius.diagram.description.tool.ContainerCreationDescription#getVariable <em>Variable</em>}'
      * containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Variable</em>' containment reference.
      * @see #getVariable()
@@ -102,7 +102,7 @@ public interface ContainerCreationDescription extends MappingBasedToolDescriptio
      * Sets the value of the
      * '{@link org.eclipse.sirius.diagram.description.tool.ContainerCreationDescription#getViewVariable <em>View
      * Variable</em>}' containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>View Variable</em>' containment reference.
      * @see #getViewVariable()
@@ -126,7 +126,7 @@ public interface ContainerCreationDescription extends MappingBasedToolDescriptio
      * Sets the value of the
      * '{@link org.eclipse.sirius.diagram.description.tool.ContainerCreationDescription#getInitialOperation <em>Initial
      * Operation</em>}' containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Initial Operation</em>' containment reference.
      * @see #getInitialOperation()
@@ -152,7 +152,7 @@ public interface ContainerCreationDescription extends MappingBasedToolDescriptio
      * Sets the value of the
      * '{@link org.eclipse.sirius.diagram.description.tool.ContainerCreationDescription#getIconPath <em>Icon Path</em>}'
      * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Icon Path</em>' attribute.
      * @see #getIconPath()
@@ -167,7 +167,7 @@ public interface ContainerCreationDescription extends MappingBasedToolDescriptio
      * creation
      *
      * <!-- end-model-doc -->
-     *
+     * 
      * @return the value of the '<em>Extra Mappings</em>' reference list.
      * @see org.eclipse.sirius.diagram.description.tool.ToolPackage#getContainerCreationDescription_ExtraMappings()
      * @model

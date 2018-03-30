@@ -37,7 +37,7 @@ public interface EnumSetLayoutOption extends EnumOption {
      * description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Values</em>' containment reference list.
      * @see org.eclipse.sirius.diagram.description.DescriptionPackage#getEnumSetLayoutOption_Values()
      * @model containment="true" resolveProxies="true"

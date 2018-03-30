@@ -42,7 +42,7 @@ public interface LabelBorderStyleDescription extends EObject {
      * If the meaning of the '<em>Id</em>' attribute isn't clear, there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Id</em>' attribute.
      * @see #setId(String)
      * @see org.eclipse.sirius.viewpoint.description.style.StylePackage#getLabelBorderStyleDescription_Id()
@@ -54,7 +54,7 @@ public interface LabelBorderStyleDescription extends EObject {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.viewpoint.description.style.LabelBorderStyleDescription#getId
      * <em>Id</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Id</em>' attribute.
      * @see #getId()
@@ -68,7 +68,7 @@ public interface LabelBorderStyleDescription extends EObject {
      * If the meaning of the '<em>Name</em>' attribute isn't clear, there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Name</em>' attribute.
      * @see #setName(String)
      * @see org.eclipse.sirius.viewpoint.description.style.StylePackage#getLabelBorderStyleDescription_Name()
@@ -80,7 +80,7 @@ public interface LabelBorderStyleDescription extends EObject {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.viewpoint.description.style.LabelBorderStyleDescription#getName
      * <em>Name</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Name</em>' attribute.
      * @see #getName()
@@ -95,7 +95,7 @@ public interface LabelBorderStyleDescription extends EObject {
      * description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Corner Height</em>' attribute.
      * @see #setCornerHeight(int)
      * @see org.eclipse.sirius.viewpoint.description.style.StylePackage#getLabelBorderStyleDescription_CornerHeight()
@@ -108,7 +108,7 @@ public interface LabelBorderStyleDescription extends EObject {
      * Sets the value of the
      * '{@link org.eclipse.sirius.viewpoint.description.style.LabelBorderStyleDescription#getCornerHeight <em>Corner
      * Height</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Corner Height</em>' attribute.
      * @see #getCornerHeight()
@@ -123,7 +123,7 @@ public interface LabelBorderStyleDescription extends EObject {
      * here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Corner Width</em>' attribute.
      * @see #setCornerWidth(int)
      * @see org.eclipse.sirius.viewpoint.description.style.StylePackage#getLabelBorderStyleDescription_CornerWidth()
@@ -136,7 +136,7 @@ public interface LabelBorderStyleDescription extends EObject {
      * Sets the value of the
      * '{@link org.eclipse.sirius.viewpoint.description.style.LabelBorderStyleDescription#getCornerWidth <em>Corner
      * Width</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Corner Width</em>' attribute.
      * @see #getCornerWidth()

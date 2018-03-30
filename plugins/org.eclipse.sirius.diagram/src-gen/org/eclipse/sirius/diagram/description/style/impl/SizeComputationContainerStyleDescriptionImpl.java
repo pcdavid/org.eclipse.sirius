@@ -37,7 +37,7 @@ public abstract class SizeComputationContainerStyleDescriptionImpl extends Minim
     /**
      * The default value of the '{@link #getWidthComputationExpression() <em>Width Computation Expression</em>}'
      * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getWidthComputationExpression()
      * @generated
      * @ordered
@@ -47,7 +47,7 @@ public abstract class SizeComputationContainerStyleDescriptionImpl extends Minim
     /**
      * The cached value of the '{@link #getWidthComputationExpression() <em>Width Computation Expression</em>}'
      * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getWidthComputationExpression()
      * @generated
      * @ordered
@@ -57,7 +57,7 @@ public abstract class SizeComputationContainerStyleDescriptionImpl extends Minim
     /**
      * The default value of the '{@link #getHeightComputationExpression() <em>Height Computation Expression</em>}'
      * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getHeightComputationExpression()
      * @generated
      * @ordered
@@ -67,7 +67,7 @@ public abstract class SizeComputationContainerStyleDescriptionImpl extends Minim
     /**
      * The cached value of the '{@link #getHeightComputationExpression() <em>Height Computation Expression</em>}'
      * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getHeightComputationExpression()
      * @generated
      * @ordered
@@ -76,7 +76,7 @@ public abstract class SizeComputationContainerStyleDescriptionImpl extends Minim
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected SizeComputationContainerStyleDescriptionImpl() {
@@ -85,7 +85,7 @@ public abstract class SizeComputationContainerStyleDescriptionImpl extends Minim
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -95,7 +95,7 @@ public abstract class SizeComputationContainerStyleDescriptionImpl extends Minim
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -105,7 +105,7 @@ public abstract class SizeComputationContainerStyleDescriptionImpl extends Minim
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -120,7 +120,7 @@ public abstract class SizeComputationContainerStyleDescriptionImpl extends Minim
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -130,7 +130,7 @@ public abstract class SizeComputationContainerStyleDescriptionImpl extends Minim
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -145,7 +145,7 @@ public abstract class SizeComputationContainerStyleDescriptionImpl extends Minim
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -161,7 +161,7 @@ public abstract class SizeComputationContainerStyleDescriptionImpl extends Minim
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -179,7 +179,7 @@ public abstract class SizeComputationContainerStyleDescriptionImpl extends Minim
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -197,7 +197,7 @@ public abstract class SizeComputationContainerStyleDescriptionImpl extends Minim
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -215,7 +215,7 @@ public abstract class SizeComputationContainerStyleDescriptionImpl extends Minim
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

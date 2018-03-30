@@ -48,7 +48,7 @@ public interface Ellipse extends NodeStyle {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.diagram.Ellipse#getHorizontalDiameter <em>Horizontal
      * Diameter</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Horizontal Diameter</em>' attribute.
      * @see #getHorizontalDiameter()
@@ -72,7 +72,7 @@ public interface Ellipse extends NodeStyle {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.diagram.Ellipse#getVerticalDiameter <em>Vertical Diameter</em>}'
      * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Vertical Diameter</em>' attribute.
      * @see #getVerticalDiameter()

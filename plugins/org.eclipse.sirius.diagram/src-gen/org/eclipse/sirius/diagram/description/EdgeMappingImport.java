@@ -52,7 +52,7 @@ public interface EdgeMappingImport extends DocumentedElement, IEdgeMapping, Iden
     /**
      * Sets the value of the '{@link org.eclipse.sirius.diagram.description.EdgeMappingImport#getImportedMapping
      * <em>Imported Mapping</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Imported Mapping</em>' reference.
      * @see #getImportedMapping()
@@ -88,7 +88,7 @@ public interface EdgeMappingImport extends DocumentedElement, IEdgeMapping, Iden
     /**
      * Sets the value of the '{@link org.eclipse.sirius.diagram.description.EdgeMappingImport#isInheritsAncestorFilters
      * <em>Inherits Ancestor Filters</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Inherits Ancestor Filters</em>' attribute.
      * @see #isInheritsAncestorFilters()

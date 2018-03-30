@@ -38,7 +38,7 @@ import org.eclipse.sirius.viewpoint.description.provider.DocumentedElementItemPr
 public class DRepresentationItemProvider extends DocumentedElementItemProvider {
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public DRepresentationItemProvider(AdapterFactory adapterFactory) {
@@ -47,7 +47,7 @@ public class DRepresentationItemProvider extends DocumentedElementItemProvider {
 
     /**
      * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -66,7 +66,7 @@ public class DRepresentationItemProvider extends DocumentedElementItemProvider {
     /**
      * This adds a property descriptor for the Owned Representation Elements feature. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addOwnedRepresentationElementsPropertyDescriptor(Object object) {
@@ -79,7 +79,7 @@ public class DRepresentationItemProvider extends DocumentedElementItemProvider {
     /**
      * This adds a property descriptor for the Representation Elements feature. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addRepresentationElementsPropertyDescriptor(Object object) {
@@ -91,7 +91,7 @@ public class DRepresentationItemProvider extends DocumentedElementItemProvider {
 
     /**
      * This adds a property descriptor for the Name feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addNamePropertyDescriptor(Object object) {
@@ -103,7 +103,7 @@ public class DRepresentationItemProvider extends DocumentedElementItemProvider {
 
     /**
      * This adds a property descriptor for the Uid feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addUidPropertyDescriptor(Object object) {
@@ -118,7 +118,7 @@ public class DRepresentationItemProvider extends DocumentedElementItemProvider {
      * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
      * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -134,7 +134,7 @@ public class DRepresentationItemProvider extends DocumentedElementItemProvider {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -147,7 +147,7 @@ public class DRepresentationItemProvider extends DocumentedElementItemProvider {
 
     /**
      * This returns the label text for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -185,7 +185,7 @@ public class DRepresentationItemProvider extends DocumentedElementItemProvider {
     /**
      * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that can be created
      * under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -201,7 +201,7 @@ public class DRepresentationItemProvider extends DocumentedElementItemProvider {
 
     /**
      * Return the resource locator for this item provider's resources. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

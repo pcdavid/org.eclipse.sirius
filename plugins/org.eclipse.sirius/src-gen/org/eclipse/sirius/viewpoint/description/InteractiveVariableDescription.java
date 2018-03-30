@@ -48,7 +48,7 @@ public interface InteractiveVariableDescription extends EObject {
      * Sets the value of the
      * '{@link org.eclipse.sirius.viewpoint.description.InteractiveVariableDescription#getUserDocumentation <em>User
      * Documentation</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>User Documentation</em>' attribute.
      * @see #getUserDocumentation()

@@ -66,7 +66,7 @@ public class DescriptionItemProviderAdapterFactory extends DescriptionAdapterFac
     /**
      * This keeps track of the root adapter factory that delegates to this adapter factory. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected ComposedAdapterFactory parentAdapterFactory;
@@ -74,7 +74,7 @@ public class DescriptionItemProviderAdapterFactory extends DescriptionAdapterFac
     /**
      * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected IChangeNotifier changeNotifier = new ChangeNotifier();
@@ -89,7 +89,7 @@ public class DescriptionItemProviderAdapterFactory extends DescriptionAdapterFac
 
     /**
      * This constructs an instance. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public DescriptionItemProviderAdapterFactory() {
@@ -104,7 +104,7 @@ public class DescriptionItemProviderAdapterFactory extends DescriptionAdapterFac
      * This keeps track of the one adapter used for all
      * {@link org.eclipse.sirius.diagram.description.DiagramDescription} instances. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected DiagramDescriptionItemProvider diagramDescriptionItemProvider;
@@ -128,7 +128,7 @@ public class DescriptionItemProviderAdapterFactory extends DescriptionAdapterFac
      * This keeps track of the one adapter used for all
      * {@link org.eclipse.sirius.diagram.description.DiagramImportDescription} instances. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected DiagramImportDescriptionItemProvider diagramImportDescriptionItemProvider;
@@ -152,7 +152,7 @@ public class DescriptionItemProviderAdapterFactory extends DescriptionAdapterFac
      * This keeps track of the one adapter used for all
      * {@link org.eclipse.sirius.diagram.description.DiagramExtensionDescription} instances. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected DiagramExtensionDescriptionItemProvider diagramExtensionDescriptionItemProvider;
@@ -175,7 +175,7 @@ public class DescriptionItemProviderAdapterFactory extends DescriptionAdapterFac
     /**
      * This keeps track of the one adapter used for all {@link org.eclipse.sirius.diagram.description.NodeMapping}
      * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected NodeMappingItemProvider nodeMappingItemProvider;
@@ -183,7 +183,7 @@ public class DescriptionItemProviderAdapterFactory extends DescriptionAdapterFac
     /**
      * This creates an adapter for a {@link org.eclipse.sirius.diagram.description.NodeMapping}. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -198,7 +198,7 @@ public class DescriptionItemProviderAdapterFactory extends DescriptionAdapterFac
     /**
      * This keeps track of the one adapter used for all {@link org.eclipse.sirius.diagram.description.ContainerMapping}
      * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected ContainerMappingItemProvider containerMappingItemProvider;
@@ -221,7 +221,7 @@ public class DescriptionItemProviderAdapterFactory extends DescriptionAdapterFac
     /**
      * This keeps track of the one adapter used for all {@link org.eclipse.sirius.diagram.description.NodeMappingImport}
      * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected NodeMappingImportItemProvider nodeMappingImportItemProvider;
@@ -245,7 +245,7 @@ public class DescriptionItemProviderAdapterFactory extends DescriptionAdapterFac
      * This keeps track of the one adapter used for all
      * {@link org.eclipse.sirius.diagram.description.ContainerMappingImport} instances. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected ContainerMappingImportItemProvider containerMappingImportItemProvider;
@@ -268,7 +268,7 @@ public class DescriptionItemProviderAdapterFactory extends DescriptionAdapterFac
     /**
      * This keeps track of the one adapter used for all {@link org.eclipse.sirius.diagram.description.EdgeMapping}
      * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected EdgeMappingItemProvider edgeMappingItemProvider;
@@ -276,7 +276,7 @@ public class DescriptionItemProviderAdapterFactory extends DescriptionAdapterFac
     /**
      * This creates an adapter for a {@link org.eclipse.sirius.diagram.description.EdgeMapping}. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -291,7 +291,7 @@ public class DescriptionItemProviderAdapterFactory extends DescriptionAdapterFac
     /**
      * This keeps track of the one adapter used for all {@link org.eclipse.sirius.diagram.description.EdgeMappingImport}
      * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected EdgeMappingImportItemProvider edgeMappingImportItemProvider;
@@ -315,7 +315,7 @@ public class DescriptionItemProviderAdapterFactory extends DescriptionAdapterFac
      * This keeps track of the one adapter used for all
      * {@link org.eclipse.sirius.diagram.description.ConditionalNodeStyleDescription} instances. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected ConditionalNodeStyleDescriptionItemProvider conditionalNodeStyleDescriptionItemProvider;
@@ -323,7 +323,7 @@ public class DescriptionItemProviderAdapterFactory extends DescriptionAdapterFac
     /**
      * This creates an adapter for a {@link org.eclipse.sirius.diagram.description.ConditionalNodeStyleDescription}.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -339,7 +339,7 @@ public class DescriptionItemProviderAdapterFactory extends DescriptionAdapterFac
      * This keeps track of the one adapter used for all
      * {@link org.eclipse.sirius.diagram.description.ConditionalEdgeStyleDescription} instances. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected ConditionalEdgeStyleDescriptionItemProvider conditionalEdgeStyleDescriptionItemProvider;
@@ -347,7 +347,7 @@ public class DescriptionItemProviderAdapterFactory extends DescriptionAdapterFac
     /**
      * This creates an adapter for a {@link org.eclipse.sirius.diagram.description.ConditionalEdgeStyleDescription}.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -372,7 +372,7 @@ public class DescriptionItemProviderAdapterFactory extends DescriptionAdapterFac
      * This creates an adapter for a
      * {@link org.eclipse.sirius.diagram.description.ConditionalContainerStyleDescription}. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -387,7 +387,7 @@ public class DescriptionItemProviderAdapterFactory extends DescriptionAdapterFac
     /**
      * This keeps track of the one adapter used for all {@link org.eclipse.sirius.diagram.description.OrderedTreeLayout}
      * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected OrderedTreeLayoutItemProvider orderedTreeLayoutItemProvider;
@@ -410,7 +410,7 @@ public class DescriptionItemProviderAdapterFactory extends DescriptionAdapterFac
     /**
      * This keeps track of the one adapter used for all {@link org.eclipse.sirius.diagram.description.CompositeLayout}
      * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected CompositeLayoutItemProvider compositeLayoutItemProvider;
@@ -418,7 +418,7 @@ public class DescriptionItemProviderAdapterFactory extends DescriptionAdapterFac
     /**
      * This creates an adapter for a {@link org.eclipse.sirius.diagram.description.CompositeLayout}. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -434,7 +434,7 @@ public class DescriptionItemProviderAdapterFactory extends DescriptionAdapterFac
      * This keeps track of the one adapter used for all
      * {@link org.eclipse.sirius.diagram.description.CustomLayoutConfiguration} instances. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected CustomLayoutConfigurationItemProvider customLayoutConfigurationItemProvider;
@@ -458,7 +458,7 @@ public class DescriptionItemProviderAdapterFactory extends DescriptionAdapterFac
      * This keeps track of the one adapter used for all
      * {@link org.eclipse.sirius.diagram.description.BooleanLayoutOption} instances. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected BooleanLayoutOptionItemProvider booleanLayoutOptionItemProvider;
@@ -482,7 +482,7 @@ public class DescriptionItemProviderAdapterFactory extends DescriptionAdapterFac
      * This keeps track of the one adapter used for all
      * {@link org.eclipse.sirius.diagram.description.StringLayoutOption} instances. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected StringLayoutOptionItemProvider stringLayoutOptionItemProvider;
@@ -506,7 +506,7 @@ public class DescriptionItemProviderAdapterFactory extends DescriptionAdapterFac
      * This keeps track of the one adapter used for all
      * {@link org.eclipse.sirius.diagram.description.IntegerLayoutOption} instances. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected IntegerLayoutOptionItemProvider integerLayoutOptionItemProvider;
@@ -530,7 +530,7 @@ public class DescriptionItemProviderAdapterFactory extends DescriptionAdapterFac
      * This keeps track of the one adapter used for all
      * {@link org.eclipse.sirius.diagram.description.DoubleLayoutOption} instances. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected DoubleLayoutOptionItemProvider doubleLayoutOptionItemProvider;
@@ -553,7 +553,7 @@ public class DescriptionItemProviderAdapterFactory extends DescriptionAdapterFac
     /**
      * This keeps track of the one adapter used for all {@link org.eclipse.sirius.diagram.description.EnumLayoutOption}
      * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected EnumLayoutOptionItemProvider enumLayoutOptionItemProvider;
@@ -577,7 +577,7 @@ public class DescriptionItemProviderAdapterFactory extends DescriptionAdapterFac
      * This keeps track of the one adapter used for all
      * {@link org.eclipse.sirius.diagram.description.EnumSetLayoutOption} instances. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected EnumSetLayoutOptionItemProvider enumSetLayoutOptionItemProvider;
@@ -600,7 +600,7 @@ public class DescriptionItemProviderAdapterFactory extends DescriptionAdapterFac
     /**
      * This keeps track of the one adapter used for all {@link org.eclipse.sirius.diagram.description.EnumLayoutValue}
      * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected EnumLayoutValueItemProvider enumLayoutValueItemProvider;
@@ -624,7 +624,7 @@ public class DescriptionItemProviderAdapterFactory extends DescriptionAdapterFac
      * This keeps track of the one adapter used for all
      * {@link org.eclipse.sirius.diagram.description.MappingBasedDecoration} instances. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected MappingBasedDecorationItemProvider mappingBasedDecorationItemProvider;
@@ -647,7 +647,7 @@ public class DescriptionItemProviderAdapterFactory extends DescriptionAdapterFac
     /**
      * This keeps track of the one adapter used for all {@link org.eclipse.sirius.diagram.description.Layer} instances.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected LayerItemProvider layerItemProvider;
@@ -655,7 +655,7 @@ public class DescriptionItemProviderAdapterFactory extends DescriptionAdapterFac
     /**
      * This creates an adapter for a {@link org.eclipse.sirius.diagram.description.Layer}. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -670,7 +670,7 @@ public class DescriptionItemProviderAdapterFactory extends DescriptionAdapterFac
     /**
      * This keeps track of the one adapter used for all {@link org.eclipse.sirius.diagram.description.AdditionalLayer}
      * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected AdditionalLayerItemProvider additionalLayerItemProvider;
@@ -678,7 +678,7 @@ public class DescriptionItemProviderAdapterFactory extends DescriptionAdapterFac
     /**
      * This creates an adapter for a {@link org.eclipse.sirius.diagram.description.AdditionalLayer}. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -692,7 +692,7 @@ public class DescriptionItemProviderAdapterFactory extends DescriptionAdapterFac
 
     /**
      * This returns the root adapter factory that contains this factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -702,7 +702,7 @@ public class DescriptionItemProviderAdapterFactory extends DescriptionAdapterFac
 
     /**
      * This sets the composed adapter factory that contains this factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -712,7 +712,7 @@ public class DescriptionItemProviderAdapterFactory extends DescriptionAdapterFac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -723,7 +723,7 @@ public class DescriptionItemProviderAdapterFactory extends DescriptionAdapterFac
     /**
      * This implementation substitutes the factory itself as the key for the adapter. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -733,7 +733,7 @@ public class DescriptionItemProviderAdapterFactory extends DescriptionAdapterFac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -750,7 +750,7 @@ public class DescriptionItemProviderAdapterFactory extends DescriptionAdapterFac
 
     /**
      * This adds a listener. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -760,7 +760,7 @@ public class DescriptionItemProviderAdapterFactory extends DescriptionAdapterFac
 
     /**
      * This removes a listener. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -771,7 +771,7 @@ public class DescriptionItemProviderAdapterFactory extends DescriptionAdapterFac
     /**
      * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -785,7 +785,7 @@ public class DescriptionItemProviderAdapterFactory extends DescriptionAdapterFac
 
     /**
      * This disposes all of the item providers created by this factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -869,27 +869,27 @@ public class DescriptionItemProviderAdapterFactory extends DescriptionAdapterFac
 
     /**
      * A child creation extender for the {@link DescriptionPackage}. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public static class DescriptionChildCreationExtender implements IChildCreationExtender {
         /**
          * The switch for creating child descriptors specific to each extended class. <!-- begin-user-doc --> <!--
          * end-user-doc -->
-         *
+         * 
          * @generated
          */
         protected static class CreationSwitch extends DescriptionSwitch<Object> {
             /**
              * The child descriptors being populated. <!-- begin-user-doc --> <!-- end-user-doc -->
-             *
+             * 
              * @generated
              */
             protected List<Object> newChildDescriptors;
 
             /**
              * The domain in which to create the children. <!-- begin-user-doc --> <!-- end-user-doc -->
-             *
+             * 
              * @generated
              */
             protected EditingDomain editingDomain;
@@ -897,7 +897,7 @@ public class DescriptionItemProviderAdapterFactory extends DescriptionAdapterFac
             /**
              * Creates the a switch for populating child descriptors in the given domain. <!-- begin-user-doc --> <!--
              * end-user-doc -->
-             *
+             * 
              * @generated
              */
             CreationSwitch(List<Object> newChildDescriptors, EditingDomain editingDomain) {
@@ -928,7 +928,7 @@ public class DescriptionItemProviderAdapterFactory extends DescriptionAdapterFac
 
             /**
              * <!-- begin-user-doc --> <!-- end-user-doc -->
-             *
+             * 
              * @generated
              */
             public Object caseViewpointGen(Viewpoint object) {
@@ -943,7 +943,7 @@ public class DescriptionItemProviderAdapterFactory extends DescriptionAdapterFac
 
             /**
              * <!-- begin-user-doc --> <!-- end-user-doc -->
-             *
+             * 
              * @generated
              */
             @Override
@@ -956,7 +956,7 @@ public class DescriptionItemProviderAdapterFactory extends DescriptionAdapterFac
 
             /**
              * <!-- begin-user-doc --> <!-- end-user-doc -->
-             *
+             * 
              * @generated
              */
             protected CommandParameter createChildParameter(Object feature, Object child) {
@@ -967,7 +967,7 @@ public class DescriptionItemProviderAdapterFactory extends DescriptionAdapterFac
 
         /**
          * <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         @Override
@@ -979,7 +979,7 @@ public class DescriptionItemProviderAdapterFactory extends DescriptionAdapterFac
 
         /**
          * <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         @Override

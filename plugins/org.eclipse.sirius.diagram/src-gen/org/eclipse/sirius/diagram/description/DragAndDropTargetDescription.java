@@ -43,7 +43,7 @@ public interface DragAndDropTargetDescription extends EObject {
      * description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Drop Descriptions</em>' reference list.
      * @see org.eclipse.sirius.diagram.description.DescriptionPackage#getDragAndDropTargetDescription_DropDescriptions()
      * @model

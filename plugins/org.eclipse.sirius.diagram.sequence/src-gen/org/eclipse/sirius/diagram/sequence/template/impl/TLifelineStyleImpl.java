@@ -37,7 +37,7 @@ public class TLifelineStyleImpl extends TTransformerImpl implements TLifelineSty
     /**
      * The default value of the '{@link #getLifelineWidthComputationExpression() <em>Lifeline Width Computation
      * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getLifelineWidthComputationExpression()
      * @generated
      * @ordered
@@ -47,7 +47,7 @@ public class TLifelineStyleImpl extends TTransformerImpl implements TLifelineSty
     /**
      * The cached value of the '{@link #getLifelineWidthComputationExpression() <em>Lifeline Width Computation
      * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getLifelineWidthComputationExpression()
      * @generated
      * @ordered
@@ -57,7 +57,7 @@ public class TLifelineStyleImpl extends TTransformerImpl implements TLifelineSty
     /**
      * The cached value of the '{@link #getLifelineColor() <em>Lifeline Color</em>}' reference. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @see #getLifelineColor()
      * @generated
      * @ordered
@@ -66,7 +66,7 @@ public class TLifelineStyleImpl extends TTransformerImpl implements TLifelineSty
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected TLifelineStyleImpl() {
@@ -75,7 +75,7 @@ public class TLifelineStyleImpl extends TTransformerImpl implements TLifelineSty
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -85,7 +85,7 @@ public class TLifelineStyleImpl extends TTransformerImpl implements TLifelineSty
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -95,7 +95,7 @@ public class TLifelineStyleImpl extends TTransformerImpl implements TLifelineSty
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -110,7 +110,7 @@ public class TLifelineStyleImpl extends TTransformerImpl implements TLifelineSty
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -129,7 +129,7 @@ public class TLifelineStyleImpl extends TTransformerImpl implements TLifelineSty
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public ColorDescription basicGetLifelineColor() {
@@ -138,7 +138,7 @@ public class TLifelineStyleImpl extends TTransformerImpl implements TLifelineSty
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -152,7 +152,7 @@ public class TLifelineStyleImpl extends TTransformerImpl implements TLifelineSty
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -171,7 +171,7 @@ public class TLifelineStyleImpl extends TTransformerImpl implements TLifelineSty
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -189,7 +189,7 @@ public class TLifelineStyleImpl extends TTransformerImpl implements TLifelineSty
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -207,7 +207,7 @@ public class TLifelineStyleImpl extends TTransformerImpl implements TLifelineSty
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -224,7 +224,7 @@ public class TLifelineStyleImpl extends TTransformerImpl implements TLifelineSty
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

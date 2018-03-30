@@ -34,7 +34,7 @@ public interface EnumLayoutOption extends EnumOption {
      * description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Value</em>' containment reference.
      * @see #setValue(EnumLayoutValue)
      * @see org.eclipse.sirius.diagram.description.DescriptionPackage#getEnumLayoutOption_Value()
@@ -46,7 +46,7 @@ public interface EnumLayoutOption extends EnumOption {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.diagram.description.EnumLayoutOption#getValue <em>Value</em>}'
      * containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Value</em>' containment reference.
      * @see #getValue()

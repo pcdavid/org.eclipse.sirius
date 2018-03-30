@@ -84,7 +84,7 @@ public interface EdgeCreationDescription extends MappingBasedToolDescription {
      * Sets the value of the
      * '{@link org.eclipse.sirius.diagram.description.tool.EdgeCreationDescription#getSourceVariable <em>Source
      * Variable</em>}' containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Source Variable</em>' containment reference.
      * @see #getSourceVariable()
@@ -109,7 +109,7 @@ public interface EdgeCreationDescription extends MappingBasedToolDescription {
      * Sets the value of the
      * '{@link org.eclipse.sirius.diagram.description.tool.EdgeCreationDescription#getTargetVariable <em>Target
      * Variable</em>}' containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Target Variable</em>' containment reference.
      * @see #getTargetVariable()
@@ -134,7 +134,7 @@ public interface EdgeCreationDescription extends MappingBasedToolDescription {
      * Sets the value of the
      * '{@link org.eclipse.sirius.diagram.description.tool.EdgeCreationDescription#getSourceViewVariable <em>Source View
      * Variable</em>}' containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Source View Variable</em>' containment reference.
      * @see #getSourceViewVariable()
@@ -159,7 +159,7 @@ public interface EdgeCreationDescription extends MappingBasedToolDescription {
      * Sets the value of the
      * '{@link org.eclipse.sirius.diagram.description.tool.EdgeCreationDescription#getTargetViewVariable <em>Target View
      * Variable</em>}' containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Target View Variable</em>' containment reference.
      * @see #getTargetViewVariable()
@@ -183,7 +183,7 @@ public interface EdgeCreationDescription extends MappingBasedToolDescription {
      * Sets the value of the
      * '{@link org.eclipse.sirius.diagram.description.tool.EdgeCreationDescription#getInitialOperation <em>Initial
      * Operation</em>}' containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Initial Operation</em>' containment reference.
      * @see #getInitialOperation()
@@ -208,7 +208,7 @@ public interface EdgeCreationDescription extends MappingBasedToolDescription {
     /**
      * Sets the value of the '{@link org.eclipse.sirius.diagram.description.tool.EdgeCreationDescription#getIconPath
      * <em>Icon Path</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Icon Path</em>' attribute.
      * @see #getIconPath()
@@ -267,7 +267,7 @@ public interface EdgeCreationDescription extends MappingBasedToolDescription {
      * Sets the value of the
      * '{@link org.eclipse.sirius.diagram.description.tool.EdgeCreationDescription#getConnectionStartPrecondition
      * <em>Connection Start Precondition</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Connection Start Precondition</em>' attribute.
      * @see #getConnectionStartPrecondition()

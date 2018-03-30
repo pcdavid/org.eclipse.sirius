@@ -37,16 +37,6 @@
       </eAnnotations>
     </eOperations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DRefreshable" abstract="true" interface="true">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="An element that can be refreshed."/>
-    </eAnnotations>
-    <eOperations name="refresh">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Refresh the element."/>
-      </eAnnotations>
-    </eOperations>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DMappingBased" abstract="true" interface="true">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="An element that has a mapping."/>
@@ -96,7 +86,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="repPath" lowerBound="1"
         eType="#//ResourceDescriptor"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DRepresentation" abstract="true" eSuperTypes="#//description/DocumentedElement #//DRefreshable #//description/DModelElement">
+  <eClassifiers xsi:type="ecore:EClass" name="DRepresentation" abstract="true" eSuperTypes="#//description/DocumentedElement #//description/DModelElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedRepresentationElements"
         upperBound="-1" eType="#//DRepresentationElement" changeable="false" volatile="true"
         transient="true" derived="true">
@@ -124,7 +114,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="uid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DRepresentationElement" abstract="true"
-      eSuperTypes="#//DMappingBased #//DStylizable #//DRefreshable #//DSemanticDecorator">
+      eSuperTypes="#//DMappingBased #//DStylizable #//DSemanticDecorator">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
         defaultValueLiteral="">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -138,7 +128,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DView" eSuperTypes="#//DRefreshable">
+  <eClassifiers xsi:type="ecore:EClass" name="DView">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="An view is the root element"/>
     </eAnnotations>
@@ -206,7 +196,7 @@
     <eLiterals name="underline" value="2"/>
     <eLiterals name="strike_through" value="3"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Style" abstract="true" eSuperTypes="#//DRefreshable #//Customizable">
+  <eClassifiers xsi:type="ecore:EClass" name="Style" abstract="true" eSuperTypes="#//Customizable">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="The super class of all styles."/>
     </eAnnotations>

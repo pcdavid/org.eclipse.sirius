@@ -41,7 +41,7 @@ public interface ComputedStyleDescriptionRegistry extends EObject {
      * should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Computed Style Descriptions</em>' containment reference list.
      * @see org.eclipse.sirius.diagram.DiagramPackage#getComputedStyleDescriptionRegistry_ComputedStyleDescriptions()
      * @model containment="true" resolveProxies="true"

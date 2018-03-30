@@ -21,7 +21,6 @@ import org.eclipse.sirius.diagram.HideLabelCapabilityStyle;
 import org.eclipse.sirius.diagram.LabelPosition;
 import org.eclipse.sirius.diagram.LineStyle;
 import org.eclipse.sirius.diagram.NodeStyle;
-import org.eclipse.sirius.viewpoint.DRefreshable;
 import org.eclipse.sirius.viewpoint.RGBValues;
 import org.eclipse.sirius.viewpoint.Style;
 import org.eclipse.sirius.viewpoint.ViewpointFactory;
@@ -51,7 +50,7 @@ public abstract class NodeStyleImpl extends LabelStyleImpl implements NodeStyle 
     /**
      * The cached value of the '{@link #getDescription() <em>Description</em>}' reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @see #getDescription()
      * @generated
      * @ordered
@@ -61,7 +60,7 @@ public abstract class NodeStyleImpl extends LabelStyleImpl implements NodeStyle 
     /**
      * The default value of the '{@link #getBorderSize() <em>Border Size</em>}' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @see #getBorderSize()
      * @generated
      * @ordered
@@ -71,7 +70,7 @@ public abstract class NodeStyleImpl extends LabelStyleImpl implements NodeStyle 
     /**
      * The cached value of the '{@link #getBorderSize() <em>Border Size</em>}' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @see #getBorderSize()
      * @generated
      * @ordered
@@ -81,7 +80,7 @@ public abstract class NodeStyleImpl extends LabelStyleImpl implements NodeStyle 
     /**
      * The default value of the '{@link #getBorderSizeComputationExpression() <em>Border Size Computation
      * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getBorderSizeComputationExpression()
      * @generated
      * @ordered
@@ -91,7 +90,7 @@ public abstract class NodeStyleImpl extends LabelStyleImpl implements NodeStyle 
     /**
      * The cached value of the '{@link #getBorderSizeComputationExpression() <em>Border Size Computation
      * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getBorderSizeComputationExpression()
      * @generated
      * @ordered
@@ -101,7 +100,7 @@ public abstract class NodeStyleImpl extends LabelStyleImpl implements NodeStyle 
     /**
      * The default value of the '{@link #getBorderColor() <em>Border Color</em>}' attribute. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @see #getBorderColor()
      * @generated
      * @ordered
@@ -111,7 +110,7 @@ public abstract class NodeStyleImpl extends LabelStyleImpl implements NodeStyle 
     /**
      * The cached value of the '{@link #getBorderColor() <em>Border Color</em>}' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @see #getBorderColor()
      * @generated
      * @ordered
@@ -131,7 +130,7 @@ public abstract class NodeStyleImpl extends LabelStyleImpl implements NodeStyle 
     /**
      * The cached value of the '{@link #getBorderLineStyle() <em>Border Line Style</em>}' attribute. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getBorderLineStyle()
      * @generated
      * @ordered
@@ -161,7 +160,7 @@ public abstract class NodeStyleImpl extends LabelStyleImpl implements NodeStyle 
     /**
      * The default value of the '{@link #getLabelPosition() <em>Label Position</em>}' attribute. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @see #getLabelPosition()
      * @generated
      * @ordered
@@ -171,7 +170,7 @@ public abstract class NodeStyleImpl extends LabelStyleImpl implements NodeStyle 
     /**
      * The cached value of the '{@link #getLabelPosition() <em>Label Position</em>}' attribute. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @see #getLabelPosition()
      * @generated
      * @ordered
@@ -180,7 +179,7 @@ public abstract class NodeStyleImpl extends LabelStyleImpl implements NodeStyle 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected NodeStyleImpl() {
@@ -189,7 +188,7 @@ public abstract class NodeStyleImpl extends LabelStyleImpl implements NodeStyle 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -199,7 +198,7 @@ public abstract class NodeStyleImpl extends LabelStyleImpl implements NodeStyle 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -218,7 +217,7 @@ public abstract class NodeStyleImpl extends LabelStyleImpl implements NodeStyle 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public StyleDescription basicGetDescription() {
@@ -227,7 +226,7 @@ public abstract class NodeStyleImpl extends LabelStyleImpl implements NodeStyle 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -241,7 +240,7 @@ public abstract class NodeStyleImpl extends LabelStyleImpl implements NodeStyle 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -251,7 +250,7 @@ public abstract class NodeStyleImpl extends LabelStyleImpl implements NodeStyle 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -265,7 +264,7 @@ public abstract class NodeStyleImpl extends LabelStyleImpl implements NodeStyle 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -275,7 +274,7 @@ public abstract class NodeStyleImpl extends LabelStyleImpl implements NodeStyle 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -289,7 +288,7 @@ public abstract class NodeStyleImpl extends LabelStyleImpl implements NodeStyle 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -299,7 +298,7 @@ public abstract class NodeStyleImpl extends LabelStyleImpl implements NodeStyle 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -313,7 +312,7 @@ public abstract class NodeStyleImpl extends LabelStyleImpl implements NodeStyle 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -323,7 +322,7 @@ public abstract class NodeStyleImpl extends LabelStyleImpl implements NodeStyle 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -337,7 +336,7 @@ public abstract class NodeStyleImpl extends LabelStyleImpl implements NodeStyle 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -347,7 +346,7 @@ public abstract class NodeStyleImpl extends LabelStyleImpl implements NodeStyle 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -361,7 +360,7 @@ public abstract class NodeStyleImpl extends LabelStyleImpl implements NodeStyle 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -371,7 +370,7 @@ public abstract class NodeStyleImpl extends LabelStyleImpl implements NodeStyle 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -385,19 +384,7 @@ public abstract class NodeStyleImpl extends LabelStyleImpl implements NodeStyle 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public void refresh() {
-        // TODO: implement this method
-        // Ensure that you remove @generated or mark it @generated NOT
-        throw new UnsupportedOperationException();
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -426,7 +413,7 @@ public abstract class NodeStyleImpl extends LabelStyleImpl implements NodeStyle 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -459,7 +446,7 @@ public abstract class NodeStyleImpl extends LabelStyleImpl implements NodeStyle 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -492,7 +479,7 @@ public abstract class NodeStyleImpl extends LabelStyleImpl implements NodeStyle 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -519,17 +506,11 @@ public abstract class NodeStyleImpl extends LabelStyleImpl implements NodeStyle 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-        if (baseClass == DRefreshable.class) {
-            switch (derivedFeatureID) {
-            default:
-                return -1;
-            }
-        }
         if (baseClass == Style.class) {
             switch (derivedFeatureID) {
             case DiagramPackage.NODE_STYLE__DESCRIPTION:
@@ -565,17 +546,11 @@ public abstract class NodeStyleImpl extends LabelStyleImpl implements NodeStyle 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-        if (baseClass == DRefreshable.class) {
-            switch (baseFeatureID) {
-            default:
-                return -1;
-            }
-        }
         if (baseClass == Style.class) {
             switch (baseFeatureID) {
             case ViewpointPackage.STYLE__DESCRIPTION:
@@ -611,7 +586,7 @@ public abstract class NodeStyleImpl extends LabelStyleImpl implements NodeStyle 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

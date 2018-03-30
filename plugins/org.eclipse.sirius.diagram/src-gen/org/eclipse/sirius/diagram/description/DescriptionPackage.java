@@ -26,7 +26,7 @@ import org.eclipse.emf.ecore.EReference;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- *
+ * 
  * @see org.eclipse.sirius.diagram.description.DescriptionFactory
  * @model kind="package"
  * @generated
@@ -34,28 +34,28 @@ import org.eclipse.emf.ecore.EReference;
 public interface DescriptionPackage extends EPackage {
     /**
      * The package name. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     String eNAME = "description"; //$NON-NLS-1$
 
     /**
      * The package namespace URI. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     String eNS_URI = "http://www.eclipse.org/sirius/diagram/description/1.1.0"; //$NON-NLS-1$
 
     /**
      * The package namespace name. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     String eNS_PREFIX = "description"; //$NON-NLS-1$
 
     /**
      * The singleton instance of the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     DescriptionPackage eINSTANCE = org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl.init();
@@ -63,7 +63,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The meta object id for the '{@link org.eclipse.sirius.diagram.description.impl.DragAndDropTargetDescriptionImpl
      * <em>Drag And Drop Target Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.sirius.diagram.description.impl.DragAndDropTargetDescriptionImpl
      * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getDragAndDropTargetDescription()
      * @generated
@@ -73,7 +73,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Drop Descriptions</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -82,7 +82,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Drag And Drop Target Description</em>' class. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -91,7 +91,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The meta object id for the '{@link org.eclipse.sirius.diagram.description.impl.DiagramDescriptionImpl <em>Diagram
      * Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.sirius.diagram.description.impl.DiagramDescriptionImpl
      * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getDiagramDescription()
      * @generated
@@ -101,7 +101,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Drop Descriptions</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -109,7 +109,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Documentation</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -118,7 +118,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>End User Documentation</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -126,7 +126,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -134,7 +134,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Label</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -151,7 +151,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Initialisation</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -159,7 +159,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Metamodel</b></em>' reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -167,7 +167,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Show On Startup</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -176,7 +176,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Paste Descriptions</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -185,7 +185,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Filters</b></em>' containment reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -194,7 +194,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>All Edge Mappings</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -203,7 +203,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>All Node Mappings</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -212,7 +212,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>All Container Mappings</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -221,7 +221,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Validation Set</b></em>' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -230,7 +230,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Concerns</b></em>' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -238,7 +238,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>All Tools</b></em>' reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -246,7 +246,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Domain Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -255,7 +255,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -263,7 +263,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Default Concern</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -271,7 +271,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Root Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -279,7 +279,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Init</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -297,7 +297,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Diagram Initialisation</b></em>' containment reference. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -306,7 +306,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Default Layer</b></em>' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -315,7 +315,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Additional Layers</b></em>' containment reference list. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -323,7 +323,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>All Layers</b></em>' reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -332,7 +332,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>All Activated Tools</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -341,7 +341,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Node Mappings</b></em>' containment reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -350,7 +350,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Edge Mappings</b></em>' containment reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -359,7 +359,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Edge Mapping Imports</b></em>' containment reference list. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -368,7 +368,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Container Mappings</b></em>' containment reference list. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -377,7 +377,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Reused Mappings</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -386,7 +386,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Tool Section</b></em>' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -422,7 +422,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Diagram Description</em>' class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -431,7 +431,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The meta object id for the '{@link org.eclipse.sirius.diagram.description.impl.DiagramImportDescriptionImpl
      * <em>Diagram Import Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.sirius.diagram.description.impl.DiagramImportDescriptionImpl
      * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getDiagramImportDescription()
      * @generated
@@ -440,7 +440,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Documentation</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -449,7 +449,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>End User Documentation</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -457,7 +457,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -465,7 +465,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Label</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -482,7 +482,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Initialisation</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -490,7 +490,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Metamodel</b></em>' reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -498,7 +498,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Show On Startup</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -507,7 +507,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Drop Descriptions</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -516,7 +516,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Paste Descriptions</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -525,7 +525,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Filters</b></em>' containment reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -534,7 +534,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>All Edge Mappings</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -543,7 +543,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>All Node Mappings</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -552,7 +552,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>All Container Mappings</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -561,7 +561,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Validation Set</b></em>' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -570,7 +570,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Concerns</b></em>' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -578,7 +578,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>All Tools</b></em>' reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -586,7 +586,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Domain Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -595,7 +595,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -603,7 +603,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Default Concern</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -611,7 +611,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Root Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -619,7 +619,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Init</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -637,7 +637,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Diagram Initialisation</b></em>' containment reference. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -646,7 +646,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Default Layer</b></em>' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -655,7 +655,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Additional Layers</b></em>' containment reference list. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -663,7 +663,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>All Layers</b></em>' reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -672,7 +672,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>All Activated Tools</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -681,7 +681,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Node Mappings</b></em>' containment reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -690,7 +690,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Edge Mappings</b></em>' containment reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -699,7 +699,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Edge Mapping Imports</b></em>' containment reference list. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -708,7 +708,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Container Mappings</b></em>' containment reference list. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -717,7 +717,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Reused Mappings</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -726,7 +726,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Tool Section</b></em>' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -771,7 +771,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Diagram Import Description</em>' class. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -780,7 +780,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The meta object id for the '{@link org.eclipse.sirius.diagram.description.impl.DiagramExtensionDescriptionImpl
      * <em>Diagram Extension Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.sirius.diagram.description.impl.DiagramExtensionDescriptionImpl
      * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getDiagramExtensionDescription()
      * @generated
@@ -789,7 +789,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -797,7 +797,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Viewpoint URI</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -814,7 +814,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Metamodel</b></em>' reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -823,7 +823,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Layers</b></em>' containment reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -832,7 +832,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Validation Set</b></em>' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -841,7 +841,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Concerns</b></em>' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -850,7 +850,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Diagram Extension Description</em>' class. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -859,7 +859,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The meta object id for the '{@link org.eclipse.sirius.diagram.description.impl.DiagramElementMappingImpl
      * <em>Diagram Element Mapping</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.sirius.diagram.description.impl.DiagramElementMappingImpl
      * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getDiagramElementMapping()
      * @generated
@@ -868,7 +868,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -876,7 +876,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Label</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -885,7 +885,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Detail Descriptions</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -894,7 +894,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Navigation Descriptions</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -903,7 +903,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Paste Descriptions</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -912,7 +912,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -921,7 +921,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Deletion Description</b></em>' reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -939,7 +939,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Semantic Candidates Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -947,7 +947,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Create Elements</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -965,7 +965,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Double Click Description</b></em>' reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -974,7 +974,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Synchronization Lock</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -983,7 +983,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Diagram Element Mapping</em>' class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -992,7 +992,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The meta object id for the '{@link org.eclipse.sirius.diagram.description.impl.AbstractNodeMappingImpl
      * <em>Abstract Node Mapping</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.sirius.diagram.description.impl.AbstractNodeMappingImpl
      * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getAbstractNodeMapping()
      * @generated
@@ -1001,7 +1001,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1009,7 +1009,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Label</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1018,7 +1018,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Detail Descriptions</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1027,7 +1027,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Navigation Descriptions</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1036,7 +1036,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Paste Descriptions</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1045,7 +1045,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1054,7 +1054,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Deletion Description</b></em>' reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1072,7 +1072,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Semantic Candidates Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1080,7 +1080,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Create Elements</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1098,7 +1098,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Double Click Description</b></em>' reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1107,7 +1107,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Synchronization Lock</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1115,7 +1115,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Documentation</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1123,7 +1123,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Domain Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1132,7 +1132,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Bordered Node Mappings</b></em>' containment reference list. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1141,7 +1141,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Reused Bordered Node Mappings</b></em>' reference list. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1150,7 +1150,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Abstract Node Mapping</em>' class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1159,7 +1159,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The meta object id for the '{@link org.eclipse.sirius.diagram.description.impl.NodeMappingImpl <em>Node
      * Mapping</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.sirius.diagram.description.impl.NodeMappingImpl
      * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getNodeMapping()
      * @generated
@@ -1168,7 +1168,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1176,7 +1176,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Label</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1185,7 +1185,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Detail Descriptions</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1194,7 +1194,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Navigation Descriptions</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1203,7 +1203,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Paste Descriptions</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1212,7 +1212,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1221,7 +1221,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Deletion Description</b></em>' reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1239,7 +1239,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Semantic Candidates Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1247,7 +1247,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Create Elements</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1265,7 +1265,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Double Click Description</b></em>' reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1274,7 +1274,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Synchronization Lock</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1282,7 +1282,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Documentation</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1290,7 +1290,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Domain Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1299,7 +1299,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Bordered Node Mappings</b></em>' containment reference list. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1308,7 +1308,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Reused Bordered Node Mappings</b></em>' reference list. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1317,7 +1317,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Drop Descriptions</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1335,7 +1335,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Conditionnal Styles</b></em>' containment reference list. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1353,7 +1353,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The meta object id for the '{@link org.eclipse.sirius.diagram.description.impl.ContainerMappingImpl <em>Container
      * Mapping</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.sirius.diagram.description.impl.ContainerMappingImpl
      * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getContainerMapping()
      * @generated
@@ -1362,7 +1362,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1370,7 +1370,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Label</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1379,7 +1379,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Detail Descriptions</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1388,7 +1388,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Navigation Descriptions</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1397,7 +1397,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Paste Descriptions</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1406,7 +1406,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1415,7 +1415,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Deletion Description</b></em>' reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1433,7 +1433,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Semantic Candidates Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1441,7 +1441,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Create Elements</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1459,7 +1459,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Double Click Description</b></em>' reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1468,7 +1468,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Synchronization Lock</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1476,7 +1476,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Documentation</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1484,7 +1484,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Domain Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1493,7 +1493,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Bordered Node Mappings</b></em>' containment reference list. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1502,7 +1502,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Reused Bordered Node Mappings</b></em>' reference list. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1511,7 +1511,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Drop Descriptions</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1520,7 +1520,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Sub Node Mappings</b></em>' containment reference list. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1529,7 +1529,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>All Node Mappings</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1538,7 +1538,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Reused Node Mappings</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1547,7 +1547,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Sub Container Mappings</b></em>' containment reference list. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1556,7 +1556,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Reused Container Mappings</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1565,7 +1565,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>All Container Mappings</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1583,7 +1583,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Conditionnal Styles</b></em>' containment reference list. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1592,7 +1592,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Children Presentation</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1601,7 +1601,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Container Mapping</em>' class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1610,7 +1610,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The meta object id for the '{@link org.eclipse.sirius.diagram.description.impl.NodeMappingImportImpl <em>Node
      * Mapping Import</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.sirius.diagram.description.impl.NodeMappingImportImpl
      * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getNodeMappingImport()
      * @generated
@@ -1619,7 +1619,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1627,7 +1627,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Label</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1636,7 +1636,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Detail Descriptions</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1645,7 +1645,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Navigation Descriptions</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1654,7 +1654,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Paste Descriptions</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1663,7 +1663,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1672,7 +1672,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Deletion Description</b></em>' reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1690,7 +1690,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Semantic Candidates Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1698,7 +1698,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Create Elements</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1716,7 +1716,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Double Click Description</b></em>' reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1725,7 +1725,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Synchronization Lock</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1733,7 +1733,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Documentation</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1741,7 +1741,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Domain Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1750,7 +1750,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Bordered Node Mappings</b></em>' containment reference list. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1759,7 +1759,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Reused Bordered Node Mappings</b></em>' reference list. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1768,7 +1768,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Drop Descriptions</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1786,7 +1786,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Conditionnal Styles</b></em>' containment reference list. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1804,7 +1804,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Inherits Ancestor Filters</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1822,7 +1822,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Node Mapping Import</em>' class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1831,7 +1831,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The meta object id for the '{@link org.eclipse.sirius.diagram.description.impl.ContainerMappingImportImpl
      * <em>Container Mapping Import</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.sirius.diagram.description.impl.ContainerMappingImportImpl
      * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getContainerMappingImport()
      * @generated
@@ -1840,7 +1840,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1848,7 +1848,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Label</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1857,7 +1857,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Detail Descriptions</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1866,7 +1866,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Navigation Descriptions</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1875,7 +1875,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Paste Descriptions</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1884,7 +1884,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1893,7 +1893,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Deletion Description</b></em>' reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1911,7 +1911,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Semantic Candidates Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1919,7 +1919,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Create Elements</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1937,7 +1937,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Double Click Description</b></em>' reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1946,7 +1946,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Synchronization Lock</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1954,7 +1954,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Documentation</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1962,7 +1962,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Domain Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1971,7 +1971,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Bordered Node Mappings</b></em>' containment reference list. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1980,7 +1980,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Reused Bordered Node Mappings</b></em>' reference list. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1989,7 +1989,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Drop Descriptions</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -1998,7 +1998,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Sub Node Mappings</b></em>' containment reference list. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2007,7 +2007,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>All Node Mappings</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2016,7 +2016,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Reused Node Mappings</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2025,7 +2025,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Sub Container Mappings</b></em>' containment reference list. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2034,7 +2034,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Reused Container Mappings</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2043,7 +2043,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>All Container Mappings</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2061,7 +2061,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Conditionnal Styles</b></em>' containment reference list. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2070,7 +2070,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Children Presentation</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2088,7 +2088,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Inherits Ancestor Filters</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2106,7 +2106,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Container Mapping Import</em>' class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2115,7 +2115,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The meta object id for the '{@link org.eclipse.sirius.diagram.description.impl.EdgeMappingImpl <em>Edge
      * Mapping</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.sirius.diagram.description.impl.EdgeMappingImpl
      * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getEdgeMapping()
      * @generated
@@ -2124,7 +2124,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2132,7 +2132,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Label</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2141,7 +2141,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Detail Descriptions</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2150,7 +2150,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Navigation Descriptions</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2159,7 +2159,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Paste Descriptions</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2168,7 +2168,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2177,7 +2177,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Deletion Description</b></em>' reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2195,7 +2195,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Semantic Candidates Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2203,7 +2203,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Create Elements</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2221,7 +2221,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Double Click Description</b></em>' reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2230,7 +2230,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Synchronization Lock</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2238,7 +2238,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Documentation</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2265,7 +2265,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Target Finder Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2274,7 +2274,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Source Finder Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2292,7 +2292,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Conditionnal Styles</b></em>' containment reference list. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2309,7 +2309,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Domain Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2335,7 +2335,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Path Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2344,7 +2344,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Path Node Mapping</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2362,7 +2362,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The meta object id for the '{@link org.eclipse.sirius.diagram.description.IEdgeMapping <em>IEdge Mapping</em>}'
      * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.sirius.diagram.description.IEdgeMapping
      * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getIEdgeMapping()
      * @generated
@@ -2372,7 +2372,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The number of structural features of the '<em>IEdge Mapping</em>' class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2381,7 +2381,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The meta object id for the '{@link org.eclipse.sirius.diagram.description.impl.EdgeMappingImportImpl <em>Edge
      * Mapping Import</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.sirius.diagram.description.impl.EdgeMappingImportImpl
      * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getEdgeMappingImport()
      * @generated
@@ -2390,7 +2390,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Documentation</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2398,7 +2398,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2406,7 +2406,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Label</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2424,7 +2424,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Conditionnal Styles</b></em>' containment reference list. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2433,7 +2433,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Inherits Ancestor Filters</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2442,7 +2442,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Edge Mapping Import</em>' class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2452,7 +2452,7 @@ public interface DescriptionPackage extends EPackage {
      * The meta object id for the
      * '{@link org.eclipse.sirius.diagram.description.impl.ConditionalNodeStyleDescriptionImpl <em>Conditional Node
      * Style Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.sirius.diagram.description.impl.ConditionalNodeStyleDescriptionImpl
      * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getConditionalNodeStyleDescription()
      * @generated
@@ -2462,7 +2462,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Predicate Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2480,7 +2480,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Conditional Node Style Description</em>' class. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2490,7 +2490,7 @@ public interface DescriptionPackage extends EPackage {
      * The meta object id for the
      * '{@link org.eclipse.sirius.diagram.description.impl.ConditionalEdgeStyleDescriptionImpl <em>Conditional Edge
      * Style Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.sirius.diagram.description.impl.ConditionalEdgeStyleDescriptionImpl
      * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getConditionalEdgeStyleDescription()
      * @generated
@@ -2500,7 +2500,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Predicate Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2518,7 +2518,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Conditional Edge Style Description</em>' class. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2528,7 +2528,7 @@ public interface DescriptionPackage extends EPackage {
      * The meta object id for the
      * '{@link org.eclipse.sirius.diagram.description.impl.ConditionalContainerStyleDescriptionImpl <em>Conditional
      * Container Style Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.sirius.diagram.description.impl.ConditionalContainerStyleDescriptionImpl
      * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getConditionalContainerStyleDescription()
      * @generated
@@ -2538,7 +2538,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Predicate Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2574,7 +2574,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Documentation</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2582,7 +2582,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The number of structural features of the '<em>Layout</em>' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2591,7 +2591,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The meta object id for the '{@link org.eclipse.sirius.diagram.description.impl.OrderedTreeLayoutImpl <em>Ordered
      * Tree Layout</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.sirius.diagram.description.impl.OrderedTreeLayoutImpl
      * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getOrderedTreeLayout()
      * @generated
@@ -2600,7 +2600,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Documentation</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2627,7 +2627,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Ordered Tree Layout</em>' class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2636,7 +2636,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The meta object id for the '{@link org.eclipse.sirius.diagram.description.impl.CompositeLayoutImpl <em>Composite
      * Layout</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.sirius.diagram.description.impl.CompositeLayoutImpl
      * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getCompositeLayout()
      * @generated
@@ -2645,7 +2645,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Documentation</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2653,7 +2653,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Padding</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2661,7 +2661,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Direction</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2670,7 +2670,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Composite Layout</em>' class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2679,7 +2679,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The meta object id for the '{@link org.eclipse.sirius.diagram.description.impl.CustomLayoutConfigurationImpl
      * <em>Custom Layout Configuration</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.sirius.diagram.description.impl.CustomLayoutConfigurationImpl
      * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getCustomLayoutConfiguration()
      * @generated
@@ -2688,7 +2688,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Documentation</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2696,7 +2696,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2704,7 +2704,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Label</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2712,7 +2712,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Description</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2730,7 +2730,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Custom Layout Configuration</em>' class. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2739,7 +2739,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The meta object id for the '{@link org.eclipse.sirius.diagram.description.impl.LayoutOptionImpl <em>Layout
      * Option</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.sirius.diagram.description.impl.LayoutOptionImpl
      * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getLayoutOption()
      * @generated
@@ -2748,7 +2748,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2756,7 +2756,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Label</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2764,7 +2764,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Description</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2773,7 +2773,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Layout Option</em>' class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2782,7 +2782,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The meta object id for the '{@link org.eclipse.sirius.diagram.description.impl.BooleanLayoutOptionImpl
      * <em>Boolean Layout Option</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.sirius.diagram.description.impl.BooleanLayoutOptionImpl
      * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getBooleanLayoutOption()
      * @generated
@@ -2791,7 +2791,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2799,7 +2799,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Label</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2807,7 +2807,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Description</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2815,7 +2815,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Value</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2824,7 +2824,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Boolean Layout Option</em>' class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2833,7 +2833,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The meta object id for the '{@link org.eclipse.sirius.diagram.description.impl.StringLayoutOptionImpl <em>String
      * Layout Option</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.sirius.diagram.description.impl.StringLayoutOptionImpl
      * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getStringLayoutOption()
      * @generated
@@ -2842,7 +2842,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2850,7 +2850,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Label</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2858,7 +2858,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Description</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2866,7 +2866,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Value</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2875,7 +2875,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The number of structural features of the '<em>String Layout Option</em>' class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2884,7 +2884,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The meta object id for the '{@link org.eclipse.sirius.diagram.description.impl.IntegerLayoutOptionImpl
      * <em>Integer Layout Option</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.sirius.diagram.description.impl.IntegerLayoutOptionImpl
      * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getIntegerLayoutOption()
      * @generated
@@ -2893,7 +2893,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2901,7 +2901,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Label</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2909,7 +2909,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Description</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2917,7 +2917,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Value</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2926,7 +2926,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Integer Layout Option</em>' class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2935,7 +2935,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The meta object id for the '{@link org.eclipse.sirius.diagram.description.impl.DoubleLayoutOptionImpl <em>Double
      * Layout Option</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.sirius.diagram.description.impl.DoubleLayoutOptionImpl
      * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getDoubleLayoutOption()
      * @generated
@@ -2944,7 +2944,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2952,7 +2952,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Label</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2960,7 +2960,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Description</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2968,7 +2968,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Value</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2977,7 +2977,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Double Layout Option</em>' class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -2986,7 +2986,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The meta object id for the '{@link org.eclipse.sirius.diagram.description.impl.EnumOptionImpl <em>Enum
      * Option</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.sirius.diagram.description.impl.EnumOptionImpl
      * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getEnumOption()
      * @generated
@@ -2995,7 +2995,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3003,7 +3003,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Label</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3011,7 +3011,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Description</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3020,7 +3020,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Choices</b></em>' containment reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3038,7 +3038,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The meta object id for the '{@link org.eclipse.sirius.diagram.description.impl.EnumLayoutOptionImpl <em>Enum
      * Layout Option</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.sirius.diagram.description.impl.EnumLayoutOptionImpl
      * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getEnumLayoutOption()
      * @generated
@@ -3047,7 +3047,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3055,7 +3055,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Label</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3063,7 +3063,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Description</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3072,7 +3072,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Choices</b></em>' containment reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3090,7 +3090,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Enum Layout Option</em>' class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3099,7 +3099,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The meta object id for the '{@link org.eclipse.sirius.diagram.description.impl.EnumSetLayoutOptionImpl <em>Enum
      * Set Layout Option</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.sirius.diagram.description.impl.EnumSetLayoutOptionImpl
      * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getEnumSetLayoutOption()
      * @generated
@@ -3108,7 +3108,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3116,7 +3116,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Label</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3124,7 +3124,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Description</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3133,7 +3133,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Choices</b></em>' containment reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3142,7 +3142,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Values</b></em>' containment reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3151,7 +3151,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Enum Set Layout Option</em>' class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3160,7 +3160,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The meta object id for the '{@link org.eclipse.sirius.diagram.description.impl.EnumLayoutValueImpl <em>Enum
      * Layout Value</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.sirius.diagram.description.impl.EnumLayoutValueImpl
      * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getEnumLayoutValue()
      * @generated
@@ -3169,7 +3169,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3177,7 +3177,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Description</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3186,7 +3186,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Enum Layout Value</em>' class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3195,7 +3195,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The meta object id for the '{@link org.eclipse.sirius.diagram.description.impl.MappingBasedDecorationImpl
      * <em>Mapping Based Decoration</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.sirius.diagram.description.impl.MappingBasedDecorationImpl
      * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getMappingBasedDecoration()
      * @generated
@@ -3204,7 +3204,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3212,7 +3212,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Position</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3221,7 +3221,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Distribution Direction</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3230,7 +3230,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3256,7 +3256,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Mappings</b></em>' reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3265,7 +3265,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Mapping Based Decoration</em>' class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3274,7 +3274,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The meta object id for the '{@link org.eclipse.sirius.diagram.description.impl.LayerImpl <em>Layer</em>}' class.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.sirius.diagram.description.impl.LayerImpl
      * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getLayer()
      * @generated
@@ -3283,7 +3283,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Documentation</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3292,7 +3292,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>End User Documentation</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3300,7 +3300,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3308,7 +3308,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Label</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3317,7 +3317,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Node Mappings</b></em>' containment reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3326,7 +3326,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Edge Mappings</b></em>' containment reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3335,7 +3335,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Edge Mapping Imports</b></em>' containment reference list. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3344,7 +3344,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Container Mappings</b></em>' containment reference list. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3353,7 +3353,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Reused Mappings</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3361,7 +3361,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>All Tools</b></em>' reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3370,7 +3370,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Tool Sections</b></em>' containment reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3388,7 +3388,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Decoration Descriptions Set</b></em>' containment reference. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3396,7 +3396,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Icon</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3405,7 +3405,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>All Edge Mappings</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3414,7 +3414,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Customization</b></em>' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3422,7 +3422,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The number of structural features of the '<em>Layer</em>' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3431,7 +3431,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The meta object id for the '{@link org.eclipse.sirius.diagram.description.impl.AdditionalLayerImpl <em>Additional
      * Layer</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.sirius.diagram.description.impl.AdditionalLayerImpl
      * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getAdditionalLayer()
      * @generated
@@ -3440,7 +3440,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Documentation</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3449,7 +3449,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>End User Documentation</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3457,7 +3457,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3465,7 +3465,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Label</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3474,7 +3474,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Node Mappings</b></em>' containment reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3483,7 +3483,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Edge Mappings</b></em>' containment reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3492,7 +3492,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Edge Mapping Imports</b></em>' containment reference list. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3501,7 +3501,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Container Mappings</b></em>' containment reference list. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3510,7 +3510,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Reused Mappings</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3518,7 +3518,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>All Tools</b></em>' reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3527,7 +3527,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Tool Sections</b></em>' containment reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3545,7 +3545,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Decoration Descriptions Set</b></em>' containment reference. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3553,7 +3553,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Icon</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3562,7 +3562,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>All Edge Mappings</b></em>' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3571,7 +3571,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Customization</b></em>' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3588,7 +3588,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * The feature id for the '<em><b>Optional</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3597,7 +3597,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Additional Layer</em>' class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -3606,7 +3606,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The meta object id for the '{@link org.eclipse.sirius.diagram.description.FoldingStyle <em>Folding Style</em>}'
      * enum. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.sirius.diagram.description.FoldingStyle
      * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getFoldingStyle()
      * @generated
@@ -3616,7 +3616,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The meta object id for the '{@link org.eclipse.sirius.diagram.description.LayoutDirection <em>Layout
      * Direction</em>}' enum. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.sirius.diagram.description.LayoutDirection
      * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getLayoutDirection()
      * @generated
@@ -3626,7 +3626,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * The meta object id for the '{@link org.eclipse.sirius.diagram.description.CenteringStyle <em>Centering
      * Style</em>}' enum. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.sirius.diagram.description.CenteringStyle
      * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getCenteringStyle()
      * @generated
@@ -3636,7 +3636,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * Returns the meta object for class '{@link org.eclipse.sirius.diagram.description.DiagramDescription <em>Diagram
      * Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Diagram Description</em>'.
      * @see org.eclipse.sirius.diagram.description.DiagramDescription
      * @generated
@@ -3659,7 +3659,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the reference list
      * '{@link org.eclipse.sirius.diagram.description.DiagramDescription#getAllEdgeMappings <em>All Edge
      * Mappings</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the reference list '<em>All Edge Mappings</em>'.
      * @see org.eclipse.sirius.diagram.description.DiagramDescription#getAllEdgeMappings()
      * @see #getDiagramDescription()
@@ -3671,7 +3671,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the reference list
      * '{@link org.eclipse.sirius.diagram.description.DiagramDescription#getAllNodeMappings <em>All Node
      * Mappings</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the reference list '<em>All Node Mappings</em>'.
      * @see org.eclipse.sirius.diagram.description.DiagramDescription#getAllNodeMappings()
      * @see #getDiagramDescription()
@@ -3683,7 +3683,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the reference list
      * '{@link org.eclipse.sirius.diagram.description.DiagramDescription#getAllContainerMappings <em>All Container
      * Mappings</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the reference list '<em>All Container Mappings</em>'.
      * @see org.eclipse.sirius.diagram.description.DiagramDescription#getAllContainerMappings()
      * @see #getDiagramDescription()
@@ -3743,7 +3743,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the attribute
      * '{@link org.eclipse.sirius.diagram.description.DiagramDescription#getPreconditionExpression <em>Precondition
      * Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Precondition Expression</em>'.
      * @see org.eclipse.sirius.diagram.description.DiagramDescription#getPreconditionExpression()
      * @see #getDiagramDescription()
@@ -3755,7 +3755,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the reference
      * '{@link org.eclipse.sirius.diagram.description.DiagramDescription#getDefaultConcern <em>Default Concern</em>}'.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the reference '<em>Default Concern</em>'.
      * @see org.eclipse.sirius.diagram.description.DiagramDescription#getDefaultConcern()
      * @see #getDiagramDescription()
@@ -3767,7 +3767,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the attribute
      * '{@link org.eclipse.sirius.diagram.description.DiagramDescription#getRootExpression <em>Root Expression</em>}'.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Root Expression</em>'.
      * @see org.eclipse.sirius.diagram.description.DiagramDescription#getRootExpression()
      * @see #getDiagramDescription()
@@ -3779,7 +3779,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the reference
      * '{@link org.eclipse.sirius.diagram.description.DiagramDescription#getInit <em>Init</em>}'. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the reference '<em>Init</em>'.
      * @see org.eclipse.sirius.diagram.description.DiagramDescription#getInit()
      * @see #getDiagramDescription()
@@ -3803,7 +3803,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the containment reference
      * '{@link org.eclipse.sirius.diagram.description.DiagramDescription#getDiagramInitialisation <em>Diagram
      * Initialisation</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference '<em>Diagram Initialisation</em>'.
      * @see org.eclipse.sirius.diagram.description.DiagramDescription#getDiagramInitialisation()
      * @see #getDiagramDescription()
@@ -3827,7 +3827,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the containment reference list
      * '{@link org.eclipse.sirius.diagram.description.DiagramDescription#getAdditionalLayers <em>Additional
      * Layers</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference list '<em>Additional Layers</em>'.
      * @see org.eclipse.sirius.diagram.description.DiagramDescription#getAdditionalLayers()
      * @see #getDiagramDescription()
@@ -3851,7 +3851,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the reference list
      * '{@link org.eclipse.sirius.diagram.description.DiagramDescription#getAllActivatedTools <em>All Activated
      * Tools</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the reference list '<em>All Activated Tools</em>'.
      * @see org.eclipse.sirius.diagram.description.DiagramDescription#getAllActivatedTools()
      * @see #getDiagramDescription()
@@ -3887,7 +3887,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the containment reference list
      * '{@link org.eclipse.sirius.diagram.description.DiagramDescription#getEdgeMappingImports <em>Edge Mapping
      * Imports</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference list '<em>Edge Mapping Imports</em>'.
      * @see org.eclipse.sirius.diagram.description.DiagramDescription#getEdgeMappingImports()
      * @see #getDiagramDescription()
@@ -3899,7 +3899,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the containment reference list
      * '{@link org.eclipse.sirius.diagram.description.DiagramDescription#getContainerMappings <em>Container
      * Mappings</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference list '<em>Container Mappings</em>'.
      * @see org.eclipse.sirius.diagram.description.DiagramDescription#getContainerMappings()
      * @see #getDiagramDescription()
@@ -3911,7 +3911,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the reference list
      * '{@link org.eclipse.sirius.diagram.description.DiagramDescription#getReusedMappings <em>Reused Mappings</em>}'.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the reference list '<em>Reused Mappings</em>'.
      * @see org.eclipse.sirius.diagram.description.DiagramDescription#getReusedMappings()
      * @see #getDiagramDescription()
@@ -3947,7 +3947,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the attribute
      * '{@link org.eclipse.sirius.diagram.description.DiagramDescription#isEnablePopupBars <em>Enable Popup Bars</em>}'.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Enable Popup Bars</em>'.
      * @see org.eclipse.sirius.diagram.description.DiagramDescription#isEnablePopupBars()
      * @see #getDiagramDescription()
@@ -3959,7 +3959,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the reference
      * '{@link org.eclipse.sirius.diagram.description.DiagramDescription#getBackgroundColor <em>Background Color</em>}'.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the reference '<em>Background Color</em>'.
      * @see org.eclipse.sirius.diagram.description.DiagramDescription#getBackgroundColor()
      * @see #getDiagramDescription()
@@ -3970,7 +3970,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * Returns the meta object for class '{@link org.eclipse.sirius.diagram.description.DiagramImportDescription
      * <em>Diagram Import Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Diagram Import Description</em>'.
      * @see org.eclipse.sirius.diagram.description.DiagramImportDescription
      * @generated
@@ -3981,7 +3981,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the reference
      * '{@link org.eclipse.sirius.diagram.description.DiagramImportDescription#getImportedDiagram <em>Imported
      * Diagram</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the reference '<em>Imported Diagram</em>'.
      * @see org.eclipse.sirius.diagram.description.DiagramImportDescription#getImportedDiagram()
      * @see #getDiagramImportDescription()
@@ -3992,7 +3992,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * Returns the meta object for class '{@link org.eclipse.sirius.diagram.description.DiagramExtensionDescription
      * <em>Diagram Extension Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Diagram Extension Description</em>'.
      * @see org.eclipse.sirius.diagram.description.DiagramExtensionDescription
      * @generated
@@ -4015,7 +4015,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the containment reference
      * '{@link org.eclipse.sirius.diagram.description.DiagramExtensionDescription#getValidationSet <em>Validation
      * Set</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference '<em>Validation Set</em>'.
      * @see org.eclipse.sirius.diagram.description.DiagramExtensionDescription#getValidationSet()
      * @see #getDiagramExtensionDescription()
@@ -4038,7 +4038,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * Returns the meta object for class '{@link org.eclipse.sirius.diagram.description.DiagramElementMapping
      * <em>Diagram Element Mapping</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Diagram Element Mapping</em>'.
      * @see org.eclipse.sirius.diagram.description.DiagramElementMapping
      * @generated
@@ -4049,7 +4049,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the attribute
      * '{@link org.eclipse.sirius.diagram.description.DiagramElementMapping#getPreconditionExpression <em>Precondition
      * Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Precondition Expression</em>'.
      * @see org.eclipse.sirius.diagram.description.DiagramElementMapping#getPreconditionExpression()
      * @see #getDiagramElementMapping()
@@ -4061,7 +4061,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the reference
      * '{@link org.eclipse.sirius.diagram.description.DiagramElementMapping#getDeletionDescription <em>Deletion
      * Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the reference '<em>Deletion Description</em>'.
      * @see org.eclipse.sirius.diagram.description.DiagramElementMapping#getDeletionDescription()
      * @see #getDiagramElementMapping()
@@ -4073,7 +4073,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the reference
      * '{@link org.eclipse.sirius.diagram.description.DiagramElementMapping#getLabelDirectEdit <em>Label Direct
      * Edit</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the reference '<em>Label Direct Edit</em>'.
      * @see org.eclipse.sirius.diagram.description.DiagramElementMapping#getLabelDirectEdit()
      * @see #getDiagramElementMapping()
@@ -4085,7 +4085,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the attribute
      * '{@link org.eclipse.sirius.diagram.description.DiagramElementMapping#getSemanticCandidatesExpression <em>Semantic
      * Candidates Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Semantic Candidates Expression</em>'.
      * @see org.eclipse.sirius.diagram.description.DiagramElementMapping#getSemanticCandidatesExpression()
      * @see #getDiagramElementMapping()
@@ -4097,7 +4097,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the attribute
      * '{@link org.eclipse.sirius.diagram.description.DiagramElementMapping#isCreateElements <em>Create Elements</em>}'.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Create Elements</em>'.
      * @see org.eclipse.sirius.diagram.description.DiagramElementMapping#isCreateElements()
      * @see #getDiagramElementMapping()
@@ -4109,7 +4109,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the attribute
      * '{@link org.eclipse.sirius.diagram.description.DiagramElementMapping#getSemanticElements <em>Semantic
      * Elements</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Semantic Elements</em>'.
      * @see org.eclipse.sirius.diagram.description.DiagramElementMapping#getSemanticElements()
      * @see #getDiagramElementMapping()
@@ -4121,7 +4121,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the reference
      * '{@link org.eclipse.sirius.diagram.description.DiagramElementMapping#getDoubleClickDescription <em>Double Click
      * Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the reference '<em>Double Click Description</em>'.
      * @see org.eclipse.sirius.diagram.description.DiagramElementMapping#getDoubleClickDescription()
      * @see #getDiagramElementMapping()
@@ -4133,7 +4133,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the attribute
      * '{@link org.eclipse.sirius.diagram.description.DiagramElementMapping#isSynchronizationLock <em>Synchronization
      * Lock</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Synchronization Lock</em>'.
      * @see org.eclipse.sirius.diagram.description.DiagramElementMapping#isSynchronizationLock()
      * @see #getDiagramElementMapping()
@@ -4144,7 +4144,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * Returns the meta object for class '{@link org.eclipse.sirius.diagram.description.AbstractNodeMapping <em>Abstract
      * Node Mapping</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Abstract Node Mapping</em>'.
      * @see org.eclipse.sirius.diagram.description.AbstractNodeMapping
      * @generated
@@ -4167,7 +4167,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the containment reference list
      * '{@link org.eclipse.sirius.diagram.description.AbstractNodeMapping#getBorderedNodeMappings <em>Bordered Node
      * Mappings</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference list '<em>Bordered Node Mappings</em>'.
      * @see org.eclipse.sirius.diagram.description.AbstractNodeMapping#getBorderedNodeMappings()
      * @see #getAbstractNodeMapping()
@@ -4179,7 +4179,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the reference list
      * '{@link org.eclipse.sirius.diagram.description.AbstractNodeMapping#getReusedBorderedNodeMappings <em>Reused
      * Bordered Node Mappings</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the reference list '<em>Reused Bordered Node Mappings</em>'.
      * @see org.eclipse.sirius.diagram.description.AbstractNodeMapping#getReusedBorderedNodeMappings()
      * @see #getAbstractNodeMapping()
@@ -4190,7 +4190,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * Returns the meta object for class '{@link org.eclipse.sirius.diagram.description.NodeMapping <em>Node
      * Mapping</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Node Mapping</em>'.
      * @see org.eclipse.sirius.diagram.description.NodeMapping
      * @generated
@@ -4201,7 +4201,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the containment reference
      * '{@link org.eclipse.sirius.diagram.description.NodeMapping#getStyle <em>Style</em>}'. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference '<em>Style</em>'.
      * @see org.eclipse.sirius.diagram.description.NodeMapping#getStyle()
      * @see #getNodeMapping()
@@ -4213,7 +4213,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the containment reference list
      * '{@link org.eclipse.sirius.diagram.description.NodeMapping#getConditionnalStyles <em>Conditionnal Styles</em>}'.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference list '<em>Conditionnal Styles</em>'.
      * @see org.eclipse.sirius.diagram.description.NodeMapping#getConditionnalStyles()
      * @see #getNodeMapping()
@@ -4224,7 +4224,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * Returns the meta object for class '{@link org.eclipse.sirius.diagram.description.ContainerMapping <em>Container
      * Mapping</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Container Mapping</em>'.
      * @see org.eclipse.sirius.diagram.description.ContainerMapping
      * @generated
@@ -4235,7 +4235,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the containment reference list
      * '{@link org.eclipse.sirius.diagram.description.ContainerMapping#getSubNodeMappings <em>Sub Node Mappings</em>}'.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference list '<em>Sub Node Mappings</em>'.
      * @see org.eclipse.sirius.diagram.description.ContainerMapping#getSubNodeMappings()
      * @see #getContainerMapping()
@@ -4247,7 +4247,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the reference list
      * '{@link org.eclipse.sirius.diagram.description.ContainerMapping#getAllNodeMappings <em>All Node Mappings</em>}'.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the reference list '<em>All Node Mappings</em>'.
      * @see org.eclipse.sirius.diagram.description.ContainerMapping#getAllNodeMappings()
      * @see #getContainerMapping()
@@ -4259,7 +4259,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the reference list
      * '{@link org.eclipse.sirius.diagram.description.ContainerMapping#getReusedNodeMappings <em>Reused Node
      * Mappings</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the reference list '<em>Reused Node Mappings</em>'.
      * @see org.eclipse.sirius.diagram.description.ContainerMapping#getReusedNodeMappings()
      * @see #getContainerMapping()
@@ -4271,7 +4271,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the containment reference list
      * '{@link org.eclipse.sirius.diagram.description.ContainerMapping#getSubContainerMappings <em>Sub Container
      * Mappings</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference list '<em>Sub Container Mappings</em>'.
      * @see org.eclipse.sirius.diagram.description.ContainerMapping#getSubContainerMappings()
      * @see #getContainerMapping()
@@ -4283,7 +4283,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the reference list
      * '{@link org.eclipse.sirius.diagram.description.ContainerMapping#getReusedContainerMappings <em>Reused Container
      * Mappings</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the reference list '<em>Reused Container Mappings</em>'.
      * @see org.eclipse.sirius.diagram.description.ContainerMapping#getReusedContainerMappings()
      * @see #getContainerMapping()
@@ -4295,7 +4295,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the reference list
      * '{@link org.eclipse.sirius.diagram.description.ContainerMapping#getAllContainerMappings <em>All Container
      * Mappings</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the reference list '<em>All Container Mappings</em>'.
      * @see org.eclipse.sirius.diagram.description.ContainerMapping#getAllContainerMappings()
      * @see #getContainerMapping()
@@ -4307,7 +4307,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the containment reference
      * '{@link org.eclipse.sirius.diagram.description.ContainerMapping#getStyle <em>Style</em>}'. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference '<em>Style</em>'.
      * @see org.eclipse.sirius.diagram.description.ContainerMapping#getStyle()
      * @see #getContainerMapping()
@@ -4319,7 +4319,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the containment reference list
      * '{@link org.eclipse.sirius.diagram.description.ContainerMapping#getConditionnalStyles <em>Conditionnal
      * Styles</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference list '<em>Conditionnal Styles</em>'.
      * @see org.eclipse.sirius.diagram.description.ContainerMapping#getConditionnalStyles()
      * @see #getContainerMapping()
@@ -4331,7 +4331,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the attribute
      * '{@link org.eclipse.sirius.diagram.description.ContainerMapping#getChildrenPresentation <em>Children
      * Presentation</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Children Presentation</em>'.
      * @see org.eclipse.sirius.diagram.description.ContainerMapping#getChildrenPresentation()
      * @see #getContainerMapping()
@@ -4342,7 +4342,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * Returns the meta object for class '{@link org.eclipse.sirius.diagram.description.NodeMappingImport <em>Node
      * Mapping Import</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Node Mapping Import</em>'.
      * @see org.eclipse.sirius.diagram.description.NodeMappingImport
      * @generated
@@ -4353,7 +4353,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the reference
      * '{@link org.eclipse.sirius.diagram.description.NodeMappingImport#getImportedMapping <em>Imported Mapping</em>}'.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the reference '<em>Imported Mapping</em>'.
      * @see org.eclipse.sirius.diagram.description.NodeMappingImport#getImportedMapping()
      * @see #getNodeMappingImport()
@@ -4364,7 +4364,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * Returns the meta object for class '{@link org.eclipse.sirius.diagram.description.ContainerMappingImport
      * <em>Container Mapping Import</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Container Mapping Import</em>'.
      * @see org.eclipse.sirius.diagram.description.ContainerMappingImport
      * @generated
@@ -4375,7 +4375,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the reference
      * '{@link org.eclipse.sirius.diagram.description.ContainerMappingImport#getImportedMapping <em>Imported
      * Mapping</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the reference '<em>Imported Mapping</em>'.
      * @see org.eclipse.sirius.diagram.description.ContainerMappingImport#getImportedMapping()
      * @see #getContainerMappingImport()
@@ -4386,7 +4386,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * Returns the meta object for class '{@link org.eclipse.sirius.diagram.description.EdgeMapping <em>Edge
      * Mapping</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Edge Mapping</em>'.
      * @see org.eclipse.sirius.diagram.description.EdgeMapping
      * @generated
@@ -4421,7 +4421,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the attribute
      * '{@link org.eclipse.sirius.diagram.description.EdgeMapping#getTargetFinderExpression <em>Target Finder
      * Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Target Finder Expression</em>'.
      * @see org.eclipse.sirius.diagram.description.EdgeMapping#getTargetFinderExpression()
      * @see #getEdgeMapping()
@@ -4433,7 +4433,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the attribute
      * '{@link org.eclipse.sirius.diagram.description.EdgeMapping#getSourceFinderExpression <em>Source Finder
      * Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Source Finder Expression</em>'.
      * @see org.eclipse.sirius.diagram.description.EdgeMapping#getSourceFinderExpression()
      * @see #getEdgeMapping()
@@ -4445,7 +4445,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the containment reference
      * '{@link org.eclipse.sirius.diagram.description.EdgeMapping#getStyle <em>Style</em>}'. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference '<em>Style</em>'.
      * @see org.eclipse.sirius.diagram.description.EdgeMapping#getStyle()
      * @see #getEdgeMapping()
@@ -4457,7 +4457,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the containment reference list
      * '{@link org.eclipse.sirius.diagram.description.EdgeMapping#getConditionnalStyles <em>Conditionnal Styles</em>}'.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference list '<em>Conditionnal Styles</em>'.
      * @see org.eclipse.sirius.diagram.description.EdgeMapping#getConditionnalStyles()
      * @see #getEdgeMapping()
@@ -4540,7 +4540,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * Returns the meta object for class '{@link org.eclipse.sirius.diagram.description.IEdgeMapping <em>IEdge
      * Mapping</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>IEdge Mapping</em>'.
      * @see org.eclipse.sirius.diagram.description.IEdgeMapping
      * @generated
@@ -4550,7 +4550,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * Returns the meta object for class '{@link org.eclipse.sirius.diagram.description.EdgeMappingImport <em>Edge
      * Mapping Import</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Edge Mapping Import</em>'.
      * @see org.eclipse.sirius.diagram.description.EdgeMappingImport
      * @generated
@@ -4561,7 +4561,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the reference
      * '{@link org.eclipse.sirius.diagram.description.EdgeMappingImport#getImportedMapping <em>Imported Mapping</em>}'.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the reference '<em>Imported Mapping</em>'.
      * @see org.eclipse.sirius.diagram.description.EdgeMappingImport#getImportedMapping()
      * @see #getEdgeMappingImport()
@@ -4573,7 +4573,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the containment reference list
      * '{@link org.eclipse.sirius.diagram.description.EdgeMappingImport#getConditionnalStyles <em>Conditionnal
      * Styles</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference list '<em>Conditionnal Styles</em>'.
      * @see org.eclipse.sirius.diagram.description.EdgeMappingImport#getConditionnalStyles()
      * @see #getEdgeMappingImport()
@@ -4585,7 +4585,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the attribute
      * '{@link org.eclipse.sirius.diagram.description.EdgeMappingImport#isInheritsAncestorFilters <em>Inherits Ancestor
      * Filters</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Inherits Ancestor Filters</em>'.
      * @see org.eclipse.sirius.diagram.description.EdgeMappingImport#isInheritsAncestorFilters()
      * @see #getEdgeMappingImport()
@@ -4596,7 +4596,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * Returns the meta object for class '{@link org.eclipse.sirius.diagram.description.ConditionalNodeStyleDescription
      * <em>Conditional Node Style Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Conditional Node Style Description</em>'.
      * @see org.eclipse.sirius.diagram.description.ConditionalNodeStyleDescription
      * @generated
@@ -4618,7 +4618,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * Returns the meta object for class '{@link org.eclipse.sirius.diagram.description.ConditionalEdgeStyleDescription
      * <em>Conditional Edge Style Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Conditional Edge Style Description</em>'.
      * @see org.eclipse.sirius.diagram.description.ConditionalEdgeStyleDescription
      * @generated
@@ -4641,7 +4641,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for class
      * '{@link org.eclipse.sirius.diagram.description.ConditionalContainerStyleDescription <em>Conditional Container
      * Style Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Conditional Container Style Description</em>'.
      * @see org.eclipse.sirius.diagram.description.ConditionalContainerStyleDescription
      * @generated
@@ -4652,7 +4652,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the containment reference
      * '{@link org.eclipse.sirius.diagram.description.ConditionalContainerStyleDescription#getStyle <em>Style</em>}'.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference '<em>Style</em>'.
      * @see org.eclipse.sirius.diagram.description.ConditionalContainerStyleDescription#getStyle()
      * @see #getConditionalContainerStyleDescription()
@@ -4673,7 +4673,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * Returns the meta object for class '{@link org.eclipse.sirius.diagram.description.OrderedTreeLayout <em>Ordered
      * Tree Layout</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Ordered Tree Layout</em>'.
      * @see org.eclipse.sirius.diagram.description.OrderedTreeLayout
      * @generated
@@ -4684,7 +4684,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the attribute
      * '{@link org.eclipse.sirius.diagram.description.OrderedTreeLayout#getChildrenExpression <em>Children
      * Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Children Expression</em>'.
      * @see org.eclipse.sirius.diagram.description.OrderedTreeLayout#getChildrenExpression()
      * @see #getOrderedTreeLayout()
@@ -4707,7 +4707,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * Returns the meta object for class '{@link org.eclipse.sirius.diagram.description.CompositeLayout <em>Composite
      * Layout</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Composite Layout</em>'.
      * @see org.eclipse.sirius.diagram.description.CompositeLayout
      * @generated
@@ -4718,7 +4718,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the attribute
      * '{@link org.eclipse.sirius.diagram.description.CompositeLayout#getPadding <em>Padding</em>}'. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Padding</em>'.
      * @see org.eclipse.sirius.diagram.description.CompositeLayout#getPadding()
      * @see #getCompositeLayout()
@@ -4741,7 +4741,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * Returns the meta object for class '{@link org.eclipse.sirius.diagram.description.CustomLayoutConfiguration
      * <em>Custom Layout Configuration</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Custom Layout Configuration</em>'.
      * @see org.eclipse.sirius.diagram.description.CustomLayoutConfiguration
      * @generated
@@ -4752,7 +4752,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the attribute
      * '{@link org.eclipse.sirius.diagram.description.CustomLayoutConfiguration#getId <em>Id</em>}'. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Id</em>'.
      * @see org.eclipse.sirius.diagram.description.CustomLayoutConfiguration#getId()
      * @see #getCustomLayoutConfiguration()
@@ -4776,7 +4776,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the attribute
      * '{@link org.eclipse.sirius.diagram.description.CustomLayoutConfiguration#getDescription <em>Description</em>}'.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Description</em>'.
      * @see org.eclipse.sirius.diagram.description.CustomLayoutConfiguration#getDescription()
      * @see #getCustomLayoutConfiguration()
@@ -4788,7 +4788,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the containment reference list
      * '{@link org.eclipse.sirius.diagram.description.CustomLayoutConfiguration#getLayoutOptions <em>Layout
      * Options</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference list '<em>Layout Options</em>'.
      * @see org.eclipse.sirius.diagram.description.CustomLayoutConfiguration#getLayoutOptions()
      * @see #getCustomLayoutConfiguration()
@@ -4799,7 +4799,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * Returns the meta object for class '{@link org.eclipse.sirius.diagram.description.LayoutOption <em>Layout
      * Option</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Layout Option</em>'.
      * @see org.eclipse.sirius.diagram.description.LayoutOption
      * @generated
@@ -4809,7 +4809,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * Returns the meta object for the attribute '{@link org.eclipse.sirius.diagram.description.LayoutOption#getId
      * <em>Id</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Id</em>'.
      * @see org.eclipse.sirius.diagram.description.LayoutOption#getId()
      * @see #getLayoutOption()
@@ -4820,7 +4820,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * Returns the meta object for the attribute '{@link org.eclipse.sirius.diagram.description.LayoutOption#getLabel
      * <em>Label</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Label</em>'.
      * @see org.eclipse.sirius.diagram.description.LayoutOption#getLabel()
      * @see #getLayoutOption()
@@ -4843,7 +4843,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * Returns the meta object for class '{@link org.eclipse.sirius.diagram.description.BooleanLayoutOption <em>Boolean
      * Layout Option</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Boolean Layout Option</em>'.
      * @see org.eclipse.sirius.diagram.description.BooleanLayoutOption
      * @generated
@@ -4854,7 +4854,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the attribute
      * '{@link org.eclipse.sirius.diagram.description.BooleanLayoutOption#isValue <em>Value</em>}'. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Value</em>'.
      * @see org.eclipse.sirius.diagram.description.BooleanLayoutOption#isValue()
      * @see #getBooleanLayoutOption()
@@ -4865,7 +4865,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * Returns the meta object for class '{@link org.eclipse.sirius.diagram.description.StringLayoutOption <em>String
      * Layout Option</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>String Layout Option</em>'.
      * @see org.eclipse.sirius.diagram.description.StringLayoutOption
      * @generated
@@ -4876,7 +4876,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the attribute
      * '{@link org.eclipse.sirius.diagram.description.StringLayoutOption#getValue <em>Value</em>}'. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Value</em>'.
      * @see org.eclipse.sirius.diagram.description.StringLayoutOption#getValue()
      * @see #getStringLayoutOption()
@@ -4887,7 +4887,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * Returns the meta object for class '{@link org.eclipse.sirius.diagram.description.IntegerLayoutOption <em>Integer
      * Layout Option</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Integer Layout Option</em>'.
      * @see org.eclipse.sirius.diagram.description.IntegerLayoutOption
      * @generated
@@ -4898,7 +4898,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the attribute
      * '{@link org.eclipse.sirius.diagram.description.IntegerLayoutOption#getValue <em>Value</em>}'. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Value</em>'.
      * @see org.eclipse.sirius.diagram.description.IntegerLayoutOption#getValue()
      * @see #getIntegerLayoutOption()
@@ -4909,7 +4909,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * Returns the meta object for class '{@link org.eclipse.sirius.diagram.description.DoubleLayoutOption <em>Double
      * Layout Option</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Double Layout Option</em>'.
      * @see org.eclipse.sirius.diagram.description.DoubleLayoutOption
      * @generated
@@ -4920,7 +4920,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the attribute
      * '{@link org.eclipse.sirius.diagram.description.DoubleLayoutOption#getValue <em>Value</em>}'. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Value</em>'.
      * @see org.eclipse.sirius.diagram.description.DoubleLayoutOption#getValue()
      * @see #getDoubleLayoutOption()
@@ -4931,7 +4931,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * Returns the meta object for class '{@link org.eclipse.sirius.diagram.description.EnumLayoutOption <em>Enum Layout
      * Option</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Enum Layout Option</em>'.
      * @see org.eclipse.sirius.diagram.description.EnumLayoutOption
      * @generated
@@ -4942,7 +4942,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the containment reference
      * '{@link org.eclipse.sirius.diagram.description.EnumLayoutOption#getValue <em>Value</em>}'. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference '<em>Value</em>'.
      * @see org.eclipse.sirius.diagram.description.EnumLayoutOption#getValue()
      * @see #getEnumLayoutOption()
@@ -4953,7 +4953,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * Returns the meta object for class '{@link org.eclipse.sirius.diagram.description.EnumSetLayoutOption <em>Enum Set
      * Layout Option</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Enum Set Layout Option</em>'.
      * @see org.eclipse.sirius.diagram.description.EnumSetLayoutOption
      * @generated
@@ -4975,7 +4975,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * Returns the meta object for class '{@link org.eclipse.sirius.diagram.description.EnumOption <em>Enum
      * Option</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Enum Option</em>'.
      * @see org.eclipse.sirius.diagram.description.EnumOption
      * @generated
@@ -4986,7 +4986,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the containment reference list
      * '{@link org.eclipse.sirius.diagram.description.EnumOption#getChoices <em>Choices</em>}'. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference list '<em>Choices</em>'.
      * @see org.eclipse.sirius.diagram.description.EnumOption#getChoices()
      * @see #getEnumOption()
@@ -4997,7 +4997,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * Returns the meta object for class '{@link org.eclipse.sirius.diagram.description.EnumLayoutValue <em>Enum Layout
      * Value</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Enum Layout Value</em>'.
      * @see org.eclipse.sirius.diagram.description.EnumLayoutValue
      * @generated
@@ -5007,7 +5007,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * Returns the meta object for the attribute '{@link org.eclipse.sirius.diagram.description.EnumLayoutValue#getName
      * <em>Name</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Name</em>'.
      * @see org.eclipse.sirius.diagram.description.EnumLayoutValue#getName()
      * @see #getEnumLayoutValue()
@@ -5030,7 +5030,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * Returns the meta object for class '{@link org.eclipse.sirius.diagram.description.MappingBasedDecoration
      * <em>Mapping Based Decoration</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Mapping Based Decoration</em>'.
      * @see org.eclipse.sirius.diagram.description.MappingBasedDecoration
      * @generated
@@ -5122,7 +5122,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * Returns the meta object for the reference list '{@link org.eclipse.sirius.diagram.description.Layer#getAllTools
      * <em>All Tools</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the reference list '<em>All Tools</em>'.
      * @see org.eclipse.sirius.diagram.description.Layer#getAllTools()
      * @see #getLayer()
@@ -5146,7 +5146,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the reference list
      * '{@link org.eclipse.sirius.diagram.description.Layer#getReusedTools <em>Reused Tools</em>}'. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the reference list '<em>Reused Tools</em>'.
      * @see org.eclipse.sirius.diagram.description.Layer#getReusedTools()
      * @see #getLayer()
@@ -5158,7 +5158,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the containment reference
      * '{@link org.eclipse.sirius.diagram.description.Layer#getDecorationDescriptionsSet <em>Decoration Descriptions
      * Set</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the containment reference '<em>Decoration Descriptions Set</em>'.
      * @see org.eclipse.sirius.diagram.description.Layer#getDecorationDescriptionsSet()
      * @see #getLayer()
@@ -5169,7 +5169,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * Returns the meta object for the attribute '{@link org.eclipse.sirius.diagram.description.Layer#getIcon
      * <em>Icon</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Icon</em>'.
      * @see org.eclipse.sirius.diagram.description.Layer#getIcon()
      * @see #getLayer()
@@ -5204,7 +5204,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * Returns the meta object for class '{@link org.eclipse.sirius.diagram.description.AdditionalLayer <em>Additional
      * Layer</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Additional Layer</em>'.
      * @see org.eclipse.sirius.diagram.description.AdditionalLayer
      * @generated
@@ -5215,7 +5215,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the attribute
      * '{@link org.eclipse.sirius.diagram.description.AdditionalLayer#isActiveByDefault <em>Active By Default</em>}'.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the attribute '<em>Active By Default</em>'.
      * @see org.eclipse.sirius.diagram.description.AdditionalLayer#isActiveByDefault()
      * @see #getAdditionalLayer()
@@ -5238,7 +5238,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * Returns the meta object for class '{@link org.eclipse.sirius.diagram.description.DragAndDropTargetDescription
      * <em>Drag And Drop Target Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Drag And Drop Target Description</em>'.
      * @see org.eclipse.sirius.diagram.description.DragAndDropTargetDescription
      * @generated
@@ -5249,7 +5249,7 @@ public interface DescriptionPackage extends EPackage {
      * Returns the meta object for the reference list
      * '{@link org.eclipse.sirius.diagram.description.DragAndDropTargetDescription#getDropDescriptions <em>Drop
      * Descriptions</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the reference list '<em>Drop Descriptions</em>'.
      * @see org.eclipse.sirius.diagram.description.DragAndDropTargetDescription#getDropDescriptions()
      * @see #getDragAndDropTargetDescription()
@@ -5260,7 +5260,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * Returns the meta object for enum '{@link org.eclipse.sirius.diagram.description.FoldingStyle <em>Folding
      * Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for enum '<em>Folding Style</em>'.
      * @see org.eclipse.sirius.diagram.description.FoldingStyle
      * @generated
@@ -5270,7 +5270,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * Returns the meta object for enum '{@link org.eclipse.sirius.diagram.description.LayoutDirection <em>Layout
      * Direction</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for enum '<em>Layout Direction</em>'.
      * @see org.eclipse.sirius.diagram.description.LayoutDirection
      * @generated
@@ -5280,7 +5280,7 @@ public interface DescriptionPackage extends EPackage {
     /**
      * Returns the meta object for enum '{@link org.eclipse.sirius.diagram.description.CenteringStyle <em>Centering
      * Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for enum '<em>Centering Style</em>'.
      * @see org.eclipse.sirius.diagram.description.CenteringStyle
      * @generated
@@ -5289,7 +5289,7 @@ public interface DescriptionPackage extends EPackage {
 
     /**
      * Returns the factory that creates the instances of the model. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the factory that creates the instances of the model.
      * @generated
      */
@@ -5304,14 +5304,14 @@ public interface DescriptionPackage extends EPackage {
      * <li>and each data type</li>
      * </ul>
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     interface Literals {
         /**
          * The meta object literal for the '{@link org.eclipse.sirius.diagram.description.impl.DiagramDescriptionImpl
          * <em>Diagram Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.eclipse.sirius.diagram.description.impl.DiagramDescriptionImpl
          * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getDiagramDescription()
          * @generated
@@ -5361,7 +5361,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Concerns</b></em>' containment reference feature. <!-- begin-user-doc
          * --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference DIAGRAM_DESCRIPTION__CONCERNS = DescriptionPackage.eINSTANCE.getDiagramDescription_Concerns();
@@ -5369,7 +5369,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>All Tools</b></em>' reference list feature. <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference DIAGRAM_DESCRIPTION__ALL_TOOLS = DescriptionPackage.eINSTANCE.getDiagramDescription_AllTools();
@@ -5377,7 +5377,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Domain Class</b></em>' attribute feature. <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EAttribute DIAGRAM_DESCRIPTION__DOMAIN_CLASS = DescriptionPackage.eINSTANCE.getDiagramDescription_DomainClass();
@@ -5393,7 +5393,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Default Concern</b></em>' reference feature. <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference DIAGRAM_DESCRIPTION__DEFAULT_CONCERN = DescriptionPackage.eINSTANCE.getDiagramDescription_DefaultConcern();
@@ -5401,7 +5401,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Root Expression</b></em>' attribute feature. <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EAttribute DIAGRAM_DESCRIPTION__ROOT_EXPRESSION = DescriptionPackage.eINSTANCE.getDiagramDescription_RootExpression();
@@ -5409,7 +5409,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Init</b></em>' reference feature. <!-- begin-user-doc --> <!--
          * end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference DIAGRAM_DESCRIPTION__INIT = DescriptionPackage.eINSTANCE.getDiagramDescription_Init();
@@ -5417,7 +5417,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Layout</b></em>' containment reference feature. <!-- begin-user-doc
          * --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference DIAGRAM_DESCRIPTION__LAYOUT = DescriptionPackage.eINSTANCE.getDiagramDescription_Layout();
@@ -5449,7 +5449,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>All Layers</b></em>' reference list feature. <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference DIAGRAM_DESCRIPTION__ALL_LAYERS = DescriptionPackage.eINSTANCE.getDiagramDescription_AllLayers();
@@ -5481,7 +5481,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Edge Mapping Imports</b></em>' containment reference list feature.
          * <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference DIAGRAM_DESCRIPTION__EDGE_MAPPING_IMPORTS = DescriptionPackage.eINSTANCE.getDiagramDescription_EdgeMappingImports();
@@ -5497,7 +5497,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Reused Mappings</b></em>' reference list feature. <!-- begin-user-doc
          * --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference DIAGRAM_DESCRIPTION__REUSED_MAPPINGS = DescriptionPackage.eINSTANCE.getDiagramDescription_ReusedMappings();
@@ -5513,7 +5513,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Reused Tools</b></em>' reference list feature. <!-- begin-user-doc
          * --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference DIAGRAM_DESCRIPTION__REUSED_TOOLS = DescriptionPackage.eINSTANCE.getDiagramDescription_ReusedTools();
@@ -5521,7 +5521,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Enable Popup Bars</b></em>' attribute feature. <!-- begin-user-doc
          * --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EAttribute DIAGRAM_DESCRIPTION__ENABLE_POPUP_BARS = DescriptionPackage.eINSTANCE.getDiagramDescription_EnablePopupBars();
@@ -5529,7 +5529,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Background Color</b></em>' reference feature. <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference DIAGRAM_DESCRIPTION__BACKGROUND_COLOR = DescriptionPackage.eINSTANCE.getDiagramDescription_BackgroundColor();
@@ -5538,7 +5538,7 @@ public interface DescriptionPackage extends EPackage {
          * The meta object literal for the
          * '{@link org.eclipse.sirius.diagram.description.impl.DiagramImportDescriptionImpl <em>Diagram Import
          * Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.eclipse.sirius.diagram.description.impl.DiagramImportDescriptionImpl
          * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getDiagramImportDescription()
          * @generated
@@ -5548,7 +5548,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Imported Diagram</b></em>' reference feature. <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference DIAGRAM_IMPORT_DESCRIPTION__IMPORTED_DIAGRAM = DescriptionPackage.eINSTANCE.getDiagramImportDescription_ImportedDiagram();
@@ -5557,7 +5557,7 @@ public interface DescriptionPackage extends EPackage {
          * The meta object literal for the
          * '{@link org.eclipse.sirius.diagram.description.impl.DiagramExtensionDescriptionImpl <em>Diagram Extension
          * Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.eclipse.sirius.diagram.description.impl.DiagramExtensionDescriptionImpl
          * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getDiagramExtensionDescription()
          * @generated
@@ -5583,7 +5583,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Concerns</b></em>' containment reference feature. <!-- begin-user-doc
          * --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference DIAGRAM_EXTENSION_DESCRIPTION__CONCERNS = DescriptionPackage.eINSTANCE.getDiagramExtensionDescription_Concerns();
@@ -5591,7 +5591,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '{@link org.eclipse.sirius.diagram.description.impl.DiagramElementMappingImpl
          * <em>Diagram Element Mapping</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.eclipse.sirius.diagram.description.impl.DiagramElementMappingImpl
          * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getDiagramElementMapping()
          * @generated
@@ -5609,7 +5609,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Deletion Description</b></em>' reference feature. <!-- begin-user-doc
          * --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference DIAGRAM_ELEMENT_MAPPING__DELETION_DESCRIPTION = DescriptionPackage.eINSTANCE.getDiagramElementMapping_DeletionDescription();
@@ -5617,7 +5617,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Label Direct Edit</b></em>' reference feature. <!-- begin-user-doc
          * --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference DIAGRAM_ELEMENT_MAPPING__LABEL_DIRECT_EDIT = DescriptionPackage.eINSTANCE.getDiagramElementMapping_LabelDirectEdit();
@@ -5633,7 +5633,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Create Elements</b></em>' attribute feature. <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EAttribute DIAGRAM_ELEMENT_MAPPING__CREATE_ELEMENTS = DescriptionPackage.eINSTANCE.getDiagramElementMapping_CreateElements();
@@ -5641,7 +5641,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Semantic Elements</b></em>' attribute feature. <!-- begin-user-doc
          * --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EAttribute DIAGRAM_ELEMENT_MAPPING__SEMANTIC_ELEMENTS = DescriptionPackage.eINSTANCE.getDiagramElementMapping_SemanticElements();
@@ -5657,7 +5657,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Synchronization Lock</b></em>' attribute feature. <!-- begin-user-doc
          * --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EAttribute DIAGRAM_ELEMENT_MAPPING__SYNCHRONIZATION_LOCK = DescriptionPackage.eINSTANCE.getDiagramElementMapping_SynchronizationLock();
@@ -5665,7 +5665,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '{@link org.eclipse.sirius.diagram.description.impl.AbstractNodeMappingImpl
          * <em>Abstract Node Mapping</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.eclipse.sirius.diagram.description.impl.AbstractNodeMappingImpl
          * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getAbstractNodeMapping()
          * @generated
@@ -5675,7 +5675,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Domain Class</b></em>' attribute feature. <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EAttribute ABSTRACT_NODE_MAPPING__DOMAIN_CLASS = DescriptionPackage.eINSTANCE.getAbstractNodeMapping_DomainClass();
@@ -5683,7 +5683,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Bordered Node Mappings</b></em>' containment reference list feature.
          * <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference ABSTRACT_NODE_MAPPING__BORDERED_NODE_MAPPINGS = DescriptionPackage.eINSTANCE.getAbstractNodeMapping_BorderedNodeMappings();
@@ -5699,7 +5699,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '{@link org.eclipse.sirius.diagram.description.impl.NodeMappingImpl <em>Node
          * Mapping</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.eclipse.sirius.diagram.description.impl.NodeMappingImpl
          * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getNodeMapping()
          * @generated
@@ -5709,7 +5709,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Style</b></em>' containment reference feature. <!-- begin-user-doc
          * --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference NODE_MAPPING__STYLE = DescriptionPackage.eINSTANCE.getNodeMapping_Style();
@@ -5717,7 +5717,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Conditionnal Styles</b></em>' containment reference list feature.
          * <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference NODE_MAPPING__CONDITIONNAL_STYLES = DescriptionPackage.eINSTANCE.getNodeMapping_ConditionnalStyles();
@@ -5725,7 +5725,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '{@link org.eclipse.sirius.diagram.description.impl.ContainerMappingImpl
          * <em>Container Mapping</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.eclipse.sirius.diagram.description.impl.ContainerMappingImpl
          * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getContainerMapping()
          * @generated
@@ -5759,7 +5759,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Sub Container Mappings</b></em>' containment reference list feature.
          * <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference CONTAINER_MAPPING__SUB_CONTAINER_MAPPINGS = DescriptionPackage.eINSTANCE.getContainerMapping_SubContainerMappings();
@@ -5783,7 +5783,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Style</b></em>' containment reference feature. <!-- begin-user-doc
          * --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference CONTAINER_MAPPING__STYLE = DescriptionPackage.eINSTANCE.getContainerMapping_Style();
@@ -5791,7 +5791,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Conditionnal Styles</b></em>' containment reference list feature.
          * <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference CONTAINER_MAPPING__CONDITIONNAL_STYLES = DescriptionPackage.eINSTANCE.getContainerMapping_ConditionnalStyles();
@@ -5807,7 +5807,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '{@link org.eclipse.sirius.diagram.description.impl.NodeMappingImportImpl
          * <em>Node Mapping Import</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.eclipse.sirius.diagram.description.impl.NodeMappingImportImpl
          * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getNodeMappingImport()
          * @generated
@@ -5817,7 +5817,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Imported Mapping</b></em>' reference feature. <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference NODE_MAPPING_IMPORT__IMPORTED_MAPPING = DescriptionPackage.eINSTANCE.getNodeMappingImport_ImportedMapping();
@@ -5826,7 +5826,7 @@ public interface DescriptionPackage extends EPackage {
          * The meta object literal for the
          * '{@link org.eclipse.sirius.diagram.description.impl.ContainerMappingImportImpl <em>Container Mapping
          * Import</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.eclipse.sirius.diagram.description.impl.ContainerMappingImportImpl
          * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getContainerMappingImport()
          * @generated
@@ -5836,7 +5836,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Imported Mapping</b></em>' reference feature. <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference CONTAINER_MAPPING_IMPORT__IMPORTED_MAPPING = DescriptionPackage.eINSTANCE.getContainerMappingImport_ImportedMapping();
@@ -5844,7 +5844,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '{@link org.eclipse.sirius.diagram.description.impl.EdgeMappingImpl <em>Edge
          * Mapping</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.eclipse.sirius.diagram.description.impl.EdgeMappingImpl
          * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getEdgeMapping()
          * @generated
@@ -5854,7 +5854,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Source Mapping</b></em>' reference list feature. <!-- begin-user-doc
          * --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference EDGE_MAPPING__SOURCE_MAPPING = DescriptionPackage.eINSTANCE.getEdgeMapping_SourceMapping();
@@ -5862,7 +5862,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Target Mapping</b></em>' reference list feature. <!-- begin-user-doc
          * --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference EDGE_MAPPING__TARGET_MAPPING = DescriptionPackage.eINSTANCE.getEdgeMapping_TargetMapping();
@@ -5886,7 +5886,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Style</b></em>' containment reference feature. <!-- begin-user-doc
          * --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference EDGE_MAPPING__STYLE = DescriptionPackage.eINSTANCE.getEdgeMapping_Style();
@@ -5894,7 +5894,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Conditionnal Styles</b></em>' containment reference list feature.
          * <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference EDGE_MAPPING__CONDITIONNAL_STYLES = DescriptionPackage.eINSTANCE.getEdgeMapping_ConditionnalStyles();
@@ -5902,7 +5902,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Target Expression</b></em>' attribute feature. <!-- begin-user-doc
          * --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EAttribute EDGE_MAPPING__TARGET_EXPRESSION = DescriptionPackage.eINSTANCE.getEdgeMapping_TargetExpression();
@@ -5910,7 +5910,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Domain Class</b></em>' attribute feature. <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EAttribute EDGE_MAPPING__DOMAIN_CLASS = DescriptionPackage.eINSTANCE.getEdgeMapping_DomainClass();
@@ -5918,7 +5918,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Use Domain Element</b></em>' attribute feature. <!-- begin-user-doc
          * --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EAttribute EDGE_MAPPING__USE_DOMAIN_ELEMENT = DescriptionPackage.eINSTANCE.getEdgeMapping_UseDomainElement();
@@ -5926,7 +5926,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Reconnections</b></em>' reference list feature. <!-- begin-user-doc
          * --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference EDGE_MAPPING__RECONNECTIONS = DescriptionPackage.eINSTANCE.getEdgeMapping_Reconnections();
@@ -5934,7 +5934,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Path Expression</b></em>' attribute feature. <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EAttribute EDGE_MAPPING__PATH_EXPRESSION = DescriptionPackage.eINSTANCE.getEdgeMapping_PathExpression();
@@ -5950,7 +5950,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '{@link org.eclipse.sirius.diagram.description.IEdgeMapping <em>IEdge
          * Mapping</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.eclipse.sirius.diagram.description.IEdgeMapping
          * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getIEdgeMapping()
          * @generated
@@ -5960,7 +5960,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '{@link org.eclipse.sirius.diagram.description.impl.EdgeMappingImportImpl
          * <em>Edge Mapping Import</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.eclipse.sirius.diagram.description.impl.EdgeMappingImportImpl
          * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getEdgeMappingImport()
          * @generated
@@ -5970,7 +5970,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Imported Mapping</b></em>' reference feature. <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference EDGE_MAPPING_IMPORT__IMPORTED_MAPPING = DescriptionPackage.eINSTANCE.getEdgeMappingImport_ImportedMapping();
@@ -5978,7 +5978,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Conditionnal Styles</b></em>' containment reference list feature.
          * <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference EDGE_MAPPING_IMPORT__CONDITIONNAL_STYLES = DescriptionPackage.eINSTANCE.getEdgeMappingImport_ConditionnalStyles();
@@ -5995,7 +5995,7 @@ public interface DescriptionPackage extends EPackage {
          * The meta object literal for the
          * '{@link org.eclipse.sirius.diagram.description.impl.ConditionalNodeStyleDescriptionImpl <em>Conditional Node
          * Style Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.eclipse.sirius.diagram.description.impl.ConditionalNodeStyleDescriptionImpl
          * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getConditionalNodeStyleDescription()
          * @generated
@@ -6005,7 +6005,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Style</b></em>' containment reference feature. <!-- begin-user-doc
          * --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference CONDITIONAL_NODE_STYLE_DESCRIPTION__STYLE = DescriptionPackage.eINSTANCE.getConditionalNodeStyleDescription_Style();
@@ -6014,7 +6014,7 @@ public interface DescriptionPackage extends EPackage {
          * The meta object literal for the
          * '{@link org.eclipse.sirius.diagram.description.impl.ConditionalEdgeStyleDescriptionImpl <em>Conditional Edge
          * Style Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.eclipse.sirius.diagram.description.impl.ConditionalEdgeStyleDescriptionImpl
          * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getConditionalEdgeStyleDescription()
          * @generated
@@ -6024,7 +6024,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Style</b></em>' containment reference feature. <!-- begin-user-doc
          * --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference CONDITIONAL_EDGE_STYLE_DESCRIPTION__STYLE = DescriptionPackage.eINSTANCE.getConditionalEdgeStyleDescription_Style();
@@ -6033,7 +6033,7 @@ public interface DescriptionPackage extends EPackage {
          * The meta object literal for the
          * '{@link org.eclipse.sirius.diagram.description.impl.ConditionalContainerStyleDescriptionImpl <em>Conditional
          * Container Style Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.eclipse.sirius.diagram.description.impl.ConditionalContainerStyleDescriptionImpl
          * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getConditionalContainerStyleDescription()
          * @generated
@@ -6043,7 +6043,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Style</b></em>' containment reference feature. <!-- begin-user-doc
          * --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference CONDITIONAL_CONTAINER_STYLE_DESCRIPTION__STYLE = DescriptionPackage.eINSTANCE.getConditionalContainerStyleDescription_Style();
@@ -6051,7 +6051,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '{@link org.eclipse.sirius.diagram.description.Layout <em>Layout</em>}'
          * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.eclipse.sirius.diagram.description.Layout
          * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getLayout()
          * @generated
@@ -6061,7 +6061,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '{@link org.eclipse.sirius.diagram.description.impl.OrderedTreeLayoutImpl
          * <em>Ordered Tree Layout</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.eclipse.sirius.diagram.description.impl.OrderedTreeLayoutImpl
          * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getOrderedTreeLayout()
          * @generated
@@ -6071,7 +6071,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Children Expression</b></em>' attribute feature. <!-- begin-user-doc
          * --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EAttribute ORDERED_TREE_LAYOUT__CHILDREN_EXPRESSION = DescriptionPackage.eINSTANCE.getOrderedTreeLayout_ChildrenExpression();
@@ -6079,7 +6079,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Node Mapping</b></em>' reference list feature. <!-- begin-user-doc
          * --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference ORDERED_TREE_LAYOUT__NODE_MAPPING = DescriptionPackage.eINSTANCE.getOrderedTreeLayout_NodeMapping();
@@ -6087,7 +6087,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '{@link org.eclipse.sirius.diagram.description.impl.CompositeLayoutImpl
          * <em>Composite Layout</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.eclipse.sirius.diagram.description.impl.CompositeLayoutImpl
          * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getCompositeLayout()
          * @generated
@@ -6097,7 +6097,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Padding</b></em>' attribute feature. <!-- begin-user-doc --> <!--
          * end-user-doc -->
-         *
+         * 
          * @generated
          */
         EAttribute COMPOSITE_LAYOUT__PADDING = DescriptionPackage.eINSTANCE.getCompositeLayout_Padding();
@@ -6105,7 +6105,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Direction</b></em>' attribute feature. <!-- begin-user-doc --> <!--
          * end-user-doc -->
-         *
+         * 
          * @generated
          */
         EAttribute COMPOSITE_LAYOUT__DIRECTION = DescriptionPackage.eINSTANCE.getCompositeLayout_Direction();
@@ -6114,7 +6114,7 @@ public interface DescriptionPackage extends EPackage {
          * The meta object literal for the
          * '{@link org.eclipse.sirius.diagram.description.impl.CustomLayoutConfigurationImpl <em>Custom Layout
          * Configuration</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.eclipse.sirius.diagram.description.impl.CustomLayoutConfigurationImpl
          * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getCustomLayoutConfiguration()
          * @generated
@@ -6124,7 +6124,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Id</b></em>' attribute feature. <!-- begin-user-doc --> <!--
          * end-user-doc -->
-         *
+         * 
          * @generated
          */
         EAttribute CUSTOM_LAYOUT_CONFIGURATION__ID = DescriptionPackage.eINSTANCE.getCustomLayoutConfiguration_Id();
@@ -6132,7 +6132,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Label</b></em>' attribute feature. <!-- begin-user-doc --> <!--
          * end-user-doc -->
-         *
+         * 
          * @generated
          */
         EAttribute CUSTOM_LAYOUT_CONFIGURATION__LABEL = DescriptionPackage.eINSTANCE.getCustomLayoutConfiguration_Label();
@@ -6140,7 +6140,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Description</b></em>' attribute feature. <!-- begin-user-doc --> <!--
          * end-user-doc -->
-         *
+         * 
          * @generated
          */
         EAttribute CUSTOM_LAYOUT_CONFIGURATION__DESCRIPTION = DescriptionPackage.eINSTANCE.getCustomLayoutConfiguration_Description();
@@ -6156,7 +6156,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '{@link org.eclipse.sirius.diagram.description.impl.LayoutOptionImpl
          * <em>Layout Option</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.eclipse.sirius.diagram.description.impl.LayoutOptionImpl
          * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getLayoutOption()
          * @generated
@@ -6166,7 +6166,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Id</b></em>' attribute feature. <!-- begin-user-doc --> <!--
          * end-user-doc -->
-         *
+         * 
          * @generated
          */
         EAttribute LAYOUT_OPTION__ID = DescriptionPackage.eINSTANCE.getLayoutOption_Id();
@@ -6174,7 +6174,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Label</b></em>' attribute feature. <!-- begin-user-doc --> <!--
          * end-user-doc -->
-         *
+         * 
          * @generated
          */
         EAttribute LAYOUT_OPTION__LABEL = DescriptionPackage.eINSTANCE.getLayoutOption_Label();
@@ -6182,7 +6182,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Description</b></em>' attribute feature. <!-- begin-user-doc --> <!--
          * end-user-doc -->
-         *
+         * 
          * @generated
          */
         EAttribute LAYOUT_OPTION__DESCRIPTION = DescriptionPackage.eINSTANCE.getLayoutOption_Description();
@@ -6190,7 +6190,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '{@link org.eclipse.sirius.diagram.description.impl.BooleanLayoutOptionImpl
          * <em>Boolean Layout Option</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.eclipse.sirius.diagram.description.impl.BooleanLayoutOptionImpl
          * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getBooleanLayoutOption()
          * @generated
@@ -6200,7 +6200,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Value</b></em>' attribute feature. <!-- begin-user-doc --> <!--
          * end-user-doc -->
-         *
+         * 
          * @generated
          */
         EAttribute BOOLEAN_LAYOUT_OPTION__VALUE = DescriptionPackage.eINSTANCE.getBooleanLayoutOption_Value();
@@ -6208,7 +6208,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '{@link org.eclipse.sirius.diagram.description.impl.StringLayoutOptionImpl
          * <em>String Layout Option</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.eclipse.sirius.diagram.description.impl.StringLayoutOptionImpl
          * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getStringLayoutOption()
          * @generated
@@ -6218,7 +6218,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Value</b></em>' attribute feature. <!-- begin-user-doc --> <!--
          * end-user-doc -->
-         *
+         * 
          * @generated
          */
         EAttribute STRING_LAYOUT_OPTION__VALUE = DescriptionPackage.eINSTANCE.getStringLayoutOption_Value();
@@ -6226,7 +6226,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '{@link org.eclipse.sirius.diagram.description.impl.IntegerLayoutOptionImpl
          * <em>Integer Layout Option</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.eclipse.sirius.diagram.description.impl.IntegerLayoutOptionImpl
          * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getIntegerLayoutOption()
          * @generated
@@ -6236,7 +6236,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Value</b></em>' attribute feature. <!-- begin-user-doc --> <!--
          * end-user-doc -->
-         *
+         * 
          * @generated
          */
         EAttribute INTEGER_LAYOUT_OPTION__VALUE = DescriptionPackage.eINSTANCE.getIntegerLayoutOption_Value();
@@ -6244,7 +6244,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '{@link org.eclipse.sirius.diagram.description.impl.DoubleLayoutOptionImpl
          * <em>Double Layout Option</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.eclipse.sirius.diagram.description.impl.DoubleLayoutOptionImpl
          * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getDoubleLayoutOption()
          * @generated
@@ -6254,7 +6254,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Value</b></em>' attribute feature. <!-- begin-user-doc --> <!--
          * end-user-doc -->
-         *
+         * 
          * @generated
          */
         EAttribute DOUBLE_LAYOUT_OPTION__VALUE = DescriptionPackage.eINSTANCE.getDoubleLayoutOption_Value();
@@ -6262,7 +6262,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '{@link org.eclipse.sirius.diagram.description.impl.EnumLayoutOptionImpl
          * <em>Enum Layout Option</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.eclipse.sirius.diagram.description.impl.EnumLayoutOptionImpl
          * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getEnumLayoutOption()
          * @generated
@@ -6272,7 +6272,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Value</b></em>' containment reference feature. <!-- begin-user-doc
          * --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference ENUM_LAYOUT_OPTION__VALUE = DescriptionPackage.eINSTANCE.getEnumLayoutOption_Value();
@@ -6280,7 +6280,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '{@link org.eclipse.sirius.diagram.description.impl.EnumSetLayoutOptionImpl
          * <em>Enum Set Layout Option</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.eclipse.sirius.diagram.description.impl.EnumSetLayoutOptionImpl
          * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getEnumSetLayoutOption()
          * @generated
@@ -6298,7 +6298,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '{@link org.eclipse.sirius.diagram.description.impl.EnumOptionImpl <em>Enum
          * Option</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.eclipse.sirius.diagram.description.impl.EnumOptionImpl
          * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getEnumOption()
          * @generated
@@ -6316,7 +6316,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '{@link org.eclipse.sirius.diagram.description.impl.EnumLayoutValueImpl
          * <em>Enum Layout Value</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.eclipse.sirius.diagram.description.impl.EnumLayoutValueImpl
          * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getEnumLayoutValue()
          * @generated
@@ -6326,7 +6326,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Name</b></em>' attribute feature. <!-- begin-user-doc --> <!--
          * end-user-doc -->
-         *
+         * 
          * @generated
          */
         EAttribute ENUM_LAYOUT_VALUE__NAME = DescriptionPackage.eINSTANCE.getEnumLayoutValue_Name();
@@ -6334,7 +6334,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Description</b></em>' attribute feature. <!-- begin-user-doc --> <!--
          * end-user-doc -->
-         *
+         * 
          * @generated
          */
         EAttribute ENUM_LAYOUT_VALUE__DESCRIPTION = DescriptionPackage.eINSTANCE.getEnumLayoutValue_Description();
@@ -6343,7 +6343,7 @@ public interface DescriptionPackage extends EPackage {
          * The meta object literal for the
          * '{@link org.eclipse.sirius.diagram.description.impl.MappingBasedDecorationImpl <em>Mapping Based
          * Decoration</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.eclipse.sirius.diagram.description.impl.MappingBasedDecorationImpl
          * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getMappingBasedDecoration()
          * @generated
@@ -6353,7 +6353,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Mappings</b></em>' reference list feature. <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference MAPPING_BASED_DECORATION__MAPPINGS = DescriptionPackage.eINSTANCE.getMappingBasedDecoration_Mappings();
@@ -6361,7 +6361,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '{@link org.eclipse.sirius.diagram.description.impl.LayerImpl
          * <em>Layer</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.eclipse.sirius.diagram.description.impl.LayerImpl
          * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getLayer()
          * @generated
@@ -6387,7 +6387,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Edge Mapping Imports</b></em>' containment reference list feature.
          * <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference LAYER__EDGE_MAPPING_IMPORTS = DescriptionPackage.eINSTANCE.getLayer_EdgeMappingImports();
@@ -6403,7 +6403,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Reused Mappings</b></em>' reference list feature. <!-- begin-user-doc
          * --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference LAYER__REUSED_MAPPINGS = DescriptionPackage.eINSTANCE.getLayer_ReusedMappings();
@@ -6411,7 +6411,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>All Tools</b></em>' reference list feature. <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference LAYER__ALL_TOOLS = DescriptionPackage.eINSTANCE.getLayer_AllTools();
@@ -6427,7 +6427,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Reused Tools</b></em>' reference list feature. <!-- begin-user-doc
          * --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference LAYER__REUSED_TOOLS = DescriptionPackage.eINSTANCE.getLayer_ReusedTools();
@@ -6435,7 +6435,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Decoration Descriptions Set</b></em>' containment reference feature.
          * <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference LAYER__DECORATION_DESCRIPTIONS_SET = DescriptionPackage.eINSTANCE.getLayer_DecorationDescriptionsSet();
@@ -6443,7 +6443,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Icon</b></em>' attribute feature. <!-- begin-user-doc --> <!--
          * end-user-doc -->
-         *
+         * 
          * @generated
          */
         EAttribute LAYER__ICON = DescriptionPackage.eINSTANCE.getLayer_Icon();
@@ -6467,7 +6467,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '{@link org.eclipse.sirius.diagram.description.impl.AdditionalLayerImpl
          * <em>Additional Layer</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.eclipse.sirius.diagram.description.impl.AdditionalLayerImpl
          * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getAdditionalLayer()
          * @generated
@@ -6477,7 +6477,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Active By Default</b></em>' attribute feature. <!-- begin-user-doc
          * --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EAttribute ADDITIONAL_LAYER__ACTIVE_BY_DEFAULT = DescriptionPackage.eINSTANCE.getAdditionalLayer_ActiveByDefault();
@@ -6485,7 +6485,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Optional</b></em>' attribute feature. <!-- begin-user-doc --> <!--
          * end-user-doc -->
-         *
+         * 
          * @generated
          */
         EAttribute ADDITIONAL_LAYER__OPTIONAL = DescriptionPackage.eINSTANCE.getAdditionalLayer_Optional();
@@ -6494,7 +6494,7 @@ public interface DescriptionPackage extends EPackage {
          * The meta object literal for the
          * '{@link org.eclipse.sirius.diagram.description.impl.DragAndDropTargetDescriptionImpl <em>Drag And Drop Target
          * Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.eclipse.sirius.diagram.description.impl.DragAndDropTargetDescriptionImpl
          * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getDragAndDropTargetDescription()
          * @generated
@@ -6512,7 +6512,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '{@link org.eclipse.sirius.diagram.description.FoldingStyle <em>Folding
          * Style</em>}' enum. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.eclipse.sirius.diagram.description.FoldingStyle
          * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getFoldingStyle()
          * @generated
@@ -6522,7 +6522,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '{@link org.eclipse.sirius.diagram.description.LayoutDirection <em>Layout
          * Direction</em>}' enum. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.eclipse.sirius.diagram.description.LayoutDirection
          * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getLayoutDirection()
          * @generated
@@ -6532,7 +6532,7 @@ public interface DescriptionPackage extends EPackage {
         /**
          * The meta object literal for the '{@link org.eclipse.sirius.diagram.description.CenteringStyle <em>Centering
          * Style</em>}' enum. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @see org.eclipse.sirius.diagram.description.CenteringStyle
          * @see org.eclipse.sirius.diagram.description.impl.DescriptionPackageImpl#getCenteringStyle()
          * @generated
