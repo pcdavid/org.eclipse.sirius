@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2007, 2008 THALES GLOBAL SERVICES.
+ * Copyright (c) 2007, 2018 THALES GLOBAL SERVICES and others.
  * This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
  * which accompanies this distribution, and is available at
@@ -12,10 +12,11 @@
  *******************************************************************************/
 package org.eclipse.sirius.diagram.ui.internal.edit.commands;
 
+import java.util.Objects;
+
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
@@ -29,18 +30,18 @@ import org.eclipse.sirius.diagram.DiagramPackage;
  */
 public class DNodeCreateCommand extends CreateElementCommand {
 
-    /**
-     * @param editingDomain
-     * @param graphicalEditPart
-     * @was-generated-not
-     */
-    public DNodeCreateCommand(CreateElementRequest req) {
+    private final EClass eClassToEdit;
+
+    public DNodeCreateCommand(CreateElementRequest req, EClass eClassToEdit) {
         super(req);
+        this.eClassToEdit = Objects.requireNonNull(eClassToEdit);
     }
 
-    /**
-     * @was-generated
-     */
+    public DNodeCreateCommand(CreateElementRequest req) {
+        this(req, DiagramPackage.eINSTANCE.getDDiagram());
+    }
+
+    @Override
     protected EObject getElementToEdit() {
         EObject container = ((CreateElementRequest) getRequest()).getContainer();
         if (container instanceof View) {
@@ -49,21 +50,12 @@ public class DNodeCreateCommand extends CreateElementCommand {
         return container;
     }
 
-    /**
-     * @was-generated
-     */
+    @Override
     protected EClass getEClassToEdit() {
-        return DiagramPackage.eINSTANCE.getDDiagram();
+        return eClassToEdit;
     }
 
-    /**
-     * @override
-     * 
-     */
-    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-        return super.doExecute(monitor, info);
-    }
-
+    @Override
     protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
         return null;
     }
