@@ -15,8 +15,8 @@ package org.eclipse.sirius.diagram.ui.internal.edit.policies;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.sirius.diagram.DiagramPackage;
-import org.eclipse.sirius.diagram.ui.internal.edit.commands.DNode3CreateCommand;
 import org.eclipse.sirius.diagram.ui.internal.edit.commands.DNodeContainer2CreateCommand;
+import org.eclipse.sirius.diagram.ui.internal.edit.commands.DNodeCreateCommand;
 import org.eclipse.sirius.diagram.ui.internal.edit.commands.DNodeList2CreateCommand;
 import org.eclipse.sirius.diagram.ui.internal.providers.SiriusElementTypes;
 
@@ -33,7 +33,7 @@ public class DNodeContainerViewNodeContainerCompartmentItemSemanticEditPolicy ex
             if (req.getContainmentFeature() == null) {
                 req.setContainmentFeature(DiagramPackage.eINSTANCE.getDNodeContainer_OwnedDiagramElements());
             }
-            return getGEFWrapper(new DNode3CreateCommand(req));
+            return getGEFWrapper(new DNodeCreateCommand(req, DiagramPackage.eINSTANCE.getDNodeContainer()));
         }
         if (SiriusElementTypes.DNodeContainer_3008 == req.getElementType()) {
             if (req.getContainmentFeature() == null) {

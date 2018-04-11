@@ -18,7 +18,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.sirius.diagram.DiagramPackage;
-import org.eclipse.sirius.diagram.ui.internal.edit.commands.DNode2CreateCommand;
+import org.eclipse.sirius.diagram.ui.internal.edit.commands.DNodeCreateCommand;
 import org.eclipse.sirius.diagram.ui.internal.providers.SiriusElementTypes;
 
 /**
@@ -34,7 +34,7 @@ public class DNode3ItemSemanticEditPolicy extends AbstractDNodeItemSemanticEditP
             if (req.getContainmentFeature() == null) {
                 req.setContainmentFeature(DiagramPackage.eINSTANCE.getAbstractDNode_OwnedBorderedNodes());
             }
-            return getGEFWrapper(new DNode2CreateCommand(req));
+            return getGEFWrapper(new DNodeCreateCommand(req, DiagramPackage.eINSTANCE.getAbstractDNode()));
         }
         return super.getCreateCommand(req);
     }

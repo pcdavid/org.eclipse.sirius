@@ -23,7 +23,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.sirius.diagram.DiagramPackage;
 import org.eclipse.sirius.diagram.ui.edit.api.part.AbstractDiagramElementContainerEditPart;
 import org.eclipse.sirius.diagram.ui.internal.edit.commands.DEdgeCreateCommand;
-import org.eclipse.sirius.diagram.ui.internal.edit.commands.DNode4CreateCommand;
+import org.eclipse.sirius.diagram.ui.internal.edit.commands.DNodeCreateCommand;
 import org.eclipse.sirius.diagram.ui.internal.providers.SiriusElementTypes;
 
 /**
@@ -43,7 +43,7 @@ public abstract class AbstractDDiagramElementContainerItemSemanticEditPolicy ext
             if (req.getContainmentFeature() == null) {
                 req.setContainmentFeature(DiagramPackage.eINSTANCE.getAbstractDNode_OwnedBorderedNodes());
             }
-            return getGEFWrapper(new DNode4CreateCommand(req));
+            return getGEFWrapper(new DNodeCreateCommand(req, DiagramPackage.eINSTANCE.getAbstractDNode()));
         }
         return super.getCreateCommand(req);
     }
