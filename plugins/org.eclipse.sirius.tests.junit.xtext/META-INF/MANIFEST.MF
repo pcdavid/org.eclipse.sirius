@@ -16,7 +16,9 @@ Require-Bundle: org.eclipse.sirius.tests.junit,
  org.eclipse.xtext.common.types.shared,
  org.eclipse.sirius.tests.sample.xtext.statemachine.ide,
  org.eclipse.sirius.tests.sample.xtext.statemachine.ui,
- org.eclipse.sirius.common
+ org.eclipse.sirius.common,
+ org.eclipse.osgi,
+ org.eclipse.emf.transaction
 Bundle-Activator: org.eclipse.sirius.tests.xtext.SiriusXtextTestsPlugin
 Eclipse-LazyStart: true
 Bundle-Localization: plugin

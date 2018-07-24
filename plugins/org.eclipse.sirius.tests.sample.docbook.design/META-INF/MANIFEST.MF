@@ -6,7 +6,9 @@ Bundle-Version: 6.1.0.qualifier
 Require-Bundle: org.eclipse.sirius.tests.sample.docbook,
  org.eclipse.sirius,
  org.eclipse.sirius.common.acceleo.aql,
- org.eclipse.core.runtime
+ org.eclipse.core.runtime,
+ org.eclipse.emf.common,
+ org.eclipse.emf.ecore
 Bundle-Vendor: %providerName
 Bundle-Activator: org.eclipse.sirius.tests.sample.docbook.design.tool.SampleDocbookPlugin
 Bundle-ActivationPolicy: lazy

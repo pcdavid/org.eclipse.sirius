@@ -6,6 +6,8 @@ Bundle-Version: 6.1.0.qualifier
 Bundle-Activator: org.eclipse.sirius.tests.support.internal.SiriusTestsSupportPlugin
 Bundle-Vendor: %providerName
 Require-Bundle: org.junit;bundle-version="[4.0.0,5.0.0)",
+ org.eclipse.sirius,
+ org.eclipse.sirius.ui,
  org.eclipse.sirius.common,
  org.eclipse.sirius.common.ui,
  org.eclipse.sirius.diagram,

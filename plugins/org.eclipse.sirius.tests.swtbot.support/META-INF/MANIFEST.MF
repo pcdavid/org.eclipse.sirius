@@ -6,11 +6,11 @@ Bundle-Version: 6.1.0.qualifier
 Bundle-Activator: org.eclipse.sirius.tests.swtbot.support.internal.DesignerSWTBotTestsSupportPlugin
 Bundle-Localization: plugin
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.ui;visibility:=reexport,
+ org.eclipse.ui,
  org.junit;bundle-version="[4.0.0,5.0.0)",
- org.eclipse.swtbot.junit4_x;visibility:=reexport,
- org.eclipse.swtbot.eclipse.finder;visibility:=reexport,
- org.eclipse.swtbot.swt.finder;visibility:=reexport,
+ org.eclipse.swtbot.junit4_x,
+ org.eclipse.swtbot.eclipse.finder,
+ org.eclipse.swtbot.swt.finder,
  org.eclipse.swtbot.eclipse.gef.finder;bundle-version="2.0.5",
  org.hamcrest.core;bundle-version="[1.1.0,2.0.0)",
  org.hamcrest.library;bundle-version="[1.1.0,2.0.0)",
@@ -35,7 +35,9 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.sirius.common,
  org.eclipse.sirius.ecore.extender,
  org.eclipse.ui.views.log,
- org.eclipse.sirius.diagram.ui
+ org.eclipse.sirius.diagram.ui,
+ org.eclipse.sirius.table,
+ org.eclipse.sirius.tree
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.eclipse.sirius.tests.swtbot.support.api;
