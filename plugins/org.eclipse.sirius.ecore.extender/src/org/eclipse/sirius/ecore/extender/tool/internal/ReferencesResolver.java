@@ -27,9 +27,6 @@ import org.eclipse.sirius.ecore.extender.business.api.permission.PermissionAutho
 import org.eclipse.sirius.ecore.extender.business.internal.Messages;
 import org.eclipse.sirius.ext.emf.EReferencePredicate;
 
-import com.google.common.base.Predicate;
-import com.google.common.collect.Iterators;
-
 /**
  * Class responsible for resolving some references.
  * 
@@ -38,7 +35,7 @@ import com.google.common.collect.Iterators;
  */
 public class ReferencesResolver {
 
-    private Predicate<EReference> filter;
+    private java.util.function.Predicate<EReference> filter;
 
     private ResourceSet set;
 
@@ -51,12 +48,7 @@ public class ReferencesResolver {
      *            resource set to resolve.
      */
     public ReferencesResolver(ResourceSet set, final EReferencePredicate filter) {
-        this.filter = new Predicate<EReference>() {
-            @Override
-            public boolean apply(EReference input) {
-                return filter.apply(input);
-            }
-        };
+        this.filter = (input) -> filter.apply(input);
         this.set = set;
     }
 
@@ -95,10 +87,7 @@ public class ReferencesResolver {
     }
 
     private void resolveCrossReferences(EObject eObject) {
-        Iterator<EReference> it = Iterators.filter(eObject.eClass().getEAllReferences().iterator(), filter);
-        while (it.hasNext()) {
-            eObject.eGet(it.next());
-        }
+        eObject.eClass().getEAllReferences().stream().filter(filter).forEachOrdered(eObject::eGet);
     }
 
     /**

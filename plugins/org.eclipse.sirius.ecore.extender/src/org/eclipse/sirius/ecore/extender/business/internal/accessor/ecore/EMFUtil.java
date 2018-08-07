@@ -60,7 +60,7 @@ public class EMFUtil {
      *            The <code>EClass</code>.
      * @return The name attribute.
      */
-    public static EAttribute getNameAttribute(EClass eClass) {
+    private static EAttribute getNameAttribute(EClass eClass) {
         EAttribute nameAttribute = null;
 
         // first, try to get the cached attribute
@@ -96,7 +96,7 @@ public class EMFUtil {
      *            The <code>EClass</code>.
      * @return The qualified name attribute.
      */
-    public static EAttribute getQualifiedNameAttribute(EClass eClass) {
+    private static EAttribute getQualifiedNameAttribute(EClass eClass) {
         EAttribute nameAttribute = null;
 
         // first, try to get the cached attribute
@@ -175,7 +175,7 @@ public class EMFUtil {
      *            The meta-model element.
      * @return The localized name of the meta-model element.
      */
-    public static String getLocalizedName(ENamedElement element) {
+    private static String getLocalizedName(ENamedElement element) {
         return element.getName();
     }
 
@@ -187,7 +187,7 @@ public class EMFUtil {
      *            The object.
      * @return The object's name.
      */
-    public static String getName(EObject eObject) {
+    private static String getName(EObject eObject) {
         if (eObject == null) {
             return EMPTY_STRING;
         }

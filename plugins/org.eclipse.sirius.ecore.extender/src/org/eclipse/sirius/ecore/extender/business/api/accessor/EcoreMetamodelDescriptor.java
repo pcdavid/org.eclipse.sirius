@@ -10,10 +10,10 @@
  *******************************************************************************/
 package org.eclipse.sirius.ecore.extender.business.api.accessor;
 
+import java.util.Objects;
+
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
-
-import com.google.common.base.Objects;
 
 /**
  * A descriptors for EPackages.
@@ -73,11 +73,6 @@ public class EcoreMetamodelDescriptor implements MetamodelDescriptor {
         return false;
     }
 
-    /**
-     * {@inheritDoc}
-     * 
-     * @see java.lang.Object#hashCode()
-     */
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -87,11 +82,6 @@ public class EcoreMetamodelDescriptor implements MetamodelDescriptor {
         return result;
     }
 
-    /**
-     * {@inheritDoc}
-     * 
-     * @see java.lang.Object#equals(java.lang.Object)
-     */
     // CHECKSTYLE:OFF
     @Override
     public boolean equals(Object obj) {
@@ -105,7 +95,7 @@ public class EcoreMetamodelDescriptor implements MetamodelDescriptor {
 
         final EcoreMetamodelDescriptor other = (EcoreMetamodelDescriptor) obj;
 
-        return ePackage == other.ePackage && Objects.equal(nsURI, other.nsURI);
+        return ePackage == other.ePackage && Objects.equals(nsURI, other.nsURI);
         // CHECKSTYLE:ON
     }
 }
