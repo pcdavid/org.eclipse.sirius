@@ -23,4 +23,65 @@
   <packaging>eclipse-plugin</packaging>
   <version>6.1.0-SNAPSHOT</version>
 
+  <profiles>
+    <profile>
+      <id>regen</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.eclipse.tycho.extras</groupId>
+            <artifactId>tycho-eclipserun-plugin</artifactId>
+            <version>${tycho-version}</version>
+            <configuration>
+              <repositories>
+                <repository>
+                  <id>Photon Update Site</id>
+                  <layout>p2</layout>
+                  <url>http://download.eclipse.org/releases/photon/</url>
+                </repository>
+              </repositories>
+              <applicationsArgs>
+                <args>-consoleLog</args>
+                <args>-application</args>
+                <args>org.eclipse.acceleo.equinox.AcceleoLauncher</args>
+                <args>-data</args>
+                <args>${project.build.directory}/wks</args>
+                <args>-models</args>
+                <args>platform:/resource/org.eclipse.sirius/model/viewpoint.genmodel</args>
+                <args>-output</args>
+                <args>./src-gen</args>
+                <args>-actions</args>
+                <args>generate:org.eclipse.emf.codegen.ecore/org.eclipse.emf.codegen.ecore.generator.Generator</args>
+              </applicationsArgs>
+              <dependencies>
+                <!-- We need the actual launcher application -->
+                <dependency>
+                  <artifactId>org.eclipse.acceleo.equinox.launcher
+                  </artifactId>
+                  <type>eclipse-feature</type>
+                </dependency>
+                <!-- The Eclipse feature packaging the code generator. -->
+                <dependency>
+                  <artifactId>org.eclipse.emf.codegen
+                  </artifactId>
+                  <type>eclipse-feature</type>
+                </dependency>
+              </dependencies>
+            </configuration>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>eclipse-run</goal>
+                </goals>
+                <phase>generate-sources</phase>
+              </execution>
+            </executions>
+          </plugin>          
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 </project>
