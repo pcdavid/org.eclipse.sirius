@@ -360,7 +360,6 @@ public abstract class AbstractSequenceDiagramTestCase extends AbstractSiriusSwtB
 
     @Override
     protected void onSetUpAfterOpeningDesignerPerspective() throws Exception {
-        changeDiagramUIPreference(SiriusDiagramUiPreferencesKeys.PREF_OLD_UI.name(), true);
         changeDiagramPreference(SiriusDiagramPreferencesKeys.PREF_DISPLAY_HEADER_SECTION.name(), false);
 
         if (getSessionModel() == null) {

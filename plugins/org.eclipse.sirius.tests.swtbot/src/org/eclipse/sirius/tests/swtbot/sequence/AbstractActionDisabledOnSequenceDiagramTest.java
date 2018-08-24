@@ -61,8 +61,6 @@ public abstract class AbstractActionDisabledOnSequenceDiagramTest extends Abstra
 
     @Override
     protected void onSetUpAfterOpeningDesignerPerspective() throws Exception {
-        changeDiagramUIPreference(SiriusDiagramUiPreferencesKeys.PREF_OLD_UI.name(), false);
-
         sessionAirdResource = new UIResource(designerProject, FILE_DIR, getSessionModel());
         localSession = designerPerspective.openSessionFromFile(sessionAirdResource, true);
         Option<String> dRepresentationName = getDRepresentationName();

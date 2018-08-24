@@ -156,7 +156,6 @@ public class HideLabelIconsWithPreferencesTest extends AbstractSiriusSwtBotGefTe
     public void testChangeLabelIconsHidingWithFilters() {
         // We activate the oldUi to be able to active filters
 
-        changeDiagramUIPreference(SiriusDiagramUiPreferencesKeys.PREF_OLD_UI.name(), true);
         // Test 1 :
         // Activate and deactivate filters with hidden shapes label icons
         changeHideLabeIconPreferencesUsingAPI(true, false);

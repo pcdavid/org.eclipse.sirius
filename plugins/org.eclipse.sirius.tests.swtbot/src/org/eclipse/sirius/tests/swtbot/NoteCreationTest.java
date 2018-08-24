@@ -42,7 +42,6 @@ import org.eclipse.sirius.diagram.ui.internal.edit.parts.SiriusDiagramNameCompar
 import org.eclipse.sirius.diagram.ui.internal.edit.parts.SiriusNoteEditPart;
 import org.eclipse.sirius.diagram.ui.provider.DiagramUIPlugin;
 import org.eclipse.sirius.diagram.ui.tools.api.image.DiagramImagesPath;
-import org.eclipse.sirius.diagram.ui.tools.api.preferences.SiriusDiagramUiPreferencesKeys;
 import org.eclipse.sirius.tests.swtbot.support.api.AbstractSiriusSwtBotGefTestCase;
 import org.eclipse.sirius.tests.swtbot.support.api.business.UIDiagramRepresentation.ZoomLevel;
 import org.eclipse.sirius.tests.swtbot.support.api.business.UILocalSession;
@@ -105,7 +104,6 @@ public class NoteCreationTest extends AbstractSiriusSwtBotGefTestCase {
 
     @Override
     protected void onSetUpAfterOpeningDesignerPerspective() throws Exception {
-        changeDiagramUIPreference(SiriusDiagramUiPreferencesKeys.PREF_OLD_UI.name(), true);
 
         sessionAirdResource = new UIResource(designerProject, FILE_DIR, SESSION_FILE);
         localSession = designerPerspective.openSessionFromFile(sessionAirdResource);
@@ -700,9 +698,6 @@ public class NoteCreationTest extends AbstractSiriusSwtBotGefTestCase {
         return current == getDiagramLinkTarget() ? getTableLinkTarget() : getDiagramLinkTarget();
     }
 
-    /**
-     * 
-     */
     private void checkNoteLabelAlignment(SWTBotGefEditPart editPart, DRepresentationDescriptor link) {
         assertNotNull("The edit part shouldn't be null for the note label", editPart);
         EditPart part = editPart.part();

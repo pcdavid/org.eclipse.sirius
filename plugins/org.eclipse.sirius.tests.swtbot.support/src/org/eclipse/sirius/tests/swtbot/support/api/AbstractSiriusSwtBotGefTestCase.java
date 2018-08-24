@@ -1523,10 +1523,6 @@ public abstract class AbstractSiriusSwtBotGefTestCase extends SWTBotGefTestCase 
         for (String key : oldValueDiagramUIPreferences.keySet()) {
             resetDiagramUIPreference(key, diagramUIPreferences);
         }
-        boolean currentUiPreference = diagramUIPreferences.getBoolean(SiriusDiagramUiPreferencesKeys.PREF_OLD_UI.name());
-        if (currentUiPreference) {
-            System.out.println("This test has not reset the oldUiPreference : " + this.getClass().getName() + " (it is currently true).");
-        }
 
         IPreferenceStore platformUIPrefs = PlatformUI.getPreferenceStore();
         for (Entry<String, Object> pref : oldPlatformUIPreferences.entrySet()) {

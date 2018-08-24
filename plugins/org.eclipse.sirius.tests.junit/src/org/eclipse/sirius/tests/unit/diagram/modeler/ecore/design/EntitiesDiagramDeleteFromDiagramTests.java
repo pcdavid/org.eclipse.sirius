@@ -36,13 +36,10 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.action.ActionContributionItem;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.action.IContributionItem;
-import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.EdgeTarget;
 import org.eclipse.sirius.diagram.ui.business.internal.command.ViewDeleteCommand;
-import org.eclipse.sirius.diagram.ui.provider.DiagramUIPlugin;
 import org.eclipse.sirius.diagram.ui.tools.api.editor.DDiagramEditor;
-import org.eclipse.sirius.diagram.ui.tools.api.preferences.SiriusDiagramUiPreferencesKeys;
 import org.eclipse.sirius.diagram.ui.tools.api.util.GMFNotationHelper;
 import org.eclipse.sirius.diagram.ui.tools.internal.actions.delete.DeleteFromDiagramAction;
 import org.eclipse.sirius.diagram.ui.tools.internal.commands.ChangeSynchronizedDagramStatusCommand;
@@ -72,7 +69,6 @@ public class EntitiesDiagramDeleteFromDiagramTests extends SiriusDiagramTestCase
     }
 
     public void testActionEnablementForActionBarButton() {
-        changeDiagramUIPreference(SiriusDiagramUiPreferencesKeys.PREF_OLD_UI.name(), true);
 
         EPackage ePackage = (EPackage) semanticModel;
         assertTrue("The semantic model is not empty before the tool application", ePackage.getEClassifiers().isEmpty());
@@ -99,23 +95,16 @@ public class EntitiesDiagramDeleteFromDiagramTests extends SiriusDiagramTestCase
         TestsUtil.synchronizationWithUIThread();
         diagramEditor.getDiagramGraphicalViewer().select(getEditPart(getFirstDiagramElement(diagram, source)));
         TestsUtil.synchronizationWithUIThread();
-        IPreferenceStore prefs = DiagramUIPlugin.getPlugin().getPreferenceStore();
-        if (!prefs.getBoolean(SiriusDiagramUiPreferencesKeys.PREF_OLD_UI.name())) {
-            /*
-             * DeleteFromDiagramAction has been removed from the old-ui mode.
-             * See Bug: 465836
-             */
-            assertTrue("The action should be enabled", isDeleteFromDiagramActionEnabled(diagramEditor));
+        assertTrue("The action should be enabled", isDeleteFromDiagramActionEnabled(diagramEditor));
 
-            diagramEditor.getDiagramGraphicalViewer().deselectAll();
-            TestsUtil.synchronizationWithUIThread();
+        diagramEditor.getDiagramGraphicalViewer().deselectAll();
+        TestsUtil.synchronizationWithUIThread();
 
-            diagramEditor.getDiagramGraphicalViewer().select(getEditPart(getFirstDiagramElement(diagram, eReference)));
-            TestsUtil.synchronizationWithUIThread();
+        diagramEditor.getDiagramGraphicalViewer().select(getEditPart(getFirstDiagramElement(diagram, eReference)));
+        TestsUtil.synchronizationWithUIThread();
 
-            assertFalse("The action should be disabled", isDeleteFromDiagramActionEnabled(diagramEditor));
-            DialectUIManager.INSTANCE.closeEditor(diagramEditor, false);
-        }
+        assertFalse("The action should be disabled", isDeleteFromDiagramActionEnabled(diagramEditor));
+        DialectUIManager.INSTANCE.closeEditor(diagramEditor, false);
     }
 
     public void testDeleteNoteFromDiagram() {
@@ -218,15 +207,7 @@ public class EntitiesDiagramDeleteFromDiagramTests extends SiriusDiagramTestCase
 
     private boolean isDeleteFromDiagramActionEnabled(final DiagramDocumentEditor diagramEditor) {
 
-        IContributionItem[] items;
-
-        IPreferenceStore prefs = DiagramUIPlugin.getPlugin().getPreferenceStore();
-        /* preference name is internal, so access it in a standard way */
-        if (prefs.getBoolean(SiriusDiagramUiPreferencesKeys.PREF_OLD_UI.name())) {
-            items = diagramEditor.getEditorSite().getActionBars().getToolBarManager().getItems();
-        } else {
-            items = ((DDiagramEditor) diagramEditor).getTabBarManager().getItems();
-        }
+        IContributionItem[] items = ((DDiagramEditor) diagramEditor).getTabBarManager().getItems();
 
         IAction foundAction = null;
 

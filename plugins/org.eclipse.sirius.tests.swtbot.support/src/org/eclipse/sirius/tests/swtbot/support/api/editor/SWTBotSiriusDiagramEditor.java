@@ -60,15 +60,11 @@ import org.eclipse.sirius.diagram.ui.edit.api.part.AbstractDiagramNodeEditPart;
 import org.eclipse.sirius.diagram.ui.internal.edit.parts.DEdgeBeginNameEditPart;
 import org.eclipse.sirius.diagram.ui.internal.edit.parts.DEdgeEndNameEditPart;
 import org.eclipse.sirius.diagram.ui.internal.edit.parts.DEdgeNameEditPart;
-import org.eclipse.sirius.diagram.ui.provider.DiagramUIPlugin;
-import org.eclipse.sirius.diagram.ui.tools.api.preferences.SiriusDiagramUiPreferencesKeys;
 import org.eclipse.sirius.ext.draw2d.figure.FigureUtilities;
 import org.eclipse.sirius.tests.swtbot.support.api.bot.SWTDesignerBot;
 import org.eclipse.sirius.tests.swtbot.support.api.business.UIDiagramRepresentation;
 import org.eclipse.sirius.tests.swtbot.support.api.business.UIDiagramRepresentation.ZoomLevel;
 import org.eclipse.sirius.tests.swtbot.support.api.condition.SessionSavedCondition;
-import org.eclipse.sirius.tests.swtbot.support.api.view.DesignerViews;
-import org.eclipse.sirius.tests.swtbot.support.api.view.SiriusOutlineView;
 import org.eclipse.sirius.tests.swtbot.support.api.widget.SWTBotSiriusFigureCanvas;
 import org.eclipse.sirius.tests.swtbot.support.utils.SWTBotUtils;
 import org.eclipse.sirius.ui.business.api.dialect.DialectEditor;
@@ -79,7 +75,6 @@ import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.MenuItem;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.ToolItem;
-import org.eclipse.swt.widgets.Widget;
 import org.eclipse.swtbot.eclipse.finder.SWTWorkbenchBot;
 import org.eclipse.swtbot.eclipse.gef.finder.matchers.IsInstanceOf;
 import org.eclipse.swtbot.eclipse.gef.finder.widgets.SWTBotGefConnectionEditPart;
@@ -1721,25 +1716,8 @@ public class SWTBotSiriusDiagramEditor extends SWTBotGefEditor {
                 control.setFocus();
                 control.setText(zoomLevel.getLevel());
                 control.select(control.indexOf(zoomLevel.getLevel()));
-                if (useTabbar()) {
-                    control.notifyListeners(SWT.DefaultSelection, new Event());
-                } else {
-                    control.notifyListeners(SWT.KeyDown, createCarriageReturnKeyPressedEvent(control));
-                }
-
+                control.notifyListeners(SWT.DefaultSelection, new Event());
             }
-
-            private Event createCarriageReturnKeyPressedEvent(final Widget control) {
-                final Event keyEvent = new Event();
-                keyEvent.time = (int) System.currentTimeMillis();
-                keyEvent.widget = control;
-                keyEvent.display = designerBot.getDisplay();
-                keyEvent.stateMask = SWT.NONE;
-                keyEvent.character = SWT.CR;
-                keyEvent.keyCode = SWT.Selection;
-                return keyEvent;
-            }
-
         });
 
         return this;
@@ -1752,10 +1730,6 @@ public class SWTBotSiriusDiagramEditor extends SWTBotGefEditor {
      */
     public SWTBotSiriusDiagramEditor zoomDefault() {
         return zoom(UIDiagramRepresentation.ZOOM_DEFAULT);
-    }
-
-    private boolean useTabbar() {
-        return !DiagramUIPlugin.getPlugin().getPreferenceStore().getBoolean(SiriusDiagramUiPreferencesKeys.PREF_OLD_UI.name());
     }
 
     /**
@@ -1888,17 +1862,11 @@ public class SWTBotSiriusDiagramEditor extends SWTBotGefEditor {
      *            The name of the layer to activate or deactivate.
      */
     public void changeLayerActivation(String layerName) {
-        if (useTabbar()) {
-            SWTBotToolbarDropDownButton button = designerBot.toolbarDropDownButtonWithTooltip("Layers");
-            Matcher<MenuItem> withLayerName = WidgetMatcherFactory.withText(layerName);
-            SWTBotMenu layerButton = button.menuItem(withLayerName);
-            layerButton.click();
-            layerButton.pressShortcut(KeyStroke.getInstance(SWT.ESC));
-        } else {
-            DesignerViews designerViews = new DesignerViews(designerBot);
-            final SiriusOutlineView outlineView = designerViews.getOutlineView().layers();
-            outlineView.activateLayer(layerName);
-        }
+        SWTBotToolbarDropDownButton button = designerBot.toolbarDropDownButtonWithTooltip("Layers");
+        Matcher<MenuItem> withLayerName = WidgetMatcherFactory.withText(layerName);
+        SWTBotMenu layerButton = button.menuItem(withLayerName);
+        layerButton.click();
+        layerButton.pressShortcut(KeyStroke.getInstance(SWT.ESC));
     }
 
     /**

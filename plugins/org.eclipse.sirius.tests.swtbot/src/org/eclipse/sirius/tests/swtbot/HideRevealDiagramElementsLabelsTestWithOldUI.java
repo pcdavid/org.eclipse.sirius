@@ -14,7 +14,6 @@ package org.eclipse.sirius.tests.swtbot;
 
 import org.eclipse.sirius.diagram.ui.edit.api.part.AbstractDiagramBorderNodeEditPart;
 import org.eclipse.sirius.diagram.ui.edit.api.part.AbstractDiagramEdgeEditPart;
-import org.eclipse.sirius.diagram.ui.tools.api.preferences.SiriusDiagramUiPreferencesKeys;
 import org.eclipse.sirius.tests.swtbot.support.api.view.SiriusOutlineView;
 import org.eclipse.sirius.tests.swtbot.support.utils.SWTBotUtils;
 import org.eclipse.swtbot.eclipse.finder.waits.Conditions;
@@ -37,23 +36,6 @@ public class HideRevealDiagramElementsLabelsTestWithOldUI extends AbstractHideRe
      * Name of the filter to apply in this test.
      */
     private static final String FILTER_NAME = "port collapse";
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    protected void onSetUpAfterOpeningDesignerPerspective() throws Exception {
-        changeDiagramUIPreference(SiriusDiagramUiPreferencesKeys.PREF_OLD_UI.name(), true);
-        super.onSetUpAfterOpeningDesignerPerspective();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    protected void tearDown() throws Exception {
-        super.tearDown();
-    }
 
     /**
      * <ul>

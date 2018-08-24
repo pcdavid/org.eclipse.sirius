@@ -32,7 +32,6 @@ import org.eclipse.core.resources.IMarker;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
-import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.draw2d.IFigure;
@@ -154,7 +153,6 @@ import org.eclipse.sirius.diagram.ui.provider.DiagramUIPlugin;
 import org.eclipse.sirius.diagram.ui.provider.Messages;
 import org.eclipse.sirius.diagram.ui.tools.api.editor.DDiagramEditor;
 import org.eclipse.sirius.diagram.ui.tools.api.graphical.edit.palette.PaletteManager;
-import org.eclipse.sirius.diagram.ui.tools.api.preferences.SiriusDiagramUiPreferencesKeys;
 import org.eclipse.sirius.diagram.ui.tools.api.properties.PropertiesService;
 import org.eclipse.sirius.diagram.ui.tools.internal.actions.delete.DeleteFromModelWithHookAction;
 import org.eclipse.sirius.diagram.ui.tools.internal.actions.delete.DeleteWithHookAction;
@@ -180,7 +178,6 @@ import org.eclipse.sirius.diagram.ui.tools.internal.palette.PaletteToolChangeLis
 import org.eclipse.sirius.diagram.ui.tools.internal.palette.SiriusPaletteViewer;
 import org.eclipse.sirius.diagram.ui.tools.internal.part.SiriusDiagramGraphicalViewer;
 import org.eclipse.sirius.diagram.ui.tools.internal.resource.CustomSiriusDocumentProvider;
-import org.eclipse.sirius.diagram.ui.tools.internal.views.outlineview.DiagramOutlineWithBookPages;
 import org.eclipse.sirius.diagram.ui.tools.internal.views.providers.outline.OutlineComparator;
 import org.eclipse.sirius.diagram.ui.tools.internal.views.providers.outline.OutlineContentProvider;
 import org.eclipse.sirius.diagram.ui.tools.internal.views.providers.outline.OutlineLabelProvider;
@@ -1077,12 +1074,8 @@ public class DDiagramEditorImpl extends SiriusDiagramEditor implements DDiagramE
                     }
                 }, };
         DiagramOutlinePage outline = null;
-        if (isOldUIEnabled()) {
-            outline = new DiagramOutlineWithBookPages(this.getDiagramEditPart().getModel(), getGraphicalViewer(), outlinePopupMenuActions);
-        } else {
-            outline = new DiagramOutlinePage(getDiagramEditPart() != null ? getDiagramEditPart().getModel() : null, new OutlineLabelProvider(), new OutlineContentProvider(), new OutlineComparator(),
-                    getGraphicalViewer(), outlinePopupMenuActions);
-        }
+        outline = new DiagramOutlinePage(getDiagramEditPart() != null ? getDiagramEditPart().getModel() : null, new OutlineLabelProvider(), new OutlineContentProvider(), new OutlineComparator(),
+                getGraphicalViewer(), outlinePopupMenuActions);
         outline.setDiagramWorkbenchPart(this);
         return outline;
     }
@@ -1449,7 +1442,7 @@ public class DDiagramEditorImpl extends SiriusDiagramEditor implements DDiagramE
     protected void createGraphicalViewer(final Composite parent) {
         this.diagramMenuUpdater = new DiagramMenuUpdater(this);
         parentComposite = createParentComposite(parent);
-        if (!isOldUIEnabled() && session != null) {
+        if (session != null) {
             setTabbar(new Tabbar(parentComposite, this));
         }
         createHeaderSection(parentComposite);
@@ -1467,10 +1460,6 @@ public class DDiagramEditorImpl extends SiriusDiagramEditor implements DDiagramE
             }
         });
 
-    }
-
-    private boolean isOldUIEnabled() {
-        return Platform.getPreferencesService().getBoolean(DiagramUIPlugin.ID, SiriusDiagramUiPreferencesKeys.PREF_OLD_UI.name(), false, null);
     }
 
     private void createMainDiagramSection(Composite composite) {

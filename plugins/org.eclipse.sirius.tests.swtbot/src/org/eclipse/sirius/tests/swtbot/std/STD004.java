@@ -12,7 +12,6 @@
  *******************************************************************************/
 package org.eclipse.sirius.tests.swtbot.std;
 
-import org.eclipse.sirius.diagram.ui.tools.api.preferences.SiriusDiagramUiPreferencesKeys;
 import org.eclipse.sirius.tests.support.api.EclipseTestsSupportHelper;
 import org.eclipse.sirius.tests.swtbot.Activator;
 import org.eclipse.sirius.tests.swtbot.support.api.AbstractSiriusSwtBotGefTestCase;
@@ -56,22 +55,9 @@ public class STD004 extends AbstractSiriusSwtBotGefTestCase {
 
     private static final String REPRESENTATION_INSTANCE_NAME_DIAGRAM = "RootSTDTestCase package entities";
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     protected void onSetUpBeforeClosingWelcomePage() throws Exception {
         EclipseTestsSupportHelper.INSTANCE.copyFile(Activator.PLUGIN_ID, PATH + "/" + SEMANTIC_MODEL_FILENAME, "/" + getProjectName() + "/" + SEMANTIC_MODEL_FILENAME);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    protected void onSetUpAfterOpeningDesignerPerspective() throws Exception {
-        super.onSetUpAfterOpeningDesignerPerspective();
-
-        changeDiagramUIPreference(SiriusDiagramUiPreferencesKeys.PREF_OLD_UI.name(), true);
     }
 
     /**
@@ -121,10 +107,5 @@ public class STD004 extends AbstractSiriusSwtBotGefTestCase {
 
         localSession.close(false);
 
-    }
-
-    @Override
-    protected void tearDown() throws Exception {
-        super.tearDown();
     }
 }

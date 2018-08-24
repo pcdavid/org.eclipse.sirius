@@ -14,7 +14,6 @@ package org.eclipse.sirius.tests.swtbot.std;
 
 import java.util.List;
 
-import org.eclipse.sirius.diagram.ui.tools.api.preferences.SiriusDiagramUiPreferencesKeys;
 import org.eclipse.sirius.tests.swtbot.support.api.business.UIDiagramRepresentation;
 import org.eclipse.sirius.tests.swtbot.support.api.business.UILocalSession;
 import org.eclipse.sirius.tests.swtbot.support.api.business.UIResource;
@@ -43,27 +42,14 @@ public class STD018 extends AbstractSTDTestCase {
 
     private static final String DYNAMIC_LAYER = "Dynamic";
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     String[] getFilesUsedForTest() {
         return new String[] { SESSION_FILE_018, MODEL_018 };
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     String getSTDDiretory() {
         return "018/";
-    }
-
-    @Override
-    protected void onSetUpAfterOpeningDesignerPerspective() throws Exception {
-        super.onSetUpAfterOpeningDesignerPerspective();
-
-        changeDiagramUIPreference(SiriusDiagramUiPreferencesKeys.PREF_OLD_UI.name(), true);
     }
 
     /**

@@ -21,11 +21,6 @@ package org.eclipse.sirius.diagram.ui.tools.api.preferences;
 public enum SiriusDiagramUiPreferencesKeys {
 
     /**
-     * Says if the old UI should be used.
-     */
-    PREF_OLD_UI(boolean.class),
-
-    /**
      * Indicates if diagram editors should display messages using pop-up or notification figures. See
      * {@link org.eclipse.sirius.diagram.tools.internal.editor.DiagramDialectEditorDialogFactory} for more details.
      * 

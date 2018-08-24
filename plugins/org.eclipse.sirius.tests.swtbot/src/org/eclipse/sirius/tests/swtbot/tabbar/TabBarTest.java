@@ -30,9 +30,7 @@ import org.eclipse.sirius.common.tools.api.util.ReflectionHelper;
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.ui.edit.api.part.AbstractDiagramContainerEditPart;
 import org.eclipse.sirius.diagram.ui.edit.api.part.IDDiagramEditPart;
-import org.eclipse.sirius.diagram.ui.provider.DiagramUIPlugin;
 import org.eclipse.sirius.diagram.ui.provider.Messages;
-import org.eclipse.sirius.diagram.ui.tools.api.preferences.SiriusDiagramUiPreferencesKeys;
 import org.eclipse.sirius.diagram.ui.tools.internal.actions.distribute.DistributeAction;
 import org.eclipse.sirius.diagram.ui.tools.internal.editor.DDiagramEditorImpl;
 import org.eclipse.sirius.tests.support.api.TestsUtil;
@@ -52,7 +50,6 @@ import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swtbot.eclipse.gef.finder.widgets.SWTBotGefEditPart;
 import org.eclipse.swtbot.eclipse.gef.finder.widgets.SWTBotGefFigureCanvas;
 import org.eclipse.swtbot.swt.finder.SWTBot;
-import org.eclipse.swtbot.swt.finder.exceptions.WidgetNotFoundException;
 import org.eclipse.swtbot.swt.finder.finders.UIThreadRunnable;
 import org.eclipse.swtbot.swt.finder.results.Result;
 import org.eclipse.swtbot.swt.finder.utils.SWTBotPreferences;
@@ -119,9 +116,6 @@ public class TabBarTest extends AbstractSiriusSwtBotGefTestCase {
 
     private SWTBotSiriusDiagramEditor editor;
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     protected void onSetUpBeforeClosingWelcomePage() throws Exception {
         copyFileToTestProject(Activator.PLUGIN_ID, DATA_UNIT_DIR, MODEL, SESSION_FILE, VSM_FILE);
@@ -132,7 +126,6 @@ public class TabBarTest extends AbstractSiriusSwtBotGefTestCase {
      */
     @Override
     protected void onSetUpAfterOpeningDesignerPerspective() throws Exception {
-        changeDiagramUIPreference(SiriusDiagramUiPreferencesKeys.PREF_OLD_UI.name(), false);
         sessionAirdResource = new UIResource(designerProject, FILE_DIR, SESSION_FILE);
         localSession = designerPerspective.openSessionFromFile(sessionAirdResource);
 
@@ -330,53 +323,11 @@ public class TabBarTest extends AbstractSiriusSwtBotGefTestCase {
     }
 
     /**
-     * Test toggling the old style preference programmatically. Note that this preference does not exist anymore in the
-     * UI, but can still be used un-officially in the code to programmatically disable the tabbar. This possibility is
-     * used for in some SWTBot tests that rely heavily on hard-coded screen corrdinates which were determined when the
-     * tabbar did not exist (in particular for sequence diagrams).
-     * 
-     * @throws Exception
-     *             Test error.
-     */
-    public void testTabbarActivation() throws Exception {
-        // changeDiagramUIPreference is already called in set up for the old ui
-        // pref, to set it to false.
-        // we must not call this method again (it will change the value after
-        // the
-        // test)
-        // The previous value (before this test and setup) will be restored
-        // during tear down.
-        PlatformUI.getWorkbench().getDisplay().syncExec(new Runnable() {
-            @Override
-            public void run() {
-                DiagramUIPlugin.getPlugin().getPreferenceStore().setValue(SiriusDiagramUiPreferencesKeys.PREF_OLD_UI.name(), true);
-
-            }
-        });
-
-        editor.close();
-
-        editor = (SWTBotSiriusDiagramEditor) openRepresentation(localSession.getOpenedSession(), REPRESENTATION_NAME, REPRESENTATION_INSTANCE_NAME, DDiagram.class);
-
-        SWTBotUtils.waitAllUiEvents();
-
-        try {
-            editor.bot().toolbarButton();
-            fail("We shouldn't have editor toolbar with SiriusDiagramUiPreferencesKeys.PREF_OLD_UI.name() pref to true");
-        } catch (WidgetNotFoundException e) {
-
-        }
-
-    }
-
-    /**
      * Test that tabbar items are well disposed.
      * 
      * @throws Exception
      */
     public void testTabbarDisposal() throws Exception {
-        assertFalse("Tabbar should be active for this test.", DiagramUIPlugin.getPlugin().getPreferenceStore().getBoolean(SiriusDiagramUiPreferencesKeys.PREF_OLD_UI.name()));
-
         // Get the tabbar contributions
         editor.setFocus();
         DDiagramEditorImpl edit = (DDiagramEditorImpl) PlatformUI.getWorkbench().getWorkbenchWindows()[0].getActivePage().getActiveEditor();

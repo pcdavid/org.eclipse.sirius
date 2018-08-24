@@ -14,15 +14,9 @@ package org.eclipse.sirius.tests.swtbot.support.api.business;
 
 import java.util.Optional;
 
-import org.eclipse.core.runtime.Platform;
-import org.eclipse.core.runtime.preferences.IPreferencesService;
-import org.eclipse.sirius.diagram.ui.provider.DiagramUIPlugin;
-import org.eclipse.sirius.diagram.ui.tools.api.preferences.SiriusDiagramUiPreferencesKeys;
 import org.eclipse.sirius.tests.support.api.TestsUtil;
 import org.eclipse.sirius.tests.swtbot.support.api.editor.SWTBotSiriusDiagramEditor;
 import org.eclipse.sirius.tests.swtbot.support.api.editor.SWTBotSiriusHelper;
-import org.eclipse.sirius.tests.swtbot.support.api.view.DesignerViews;
-import org.eclipse.sirius.tests.swtbot.support.api.view.SiriusOutlineView;
 import org.eclipse.swt.widgets.MenuItem;
 import org.eclipse.swtbot.swt.finder.matchers.WidgetMatcherFactory;
 import org.eclipse.swtbot.swt.finder.widgets.SWTBotMenu;
@@ -228,24 +222,11 @@ public class UIDiagramRepresentation extends AbstractUIRepresentation<SWTBotSiri
      * @return .
      */
     public UIDiagramRepresentation changeLayerActivation(final String layerName) {
-
-        if (useTabbar()) {
-            SWTBotToolbarDropDownButton button = designerBot.toolbarDropDownButtonWithTooltip("Layers");
-            Matcher<MenuItem> withLayerName = WidgetMatcherFactory.withText(layerName);
-            SWTBotMenu layerButton = button.menuItem(withLayerName);
-            layerButton.click();
-        } else {
-            DesignerViews designerViews = new DesignerViews(designerBot);
-            final SiriusOutlineView outlineView = designerViews.getOutlineView().layers();
-            outlineView.activateLayer(layerName);
-        }
-
+        SWTBotToolbarDropDownButton button = designerBot.toolbarDropDownButtonWithTooltip("Layers");
+        Matcher<MenuItem> withLayerName = WidgetMatcherFactory.withText(layerName);
+        SWTBotMenu layerButton = button.menuItem(withLayerName);
+        layerButton.click();
         return this;
-    }
-
-    private boolean useTabbar() {
-        IPreferencesService prefs = Platform.getPreferencesService();
-        return !prefs.getBoolean(DiagramUIPlugin.ID, SiriusDiagramUiPreferencesKeys.PREF_OLD_UI.name(), false, null);
     }
 
     @Override

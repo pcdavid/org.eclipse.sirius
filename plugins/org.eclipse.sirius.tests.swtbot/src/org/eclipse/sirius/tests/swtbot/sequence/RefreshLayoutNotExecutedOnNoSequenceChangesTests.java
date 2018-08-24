@@ -26,7 +26,6 @@ import org.eclipse.sirius.diagram.sequence.business.internal.refresh.RefreshLayo
 import org.eclipse.sirius.diagram.sequence.ui.tool.internal.edit.part.InstanceRoleEditPart;
 import org.eclipse.sirius.diagram.tools.api.preferences.SiriusDiagramPreferencesKeys;
 import org.eclipse.sirius.diagram.ui.internal.edit.parts.DNodeEditPart;
-import org.eclipse.sirius.diagram.ui.tools.api.preferences.SiriusDiagramUiPreferencesKeys;
 import org.eclipse.sirius.tests.swtbot.Activator;
 import org.eclipse.sirius.tests.swtbot.support.api.AbstractSiriusSwtBotGefTestCase;
 import org.eclipse.sirius.tests.swtbot.support.api.business.UIResource;
@@ -63,7 +62,6 @@ public class RefreshLayoutNotExecutedOnNoSequenceChangesTests extends AbstractSi
         copyFileToTestProject(Activator.PLUGIN_ID, PATH, SEMANTIC_INTERACTIONS_RESOURCE_NAME);
         copyFileToTestProject(Activator.PLUGIN_ID, PATH, AIRD_RESOURCE_NAME);
 
-        changeDiagramUIPreference(SiriusDiagramUiPreferencesKeys.PREF_OLD_UI.name(), true);
         changeDiagramPreference(SiriusDiagramPreferencesKeys.PREF_DISPLAY_HEADER_SECTION.name(), false);
 
         sessionAirdResource = new UIResource(designerProject, "/", AIRD_RESOURCE_NAME);
