@@ -66,6 +66,13 @@
             id="org.eclipse.sirius.ui.debug.SiriusDebugView">
       </view>
    </extension>
+   <extension
+         point="org.eclipse.sirius.migrationParticipant">
+      <participant
+            class="org.eclipse.sirius.ui.debug.VSMPatcher"
+            kind="VSM">
+      </participant>
+   </extension>
    <!--
    <extension
          point="org.eclipse.sirius.ui.editor.sessionEditorPageProvider">
