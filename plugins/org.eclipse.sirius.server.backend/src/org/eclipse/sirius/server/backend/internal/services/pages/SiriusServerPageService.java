@@ -20,9 +20,6 @@ import java.util.stream.Collectors;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.ResourcesPlugin;
-import org.eclipse.sirius.business.api.modelingproject.ModelingProject;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.server.api.ISiriusServerService;
 import org.eclipse.sirius.server.api.SiriusServerPath;
@@ -53,13 +50,7 @@ public class SiriusServerPageService implements ISiriusServerService {
         String projectName = variables.get(PROJECT_NAME);
         String pageIdentifier = variables.get(PAGE_IDENTIFIER);
 
-        // @formatter:off
-        Optional<IProject> optionalProject = Optional.ofNullable(ResourcesPlugin.getWorkspace().getRoot().getProject(projectName));
-        Optional<ModelingProject> optionalModelingProject = optionalProject.filter(ModelingProject::hasModelingProjectNature)
-                .filter(IProject::isOpen)
-                .map(iProject -> ModelingProject.asModelingProject(iProject).get()); // FIXME Sirius Optional removal!
-        Optional<SiriusServerPageDto> optionalPage = optionalModelingProject.flatMap(modelingProject -> this.getPage(modelingProject, pageIdentifier));
-        // @formatter:on
+        Optional<SiriusServerPageDto> optionalPage = SiriusServerUtils.getSessionFromProject(projectName).flatMap(session -> getPage(session, pageIdentifier));
         if (optionalPage.isPresent()) {
             SiriusServerPageDto page = optionalPage.get();
             return new SiriusServerResponse(STATUS_OK, page);
@@ -79,8 +70,7 @@ public class SiriusServerPageService implements ISiriusServerService {
      * @return An optional containing the page found or an empty optional if it
      *         does not exist
      */
-    private Optional<SiriusServerPageDto> getPage(ModelingProject modelingProject, String pageIdentifier) {
-        Session session = SiriusServerUtils.getSession(modelingProject);
+    private Optional<SiriusServerPageDto> getPage(Session session, String pageIdentifier) {
         return WorkflowHelper.on(session).findPageById(pageIdentifier).map(page -> {
             List<SiriusServerSectionDto> sections = page.getSections().stream().map(section -> {
                 List<SiriusServerActivityDto> activities = section.getActivities().stream().map(desc -> {

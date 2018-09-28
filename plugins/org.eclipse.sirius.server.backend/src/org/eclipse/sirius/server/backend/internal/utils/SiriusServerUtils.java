@@ -48,6 +48,27 @@ public final class SiriusServerUtils {
     }
 
     /**
+     * Returns the session from the name of a modeling project in the workspace.
+     *
+     * @param projectName
+     *            the name of the modeling project
+     * @return the session if the modeling project exists.
+     */
+    public static Optional<Session> getSessionFromProject(String projectName) {
+        // @formatter:off
+        Optional<IProject> optionalProject = Optional.ofNullable(ResourcesPlugin.getWorkspace().getRoot().getProject(projectName));
+        Optional<ModelingProject> optionalModelingProject = optionalProject.filter(ModelingProject::hasModelingProjectNature)
+                .filter(IProject::isOpen)
+                .map(iProject -> ModelingProject.asModelingProject(iProject).get());
+        // @formatter:on
+        if (optionalModelingProject.isPresent()) {
+            ModelingProject modelingProject = optionalModelingProject.get();
+            return Optional.of(getSession(modelingProject));
+        }
+        return Optional.empty();
+    }
+
+    /**
      * Returns the session of the given modeling project or open a new one and
      * return it.
      *

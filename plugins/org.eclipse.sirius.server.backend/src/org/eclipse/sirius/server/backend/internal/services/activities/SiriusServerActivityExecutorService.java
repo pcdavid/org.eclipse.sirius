@@ -14,17 +14,13 @@ import static org.eclipse.sirius.server.api.SiriusServerResponse.STATUS_NOT_FOUN
 import static org.eclipse.sirius.server.api.SiriusServerResponse.STATUS_OK;
 
 import java.util.Map;
-import java.util.Optional;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.sirius.business.api.modelingproject.ModelingProject;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.internal.session.danalysis.DAnalysisSessionImpl;
 import org.eclipse.sirius.server.api.ISiriusServerService;
@@ -71,24 +67,17 @@ public class SiriusServerActivityExecutorService implements ISiriusServerService
         String sectionId = variables.get(SECTION_IDENTIFIER);
         String activityId = variables.get(ACTIVITY_IDENTIFIER);
 
-        // @formatter:off
-        Optional<IProject> optionalProject = Optional.ofNullable(ResourcesPlugin.getWorkspace().getRoot().getProject(projectName));
-        Optional<ModelingProject> optionalModelingProject = optionalProject.filter(ModelingProject::hasModelingProjectNature)
-                .filter(IProject::isOpen)
-                .map(iProject -> ModelingProject.asModelingProject(iProject).get()); // FIXME Sirius Optional removal!
-        // @formatter:on
-        if (optionalModelingProject.isPresent()) {
-            ModelingProject modelingProject = optionalModelingProject.get();
-            Session session = SiriusServerUtils.getSession(modelingProject);
+        SiriusServerResponse[] result = { new SiriusServerResponse(STATUS_NOT_FOUND) };
 
-            WorkflowHelper.on(session).findActivityById(pageId, sectionId, activityId).ifPresent(activity -> {
+        SiriusServerUtils.getSessionFromProject(projectName).ifPresent(session -> {
+            WorkflowHelper wf = WorkflowHelper.on(session);
+            wf.findActivityById(pageId, sectionId, activityId).ifPresent(activity -> {
                 executeActivity(session, activity);
+                result[0] = new SiriusServerResponse(STATUS_OK);
             });
+        });
 
-            return new SiriusServerResponse(STATUS_OK);
-        }
-
-        return new SiriusServerResponse(STATUS_NOT_FOUND);
+        return result[0];
     }
 
     private void executeActivity(Session session, ActivityDescription activity) {
