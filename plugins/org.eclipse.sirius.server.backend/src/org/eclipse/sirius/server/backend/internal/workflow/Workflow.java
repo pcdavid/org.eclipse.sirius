@@ -8,7 +8,7 @@
  * Contributors:
  *    Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipse.sirius.server.backend.internal.services.workflow;
+package org.eclipse.sirius.server.backend.internal.workflow;
 
 import java.util.Collection;
 import java.util.Objects;
@@ -27,20 +27,19 @@ import org.eclipse.sirius.workflow.SectionDescription;
 import org.eclipse.sirius.workflow.WorkflowDescription;
 
 /**
- * Utility methods to manipulate Workflows and their elements.
+ * Runtime API to query and manipulate the workflow of a given session.
  *
  * @author pcdavid
- *
  */
 // CHECKSTYLE:OFF
-public final class WorkflowHelper {
+public final class Workflow {
     private final Session session;
 
-    public static WorkflowHelper on(Session session) {
-        return new WorkflowHelper(Objects.requireNonNull(session));
+    public static Workflow on(Session session) {
+        return new Workflow(Objects.requireNonNull(session));
     }
 
-    private WorkflowHelper(Session session) {
+    private Workflow(Session session) {
         this.session = session;
     }
 
@@ -93,5 +92,4 @@ public final class WorkflowHelper {
     private <T extends IdentifiedElement> Optional<T> findById(Stream<T> candidates, String id) {
         return candidates.filter(elt -> Objects.equals(elt.getName(), id)).findFirst();
     }
-
 }

@@ -26,9 +26,9 @@ import org.eclipse.sirius.business.internal.session.danalysis.DAnalysisSessionIm
 import org.eclipse.sirius.server.api.ISiriusServerService;
 import org.eclipse.sirius.server.api.SiriusServerPath;
 import org.eclipse.sirius.server.api.SiriusServerResponse;
-import org.eclipse.sirius.server.backend.internal.services.workflow.SiriusToolServices;
-import org.eclipse.sirius.server.backend.internal.services.workflow.WorkflowHelper;
 import org.eclipse.sirius.server.backend.internal.utils.SiriusServerUtils;
+import org.eclipse.sirius.server.backend.internal.workflow.SiriusToolServices;
+import org.eclipse.sirius.server.backend.internal.workflow.Workflow;
 import org.eclipse.sirius.viewpoint.DAnalysis;
 import org.eclipse.sirius.workflow.ActivityDescription;
 
@@ -70,7 +70,7 @@ public class SiriusServerActivityExecutorService implements ISiriusServerService
         SiriusServerResponse[] result = { new SiriusServerResponse(STATUS_NOT_FOUND) };
 
         SiriusServerUtils.getSessionFromProject(projectName).ifPresent(session -> {
-            WorkflowHelper wf = WorkflowHelper.on(session);
+            Workflow wf = Workflow.on(session);
             wf.findActivityById(pageId, sectionId, activityId).ifPresent(activity -> {
                 executeActivity(session, activity);
                 result[0] = new SiriusServerResponse(STATUS_OK);

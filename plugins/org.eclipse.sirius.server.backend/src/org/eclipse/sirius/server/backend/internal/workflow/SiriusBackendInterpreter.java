@@ -8,7 +8,7 @@
  * Contributors:
  *    Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipse.sirius.server.backend.internal.expressions;
+package org.eclipse.sirius.server.backend.internal.workflow;
 
 import java.util.Map;
 import java.util.Map.Entry;

@@ -24,8 +24,8 @@ import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.server.api.ISiriusServerService;
 import org.eclipse.sirius.server.api.SiriusServerPath;
 import org.eclipse.sirius.server.api.SiriusServerResponse;
-import org.eclipse.sirius.server.backend.internal.services.workflow.WorkflowHelper;
 import org.eclipse.sirius.server.backend.internal.utils.SiriusServerUtils;
+import org.eclipse.sirius.server.backend.internal.workflow.Workflow;
 
 /**
  * The service used to manipulate a page of the workflow of a project.
@@ -71,7 +71,7 @@ public class SiriusServerPageService implements ISiriusServerService {
      *         does not exist
      */
     private Optional<SiriusServerPageDto> getPage(Session session, String pageIdentifier) {
-        return WorkflowHelper.on(session).findPageById(pageIdentifier).map(page -> {
+        return Workflow.on(session).findPageById(pageIdentifier).map(page -> {
             List<SiriusServerSectionDto> sections = page.getSections().stream().map(section -> {
                 List<SiriusServerActivityDto> activities = section.getActivities().stream().map(desc -> {
                     return new SiriusServerActivityDto(desc.getName(), desc.getLabelExpression());

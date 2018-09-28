@@ -21,7 +21,6 @@ import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionListener;
 import org.eclipse.sirius.business.api.session.SessionManager;
 import org.eclipse.sirius.business.api.session.SessionManagerListener;
-import org.eclipse.sirius.server.backend.internal.services.workflow.WorkflowHelper;
 import org.eclipse.sirius.server.internal.SiriusServerPlugin;
 import org.eclipse.sirius.ui.editor.SessionEditorPlugin;
 import org.eclipse.sirius.ui.editor.api.pages.AbstractSessionEditorPage;

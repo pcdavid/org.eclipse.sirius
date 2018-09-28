@@ -53,9 +53,9 @@ import org.eclipse.sirius.server.api.ISiriusServerService;
 import org.eclipse.sirius.server.api.SiriusServerPath;
 import org.eclipse.sirius.server.api.SiriusServerResponse;
 import org.eclipse.sirius.server.backend.internal.SiriusServerBackendPlugin;
-import org.eclipse.sirius.server.backend.internal.expressions.SiriusBackendInterpreter;
-import org.eclipse.sirius.server.backend.internal.services.workflow.WorkflowHelper;
 import org.eclipse.sirius.server.backend.internal.utils.SiriusServerUtils;
+import org.eclipse.sirius.server.backend.internal.workflow.SiriusBackendInterpreter;
+import org.eclipse.sirius.server.backend.internal.workflow.Workflow;
 import org.eclipse.sirius.table.metamodel.table.description.TableDescription;
 import org.eclipse.sirius.tree.description.TreeDescription;
 import org.eclipse.sirius.viewpoint.DAnalysis;
@@ -140,7 +140,7 @@ public class SiriusServerProjectService implements ISiriusServerService {
      * @return The list of workflow page from the given session
      */
     private List<SiriusServerPageDto> getPages(ModelingProject modelingProject, Session session) {
-        return WorkflowHelper.on(session).getPageDescriptions().map(page -> {
+        return Workflow.on(session).getPageDescriptions().map(page -> {
             DAnalysis self = ((DAnalysisSession) session).allAnalyses().stream().findFirst().orElse(null);
             Map<String, Object> variables = new HashMap<>();
             variables.put(SELF, self);
@@ -160,7 +160,7 @@ public class SiriusServerProjectService implements ISiriusServerService {
      * @return The list of the sections of the current page
      */
     private List<SiriusServerSectionDto> getFirstPageSections(Session session) {
-        Optional<PageDescription> optionalPageDescription = WorkflowHelper.on(session).getPageDescriptions().findFirst();
+        Optional<PageDescription> optionalPageDescription = Workflow.on(session).getPageDescriptions().findFirst();
         List<SectionDescription> sectionDescriptions = optionalPageDescription.map(PageDescription::getSections).orElseGet(BasicEList::new);
 
         // @formatter:off

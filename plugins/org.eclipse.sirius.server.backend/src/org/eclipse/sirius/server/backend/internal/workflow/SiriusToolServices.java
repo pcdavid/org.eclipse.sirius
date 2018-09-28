@@ -8,7 +8,7 @@
  * Contributors:
  *    Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipse.sirius.server.backend.internal.services.workflow;
+package org.eclipse.sirius.server.backend.internal.workflow;
 
 import java.util.Collection;
 import java.util.LinkedHashSet;
