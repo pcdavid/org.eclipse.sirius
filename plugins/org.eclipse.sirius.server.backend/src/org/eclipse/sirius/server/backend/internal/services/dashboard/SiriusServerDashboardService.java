@@ -12,7 +12,6 @@ package org.eclipse.sirius.server.backend.internal.services.dashboard;
 
 import static org.eclipse.sirius.server.api.SiriusServerResponse.STATUS_OK;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -21,10 +20,8 @@ import java.util.stream.Stream;
 import javax.servlet.http.HttpServletRequest;
 
 import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.sirius.business.api.componentization.ViewpointRegistry;
-import org.eclipse.sirius.business.api.modelingproject.ModelingProject;
 import org.eclipse.sirius.server.api.ISiriusServerService;
 import org.eclipse.sirius.server.api.SiriusServerPath;
 import org.eclipse.sirius.server.api.SiriusServerResponse;
@@ -54,34 +51,19 @@ public class SiriusServerDashboardService implements ISiriusServerService {
      * @return The dashboard
      */
     private SiriusServerDashboardDto getDashboard() {
-        int projectsCount = Long.valueOf(this.getModelingProjects().count()).intValue();
+        Stream<IProject> allModelingProjects = SiriusServerUtils.getModelingProjects();
+        int projectsCount = Long.valueOf(allModelingProjects.count()).intValue();
         int viewpointsCount = ViewpointRegistry.getInstance().getViewpoints().size();
         int metamodelsCount = EPackage.Registry.INSTANCE.size();
 
         // @formatter:off
-		List<SiriusServerDashboardProjectDto> projects = this.getModelingProjects()
+		List<SiriusServerDashboardProjectDto> projects = allModelingProjects
 				.limit(DASHBOARD_PROJECT_COUNT)
 				.map(this::convertToProject)
 				.collect(Collectors.toList());
 		// @formatter:on
 
         return new SiriusServerDashboardDto(projectsCount, viewpointsCount, metamodelsCount, projects);
-    }
-
-    /**
-     * Returns a stream of the projects with the modeling project nature in the
-     * workspace.
-     *
-     * @return A stream of the projects with the modeling project nature in the
-     *         workspace
-     */
-    private Stream<IProject> getModelingProjects() {
-        IProject[] allProjects = ResourcesPlugin.getWorkspace().getRoot().getProjects();
-        // @formatter:off
-		return Arrays.stream(allProjects)
-				.filter(ModelingProject::hasModelingProjectNature)
-				.filter(IProject::isOpen);
-		// @formatter:on
     }
 
     /**

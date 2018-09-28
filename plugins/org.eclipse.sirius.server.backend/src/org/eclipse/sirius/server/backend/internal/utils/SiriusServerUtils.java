@@ -10,10 +10,13 @@
  *******************************************************************************/
 package org.eclipse.sirius.server.backend.internal.utils;
 
+import java.util.Arrays;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IProjectDescription;
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
@@ -64,17 +67,33 @@ public final class SiriusServerUtils {
     }
 
     /**
+     * Returns a stream of the projects with the modeling project nature in the
+     * workspace.
+     *
+     * @return A stream of the projects with the modeling project nature in the
+     *         workspace
+     */
+    public static Stream<IProject> getModelingProjects() {
+        IProject[] allProjects = ResourcesPlugin.getWorkspace().getRoot().getProjects();
+        // @formatter:off
+        return Arrays.stream(allProjects)
+                .filter(ModelingProject::hasModelingProjectNature)
+                .filter(IProject::isOpen);
+        // @formatter:on
+    }
+
+    /**
      * Returns the description from the given project.
      *
-     * @param iProject
+     * @param project
      *            The project
      * @return The description from the given project
      */
-    public static String getProjectDescription(IProject iProject) {
+    public static String getProjectDescription(IProject project) {
         String description = null;
 
         try {
-            IProjectDescription iProjectDescription = iProject.getDescription();
+            IProjectDescription iProjectDescription = project.getDescription();
             String comment = iProjectDescription.getComment();
             if (comment != null && comment.trim().length() > 0) {
                 description = comment;
@@ -85,4 +104,5 @@ public final class SiriusServerUtils {
         }
         return description;
     }
+
 }
