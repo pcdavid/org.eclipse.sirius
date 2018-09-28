@@ -30,6 +30,7 @@
                class="org.eclipse.sirius.workflow.model.editor.properties.sections.workflow.activitydescription.ActivityDescriptionLabelExpressionPropertySection"
                id="workflow.section.activityDescription.LabelExpression"
                filter="org.eclipse.sirius.workflow.model.editor.properties.filters.workflow.activitydescription.ActivityDescriptionLabelExpressionFilter"
+               afterSection="description.section.identifiedElement.Label"
                 tab="viewpoint.tab.general">
         <input type="org.eclipse.sirius.workflow.ActivityDescription"/>
       </propertySection>
@@ -53,6 +54,7 @@
                class="org.eclipse.sirius.workflow.model.editor.properties.sections.workflow.sectiondescription.SectionDescriptionTitleExpressionPropertySection"
                id="workflow.section.sectionDescription.TitleExpression"
                filter="org.eclipse.sirius.workflow.model.editor.properties.filters.workflow.sectiondescription.SectionDescriptionTitleExpressionFilter"
+               afterSection="description.section.identifiedElement.Label"
                 tab="viewpoint.tab.general">
         <input type="org.eclipse.sirius.workflow.SectionDescription"/>
       </propertySection>
@@ -76,6 +78,7 @@
                class="org.eclipse.sirius.workflow.model.editor.properties.sections.workflow.pagedescription.PageDescriptionTitleExpressionPropertySection"
                id="workflow.section.pageDescription.TitleExpression"
                filter="org.eclipse.sirius.workflow.model.editor.properties.filters.workflow.pagedescription.PageDescriptionTitleExpressionFilter"
+               afterSection="description.section.identifiedElement.Label"
                 tab="viewpoint.tab.general">
         <input type="org.eclipse.sirius.workflow.PageDescription"/>
       </propertySection>
