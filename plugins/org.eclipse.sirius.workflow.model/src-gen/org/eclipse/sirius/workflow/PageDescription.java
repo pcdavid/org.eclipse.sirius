@@ -116,6 +116,33 @@ public interface PageDescription extends IdentifiedElement, DocumentedElement {
     void setDescriptionExpression(String value);
 
     /**
+     * Returns the value of the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Precondition Expression</em>' attribute isn't clear, there really should be more of a
+     * description here...
+     * </p>
+     * <!-- end-user-doc -->
+     *
+     * @return the value of the '<em>Precondition Expression</em>' attribute.
+     * @see #setPreconditionExpression(String)
+     * @see org.eclipse.sirius.workflow.WorkflowPackage#getPageDescription_PreconditionExpression()
+     * @model dataType="org.eclipse.sirius.viewpoint.description.InterpretedExpression"
+     * @generated
+     */
+    String getPreconditionExpression();
+
+    /**
+     * Sets the value of the '{@link org.eclipse.sirius.workflow.PageDescription#getPreconditionExpression
+     * <em>Precondition Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @param value
+     *            the new value of the '<em>Precondition Expression</em>' attribute.
+     * @see #getPreconditionExpression()
+     * @generated
+     */
+    void setPreconditionExpression(String value);
+
+    /**
      * Returns the value of the '<em><b>Sections</b></em>' containment reference list. The list contents are of type
      * {@link org.eclipse.sirius.workflow.SectionDescription}. <!-- begin-user-doc -->
      * <p>

@@ -27,7 +27,9 @@ Export-Package: org.eclipse.sirius.editor.workflow.internal;version="6.0.0";x-in
  org.eclipse.sirius.workflow.model.editor.properties.filters.workflow.activitydescription;version="6.0.0",
  org.eclipse.sirius.workflow.model.editor.properties.filters.workflow.pagedescription;version="6.0.0",
  org.eclipse.sirius.workflow.model.editor.properties.filters.workflow.sectiondescription;version="6.0.0",
+ org.eclipse.sirius.workflow.model.editor.properties.filters.workflow.workflowdescription,
  org.eclipse.sirius.workflow.model.editor.properties.sections.workflow.activitydescription;version="6.0.0",
  org.eclipse.sirius.workflow.model.editor.properties.sections.workflow.pagedescription;version="6.0.0",
- org.eclipse.sirius.workflow.model.editor.properties.sections.workflow.sectiondescription;version="6.0.0"
+ org.eclipse.sirius.workflow.model.editor.properties.sections.workflow.sectiondescription;version="6.0.0",
+ org.eclipse.sirius.workflow.model.editor.properties.sections.workflow.workflowdescription
 Bundle-Activator: org.eclipse.sirius.editor.workflow.internal.SiriusEditorWorkflowPlugin$Implementation

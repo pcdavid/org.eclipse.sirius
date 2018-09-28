@@ -38,6 +38,10 @@ import org.eclipse.sirius.workflow.WorkflowPackage;
  * <li>{@link org.eclipse.sirius.workflow.impl.WorkflowDescriptionImpl#getName <em>Name</em>}</li>
  * <li>{@link org.eclipse.sirius.workflow.impl.WorkflowDescriptionImpl#getLabel <em>Label</em>}</li>
  * <li>{@link org.eclipse.sirius.workflow.impl.WorkflowDescriptionImpl#getDocumentation <em>Documentation</em>}</li>
+ * <li>{@link org.eclipse.sirius.workflow.impl.WorkflowDescriptionImpl#getPreconditionExpression <em>Precondition
+ * Expression</em>}</li>
+ * <li>{@link org.eclipse.sirius.workflow.impl.WorkflowDescriptionImpl#getStateExpression <em>State
+ * Expression</em>}</li>
  * <li>{@link org.eclipse.sirius.workflow.impl.WorkflowDescriptionImpl#getPages <em>Pages</em>}</li>
  * </ul>
  *
@@ -103,6 +107,46 @@ public class WorkflowDescriptionImpl extends MinimalEObjectImpl.Container implem
      * @ordered
      */
     protected String documentation = WorkflowDescriptionImpl.DOCUMENTATION_EDEFAULT;
+
+    /**
+     * The default value of the '{@link #getPreconditionExpression() <em>Precondition Expression</em>}' attribute. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @see #getPreconditionExpression()
+     * @generated
+     * @ordered
+     */
+    protected static final String PRECONDITION_EXPRESSION_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getPreconditionExpression() <em>Precondition Expression</em>}' attribute. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @see #getPreconditionExpression()
+     * @generated
+     * @ordered
+     */
+    protected String preconditionExpression = WorkflowDescriptionImpl.PRECONDITION_EXPRESSION_EDEFAULT;
+
+    /**
+     * The default value of the '{@link #getStateExpression() <em>State Expression</em>}' attribute. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
+     *
+     * @see #getStateExpression()
+     * @generated
+     * @ordered
+     */
+    protected static final String STATE_EXPRESSION_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getStateExpression() <em>State Expression</em>}' attribute. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
+     *
+     * @see #getStateExpression()
+     * @generated
+     * @ordered
+     */
+    protected String stateExpression = WorkflowDescriptionImpl.STATE_EXPRESSION_EDEFAULT;
 
     /**
      * The cached value of the '{@link #getPages() <em>Pages</em>}' containment reference list. <!-- begin-user-doc -->
@@ -211,6 +255,54 @@ public class WorkflowDescriptionImpl extends MinimalEObjectImpl.Container implem
      * @generated
      */
     @Override
+    public String getPreconditionExpression() {
+        return preconditionExpression;
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public void setPreconditionExpression(String newPreconditionExpression) {
+        String oldPreconditionExpression = preconditionExpression;
+        preconditionExpression = newPreconditionExpression;
+        if (eNotificationRequired()) {
+            eNotify(new ENotificationImpl(this, Notification.SET, WorkflowPackage.WORKFLOW_DESCRIPTION__PRECONDITION_EXPRESSION, oldPreconditionExpression, preconditionExpression));
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public String getStateExpression() {
+        return stateExpression;
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public void setStateExpression(String newStateExpression) {
+        String oldStateExpression = stateExpression;
+        stateExpression = newStateExpression;
+        if (eNotificationRequired()) {
+            eNotify(new ENotificationImpl(this, Notification.SET, WorkflowPackage.WORKFLOW_DESCRIPTION__STATE_EXPRESSION, oldStateExpression, stateExpression));
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
     public EList<PageDescription> getPages() {
         if (pages == null) {
             pages = new EObjectContainmentEList.Resolving<PageDescription>(PageDescription.class, this, WorkflowPackage.WORKFLOW_DESCRIPTION__PAGES);
@@ -246,6 +338,10 @@ public class WorkflowDescriptionImpl extends MinimalEObjectImpl.Container implem
             return getLabel();
         case WorkflowPackage.WORKFLOW_DESCRIPTION__DOCUMENTATION:
             return getDocumentation();
+        case WorkflowPackage.WORKFLOW_DESCRIPTION__PRECONDITION_EXPRESSION:
+            return getPreconditionExpression();
+        case WorkflowPackage.WORKFLOW_DESCRIPTION__STATE_EXPRESSION:
+            return getStateExpression();
         case WorkflowPackage.WORKFLOW_DESCRIPTION__PAGES:
             return getPages();
         }
@@ -269,6 +365,12 @@ public class WorkflowDescriptionImpl extends MinimalEObjectImpl.Container implem
             return;
         case WorkflowPackage.WORKFLOW_DESCRIPTION__DOCUMENTATION:
             setDocumentation((String) newValue);
+            return;
+        case WorkflowPackage.WORKFLOW_DESCRIPTION__PRECONDITION_EXPRESSION:
+            setPreconditionExpression((String) newValue);
+            return;
+        case WorkflowPackage.WORKFLOW_DESCRIPTION__STATE_EXPRESSION:
+            setStateExpression((String) newValue);
             return;
         case WorkflowPackage.WORKFLOW_DESCRIPTION__PAGES:
             getPages().clear();
@@ -295,6 +397,12 @@ public class WorkflowDescriptionImpl extends MinimalEObjectImpl.Container implem
         case WorkflowPackage.WORKFLOW_DESCRIPTION__DOCUMENTATION:
             setDocumentation(WorkflowDescriptionImpl.DOCUMENTATION_EDEFAULT);
             return;
+        case WorkflowPackage.WORKFLOW_DESCRIPTION__PRECONDITION_EXPRESSION:
+            setPreconditionExpression(WorkflowDescriptionImpl.PRECONDITION_EXPRESSION_EDEFAULT);
+            return;
+        case WorkflowPackage.WORKFLOW_DESCRIPTION__STATE_EXPRESSION:
+            setStateExpression(WorkflowDescriptionImpl.STATE_EXPRESSION_EDEFAULT);
+            return;
         case WorkflowPackage.WORKFLOW_DESCRIPTION__PAGES:
             getPages().clear();
             return;
@@ -316,6 +424,11 @@ public class WorkflowDescriptionImpl extends MinimalEObjectImpl.Container implem
             return WorkflowDescriptionImpl.LABEL_EDEFAULT == null ? label != null : !WorkflowDescriptionImpl.LABEL_EDEFAULT.equals(label);
         case WorkflowPackage.WORKFLOW_DESCRIPTION__DOCUMENTATION:
             return WorkflowDescriptionImpl.DOCUMENTATION_EDEFAULT == null ? documentation != null : !WorkflowDescriptionImpl.DOCUMENTATION_EDEFAULT.equals(documentation);
+        case WorkflowPackage.WORKFLOW_DESCRIPTION__PRECONDITION_EXPRESSION:
+            return WorkflowDescriptionImpl.PRECONDITION_EXPRESSION_EDEFAULT == null ? preconditionExpression != null
+                    : !WorkflowDescriptionImpl.PRECONDITION_EXPRESSION_EDEFAULT.equals(preconditionExpression);
+        case WorkflowPackage.WORKFLOW_DESCRIPTION__STATE_EXPRESSION:
+            return WorkflowDescriptionImpl.STATE_EXPRESSION_EDEFAULT == null ? stateExpression != null : !WorkflowDescriptionImpl.STATE_EXPRESSION_EDEFAULT.equals(stateExpression);
         case WorkflowPackage.WORKFLOW_DESCRIPTION__PAGES:
             return pages != null && !pages.isEmpty();
         }
@@ -396,6 +509,10 @@ public class WorkflowDescriptionImpl extends MinimalEObjectImpl.Container implem
         result.append(label);
         result.append(", documentation: "); //$NON-NLS-1$
         result.append(documentation);
+        result.append(", preconditionExpression: "); //$NON-NLS-1$
+        result.append(preconditionExpression);
+        result.append(", stateExpression: "); //$NON-NLS-1$
+        result.append(stateExpression);
         result.append(')');
         return result.toString();
     }

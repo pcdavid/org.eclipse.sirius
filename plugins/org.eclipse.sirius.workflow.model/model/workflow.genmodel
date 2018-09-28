@@ -14,23 +14,28 @@
   <genPackages prefix="Workflow" basePackage="org.eclipse.sirius" disposableProviderFactory="true"
       extensibleProviderFactory="true" childCreationExtenders="true" ecorePackage="workflow.ecore#/">
     <genClasses ecoreClass="workflow.ecore#//WorkflowDescription" labelFeature="../../org.eclipse.sirius/model/viewpoint.genmodel#//viewpoint/description/IdentifiedElement/label">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workflow.ecore#//WorkflowDescription/preconditionExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workflow.ecore#//WorkflowDescription/stateExpression"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference workflow.ecore#//WorkflowDescription/pages"/>
     </genClasses>
     <genClasses ecoreClass="workflow.ecore#//PageDescription" labelFeature="#//workflow/PageDescription/titleExpression">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workflow.ecore#//PageDescription/titleExpression"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workflow.ecore#//PageDescription/imagePath"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workflow.ecore#//PageDescription/descriptionExpression"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute workflow.ecore#//PageDescription/imagePath"/>
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EAttribute workflow.ecore#//PageDescription/descriptionExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workflow.ecore#//PageDescription/preconditionExpression"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference workflow.ecore#//PageDescription/sections"/>
     </genClasses>
     <genClasses ecoreClass="workflow.ecore#//SectionDescription" labelFeature="#//workflow/SectionDescription/titleExpression">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workflow.ecore#//SectionDescription/titleExpression"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workflow.ecore#//SectionDescription/imagePath"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workflow.ecore#//SectionDescription/descriptionExpression"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute workflow.ecore#//SectionDescription/imagePath"/>
+      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute workflow.ecore#//SectionDescription/descriptionExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workflow.ecore#//SectionDescription/preconditionExpression"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference workflow.ecore#//SectionDescription/activities"/>
     </genClasses>
     <genClasses ecoreClass="workflow.ecore#//ActivityDescription" labelFeature="#//workflow/ActivityDescription/labelExpression">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workflow.ecore#//ActivityDescription/labelExpression"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workflow.ecore#//ActivityDescription/imagePath"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute workflow.ecore#//ActivityDescription/imagePath"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workflow.ecore#//ActivityDescription/preconditionExpression"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference workflow.ecore#//ActivityDescription/operation"/>
     </genClasses>
   </genPackages>

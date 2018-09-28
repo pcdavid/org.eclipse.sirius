@@ -95,13 +95,31 @@ public interface WorkflowPackage extends EPackage {
     int WORKFLOW_DESCRIPTION__DOCUMENTATION = DescriptionPackage.EXTENSION_FEATURE_COUNT + 2;
 
     /**
+     * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int WORKFLOW_DESCRIPTION__PRECONDITION_EXPRESSION = DescriptionPackage.EXTENSION_FEATURE_COUNT + 3;
+
+    /**
+     * The feature id for the '<em><b>State Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+     * -->
+     *
+     * @generated
+     * @ordered
+     */
+    int WORKFLOW_DESCRIPTION__STATE_EXPRESSION = DescriptionPackage.EXTENSION_FEATURE_COUNT + 4;
+
+    /**
      * The feature id for the '<em><b>Pages</b></em>' containment reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
      *
      * @generated
      * @ordered
      */
-    int WORKFLOW_DESCRIPTION__PAGES = DescriptionPackage.EXTENSION_FEATURE_COUNT + 3;
+    int WORKFLOW_DESCRIPTION__PAGES = DescriptionPackage.EXTENSION_FEATURE_COUNT + 5;
 
     /**
      * The number of structural features of the '<em>Description</em>' class. <!-- begin-user-doc --> <!-- end-user-doc
@@ -110,7 +128,7 @@ public interface WorkflowPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int WORKFLOW_DESCRIPTION_FEATURE_COUNT = DescriptionPackage.EXTENSION_FEATURE_COUNT + 4;
+    int WORKFLOW_DESCRIPTION_FEATURE_COUNT = DescriptionPackage.EXTENSION_FEATURE_COUNT + 6;
 
     /**
      * The meta object id for the '{@link org.eclipse.sirius.workflow.impl.PageDescriptionImpl <em>Page
@@ -173,13 +191,22 @@ public interface WorkflowPackage extends EPackage {
     int PAGE_DESCRIPTION__DESCRIPTION_EXPRESSION = DescriptionPackage.IDENTIFIED_ELEMENT_FEATURE_COUNT + 3;
 
     /**
+     * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int PAGE_DESCRIPTION__PRECONDITION_EXPRESSION = DescriptionPackage.IDENTIFIED_ELEMENT_FEATURE_COUNT + 4;
+
+    /**
      * The feature id for the '<em><b>Sections</b></em>' containment reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
      *
      * @generated
      * @ordered
      */
-    int PAGE_DESCRIPTION__SECTIONS = DescriptionPackage.IDENTIFIED_ELEMENT_FEATURE_COUNT + 4;
+    int PAGE_DESCRIPTION__SECTIONS = DescriptionPackage.IDENTIFIED_ELEMENT_FEATURE_COUNT + 5;
 
     /**
      * The number of structural features of the '<em>Page Description</em>' class. <!-- begin-user-doc --> <!--
@@ -188,7 +215,7 @@ public interface WorkflowPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int PAGE_DESCRIPTION_FEATURE_COUNT = DescriptionPackage.IDENTIFIED_ELEMENT_FEATURE_COUNT + 5;
+    int PAGE_DESCRIPTION_FEATURE_COUNT = DescriptionPackage.IDENTIFIED_ELEMENT_FEATURE_COUNT + 6;
 
     /**
      * The meta object id for the '{@link org.eclipse.sirius.workflow.impl.SectionDescriptionImpl <em>Section
@@ -251,13 +278,22 @@ public interface WorkflowPackage extends EPackage {
     int SECTION_DESCRIPTION__DESCRIPTION_EXPRESSION = DescriptionPackage.IDENTIFIED_ELEMENT_FEATURE_COUNT + 3;
 
     /**
+     * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int SECTION_DESCRIPTION__PRECONDITION_EXPRESSION = DescriptionPackage.IDENTIFIED_ELEMENT_FEATURE_COUNT + 4;
+
+    /**
      * The feature id for the '<em><b>Activities</b></em>' containment reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
      *
      * @generated
      * @ordered
      */
-    int SECTION_DESCRIPTION__ACTIVITIES = DescriptionPackage.IDENTIFIED_ELEMENT_FEATURE_COUNT + 4;
+    int SECTION_DESCRIPTION__ACTIVITIES = DescriptionPackage.IDENTIFIED_ELEMENT_FEATURE_COUNT + 5;
 
     /**
      * The number of structural features of the '<em>Section Description</em>' class. <!-- begin-user-doc --> <!--
@@ -266,7 +302,7 @@ public interface WorkflowPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SECTION_DESCRIPTION_FEATURE_COUNT = DescriptionPackage.IDENTIFIED_ELEMENT_FEATURE_COUNT + 5;
+    int SECTION_DESCRIPTION_FEATURE_COUNT = DescriptionPackage.IDENTIFIED_ELEMENT_FEATURE_COUNT + 6;
 
     /**
      * The meta object id for the '{@link org.eclipse.sirius.workflow.impl.ActivityDescriptionImpl <em>Activity
@@ -320,13 +356,22 @@ public interface WorkflowPackage extends EPackage {
     int ACTIVITY_DESCRIPTION__IMAGE_PATH = DescriptionPackage.IDENTIFIED_ELEMENT_FEATURE_COUNT + 2;
 
     /**
+     * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int ACTIVITY_DESCRIPTION__PRECONDITION_EXPRESSION = DescriptionPackage.IDENTIFIED_ELEMENT_FEATURE_COUNT + 3;
+
+    /**
      * The feature id for the '<em><b>Operation</b></em>' containment reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
      *
      * @generated
      * @ordered
      */
-    int ACTIVITY_DESCRIPTION__OPERATION = DescriptionPackage.IDENTIFIED_ELEMENT_FEATURE_COUNT + 3;
+    int ACTIVITY_DESCRIPTION__OPERATION = DescriptionPackage.IDENTIFIED_ELEMENT_FEATURE_COUNT + 4;
 
     /**
      * The number of structural features of the '<em>Activity Description</em>' class. <!-- begin-user-doc --> <!--
@@ -335,7 +380,7 @@ public interface WorkflowPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ACTIVITY_DESCRIPTION_FEATURE_COUNT = DescriptionPackage.IDENTIFIED_ELEMENT_FEATURE_COUNT + 4;
+    int ACTIVITY_DESCRIPTION_FEATURE_COUNT = DescriptionPackage.IDENTIFIED_ELEMENT_FEATURE_COUNT + 5;
 
     /**
      * Returns the meta object for class '{@link org.eclipse.sirius.workflow.WorkflowDescription <em>Description</em>}'.
@@ -346,6 +391,30 @@ public interface WorkflowPackage extends EPackage {
      * @generated
      */
     EClass getWorkflowDescription();
+
+    /**
+     * Returns the meta object for the attribute
+     * '{@link org.eclipse.sirius.workflow.WorkflowDescription#getPreconditionExpression <em>Precondition
+     * Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @return the meta object for the attribute '<em>Precondition Expression</em>'.
+     * @see org.eclipse.sirius.workflow.WorkflowDescription#getPreconditionExpression()
+     * @see #getWorkflowDescription()
+     * @generated
+     */
+    EAttribute getWorkflowDescription_PreconditionExpression();
+
+    /**
+     * Returns the meta object for the attribute
+     * '{@link org.eclipse.sirius.workflow.WorkflowDescription#getStateExpression <em>State Expression</em>}'. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @return the meta object for the attribute '<em>State Expression</em>'.
+     * @see org.eclipse.sirius.workflow.WorkflowDescription#getStateExpression()
+     * @see #getWorkflowDescription()
+     * @generated
+     */
+    EAttribute getWorkflowDescription_StateExpression();
 
     /**
      * Returns the meta object for the containment reference list
@@ -402,6 +471,18 @@ public interface WorkflowPackage extends EPackage {
      * @generated
      */
     EAttribute getPageDescription_DescriptionExpression();
+
+    /**
+     * Returns the meta object for the attribute
+     * '{@link org.eclipse.sirius.workflow.PageDescription#getPreconditionExpression <em>Precondition Expression</em>}'.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @return the meta object for the attribute '<em>Precondition Expression</em>'.
+     * @see org.eclipse.sirius.workflow.PageDescription#getPreconditionExpression()
+     * @see #getPageDescription()
+     * @generated
+     */
+    EAttribute getPageDescription_PreconditionExpression();
 
     /**
      * Returns the meta object for the containment reference list
@@ -461,6 +542,18 @@ public interface WorkflowPackage extends EPackage {
     EAttribute getSectionDescription_DescriptionExpression();
 
     /**
+     * Returns the meta object for the attribute
+     * '{@link org.eclipse.sirius.workflow.SectionDescription#getPreconditionExpression <em>Precondition
+     * Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @return the meta object for the attribute '<em>Precondition Expression</em>'.
+     * @see org.eclipse.sirius.workflow.SectionDescription#getPreconditionExpression()
+     * @see #getSectionDescription()
+     * @generated
+     */
+    EAttribute getSectionDescription_PreconditionExpression();
+
+    /**
      * Returns the meta object for the containment reference list
      * '{@link org.eclipse.sirius.workflow.SectionDescription#getActivities <em>Activities</em>}'. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
@@ -506,6 +599,18 @@ public interface WorkflowPackage extends EPackage {
     EAttribute getActivityDescription_ImagePath();
 
     /**
+     * Returns the meta object for the attribute
+     * '{@link org.eclipse.sirius.workflow.ActivityDescription#getPreconditionExpression <em>Precondition
+     * Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @return the meta object for the attribute '<em>Precondition Expression</em>'.
+     * @see org.eclipse.sirius.workflow.ActivityDescription#getPreconditionExpression()
+     * @see #getActivityDescription()
+     * @generated
+     */
+    EAttribute getActivityDescription_PreconditionExpression();
+
+    /**
      * Returns the meta object for the containment reference
      * '{@link org.eclipse.sirius.workflow.ActivityDescription#getOperation <em>Operation</em>}'. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
@@ -547,6 +652,22 @@ public interface WorkflowPackage extends EPackage {
          * @generated
          */
         EClass WORKFLOW_DESCRIPTION = WorkflowPackage.eINSTANCE.getWorkflowDescription();
+
+        /**
+         * The meta object literal for the '<em><b>Precondition Expression</b></em>' attribute feature. <!--
+         * begin-user-doc --> <!-- end-user-doc -->
+         *
+         * @generated
+         */
+        EAttribute WORKFLOW_DESCRIPTION__PRECONDITION_EXPRESSION = WorkflowPackage.eINSTANCE.getWorkflowDescription_PreconditionExpression();
+
+        /**
+         * The meta object literal for the '<em><b>State Expression</b></em>' attribute feature. <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         *
+         * @generated
+         */
+        EAttribute WORKFLOW_DESCRIPTION__STATE_EXPRESSION = WorkflowPackage.eINSTANCE.getWorkflowDescription_StateExpression();
 
         /**
          * The meta object literal for the '<em><b>Pages</b></em>' containment reference list feature. <!--
@@ -591,6 +712,14 @@ public interface WorkflowPackage extends EPackage {
         EAttribute PAGE_DESCRIPTION__DESCRIPTION_EXPRESSION = WorkflowPackage.eINSTANCE.getPageDescription_DescriptionExpression();
 
         /**
+         * The meta object literal for the '<em><b>Precondition Expression</b></em>' attribute feature. <!--
+         * begin-user-doc --> <!-- end-user-doc -->
+         *
+         * @generated
+         */
+        EAttribute PAGE_DESCRIPTION__PRECONDITION_EXPRESSION = WorkflowPackage.eINSTANCE.getPageDescription_PreconditionExpression();
+
+        /**
          * The meta object literal for the '<em><b>Sections</b></em>' containment reference list feature. <!--
          * begin-user-doc --> <!-- end-user-doc -->
          *
@@ -633,6 +762,14 @@ public interface WorkflowPackage extends EPackage {
         EAttribute SECTION_DESCRIPTION__DESCRIPTION_EXPRESSION = WorkflowPackage.eINSTANCE.getSectionDescription_DescriptionExpression();
 
         /**
+         * The meta object literal for the '<em><b>Precondition Expression</b></em>' attribute feature. <!--
+         * begin-user-doc --> <!-- end-user-doc -->
+         *
+         * @generated
+         */
+        EAttribute SECTION_DESCRIPTION__PRECONDITION_EXPRESSION = WorkflowPackage.eINSTANCE.getSectionDescription_PreconditionExpression();
+
+        /**
          * The meta object literal for the '<em><b>Activities</b></em>' containment reference list feature. <!--
          * begin-user-doc --> <!-- end-user-doc -->
          *
@@ -665,6 +802,14 @@ public interface WorkflowPackage extends EPackage {
          * @generated
          */
         EAttribute ACTIVITY_DESCRIPTION__IMAGE_PATH = WorkflowPackage.eINSTANCE.getActivityDescription_ImagePath();
+
+        /**
+         * The meta object literal for the '<em><b>Precondition Expression</b></em>' attribute feature. <!--
+         * begin-user-doc --> <!-- end-user-doc -->
+         *
+         * @generated
+         */
+        EAttribute ACTIVITY_DESCRIPTION__PRECONDITION_EXPRESSION = WorkflowPackage.eINSTANCE.getActivityDescription_PreconditionExpression();
 
         /**
          * The meta object literal for the '<em><b>Operation</b></em>' containment reference feature. <!--

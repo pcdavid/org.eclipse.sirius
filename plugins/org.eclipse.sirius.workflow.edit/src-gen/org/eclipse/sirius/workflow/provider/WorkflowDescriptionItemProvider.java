@@ -66,6 +66,8 @@ public class WorkflowDescriptionItemProvider extends ItemProviderAdapter
             addNamePropertyDescriptor(object);
             addLabelPropertyDescriptor(object);
             addDocumentationPropertyDescriptor(object);
+            addPreconditionExpressionPropertyDescriptor(object);
+            addStateExpressionPropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -107,6 +109,31 @@ public class WorkflowDescriptionItemProvider extends ItemProviderAdapter
                         getString("_UI_DocumentedElement_documentation_description"), //$NON-NLS-1$
                         DescriptionPackage.Literals.DOCUMENTED_ELEMENT__DOCUMENTATION, true, true, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, getString("_UI_DocumentationPropertyCategory"), //$NON-NLS-1$
                         null));
+    }
+
+    /**
+     * This adds a property descriptor for the Precondition Expression feature. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     */
+    protected void addPreconditionExpressionPropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+                getString("_UI_WorkflowDescription_preconditionExpression_feature"), //$NON-NLS-1$
+                getString("_UI_PropertyDescriptor_description", "_UI_WorkflowDescription_preconditionExpression_feature", "_UI_WorkflowDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+                WorkflowPackage.Literals.WORKFLOW_DESCRIPTION__PRECONDITION_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+    }
+
+    /**
+     * This adds a property descriptor for the State Expression feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected void addStateExpressionPropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_WorkflowDescription_stateExpression_feature"), //$NON-NLS-1$
+                        getString("_UI_PropertyDescriptor_description", "_UI_WorkflowDescription_stateExpression_feature", "_UI_WorkflowDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+                        WorkflowPackage.Literals.WORKFLOW_DESCRIPTION__STATE_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
     }
 
     /**
@@ -191,6 +218,8 @@ public class WorkflowDescriptionItemProvider extends ItemProviderAdapter
         case WorkflowPackage.WORKFLOW_DESCRIPTION__NAME:
         case WorkflowPackage.WORKFLOW_DESCRIPTION__LABEL:
         case WorkflowPackage.WORKFLOW_DESCRIPTION__DOCUMENTATION:
+        case WorkflowPackage.WORKFLOW_DESCRIPTION__PRECONDITION_EXPRESSION:
+        case WorkflowPackage.WORKFLOW_DESCRIPTION__STATE_EXPRESSION:
             fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
             return;
         case WorkflowPackage.WORKFLOW_DESCRIPTION__PAGES:

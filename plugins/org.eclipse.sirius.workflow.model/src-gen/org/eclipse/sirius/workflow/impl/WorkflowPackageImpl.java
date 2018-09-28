@@ -144,8 +144,28 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
      * @generated
      */
     @Override
+    public EAttribute getWorkflowDescription_PreconditionExpression() {
+        return (EAttribute) workflowDescriptionEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public EAttribute getWorkflowDescription_StateExpression() {
+        return (EAttribute) workflowDescriptionEClass.getEStructuralFeatures().get(1);
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
     public EReference getWorkflowDescription_Pages() {
-        return (EReference) workflowDescriptionEClass.getEStructuralFeatures().get(0);
+        return (EReference) workflowDescriptionEClass.getEStructuralFeatures().get(2);
     }
 
     /**
@@ -194,8 +214,18 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
      * @generated
      */
     @Override
+    public EAttribute getPageDescription_PreconditionExpression() {
+        return (EAttribute) pageDescriptionEClass.getEStructuralFeatures().get(3);
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
     public EReference getPageDescription_Sections() {
-        return (EReference) pageDescriptionEClass.getEStructuralFeatures().get(3);
+        return (EReference) pageDescriptionEClass.getEStructuralFeatures().get(4);
     }
 
     /**
@@ -244,8 +274,18 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
      * @generated
      */
     @Override
+    public EAttribute getSectionDescription_PreconditionExpression() {
+        return (EAttribute) sectionDescriptionEClass.getEStructuralFeatures().get(3);
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
     public EReference getSectionDescription_Activities() {
-        return (EReference) sectionDescriptionEClass.getEStructuralFeatures().get(3);
+        return (EReference) sectionDescriptionEClass.getEStructuralFeatures().get(4);
     }
 
     /**
@@ -284,8 +324,18 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
      * @generated
      */
     @Override
+    public EAttribute getActivityDescription_PreconditionExpression() {
+        return (EAttribute) activityDescriptionEClass.getEStructuralFeatures().get(2);
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
     public EReference getActivityDescription_Operation() {
-        return (EReference) activityDescriptionEClass.getEStructuralFeatures().get(2);
+        return (EReference) activityDescriptionEClass.getEStructuralFeatures().get(3);
     }
 
     /**
@@ -319,23 +369,28 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 
         // Create classes and their features
         workflowDescriptionEClass = createEClass(WorkflowPackage.WORKFLOW_DESCRIPTION);
+        createEAttribute(workflowDescriptionEClass, WorkflowPackage.WORKFLOW_DESCRIPTION__PRECONDITION_EXPRESSION);
+        createEAttribute(workflowDescriptionEClass, WorkflowPackage.WORKFLOW_DESCRIPTION__STATE_EXPRESSION);
         createEReference(workflowDescriptionEClass, WorkflowPackage.WORKFLOW_DESCRIPTION__PAGES);
 
         pageDescriptionEClass = createEClass(WorkflowPackage.PAGE_DESCRIPTION);
         createEAttribute(pageDescriptionEClass, WorkflowPackage.PAGE_DESCRIPTION__TITLE_EXPRESSION);
         createEAttribute(pageDescriptionEClass, WorkflowPackage.PAGE_DESCRIPTION__IMAGE_PATH);
         createEAttribute(pageDescriptionEClass, WorkflowPackage.PAGE_DESCRIPTION__DESCRIPTION_EXPRESSION);
+        createEAttribute(pageDescriptionEClass, WorkflowPackage.PAGE_DESCRIPTION__PRECONDITION_EXPRESSION);
         createEReference(pageDescriptionEClass, WorkflowPackage.PAGE_DESCRIPTION__SECTIONS);
 
         sectionDescriptionEClass = createEClass(WorkflowPackage.SECTION_DESCRIPTION);
         createEAttribute(sectionDescriptionEClass, WorkflowPackage.SECTION_DESCRIPTION__TITLE_EXPRESSION);
         createEAttribute(sectionDescriptionEClass, WorkflowPackage.SECTION_DESCRIPTION__IMAGE_PATH);
         createEAttribute(sectionDescriptionEClass, WorkflowPackage.SECTION_DESCRIPTION__DESCRIPTION_EXPRESSION);
+        createEAttribute(sectionDescriptionEClass, WorkflowPackage.SECTION_DESCRIPTION__PRECONDITION_EXPRESSION);
         createEReference(sectionDescriptionEClass, WorkflowPackage.SECTION_DESCRIPTION__ACTIVITIES);
 
         activityDescriptionEClass = createEClass(WorkflowPackage.ACTIVITY_DESCRIPTION);
         createEAttribute(activityDescriptionEClass, WorkflowPackage.ACTIVITY_DESCRIPTION__LABEL_EXPRESSION);
         createEAttribute(activityDescriptionEClass, WorkflowPackage.ACTIVITY_DESCRIPTION__IMAGE_PATH);
+        createEAttribute(activityDescriptionEClass, WorkflowPackage.ACTIVITY_DESCRIPTION__PRECONDITION_EXPRESSION);
         createEReference(activityDescriptionEClass, WorkflowPackage.ACTIVITY_DESCRIPTION__OPERATION);
     }
 
@@ -384,6 +439,11 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 
         // Initialize classes and features; add operations and parameters
         initEClass(workflowDescriptionEClass, WorkflowDescription.class, "WorkflowDescription", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+        initEAttribute(getWorkflowDescription_PreconditionExpression(), theDescriptionPackage.getInterpretedExpression(), "preconditionExpression", null, 0, 1, WorkflowDescription.class, //$NON-NLS-1$
+                !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED,
+                EPackageImpl.IS_ORDERED);
+        initEAttribute(getWorkflowDescription_StateExpression(), theDescriptionPackage.getInterpretedExpression(), "stateExpression", null, 0, 1, WorkflowDescription.class, !EPackageImpl.IS_TRANSIENT, //$NON-NLS-1$
+                !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED);
         initEReference(getWorkflowDescription_Pages(), this.getPageDescription(), null, "pages", null, 0, -1, WorkflowDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, //$NON-NLS-1$
                 EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED,
                 EPackageImpl.IS_ORDERED);
@@ -394,6 +454,9 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
         initEAttribute(getPageDescription_ImagePath(), theDescriptionPackage.getImagePath(), "imagePath", null, 0, 1, PageDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, //$NON-NLS-1$
                 EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED);
         initEAttribute(getPageDescription_DescriptionExpression(), theDescriptionPackage.getInterpretedExpression(), "descriptionExpression", null, 1, 1, PageDescription.class, //$NON-NLS-1$
+                !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED,
+                EPackageImpl.IS_ORDERED);
+        initEAttribute(getPageDescription_PreconditionExpression(), theDescriptionPackage.getInterpretedExpression(), "preconditionExpression", null, 0, 1, PageDescription.class, //$NON-NLS-1$
                 !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED,
                 EPackageImpl.IS_ORDERED);
         initEReference(getPageDescription_Sections(), this.getSectionDescription(), null, "sections", null, 0, -1, PageDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, //$NON-NLS-1$
@@ -408,6 +471,9 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
         initEAttribute(getSectionDescription_DescriptionExpression(), theDescriptionPackage.getInterpretedExpression(), "descriptionExpression", null, 1, 1, SectionDescription.class, //$NON-NLS-1$
                 !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED,
                 EPackageImpl.IS_ORDERED);
+        initEAttribute(getSectionDescription_PreconditionExpression(), theDescriptionPackage.getInterpretedExpression(), "preconditionExpression", null, 0, 1, SectionDescription.class, //$NON-NLS-1$
+                !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED,
+                EPackageImpl.IS_ORDERED);
         initEReference(getSectionDescription_Activities(), this.getActivityDescription(), null, "activities", null, 0, -1, SectionDescription.class, !EPackageImpl.IS_TRANSIENT, //$NON-NLS-1$
                 !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE,
                 !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED);
@@ -417,6 +483,9 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
                 !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED);
         initEAttribute(getActivityDescription_ImagePath(), theDescriptionPackage.getImagePath(), "imagePath", null, 0, 1, ActivityDescription.class, !EPackageImpl.IS_TRANSIENT, //$NON-NLS-1$
                 !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED);
+        initEAttribute(getActivityDescription_PreconditionExpression(), theDescriptionPackage.getInterpretedExpression(), "preconditionExpression", null, 0, 1, ActivityDescription.class, //$NON-NLS-1$
+                !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED,
+                EPackageImpl.IS_ORDERED);
         initEReference(getActivityDescription_Operation(), theToolPackage.getInitialOperation(), null, "operation", null, 1, 1, ActivityDescription.class, !EPackageImpl.IS_TRANSIENT, //$NON-NLS-1$
                 !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE,
                 !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED);

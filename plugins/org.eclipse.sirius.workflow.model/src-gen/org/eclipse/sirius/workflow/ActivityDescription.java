@@ -25,6 +25,8 @@ import org.eclipse.sirius.viewpoint.description.tool.InitialOperation;
  * <ul>
  * <li>{@link org.eclipse.sirius.workflow.ActivityDescription#getLabelExpression <em>Label Expression</em>}</li>
  * <li>{@link org.eclipse.sirius.workflow.ActivityDescription#getImagePath <em>Image Path</em>}</li>
+ * <li>{@link org.eclipse.sirius.workflow.ActivityDescription#getPreconditionExpression <em>Precondition
+ * Expression</em>}</li>
  * <li>{@link org.eclipse.sirius.workflow.ActivityDescription#getOperation <em>Operation</em>}</li>
  * </ul>
  *
@@ -86,6 +88,33 @@ public interface ActivityDescription extends IdentifiedElement, DocumentedElemen
      * @generated
      */
     void setImagePath(String value);
+
+    /**
+     * Returns the value of the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Precondition Expression</em>' attribute isn't clear, there really should be more of a
+     * description here...
+     * </p>
+     * <!-- end-user-doc -->
+     *
+     * @return the value of the '<em>Precondition Expression</em>' attribute.
+     * @see #setPreconditionExpression(String)
+     * @see org.eclipse.sirius.workflow.WorkflowPackage#getActivityDescription_PreconditionExpression()
+     * @model dataType="org.eclipse.sirius.viewpoint.description.InterpretedExpression"
+     * @generated
+     */
+    String getPreconditionExpression();
+
+    /**
+     * Sets the value of the '{@link org.eclipse.sirius.workflow.ActivityDescription#getPreconditionExpression
+     * <em>Precondition Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @param value
+     *            the new value of the '<em>Precondition Expression</em>' attribute.
+     * @see #getPreconditionExpression()
+     * @generated
+     */
+    void setPreconditionExpression(String value);
 
     /**
      * Returns the value of the '<em><b>Operation</b></em>' containment reference. <!-- begin-user-doc -->

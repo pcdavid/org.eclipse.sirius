@@ -57,7 +57,7 @@ public class ActivityDescriptionItemProvider extends IdentifiedElementItemProvid
 
             addDocumentationPropertyDescriptor(object);
             addLabelExpressionPropertyDescriptor(object);
-            addImagePathPropertyDescriptor(object);
+            addPreconditionExpressionPropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -88,15 +88,16 @@ public class ActivityDescriptionItemProvider extends IdentifiedElementItemProvid
     }
 
     /**
-     * This adds a property descriptor for the Image Path feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * This adds a property descriptor for the Precondition Expression feature. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
      *
      * @generated
      */
-    protected void addImagePathPropertyDescriptor(Object object) {
-        itemPropertyDescriptors
-                .add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_ActivityDescription_imagePath_feature"), //$NON-NLS-1$
-                        getString("_UI_PropertyDescriptor_description", "_UI_ActivityDescription_imagePath_feature", "_UI_ActivityDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-                        WorkflowPackage.Literals.ACTIVITY_DESCRIPTION__IMAGE_PATH, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+    protected void addPreconditionExpressionPropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+                getString("_UI_ActivityDescription_preconditionExpression_feature"), //$NON-NLS-1$
+                getString("_UI_PropertyDescriptor_description", "_UI_ActivityDescription_preconditionExpression_feature", "_UI_ActivityDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+                WorkflowPackage.Literals.ACTIVITY_DESCRIPTION__PRECONDITION_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
     }
 
     /**
@@ -181,6 +182,7 @@ public class ActivityDescriptionItemProvider extends IdentifiedElementItemProvid
         case WorkflowPackage.ACTIVITY_DESCRIPTION__DOCUMENTATION:
         case WorkflowPackage.ACTIVITY_DESCRIPTION__LABEL_EXPRESSION:
         case WorkflowPackage.ACTIVITY_DESCRIPTION__IMAGE_PATH:
+        case WorkflowPackage.ACTIVITY_DESCRIPTION__PRECONDITION_EXPRESSION:
             fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
             return;
         case WorkflowPackage.ACTIVITY_DESCRIPTION__OPERATION:

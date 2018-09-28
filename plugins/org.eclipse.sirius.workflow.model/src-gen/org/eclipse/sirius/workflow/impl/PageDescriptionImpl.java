@@ -127,6 +127,26 @@ public class PageDescriptionImpl extends IdentifiedElementImpl implements PageDe
     protected String descriptionExpression = PageDescriptionImpl.DESCRIPTION_EXPRESSION_EDEFAULT;
 
     /**
+     * The default value of the '{@link #getPreconditionExpression() <em>Precondition Expression</em>}' attribute. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @see #getPreconditionExpression()
+     * @generated
+     * @ordered
+     */
+    protected static final String PRECONDITION_EXPRESSION_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getPreconditionExpression() <em>Precondition Expression</em>}' attribute. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @see #getPreconditionExpression()
+     * @generated
+     * @ordered
+     */
+    protected String preconditionExpression = PageDescriptionImpl.PRECONDITION_EXPRESSION_EDEFAULT;
+
+    /**
      * The cached value of the '{@link #getSections() <em>Sections</em>}' containment reference list. <!--
      * begin-user-doc --> <!-- end-user-doc -->
      *
@@ -257,6 +277,30 @@ public class PageDescriptionImpl extends IdentifiedElementImpl implements PageDe
      * @generated
      */
     @Override
+    public String getPreconditionExpression() {
+        return preconditionExpression;
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public void setPreconditionExpression(String newPreconditionExpression) {
+        String oldPreconditionExpression = preconditionExpression;
+        preconditionExpression = newPreconditionExpression;
+        if (eNotificationRequired()) {
+            eNotify(new ENotificationImpl(this, Notification.SET, WorkflowPackage.PAGE_DESCRIPTION__PRECONDITION_EXPRESSION, oldPreconditionExpression, preconditionExpression));
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
     public EList<SectionDescription> getSections() {
         if (sections == null) {
             sections = new EObjectContainmentEList.Resolving<SectionDescription>(SectionDescription.class, this, WorkflowPackage.PAGE_DESCRIPTION__SECTIONS);
@@ -294,6 +338,8 @@ public class PageDescriptionImpl extends IdentifiedElementImpl implements PageDe
             return getImagePath();
         case WorkflowPackage.PAGE_DESCRIPTION__DESCRIPTION_EXPRESSION:
             return getDescriptionExpression();
+        case WorkflowPackage.PAGE_DESCRIPTION__PRECONDITION_EXPRESSION:
+            return getPreconditionExpression();
         case WorkflowPackage.PAGE_DESCRIPTION__SECTIONS:
             return getSections();
         }
@@ -320,6 +366,9 @@ public class PageDescriptionImpl extends IdentifiedElementImpl implements PageDe
             return;
         case WorkflowPackage.PAGE_DESCRIPTION__DESCRIPTION_EXPRESSION:
             setDescriptionExpression((String) newValue);
+            return;
+        case WorkflowPackage.PAGE_DESCRIPTION__PRECONDITION_EXPRESSION:
+            setPreconditionExpression((String) newValue);
             return;
         case WorkflowPackage.PAGE_DESCRIPTION__SECTIONS:
             getSections().clear();
@@ -349,6 +398,9 @@ public class PageDescriptionImpl extends IdentifiedElementImpl implements PageDe
         case WorkflowPackage.PAGE_DESCRIPTION__DESCRIPTION_EXPRESSION:
             setDescriptionExpression(PageDescriptionImpl.DESCRIPTION_EXPRESSION_EDEFAULT);
             return;
+        case WorkflowPackage.PAGE_DESCRIPTION__PRECONDITION_EXPRESSION:
+            setPreconditionExpression(PageDescriptionImpl.PRECONDITION_EXPRESSION_EDEFAULT);
+            return;
         case WorkflowPackage.PAGE_DESCRIPTION__SECTIONS:
             getSections().clear();
             return;
@@ -372,6 +424,8 @@ public class PageDescriptionImpl extends IdentifiedElementImpl implements PageDe
             return PageDescriptionImpl.IMAGE_PATH_EDEFAULT == null ? imagePath != null : !PageDescriptionImpl.IMAGE_PATH_EDEFAULT.equals(imagePath);
         case WorkflowPackage.PAGE_DESCRIPTION__DESCRIPTION_EXPRESSION:
             return PageDescriptionImpl.DESCRIPTION_EXPRESSION_EDEFAULT == null ? descriptionExpression != null : !PageDescriptionImpl.DESCRIPTION_EXPRESSION_EDEFAULT.equals(descriptionExpression);
+        case WorkflowPackage.PAGE_DESCRIPTION__PRECONDITION_EXPRESSION:
+            return PageDescriptionImpl.PRECONDITION_EXPRESSION_EDEFAULT == null ? preconditionExpression != null : !PageDescriptionImpl.PRECONDITION_EXPRESSION_EDEFAULT.equals(preconditionExpression);
         case WorkflowPackage.PAGE_DESCRIPTION__SECTIONS:
             return sections != null && !sections.isEmpty();
         }
@@ -434,6 +488,8 @@ public class PageDescriptionImpl extends IdentifiedElementImpl implements PageDe
         result.append(imagePath);
         result.append(", descriptionExpression: "); //$NON-NLS-1$
         result.append(descriptionExpression);
+        result.append(", preconditionExpression: "); //$NON-NLS-1$
+        result.append(preconditionExpression);
         result.append(')');
         return result.toString();
     }

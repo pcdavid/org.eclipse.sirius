@@ -18,29 +18,25 @@
   
   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
     <propertySections contributorId="org.eclipse.sirius.editor.editorPlugin.SiriusEditorContributor">
-      <!--
   	  <propertySection
-               class="org.eclipse.sirius.workflow.model.editor.properties.sections.workflow.activitydescription.ActivityDescriptionImagePathPropertySection"
-               id="workflow.section.activityDescription.ImagePath"
-               filter="org.eclipse.sirius.workflow.model.editor.properties.filters.workflow.activitydescription.ActivityDescriptionImagePathFilter"
+               class="org.eclipse.sirius.workflow.model.editor.properties.sections.workflow.activitydescription.ActivityDescriptionPreconditionExpressionPropertySection"
+               id="workflow.section.activityDescription.PreconditionExpression"
+               filter="org.eclipse.sirius.workflow.model.editor.properties.filters.workflow.activitydescription.ActivityDescriptionPreconditionExpressionFilter"
                afterSection="description.section.documentedElement.Documentation"
                 tab="viewpoint.tab.general">
         <input type="org.eclipse.sirius.workflow.ActivityDescription"/>
       </propertySection>
-      -->
   	  <propertySection
                class="org.eclipse.sirius.workflow.model.editor.properties.sections.workflow.activitydescription.ActivityDescriptionLabelExpressionPropertySection"
                id="workflow.section.activityDescription.LabelExpression"
                filter="org.eclipse.sirius.workflow.model.editor.properties.filters.workflow.activitydescription.ActivityDescriptionLabelExpressionFilter"
-               afterSection="description.section.identifiedElement.Name"
                 tab="viewpoint.tab.general">
         <input type="org.eclipse.sirius.workflow.ActivityDescription"/>
       </propertySection>
-      <!--
   	  <propertySection
-               class="org.eclipse.sirius.workflow.model.editor.properties.sections.workflow.sectiondescription.SectionDescriptionImagePathPropertySection"
-               id="workflow.section.sectionDescription.ImagePath"
-               filter="org.eclipse.sirius.workflow.model.editor.properties.filters.workflow.sectiondescription.SectionDescriptionImagePathFilter"
+               class="org.eclipse.sirius.workflow.model.editor.properties.sections.workflow.sectiondescription.SectionDescriptionPreconditionExpressionPropertySection"
+               id="workflow.section.sectionDescription.PreconditionExpression"
+               filter="org.eclipse.sirius.workflow.model.editor.properties.filters.workflow.sectiondescription.SectionDescriptionPreconditionExpressionFilter"
                afterSection="description.section.documentedElement.Documentation"
                 tab="viewpoint.tab.general">
         <input type="org.eclipse.sirius.workflow.SectionDescription"/>
@@ -53,20 +49,17 @@
                 tab="viewpoint.tab.general">
         <input type="org.eclipse.sirius.workflow.SectionDescription"/>
       </propertySection>
-      -->
   	  <propertySection
                class="org.eclipse.sirius.workflow.model.editor.properties.sections.workflow.sectiondescription.SectionDescriptionTitleExpressionPropertySection"
                id="workflow.section.sectionDescription.TitleExpression"
                filter="org.eclipse.sirius.workflow.model.editor.properties.filters.workflow.sectiondescription.SectionDescriptionTitleExpressionFilter"
-               afterSection="description.section.identifiedElement.Name"
                 tab="viewpoint.tab.general">
         <input type="org.eclipse.sirius.workflow.SectionDescription"/>
       </propertySection>
-      <!--
   	  <propertySection
-               class="org.eclipse.sirius.workflow.model.editor.properties.sections.workflow.pagedescription.PageDescriptionImagePathPropertySection"
-               id="workflow.section.pageDescription.ImagePath"
-               filter="org.eclipse.sirius.workflow.model.editor.properties.filters.workflow.pagedescription.PageDescriptionImagePathFilter"
+               class="org.eclipse.sirius.workflow.model.editor.properties.sections.workflow.pagedescription.PageDescriptionPreconditionExpressionPropertySection"
+               id="workflow.section.pageDescription.PreconditionExpression"
+               filter="org.eclipse.sirius.workflow.model.editor.properties.filters.workflow.pagedescription.PageDescriptionPreconditionExpressionFilter"
                afterSection="description.section.documentedElement.Documentation"
                 tab="viewpoint.tab.general">
         <input type="org.eclipse.sirius.workflow.PageDescription"/>
@@ -79,14 +72,28 @@
                 tab="viewpoint.tab.general">
         <input type="org.eclipse.sirius.workflow.PageDescription"/>
       </propertySection>
-      -->
   	  <propertySection
                class="org.eclipse.sirius.workflow.model.editor.properties.sections.workflow.pagedescription.PageDescriptionTitleExpressionPropertySection"
                id="workflow.section.pageDescription.TitleExpression"
                filter="org.eclipse.sirius.workflow.model.editor.properties.filters.workflow.pagedescription.PageDescriptionTitleExpressionFilter"
-               afterSection="description.section.identifiedElement.Name"
                 tab="viewpoint.tab.general">
         <input type="org.eclipse.sirius.workflow.PageDescription"/>
+      </propertySection>
+  	  <propertySection
+               class="org.eclipse.sirius.workflow.model.editor.properties.sections.workflow.workflowdescription.WorkflowDescriptionStateExpressionPropertySection"
+               id="workflow.section.workflowDescription.StateExpression"
+               filter="org.eclipse.sirius.workflow.model.editor.properties.filters.workflow.workflowdescription.WorkflowDescriptionStateExpressionFilter"
+               afterSection="workflow.section.workflowDescription.PreconditionExpression"
+                tab="viewpoint.tab.general">
+        <input type="org.eclipse.sirius.workflow.WorkflowDescription"/>
+      </propertySection>
+  	  <propertySection
+               class="org.eclipse.sirius.workflow.model.editor.properties.sections.workflow.workflowdescription.WorkflowDescriptionPreconditionExpressionPropertySection"
+               id="workflow.section.workflowDescription.PreconditionExpression"
+               filter="org.eclipse.sirius.workflow.model.editor.properties.filters.workflow.workflowdescription.WorkflowDescriptionPreconditionExpressionFilter"
+               afterSection="description.section.documentedElement.Documentation"
+                tab="viewpoint.tab.general">
+        <input type="org.eclipse.sirius.workflow.WorkflowDescription"/>
       </propertySection>
   	<!-- Start of user code propertySections of org.eclipse.sirius.editor.editorPlugin.SiriusEditorContributor  -->
   	

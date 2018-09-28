@@ -57,8 +57,8 @@ public class SectionDescriptionItemProvider extends IdentifiedElementItemProvide
 
             addDocumentationPropertyDescriptor(object);
             addTitleExpressionPropertyDescriptor(object);
-            addImagePathPropertyDescriptor(object);
             addDescriptionExpressionPropertyDescriptor(object);
+            addPreconditionExpressionPropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -89,18 +89,6 @@ public class SectionDescriptionItemProvider extends IdentifiedElementItemProvide
     }
 
     /**
-     * This adds a property descriptor for the Image Path feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    protected void addImagePathPropertyDescriptor(Object object) {
-        itemPropertyDescriptors
-                .add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_SectionDescription_imagePath_feature"), //$NON-NLS-1$
-                        getString("_UI_PropertyDescriptor_description", "_UI_SectionDescription_imagePath_feature", "_UI_SectionDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-                        WorkflowPackage.Literals.SECTION_DESCRIPTION__IMAGE_PATH, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-    }
-
-    /**
      * This adds a property descriptor for the Description Expression feature. <!-- begin-user-doc --> <!-- end-user-doc
      * -->
      *
@@ -110,7 +98,20 @@ public class SectionDescriptionItemProvider extends IdentifiedElementItemProvide
         itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
                 getString("_UI_SectionDescription_descriptionExpression_feature"), //$NON-NLS-1$
                 getString("_UI_PropertyDescriptor_description", "_UI_SectionDescription_descriptionExpression_feature", "_UI_SectionDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-                WorkflowPackage.Literals.SECTION_DESCRIPTION__DESCRIPTION_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+                WorkflowPackage.Literals.SECTION_DESCRIPTION__DESCRIPTION_EXPRESSION, true, true, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+    }
+
+    /**
+     * This adds a property descriptor for the Precondition Expression feature. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     */
+    protected void addPreconditionExpressionPropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+                getString("_UI_SectionDescription_preconditionExpression_feature"), //$NON-NLS-1$
+                getString("_UI_PropertyDescriptor_description", "_UI_SectionDescription_preconditionExpression_feature", "_UI_SectionDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+                WorkflowPackage.Literals.SECTION_DESCRIPTION__PRECONDITION_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
     }
 
     /**
@@ -196,6 +197,7 @@ public class SectionDescriptionItemProvider extends IdentifiedElementItemProvide
         case WorkflowPackage.SECTION_DESCRIPTION__TITLE_EXPRESSION:
         case WorkflowPackage.SECTION_DESCRIPTION__IMAGE_PATH:
         case WorkflowPackage.SECTION_DESCRIPTION__DESCRIPTION_EXPRESSION:
+        case WorkflowPackage.SECTION_DESCRIPTION__PRECONDITION_EXPRESSION:
             fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
             return;
         case WorkflowPackage.SECTION_DESCRIPTION__ACTIVITIES:

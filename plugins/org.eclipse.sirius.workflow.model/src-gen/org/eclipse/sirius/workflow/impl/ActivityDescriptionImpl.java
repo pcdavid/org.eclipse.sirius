@@ -34,6 +34,8 @@ import org.eclipse.sirius.workflow.WorkflowPackage;
  * <li>{@link org.eclipse.sirius.workflow.impl.ActivityDescriptionImpl#getLabelExpression <em>Label
  * Expression</em>}</li>
  * <li>{@link org.eclipse.sirius.workflow.impl.ActivityDescriptionImpl#getImagePath <em>Image Path</em>}</li>
+ * <li>{@link org.eclipse.sirius.workflow.impl.ActivityDescriptionImpl#getPreconditionExpression <em>Precondition
+ * Expression</em>}</li>
  * <li>{@link org.eclipse.sirius.workflow.impl.ActivityDescriptionImpl#getOperation <em>Operation</em>}</li>
  * </ul>
  *
@@ -99,6 +101,26 @@ public class ActivityDescriptionImpl extends IdentifiedElementImpl implements Ac
      * @ordered
      */
     protected String imagePath = ActivityDescriptionImpl.IMAGE_PATH_EDEFAULT;
+
+    /**
+     * The default value of the '{@link #getPreconditionExpression() <em>Precondition Expression</em>}' attribute. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @see #getPreconditionExpression()
+     * @generated
+     * @ordered
+     */
+    protected static final String PRECONDITION_EXPRESSION_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getPreconditionExpression() <em>Precondition Expression</em>}' attribute. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @see #getPreconditionExpression()
+     * @generated
+     * @ordered
+     */
+    protected String preconditionExpression = ActivityDescriptionImpl.PRECONDITION_EXPRESSION_EDEFAULT;
 
     /**
      * The cached value of the '{@link #getOperation() <em>Operation</em>}' containment reference. <!-- begin-user-doc
@@ -198,6 +220,30 @@ public class ActivityDescriptionImpl extends IdentifiedElementImpl implements Ac
         imagePath = newImagePath;
         if (eNotificationRequired()) {
             eNotify(new ENotificationImpl(this, Notification.SET, WorkflowPackage.ACTIVITY_DESCRIPTION__IMAGE_PATH, oldImagePath, imagePath));
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public String getPreconditionExpression() {
+        return preconditionExpression;
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public void setPreconditionExpression(String newPreconditionExpression) {
+        String oldPreconditionExpression = preconditionExpression;
+        preconditionExpression = newPreconditionExpression;
+        if (eNotificationRequired()) {
+            eNotify(new ENotificationImpl(this, Notification.SET, WorkflowPackage.ACTIVITY_DESCRIPTION__PRECONDITION_EXPRESSION, oldPreconditionExpression, preconditionExpression));
         }
     }
 
@@ -308,6 +354,8 @@ public class ActivityDescriptionImpl extends IdentifiedElementImpl implements Ac
             return getLabelExpression();
         case WorkflowPackage.ACTIVITY_DESCRIPTION__IMAGE_PATH:
             return getImagePath();
+        case WorkflowPackage.ACTIVITY_DESCRIPTION__PRECONDITION_EXPRESSION:
+            return getPreconditionExpression();
         case WorkflowPackage.ACTIVITY_DESCRIPTION__OPERATION:
             if (resolve) {
                 return getOperation();
@@ -334,6 +382,9 @@ public class ActivityDescriptionImpl extends IdentifiedElementImpl implements Ac
         case WorkflowPackage.ACTIVITY_DESCRIPTION__IMAGE_PATH:
             setImagePath((String) newValue);
             return;
+        case WorkflowPackage.ACTIVITY_DESCRIPTION__PRECONDITION_EXPRESSION:
+            setPreconditionExpression((String) newValue);
+            return;
         case WorkflowPackage.ACTIVITY_DESCRIPTION__OPERATION:
             setOperation((InitialOperation) newValue);
             return;
@@ -358,6 +409,9 @@ public class ActivityDescriptionImpl extends IdentifiedElementImpl implements Ac
         case WorkflowPackage.ACTIVITY_DESCRIPTION__IMAGE_PATH:
             setImagePath(ActivityDescriptionImpl.IMAGE_PATH_EDEFAULT);
             return;
+        case WorkflowPackage.ACTIVITY_DESCRIPTION__PRECONDITION_EXPRESSION:
+            setPreconditionExpression(ActivityDescriptionImpl.PRECONDITION_EXPRESSION_EDEFAULT);
+            return;
         case WorkflowPackage.ACTIVITY_DESCRIPTION__OPERATION:
             setOperation((InitialOperation) null);
             return;
@@ -379,6 +433,9 @@ public class ActivityDescriptionImpl extends IdentifiedElementImpl implements Ac
             return ActivityDescriptionImpl.LABEL_EXPRESSION_EDEFAULT == null ? labelExpression != null : !ActivityDescriptionImpl.LABEL_EXPRESSION_EDEFAULT.equals(labelExpression);
         case WorkflowPackage.ACTIVITY_DESCRIPTION__IMAGE_PATH:
             return ActivityDescriptionImpl.IMAGE_PATH_EDEFAULT == null ? imagePath != null : !ActivityDescriptionImpl.IMAGE_PATH_EDEFAULT.equals(imagePath);
+        case WorkflowPackage.ACTIVITY_DESCRIPTION__PRECONDITION_EXPRESSION:
+            return ActivityDescriptionImpl.PRECONDITION_EXPRESSION_EDEFAULT == null ? preconditionExpression != null
+                    : !ActivityDescriptionImpl.PRECONDITION_EXPRESSION_EDEFAULT.equals(preconditionExpression);
         case WorkflowPackage.ACTIVITY_DESCRIPTION__OPERATION:
             return operation != null;
         }
@@ -439,6 +496,8 @@ public class ActivityDescriptionImpl extends IdentifiedElementImpl implements Ac
         result.append(labelExpression);
         result.append(", imagePath: "); //$NON-NLS-1$
         result.append(imagePath);
+        result.append(", preconditionExpression: "); //$NON-NLS-1$
+        result.append(preconditionExpression);
         result.append(')');
         return result.toString();
     }

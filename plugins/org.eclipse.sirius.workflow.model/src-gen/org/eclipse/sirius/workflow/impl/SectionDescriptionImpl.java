@@ -40,6 +40,8 @@ import org.eclipse.sirius.workflow.WorkflowPackage;
  * <li>{@link org.eclipse.sirius.workflow.impl.SectionDescriptionImpl#getImagePath <em>Image Path</em>}</li>
  * <li>{@link org.eclipse.sirius.workflow.impl.SectionDescriptionImpl#getDescriptionExpression <em>Description
  * Expression</em>}</li>
+ * <li>{@link org.eclipse.sirius.workflow.impl.SectionDescriptionImpl#getPreconditionExpression <em>Precondition
+ * Expression</em>}</li>
  * <li>{@link org.eclipse.sirius.workflow.impl.SectionDescriptionImpl#getActivities <em>Activities</em>}</li>
  * </ul>
  *
@@ -125,6 +127,26 @@ public class SectionDescriptionImpl extends IdentifiedElementImpl implements Sec
      * @ordered
      */
     protected String descriptionExpression = SectionDescriptionImpl.DESCRIPTION_EXPRESSION_EDEFAULT;
+
+    /**
+     * The default value of the '{@link #getPreconditionExpression() <em>Precondition Expression</em>}' attribute. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @see #getPreconditionExpression()
+     * @generated
+     * @ordered
+     */
+    protected static final String PRECONDITION_EXPRESSION_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getPreconditionExpression() <em>Precondition Expression</em>}' attribute. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @see #getPreconditionExpression()
+     * @generated
+     * @ordered
+     */
+    protected String preconditionExpression = SectionDescriptionImpl.PRECONDITION_EXPRESSION_EDEFAULT;
 
     /**
      * The cached value of the '{@link #getActivities() <em>Activities</em>}' containment reference list. <!--
@@ -257,6 +279,30 @@ public class SectionDescriptionImpl extends IdentifiedElementImpl implements Sec
      * @generated
      */
     @Override
+    public String getPreconditionExpression() {
+        return preconditionExpression;
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public void setPreconditionExpression(String newPreconditionExpression) {
+        String oldPreconditionExpression = preconditionExpression;
+        preconditionExpression = newPreconditionExpression;
+        if (eNotificationRequired()) {
+            eNotify(new ENotificationImpl(this, Notification.SET, WorkflowPackage.SECTION_DESCRIPTION__PRECONDITION_EXPRESSION, oldPreconditionExpression, preconditionExpression));
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
     public EList<ActivityDescription> getActivities() {
         if (activities == null) {
             activities = new EObjectContainmentEList.Resolving<ActivityDescription>(ActivityDescription.class, this, WorkflowPackage.SECTION_DESCRIPTION__ACTIVITIES);
@@ -294,6 +340,8 @@ public class SectionDescriptionImpl extends IdentifiedElementImpl implements Sec
             return getImagePath();
         case WorkflowPackage.SECTION_DESCRIPTION__DESCRIPTION_EXPRESSION:
             return getDescriptionExpression();
+        case WorkflowPackage.SECTION_DESCRIPTION__PRECONDITION_EXPRESSION:
+            return getPreconditionExpression();
         case WorkflowPackage.SECTION_DESCRIPTION__ACTIVITIES:
             return getActivities();
         }
@@ -320,6 +368,9 @@ public class SectionDescriptionImpl extends IdentifiedElementImpl implements Sec
             return;
         case WorkflowPackage.SECTION_DESCRIPTION__DESCRIPTION_EXPRESSION:
             setDescriptionExpression((String) newValue);
+            return;
+        case WorkflowPackage.SECTION_DESCRIPTION__PRECONDITION_EXPRESSION:
+            setPreconditionExpression((String) newValue);
             return;
         case WorkflowPackage.SECTION_DESCRIPTION__ACTIVITIES:
             getActivities().clear();
@@ -349,6 +400,9 @@ public class SectionDescriptionImpl extends IdentifiedElementImpl implements Sec
         case WorkflowPackage.SECTION_DESCRIPTION__DESCRIPTION_EXPRESSION:
             setDescriptionExpression(SectionDescriptionImpl.DESCRIPTION_EXPRESSION_EDEFAULT);
             return;
+        case WorkflowPackage.SECTION_DESCRIPTION__PRECONDITION_EXPRESSION:
+            setPreconditionExpression(SectionDescriptionImpl.PRECONDITION_EXPRESSION_EDEFAULT);
+            return;
         case WorkflowPackage.SECTION_DESCRIPTION__ACTIVITIES:
             getActivities().clear();
             return;
@@ -373,6 +427,9 @@ public class SectionDescriptionImpl extends IdentifiedElementImpl implements Sec
         case WorkflowPackage.SECTION_DESCRIPTION__DESCRIPTION_EXPRESSION:
             return SectionDescriptionImpl.DESCRIPTION_EXPRESSION_EDEFAULT == null ? descriptionExpression != null
                     : !SectionDescriptionImpl.DESCRIPTION_EXPRESSION_EDEFAULT.equals(descriptionExpression);
+        case WorkflowPackage.SECTION_DESCRIPTION__PRECONDITION_EXPRESSION:
+            return SectionDescriptionImpl.PRECONDITION_EXPRESSION_EDEFAULT == null ? preconditionExpression != null
+                    : !SectionDescriptionImpl.PRECONDITION_EXPRESSION_EDEFAULT.equals(preconditionExpression);
         case WorkflowPackage.SECTION_DESCRIPTION__ACTIVITIES:
             return activities != null && !activities.isEmpty();
         }
@@ -435,6 +492,8 @@ public class SectionDescriptionImpl extends IdentifiedElementImpl implements Sec
         result.append(imagePath);
         result.append(", descriptionExpression: "); //$NON-NLS-1$
         result.append(descriptionExpression);
+        result.append(", preconditionExpression: "); //$NON-NLS-1$
+        result.append(preconditionExpression);
         result.append(')');
         return result.toString();
     }
