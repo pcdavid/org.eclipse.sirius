@@ -10,12 +10,15 @@
  *******************************************************************************/
 package org.eclipse.sirius.server.api;
 
+import java.util.Optional;
+
 /**
  * Class used to describe the response of the HTTP service.
  *
  * @author sbegaudeau
  */
 public class SiriusServerResponse {
+
     /** The application/json content type. */
     public static final String CONTENT_TYPE_APPLICATION_JSON = "application/json"; //$NON-NLS-1$
 
@@ -85,6 +88,22 @@ public class SiriusServerResponse {
         this.status = status;
         this.payload = payload;
         this.contentType = contentType;
+    }
+
+    /**
+     * Factory method to create a response with the proper status from an
+     * optional payload.
+     *
+     * @param payload
+     *            the payload.
+     * @return the response.
+     */
+    public static SiriusServerResponse ofOptional(Optional<Object> payload) {
+        if (payload.isPresent()) {
+            return new SiriusServerResponse(STATUS_OK, payload);
+        } else {
+            return new SiriusServerResponse(STATUS_NOT_FOUND);
+        }
     }
 
     /**
