@@ -38,11 +38,7 @@ import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
-import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Status;
-import org.eclipse.emf.common.util.BasicEList;
-import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.sirius.business.api.dialect.DialectManager;
 import org.eclipse.sirius.business.api.modelingproject.ModelingProject;
 import org.eclipse.sirius.business.api.session.Session;
@@ -56,6 +52,8 @@ import org.eclipse.sirius.server.backend.internal.SiriusServerBackendPlugin;
 import org.eclipse.sirius.server.backend.internal.utils.SiriusServerUtils;
 import org.eclipse.sirius.server.backend.internal.workflow.SiriusBackendInterpreter;
 import org.eclipse.sirius.server.backend.internal.workflow.Workflow;
+import org.eclipse.sirius.server.backend.internal.workflow.WorkflowExpressions;
+import org.eclipse.sirius.server.backend.internal.workflow.WorkflowStateAdapter;
 import org.eclipse.sirius.table.metamodel.table.description.TableDescription;
 import org.eclipse.sirius.tree.description.TreeDescription;
 import org.eclipse.sirius.viewpoint.DAnalysis;
@@ -63,8 +61,8 @@ import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
 import org.eclipse.sirius.viewpoint.description.RepresentationDescription;
 import org.eclipse.sirius.viewpoint.description.Viewpoint;
 import org.eclipse.sirius.workflow.ActivityDescription;
-import org.eclipse.sirius.workflow.PageDescription;
 import org.eclipse.sirius.workflow.SectionDescription;
+import org.eclipse.sirius.workflow.WorkflowDescription;
 
 /**
  * Service used to manipulate a specific project.
@@ -75,11 +73,6 @@ import org.eclipse.sirius.workflow.SectionDescription;
 public class SiriusServerProjectService implements ISiriusServerService {
 
     /**
-     * The name of the self variable.
-     */
-    private static final String SELF = "self"; //$NON-NLS-1$
-
-    /**
      * The name of the variable used to capture the name of the project.
      */
     private static final Object PROJECT_NAME = "projectName"; //$NON-NLS-1$
@@ -87,27 +80,9 @@ public class SiriusServerProjectService implements ISiriusServerService {
     @Override
     public SiriusServerResponse doGet(HttpServletRequest request, Map<String, String> variables, String remainingPart) {
         Optional<String> optionalProjectName = Optional.ofNullable(variables.get(PROJECT_NAME));
-        Optional<ModelingProject> optionalModelingProject = optionalProjectName.flatMap(this::findModelingProjectByName);
+        Optional<ModelingProject> optionalModelingProject = optionalProjectName.flatMap(SiriusServerUtils::findModelingProjectByName);
         Optional<SiriusServerProjectDto> optionalProject = optionalModelingProject.map(this::getProjectFromModelingProject);
-
-        return optionalProject.map(project -> new SiriusServerResponse(STATUS_OK, project)).orElse(new SiriusServerResponse(STATUS_NOT_FOUND));
-    }
-
-    /**
-     * Finds the modeling project with the given name.
-     *
-     * @param projectName
-     *            The name of the project
-     * @return An optional with the modeling project or an empty optional if it
-     *         could not be found
-     */
-    private Optional<ModelingProject> findModelingProjectByName(String projectName) {
-        Optional<IProject> optionalProject = Optional.ofNullable(ResourcesPlugin.getWorkspace().getRoot().getProject(projectName));
-        // @formatter:off
-		return optionalProject.filter(ModelingProject::hasModelingProjectNature)
-				.filter(IProject::isOpen)
-				.map(iProject -> ModelingProject.asModelingProject(iProject).get()); // FIXME Sirius Optional removal!
-		// @formatter:on
+        return SiriusServerResponse.ofOptional(optionalProject);
     }
 
     /**
@@ -121,10 +96,11 @@ public class SiriusServerProjectService implements ISiriusServerService {
     private SiriusServerProjectDto getProjectFromModelingProject(ModelingProject modelingProject) {
         Session session = SiriusServerUtils.getSession(modelingProject);
 
-        String projectName = modelingProject.getProject().getName();
-        String description = SiriusServerUtils.getProjectDescription(modelingProject.getProject());
+        IProject project = modelingProject.getProject();
+        String projectName = project.getName();
+        String description = SiriusServerUtils.getProjectDescription(project);
         List<AbstractSiriusServerRepresentationDto> representations = this.getRepresentations(session);
-        List<SiriusServerSemanticResourceDto> semanticResources = this.getSemanticResources(modelingProject.getProject(), session);
+        List<SiriusServerSemanticResourceDto> semanticResources = this.getSemanticResources(modelingProject);
         List<SiriusServerPageDto> pages = this.getPages(modelingProject, session);
         List<SiriusServerSectionDto> currentPageSections = this.getFirstPageSections(session);
         return new SiriusServerProjectDto(projectName, description, representations, semanticResources, pages, currentPageSections);
@@ -140,15 +116,16 @@ public class SiriusServerProjectService implements ISiriusServerService {
      * @return The list of workflow page from the given session
      */
     private List<SiriusServerPageDto> getPages(ModelingProject modelingProject, Session session) {
-        return Workflow.on(session).getPageDescriptions().map(page -> {
+        return Workflow.of(session).getPageDescriptions().map(page -> {
             DAnalysis self = ((DAnalysisSession) session).allAnalyses().stream().findFirst().orElse(null);
+            WorkflowDescription workflow = (WorkflowDescription) page.eContainer();
             Map<String, Object> variables = new HashMap<>();
-            variables.put(SELF, self);
-            IEvaluationResult result = new SiriusBackendInterpreter(session).evaluateExpression(variables, page.getTitleExpression());
-
+            WorkflowExpressions.Variable.SELF.define(variables, self);
+            WorkflowExpressions.Variable.STATE.define(variables, WorkflowStateAdapter.on(workflow).getStateValue());
+            SiriusBackendInterpreter interpreter = new SiriusBackendInterpreter(session);
+            String title = interpreter.evaluateExpression(variables, page.getTitleExpression()).asString();
             String identifier = page.getName();
-            String name = result.asString();
-            return new SiriusServerPageDto(identifier, name);
+            return new SiriusServerPageDto(identifier, title);
         }).collect(Collectors.toList());
     }
 
@@ -160,11 +137,9 @@ public class SiriusServerProjectService implements ISiriusServerService {
      * @return The list of the sections of the current page
      */
     private List<SiriusServerSectionDto> getFirstPageSections(Session session) {
-        Optional<PageDescription> optionalPageDescription = Workflow.on(session).getPageDescriptions().findFirst();
-        List<SectionDescription> sectionDescriptions = optionalPageDescription.map(PageDescription::getSections).orElseGet(BasicEList::new);
-
         // @formatter:off
-        return sectionDescriptions.stream()
+        return Workflow.of(session)
+                .getFirstPageSections().stream()
                 .map(sectionDescription -> this.convertSection(session, sectionDescription))
                 .collect(Collectors.toList());
         // @formatter:on
@@ -184,7 +159,7 @@ public class SiriusServerProjectService implements ISiriusServerService {
 
         DAnalysis self = ((DAnalysisSession) session).allAnalyses().stream().findFirst().orElse(null);
         Map<String, Object> variables = new HashMap<>();
-        variables.put(SELF, self);
+        WorkflowExpressions.Variable.SELF.define(variables, self);
         IEvaluationResult result = new SiriusBackendInterpreter(session).evaluateExpression(variables, sectionDescription.getTitleExpression());
         String sectionName = result.asString();
 
@@ -211,7 +186,7 @@ public class SiriusServerProjectService implements ISiriusServerService {
 
         DAnalysis self = ((DAnalysisSession) session).allAnalyses().stream().findFirst().orElse(null);
         Map<String, Object> variables = new HashMap<>();
-        variables.put(SELF, self);
+        WorkflowExpressions.Variable.SELF.define(variables, self);
         IEvaluationResult result = new SiriusBackendInterpreter(session).evaluateExpression(variables, activityDescription.getLabelExpression());
         String activityName = result.asString();
 
@@ -276,17 +251,9 @@ public class SiriusServerProjectService implements ISiriusServerService {
      *            The Sirius session
      * @return The list of semantic resources from the given session
      */
-    private List<SiriusServerSemanticResourceDto> getSemanticResources(IProject project, Session session) {
-        Collection<Resource> semanticResources = session.getSemanticResources();
+    private List<SiriusServerSemanticResourceDto> getSemanticResources(ModelingProject modelingProject) {
         // @formatter:off
-		return semanticResources.stream()
-				.map(Resource::getURI)
-				.filter(URI::isPlatformResource)
-				.map(uri -> {
-					String platformString = uri.toPlatformString(true);
-					return ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(platformString));
-				})
-				.filter(iFile -> iFile.getProject().equals(project))
+		return SiriusServerUtils.getSemanticResources(modelingProject)
 				.map(this::convertToSemanticResource)
 				.collect(Collectors.toList());
 		// @formatter:on

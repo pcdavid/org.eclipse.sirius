@@ -10,9 +10,6 @@
  *******************************************************************************/
 package org.eclipse.sirius.server.backend.internal.services.pages;
 
-import static org.eclipse.sirius.server.api.SiriusServerResponse.STATUS_NOT_FOUND;
-import static org.eclipse.sirius.server.api.SiriusServerResponse.STATUS_OK;
-
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -50,13 +47,8 @@ public class SiriusServerPageService implements ISiriusServerService {
         String projectName = variables.get(PROJECT_NAME);
         String pageIdentifier = variables.get(PAGE_IDENTIFIER);
 
-        Optional<SiriusServerPageDto> optionalPage = SiriusServerUtils.getSessionFromProject(projectName).flatMap(session -> getPage(session, pageIdentifier));
-        if (optionalPage.isPresent()) {
-            SiriusServerPageDto page = optionalPage.get();
-            return new SiriusServerResponse(STATUS_OK, page);
-        }
-
-        return new SiriusServerResponse(STATUS_NOT_FOUND);
+        Optional<SiriusServerPageDto> page = SiriusServerUtils.getSessionFromProject(projectName).flatMap(session -> getPage(session, pageIdentifier));
+        return SiriusServerResponse.ofOptional(page);
     }
 
     /**
@@ -71,7 +63,7 @@ public class SiriusServerPageService implements ISiriusServerService {
      *         does not exist
      */
     private Optional<SiriusServerPageDto> getPage(Session session, String pageIdentifier) {
-        return Workflow.on(session).findPageById(pageIdentifier).map(page -> {
+        return Workflow.of(session).findPageById(pageIdentifier).map(page -> {
             List<SiriusServerSectionDto> sections = page.getSections().stream().map(section -> {
                 List<SiriusServerActivityDto> activities = section.getActivities().stream().map(desc -> {
                     return new SiriusServerActivityDto(desc.getName(), desc.getLabelExpression());

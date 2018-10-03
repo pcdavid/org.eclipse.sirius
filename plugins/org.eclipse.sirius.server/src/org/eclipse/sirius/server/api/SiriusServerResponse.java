@@ -12,6 +12,8 @@ package org.eclipse.sirius.server.api;
 
 import java.util.Optional;
 
+import org.eclipse.core.runtime.IStatus;
+
 /**
  * Class used to describe the response of the HTTP service.
  *
@@ -98,11 +100,27 @@ public class SiriusServerResponse {
      *            the payload.
      * @return the response.
      */
-    public static SiriusServerResponse ofOptional(Optional<Object> payload) {
+    public static SiriusServerResponse ofOptional(Optional<? extends Object> payload) {
         if (payload.isPresent()) {
-            return new SiriusServerResponse(STATUS_OK, payload);
+            return new SiriusServerResponse(STATUS_OK, payload.get());
         } else {
             return new SiriusServerResponse(STATUS_NOT_FOUND);
+        }
+    }
+
+    /**
+     * Converts an {@link IStatus} into a {@link SiriusServerResponse}.
+     *
+     * @param status
+     *            the status.
+     * @return an {@link SiriusServerResponse} which indicates success or
+     *         failure depending on the status.
+     */
+    public static SiriusServerResponse ofStatus(IStatus status) {
+        if (status.getSeverity() < IStatus.ERROR) {
+            return new SiriusServerResponse(STATUS_OK);
+        } else {
+            return new SiriusServerResponse(STATUS_INTERNAL_SERVER_ERROR);
         }
     }
 

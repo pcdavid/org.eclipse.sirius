@@ -10,18 +10,28 @@
  *******************************************************************************/
 package org.eclipse.sirius.server.backend.internal.workflow;
 
+import java.text.MessageFormat;
 import java.util.Collection;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.concurrent.Callable;
 import java.util.stream.Stream;
 
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
+import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.transaction.RecordingCommand;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.business.api.query.EObjectQuery;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.ext.base.Option;
+import org.eclipse.sirius.server.backend.internal.SiriusServerBackendPlugin;
+import org.eclipse.sirius.server.backend.internal.SiriusServerMessages;
 import org.eclipse.sirius.viewpoint.description.DescriptionPackage;
 import org.eclipse.sirius.viewpoint.description.Group;
 import org.eclipse.sirius.viewpoint.description.IdentifiedElement;
-import org.eclipse.sirius.workflow.ActivityDescription;
 import org.eclipse.sirius.workflow.PageDescription;
 import org.eclipse.sirius.workflow.SectionDescription;
 import org.eclipse.sirius.workflow.WorkflowDescription;
@@ -35,7 +45,7 @@ import org.eclipse.sirius.workflow.WorkflowDescription;
 public final class Workflow {
     private final Session session;
 
-    public static Workflow on(Session session) {
+    public static Workflow of(Session session) {
         return new Workflow(Objects.requireNonNull(session));
     }
 
@@ -81,8 +91,8 @@ public final class Workflow {
         return findPageById(pageId).flatMap(page -> findById(page.getSections(), sectionId));
     }
 
-    public Optional<ActivityDescription> findActivityById(String pageId, String sectionId, String activityId) {
-        return findSectionById(pageId, sectionId).flatMap(section -> findById(section.getActivities(), activityId));
+    public Optional<Activity> findActivityById(String pageId, String sectionId, String activityId) {
+        return findSectionById(pageId, sectionId).flatMap(section -> findById(section.getActivities(), activityId)).map(ad -> Activity.create(this, ad));
     }
 
     private <T extends IdentifiedElement> Optional<T> findById(Collection<T> candidates, String id) {
@@ -92,4 +102,41 @@ public final class Workflow {
     private <T extends IdentifiedElement> Optional<T> findById(Stream<T> candidates, String id) {
         return candidates.filter(elt -> Objects.equals(elt.getName(), id)).findFirst();
     }
+
+    public void invalidateStateValues() {
+        getWorkflowDescriptions().forEach(w -> WorkflowStateAdapter.on(w).invalidate());
+    }
+
+    public List<SectionDescription> getFirstPageSections() {
+        Optional<PageDescription> optionalPageDescription = getPageDescriptions().findFirst();
+        List<SectionDescription> sectionDescriptions = optionalPageDescription.map(PageDescription::getSections).orElseGet(BasicEList::new);
+        return sectionDescriptions;
+    }
+
+    /**
+     * Returns the default context ("self") object to be used for all workflow
+     * related expressions and operations.
+     *
+     * @return the default context object.
+     */
+    public EObject getDefaultContext() {
+        return session.getSessionResource().getContents().get(0);
+    }
+
+    IStatus executeReadWriteOperation(String title, Callable<IStatus> body) {
+        IStatus[] result = { Status.CANCEL_STATUS };
+        TransactionalEditingDomain ted = session.getTransactionalEditingDomain();
+        ted.getCommandStack().execute(new RecordingCommand(ted, title) {
+            @Override
+            protected void doExecute() {
+                try {
+                    result[0] = body.call();
+                } catch (Exception e) {
+                    result[0] = new Status(IStatus.ERROR, SiriusServerBackendPlugin.PLUGIN_ID, MessageFormat.format(SiriusServerMessages.Workflow_readWriteOperation_error, title), e);
+                }
+            }
+        });
+        return result[0];
+    }
+
 }

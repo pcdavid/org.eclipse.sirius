@@ -29,6 +29,9 @@ public final class SiriusServerMessages {
     @TranslatableMessage
     public static String SiriusServerProjectsService_projectAlreadyExists;
 
+    @TranslatableMessage
+    public static String Workflow_readWriteOperation_error;
+
     // CHECKSTYLE:ON
 
     private SiriusServerMessages() {

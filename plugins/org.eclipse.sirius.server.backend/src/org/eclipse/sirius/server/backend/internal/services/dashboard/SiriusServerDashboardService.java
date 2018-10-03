@@ -20,8 +20,6 @@ import java.util.stream.Stream;
 import javax.servlet.http.HttpServletRequest;
 
 import org.eclipse.core.resources.IProject;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.sirius.business.api.componentization.ViewpointRegistry;
 import org.eclipse.sirius.server.api.ISiriusServerService;
 import org.eclipse.sirius.server.api.SiriusServerPath;
 import org.eclipse.sirius.server.api.SiriusServerResponse;
@@ -53,8 +51,8 @@ public class SiriusServerDashboardService implements ISiriusServerService {
     private SiriusServerDashboardDto getDashboard() {
         Stream<IProject> allModelingProjects = SiriusServerUtils.getModelingProjects();
         int projectsCount = Long.valueOf(allModelingProjects.count()).intValue();
-        int viewpointsCount = ViewpointRegistry.getInstance().getViewpoints().size();
-        int metamodelsCount = EPackage.Registry.INSTANCE.size();
+        int viewpointsCount = SiriusServerUtils.getViewpointRegistry().getViewpoints().size();
+        int metamodelsCount = SiriusServerUtils.getGlobalEPackagesRegistry().size();
 
         // @formatter:off
 		List<SiriusServerDashboardProjectDto> projects = allModelingProjects
@@ -70,14 +68,13 @@ public class SiriusServerDashboardService implements ISiriusServerService {
      * Converts the given project into a
      * {@link SiriusServerDashboardProjectDto}.
      *
-     * @param iProject
+     * @param project
      *            A project with the modeling project nature
      * @return The {@link SiriusServerDashboardProjectDto}
      */
-    private SiriusServerDashboardProjectDto convertToProject(IProject iProject) {
-        String name = iProject.getName();
-        String description = SiriusServerUtils.getProjectDescription(iProject);
-
+    private SiriusServerDashboardProjectDto convertToProject(IProject project) {
+        String name = project.getName();
+        String description = SiriusServerUtils.getProjectDescription(project);
         return new SiriusServerDashboardProjectDto(name, description);
     }
 }
