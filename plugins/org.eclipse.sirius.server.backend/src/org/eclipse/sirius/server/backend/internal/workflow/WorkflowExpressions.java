@@ -106,8 +106,7 @@ public final class WorkflowExpressions {
         try {
             IEvaluationResult result = ((IInterpreterWithDiagnostic) session.getInterpreter()).evaluateExpression(self, workflow.getStateExpression());
             if (result.getDiagnostic().getSeverity() == Diagnostic.OK) {
-                return Optional.of(result.getValue()); // FIXME Does not handle
-                                                       // null results
+                return Optional.ofNullable(result.getValue());
             } else {
                 // TODO Log evaluation error.
             }
