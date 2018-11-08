@@ -894,34 +894,32 @@ public class BracketEdgeTests extends AbstractSiriusSwtBotGefTestCase {
         propertiesBot.setFocus();
         // accesses to tab Decorators
         SWTBotSiriusHelper.selectPropertyTabItem(GENERAL, propertiesBot.bot());
-        final long previousTimeout = SWTBotPreferences.TIMEOUT;
-        SWTBotPreferences.TIMEOUT = 1000;
-        try {
-            // Check that routing style is not present
-            bot.viewByTitle(PROPERTIES).bot().radio();
-            fail("The Routing Style should not be present in VSM for bracket edge");
-        } catch (WidgetNotFoundException e) {
-            editor.show();
-            editor.setFocus();
-            // Eclipse 4.x setFocus
-            editor.click(0, 0);
-
-            initializeEdgeBracketPositionPoint(NEW_EREFERENCE_1).select();
-            propertiesBot = bot.viewByTitle(PROPERTIES);
-            SWTBotUtils.waitAllUiEvents();
-            propertiesBot.setFocus();
-            SWTBotSiriusHelper.selectPropertyTabItem("Style", propertiesBot.bot());
-            tree = propertiesBot.bot().tree();
-            // Test that routing style is not visible in properties view
+        withTimeout(1000, () -> {
             try {
-                tree.expandNode("Bracket Edge Style false").select().getNode("Routing Style");
-                fail("The field Routing Style should not be present in properties view for Bracket Edge");
-            } catch (WidgetNotFoundException wnfe) {
-                // No things to do
+                // Check that routing style is not present
+                bot.viewByTitle(PROPERTIES).bot().radio();
+                fail("The Routing Style should not be present in VSM for bracket edge");
+            } catch (WidgetNotFoundException e) {
+                editor.show();
+                editor.setFocus();
+                // Eclipse 4.x setFocus
+                editor.click(0, 0);
+
+                initializeEdgeBracketPositionPoint(NEW_EREFERENCE_1).select();
+                propertiesBot = bot.viewByTitle(PROPERTIES);
+                SWTBotUtils.waitAllUiEvents();
+                propertiesBot.setFocus();
+                SWTBotSiriusHelper.selectPropertyTabItem("Style", propertiesBot.bot());
+                SWTBotTree propsTree = propertiesBot.bot().tree();
+                // Test that routing style is not visible in properties view
+                try {
+                    propsTree.expandNode("Bracket Edge Style false").select().getNode("Routing Style");
+                    fail("The field Routing Style should not be present in properties view for Bracket Edge");
+                } catch (WidgetNotFoundException wnfe) {
+                    // No things to do
+                }
             }
-        } finally {
-            SWTBotPreferences.TIMEOUT = previousTimeout;
-        }
+        });
 
     }
 

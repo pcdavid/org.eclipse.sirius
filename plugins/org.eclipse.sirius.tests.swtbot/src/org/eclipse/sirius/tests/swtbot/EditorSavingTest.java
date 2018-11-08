@@ -22,7 +22,6 @@ import org.eclipse.sirius.tools.api.command.ui.UICallBack;
 import org.eclipse.sirius.ui.business.api.preferences.SiriusUIPreferencesKeys;
 import org.eclipse.sirius.ui.business.internal.session.GenericSWTCallBack;
 import org.eclipse.sirius.viewpoint.provider.SiriusEditPlugin;
-import org.eclipse.swtbot.swt.finder.utils.SWTBotPreferences;
 import org.eclipse.swtbot.swt.finder.waits.Conditions;
 import org.eclipse.swtbot.swt.finder.widgets.SWTBotButton;
 import org.eclipse.swtbot.swt.finder.widgets.SWTBotLabel;
@@ -93,9 +92,8 @@ public class EditorSavingTest extends AbstractSiriusSwtBotGefTestCase {
     }
 
     /**
-     * Test that when a session is dirty, a confirmation is asked for the
-     * closing of the last diagram editor. The message must start with the
-     * session name and not with the editor name.
+     * Test that when a session is dirty, a confirmation is asked for the closing of the last diagram editor. The
+     * message must start with the session name and not with the editor name.
      * 
      * @throws Exception
      *             Test error.
@@ -113,9 +111,8 @@ public class EditorSavingTest extends AbstractSiriusSwtBotGefTestCase {
     }
 
     /**
-     * Test that when a session is dirty, a confirmation is asked for the
-     * closing of the last table editor. The message must start with the session
-     * name and not with the editor name.
+     * Test that when a session is dirty, a confirmation is asked for the closing of the last table editor. The message
+     * must start with the session name and not with the editor name.
      * 
      * @throws Exception
      *             Test error.
@@ -133,9 +130,8 @@ public class EditorSavingTest extends AbstractSiriusSwtBotGefTestCase {
     }
 
     /**
-     * Test that when a session is dirty, a confirmation is asked for the
-     * closing of all editors. The message must start with the session name and
-     * not with the editor name.
+     * Test that when a session is dirty, a confirmation is asked for the closing of all editors. The message must start
+     * with the session name and not with the editor name.
      * 
      * @throws Exception
      *             Test error.
@@ -161,9 +157,8 @@ public class EditorSavingTest extends AbstractSiriusSwtBotGefTestCase {
     }
 
     /**
-     * Check that when a session is dirty, a confirmation is asked for the
-     * closing of the last editor. The message must start with the session name
-     * and not with the editor name.
+     * Check that when a session is dirty, a confirmation is asked for the closing of the last editor. The message must
+     * start with the session name and not with the editor name.
      * 
      * @throws Exception
      *             Test error.
@@ -180,9 +175,8 @@ public class EditorSavingTest extends AbstractSiriusSwtBotGefTestCase {
     }
 
     /**
-     * Check that when a session is dirty, a confirmation is asked when cloase
-     * all occurs. The message must start with the session name and not with the
-     * editor name.
+     * Check that when a session is dirty, a confirmation is asked when cloase all occurs. The message must start with
+     * the session name and not with the editor name.
      * 
      * @throws Exception
      *             Test error.
@@ -195,19 +189,14 @@ public class EditorSavingTest extends AbstractSiriusSwtBotGefTestCase {
     }
 
     private void checkNoSaveDialog() {
-        // Reduce the timeout to 1 sec
-        final long defaultTimeOut = SWTBotPreferences.TIMEOUT;
-        SWTBotPreferences.TIMEOUT = 1000;
-
-        try {
-            bot.waitUntil(Conditions.shellIsActive("Save Resource"));
-            fail("That is not the last editor for this session, so it shouldn't have popup of confirmation for saving.");
-        } catch (TimeoutException e) {
-            // Do nothing : It's the waited behavior.
-        } finally {
-            // Restore the default timeout
-            SWTBotPreferences.TIMEOUT = defaultTimeOut;
-        }
+        withTimeout(1000, () -> {
+            try {
+                bot.waitUntil(Conditions.shellIsActive("Save Resource"));
+                fail("That is not the last editor for this session, so it shouldn't have popup of confirmation for saving.");
+            } catch (TimeoutException e) {
+                // Do nothing : It's the waited behavior.
+            }
+        });
     }
 
     private void checkSaveDialog() {

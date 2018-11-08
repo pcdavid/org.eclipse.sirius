@@ -27,7 +27,6 @@ import org.eclipse.sirius.ui.business.api.preferences.SiriusUIPreferencesKeys;
 import org.eclipse.sirius.ui.tools.api.Messages;
 import org.eclipse.swtbot.eclipse.finder.waits.Conditions;
 import org.eclipse.swtbot.swt.finder.exceptions.WidgetNotFoundException;
-import org.eclipse.swtbot.swt.finder.utils.SWTBotPreferences;
 import org.eclipse.ui.IEditorReference;
 
 /**
@@ -99,7 +98,7 @@ public class DiagramCreationDescriptionTest extends AbstractSiriusSwtBotGefTestC
         editor = (SWTBotSiriusDiagramEditor) openRepresentation(localSession.getOpenedSession(), REPRESENTATION_NAME, REPRESENTATION_INSTANCE_NAME, DDiagram.class);
     }
 
-    private void initializeFirstSession() throws Exception {
+    protected void initializeFirstSession() throws Exception {
         sessionAirdResource = new UIResource(designerProject, FILE_DIR, SESSION_FILE_1_VIEWPOINT);
         localSession = designerPerspective.openSessionFromFile(sessionAirdResource);
 
@@ -218,25 +217,19 @@ public class DiagramCreationDescriptionTest extends AbstractSiriusSwtBotGefTestC
     }
 
     private void doTestNewRepresentationWithoutContextualMenu(Point point) throws Exception {
-        final long oldTimeout = SWTBotPreferences.TIMEOUT;
-
-        try {
-            SWTBotPreferences.TIMEOUT = 1000;
-
-            initializeFirstSession();
-
-            editor.click(point.x, point.y);
-
-            SWTBotUtils.waitAllUiEvents();
-
-            editor.clickContextMenu(EXPECTED_NEW_REPRESENTATION_NAME);
-
-            fail(WidgetNotFoundException.class + " New representation menu not expected to be available");
-        } catch (final WidgetNotFoundException e) {
-            assertEquals("The active editor is not the one expected", REPRESENTATION_INSTANCE_NAME, bot.activeEditor().getTitle());
-        } finally {
-            SWTBotPreferences.TIMEOUT = oldTimeout;
-        }
+        withTimeout(1000, () -> {
+            try {
+                initializeFirstSession();
+                editor.click(point.x, point.y);
+                SWTBotUtils.waitAllUiEvents();
+                editor.clickContextMenu(EXPECTED_NEW_REPRESENTATION_NAME);
+                fail(WidgetNotFoundException.class + " New representation menu not expected to be available");
+            } catch (final WidgetNotFoundException e) {
+                assertEquals("The active editor is not the one expected", REPRESENTATION_INSTANCE_NAME, bot.activeEditor().getTitle());
+            } catch (Exception ex) {
+                throw new RuntimeException(ex);
+            }
+        });
     }
 
 }

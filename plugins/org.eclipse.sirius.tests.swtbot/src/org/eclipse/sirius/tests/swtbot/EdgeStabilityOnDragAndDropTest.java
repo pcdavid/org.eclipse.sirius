@@ -40,7 +40,6 @@ import org.eclipse.sirius.tests.swtbot.support.api.widget.WrappedSWTBotRadio;
 import org.eclipse.swtbot.eclipse.finder.widgets.SWTBotView;
 import org.eclipse.swtbot.eclipse.gef.finder.widgets.SWTBotGefConnectionEditPart;
 import org.eclipse.swtbot.eclipse.gef.finder.widgets.SWTBotGefEditPart;
-import org.eclipse.swtbot.swt.finder.utils.SWTBotPreferences;
 import org.eclipse.swtbot.swt.finder.widgets.SWTBotRadio;
 import org.junit.Assert;
 
@@ -79,16 +78,11 @@ public class EdgeStabilityOnDragAndDropTest extends AbstractSiriusSwtBotGefTestC
     private UILocalSession localSession;
 
     /**
-     * {@inheritDoc}
-     */
     @Override
     protected void onSetUpBeforeClosingWelcomePage() throws Exception {
         copyFileToTestProject(Activator.PLUGIN_ID, DATA_UNIT_DIR, MODEL, SESSION_FILE, VSM_FILE);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     protected void onSetUpAfterOpeningDesignerPerspective() throws Exception {
         sessionAirdResource = new UIResource(designerProject, FILE_DIR, SESSION_FILE);
@@ -359,23 +353,14 @@ public class EdgeStabilityOnDragAndDropTest extends AbstractSiriusSwtBotGefTestC
      * Drag and drop a source and target edge border node to another node.
      */
     public void testEdgeStabilityOnDragAndDropWithSourceAndTarget() {
-
-        final long oldTimeout = SWTBotPreferences.TIMEOUT;
-        try {
-            SWTBotPreferences.TIMEOUT = 1000;
-
+        withTimeout(1000, () -> {
             // Get bendpoints before drag and drop
             PointList originalPointsC5C6 = getBendpoints("C5", "C6");
-
             // Drag and drop C5 and C6 to package P1
             dragNorth("P1", "C5", "C6");
-
             // Check the connections bendpoints stability
             checkEdgeShiftedByVector("C5", "C6", originalPointsC5C6, EdgeRouting.MANHATTAN_LITERAL); // rectilinear
-
-        } finally {
-            SWTBotPreferences.TIMEOUT = oldTimeout;
-        }
+        });
     }
 
     /**
@@ -391,10 +376,7 @@ public class EdgeStabilityOnDragAndDropTest extends AbstractSiriusSwtBotGefTestC
      *            true to change edge routing style to 'Oblique'
      */
     private void doTestEdgeStabilityOnDragAndDrop(String targetElement, String elementToDrag, Direction direction, boolean changeStyle) {
-
-        final long oldTimeout = SWTBotPreferences.TIMEOUT;
-        try {
-            SWTBotPreferences.TIMEOUT = 1000;
+        withTimeout(1000, () -> {
 
             // Get bendpoints before drag and drop
             List<PointList> originalPointsList = new ArrayList<PointList>();
@@ -427,9 +409,7 @@ public class EdgeStabilityOnDragAndDropTest extends AbstractSiriusSwtBotGefTestC
                     checkUnmovedEdge(source, target, originalPoints, changeStyle ? EdgeRouting.STRAIGHT_LITERAL : EdgeRouting.MANHATTAN_LITERAL);
                 }
             }
-        } finally {
-            SWTBotPreferences.TIMEOUT = oldTimeout;
-        }
+        });
     }
 
     /**

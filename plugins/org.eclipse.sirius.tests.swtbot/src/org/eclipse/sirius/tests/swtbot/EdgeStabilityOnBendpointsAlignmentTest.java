@@ -18,7 +18,6 @@ import org.eclipse.sirius.tests.swtbot.support.api.business.UIDiagramRepresentat
 import org.eclipse.sirius.tests.swtbot.support.api.business.UILocalSession;
 import org.eclipse.sirius.tests.swtbot.support.api.business.UIResource;
 import org.eclipse.sirius.tests.swtbot.support.api.editor.SWTBotSiriusDiagramEditor;
-import org.eclipse.swtbot.swt.finder.utils.SWTBotPreferences;
 
 /**
  * 
@@ -47,44 +46,29 @@ public class EdgeStabilityOnBendpointsAlignmentTest extends AbstractSiriusSwtBot
      */
     protected UIDiagramRepresentation diagram;
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     protected void onSetUpBeforeClosingWelcomePage() throws Exception {
         copyFileToTestProject(Activator.PLUGIN_ID, DATA_UNIT_DIR, MODEL, SESSION_FILE);
-
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     protected void onSetUpAfterOpeningDesignerPerspective() throws Exception {
         sessionAirdResource = new UIResource(designerProject, FILE_DIR, SESSION_FILE);
         localSession = designerPerspective.openSessionFromFile(sessionAirdResource);
-
         editor = (SWTBotSiriusDiagramEditor) openRepresentation(localSession.getOpenedSession(), REPRESENTATION_NAME, REPRESENTATION_INSTANCE_NAME, DDiagram.class);
     }
 
     /**
-     * Test method. For the moment mouseDrag does not work on bendpoints. The
-     * edge is selected but not moved.
+     * Test method. For the moment mouseDrag does not work on bendpoints. The edge is selected but not moved.
      * 
      * @throws Exception
      *             Test error.
      */
     public void testEdgeStabilityOnBendpointsAlignment() throws Exception {
-
-        final long oldTimeout = SWTBotPreferences.TIMEOUT;
-        try {
-            SWTBotPreferences.TIMEOUT = 1000;
+        withTimeout(1000, () -> {
             editor.drag(360, 98, 268, 225);
-
             editor.drag(95, 195, 224, 132);
-        } finally {
-            SWTBotPreferences.TIMEOUT = oldTimeout;
-        }
+        });
     }
 
 }

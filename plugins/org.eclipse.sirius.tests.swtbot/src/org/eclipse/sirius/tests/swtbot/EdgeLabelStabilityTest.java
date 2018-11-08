@@ -24,7 +24,6 @@ import org.eclipse.sirius.tests.swtbot.support.api.business.UIDiagramRepresentat
 import org.eclipse.sirius.tests.swtbot.support.api.business.UILocalSession;
 import org.eclipse.sirius.tests.swtbot.support.api.business.UIResource;
 import org.eclipse.sirius.tests.swtbot.support.api.editor.SWTBotSiriusDiagramEditor;
-import org.eclipse.swtbot.swt.finder.utils.SWTBotPreferences;
 
 /**
  * 
@@ -63,18 +62,12 @@ public class EdgeLabelStabilityTest extends AbstractSiriusSwtBotGefTestCase {
      */
     protected UIDiagramRepresentation diagram;
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     protected void onSetUpBeforeClosingWelcomePage() throws Exception {
         copyFileToTestProject(Activator.PLUGIN_ID, DATA_UNIT_DIR, MODEL, SESSION_FILE, VSM_FILE);
 
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     protected void onSetUpAfterOpeningDesignerPerspective() throws Exception {
         changeDiagramUIPreference(SiriusDiagramUiPreferencesKeys.PREF_OLD_UI.name(), true);
@@ -84,18 +77,13 @@ public class EdgeLabelStabilityTest extends AbstractSiriusSwtBotGefTestCase {
     }
 
     /**
-     * Validate edge label dimension stability on drag and drop with a label on
-     * multiple lines.
+     * Validate edge label dimension stability on drag and drop with a label on multiple lines.
      * 
      * @throws Exception
      *             Test error.
      */
     public void testEdgeLabelStabilityOnDragAndDrop() throws Exception {
-
-        final long oldTimeout = SWTBotPreferences.TIMEOUT;
-        try {
-            SWTBotPreferences.TIMEOUT = 1000;
-
+        withTimeout(1000, () -> {
             editor = (SWTBotSiriusDiagramEditor) openRepresentation(localSession.getOpenedSession(), REPRESENTATION_NAME, REPRESENTATION_INSTANCE_NAME_MULTI_LINES, DDiagram.class);
 
             Point location = editor.getLocation("P1", AbstractDiagramContainerEditPart.class);
@@ -108,25 +96,18 @@ public class EdgeLabelStabilityTest extends AbstractSiriusSwtBotGefTestCase {
 
             assertEquals("The edge label width has changed", edgeLabelDimension.width, editor.getDimension("extends " + C2, AbstractDiagramNameEditPart.class).width);
             assertEquals("The edge label height has changed", edgeLabelDimension.height, editor.getDimension("extends " + C2, AbstractDiagramNameEditPart.class).height);
-
-        } finally {
-            SWTBotPreferences.TIMEOUT = oldTimeout;
-        }
+        });
     }
 
     /**
-     * Validate edge label dimension stability on copy paste layout with a label
-     * on multiple lines and then on a single line.
+     * Validate edge label dimension stability on copy paste layout with a label on multiple lines and then on a single
+     * line.
      * 
      * @throws Exception
      *             Test error.
      */
     public void testEdgeLabelStabilityOnCopyPasteLayout() throws Exception {
-
-        final long oldTimeout = SWTBotPreferences.TIMEOUT;
-        try {
-            SWTBotPreferences.TIMEOUT = 1000;
-
+        withTimeout(1000, () -> {
             editor = (SWTBotSiriusDiagramEditor) openRepresentation(localSession.getOpenedSession(), REPRESENTATION_NAME, REPRESENTATION_INSTANCE_NAME_MULTI_LINES, DDiagram.class);
 
             Dimension edgeLabelDimension = editor.getDimension("extends " + C2, AbstractDiagramNameEditPart.class);
@@ -166,10 +147,7 @@ public class EdgeLabelStabilityTest extends AbstractSiriusSwtBotGefTestCase {
 
             assertEquals("The edge label width has changed", edgeLabelDimension.width, editor.getDimension("extends " + C2, AbstractDiagramNameEditPart.class).width);
             assertEquals("The edge label height has changed", edgeLabelDimension.height, editor.getDimension("extends " + C2, AbstractDiagramNameEditPart.class).height);
-
-        } finally {
-            SWTBotPreferences.TIMEOUT = oldTimeout;
-        }
+        });
     }
 
     @Override

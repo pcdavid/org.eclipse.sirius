@@ -79,8 +79,8 @@ import org.junit.Assert;
 import junit.framework.AssertionFailedError;
 
 /**
- * Checks the behavior of the goToMarker method of all DialectEditors, when
- * several editors are avalaible and choices are presented to end-user.
+ * Checks the behavior of the goToMarker method of all DialectEditors, when several editors are avalaible and choices
+ * are presented to end-user.
  * 
  * @author alagarde
  */
@@ -150,8 +150,8 @@ public class GoToMarkerTraceabilityWithUserInteractionTest extends AbstractScena
     private UILocalSession localSession;
 
     /**
-     * A part listener to detect "Default Editor" activation and store the
-     * session of this editor to be compared after with the "real" editor.
+     * A part listener to detect "Default Editor" activation and store the session of this editor to be compared after
+     * with the "real" editor.
      */
     private IPartListener2 defaultEditorPartListener = new IPartListener2() {
         @Override
@@ -197,8 +197,7 @@ public class GoToMarkerTraceabilityWithUserInteractionTest extends AbstractScena
     };
 
     /**
-     * This variable is initialized when the above part listener is called and
-     * so when the dummy editor is activated.
+     * This variable is initialized when the above part listener is called and so when the dummy editor is activated.
      */
     private Session sessionOfDummyEditor;
 
@@ -235,8 +234,7 @@ public class GoToMarkerTraceabilityWithUserInteractionTest extends AbstractScena
     }
 
     /**
-     * Open the representation and gather the initial bounds of all the bordered
-     * nodes.
+     * Open the representation and gather the initial bounds of all the bordered nodes.
      */
     @Override
     protected void onSetUpAfterOpeningDesignerPerspective() throws Exception {
@@ -246,9 +244,8 @@ public class GoToMarkerTraceabilityWithUserInteractionTest extends AbstractScena
     }
 
     /**
-     * Ensures that when Traceability ask users to choose the representations
-     * containing the searched element to open, selected editors are correctly
-     * opened and have the expected selection.
+     * Ensures that when Traceability ask users to choose the representations containing the searched element to open,
+     * selected editors are correctly opened and have the expected selection.
      */
     public void testTraceabilityWhenSeveralMatchInNotOpenedRepresentationsWhenUserClickOk() {
         setUpMarker(REPRESENTATION_EMPTY_DIAGRAM, "emptyDiagram", "platform:/resource/DesignerTestProject/vp1038.ecore#//p1/A");
@@ -284,9 +281,8 @@ public class GoToMarkerTraceabilityWithUserInteractionTest extends AbstractScena
     }
 
     /**
-     * Ensure that after closing a representation editor (with refresh at
-     * opening) having validation errors, it can be reopened using an error
-     * marker from the Problem view.
+     * Ensure that after closing a representation editor (with refresh at opening) having validation errors, it can be
+     * reopened using an error marker from the Problem view.
      */
     public void testTraceabilityWithNoOpenedRepresentationsWithRefreshAtOpening() {
         changeSiriusUIPreference(org.eclipse.sirius.ui.business.api.preferences.SiriusUIPreferencesKeys.PREF_REFRESH_ON_REPRESENTATION_OPENING.name(), true);
@@ -294,9 +290,8 @@ public class GoToMarkerTraceabilityWithUserInteractionTest extends AbstractScena
     }
 
     /**
-     * Ensure that after closing a representation editor (without refresh at
-     * opening) having validation errors, it can be reopened using an error
-     * marker from the Problem view.
+     * Ensure that after closing a representation editor (without refresh at opening) having validation errors, it can
+     * be reopened using an error marker from the Problem view.
      */
     public void testTraceabilityWithNoOpenedRepresentationsWithoutRefreshAtOpening() {
         changeSiriusUIPreference(org.eclipse.sirius.ui.business.api.preferences.SiriusUIPreferencesKeys.PREF_REFRESH_ON_REPRESENTATION_OPENING.name(), false);
@@ -304,9 +299,8 @@ public class GoToMarkerTraceabilityWithUserInteractionTest extends AbstractScena
     }
 
     /**
-     * Ensure that with an opened representation editor (with refresh at
-     * opening) having validation errors, it can be reused using an error marker
-     * from the Problem view.
+     * Ensure that with an opened representation editor (with refresh at opening) having validation errors, it can be
+     * reused using an error marker from the Problem view.
      */
     public void testTraceabilityWithOpenedRepresentationsWithRefreshAtOpening() {
         changeSiriusUIPreference(org.eclipse.sirius.ui.business.api.preferences.SiriusUIPreferencesKeys.PREF_REFRESH_ON_REPRESENTATION_OPENING.name(), true);
@@ -314,9 +308,8 @@ public class GoToMarkerTraceabilityWithUserInteractionTest extends AbstractScena
     }
 
     /**
-     * Ensure that after closing a session containing a representation having
-     * validation errors, it can be reopened using an error marker from the
-     * Problem view.
+     * Ensure that after closing a session containing a representation having validation errors, it can be reopened
+     * using an error marker from the Problem view.
      */
     public void testTraceabilityWithClosedSession() {
         processEditorOpeningFromMarker(true, true);
@@ -401,9 +394,8 @@ public class GoToMarkerTraceabilityWithUserInteractionTest extends AbstractScena
     }
 
     /**
-     * Ensures that when Traceability ask users to choose the representations
-     * containing the searched element to open, and user cancel the action, no
-     * editor are opened.
+     * Ensures that when Traceability ask users to choose the representations containing the searched element to open,
+     * and user cancel the action, no editor are opened.
      */
     public void testTraceabilityWhenSeveralMatchInNotOpenedRepresentationsWhenUserClickCancel() {
         setUpMarker(REPRESENTATION_EMPTY_DIAGRAM, "emptyDiagram", "platform:/resource/DesignerTestProject/vp1038.ecore#//p1/A");
@@ -422,10 +414,9 @@ public class GoToMarkerTraceabilityWithUserInteractionTest extends AbstractScena
     }
 
     /**
-     * Ensures that when Traceability ask users to choose the representations
-     * containing the searched element to open, selected editors are correctly
-     * opened and have the expected selection (here several editors have already
-     * been opened).
+     * Ensures that when Traceability ask users to choose the representations containing the searched element to open,
+     * selected editors are correctly opened and have the expected selection (here several editors have already been
+     * opened).
      */
     public void testTraceabilityWhenGoToMarkerIsCalledOnAllOpenedEditors() {
         setUpMarker(REPRESENTATION_EMPTY_DIAGRAM, "emptyDiagram", "platform:/resource/DesignerTestProject/vp1038.ecore#//p1/A");
@@ -449,8 +440,8 @@ public class GoToMarkerTraceabilityWithUserInteractionTest extends AbstractScena
     }
 
     /**
-     * Ensure that there is no NPE when no representation element exists
-     * (corresponding to the semantic element of the marker).
+     * Ensure that there is no NPE when no representation element exists (corresponding to the semantic element of the
+     * marker).
      */
     public void testTraceabilityWhenNoRepresentationElementExists() {
         setUpMarker(REPRESENTATION_EMPTY_DIAGRAM, "emptyDiagram", "platform:/resource/DesignerTestProject/vp1038.ecore#/");
@@ -461,10 +452,9 @@ public class GoToMarkerTraceabilityWithUserInteractionTest extends AbstractScena
     }
 
     /**
-     * Ensures that the given dialectEditor's selection is corresponding to the
-     * given semanticElement. For instance : if the semantic Element is
-     * 'EClass1' and the editor's selection is a DNode which associated semantic
-     * element is 'EClass1'.
+     * Ensures that the given dialectEditor's selection is corresponding to the given semanticElement. For instance : if
+     * the semantic Element is 'EClass1' and the editor's selection is a DNode which associated semantic element is
+     * 'EClass1'.
      * 
      * @param editor
      *            the editor to test
@@ -531,18 +521,16 @@ public class GoToMarkerTraceabilityWithUserInteractionTest extends AbstractScena
     }
 
     /**
-     * Creates a sample Traceability marker on the semantic element with the
-     * given semanticElementName, referenced by the representation with the
-     * given representationName. If openEditor is true, also opens an editor on
-     * this representation.
+     * Creates a sample Traceability marker on the semantic element with the given semanticElementName, referenced by
+     * the representation with the given representationName. If openEditor is true, also opens an editor on this
+     * representation.
      * 
      * @param representationType
      *            the type of the representation to open
      * @param representationName
      *            the representation name
      * @param semanticElementURI
-     *            the semantic element URI (on which the Traceability marker
-     *            will be created)
+     *            the semantic element URI (on which the Traceability marker will be created)
      */
     protected void setUpMarker(String representationType, String representationName, String semanticElementURI) {
 
@@ -564,8 +552,7 @@ public class GoToMarkerTraceabilityWithUserInteractionTest extends AbstractScena
     }
 
     /**
-     * Calls the goToMarker method on all opened Editors like Traceability would
-     * do.
+     * Calls the goToMarker method on all opened Editors like Traceability would do.
      * 
      * @param marker
      *            the marker to go to
@@ -663,11 +650,8 @@ public class GoToMarkerTraceabilityWithUserInteractionTest extends AbstractScena
             }
         });
         SWTBotUtils.waitAllUiEvents();
-        long oldTimeOut = SWTBotPreferences.TIMEOUT;
-        SWTBotPreferences.TIMEOUT = 2000;
-        try {
+        withTimeout(2000, () -> {
             bot.waitUntil(new DefaultCondition() {
-
                 @Override
                 public boolean test() throws Exception {
                     try {
@@ -684,9 +668,7 @@ public class GoToMarkerTraceabilityWithUserInteractionTest extends AbstractScena
                     return "The validation warning message has not been removed from the Problems view.";
                 }
             });
-        } finally {
-            SWTBotPreferences.TIMEOUT = oldTimeOut;
-        }
+        });
         if (!closeDiagram && !closeSession) {
             // Check that the current editor is the same as before quick fix
             assertEquals("The quick fix should not reload another editor but use the same.", initialEditoReference, bot.activeEditor().getReference());

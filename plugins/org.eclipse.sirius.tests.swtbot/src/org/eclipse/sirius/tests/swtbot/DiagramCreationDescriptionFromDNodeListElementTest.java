@@ -18,7 +18,6 @@ import org.eclipse.sirius.tests.swtbot.support.api.business.UIDiagramRepresentat
 import org.eclipse.sirius.tests.swtbot.support.api.business.UILocalSession;
 import org.eclipse.sirius.tests.swtbot.support.api.business.UIResource;
 import org.eclipse.sirius.tests.swtbot.support.api.editor.SWTBotSiriusDiagramEditor;
-import org.eclipse.swtbot.swt.finder.utils.SWTBotPreferences;
 
 /**
  * Test class for diagram creation description.
@@ -54,18 +53,12 @@ public class DiagramCreationDescriptionFromDNodeListElementTest extends Abstract
      */
     protected UIDiagramRepresentation diagram;
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     protected void onSetUpBeforeClosingWelcomePage() throws Exception {
         copyFileToTestProject(Activator.PLUGIN_ID, DATA_UNIT_DIR, MODEL, SESSION_FILE, VSM_FILE);
 
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     protected void onSetUpAfterOpeningDesignerPerspective() throws Exception {
         sessionAirdResource = new UIResource(designerProject, FILE_DIR, SESSION_FILE);
@@ -81,20 +74,12 @@ public class DiagramCreationDescriptionFromDNodeListElementTest extends Abstract
      *             Test error.
      */
     public void testNewRepresentationFromDNodeListElement() throws Exception {
-        final long oldTimeout = SWTBotPreferences.TIMEOUT;
-
-        try {
-            SWTBotPreferences.TIMEOUT = 1000;
-
+        withTimeout(1000, () -> {
             editor.click(175, 45);
-
             editor.clickContextMenu(EXPECTED_NEW_REPRESENTATION_NAME);
-
             bot.button("OK").click();
             assertEditorIsNotError("Right click New representation editor did not opened correctly", bot.activeEditor());
             assertEquals("The active editor is not the one expected", EXPECTED_NEW_REPRESENTATION_INSTANCE_NAME, bot.activeEditor().getTitle());
-        } finally {
-            SWTBotPreferences.TIMEOUT = oldTimeout;
-        }
+        });
     }
 }

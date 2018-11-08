@@ -341,6 +341,25 @@ public abstract class AbstractSiriusSwtBotGefTestCase extends SWTBotGefTestCase 
     }
 
     /**
+     * Executes a runnable with a custom SWTBot timeout. The timeout is reset to its previous value after the runnable
+     * is done.
+     * 
+     * @param timeout
+     *            the timeout to use during the execution of the runnable.
+     * @param r
+     *            the {@link Runnable} to execute.
+     */
+    protected void withTimeout(long timeout, Runnable r) {
+        long previous = SWTBotPreferences.TIMEOUT;
+        SWTBotPreferences.TIMEOUT = timeout;
+        try {
+            r.run();
+        } finally {
+            SWTBotPreferences.TIMEOUT = previous;
+        }
+    }
+
+    /**
      * Define the auto refresh mode to use during this tests.
      *
      * @return the auto refresh mode.
