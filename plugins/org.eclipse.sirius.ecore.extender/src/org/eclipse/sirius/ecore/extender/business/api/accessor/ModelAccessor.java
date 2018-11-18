@@ -34,9 +34,8 @@ import org.eclipse.sirius.ecore.extender.business.internal.permission.Permission
 import org.eclipse.sirius.ext.emf.EReferencePredicate;
 
 /**
- * This class is the common layer to access emf models. You may want to use it
- * when you want to extend Ecore meta-model or if you want to handle the
- * permissions of software trying to access the elements.
+ * This class is the common layer to access emf models. You may want to use it when you want to extend Ecore meta-model
+ * or if you want to handle the permissions of software trying to access the elements.
  * 
  * @author cbrun
  * 
@@ -44,16 +43,20 @@ import org.eclipse.sirius.ext.emf.EReferencePredicate;
 public class ModelAccessor {
 
     /**
-     * Responsible to handle meta-model extensions.
-     */
-    CompositeMetamodelExtender extender;
-
-    /**
      * Is able to tell if yes, or no, the user is able to set a value.
      */
-    IPermissionAuthority authority = PermissionService.createDefaultPermissionAuthority();
+    protected IPermissionAuthority authority = PermissionService.createDefaultPermissionAuthority();
 
-    private boolean silentMode;
+    /**
+     * If the model Accessor is not in silent mode then {@link LockedInstanceException} will be thrown on invalid
+     * accesses.
+     */
+    protected boolean silentMode;
+
+    /**
+     * Responsible to handle meta-model extensions.
+     */
+    private CompositeMetamodelExtender extender;
 
     /**
      * Create a new ModelAccessor ready for initialization, you may want to add
