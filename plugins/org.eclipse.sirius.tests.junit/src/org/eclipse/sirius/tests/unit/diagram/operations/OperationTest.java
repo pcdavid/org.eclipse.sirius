@@ -636,9 +636,9 @@ public class OperationTest extends DocbookTestCase {
      * Error Log view.
      */
     public void testIFOperationConditionError() {
-        setErrorCatchActive(true);
+    	problemsListener.setErrorCatchActive(true);
         testIf("var:ifConditionWithError", 0, 0);
-        assertTrue(doesAnErrorOccurs());
+        assertTrue(problemsListener.doesAnErrorOccurs());
     }
 
     /**
@@ -663,9 +663,9 @@ public class OperationTest extends DocbookTestCase {
      * Error Log view.
      */
     public void testSwitchOperationConditionError() {
-        setErrorCatchActive(true);
+    	problemsListener.setErrorCatchActive(true);
         testSwitch("var:switchConditionWithError", 0, 0, 0, 1);
-        assertTrue(doesAnErrorOccurs());
+        assertTrue(problemsListener.doesAnErrorOccurs());
     }
 
     /**
@@ -673,7 +673,7 @@ public class OperationTest extends DocbookTestCase {
      * is executed.
      */
     public void testSwitchOperationConditionNull() {
-        setErrorCatchActive(true);
+    	problemsListener.setErrorCatchActive(true);
         testSwitch(null, 0, 0, 0, 1);
     }
 

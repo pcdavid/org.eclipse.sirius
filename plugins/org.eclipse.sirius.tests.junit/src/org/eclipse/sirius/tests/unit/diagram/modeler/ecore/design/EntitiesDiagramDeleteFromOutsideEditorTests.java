@@ -110,7 +110,7 @@ public class EntitiesDiagramDeleteFromOutsideEditorTests extends SiriusDiagramTe
         TestsUtil.synchronizationWithUIThread();
 
         // Activate the error catching (to detect msg during selection)
-        setErrorCatchActive(true);
+        problemsListener.setErrorCatchActive(true);
         // Select the corresponding element in the diagram
         final DDiagramElement diagramElement = getFirstDiagramElement(diagram, eClass);
         final IGraphicalEditPart editPart = getEditPart(diagramElement, editorPart);
@@ -118,6 +118,6 @@ public class EntitiesDiagramDeleteFromOutsideEditorTests extends SiriusDiagramTe
 
         // Deactivate the error catching (the error detection is done during the
         // super.tearDown)
-        setErrorCatchActive(false);
+        problemsListener.setErrorCatchActive(false);
     }
 }

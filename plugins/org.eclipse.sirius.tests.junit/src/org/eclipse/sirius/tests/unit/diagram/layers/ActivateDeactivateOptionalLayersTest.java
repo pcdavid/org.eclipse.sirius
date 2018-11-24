@@ -55,14 +55,14 @@ public class ActivateDeactivateOptionalLayersTest extends SiriusDiagramTestCase 
         super.setUp();
         genericSetUp(SEMANTIC_MODEL_PATH, MODELER_PATH);
         initViewpoint(VIEWPOINT_NAME);
-        setErrorCatchActive(true);
+        problemsListener.setErrorCatchActive(true);
     }
 
     /**
      * Test that there is no error when activate-deactivate the layer.
      */
     public void testActivateDeactivateOptionalLayer() {
-        assertTrue("The error Catch should be activate", isErrorCatchActive());
+        assertTrue("The error Catch should be activate", problemsListener.isErrorCatchActive());
         DDiagram diagram = (DDiagram) getRepresentations(TEST_CLASS_DIAGRAM).toArray()[0];
         refresh(diagram);
         // Open editor
@@ -81,7 +81,7 @@ public class ActivateDeactivateOptionalLayersTest extends SiriusDiagramTestCase 
         deactivateLayer(optionalLayer, diagram);
 
         //When the suite is called with the skipUnreliable option, the error catch is not checked.
-        assertFalse("There shoud be no error. " + getErrorLoggersMessage(), doesAnErrorOccurs());
+        assertFalse("There shoud be no error. " + problemsListener.getErrorLoggersMessage(), problemsListener.doesAnErrorOccurs());
     }
 
     /**

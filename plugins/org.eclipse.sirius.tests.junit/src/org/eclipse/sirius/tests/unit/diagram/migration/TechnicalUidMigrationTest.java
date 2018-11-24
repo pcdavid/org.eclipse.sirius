@@ -144,7 +144,7 @@ public class TechnicalUidMigrationTest extends SiriusTestCase {
         // of the uid of the representation).
         Diagram gmfDiag = (Diagram) new DRepresentationQuery(dRepresentationDescriptor.getRepresentation()).getAnnotation(CustomDataConstants.GMF_DIAGRAMS).iterator().next().getData();
         assertEquals("GMF Diagram is no more able to retrieve its DDiagram, check the migration effect.", dRepresentationDescriptor.getRepresentation(), gmfDiag.getElement());
-        assertFalse(getErrorLoggersMessage(), doesAnErrorOccurs());
+        assertFalse(problemsListener.getErrorLoggersMessage(), problemsListener.doesAnErrorOccurs());
     }
 
     @Override

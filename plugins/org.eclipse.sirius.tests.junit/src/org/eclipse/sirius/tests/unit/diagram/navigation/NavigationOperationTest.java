@@ -104,7 +104,7 @@ public class NavigationOperationTest extends SiriusDiagramTestCase {
         AbstractToolDescription tool = getTool(diagram, OPERATION_NAME);
         assertTrue(tool instanceof OperationAction);
         Command cmd = getCommand(diagram, tool, Arrays.asList((EObject) aDiagramElement));
-        setErrorCatchActive(true);
+        problemsListener.setErrorCatchActive(true);
         // This will use the UiCallback (in the context of tests, a
         // NoUICallback) to ask for the new representation name. VP-1851
         // triggered an NPE here.

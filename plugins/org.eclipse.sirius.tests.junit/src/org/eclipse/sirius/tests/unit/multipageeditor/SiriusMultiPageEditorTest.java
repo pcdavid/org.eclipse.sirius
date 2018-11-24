@@ -94,7 +94,7 @@ public class SiriusMultiPageEditorTest extends SiriusTestCase {
         String editorName = DialectUIManager.INSTANCE.getEditorName(representation);
         final IEditorInput editorInput = new SessionEditorInput(uri, editorName, session);
         final IWorkbenchPage activePage = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
-        assertFalse(doesAnErrorOccurs());
+        assertFalse(problemsListener.doesAnErrorOccurs());
 
         RunnableWithResult<IEditorPart> result = new RunnableWithResult<IEditorPart>() {
             private IEditorPart resultEditor;
@@ -125,7 +125,7 @@ public class SiriusMultiPageEditorTest extends SiriusTestCase {
         };
         PlatformUI.getWorkbench().getDisplay().syncExec(result);
         openEditor = result.getResult();
-        assertFalse("No error should have occurs during opening of the Sirius Diagram editor inside a multi page editor.", doesAnErrorOccurs());
+        assertFalse("No error should have occurs during opening of the Sirius Diagram editor inside a multi page editor.", problemsListener.doesAnErrorOccurs());
     }
 
     @Override

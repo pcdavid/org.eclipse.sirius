@@ -139,7 +139,7 @@ public class ResourceVersionMismatchTest extends SiriusTestCase {
         // check stopping session opening
         try {
             forceOpeningSession = false;
-            clearErrors();
+            problemsListener.clearErrors();
             session = SessionManager.INSTANCE.openSession(sessionResourceURI, new NullProgressMonitor(), SiriusEditPlugin.getPlugin().getUiCallback());
             String[] args = { AirdResourceVersionMismatchException.class.getName(), "aird" };
             fail(Messages.format(THROWN_EXCEPTION, args));
@@ -155,16 +155,16 @@ public class ResourceVersionMismatchTest extends SiriusTestCase {
      */
     public void testViewRegistryWithVSMResourceVersionMismatch() {
         // Initialize error/warning log and uncaught exception handlers
-        initLoggers();
-        setWarningCatchActive(true);
-        clearWarnings();
+    	problemsListener.initLoggers();
+    	problemsListener.setWarningCatchActive(true);
+    	problemsListener.clearWarnings();
 
         // Setup a session with invalid VSM and valid aird
         setupFileVersionMismatch(true, false, false);
 
         // check that the viewpoint Registry has logged a warning
-        assertTrue(WARNING_LOGGED, doesAWarningOccurs());
-        clearWarnings();
+        assertTrue(WARNING_LOGGED, problemsListener.doesAWarningOccurs());
+        problemsListener.clearWarnings();
 
         Set<Viewpoint> viewpoints = ViewpointRegistry.getInstance().getViewpoints();
         for (Viewpoint viewpoint : viewpoints) {
@@ -183,7 +183,7 @@ public class ResourceVersionMismatchTest extends SiriusTestCase {
 
         // Test
         try {
-            clearErrors();
+        	problemsListener.clearErrors();
             SessionManager.INSTANCE.openSession(sessionResourceURI, new NullProgressMonitor(), SiriusEditPlugin.getPlugin().getUiCallback());
             fail(Messages.format(THROWN_EXCEPTION, new String[] { RuntimeException.class.getName(), "VSM" }));
         } catch (RuntimeException e) {

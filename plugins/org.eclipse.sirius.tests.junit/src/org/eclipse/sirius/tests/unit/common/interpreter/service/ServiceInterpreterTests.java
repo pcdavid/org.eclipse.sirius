@@ -274,18 +274,18 @@ public class ServiceInterpreterTests extends SiriusTestCase {
      */
     public void testAddImportWithInvalidPathContainintPoint() {
         // Initialize error/warning log and uncaught exception handlers
-        initLoggers();
-        boolean oldIsWarningCatchActive = isWarningCatchActive();
-        setWarningCatchActive(true);
+    	problemsListener.initLoggers();
+        boolean oldIsWarningCatchActive = problemsListener.isWarningCatchActive();
+        problemsListener.setWarningCatchActive(true);
         try {
             // Add an invalid mlt path containing a point
             interpreter.addImport("org::eclipse::sirius::test::a3Querries.mtl");
             // Test
             checkServiceInterpreterEvaluationWithSpecificServiceExpression(false);
-            assertFalse("Problem concerning Java extension path: " + getWarningLoggersMessage(), doesAWarningOccurs());
+            assertFalse("Problem concerning Java extension path: " + problemsListener.getWarningLoggersMessage(), problemsListener.doesAWarningOccurs());
         } finally {
-            setWarningCatchActive(oldIsWarningCatchActive);
-            disposeLoggers();
+        	problemsListener.setWarningCatchActive(oldIsWarningCatchActive);
+        	problemsListener.disposeLoggers();
         }
     }
 
@@ -295,18 +295,18 @@ public class ServiceInterpreterTests extends SiriusTestCase {
      */
     public void testAddImportWithPathOfMtlFile() {
         // Initialize error/warning log and uncaught exception handlers
-        initLoggers();
-        boolean oldIsWarningCatchActive = isWarningCatchActive();
-        setWarningCatchActive(true);
+    	problemsListener.initLoggers();
+        boolean oldIsWarningCatchActive = problemsListener.isWarningCatchActive();
+        problemsListener.setWarningCatchActive(true);
         try {
             // Add a path corresponding to an mtl file
             interpreter.addImport("org::eclipse::sirius::test::a3Querries");
             // Test
             checkServiceInterpreterEvaluationWithSpecificServiceExpression(false);
-            assertFalse("Problem concerning Java extension path: " + getWarningLoggersMessage(), doesAWarningOccurs());
+            assertFalse("Problem concerning Java extension path: " + problemsListener.getWarningLoggersMessage(), problemsListener.doesAWarningOccurs());
         } finally {
-            setWarningCatchActive(oldIsWarningCatchActive);
-            disposeLoggers();
+        	problemsListener.setWarningCatchActive(oldIsWarningCatchActive);
+            problemsListener.disposeLoggers();
         }
     }
 

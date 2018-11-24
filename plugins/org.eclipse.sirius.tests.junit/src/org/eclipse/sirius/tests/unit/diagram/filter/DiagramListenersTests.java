@@ -75,8 +75,8 @@ public class DiagramListenersTests extends SiriusDiagramTestCase {
         final DRepresentationDescriptor repDescriptor = (DRepresentationDescriptor) getRepresentationDescriptors("Diagram").toArray()[0];
         IEditorPart editor = DialectUIManager.INSTANCE.openEditor(session, repDescriptor.getRepresentation(), new NullProgressMonitor());
         TestsUtil.synchronizationWithUIThread();
-        errorCatchActiveOldState = isErrorCatchActive();
-        setErrorCatchActive(true);
+        errorCatchActiveOldState = problemsListener.isErrorCatchActive();
+        problemsListener.setErrorCatchActive(true);
         try {
 
             final EObject semanticElement = repDescriptor.getTarget();
@@ -119,14 +119,14 @@ public class DiagramListenersTests extends SiriusDiagramTestCase {
 
             // Check if there is problem about "not found interpreter" in error
             // log
-            if (doesAnErrorOccurs()) {
-                String errors = getErrorLoggersMessage();
+            if (problemsListener.doesAnErrorOccurs()) {
+                String errors = problemsListener.getErrorLoggersMessage();
                 if (errors.contains("Impossible to find an interpreter")) {
                     fail("This test logs error of kind \"Impossible to find an interpreter\": " + errors);
                 }
             }
         } finally {
-            setErrorCatchActive(errorCatchActiveOldState);
+        	problemsListener.setErrorCatchActive(errorCatchActiveOldState);
             DialectUIManager.INSTANCE.closeEditor(editor, false);
             TestsUtil.synchronizationWithUIThread();
         }

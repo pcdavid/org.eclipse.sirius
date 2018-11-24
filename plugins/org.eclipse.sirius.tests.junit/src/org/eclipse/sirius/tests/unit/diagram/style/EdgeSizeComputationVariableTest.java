@@ -79,21 +79,21 @@ public class EdgeSizeComputationVariableTest extends SiriusDiagramTestCase {
         changeSiriusUIPreference(SiriusUIPreferencesKeys.PREF_REFRESH_ON_REPRESENTATION_OPENING.name(), true);
         changeSiriusPreference(SiriusPreferencesKeys.PREF_AUTO_REFRESH.name(), true);
 
-        boolean errorCatchActive = isErrorCatchActive();
-        Multimap<String, IStatus> prevError = LinkedHashMultimap.create(errors);
-        clearErrors();
-        setErrorCatchActive(true);
+        boolean errorCatchActive = problemsListener.isErrorCatchActive();
+        Multimap<String, IStatus> prevError = LinkedHashMultimap.create(problemsListener.getErrors());
+        problemsListener.clearErrors();
+        problemsListener.setErrorCatchActive(true);
 
         diagram = (DDiagram) createRepresentation(REPRESENTATION_DESC_NAME);
         assertNotNull(diagram);
         editor = (DiagramEditor) DialectUIManager.INSTANCE.openEditor(session, diagram, defaultProgress);
         TestsUtil.synchronizationWithUIThread();
 
-        assertFalse("No error should occurs during refresh: check the variable access.", doesAnErrorOccurs());
+        assertFalse("No error should occurs during refresh: check the variable access.", problemsListener.doesAnErrorOccurs());
 
         // resetErrorCatchActive
-        setErrorCatchActive(errorCatchActive);
-        errors.putAll(prevError);
+        problemsListener.setErrorCatchActive(errorCatchActive);
+        problemsListener.getErrors().putAll(prevError);
 
         // Check the expected size.
         assertEquals("The diagram should contain 2 nodes and 4 edges.", 6, diagram.getRepresentationElements().size());

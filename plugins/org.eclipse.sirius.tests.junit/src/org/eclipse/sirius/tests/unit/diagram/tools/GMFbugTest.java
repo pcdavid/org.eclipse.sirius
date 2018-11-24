@@ -82,10 +82,10 @@ public class GMFbugTest extends SiriusDiagramTestCase {
         AbstractToolDescription tool = getTool(diagram, "Group Classes");
         assertTrue(tool instanceof OperationAction);
         Command cmd = getCommand(diagram, tool, Arrays.asList((EObject) bDiagramElement, (EObject) cDiagramElement));
-        setErrorCatchActive(true);
+        problemsListener.setErrorCatchActive(true);
         session.getTransactionalEditingDomain().getCommandStack().execute(cmd);
         refresh(diagram);
-        assertFalse("The 'Group Classes' action triggered an error.", doesAnErrorOccurs());
+        assertFalse("The 'Group Classes' action triggered an error.", problemsListener.doesAnErrorOccurs());
         assertEquals(1, ((EPackage) semanticModel).getESubpackages().size());
         EPackage newPkg = ((EPackage) semanticModel).getESubpackages().get(0);
         assertNotNull(newPkg);
@@ -107,7 +107,7 @@ public class GMFbugTest extends SiriusDiagramTestCase {
      */
     public void testNotErrorOnUndoRedoOfGroupingClasses() throws Exception {
         testNoErrorWhenGroupingClassesIntoPackage();
-        setErrorCatchActive(true);
+        problemsListener.setErrorCatchActive(true);
         assertTrue(session.getTransactionalEditingDomain().getCommandStack().canUndo());
         session.getTransactionalEditingDomain().getCommandStack().undo();
         assertTrue(undo());
@@ -115,14 +115,14 @@ public class GMFbugTest extends SiriusDiagramTestCase {
         assertNotNull(((EPackage) semanticModel).getEClassifier("B"));
         assertNotNull(((EPackage) semanticModel).getEClassifier("C"));
         assertEquals(0, ((EPackage) semanticModel).getESubpackages().size());
-        assertFalse(doesAnErrorOccurs());
+        assertFalse(problemsListener.doesAnErrorOccurs());
         assertTrue(session.getTransactionalEditingDomain().getCommandStack().canRedo());
         session.getTransactionalEditingDomain().getCommandStack().redo();
         refresh(diagram);
         assertNull(((EPackage) semanticModel).getEClassifier("B"));
         assertNull(((EPackage) semanticModel).getEClassifier("C"));
         assertEquals(1, ((EPackage) semanticModel).getESubpackages().size());
-        assertFalse(doesAnErrorOccurs());
+        assertFalse(problemsListener.doesAnErrorOccurs());
     }
 
     /**

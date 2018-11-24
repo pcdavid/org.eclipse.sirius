@@ -155,7 +155,7 @@ public class SelectionInTreeAfterToolExecutionTest extends AbstractToolDescripti
         changeSelectionExpression(tool, "[container->including(element)->including(root)/]", false);
         applyTreeItemCreationTool(tool_Name, dTreeItem, dTreeItem.getTarget());
 
-        assertFalse("An error occurred during runtime execution of ElementsToSelect expression", doesAnErrorOccurs());
+        assertFalse("An error occurred during runtime execution of ElementsToSelect expression", problemsListener.doesAnErrorOccurs());
     }
 
     @Override

@@ -20,7 +20,6 @@ import java.util.List;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IMarker;
 import org.eclipse.core.resources.ResourcesPlugin;
-import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.common.ui.viewer.IViewerProvider;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.Diagnostic;
@@ -450,21 +449,5 @@ public class IInterpreterValidationExpressionTest extends SiriusDiagramTestCase 
         });
         assertTrue(layers.iterator().hasNext());
         return layers.iterator().next();
-    }
-
-    /**
-     * 
-     * {@inheritDoc}
-     * 
-     * @see org.eclipse.sirius.tests.support.api.SiriusTestCase#doesAnErrorOccurs()
-     */
-    @Override
-    protected synchronized boolean doesAnErrorOccurs() {
-        // Only validation errors should have been logged
-        boolean onlyValidationErrors = true;
-        for (IStatus status : errors.values()) {
-            onlyValidationErrors = onlyValidationErrors && status.getMessage().startsWith("Compilation error");
-        }
-        return !onlyValidationErrors;
     }
 }

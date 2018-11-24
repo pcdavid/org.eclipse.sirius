@@ -134,7 +134,7 @@ public class AddRepresentationUidMigrationTest extends SiriusTestCase {
         assertFalse("The version tag should now be set telling that the migration was done.", RepresentationsFileMigrationService.getInstance().isMigrationNeeded(Version.parseVersion(version)));
         checkMigration(analysis);
 
-        assertFalse(getErrorLoggersMessage(), doesAnErrorOccurs());
+        assertFalse(problemsListener.getErrorLoggersMessage(), problemsListener.doesAnErrorOccurs());
     }
 
     private void checkMigration(DAnalysis dAnalysis) {

@@ -213,9 +213,9 @@ public class RunRepairTest extends AbstractRepairMigrateTest {
      *             Test error.
      */
     public void testDiagramElementWithUnexistingTarget() throws Exception {
-        setErrorCatchActive(true);
+    	problemsListener.setErrorCatchActive(true);
         runRepairProcess(TC_2316_AIRD_PB1_MAIN);
-        setErrorCatchActive(false);
+        problemsListener.setErrorCatchActive(false);
         // Nothing to check
         // Just test that migration process can be run without error
     }
@@ -227,9 +227,9 @@ public class RunRepairTest extends AbstractRepairMigrateTest {
      *             Test error.
      */
     public void testAirdWithUnexistingModel() throws Exception {
-        setErrorCatchActive(true);
+    	problemsListener.setErrorCatchActive(true);
         runRepairProcess(TC_2316_AIRD_PB2_MAIN);
-        setErrorCatchActive(false);
+        problemsListener.setErrorCatchActive(false);
         // Nothing to check
         // Just test that migration process can be run without error
     }
@@ -241,15 +241,15 @@ public class RunRepairTest extends AbstractRepairMigrateTest {
      *             Test error.
      */
     public void testBlankAird() throws Exception {
-        setErrorCatchActive(true);
+    	problemsListener.setErrorCatchActive(true);
         runRepairProcess(TC_2316_AIRD_PB4);
-        setErrorCatchActive(false);
+        problemsListener.setErrorCatchActive(false);
         // Check that one error occurs (because the representation files
         // contains no DAnalysis).
-        assertEquals("One error should occur (because the representation files contains no DAnalysis)", 1, errors.values().size());
-        assertEquals("The error message is not the expected one.", SiriusRepairProcess.ERROR_MSG, errors.values().iterator().next().getMessage());
+        assertEquals("One error should occur (because the representation files contains no DAnalysis)", 1, problemsListener.getErrors().values().size());
+        assertEquals("The error message is not the expected one.", SiriusRepairProcess.ERROR_MSG, problemsListener.getErrors().values().iterator().next().getMessage());
         // Clear the expected error
-        clearErrors();
+        problemsListener.clearErrors();
     }
 
     /**
@@ -258,7 +258,7 @@ public class RunRepairTest extends AbstractRepairMigrateTest {
      * @throws Exception
      */
     public void testFragmentedMigration() throws Exception {
-        setErrorCatchActive(true);
+    	problemsListener.setErrorCatchActive(true);
         /* set refresh on representation opening */
         changeSiriusUIPreference(SiriusUIPreferencesKeys.PREF_REFRESH_ON_REPRESENTATION_OPENING.name(), false);
 
@@ -278,7 +278,7 @@ public class RunRepairTest extends AbstractRepairMigrateTest {
         assertLoadOK(TC_VP_2035_P2_AIRD, "after second migration");
         assertLoadOK(TC_VP_2035_P3_AIRD, "after second migration");
 
-        setErrorCatchActive(false);
+        problemsListener.setErrorCatchActive(false);
     }
 
     /**
@@ -317,7 +317,7 @@ public class RunRepairTest extends AbstractRepairMigrateTest {
      * @throws Exception
      */
     public void testFragmentedMigrationKeepModelsReferencesAfterMigration() throws Exception {
-        setErrorCatchActive(true);
+    	problemsListener.setErrorCatchActive(true);
         runRepairProcess(TC_VP_2738_ROOT_AIRD);
         TestsUtil.emptyEventsFromUIThread();
 
@@ -332,7 +332,7 @@ public class RunRepairTest extends AbstractRepairMigrateTest {
         assertEquals("Bad number of DAnalysis in " + TC_VP_2738_P1_AIRD, 1, rootData.size());
         assertEquals("Bad number of Models in " + TC_VP_2738_P1_AIRD, 2, rootData.get(0).getModels().size());
 
-        setErrorCatchActive(false);
+        problemsListener.setErrorCatchActive(false);
     }
 
     private void assertLoadOK(String projectRelativePath, String endMessage) {
@@ -369,9 +369,9 @@ public class RunRepairTest extends AbstractRepairMigrateTest {
      */
     public void testMigrationOfBreakdownDiagram() throws Exception {
         // Launch migration
-        setErrorCatchActive(true);
+    	problemsListener.setErrorCatchActive(true);
         runRepairProcess(TC_2369_AIRD);
-        setErrorCatchActive(false);
+        problemsListener.setErrorCatchActive(false);
 
         // Get the content of the migrated file
         String path = "/" + TEMPORARY_PROJECT_NAME + "/" + TC_2369_AIRD;

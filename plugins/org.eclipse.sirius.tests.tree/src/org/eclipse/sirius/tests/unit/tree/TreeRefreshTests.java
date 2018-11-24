@@ -84,9 +84,8 @@ public class TreeRefreshTests extends TreeCommonTest implements EcoreModeler, Tr
 
         ctx = new GlobalContext(accessor, interpreter, null);
 
-        initLoggers();
-        setWarningCatchActive(true);
-
+        problemsListener.initLoggers();
+        problemsListener.setWarningCatchActive(true);
     }
 
     /**
@@ -103,15 +102,14 @@ public class TreeRefreshTests extends TreeCommonTest implements EcoreModeler, Tr
         newTree.setDescription(odesign.group().design().epackagecontent().object());
         List<TreeItemMapping> mappings = Lists.newArrayList(Iterators.filter(odesign.group().design().epackagecontent().object().eAllContents(), TreeItemMapping.class));
 
-        Assert.assertFalse(doesAWarningOccurs());
+        Assert.assertFalse(problemsListener.doesAWarningOccurs());
         mappings.get(0).setSemanticCandidatesExpression("aql:incorrectExpression");
 
         DTreeRefresh refresher = new DTreeRefresh(newTree, mappings, invalidator, ctx);
         refresher.refresh(true, new NullProgressMonitor());
-        Assert.assertEquals(1, warnings.size());
-        Assert.assertTrue(warnings.get("org.eclipse.core.runtime").iterator().next().getException() instanceof EvaluationException);
-        clearWarnings();
-
+        Assert.assertEquals(1, problemsListener.getWarnings().size());
+        Assert.assertTrue(problemsListener.getWarnings().get("org.eclipse.core.runtime").iterator().next().getException() instanceof EvaluationException);
+        problemsListener.clearWarnings();
     }
 
     public void testOrderMatchesTheModelOrder() throws Exception {

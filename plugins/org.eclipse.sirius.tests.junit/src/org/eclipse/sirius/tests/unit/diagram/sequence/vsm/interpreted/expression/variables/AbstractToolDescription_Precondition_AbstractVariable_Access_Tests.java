@@ -154,7 +154,7 @@ public class AbstractToolDescription_Precondition_AbstractVariable_Access_Tests 
 
         // Disable catching of error log
         // TODO: This test must be fixed to avoid message in error log (VP-2365)
-        setErrorCatchActive(false);
+        problemsListener.setErrorCatchActive(false);
 
         String modelPath = TEMPORARY_PROJECT_NAME + "/" + modelFileName;
         String metaModelPath = TEMPORARY_PROJECT_NAME + "/" + metaModelFileName;

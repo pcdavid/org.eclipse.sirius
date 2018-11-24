@@ -93,16 +93,6 @@ public abstract class TreeTestCase extends SiriusTestCase {
     }
 
     /**
-     * check if an error occurs.
-     * 
-     * @return true if an error occurs.
-     */
-    @Override
-    protected synchronized boolean doesAnErrorOccurs() {
-        return errors.values().size() != 0;
-    }
-
-    /**
      * Apply a deletion tool on a diagram element.
      * 
      * @param element

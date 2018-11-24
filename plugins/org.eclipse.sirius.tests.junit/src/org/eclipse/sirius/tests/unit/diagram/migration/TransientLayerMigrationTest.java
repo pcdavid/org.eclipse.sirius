@@ -145,7 +145,7 @@ public class TransientLayerMigrationTest extends SiriusTestCase {
         version = analysis.getVersion();
         assertFalse("The version tag should now be set telling that the migration was done.", RepresentationsFileMigrationService.getInstance().isMigrationNeeded(Version.parseVersion(version)));
         checkTransientLayerMigration(analysis.eResource().getURI(), 1, 2);
-        assertFalse(getErrorLoggersMessage(), doesAnErrorOccurs());
+        assertFalse(problemsListener.getErrorLoggersMessage(), problemsListener.doesAnErrorOccurs());
     }
 
     @Override

@@ -56,7 +56,7 @@ public class SiriusCrossReferenceAdapterTests extends SiriusTestCase {
     @Override
     protected void setUp() throws Exception {
         super.setUp();
-        setWarningCatchActive(true);
+        problemsListener.setWarningCatchActive(true);
 
         // create session with empty aird
         genericSetUp();
@@ -93,7 +93,7 @@ public class SiriusCrossReferenceAdapterTests extends SiriusTestCase {
 
         // check that no warning "loading resource while unloading it" has been
         // dispatched
-        for (Iterator<IStatus> warning = warnings.values().iterator(); warning.hasNext();) {
+        for (Iterator<IStatus> warning = problemsListener.getWarnings().values().iterator(); warning.hasNext();) {
             IStatus status = warning.next();
             if (status.getCode() == EMFTransactionStatusCodes.RELOAD_DURING_UNLOAD) {
                 fail("Resource is being reloaded during its unload.");
@@ -122,7 +122,7 @@ public class SiriusCrossReferenceAdapterTests extends SiriusTestCase {
 
         // check that no warning "loading resource while unloading it" has been
         // dispatched
-        for (Iterator<IStatus> warning = warnings.values().iterator(); warning.hasNext();) {
+        for (Iterator<IStatus> warning = problemsListener.getWarnings().values().iterator(); warning.hasNext();) {
             IStatus status = warning.next();
             if (status.getCode() == EMFTransactionStatusCodes.RELOAD_DURING_UNLOAD) {
                 fail("Resource is being reloaded during its unload.");

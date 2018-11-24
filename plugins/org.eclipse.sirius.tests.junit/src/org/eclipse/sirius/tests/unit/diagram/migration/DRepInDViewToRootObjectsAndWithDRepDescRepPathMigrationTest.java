@@ -171,7 +171,7 @@ public class DRepInDViewToRootObjectsAndWithDRepDescRepPathMigrationTest extends
         checkDRepresentationDescriptor(analysis);
         assertEquals("Bad DRepresentationDescriptor number", analysis.getOwnedViews().stream().flatMap(view -> view.getOwnedRepresentationDescriptors().stream()).count(), 3);
 
-        assertFalse(getErrorLoggersMessage(), doesAnErrorOccurs());
+        assertFalse(problemsListener.getErrorLoggersMessage(), problemsListener.doesAnErrorOccurs());
     }
 
     private void checkDRepresentationDescriptor(DAnalysis dAnalysis) {

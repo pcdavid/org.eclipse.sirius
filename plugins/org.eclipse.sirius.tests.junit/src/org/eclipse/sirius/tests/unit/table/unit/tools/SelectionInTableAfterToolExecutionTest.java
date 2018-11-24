@@ -139,7 +139,7 @@ public class SelectionInTableAfterToolExecutionTest extends AbstractToolDescript
         changeSelectionExpression(tool, "[container->including(element)->including(root)/]", false);
         applyCreateLineTool(tool_Name, dLine.getContainer(), dLine.getTarget());
 
-        assertFalse("An error occurred during runtime execution of ElementsToSelect expression", doesAnErrorOccurs());
+        assertFalse("An error occurred during runtime execution of ElementsToSelect expression", problemsListener.doesAnErrorOccurs());
     }
 
     @Override

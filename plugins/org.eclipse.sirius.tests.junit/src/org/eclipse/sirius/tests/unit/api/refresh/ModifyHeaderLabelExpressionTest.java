@@ -94,9 +94,9 @@ public class ModifyHeaderLabelExpressionTest extends SiriusTestCase {
         TestsUtil.synchronizationWithUIThread();
 
         // VP-4466: clear the NPE error before the fix of this issue.
-        if (errors.values().size() == 1) {
-            if (errors.values().iterator().next().getException() instanceof NullPointerException) {
-                errors.clear();
+        if (problemsListener.getErrors().values().size() == 1) {
+            if (problemsListener.getErrors().values().iterator().next().getException() instanceof NullPointerException) {
+            	problemsListener.getErrors().clear();
             }
         }
         // Verify that there is one representation corresponding to table
@@ -139,7 +139,7 @@ public class ModifyHeaderLabelExpressionTest extends SiriusTestCase {
             TestsUtil.synchronizationWithUIThread();
             // Verify Header label expression value
             assertEquals("HeaderLableExpression should be equals to 'NameModify'", "NameModify", featureColumnMapping.getHeaderLabelExpression());
-            assertFalse("At least one error occurs before the vsm modification: " + getErrorLoggersMessage(), doesAnErrorOccurs());
+            assertFalse("At least one error occurs before the vsm modification: " + problemsListener.getErrorLoggersMessage(), problemsListener.doesAnErrorOccurs());
             AbstractDTableEditor tableEditor = (AbstractDTableEditor) openedTableEditor;
             Tree tree = tableEditor.getTableViewer().getTreeViewer().getTree();
 

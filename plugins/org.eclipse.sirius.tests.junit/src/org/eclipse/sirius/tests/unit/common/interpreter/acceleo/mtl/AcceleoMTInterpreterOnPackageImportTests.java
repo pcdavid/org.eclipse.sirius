@@ -115,10 +115,10 @@ public class AcceleoMTInterpreterOnPackageImportTests extends SiriusDiagramTestC
      *            representation must be created
      */
     protected void doCreateRepresentationAndCheckThatNoErrorOccur(String representationDescriptionName) {
-        boolean oldIsErrorCatchActive = isErrorCatchActive();
-        setErrorCatchActive(true);
+        boolean oldIsErrorCatchActive = problemsListener.isErrorCatchActive();
+        problemsListener.setErrorCatchActive(true);
         createRepresentation(representationDescriptionName, session.getSemanticResources().iterator().next().getContents().get(0));
-        assertFalse("No compilation error should have been raised by the diagram creation. " + getErrorLoggersMessage(), doesAnErrorOccurs());
-        setErrorCatchActive(oldIsErrorCatchActive);
+        assertFalse("No compilation error should have been raised by the diagram creation. " + problemsListener.getErrorLoggersMessage(), problemsListener.doesAnErrorOccurs());
+        problemsListener.setErrorCatchActive(oldIsErrorCatchActive);
     }
 }

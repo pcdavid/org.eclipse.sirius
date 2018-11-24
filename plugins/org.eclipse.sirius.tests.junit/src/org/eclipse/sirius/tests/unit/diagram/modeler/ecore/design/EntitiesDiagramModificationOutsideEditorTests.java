@@ -223,7 +223,7 @@ public class EntitiesDiagramModificationOutsideEditorTests extends SiriusDiagram
         }
         TestsUtil.synchronizationWithUIThread();
         // Activate the error catching (to detect msg during closing)
-        setErrorCatchActive(true);
+        problemsListener.setErrorCatchActive(true);
 
         try {
             DDiagramHelper.findParentDDiagram(editor.getDiagramEditPart());
@@ -238,7 +238,7 @@ public class EntitiesDiagramModificationOutsideEditorTests extends SiriusDiagram
         TestsUtil.synchronizationWithUIThread();
         // Deactivate the error catching (the error detection is done during the
         // super.tearDown)
-        setErrorCatchActive(false);
+        problemsListener.setErrorCatchActive(false);
     }
 
     /**
@@ -286,7 +286,7 @@ public class EntitiesDiagramModificationOutsideEditorTests extends SiriusDiagram
         TestsUtil.synchronizationWithUIThread();
 
         // Activate the error catching (to detect msg during selection)
-        setErrorCatchActive(true);
+        problemsListener.setErrorCatchActive(true);
         // Select the corresponding element in the diagram
         final DDiagramElement diagramElement = getFirstDiagramElement(diagram, eClass);
         final IGraphicalEditPart editPart = getEditPart(diagramElement, editorPart);
@@ -294,7 +294,7 @@ public class EntitiesDiagramModificationOutsideEditorTests extends SiriusDiagram
 
         // Deactivate the error catching (the error detection is done during the
         // super.tearDown)
-        setErrorCatchActive(false);
+        problemsListener.setErrorCatchActive(false);
 
         DialectUIManager.INSTANCE.closeEditor(editorPart, false);
         TestsUtil.synchronizationWithUIThread();

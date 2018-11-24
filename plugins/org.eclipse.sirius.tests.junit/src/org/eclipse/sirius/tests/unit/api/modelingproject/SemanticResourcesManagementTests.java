@@ -73,7 +73,7 @@ public class SemanticResourcesManagementTests extends SiriusDiagramTestCase impl
         assertEquals(1, session.getSemanticResources().size());
         // We disabled the error catch during this test because it throw an
         // error because this project became invalid.
-        setErrorCatchActive(false);
+        problemsListener.setErrorCatchActive(false);
         TestsUtil.synchronizationWithUIThread();
         try {
             final Resource resource = EclipseTestsSupportHelper.INSTANCE.createResourceInProject(new ResourceSetImpl(), TEMPORARY_PROJECT_NAME, "anotherAird.aird");
@@ -87,7 +87,7 @@ public class SemanticResourcesManagementTests extends SiriusDiagramTestCase impl
             resource.save(new HashMap<Object, Object>());
         } finally {
             TestsUtil.synchronizationWithUIThread();
-            setErrorCatchActive(true);
+            problemsListener.setErrorCatchActive(true);
         }
         TestsUtil.synchronizationWithUIThread();
         assertEquals(1, session.getSemanticResources().size());

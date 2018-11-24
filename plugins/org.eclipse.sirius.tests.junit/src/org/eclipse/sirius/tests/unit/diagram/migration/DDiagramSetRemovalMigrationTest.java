@@ -153,7 +153,7 @@ public class DDiagramSetRemovalMigrationTest extends SiriusTestCase {
         version = analysis.getVersion();
         assertFalse("The version tag should now be set telling that the migration was done.", RepresentationsFileMigrationService.getInstance().isMigrationNeeded(Version.parseVersion(version)));
         checkFileContainDDiagramSet(analysis.eResource().getURI(), false, "After migration, the resource should not contains any DDiagramSet.");
-        assertFalse(getErrorLoggersMessage(), doesAnErrorOccurs());
+        assertFalse(problemsListener.getErrorLoggersMessage(), problemsListener.doesAnErrorOccurs());
     }
 
     @Override

@@ -143,11 +143,11 @@ public class UnsynchronizedMappingAndDeleteFromOutsideEditorTests extends Sirius
         EClass testedClass = (EClass) ePackage.getESubpackages().get(2).getEClassifier("C1InSubRoot");
         EPackage testedPackage = ePackage.getESubpackages().get(2).getESubpackages().get(0);
 
-        assertFalse("At least one error occurs before the semantic modification.", doesAnErrorOccurs());
+        assertFalse("At least one error occurs before the semantic modification.", problemsListener.doesAnErrorOccurs());
         modifySemanticModelOutsideDiagram();
         // Check there is no errorLog message during semantic modification and
         // diagram refresh
-        assertFalse("At least one error occurs during the semantic modification (and so diagram refresh).", doesAnErrorOccurs());
+        assertFalse("At least one error occurs during the semantic modification (and so diagram refresh).", problemsListener.doesAnErrorOccurs());
         // Check the number of diagram elements
         assertEquals("The diagram should not be modify because we are in manual refresh mode.", 5, diagram.getOwnedDiagramElements().size());
         // Check edit part for a DNode
@@ -165,7 +165,7 @@ public class UnsynchronizedMappingAndDeleteFromOutsideEditorTests extends Sirius
             // Launch a manual refresh and check again the number of diagram
             // elements
             refresh(diagram);
-            assertFalse("At least one error occurs during the manual refresh.", doesAnErrorOccurs());
+            assertFalse("At least one error occurs during the manual refresh.", problemsListener.doesAnErrorOccurs());
             assertEquals("The diagram should only contain elements that are not deleted.", 2, diagram.getOwnedDiagramElements().size());            
         }
     }
@@ -204,11 +204,11 @@ public class UnsynchronizedMappingAndDeleteFromOutsideEditorTests extends Sirius
         EClass testedClass = (EClass) ePackage.getESubpackages().get(2).getEClassifier("C1InSubRoot");
         EPackage testedPackage = ePackage.getESubpackages().get(2).getESubpackages().get(0);
 
-        assertFalse("At least one error occurs before the semantic modification.", doesAnErrorOccurs());
+        assertFalse("At least one error occurs before the semantic modification.", problemsListener.doesAnErrorOccurs());
         modifySemanticModelOutsideDiagram();
         // Check there is no errorLog message during semantic modification and
         // diagram refresh
-        assertFalse("At least one error occurs during the semantic modification (and so diagram refresh).", doesAnErrorOccurs());
+        assertFalse("At least one error occurs during the semantic modification (and so diagram refresh).", problemsListener.doesAnErrorOccurs());
 
         // Check the number of diagram elements
         assertEquals("The diagram should not be modify because we are in manual refresh mode.", 5, diagram.getOwnedDiagramElements().size());
@@ -243,11 +243,11 @@ public class UnsynchronizedMappingAndDeleteFromOutsideEditorTests extends Sirius
         EPackage ePackage = (EPackage) semanticModel;
         EPackage dropTargetPackage = ePackage.getESubpackages().get(2);
 
-        assertFalse("At least one error occurs before the semantic modification.", doesAnErrorOccurs());
+        assertFalse("At least one error occurs before the semantic modification.", problemsListener.doesAnErrorOccurs());
         modifySemanticModelOutsideDiagram();
         // Check there is no errorLog message during semantic modification and
         // diagram refresh
-        assertFalse("At least one error occurs during the semantic modification (and so diagram refresh).", doesAnErrorOccurs());
+        assertFalse("At least one error occurs during the semantic modification (and so diagram refresh).", problemsListener.doesAnErrorOccurs());
 
         // Get some semantic elements for future tests
         EPackage rootPackage = (EPackage) ((DSemanticDiagram) diagram).getTarget();
@@ -274,8 +274,8 @@ public class UnsynchronizedMappingAndDeleteFromOutsideEditorTests extends Sirius
                 dragAndDropToolInContainer);
         nbDiagElementsBeforeDnD = diagram.getOwnedDiagramElements().size();
         session.getTransactionalEditingDomain().getCommandStack().execute(command);
-        assertTrue("A message must be logged because during the build of the command the session of the deleted object can not be reached.", doesAnErrorOccurs());
-        clearErrors();
+        assertTrue("A message must be logged because during the build of the command the session of the deleted object can not be reached.", problemsListener.doesAnErrorOccurs());
+        problemsListener.clearErrors();
         // Check the number of diagram elements
         assertEquals("This drag'n'drop is not authorized, so the number of diagram element should be the same.", nbDiagElementsBeforeDnD, diagram.getOwnedDiagramElements().size());
     }

@@ -99,8 +99,8 @@ public class PaletteUpdateWithoutInvalidThreadAccessTest extends AbstractPalette
         } catch (final InterruptedException e) {
             throw new RuntimeException(e);
         }
-        if (doesAnErrorOccurs()) {
-            fail("There is problem after layer deactivation:" + getErrorLoggersMessage());
+        if (problemsListener.doesAnErrorOccurs()) {
+            fail("There is problem after layer deactivation:" + problemsListener.getErrorLoggersMessage());
         }
 
         Set<PaletteEntry> paletteEntriesAfterFilterDisablement = getAllVisiblePaletteEntries(paletteRoot);
