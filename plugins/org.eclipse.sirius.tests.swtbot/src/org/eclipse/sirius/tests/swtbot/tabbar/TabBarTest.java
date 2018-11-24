@@ -295,8 +295,8 @@ public class TabBarTest extends AbstractSiriusSwtBotGefTestCase {
 
     private void checkButtonNotPresent(String tooltip) {
         final long oldTimeout = SWTBotPreferences.TIMEOUT;
-        boolean oldErrorCatchActive = isErrorCatchActive();
-        setErrorCatchActive(false);
+        boolean oldErrorCatchActive = problemsListener.isErrorCatchActive();
+        problemsListener.setErrorCatchActive(false);
         try {
             SWTBotPreferences.TIMEOUT = 1000;
             editor.bot().toolbarButtonWithTooltip(tooltip);
@@ -306,7 +306,7 @@ public class TabBarTest extends AbstractSiriusSwtBotGefTestCase {
         } finally {
             SWTBotPreferences.TIMEOUT = oldTimeout;
         }
-        setErrorCatchActive(oldErrorCatchActive);
+        problemsListener.setErrorCatchActive(oldErrorCatchActive);
     }
 
     private void selectDiagramElement0() {

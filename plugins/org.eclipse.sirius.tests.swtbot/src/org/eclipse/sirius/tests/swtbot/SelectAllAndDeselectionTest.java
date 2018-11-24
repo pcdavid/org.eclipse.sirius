@@ -164,8 +164,8 @@ public class SelectAllAndDeselectionTest extends AbstractSiriusSwtBotGefTestCase
 
         // Check there is no more IllegalArgumentException when the user click
         // on the label of a secondary selected part.
-        if (doesAnErrorOccurs()) {
-            Assert.fail(getErrorLoggersMessage());
+        if (problemsListener.doesAnErrorOccurs()) {
+            Assert.fail(problemsListener.getErrorLoggersMessage());
         }
         checkSelectedEditParts(Lists.newArrayList(getEditPartsFromNames(PACKAGE_1_NAME)));
     }

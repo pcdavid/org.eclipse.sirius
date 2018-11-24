@@ -692,7 +692,7 @@ public class SetStyleToWorkspaceImageTests extends AbstractSiriusSwtBotGefTestCa
             wkpImageButton = getSetStyleToWorkspaceImageButton(tabbar, true);
         }
 
-        assertFalse("No message should be log in error log after a change of image:" + getErrorLoggersMessage(), doesAnErrorOccurs());
+        assertFalse("No message should be log in error log after a change of image:" + problemsListener.getErrorLoggersMessage(), problemsListener.doesAnErrorOccurs());
         checkCustom(part, true);
     }
 

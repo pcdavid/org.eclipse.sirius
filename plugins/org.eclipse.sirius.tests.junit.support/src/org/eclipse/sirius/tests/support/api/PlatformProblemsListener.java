@@ -17,6 +17,7 @@ import java.io.StringWriter;
 import java.lang.Thread.UncaughtExceptionHandler;
 import java.util.Collection;
 import java.util.Map.Entry;
+import java.util.function.Predicate;
 
 import org.eclipse.core.runtime.ILogListener;
 import org.eclipse.core.runtime.IStatus;
@@ -43,7 +44,7 @@ public class PlatformProblemsListener {
 	/** The reported infos. */
 	protected final Multimap<String, IStatus> infos = LinkedHashMultimap.create();
 
-	/** The unchaught exceptions handler. */
+	/** The uncaught exceptions handler. */
 	private UncaughtExceptionHandler exceptionHandler;
 
 	/** The platform log listener. */
@@ -57,6 +58,24 @@ public class PlatformProblemsListener {
 
 	/** Boolean to activate info catch. */
 	private boolean infoCatchActive;
+
+	private final Predicate<IStatus> ignored;
+
+	/**
+	 * Create a new problems listener with no filtering.
+	 */
+	public PlatformProblemsListener() {
+		this(s -> false);
+	}
+
+	/**
+	 * Create a new problems listener with a filter to ignore some statuses.
+	 * 
+	 * @param ignored a filter to ignore statuses that are expected.
+	 */
+	public PlatformProblemsListener(Predicate<IStatus> ignored) {
+		this.ignored = ignored;
+	}
 
 	/** Initialize the log listener. */
 	public void initLoggers() {
@@ -263,7 +282,7 @@ public class PlatformProblemsListener {
 	/**
 	 * Check that there is no existing error or warning.
 	 */
-	protected void checkLogs() {
+	public void checkLogs() {
 		/* an exception occurs in another thread */
 		/*
 		 * TODO: skip checkLoggers when we are in a shouldSkipUnreliableTests mode. We

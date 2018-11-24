@@ -176,7 +176,7 @@ public class ProjectsConcurrentCloseTest extends AbstractSiriusSwtBotGefTestCase
         SWTBotUtils.waitAllUiEvents();
 
         bot.waitUntil(new OpenedSessionCondition(0));
-        assertFalse(getErrorLoggersMessage(), doesAnErrorOccurs());
+        assertFalse(problemsListener.getErrorLoggersMessage(), problemsListener.doesAnErrorOccurs());
     }
 
     /**

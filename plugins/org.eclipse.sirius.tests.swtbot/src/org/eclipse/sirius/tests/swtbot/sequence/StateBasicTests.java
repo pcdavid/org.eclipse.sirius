@@ -493,9 +493,8 @@ public class StateBasicTests extends AbstractStatesSequenceTests {
         try {
             bot.waitUntil(cR);
         } catch (TimeoutException e) {
-            boolean doesAnErrorOccurs = doesAnErrorOccurs();
-            if (doesAnErrorOccurs) {
-                Throwable exception = errors.values().iterator().next().getException();
+            if (problemsListener.doesAnErrorOccurs()) {
+                Throwable exception = problemsListener.getErrors().values().iterator().next().getException();
                 if (exception instanceof ClassCastException || (exception instanceof SWTException && exception.getCause() instanceof ClassCastException)) {
                     fail("The resize of the state next to the message m1 causes a ClassCastException");
                 }

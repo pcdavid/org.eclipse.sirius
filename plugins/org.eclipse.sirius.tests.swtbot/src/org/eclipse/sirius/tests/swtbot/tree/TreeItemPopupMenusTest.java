@@ -145,14 +145,14 @@ public class TreeItemPopupMenusTest extends AbstractTreeSiriusSWTBotGefTestCase 
         // The test must be passed in the exception, so we deactivated the catch
         // of
         // "error log" view
-        setErrorCatchActive(false);
+        problemsListener.setErrorCatchActive(false);
         try {
             node.contextMenu(OPERATION_ACTION_NAME);
         } catch (WidgetNotFoundException e) {
             foundContextMenu = false;
         }
         assertFalse("Operation Action " + OPERATION_ACTION_NAME + " should not be displayed on TreeITem " + TREE_ITEM_WITH_JAVA_ACTION_CALL_NAME, foundContextMenu);
-        setErrorCatchActive(true);
+        problemsListener.setErrorCatchActive(true);
     }
 
     /**
@@ -169,14 +169,14 @@ public class TreeItemPopupMenusTest extends AbstractTreeSiriusSWTBotGefTestCase 
         // The test must be passed in the exception, so we deactivated the catch
         // of
         // "error log" view
-        setErrorCatchActive(false);
+        problemsListener.setErrorCatchActive(false);
         try {
             node.contextMenu(JAVA_ACTION_NAME);
         } catch (WidgetNotFoundException e) {
             foundContextMenu = false;
         }
         assertFalse("Java Action " + JAVA_ACTION_NAME + " should not be displayed on TreeITem " + TREE_ITEM_WITH_JAVA_ACTION_CALL_NAME, foundContextMenu);
-        setErrorCatchActive(true);
+        problemsListener.setErrorCatchActive(true);
     }
 
     /**
@@ -194,14 +194,14 @@ public class TreeItemPopupMenusTest extends AbstractTreeSiriusSWTBotGefTestCase 
         // The test must be passed in the exception, so we deactivated the catch
         // of
         // "error log" view
-        setErrorCatchActive(false);
+        problemsListener.setErrorCatchActive(false);
         try {
             node.contextMenu(JAVA_ACTION_CALL_NAME);
         } catch (WidgetNotFoundException e) {
             foundContextMenu = false;
         }
         assertFalse("Java Action Call  " + JAVA_ACTION_CALL_NAME + " should not be displayed on TreeITem " + TREE_ITEM_WITH_JAVA_ACTION_NAME, foundContextMenu);
-        setErrorCatchActive(true);
+        problemsListener.setErrorCatchActive(true);
     }
 
 }

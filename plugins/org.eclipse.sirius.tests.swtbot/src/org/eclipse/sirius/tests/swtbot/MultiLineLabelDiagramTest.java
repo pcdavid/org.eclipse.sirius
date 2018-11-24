@@ -566,8 +566,8 @@ public class MultiLineLabelDiagramTest extends AbstractSiriusSwtBotGefTestCase {
         String wrapText = viewpointWrapLabel.getText();
 
         final long oldTimeout = SWTBotPreferences.TIMEOUT;
-        boolean oldErrorCatchActive = isErrorCatchActive();
-        setErrorCatchActive(false);
+        boolean oldErrorCatchActive = problemsListener.isErrorCatchActive();
+        problemsListener.setErrorCatchActive(false);
         SWTBotPreferences.TIMEOUT = 1000;
         try {
             assertLabelMultiLines(nameFigure, 1);
@@ -579,7 +579,7 @@ public class MultiLineLabelDiagramTest extends AbstractSiriusSwtBotGefTestCase {
             assertEquals("DirectEdit should not be enabled on begin and end edge labels.", wrapText, viewpointWrapLabel.getText());
         } finally {
             SWTBotPreferences.TIMEOUT = oldTimeout;
-            setErrorCatchActive(oldErrorCatchActive);
+            problemsListener.setErrorCatchActive(oldErrorCatchActive);
             editor.close();
             SWTBotUtils.waitAllUiEvents();
         }

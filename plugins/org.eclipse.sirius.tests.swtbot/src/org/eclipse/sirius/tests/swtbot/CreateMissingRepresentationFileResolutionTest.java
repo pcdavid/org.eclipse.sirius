@@ -49,18 +49,6 @@ public class CreateMissingRepresentationFileResolutionTest extends AbstractScena
     }
 
     /**
-     * check that expected error related to the marker occurred.
-     *
-     * @return true if one error occurred.
-     */
-    protected synchronized boolean doesAnErrorOccurs() {
-        if (errors != null) {
-            return errors.values().size() != 1;
-        }
-        return false;
-    }
-
-    /**
      * This scenario tests the quick fix concerning the project marker when a modeling project has no representations
      * file.
      */

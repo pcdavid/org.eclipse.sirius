@@ -87,7 +87,7 @@ public class DeleteTableColumnTest extends AbstractTreeSiriusSWTBotGefTestCase {
 
         // Press a key and check that it does not raise an exception
         SWTBotUtils.pressKeyboardKey(tree.widget, SWT.CTRL);
-        Assert.assertFalse("Pressing a key after a column deletion should not raise exceptions", doesAnErrorOccurs());
+        Assert.assertFalse("Pressing a key after a column deletion should not raise exceptions", problemsListener.doesAnErrorOccurs());
     }
 
     @Override

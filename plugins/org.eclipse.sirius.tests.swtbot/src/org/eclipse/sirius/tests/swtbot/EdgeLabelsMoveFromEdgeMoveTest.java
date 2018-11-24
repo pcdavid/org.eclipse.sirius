@@ -112,7 +112,7 @@ public class EdgeLabelsMoveFromEdgeMoveTest extends AbstractSiriusSwtBotGefTestC
         public boolean test() throws Exception {
             boolean result = super.test();
             if (!result) {
-                result = doesAnErrorOccurs();
+                result = problemsListener.doesAnErrorOccurs();
             }
             return result;
         }

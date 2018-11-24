@@ -367,14 +367,14 @@ public class GoToMarkerTraceabilityWithUserInteractionTest extends AbstractScena
         final SWTBotTreeItem node = problemsTree.getTreeItem("Errors (3 items)").getNode("The namespace URI '' is not well formed");
         node.select();
 
-        Assert.assertFalse("An error happened before opening an editor using an error marker: " + getErrorLoggersMessage(), doesAnErrorOccurs());
+        Assert.assertFalse("An error happened before opening an editor using an error marker: " + problemsListener.getErrorLoggersMessage(), problemsListener.doesAnErrorOccurs());
         // Add a listener to detect the dummy editor opened after the goto
         // marker
         EclipseUIUtil.getActivePage().addPartListener(defaultEditorPartListener);
         try {
             // Double click the error marker to reopen the diagram
             node.doubleClick();
-            Assert.assertFalse("An error happened on opening of an editor using an error marker: " + getErrorLoggersMessage(), doesAnErrorOccurs());
+            Assert.assertFalse("An error happened on opening of an editor using an error marker: " + problemsListener.getErrorLoggersMessage(), problemsListener.doesAnErrorOccurs());
             IEditorPart currentEditor = EclipseUIUtil.getActiveEditor();
             assertTrue("The current editor, opened through a GoTo marker must have a SessionEditorInput as editor input", currentEditor.getEditorInput() instanceof SessionEditorInput);
             if (sessionOfDummyEditor != null) {

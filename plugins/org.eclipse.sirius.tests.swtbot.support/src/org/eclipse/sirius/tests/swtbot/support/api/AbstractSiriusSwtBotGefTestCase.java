@@ -14,8 +14,6 @@
 package org.eclipse.sirius.tests.swtbot.support.api;
 
 import java.io.File;
-import java.io.PrintWriter;
-import java.io.StringWriter;
 import java.lang.Thread.UncaughtExceptionHandler;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -69,6 +67,7 @@ import org.eclipse.sirius.diagram.ui.tools.api.preferences.SiriusDiagramUiPrefer
 import org.eclipse.sirius.diagram.ui.tools.internal.actions.style.ResetStylePropertiesToDefaultValuesAction;
 import org.eclipse.sirius.diagram.ui.tools.internal.preferences.SiriusDiagramUiInternalPreferencesKeys;
 import org.eclipse.sirius.tests.support.api.EclipseTestsSupportHelper;
+import org.eclipse.sirius.tests.support.api.PlatformProblemsListener;
 import org.eclipse.sirius.tests.support.api.TestCaseCleaner;
 import org.eclipse.sirius.tests.support.api.TestsUtil;
 import org.eclipse.sirius.tests.support.internal.helper.CrossReferenceAdapterDetector;
@@ -132,9 +131,7 @@ import org.junit.Assert;
 import com.google.common.base.Function;
 import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
-import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Lists;
-import com.google.common.collect.Multimap;
 import com.google.common.collect.Sets;
 
 import junit.framework.TestCase;
@@ -213,16 +210,11 @@ public abstract class AbstractSiriusSwtBotGefTestCase extends SWTBotGefTestCase 
      * The DialectEditor (opened on representation creation) wrapper.
      */
     protected SWTBotSiriusDiagramEditor editor;
-
+    
     /**
-     * The reported errors.
+     * Helper to watch the platform log.
      */
-    protected Multimap<String, IStatus> errors;
-
-    /**
-     * The reported warnings.
-     */
-    protected Multimap<String, IStatus> warnings;
+    protected PlatformProblemsListener problemsListener = new PlatformProblemsListener();
 
     private boolean defaultEnableAnimatedZoom;
 
@@ -253,16 +245,6 @@ public abstract class AbstractSiriusSwtBotGefTestCase extends SWTBotGefTestCase 
      */
     private ILogListener logListener;
 
-    /**
-     * Boolean to activate error catch.
-     */
-    private boolean errorCatchActive;
-
-    /**
-     * Boolean to activate warning catch.
-     */
-    private boolean warningCatchActive;
-
     @Override
     protected void setUp() throws Exception {
         PlatformUI.getWorkbench().getDisplay().syncExec(() -> {
@@ -281,10 +263,7 @@ public abstract class AbstractSiriusSwtBotGefTestCase extends SWTBotGefTestCase 
             }
         });
 
-        // Init logger and uncauht exception handlers
-        errors = LinkedHashMultimap.create();
-        warnings = LinkedHashMultimap.create();
-        initLoggers();
+        problemsListener.initLoggers();
 
         closeAllSessions(true);
 
@@ -1366,17 +1345,23 @@ public abstract class AbstractSiriusSwtBotGefTestCase extends SWTBotGefTestCase 
         logListener = (status, plugin) -> {
             switch (status.getSeverity()) {
             case IStatus.ERROR:
-                if (!"org.eclipse.ui.views.properties.tabbed".equals(status.getPlugin()) && status.getMessage() != null && !status.getMessage().startsWith(
-                        "Contributor org.eclipse.ui.navigator.ProjectExplorer cannot be created., exception: org.eclipse.core.runtime.CoreException: Plug-in \"org.eclipse.ui.navigator.resources\" was unable to instantiate class \"org.eclipse.ui.internal.navigator.resources.workbench.TabbedPropertySheetTitleProvider\".")) {
+                    if (errorFilter(status)) {
                     errorOccurs(status, plugin);
                 }
                 break;
             case IStatus.WARNING:
-                warningOccurs(status, plugin);
+                    problemsListener.warningOccurs(status, plugin);
                 break;
             default:
                 // nothing to do
             }
+
+			private boolean errorFilter(IStatus status) {
+				String sourcePluginId = "org.eclipse.ui.views.properties.tabbed";
+				String errorMessagePrefix = "Contributor org.eclipse.ui.navigator.ProjectExplorer cannot be created., exception: org.eclipse.core.runtime.CoreException: Plug-in \"org.eclipse.ui.navigator.resources\" was unable to instantiate class \"org.eclipse.ui.internal.navigator.resources.workbench.TabbedPropertySheetTitleProvider\".";
+				return !sourcePluginId.equals(status.getPlugin()) && status.getMessage() != null
+						&& !status.getMessage().startsWith(errorMessagePrefix);
+			}
         };
         Platform.addLogListener(logListener);
 
@@ -1393,53 +1378,8 @@ public abstract class AbstractSiriusSwtBotGefTestCase extends SWTBotGefTestCase 
 
         Thread.setDefaultUncaughtExceptionHandler(exceptionHandler);
 
-        setErrorCatchActive(true);
-        setWarningCatchActive(false);
-    }
-
-    /**
-     * Dispose the log listener.
-     */
-    private void disposeLoggers() {
-        if (logListener != null) {
-            Platform.removeLogListener(logListener);
-        }
-    }
-
-    /**
-     * check if an error occurs.
-     *
-     * @return true if an error occurs.
-     */
-    protected synchronized boolean doesAnErrorOccurs() {
-        return errors != null && !errors.isEmpty();
-    }
-
-    /**
-     * check if a warning occurs.
-     *
-     * @return true if a warning occurs.
-     */
-    protected synchronized boolean doesAWarningOccurs() {
-        return warnings != null && !warnings.isEmpty();
-    }
-
-    /**
-     * check if an error catch is active.
-     *
-     * @return true if an error catch is active.
-     */
-    protected synchronized boolean isErrorCatchActive() {
-        return errorCatchActive;
-    }
-
-    /**
-     * check if a warning catch is active.
-     *
-     * @return true if a warning catch is active.
-     */
-    protected synchronized boolean isWarningCatchActive() {
-        return warningCatchActive;
+        problemsListener.setErrorCatchActive(true);
+        problemsListener.setWarningCatchActive(false);
     }
 
     /**
@@ -1469,160 +1409,6 @@ public abstract class AbstractSiriusSwtBotGefTestCase extends SWTBotGefTestCase 
                 errors.put(sourcePlugin, status);
             }
         }
-    }
-
-    /**
-     * Records the warning.
-     *
-     * @param status
-     *            warning status to record
-     * @param sourcePlugin
-     *            source plugin in which the warning occurred
-     */
-    private synchronized void warningOccurs(IStatus status, String sourcePlugin) {
-        if (warningCatchActive) {
-            warnings.put(sourcePlugin, status);
-        }
-    }
-
-    /**
-     * Activate or deactivate the external error detection: the test will fail in an error is logged or uncaught.
-     *
-     * @param errorCatchActive
-     *            boolean to indicate if we activate or deactivate the external error detection
-     */
-    protected synchronized void setErrorCatchActive(boolean errorCatchActive) {
-        this.errorCatchActive = errorCatchActive;
-    }
-
-    /**
-     * Activate or deactivate the external warning detection: the test will fail in a warning is logged or uncaught.
-     *
-     * @param warningCatchActive
-     *            boolean to indicate if we activate or deactivate the external warning detection
-     */
-    protected synchronized void setWarningCatchActive(boolean warningCatchActive) {
-        this.warningCatchActive = warningCatchActive;
-    }
-
-    /**
-     * Check that there is no existing error or warning.
-     */
-    private void checkLogs() {
-        /* an exception occurs in another thread */
-
-        /*
-         * TODO : skip checkErrors when we are in a shouldSkipUnreliableTests mode. We have some unwanted resource
-         * notifications during the teardown on jenkins.
-         */
-        if (!TestsUtil.shouldSkipUnreliableTests()) {
-            if (doesAnErrorOccurs()) {
-                Assert.fail(getErrorLoggersMessage());
-            }
-
-            if (doesAWarningOccurs()) {
-                Assert.fail(getWarningLoggersMessage());
-            }
-        }
-    }
-
-    /**
-     * Compute an error message from the detected errors.
-     *
-     * @return the error message.
-     */
-    protected synchronized String getErrorLoggersMessage() {
-
-        StringBuilder log1 = new StringBuilder();
-        String br = "\n";
-
-        String testName = getClass().getName();
-
-        log1.append("Error(s) raised during test : " + testName).append(br);
-        for (Entry<String, Collection<IStatus>> entry : errors.asMap().entrySet()) {
-            String reporter = entry.getKey();
-            log1.append(". Log Plugin : " + reporter).append(br);
-
-            for (IStatus status : entry.getValue()) {
-                log1.append("  . " + getSeverity(status) + " from plugin:" + status.getPlugin() + ", message: " + status.getMessage() + ", exception: " + status.getException()).append(br);
-                appendStackTrace(log1, br, status);
-            }
-            log1.append(br);
-        }
-        return log1.toString();
-    }
-
-    /**
-     * Compute an error message from the detected warnings.
-     *
-     * @return the error message.
-     */
-    protected synchronized String getWarningLoggersMessage() {
-
-        StringBuilder log1 = new StringBuilder();
-        String br = "\n";
-
-        String testName = getClass().getName();
-
-        log1.append("Warning(s) raised during test : " + testName).append(br);
-        for (Entry<String, Collection<IStatus>> entry : warnings.asMap().entrySet()) {
-            String reporter = entry.getKey();
-            log1.append(". Log Plugin : " + reporter).append(br);
-
-            for (IStatus status : entry.getValue()) {
-                log1.append("  . " + getSeverity(status) + " from plugin:" + status.getPlugin() + ", message: " + status.getMessage() + ", exception: " + status.getException()).append(br);
-                appendStackTrace(log1, br, status);
-            }
-            log1.append(br);
-        }
-        return log1.toString();
-    }
-
-    private void appendStackTrace(StringBuilder log1, String br, IStatus status) {
-        PrintWriter pw = null;
-        String stacktrace = null;
-        if (status.getException() != null) {
-            try {
-                StringWriter sw = new StringWriter();
-                pw = new PrintWriter(sw);
-                // CHECKSTYLE:OFF
-                status.getException().printStackTrace(pw);
-                // CHECKSTYLE:ON
-                stacktrace = sw.toString();
-            } finally {
-                if (pw != null) {
-                    pw.close();
-                }
-                if (stacktrace == null) {
-                    stacktrace = status.getException().toString();
-                }
-                log1.append("   . Stack trace: " + stacktrace).append(br);
-            }
-        }
-    }
-
-    private String getSeverity(IStatus status) {
-        String severity;
-        switch (status.getSeverity()) {
-        case IStatus.OK:
-            severity = "Ok";
-            break;
-        case IStatus.INFO:
-            severity = "Info";
-            break;
-        case IStatus.WARNING:
-            severity = "Warning";
-            break;
-        case IStatus.CANCEL:
-            severity = "Cancel";
-            break;
-        case IStatus.ERROR:
-            severity = "Error";
-            break;
-        default:
-            severity = "Unspecified";
-        }
-        return severity;
     }
 
     // Cannot be overriden, we are trying to preserve and cleanup workspace for
@@ -1691,7 +1477,7 @@ public abstract class AbstractSiriusSwtBotGefTestCase extends SWTBotGefTestCase 
                 EclipseTestsSupportHelper.INSTANCE.deleteProject(project.getName());
             }
 
-            disposeLoggers();
+            problemsListener.disposeLoggers();
         } finally {
             // Reset the preferences changed during the test with the method
             // changePreference. This is done in the finally block in case of
@@ -1714,11 +1500,11 @@ public abstract class AbstractSiriusSwtBotGefTestCase extends SWTBotGefTestCase 
                 }
 
             });
-            setErrorCatchActive(false);
-            setWarningCatchActive(false);
+            problemsListener.setErrorCatchActive(false);
+            problemsListener.setWarningCatchActive(false);
 
             crossRefDetector.assertNoCrossReferenceAdapterFound();
-            checkLogs();
+            problemsListener.checkLogs();
         }
 
     }
@@ -1918,8 +1704,8 @@ public abstract class AbstractSiriusSwtBotGefTestCase extends SWTBotGefTestCase 
         new TestCaseCleaner(this).clearAllFields();
 
         super.tearDown();
-        setErrorCatchActive(false);
-        setWarningCatchActive(false);
+        problemsListener.setErrorCatchActive(false);
+        problemsListener.setWarningCatchActive(false);
         // Avoid NPE in
         // org.eclipse.ui.internal.statushandlers.StatusHandlerRegistry.<init>
         // on close.

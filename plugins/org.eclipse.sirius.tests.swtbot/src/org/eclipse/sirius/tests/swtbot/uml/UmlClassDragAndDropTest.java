@@ -243,7 +243,7 @@ public class UmlClassDragAndDropTest extends AbstractUmlDragAndDropTest {
         editor.drag(PT_IN_AACLASS_TO_DRAG, PT_IN_CANVAS_TO_DROP);
         SWTBotUtils.waitAllUiEvents();
         // Check if there is error in errorLog
-        if (doesAnErrorOccurs()) {
+        if (problemsListener.doesAnErrorOccurs()) {
             fail("This drag'n'drop should be done without error in errorlog.");
         }
     }

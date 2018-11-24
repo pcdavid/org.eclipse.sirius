@@ -109,7 +109,7 @@ public class ServiceNavigationTest extends AbstractContentAssistTest {
 
     @Override
     protected void onSetUpAfterOpeningDesignerPerspective() throws Exception {
-        setErrorCatchActive(false);
+    	problemsListener.setErrorCatchActive(false);
 
         // Load the target platform, if not already done, to allow compilation
         // of the java services

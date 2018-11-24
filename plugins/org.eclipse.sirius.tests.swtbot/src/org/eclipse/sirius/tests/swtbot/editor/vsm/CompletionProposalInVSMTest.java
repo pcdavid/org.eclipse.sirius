@@ -88,12 +88,9 @@ public class CompletionProposalInVSMTest extends AbstractContentAssistTest {
         previousAutoBuildValue = ResourcesPlugin.getWorkspace().getDescription().isAutoBuilding();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     protected void onSetUpAfterOpeningDesignerPerspective() throws Exception {
-        setErrorCatchActive(false);
+    	problemsListener.setErrorCatchActive(false);
 
         // Load the target platform, if not already done, to allow compilation
         // of the java services

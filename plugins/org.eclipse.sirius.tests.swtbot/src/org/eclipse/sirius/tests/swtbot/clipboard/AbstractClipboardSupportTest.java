@@ -236,12 +236,6 @@ public abstract class AbstractClipboardSupportTest extends AbstractSiriusSwtBotG
         this.errorMessage = "";
     }
 
-    private synchronized void errorOccurs(IStatus status, String sourcePlugin) {
-        if (errorCatchActive) {
-            errors.put(sourcePlugin, status);
-        }
-    }
-
     /**
      * check if an error occurs.
      * 

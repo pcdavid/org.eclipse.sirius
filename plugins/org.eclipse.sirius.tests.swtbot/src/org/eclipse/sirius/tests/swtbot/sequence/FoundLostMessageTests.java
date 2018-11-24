@@ -76,7 +76,7 @@ public class FoundLostMessageTests extends AbstractLostFoundModelSequenceTests {
         createMessage(InteractionsConstants.FOUND_READ_TOOL_ID, newPosition, newPosition);
 
         // Check if there is an error in errorLog
-        if (doesAnErrorOccurs()) {
+        if (problemsListener.doesAnErrorOccurs()) {
             fail("This Found read message creation should be done without error in errorlog.");
         }
 

@@ -221,7 +221,7 @@ public class DragNDropTest extends AbstractSiriusSwtBotGefTestCase {
     public void test_DnDNoNPEDuringFeedback_Diagram3() throws Exception {
 
         openRepresentation3();
-        boolean errorCatchPreviouslyEnabled = isErrorCatchActive();
+        boolean errorCatchPreviouslyEnabled = problemsListener.isErrorCatchActive();
         try {
             // In the diagram, DnD C1(EClass) from P1(EPackage) to P2(EPackage)
             SWTBotGefEditPart eClassBorderNodeEditPart = editor.getEditPart(CLASS_TO_DRAG_C1).parent();
@@ -242,14 +242,14 @@ public class DragNDropTest extends AbstractSiriusSwtBotGefTestCase {
             }
             // Activate the error catch to detect the potential NPE fixed by the
             // previous commit
-            setErrorCatchActive(true);
+            problemsListener.setErrorCatchActive(true);
             eClassBorderNodeEditPart.click();
             SWTBotUtils.waitAllUiEvents();
             editor.drag(sourceLocation, endLocation);
             SWTBotUtils.waitAllUiEvents();
 
         } finally {
-            setErrorCatchActive(errorCatchPreviouslyEnabled);
+        	problemsListener.setErrorCatchActive(errorCatchPreviouslyEnabled);
         }
 
     }
