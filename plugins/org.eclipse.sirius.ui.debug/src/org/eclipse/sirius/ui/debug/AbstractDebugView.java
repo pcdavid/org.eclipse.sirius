@@ -51,26 +51,12 @@ import org.eclipse.ui.part.ViewPart;
  */
 public abstract class AbstractDebugView extends ViewPart implements ISelectionListener {
 
-    private static class Action {
-        final String label;
-
-        final String description;
-
-        final Runnable body;
-
-        public Action(String label, String description, Runnable body) {
-            this.label = label;
-            this.description = description;
-            this.body = body;
-        }
-    }
-
     /**
      * The text area in which information is placed.
      */
     private Text info;
 
-    private List<Action> actions = new ArrayList<>();
+    private List<DebugAction> actions = new ArrayList<>();
 
     private Combo actionSelector;
 
@@ -98,7 +84,7 @@ public abstract class AbstractDebugView extends ViewPart implements ISelectionLi
         actionLauncher.setText("Run");
         actionLauncher.addSelectionListener(SelectionListener.widgetSelectedAdapter(evt -> {
             int idx = actionSelector.getSelectionIndex();
-            actions.get(idx).body.run();
+            actions.get(idx).execute(selection);
         }));
         createActionButtons();
     }
@@ -114,9 +100,9 @@ public abstract class AbstractDebugView extends ViewPart implements ISelectionLi
      * Helper method to add an action button to the view.
      */
     protected void addAction(String name, String description, final Runnable body) {
-        Action action = new Action(name, description, body);
+        DebugAction action = new DebugAction(name, description, selection -> body.run());
         actions.add(action);
-        actionSelector.add(action.label);
+        actionSelector.add(action.getLabel());
     }
 
     @Override
