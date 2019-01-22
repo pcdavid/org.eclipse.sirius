@@ -108,9 +108,9 @@ public final class CompoundInterpreter implements IInterpreter, IProposalProvide
      * The default constructor.
      */
     private CompoundInterpreter() {
-        this.providers = new HashMap<IInterpreterProvider, IInterpreter>();
+        this.providers = new HashMap<>();
         this.variableManager = new VariableManager();
-        this.dependencies = new LinkedList<String>();
+        this.dependencies = new LinkedList<>();
         this.interpreterIdentifiers = new HashMap<>();
         this.properties = new HashMap<>();
         this.fallbackInterpreter = new DefaultInterpreterProvider();
@@ -150,12 +150,7 @@ public final class CompoundInterpreter implements IInterpreter, IProposalProvide
      * @return the provider to use for the given expression.
      */
     public IInterpreterProvider getProviderForExpression(final String expression) {
-        for (final IInterpreterProvider provider : getProviders()) {
-            if (provider.provides(expression)) {
-                return provider;
-            }
-        }
-        return fallbackInterpreter;
+        return getProviders().stream().filter(p -> p.provides(expression)).findFirst().orElse(fallbackInterpreter);
     }
 
     /**

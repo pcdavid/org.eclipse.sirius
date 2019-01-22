@@ -52,7 +52,7 @@ import org.eclipse.sirius.tools.api.profiler.SiriusTasksKey;
 public class SessionInterpreter implements IInterpreter, IProposalProvider {
 
     /** Maps provider with interpreters. */
-    private final Map<IInterpreterProvider, IInterpreter> loadedInterpreters = new HashMap<IInterpreterProvider, IInterpreter>();
+    private final Map<IInterpreterProvider, IInterpreter> loadedInterpreters = new HashMap<>();
 
     /** The dependencies. */
     private Collection<String> dependencies = new LinkedHashSet<>();
@@ -67,7 +67,7 @@ public class SessionInterpreter implements IInterpreter, IProposalProvider {
     private final VariableManager variables = new VariableManager();
 
     /** The properties. */
-    private final Map<Object, Object> properties = new HashMap<Object, Object>();
+    private final Map<Object, Object> properties = new HashMap<>();
 
     /** The optional model accessor. */
     private ModelAccessor modelAccessor;
@@ -76,7 +76,7 @@ public class SessionInterpreter implements IInterpreter, IProposalProvider {
     private ECrossReferenceAdapter crossReferencer;
 
     /** The profiler tasks. */
-    private final Map<String, ProfilerTask> profilerTasks = new HashMap<String, ProfilerTask>();
+    private final Map<String, ProfilerTask> profilerTasks = new HashMap<>();
 
     private AtomicReference<EvaluationErrorHandler> evaluationErrorHandler = new AtomicReference<>(EvaluationErrorHandler.IGNORE);
     
@@ -287,7 +287,7 @@ public class SessionInterpreter implements IInterpreter, IProposalProvider {
 
     @Override
     public Map<String, Object> getVariables() {
-        final Map<String, Object> result = new HashMap<String, Object>();
+        final Map<String, Object> result = new HashMap<>();
         for (final IInterpreter interpreter : this.loadedInterpreters.values()) {
             for (final Map.Entry<String, ?> entry : interpreter.getVariables().entrySet()) {
                 result.put(entry.getKey(), entry.getValue());

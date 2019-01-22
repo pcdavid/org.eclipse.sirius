@@ -30,9 +30,8 @@ import org.eclipse.sirius.viewpoint.description.Viewpoint;
 import com.google.common.collect.Iterables;
 
 /**
- * This class registers all {@link AcceleoInterpreter} for each viewpoint
+ * This class registers all {@link IInterpreter} for each viewpoint
  * specification file.
- * 
  * 
  * @author cbrun
  */
