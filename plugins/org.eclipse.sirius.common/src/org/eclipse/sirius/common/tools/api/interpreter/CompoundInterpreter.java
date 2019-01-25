@@ -195,7 +195,7 @@ public final class CompoundInterpreter implements IInterpreter, IProposalProvide
      * @return the interpreter for the given expression.
      */
     public IInterpreter getInterpreterForExpression(final String expression) {
-        IInterpreter result = null;
+        IInterpreter result = fallbackInterpreter;
         final IInterpreterProvider provider = getProviderForExpression(expression);
         if (provider != null) {
             result = this.providers.get(provider);
