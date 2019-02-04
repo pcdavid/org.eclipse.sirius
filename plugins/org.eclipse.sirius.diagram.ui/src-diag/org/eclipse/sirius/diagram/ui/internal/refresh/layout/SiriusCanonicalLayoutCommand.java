@@ -13,6 +13,7 @@
 package org.eclipse.sirius.diagram.ui.internal.refresh.layout;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.common.command.AbstractCommand.NonDirtying;
@@ -86,11 +87,13 @@ public class SiriusCanonicalLayoutCommand extends RecordingCommand implements No
 
             @Override
             public void run() {
+                long start = System.nanoTime();
                 if (childViewsAdapters == null && childViewsAdaptersForCenterLayout == null) {
                     executeLayoutOnDiagramOpening();
                 } else {
                     executeLayoutDueToExternalChanges();
                 }
+                System.err.println("SiriusCanonicalLayoutCommand: " + TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - start) + "ms"); //$NON-NLS-1$ //$NON-NLS-2$
             }
         });
 
