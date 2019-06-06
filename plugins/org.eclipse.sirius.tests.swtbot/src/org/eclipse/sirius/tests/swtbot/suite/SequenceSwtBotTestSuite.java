@@ -157,7 +157,8 @@ public class SequenceSwtBotTestSuite extends TestCase {
     @SuppressWarnings("unchecked")
     public static Test suite() {
         final TestSuite suite = new TestSuite("SwtBot tests on sequence diagram");
-
+        addBrokenTests(suite);
+        /*
         String testClassQualifiedName = System.getenv("TEST_CLASS_NAME"); //$NON-NLS-1$
         if (testClassQualifiedName != null && testClassQualifiedName.length() > 0) {
             try {
@@ -210,10 +211,20 @@ public class SequenceSwtBotTestSuite extends TestCase {
             suite.addTestSuite(SequenceExecutionBasicAndReturnMessageTest.class);
             suite.addTestSuite(ExecutionMoveTests.class);
         }
+        */
         return suite;
     }
 
-    /**
+	private static void addBrokenTests(TestSuite suite) {
+	    suite.addTestSuite(org.eclipse.sirius.tests.swtbot.sequence.ActionDisabledOnExtendedMessagesTest.class);
+	    suite.addTestSuite(org.eclipse.sirius.tests.swtbot.sequence.ActionDisabledOnSequenceDiagramTest.class);
+	    suite.addTestSuite(org.eclipse.sirius.tests.swtbot.sequence.ExecutionMoveTests.class);
+	    suite.addTestSuite(org.eclipse.sirius.tests.swtbot.sequence.MessageExtensionTest.class);
+	    suite.addTestSuite(org.eclipse.sirius.tests.swtbot.sequence.SyncCall2Test.class);
+	    suite.addTestSuite(org.eclipse.sirius.tests.swtbot.sequence.SyncCallTest.class);
+	}
+
+	/**
      * Creates the {@link junit.framework.TestSuite TestSuite} for all the disabled test.
      * 
      * @return The test suite containing all the disabled tests.

@@ -121,22 +121,61 @@ public class AllTestSuite extends TestCase {
     @SuppressWarnings("unchecked")
     public static Test suite() {
         TestSuite suite = new TestSuite("Sirius SwtBot tests");
-
-        String testClassQualifiedName = System.getenv("TEST_CLASS_NAME"); //$NON-NLS-1$
-        if (testClassQualifiedName != null && testClassQualifiedName.length() > 0) {
-            try {
-                Class<?> testToLaunch = Activator.getDefault().getBundle().loadClass(testClassQualifiedName);
-                if (TestCase.class.isAssignableFrom(testToLaunch)) {
-                    suite.addTestSuite((Class<? extends TestCase>) testToLaunch);
-                }
-            } catch (ClassNotFoundException e) {
-                fail("The class " + testClassQualifiedName + ", to launch for test specific case, has not been found.");
-            }
-        } else {
-            addPart1(suite);
-            addPart2(suite);
-        }
+        addBrokenTests(suite);
+//        String testClassQualifiedName = System.getenv("TEST_CLASS_NAME"); //$NON-NLS-1$
+//        if (testClassQualifiedName != null && testClassQualifiedName.length() > 0) {
+//            try {
+//                Class<?> testToLaunch = Activator.getDefault().getBundle().loadClass(testClassQualifiedName);
+//                if (TestCase.class.isAssignableFrom(testToLaunch)) {
+//                    suite.addTestSuite((Class<? extends TestCase>) testToLaunch);
+//                }
+//            } catch (ClassNotFoundException e) {
+//                fail("The class " + testClassQualifiedName + ", to launch for test specific case, has not been found.");
+//            }
+//        } else {
+//            addPart1(suite);
+//            addPart2(suite);
+//        }
         return suite;
+    }
+    
+    public static void addBrokenTests(TestSuite suite) {
+        suite.addTestSuite(org.eclipse.sirius.tests.swtbot.ArrangeAllLinkedBorderedNodesLayoutStabilityTest.class);
+        suite.addTestSuite(org.eclipse.sirius.tests.swtbot.ESEDemoTest.class);
+        suite.addTestSuite(org.eclipse.sirius.tests.swtbot.EdgeLabelStabilityTest.class);
+        suite.addTestSuite(org.eclipse.sirius.tests.swtbot.EdgeOnFigureWithAlphaAnchorTest.class);
+        suite.addTestSuite(org.eclipse.sirius.tests.swtbot.EdgeWithBorderNodeCreationPositionWithSnapToGridTest.class);
+        suite.addTestSuite(org.eclipse.sirius.tests.swtbot.EditModeTest.class);
+        suite.addTestSuite(org.eclipse.sirius.tests.swtbot.EditorSavingTest.class);
+        suite.addTestSuite(org.eclipse.sirius.tests.swtbot.ExtensionActivationOrderTest.class);
+        suite.addTestSuite(org.eclipse.sirius.tests.swtbot.GoToMarkerTraceabilityWithUserInteractionTest.class);
+        suite.addTestSuite(org.eclipse.sirius.tests.swtbot.GroupElementsInOneOtherTests.class);
+        suite.addTestSuite(org.eclipse.sirius.tests.swtbot.GroupElementsInOneOtherTestsWith50PercentOfZoomTests.class);
+        suite.addTestSuite(org.eclipse.sirius.tests.swtbot.InitializeSessionTest.class);
+        suite.addTestSuite(org.eclipse.sirius.tests.swtbot.LineStyleTest.class);
+        suite.addTestSuite(org.eclipse.sirius.tests.swtbot.LinkNoteFragmentModelCreationTest.class);
+        suite.addTestSuite(org.eclipse.sirius.tests.swtbot.NoteCreationTest.class);
+        suite.addTestSuite(org.eclipse.sirius.tests.swtbot.PaletteManagerAfterVSMSelectionChange.class);
+        suite.addTestSuite(org.eclipse.sirius.tests.swtbot.RefreshWithCustomizedStyleFromAppearanceTabTests.class);
+        suite.addTestSuite(org.eclipse.sirius.tests.swtbot.RefreshWithCustomizedStyleFromTabbarTests.class);
+        suite.addTestSuite(org.eclipse.sirius.tests.swtbot.RefreshWithCustomizedStyleTests.class);
+        suite.addTestSuite(org.eclipse.sirius.tests.swtbot.SiriusInternationalizationTest.class);
+        suite.addTestSuite(org.eclipse.sirius.tests.swtbot.SpecificClosedOrNotClosedEditorTest.class);
+        suite.addTestSuite(org.eclipse.sirius.tests.swtbot.VSMAndDiagramEditorSynchronisationTest.class);
+        suite.addTestSuite(org.eclipse.sirius.tests.swtbot.ValidationTest.class);
+        suite.addTestSuite(org.eclipse.sirius.tests.swtbot.ViewpointSelectionDialogTest.class);
+        suite.addTestSuite(org.eclipse.sirius.tests.swtbot.celleditor.CellEditorExtensionTest.class);
+        suite.addTestSuite(org.eclipse.sirius.tests.swtbot.compartment.CompartmentsWithComponentTest.class);
+        suite.addTestSuite(org.eclipse.sirius.tests.swtbot.editor.vsm.CustomizationPropertySectionsTests.class);
+        suite.addTestSuite(org.eclipse.sirius.tests.swtbot.editor.vsm.LayoutOptionsTests.class);
+        suite.addTestSuite(org.eclipse.sirius.tests.swtbot.editor.vsm.ServiceNavigationTest.class);
+        suite.addTestSuite(org.eclipse.sirius.tests.swtbot.std.STD004.class);
+        suite.addTestSuite(org.eclipse.sirius.tests.swtbot.std.STD005.class);
+        suite.addTestSuite(org.eclipse.sirius.tests.swtbot.table.CreatedDLinesSelectionTests.class);
+        suite.addTestSuite(org.eclipse.sirius.tests.swtbot.table.SetPropertyOfTableTreeByPropertiesViewTest.class);
+        suite.addTestSuite(org.eclipse.sirius.tests.swtbot.tree.ConditionalTreeItemStyleDescriptionTest.class);
+        suite.addTestSuite(org.eclipse.sirius.tests.swtbot.tree.RefreshWithPropertiesViewTest.class);
+        suite.addTestSuite(org.eclipse.sirius.tests.swtbot.tree.TreeItemMappingTest.class);
     }
 
     /**
