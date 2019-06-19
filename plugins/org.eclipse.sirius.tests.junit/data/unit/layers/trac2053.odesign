@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" name="2053" version="8.0.0">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="2053" version="12.0.0.2017041100">
   <ownedViewpoints name="tc2053" modelFileExtension="ecore">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" dropDescriptions="//@ownedViewpoints[name='tc2053']/@ownedRepresentations[name='tc2053']/@defaultLayer/@toolSections.0/@ownedTools[name='DnD%20EPackage']" name="tc2053" domainClass="EPackage">
       <defaultLayer name="L">
@@ -11,7 +11,7 @@
           </style>
         </nodeMappings>
         <containerMappings name="EPackage" semanticCandidatesExpression="" createElements="false" domainClass="EPackage" reusedNodeMappings="//@ownedViewpoints[name='tc2053']/@ownedRepresentations[name='tc2053']/@defaultLayer/@nodeMappings[name='EClass']">
-          <style xsi:type="style:FlatContainerStyleDescription">
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -25,17 +25,17 @@
             <element name="element"/>
             <newViewContainer name="newContainerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool:For" expression="$element">
-                <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='tc2053']/@ownedRepresentations[name='tc2053']/@defaultLayer/@containerMappings[name='EPackage']" containerViewExpression="var:newContainerView"/>
+              <firstModelOperations xsi:type="tool_1:For" expression="$element">
+                <subModelOperations xsi:type="tool:CreateView" mapping="//@ownedViewpoints[name='tc2053']/@ownedRepresentations[name='tc2053']/@defaultLayer/@containerMappings[name='EPackage']" containerViewExpression="var:newContainerView"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool_1:NodeCreationDescription" name="EClass" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='tc2053']/@ownedRepresentations[name='tc2053']/@defaultLayer/@nodeMappings[name='EClass']">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="EClass" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='tc2053']/@ownedRepresentations[name='tc2053']/@defaultLayer/@nodeMappings[name='EClass']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool:CreateInstance" typeName="EClass" referenceName="eClassifiers">
-                <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="new EClass"/>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="EClass" referenceName="eClassifiers">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="new EClass"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -50,7 +50,7 @@
           </style>
         </nodeMappings>
         <containerMappings xsi:type="description_1:ContainerMappingImport" name="Extended EPackage" semanticCandidatesExpression="" domainClass="EPackage" importedMapping="//@ownedViewpoints[name='tc2053']/@ownedRepresentations[name='tc2053']/@defaultLayer/@containerMappings[name='EPackage']">
-          <style xsi:type="style:FlatContainerStyleDescription">
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>

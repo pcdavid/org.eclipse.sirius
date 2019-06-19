@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.obeo.fr/dsl/viewpoint/description/1.1.0" xmlns:style="http://www.obeo.fr/dsl/viewpoint/description/style/1.1.0" xmlns:tool="http://www.obeo.fr/dsl/viewpoint/description/tool/1.1.0" name="EdgeLabelRefreshPb">
-  <eAnnotations source="Migration">
-    <details key="SemanticCandidatesExpressionBehaviorChange" value=""/>
-  </eAnnotations>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="EdgeLabelRefreshPb" version="12.0.0.2017041100">
   <ownedViewpoints name="EdgeLabelRefreshPb" modelFileExtension="ecore">
-    <ownedRepresentations xsi:type="description:DiagramDescription" name="EdgeLabelRefreshPb" domainClass="EPackage">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="EdgeLabelRefreshPb" domainClass="EPackage">
       <defaultLayer name="Default">
         <nodeMappings name="Class" semanticCandidatesExpression="&lt;%eContents.filter(&quot;EClass&quot;)%>" domainClass="EClass">
           <style xsi:type="style:SquareDescription">
@@ -14,9 +11,9 @@
           </style>
         </nodeMappings>
         <edgeMappings name="edge" deletionDescription="//@ownedViewpoints[name='EdgeLabelRefreshPb']/@ownedRepresentations[name='EdgeLabelRefreshPb']/@defaultLayer/@toolSections.0/@ownedTools[name='TestDel']" semanticElements="&lt;%self%>" sourceMapping="//@ownedViewpoints[name='EdgeLabelRefreshPb']/@ownedRepresentations[name='EdgeLabelRefreshPb']/@defaultLayer/@nodeMappings[name='Class']" targetMapping="//@ownedViewpoints[name='EdgeLabelRefreshPb']/@ownedRepresentations[name='EdgeLabelRefreshPb']/@defaultLayer/@nodeMappings[name='Class']" targetFinderExpression="&lt;%eType%>" sourceFinderExpression="&lt;%eContainer%>" domainClass="EReference" useDomainElement="true">
-          <style labelExpression="&lt;%name%>" sizeComputationExpression="2">
-            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          <style sizeComputationExpression="2" labelExpression="&lt;%name%>">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <labelColor href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </edgeMappings>
         <toolSections name="Tools">
@@ -25,7 +22,7 @@
             <elementView name="elementView"/>
             <containerView name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool:ExternalJavaAction" name="MyAction" id="my.project.design.javaActions.id"/>
+              <firstModelOperations xsi:type="tool_1:ExternalJavaAction" name="MyAction" id="my.project.design.javaActions.id"/>
             </initialOperation>
           </ownedTools>
         </toolSections>

@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
-  <viewpoint:DAnalysis xmi:id="_BfPQMLr0Eeaxv-iboWdafg" selectedViews="_MQTmELr0Eeaxv-iboWdafg" version="11.1.0.201608251200">
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:UML="http://www.eclipse.org/uml2/5.0.0/UML" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+  <viewpoint:DAnalysis uid="_BfPQMLr0Eeaxv-iboWdafg" selectedViews="_MQTmELr0Eeaxv-iboWdafg" version="14.1.0.201810161215">
     <semanticResources>sprint.uml</semanticResources>
-    <ownedViews xmi:type="viewpoint:DView" xmi:id="_MQTmELr0Eeaxv-iboWdafg">
+    <ownedViews xmi:type="viewpoint:DView" uid="_MQTmELr0Eeaxv-iboWdafg">
       <viewpoint xmi:type="description:Viewpoint" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_-woYELr3Eeaxv-iboWdafg" name="new MappingBasedDecoration" representation="_-woYEbr3Eeaxv-iboWdafg">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_-woYELr3Eeaxv-iboWdafg" name="new MappingBasedDecoration" repPath="#_-woYEbr3Eeaxv-iboWdafg">
         <description xmi:type="description_1:DiagramDescription" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='MappingBasedDecoration']"/>
-        <target xmi:type="uml:Model" href="sprint.uml#_Wh_KkEjgEd2dA-w4B9F6fQ"/>
+        <target xmi:type="UML:Model" href="sprint.uml#_Wh_KkEjgEd2dA-w4B9F6fQ"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_hKQToLr4Eeaxv-iboWdafg" name="new MappingBasedDecorationLayer" representation="_hKQTobr4Eeaxv-iboWdafg">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_hKQToLr4Eeaxv-iboWdafg" name="new MappingBasedDecorationLayer" repPath="#_hKQTobr4Eeaxv-iboWdafg">
         <description xmi:type="description_1:DiagramDescription" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='MappingBasedDecorationLayer']"/>
-        <target xmi:type="uml:Model" href="sprint.uml#_Wh_KkEjgEd2dA-w4B9F6fQ"/>
+        <target xmi:type="UML:Model" href="sprint.uml#_Wh_KkEjgEd2dA-w4B9F6fQ"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_UiYXsLr5Eeaxv-iboWdafg" name="new SemanticBasedDecoration" representation="_UiYXsbr5Eeaxv-iboWdafg">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_UiYXsLr5Eeaxv-iboWdafg" name="new SemanticBasedDecoration" repPath="#_UiYXsbr5Eeaxv-iboWdafg">
         <description xmi:type="description_1:DiagramDescription" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='SemanticBasedDecoration']"/>
-        <target xmi:type="uml:Model" href="sprint.uml#_Wh_KkEjgEd2dA-w4B9F6fQ"/>
+        <target xmi:type="UML:Model" href="sprint.uml#_Wh_KkEjgEd2dA-w4B9F6fQ"/>
       </ownedRepresentationDescriptors>
     </ownedViews>
   </viewpoint:DAnalysis>
-  <diagram:DSemanticDiagram xmi:id="_-woYEbr3Eeaxv-iboWdafg" name="new MappingBasedDecoration">
-    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_-woYErr3Eeaxv-iboWdafg" source="DANNOTATION_CUSTOMIZATION_KEY">
-      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_-woYE7r3Eeaxv-iboWdafg"/>
+  <diagram:DSemanticDiagram uid="_-woYEbr3Eeaxv-iboWdafg" name="new MappingBasedDecoration">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_-woYErr3Eeaxv-iboWdafg" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_-woYE7r3Eeaxv-iboWdafg"/>
     </ownedAnnotationEntries>
-    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_-woYK7r3Eeaxv-iboWdafg" source="GMF_DIAGRAMS">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_-woYK7r3Eeaxv-iboWdafg" source="GMF_DIAGRAMS">
       <data xmi:type="notation:Diagram" xmi:id="_-woYLLr3Eeaxv-iboWdafg" type="Sirius" element="_-woYEbr3Eeaxv-iboWdafg" measurementUnit="Pixel">
         <children xmi:type="notation:Node" xmi:id="_-woYLrr3Eeaxv-iboWdafg" type="2001" element="_-woYFLr3Eeaxv-iboWdafg">
           <children xmi:type="notation:Node" xmi:id="_-woYMbr3Eeaxv-iboWdafg" type="5002">
@@ -99,98 +99,98 @@
         <styles xmi:type="notation:DiagramStyle" xmi:id="_-woYLbr3Eeaxv-iboWdafg"/>
       </data>
     </ownedAnnotationEntries>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_-woYFLr3Eeaxv-iboWdafg" name="100m" width="3" height="3">
-      <target xmi:type="uml:Class" href="sprint.uml#_Zfig0EjgEd2dA-w4B9F6fQ"/>
-      <semanticElements xmi:type="uml:Class" href="sprint.uml#_Zfig0EjgEd2dA-w4B9F6fQ"/>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_SdFfILr5Eeaxv-iboWdafg">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_-woYFLr3Eeaxv-iboWdafg" name="100m" width="3" height="3">
+      <decorations xmi:type="viewpoint:Decoration" uid="_SdFfILr5Eeaxv-iboWdafg">
         <description xmi:type="description_1:MappingBasedDecoration" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='MappingBasedDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='mappingBasedDecoration']"/>
       </decorations>
-      <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_-woYFrr3Eeaxv-iboWdafg" color="114,159,207">
+      <ownedStyle xmi:type="diagram:BundledImage" uid="_-woYFrr3Eeaxv-iboWdafg" color="114,159,207">
         <description xmi:type="style:BundledImageDescription" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='MappingBasedDecoration']/@defaultLayer/@nodeMappings[name='Class%20Diagram%20mbd']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='MappingBasedDecoration']/@defaultLayer/@nodeMappings[name='Class%20Diagram%20mbd']"/>
+      <target xmi:type="UML:Class" href="sprint.uml#_Zfig0EjgEd2dA-w4B9F6fQ"/>
+      <semanticElements xmi:type="UML:Class" href="sprint.uml#_Zfig0EjgEd2dA-w4B9F6fQ"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_-woYF7r3Eeaxv-iboWdafg" name="200m" width="3" height="3">
-      <target xmi:type="uml:Class" href="sprint.uml#_wLR7QHg7Ed2ISLgtvgSAmQ"/>
-      <semanticElements xmi:type="uml:Class" href="sprint.uml#_wLR7QHg7Ed2ISLgtvgSAmQ"/>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_SdFfIbr5Eeaxv-iboWdafg">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_-woYF7r3Eeaxv-iboWdafg" name="200m" width="3" height="3">
+      <decorations xmi:type="viewpoint:Decoration" uid="_SdFfIbr5Eeaxv-iboWdafg">
         <description xmi:type="description_1:MappingBasedDecoration" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='MappingBasedDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='mappingBasedDecoration']"/>
       </decorations>
-      <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_-woYGbr3Eeaxv-iboWdafg" color="114,159,207">
+      <ownedStyle xmi:type="diagram:BundledImage" uid="_-woYGbr3Eeaxv-iboWdafg" color="114,159,207">
         <description xmi:type="style:BundledImageDescription" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='MappingBasedDecoration']/@defaultLayer/@nodeMappings[name='Class%20Diagram%20mbd']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='MappingBasedDecoration']/@defaultLayer/@nodeMappings[name='Class%20Diagram%20mbd']"/>
+      <target xmi:type="UML:Class" href="sprint.uml#_wLR7QHg7Ed2ISLgtvgSAmQ"/>
+      <semanticElements xmi:type="UML:Class" href="sprint.uml#_wLR7QHg7Ed2ISLgtvgSAmQ"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_-woYGrr3Eeaxv-iboWdafg" name="400m" width="3" height="3">
-      <target xmi:type="uml:Class" href="sprint.uml#_XFrIwHg7Ed2ISLgtvgSAmQ"/>
-      <semanticElements xmi:type="uml:Class" href="sprint.uml#_XFrIwHg7Ed2ISLgtvgSAmQ"/>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_bHC-kLr5Eeaxv-iboWdafg">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_-woYGrr3Eeaxv-iboWdafg" name="400m" width="3" height="3">
+      <decorations xmi:type="viewpoint:Decoration" uid="_bHC-kLr5Eeaxv-iboWdafg">
         <description xmi:type="description_1:MappingBasedDecoration" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='MappingBasedDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='mappingBasedDecoration']"/>
       </decorations>
-      <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_-woYHLr3Eeaxv-iboWdafg" color="114,159,207">
+      <ownedStyle xmi:type="diagram:BundledImage" uid="_-woYHLr3Eeaxv-iboWdafg" color="114,159,207">
         <description xmi:type="style:BundledImageDescription" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='MappingBasedDecoration']/@defaultLayer/@nodeMappings[name='Class%20Diagram%20mbd']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='MappingBasedDecoration']/@defaultLayer/@nodeMappings[name='Class%20Diagram%20mbd']"/>
+      <target xmi:type="UML:Class" href="sprint.uml#_XFrIwHg7Ed2ISLgtvgSAmQ"/>
+      <semanticElements xmi:type="UML:Class" href="sprint.uml#_XFrIwHg7Ed2ISLgtvgSAmQ"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_-woYHbr3Eeaxv-iboWdafg" name="110m H" width="3" height="3">
-      <target xmi:type="uml:Class" href="sprint.uml#_vUwcEbGYEd2FK9pHgg2YuA"/>
-      <semanticElements xmi:type="uml:Class" href="sprint.uml#_vUwcEbGYEd2FK9pHgg2YuA"/>
-      <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_-woYHrr3Eeaxv-iboWdafg" color="252,233,79">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_-woYHbr3Eeaxv-iboWdafg" name="110m H" width="3" height="3">
+      <ownedStyle xmi:type="diagram:BundledImage" uid="_-woYHrr3Eeaxv-iboWdafg" color="252,233,79">
         <description xmi:type="style:BundledImageDescription" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='MappingBasedDecoration']/@defaultLayer/@nodeMappings[name='Class%20Diagram%20mbdh']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='MappingBasedDecoration']/@defaultLayer/@nodeMappings[name='Class%20Diagram%20mbdh']"/>
+      <target xmi:type="UML:Class" href="sprint.uml#_vUwcEbGYEd2FK9pHgg2YuA"/>
+      <semanticElements xmi:type="UML:Class" href="sprint.uml#_vUwcEbGYEd2FK9pHgg2YuA"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_-woYH7r3Eeaxv-iboWdafg" name="400m H" width="3" height="3">
-      <target xmi:type="uml:Class" href="sprint.uml#_vZnG4LGYEd2FK9pHgg2YuA"/>
-      <semanticElements xmi:type="uml:Class" href="sprint.uml#_vZnG4LGYEd2FK9pHgg2YuA"/>
-      <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_-woYILr3Eeaxv-iboWdafg" color="252,233,79">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_-woYH7r3Eeaxv-iboWdafg" name="400m H" width="3" height="3">
+      <ownedStyle xmi:type="diagram:BundledImage" uid="_-woYILr3Eeaxv-iboWdafg" color="252,233,79">
         <description xmi:type="style:BundledImageDescription" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='MappingBasedDecoration']/@defaultLayer/@nodeMappings[name='Class%20Diagram%20mbdh']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='MappingBasedDecoration']/@defaultLayer/@nodeMappings[name='Class%20Diagram%20mbdh']"/>
+      <target xmi:type="UML:Class" href="sprint.uml#_vZnG4LGYEd2FK9pHgg2YuA"/>
+      <semanticElements xmi:type="UML:Class" href="sprint.uml#_vZnG4LGYEd2FK9pHgg2YuA"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_-woYIbr3Eeaxv-iboWdafg" name="sprint">
-      <target xmi:type="uml:Model" href="sprint.uml#_Wh_KkEjgEd2dA-w4B9F6fQ"/>
-      <semanticElements xmi:type="uml:Model" href="sprint.uml#_Wh_KkEjgEd2dA-w4B9F6fQ"/>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_-woYIrr3Eeaxv-iboWdafg">
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_-woYIbr3Eeaxv-iboWdafg" name="sprint">
+      <decorations xmi:type="viewpoint:Decoration" uid="_-woYIrr3Eeaxv-iboWdafg">
         <description xmi:type="description_1:MappingBasedDecoration" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='MappingBasedDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='mappingBasedDecorationContainer']"/>
       </decorations>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_-woYI7r3Eeaxv-iboWdafg" borderSize="1" borderSizeComputationExpression="1">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_-woYI7r3Eeaxv-iboWdafg" borderSize="1" borderSizeComputationExpression="1">
         <description xmi:type="style:FlatContainerStyleDescription" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='MappingBasedDecoration']/@defaultLayer/@containerMappings[name='mbdp']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='MappingBasedDecoration']/@defaultLayer/@containerMappings[name='mbdp']"/>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_-woYJLr3Eeaxv-iboWdafg" name="Homme">
-        <target xmi:type="uml:Interface" href="sprint.uml#_CLYKgLGeEd2tQaKZ0qu29w"/>
-        <semanticElements xmi:type="uml:Interface" href="sprint.uml#_CLYKgLGeEd2tQaKZ0qu29w"/>
-        <decorations xmi:type="viewpoint:Decoration" xmi:id="_-woYJbr3Eeaxv-iboWdafg">
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_-woYJLr3Eeaxv-iboWdafg" name="Homme">
+        <decorations xmi:type="viewpoint:Decoration" uid="_-woYJbr3Eeaxv-iboWdafg">
           <description xmi:type="description_1:MappingBasedDecoration" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='MappingBasedDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='mappingBasedDecorationListElement']"/>
         </decorations>
-        <ownedStyle xmi:type="diagram:Square" xmi:id="_-woYJrr3Eeaxv-iboWdafg">
+        <ownedStyle xmi:type="diagram:Square" uid="_-woYJrr3Eeaxv-iboWdafg">
           <description xmi:type="style:SquareDescription" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='MappingBasedDecoration']/@defaultLayer/@containerMappings[name='mbdp']/@subNodeMappings[name='mbdi']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='MappingBasedDecoration']/@defaultLayer/@containerMappings[name='mbdp']/@subNodeMappings[name='mbdi']"/>
+        <target xmi:type="UML:Interface" href="sprint.uml#_CLYKgLGeEd2tQaKZ0qu29w"/>
+        <semanticElements xmi:type="UML:Interface" href="sprint.uml#_CLYKgLGeEd2tQaKZ0qu29w"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_-woYJ7r3Eeaxv-iboWdafg" name="Femme">
-        <target xmi:type="uml:Interface" href="sprint.uml#_I4BosLGeEd2tQaKZ0qu29w"/>
-        <semanticElements xmi:type="uml:Interface" href="sprint.uml#_I4BosLGeEd2tQaKZ0qu29w"/>
-        <decorations xmi:type="viewpoint:Decoration" xmi:id="_-woYKLr3Eeaxv-iboWdafg">
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_-woYJ7r3Eeaxv-iboWdafg" name="Femme">
+        <decorations xmi:type="viewpoint:Decoration" uid="_-woYKLr3Eeaxv-iboWdafg">
           <description xmi:type="description_1:MappingBasedDecoration" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='MappingBasedDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='mappingBasedDecorationListElement']"/>
         </decorations>
-        <ownedStyle xmi:type="diagram:Square" xmi:id="_-woYKbr3Eeaxv-iboWdafg">
+        <ownedStyle xmi:type="diagram:Square" uid="_-woYKbr3Eeaxv-iboWdafg">
           <description xmi:type="style:SquareDescription" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='MappingBasedDecoration']/@defaultLayer/@containerMappings[name='mbdp']/@subNodeMappings[name='mbdi']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='MappingBasedDecoration']/@defaultLayer/@containerMappings[name='mbdp']/@subNodeMappings[name='mbdi']"/>
+        <target xmi:type="UML:Interface" href="sprint.uml#_I4BosLGeEd2tQaKZ0qu29w"/>
+        <semanticElements xmi:type="UML:Interface" href="sprint.uml#_I4BosLGeEd2tQaKZ0qu29w"/>
       </ownedElements>
+      <target xmi:type="UML:Model" href="sprint.uml#_Wh_KkEjgEd2dA-w4B9F6fQ"/>
+      <semanticElements xmi:type="UML:Model" href="sprint.uml#_Wh_KkEjgEd2dA-w4B9F6fQ"/>
     </ownedDiagramElements>
     <description xmi:type="description_1:DiagramDescription" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='MappingBasedDecoration']"/>
-    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_-woYKrr3Eeaxv-iboWdafg"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_-woYKrr3Eeaxv-iboWdafg"/>
     <activatedLayers xmi:type="description_1:Layer" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='MappingBasedDecoration']/@defaultLayer"/>
-    <target xmi:type="uml:Model" href="sprint.uml#_Wh_KkEjgEd2dA-w4B9F6fQ"/>
+    <target xmi:type="UML:Model" href="sprint.uml#_Wh_KkEjgEd2dA-w4B9F6fQ"/>
   </diagram:DSemanticDiagram>
-  <diagram:DSemanticDiagram xmi:id="_hKQTobr4Eeaxv-iboWdafg" name="new MappingBasedDecorationLayer">
-    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_hKQTorr4Eeaxv-iboWdafg" source="DANNOTATION_CUSTOMIZATION_KEY">
-      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_hKQTo7r4Eeaxv-iboWdafg"/>
+  <diagram:DSemanticDiagram uid="_hKQTobr4Eeaxv-iboWdafg" name="new MappingBasedDecorationLayer">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_hKQTorr4Eeaxv-iboWdafg" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_hKQTo7r4Eeaxv-iboWdafg"/>
     </ownedAnnotationEntries>
-    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_hKQTr7r4Eeaxv-iboWdafg" source="GMF_DIAGRAMS">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_hKQTr7r4Eeaxv-iboWdafg" source="GMF_DIAGRAMS">
       <data xmi:type="notation:Diagram" xmi:id="_hKQTsLr4Eeaxv-iboWdafg" type="Sirius" element="_hKQTobr4Eeaxv-iboWdafg" measurementUnit="Pixel">
         <children xmi:type="notation:Node" xmi:id="_hKQTsrr4Eeaxv-iboWdafg" type="2001" element="_hKQTpLr4Eeaxv-iboWdafg">
           <children xmi:type="notation:Node" xmi:id="_hKWaQLr4Eeaxv-iboWdafg" type="5002">
@@ -250,72 +250,56 @@
         <styles xmi:type="notation:DiagramStyle" xmi:id="_hKQTsbr4Eeaxv-iboWdafg"/>
       </data>
     </ownedAnnotationEntries>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_hKQTpLr4Eeaxv-iboWdafg" name="100m" width="3" height="3">
-      <target xmi:type="uml:Class" href="sprint.uml#_Zfig0EjgEd2dA-w4B9F6fQ"/>
-      <semanticElements xmi:type="uml:Class" href="sprint.uml#_Zfig0EjgEd2dA-w4B9F6fQ"/>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_h9tJ0Lr4Eeaxv-iboWdafg">
-        <description xmi:type="description_1:MappingBasedDecoration" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='MappingBasedDecorationLayer']/@additionalLayers[name='Hurdles']/@decorationDescriptionsSet/@decorationDescriptions[name='MappingBasedDecorationLayer']"/>
-      </decorations>
-      <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_hKQTpbr4Eeaxv-iboWdafg" color="114,159,207">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_hKQTpLr4Eeaxv-iboWdafg" name="100m" width="3" height="3">
+      <ownedStyle xmi:type="diagram:BundledImage" uid="_hKQTpbr4Eeaxv-iboWdafg" color="114,159,207">
         <description xmi:type="style:BundledImageDescription" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='MappingBasedDecorationLayer']/@defaultLayer/@nodeMappings[name='Class%20Diagram%20mbdl']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='MappingBasedDecorationLayer']/@defaultLayer/@nodeMappings[name='Class%20Diagram%20mbdl']"/>
+      <target xmi:type="UML:Class" href="sprint.uml#_Zfig0EjgEd2dA-w4B9F6fQ"/>
+      <semanticElements xmi:type="UML:Class" href="sprint.uml#_Zfig0EjgEd2dA-w4B9F6fQ"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_hKQTprr4Eeaxv-iboWdafg" name="200m" width="3" height="3">
-      <target xmi:type="uml:Class" href="sprint.uml#_wLR7QHg7Ed2ISLgtvgSAmQ"/>
-      <semanticElements xmi:type="uml:Class" href="sprint.uml#_wLR7QHg7Ed2ISLgtvgSAmQ"/>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_h9tJ0br4Eeaxv-iboWdafg">
-        <description xmi:type="description_1:MappingBasedDecoration" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='MappingBasedDecorationLayer']/@additionalLayers[name='Hurdles']/@decorationDescriptionsSet/@decorationDescriptions[name='MappingBasedDecorationLayer']"/>
-      </decorations>
-      <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_hKQTp7r4Eeaxv-iboWdafg" color="114,159,207">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_hKQTprr4Eeaxv-iboWdafg" name="200m" width="3" height="3">
+      <ownedStyle xmi:type="diagram:BundledImage" uid="_hKQTp7r4Eeaxv-iboWdafg" color="114,159,207">
         <description xmi:type="style:BundledImageDescription" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='MappingBasedDecorationLayer']/@defaultLayer/@nodeMappings[name='Class%20Diagram%20mbdl']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='MappingBasedDecorationLayer']/@defaultLayer/@nodeMappings[name='Class%20Diagram%20mbdl']"/>
+      <target xmi:type="UML:Class" href="sprint.uml#_wLR7QHg7Ed2ISLgtvgSAmQ"/>
+      <semanticElements xmi:type="UML:Class" href="sprint.uml#_wLR7QHg7Ed2ISLgtvgSAmQ"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_hKQTqLr4Eeaxv-iboWdafg" name="400m" width="3" height="3">
-      <target xmi:type="uml:Class" href="sprint.uml#_XFrIwHg7Ed2ISLgtvgSAmQ"/>
-      <semanticElements xmi:type="uml:Class" href="sprint.uml#_XFrIwHg7Ed2ISLgtvgSAmQ"/>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_h9tJ0rr4Eeaxv-iboWdafg">
-        <description xmi:type="description_1:MappingBasedDecoration" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='MappingBasedDecorationLayer']/@additionalLayers[name='Hurdles']/@decorationDescriptionsSet/@decorationDescriptions[name='MappingBasedDecorationLayer']"/>
-      </decorations>
-      <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_hKQTqbr4Eeaxv-iboWdafg" color="114,159,207">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_hKQTqLr4Eeaxv-iboWdafg" name="400m" width="3" height="3">
+      <ownedStyle xmi:type="diagram:BundledImage" uid="_hKQTqbr4Eeaxv-iboWdafg" color="114,159,207">
         <description xmi:type="style:BundledImageDescription" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='MappingBasedDecorationLayer']/@defaultLayer/@nodeMappings[name='Class%20Diagram%20mbdl']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='MappingBasedDecorationLayer']/@defaultLayer/@nodeMappings[name='Class%20Diagram%20mbdl']"/>
+      <target xmi:type="UML:Class" href="sprint.uml#_XFrIwHg7Ed2ISLgtvgSAmQ"/>
+      <semanticElements xmi:type="UML:Class" href="sprint.uml#_XFrIwHg7Ed2ISLgtvgSAmQ"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_hKQTqrr4Eeaxv-iboWdafg" name="110m H" width="3" height="3">
-      <target xmi:type="uml:Class" href="sprint.uml#_vUwcEbGYEd2FK9pHgg2YuA"/>
-      <semanticElements xmi:type="uml:Class" href="sprint.uml#_vUwcEbGYEd2FK9pHgg2YuA"/>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_h9tJ07r4Eeaxv-iboWdafg">
-        <description xmi:type="description_1:MappingBasedDecoration" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='MappingBasedDecorationLayer']/@additionalLayers[name='Hurdles']/@decorationDescriptionsSet/@decorationDescriptions[name='MappingBasedDecorationLayer']"/>
-      </decorations>
-      <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_hKQTq7r4Eeaxv-iboWdafg" color="114,159,207">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_hKQTqrr4Eeaxv-iboWdafg" name="110m H" width="3" height="3">
+      <ownedStyle xmi:type="diagram:BundledImage" uid="_hKQTq7r4Eeaxv-iboWdafg" color="114,159,207">
         <description xmi:type="style:BundledImageDescription" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='MappingBasedDecorationLayer']/@defaultLayer/@nodeMappings[name='Class%20Diagram%20mbdl']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='MappingBasedDecorationLayer']/@defaultLayer/@nodeMappings[name='Class%20Diagram%20mbdl']"/>
+      <target xmi:type="UML:Class" href="sprint.uml#_vUwcEbGYEd2FK9pHgg2YuA"/>
+      <semanticElements xmi:type="UML:Class" href="sprint.uml#_vUwcEbGYEd2FK9pHgg2YuA"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_hKQTrLr4Eeaxv-iboWdafg" name="400m H" width="3" height="3">
-      <target xmi:type="uml:Class" href="sprint.uml#_vZnG4LGYEd2FK9pHgg2YuA"/>
-      <semanticElements xmi:type="uml:Class" href="sprint.uml#_vZnG4LGYEd2FK9pHgg2YuA"/>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_h9tJ1Lr4Eeaxv-iboWdafg">
-        <description xmi:type="description_1:MappingBasedDecoration" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='MappingBasedDecorationLayer']/@additionalLayers[name='Hurdles']/@decorationDescriptionsSet/@decorationDescriptions[name='MappingBasedDecorationLayer']"/>
-      </decorations>
-      <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_hKQTrbr4Eeaxv-iboWdafg" color="114,159,207">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_hKQTrLr4Eeaxv-iboWdafg" name="400m H" width="3" height="3">
+      <ownedStyle xmi:type="diagram:BundledImage" uid="_hKQTrbr4Eeaxv-iboWdafg" color="114,159,207">
         <description xmi:type="style:BundledImageDescription" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='MappingBasedDecorationLayer']/@defaultLayer/@nodeMappings[name='Class%20Diagram%20mbdl']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='MappingBasedDecorationLayer']/@defaultLayer/@nodeMappings[name='Class%20Diagram%20mbdl']"/>
+      <target xmi:type="UML:Class" href="sprint.uml#_vZnG4LGYEd2FK9pHgg2YuA"/>
+      <semanticElements xmi:type="UML:Class" href="sprint.uml#_vZnG4LGYEd2FK9pHgg2YuA"/>
     </ownedDiagramElements>
     <description xmi:type="description_1:DiagramDescription" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='MappingBasedDecorationLayer']"/>
-    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_hKQTrrr4Eeaxv-iboWdafg"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_hKQTrrr4Eeaxv-iboWdafg"/>
     <activatedLayers xmi:type="description_1:Layer" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='MappingBasedDecorationLayer']/@defaultLayer"/>
-    <activatedLayers xmi:type="description_1:AdditionalLayer" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='MappingBasedDecorationLayer']/@additionalLayers[name='Hurdles']"/>
-    <target xmi:type="uml:Model" href="sprint.uml#_Wh_KkEjgEd2dA-w4B9F6fQ"/>
+    <target xmi:type="UML:Model" href="sprint.uml#_Wh_KkEjgEd2dA-w4B9F6fQ"/>
   </diagram:DSemanticDiagram>
-  <diagram:DSemanticDiagram xmi:id="_UiYXsbr5Eeaxv-iboWdafg" name="new SemanticBasedDecoration">
-    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_UiYXsrr5Eeaxv-iboWdafg" source="DANNOTATION_CUSTOMIZATION_KEY">
-      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_UiYXs7r5Eeaxv-iboWdafg"/>
+  <diagram:DSemanticDiagram uid="_UiYXsbr5Eeaxv-iboWdafg" name="new SemanticBasedDecoration">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_UiYXsrr5Eeaxv-iboWdafg" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_UiYXs7r5Eeaxv-iboWdafg"/>
     </ownedAnnotationEntries>
-    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_UiYX2br5Eeaxv-iboWdafg" source="GMF_DIAGRAMS">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_UiYX2br5Eeaxv-iboWdafg" source="GMF_DIAGRAMS">
       <data xmi:type="notation:Diagram" xmi:id="_UiYX2rr5Eeaxv-iboWdafg" type="Sirius" element="_UiYXsbr5Eeaxv-iboWdafg" measurementUnit="Pixel">
         <children xmi:type="notation:Node" xmi:id="_UiYX3Lr5Eeaxv-iboWdafg" type="2001" element="_UiYXtLr5Eeaxv-iboWdafg">
           <children xmi:type="notation:Node" xmi:id="_UiYX37r5Eeaxv-iboWdafg" type="5002">
@@ -426,143 +410,143 @@
         <styles xmi:type="notation:DiagramStyle" xmi:id="_UiYX27r5Eeaxv-iboWdafg"/>
       </data>
     </ownedAnnotationEntries>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_UiYXtLr5Eeaxv-iboWdafg" name="100m" width="3" height="3">
-      <target xmi:type="uml:Class" href="sprint.uml#_Zfig0EjgEd2dA-w4B9F6fQ"/>
-      <semanticElements xmi:type="uml:Class" href="sprint.uml#_Zfig0EjgEd2dA-w4B9F6fQ"/>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_UiYXtbr5Eeaxv-iboWdafg">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_UiYXtLr5Eeaxv-iboWdafg" name="100m" width="3" height="3">
+      <decorations xmi:type="viewpoint:Decoration" uid="_UiYXtbr5Eeaxv-iboWdafg">
         <description xmi:type="description:SemanticBasedDecoration" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='SemanticBasedDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='SemanticBasedDecoration']"/>
       </decorations>
-      <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_UiYXtrr5Eeaxv-iboWdafg" color="114,159,207">
+      <ownedStyle xmi:type="diagram:BundledImage" uid="_UiYXtrr5Eeaxv-iboWdafg" color="114,159,207">
         <description xmi:type="style:BundledImageDescription" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='SemanticBasedDecoration']/@defaultLayer/@nodeMappings[name='Class%20Diagram%20sbd']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='SemanticBasedDecoration']/@defaultLayer/@nodeMappings[name='Class%20Diagram%20sbd']"/>
+      <target xmi:type="UML:Class" href="sprint.uml#_Zfig0EjgEd2dA-w4B9F6fQ"/>
+      <semanticElements xmi:type="UML:Class" href="sprint.uml#_Zfig0EjgEd2dA-w4B9F6fQ"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_UiYXt7r5Eeaxv-iboWdafg" name="200m" width="3" height="3">
-      <target xmi:type="uml:Class" href="sprint.uml#_wLR7QHg7Ed2ISLgtvgSAmQ"/>
-      <semanticElements xmi:type="uml:Class" href="sprint.uml#_wLR7QHg7Ed2ISLgtvgSAmQ"/>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_UiYXuLr5Eeaxv-iboWdafg">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_UiYXt7r5Eeaxv-iboWdafg" name="200m" width="3" height="3">
+      <decorations xmi:type="viewpoint:Decoration" uid="_UiYXuLr5Eeaxv-iboWdafg">
         <description xmi:type="description:SemanticBasedDecoration" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='SemanticBasedDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='SemanticBasedDecoration']"/>
       </decorations>
-      <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_UiYXubr5Eeaxv-iboWdafg" color="114,159,207">
+      <ownedStyle xmi:type="diagram:BundledImage" uid="_UiYXubr5Eeaxv-iboWdafg" color="114,159,207">
         <description xmi:type="style:BundledImageDescription" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='SemanticBasedDecoration']/@defaultLayer/@nodeMappings[name='Class%20Diagram%20sbd']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='SemanticBasedDecoration']/@defaultLayer/@nodeMappings[name='Class%20Diagram%20sbd']"/>
+      <target xmi:type="UML:Class" href="sprint.uml#_wLR7QHg7Ed2ISLgtvgSAmQ"/>
+      <semanticElements xmi:type="UML:Class" href="sprint.uml#_wLR7QHg7Ed2ISLgtvgSAmQ"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_UiYXurr5Eeaxv-iboWdafg" name="400m" width="3" height="3">
-      <target xmi:type="uml:Class" href="sprint.uml#_XFrIwHg7Ed2ISLgtvgSAmQ"/>
-      <semanticElements xmi:type="uml:Class" href="sprint.uml#_XFrIwHg7Ed2ISLgtvgSAmQ"/>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_bHC-kbr5Eeaxv-iboWdafg">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_UiYXurr5Eeaxv-iboWdafg" name="400m" width="3" height="3">
+      <decorations xmi:type="viewpoint:Decoration" uid="_bHC-kbr5Eeaxv-iboWdafg">
         <description xmi:type="description:SemanticBasedDecoration" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='SemanticBasedDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='SemanticBasedDecoration']"/>
       </decorations>
-      <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_UiYXvLr5Eeaxv-iboWdafg" color="114,159,207">
+      <ownedStyle xmi:type="diagram:BundledImage" uid="_UiYXvLr5Eeaxv-iboWdafg" color="114,159,207">
         <description xmi:type="style:BundledImageDescription" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='SemanticBasedDecoration']/@defaultLayer/@nodeMappings[name='Class%20Diagram%20sbd']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='SemanticBasedDecoration']/@defaultLayer/@nodeMappings[name='Class%20Diagram%20sbd']"/>
+      <target xmi:type="UML:Class" href="sprint.uml#_XFrIwHg7Ed2ISLgtvgSAmQ"/>
+      <semanticElements xmi:type="UML:Class" href="sprint.uml#_XFrIwHg7Ed2ISLgtvgSAmQ"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_UiYXvbr5Eeaxv-iboWdafg" name="110m H" width="3" height="3">
-      <target xmi:type="uml:Class" href="sprint.uml#_vUwcEbGYEd2FK9pHgg2YuA"/>
-      <semanticElements xmi:type="uml:Class" href="sprint.uml#_vUwcEbGYEd2FK9pHgg2YuA"/>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_UiYXvrr5Eeaxv-iboWdafg">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_UiYXvbr5Eeaxv-iboWdafg" name="110m H" width="3" height="3">
+      <decorations xmi:type="viewpoint:Decoration" uid="_UiYXvrr5Eeaxv-iboWdafg">
         <description xmi:type="description:SemanticBasedDecoration" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='SemanticBasedDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='SemanticBasedDecoration']"/>
       </decorations>
-      <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_UiYXv7r5Eeaxv-iboWdafg" color="252,233,79">
+      <ownedStyle xmi:type="diagram:BundledImage" uid="_UiYXv7r5Eeaxv-iboWdafg" color="252,233,79">
         <description xmi:type="style:BundledImageDescription" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='SemanticBasedDecoration']/@defaultLayer/@nodeMappings[name='Class%20Diagram%20sbdh']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='SemanticBasedDecoration']/@defaultLayer/@nodeMappings[name='Class%20Diagram%20sbdh']"/>
+      <target xmi:type="UML:Class" href="sprint.uml#_vUwcEbGYEd2FK9pHgg2YuA"/>
+      <semanticElements xmi:type="UML:Class" href="sprint.uml#_vUwcEbGYEd2FK9pHgg2YuA"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_UiYXwLr5Eeaxv-iboWdafg" name="400m H" width="3" height="3">
-      <target xmi:type="uml:Class" href="sprint.uml#_vZnG4LGYEd2FK9pHgg2YuA"/>
-      <semanticElements xmi:type="uml:Class" href="sprint.uml#_vZnG4LGYEd2FK9pHgg2YuA"/>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_UiYXwbr5Eeaxv-iboWdafg">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_UiYXwLr5Eeaxv-iboWdafg" name="400m H" width="3" height="3">
+      <decorations xmi:type="viewpoint:Decoration" uid="_UiYXwbr5Eeaxv-iboWdafg">
         <description xmi:type="description:SemanticBasedDecoration" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='SemanticBasedDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='SemanticBasedDecoration']"/>
       </decorations>
-      <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_UiYXwrr5Eeaxv-iboWdafg" color="252,233,79">
+      <ownedStyle xmi:type="diagram:BundledImage" uid="_UiYXwrr5Eeaxv-iboWdafg" color="252,233,79">
         <description xmi:type="style:BundledImageDescription" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='SemanticBasedDecoration']/@defaultLayer/@nodeMappings[name='Class%20Diagram%20sbdh']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='SemanticBasedDecoration']/@defaultLayer/@nodeMappings[name='Class%20Diagram%20sbdh']"/>
+      <target xmi:type="UML:Class" href="sprint.uml#_vZnG4LGYEd2FK9pHgg2YuA"/>
+      <semanticElements xmi:type="UML:Class" href="sprint.uml#_vZnG4LGYEd2FK9pHgg2YuA"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_UiYXw7r5Eeaxv-iboWdafg" name="Homme" width="3" height="3">
-      <target xmi:type="uml:Interface" href="sprint.uml#_CLYKgLGeEd2tQaKZ0qu29w"/>
-      <semanticElements xmi:type="uml:Interface" href="sprint.uml#_CLYKgLGeEd2tQaKZ0qu29w"/>
-      <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_UiYXxLr5Eeaxv-iboWdafg" shape="triangle" color="246,139,139">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_UiYXw7r5Eeaxv-iboWdafg" name="Homme" width="3" height="3">
+      <ownedStyle xmi:type="diagram:BundledImage" uid="_UiYXxLr5Eeaxv-iboWdafg" shape="triangle" color="246,139,139">
         <description xmi:type="style:BundledImageDescription" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='SemanticBasedDecoration']/@defaultLayer/@nodeMappings[name='interf']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='SemanticBasedDecoration']/@defaultLayer/@nodeMappings[name='interf']"/>
+      <target xmi:type="UML:Interface" href="sprint.uml#_CLYKgLGeEd2tQaKZ0qu29w"/>
+      <semanticElements xmi:type="UML:Interface" href="sprint.uml#_CLYKgLGeEd2tQaKZ0qu29w"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_UiYXxbr5Eeaxv-iboWdafg" name="Femme" width="3" height="3">
-      <target xmi:type="uml:Interface" href="sprint.uml#_I4BosLGeEd2tQaKZ0qu29w"/>
-      <semanticElements xmi:type="uml:Interface" href="sprint.uml#_I4BosLGeEd2tQaKZ0qu29w"/>
-      <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_UiYXxrr5Eeaxv-iboWdafg" shape="triangle" color="246,139,139">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_UiYXxbr5Eeaxv-iboWdafg" name="Femme" width="3" height="3">
+      <ownedStyle xmi:type="diagram:BundledImage" uid="_UiYXxrr5Eeaxv-iboWdafg" shape="triangle" color="246,139,139">
         <description xmi:type="style:BundledImageDescription" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='SemanticBasedDecoration']/@defaultLayer/@nodeMappings[name='interf']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='SemanticBasedDecoration']/@defaultLayer/@nodeMappings[name='interf']"/>
+      <target xmi:type="UML:Interface" href="sprint.uml#_I4BosLGeEd2tQaKZ0qu29w"/>
+      <semanticElements xmi:type="UML:Interface" href="sprint.uml#_I4BosLGeEd2tQaKZ0qu29w"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_UiYXx7r5Eeaxv-iboWdafg" name="sprint">
-      <target xmi:type="uml:Model" href="sprint.uml#_Wh_KkEjgEd2dA-w4B9F6fQ"/>
-      <semanticElements xmi:type="uml:Model" href="sprint.uml#_Wh_KkEjgEd2dA-w4B9F6fQ"/>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_UiYXyLr5Eeaxv-iboWdafg" borderSize="1" borderSizeComputationExpression="1">
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_UiYXx7r5Eeaxv-iboWdafg" name="sprint">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_UiYXyLr5Eeaxv-iboWdafg" borderSize="1" borderSizeComputationExpression="1">
         <description xmi:type="style:FlatContainerStyleDescription" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='SemanticBasedDecoration']/@defaultLayer/@containerMappings[name='sbdp']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='SemanticBasedDecoration']/@defaultLayer/@containerMappings[name='sbdp']"/>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_UiYXybr5Eeaxv-iboWdafg" name="100m">
-        <target xmi:type="uml:Class" href="sprint.uml#_Zfig0EjgEd2dA-w4B9F6fQ"/>
-        <semanticElements xmi:type="uml:Class" href="sprint.uml#_Zfig0EjgEd2dA-w4B9F6fQ"/>
-        <decorations xmi:type="viewpoint:Decoration" xmi:id="_UiYXyrr5Eeaxv-iboWdafg">
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_UiYXybr5Eeaxv-iboWdafg" name="100m">
+        <decorations xmi:type="viewpoint:Decoration" uid="_UiYXyrr5Eeaxv-iboWdafg">
           <description xmi:type="description:SemanticBasedDecoration" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='SemanticBasedDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='SemanticBasedDecoration']"/>
         </decorations>
-        <ownedStyle xmi:type="diagram:Square" xmi:id="_UiYXy7r5Eeaxv-iboWdafg">
+        <ownedStyle xmi:type="diagram:Square" uid="_UiYXy7r5Eeaxv-iboWdafg">
           <description xmi:type="style:SquareDescription" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='SemanticBasedDecoration']/@defaultLayer/@containerMappings[name='sbdp']/@subNodeMappings[name='sbdc']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='SemanticBasedDecoration']/@defaultLayer/@containerMappings[name='sbdp']/@subNodeMappings[name='sbdc']"/>
+        <target xmi:type="UML:Class" href="sprint.uml#_Zfig0EjgEd2dA-w4B9F6fQ"/>
+        <semanticElements xmi:type="UML:Class" href="sprint.uml#_Zfig0EjgEd2dA-w4B9F6fQ"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_UiYXzLr5Eeaxv-iboWdafg" name="200m">
-        <target xmi:type="uml:Class" href="sprint.uml#_wLR7QHg7Ed2ISLgtvgSAmQ"/>
-        <semanticElements xmi:type="uml:Class" href="sprint.uml#_wLR7QHg7Ed2ISLgtvgSAmQ"/>
-        <decorations xmi:type="viewpoint:Decoration" xmi:id="_UiYXzbr5Eeaxv-iboWdafg">
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_UiYXzLr5Eeaxv-iboWdafg" name="200m">
+        <decorations xmi:type="viewpoint:Decoration" uid="_UiYXzbr5Eeaxv-iboWdafg">
           <description xmi:type="description:SemanticBasedDecoration" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='SemanticBasedDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='SemanticBasedDecoration']"/>
         </decorations>
-        <ownedStyle xmi:type="diagram:Square" xmi:id="_UiYXzrr5Eeaxv-iboWdafg">
+        <ownedStyle xmi:type="diagram:Square" uid="_UiYXzrr5Eeaxv-iboWdafg">
           <description xmi:type="style:SquareDescription" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='SemanticBasedDecoration']/@defaultLayer/@containerMappings[name='sbdp']/@subNodeMappings[name='sbdc']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='SemanticBasedDecoration']/@defaultLayer/@containerMappings[name='sbdp']/@subNodeMappings[name='sbdc']"/>
+        <target xmi:type="UML:Class" href="sprint.uml#_wLR7QHg7Ed2ISLgtvgSAmQ"/>
+        <semanticElements xmi:type="UML:Class" href="sprint.uml#_wLR7QHg7Ed2ISLgtvgSAmQ"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_UiYXz7r5Eeaxv-iboWdafg" name="400m">
-        <target xmi:type="uml:Class" href="sprint.uml#_XFrIwHg7Ed2ISLgtvgSAmQ"/>
-        <semanticElements xmi:type="uml:Class" href="sprint.uml#_XFrIwHg7Ed2ISLgtvgSAmQ"/>
-        <decorations xmi:type="viewpoint:Decoration" xmi:id="_UiYX0Lr5Eeaxv-iboWdafg">
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_UiYXz7r5Eeaxv-iboWdafg" name="400m">
+        <decorations xmi:type="viewpoint:Decoration" uid="_UiYX0Lr5Eeaxv-iboWdafg">
           <description xmi:type="description:SemanticBasedDecoration" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='SemanticBasedDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='SemanticBasedDecoration']"/>
         </decorations>
-        <ownedStyle xmi:type="diagram:Square" xmi:id="_UiYX0br5Eeaxv-iboWdafg">
+        <ownedStyle xmi:type="diagram:Square" uid="_UiYX0br5Eeaxv-iboWdafg">
           <description xmi:type="style:SquareDescription" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='SemanticBasedDecoration']/@defaultLayer/@containerMappings[name='sbdp']/@subNodeMappings[name='sbdc']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='SemanticBasedDecoration']/@defaultLayer/@containerMappings[name='sbdp']/@subNodeMappings[name='sbdc']"/>
+        <target xmi:type="UML:Class" href="sprint.uml#_XFrIwHg7Ed2ISLgtvgSAmQ"/>
+        <semanticElements xmi:type="UML:Class" href="sprint.uml#_XFrIwHg7Ed2ISLgtvgSAmQ"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_UiYX0rr5Eeaxv-iboWdafg" name="110m H">
-        <target xmi:type="uml:Class" href="sprint.uml#_vUwcEbGYEd2FK9pHgg2YuA"/>
-        <semanticElements xmi:type="uml:Class" href="sprint.uml#_vUwcEbGYEd2FK9pHgg2YuA"/>
-        <decorations xmi:type="viewpoint:Decoration" xmi:id="_UiYX07r5Eeaxv-iboWdafg">
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_UiYX0rr5Eeaxv-iboWdafg" name="110m H">
+        <decorations xmi:type="viewpoint:Decoration" uid="_UiYX07r5Eeaxv-iboWdafg">
           <description xmi:type="description:SemanticBasedDecoration" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='SemanticBasedDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='SemanticBasedDecoration']"/>
         </decorations>
-        <ownedStyle xmi:type="diagram:Square" xmi:id="_UiYX1Lr5Eeaxv-iboWdafg">
+        <ownedStyle xmi:type="diagram:Square" uid="_UiYX1Lr5Eeaxv-iboWdafg">
           <description xmi:type="style:SquareDescription" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='SemanticBasedDecoration']/@defaultLayer/@containerMappings[name='sbdp']/@subNodeMappings[name='sbdc']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='SemanticBasedDecoration']/@defaultLayer/@containerMappings[name='sbdp']/@subNodeMappings[name='sbdc']"/>
+        <target xmi:type="UML:Class" href="sprint.uml#_vUwcEbGYEd2FK9pHgg2YuA"/>
+        <semanticElements xmi:type="UML:Class" href="sprint.uml#_vUwcEbGYEd2FK9pHgg2YuA"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_UiYX1br5Eeaxv-iboWdafg" name="400m H">
-        <target xmi:type="uml:Class" href="sprint.uml#_vZnG4LGYEd2FK9pHgg2YuA"/>
-        <semanticElements xmi:type="uml:Class" href="sprint.uml#_vZnG4LGYEd2FK9pHgg2YuA"/>
-        <decorations xmi:type="viewpoint:Decoration" xmi:id="_UiYX1rr5Eeaxv-iboWdafg">
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_UiYX1br5Eeaxv-iboWdafg" name="400m H">
+        <decorations xmi:type="viewpoint:Decoration" uid="_UiYX1rr5Eeaxv-iboWdafg">
           <description xmi:type="description:SemanticBasedDecoration" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='SemanticBasedDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='SemanticBasedDecoration']"/>
         </decorations>
-        <ownedStyle xmi:type="diagram:Square" xmi:id="_UiYX17r5Eeaxv-iboWdafg">
+        <ownedStyle xmi:type="diagram:Square" uid="_UiYX17r5Eeaxv-iboWdafg">
           <description xmi:type="style:SquareDescription" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='SemanticBasedDecoration']/@defaultLayer/@containerMappings[name='sbdp']/@subNodeMappings[name='sbdc']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='SemanticBasedDecoration']/@defaultLayer/@containerMappings[name='sbdp']/@subNodeMappings[name='sbdc']"/>
+        <target xmi:type="UML:Class" href="sprint.uml#_vZnG4LGYEd2FK9pHgg2YuA"/>
+        <semanticElements xmi:type="UML:Class" href="sprint.uml#_vZnG4LGYEd2FK9pHgg2YuA"/>
       </ownedElements>
+      <target xmi:type="UML:Model" href="sprint.uml#_Wh_KkEjgEd2dA-w4B9F6fQ"/>
+      <semanticElements xmi:type="UML:Model" href="sprint.uml#_Wh_KkEjgEd2dA-w4B9F6fQ"/>
     </ownedDiagramElements>
     <description xmi:type="description_1:DiagramDescription" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='SemanticBasedDecoration']"/>
-    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_UiYX2Lr5Eeaxv-iboWdafg"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_UiYX2Lr5Eeaxv-iboWdafg"/>
     <activatedLayers xmi:type="description_1:Layer" href="sprint.odesign#//@ownedViewpoints[name='Sprint%20with%20UML2%20(Modeler%20test%20for%20decorators)']/@ownedRepresentations[name='SemanticBasedDecoration']/@defaultLayer"/>
-    <target xmi:type="uml:Model" href="sprint.uml#_Wh_KkEjgEd2dA-w4B9F6fQ"/>
+    <target xmi:type="UML:Model" href="sprint.uml#_Wh_KkEjgEd2dA-w4B9F6fQ"/>
   </diagram:DSemanticDiagram>
 </xmi:XMI>

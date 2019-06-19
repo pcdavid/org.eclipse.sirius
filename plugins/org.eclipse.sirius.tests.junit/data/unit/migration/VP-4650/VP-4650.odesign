@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.obeo.fr/dsl/viewpoint/description/1.1.0" xmlns:style="http://www.obeo.fr/dsl/viewpoint/description/style/1.1.0" xmlns:tool="http://www.obeo.fr/dsl/viewpoint/description/tool/1.1.0" name="VP-4650" version="6.7.0.201302071200">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="VP-4650" version="12.0.0.2017041100">
   <ownedViewpoints name="VP-4650_Viewpoint" modelFileExtension="ecore">
-    <ownedRepresentations xsi:type="description:DiagramDescription" dropDescriptions="//@ownedViewpoints[name='VP-4650_Viewpoint']/@ownedRepresentations[name='VP-4650_Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='DropClass'] //@ownedViewpoints[name='VP-4650_Viewpoint']/@ownedRepresentations[name='VP-4650_Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Drop%20EPackage%20into%20EPackage']" name="VP-4650_Diagram" domainClass="ecore.EPackage">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" dropDescriptions="//@ownedViewpoints[name='VP-4650_Viewpoint']/@ownedRepresentations[name='VP-4650_Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='DropClass'] //@ownedViewpoints[name='VP-4650_Viewpoint']/@ownedRepresentations[name='VP-4650_Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Drop%20EPackage%20into%20EPackage']" name="VP-4650_Diagram" domainClass="ecore.EPackage">
       <defaultLayer name="Default">
         <nodeMappings name="EClassMapping" semanticCandidatesExpression="[eClassifiers/]" domainClass="ecore.EClass" dropDescriptions="//@ownedViewpoints[name='VP-4650_Viewpoint']/@ownedRepresentations[name='VP-4650_Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='DropAttribute']">
           <borderedNodeMappings name="EAttributeMapping" semanticCandidatesExpression="[eStructuralFeatures/]" domainClass="EAttribute">
-            <style xsi:type="style:SquareDescription" sizeComputationExpression="1" hideLabelByDefault="true">
+            <style xsi:type="style:SquareDescription" hideLabelByDefault="true" sizeComputationExpression="1">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
@@ -53,7 +53,7 @@
           </style>
         </edgeMappings>
         <containerMappings name="EPackageMapping" semanticCandidatesExpression="[eSubpackages/]" domainClass="ecore.EPackage" dropDescriptions="//@ownedViewpoints[name='VP-4650_Viewpoint']/@ownedRepresentations[name='VP-4650_Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='DropClass'] //@ownedViewpoints[name='VP-4650_Viewpoint']/@ownedRepresentations[name='VP-4650_Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Drop%20EPackage%20into%20EPackage']" reusedNodeMappings="//@ownedViewpoints[name='VP-4650_Viewpoint']/@ownedRepresentations[name='VP-4650_Diagram']/@defaultLayer/@nodeMappings[name='EClassMapping']" reusedContainerMappings="//@ownedViewpoints[name='VP-4650_Viewpoint']/@ownedRepresentations[name='VP-4650_Diagram']/@defaultLayer/@containerMappings[name='EPackageMapping']">
-          <style xsi:type="style:FlatContainerStyleDescription">
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -67,8 +67,8 @@
             <element name="element"/>
             <newViewContainer name="newContainerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="[newSemanticContainer/]">
-                <subModelOperations xsi:type="tool:SetValue" featureName="eClassifiers" valueExpression="[element/]"/>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[newSemanticContainer/]">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="eClassifiers" valueExpression="[element/]"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -78,8 +78,8 @@
             <element name="element"/>
             <newViewContainer name="newContainerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="[newSemanticContainer/]">
-                <subModelOperations xsi:type="tool:SetValue" featureName="eStructuralFeatures" valueExpression="[element/]"/>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[newSemanticContainer/]">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="eStructuralFeatures" valueExpression="[element/]"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -90,36 +90,36 @@
             <targetView name="targetView"/>
             <element name="element"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="[source/]">
-                <subModelOperations xsi:type="tool:If" conditionExpression="[source &lt;> element/]">
-                  <subModelOperations xsi:type="tool:ChangeContext" browseExpression="[element/]">
-                    <subModelOperations xsi:type="tool:SetValue" featureName="eSuperTypes" valueExpression="[target/]"/>
-                    <subModelOperations xsi:type="tool:Unset" featureName="eSuperTypes" elementExpression="[source/]"/>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[source/]">
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="[source &lt;> element/]">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[element/]">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="eSuperTypes" valueExpression="[target/]"/>
+                    <subModelOperations xsi:type="tool_1:Unset" featureName="eSuperTypes" elementExpression="[source/]"/>
                   </subModelOperations>
                 </subModelOperations>
-                <subModelOperations xsi:type="tool:If" conditionExpression="[source = element/]">
-                  <subModelOperations xsi:type="tool:If" conditionExpression="[otherEnd = sourceView/]">
-                    <subModelOperations xsi:type="tool:If" conditionExpression="[otherEnd = edgeView.targetNode/]">
-                      <subModelOperations xsi:type="tool:ChangeContext" browseExpression="[target/]">
-                        <subModelOperations xsi:type="tool:SetValue" featureName="eSuperTypes" valueExpression="[edgeView.targetNode.oclAsType(viewpoint::DSemanticDecorator).target/]"/>
-                        <subModelOperations xsi:type="tool:ChangeContext" browseExpression="[element/]">
-                          <subModelOperations xsi:type="tool:Unset" featureName="eSuperTypes" elementExpression="[element/]"/>
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="[source = element/]">
+                  <subModelOperations xsi:type="tool_1:If" conditionExpression="[otherEnd = sourceView/]">
+                    <subModelOperations xsi:type="tool_1:If" conditionExpression="[otherEnd = edgeView.targetNode/]">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[target/]">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="eSuperTypes" valueExpression="[edgeView.targetNode.oclAsType(viewpoint::DSemanticDecorator).target/]"/>
+                        <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[element/]">
+                          <subModelOperations xsi:type="tool_1:Unset" featureName="eSuperTypes" elementExpression="[element/]"/>
                         </subModelOperations>
                       </subModelOperations>
                     </subModelOperations>
-                    <subModelOperations xsi:type="tool:If" conditionExpression="[otherEnd &lt;> edgeView.targetNode/]">
-                      <subModelOperations xsi:type="tool:ChangeContext" browseExpression="[element/]">
-                        <subModelOperations xsi:type="tool:SetValue" featureName="eSuperTypes" valueExpression="[target/]"/>
-                        <subModelOperations xsi:type="tool:Unset" featureName="eSuperTypes" elementExpression="[source/]"/>
+                    <subModelOperations xsi:type="tool_1:If" conditionExpression="[otherEnd &lt;> edgeView.targetNode/]">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[element/]">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="eSuperTypes" valueExpression="[target/]"/>
+                        <subModelOperations xsi:type="tool_1:Unset" featureName="eSuperTypes" elementExpression="[source/]"/>
                       </subModelOperations>
                     </subModelOperations>
                   </subModelOperations>
-                  <subModelOperations xsi:type="tool:If" conditionExpression="[otherEnd &lt;> sourceView/]">
-                    <subModelOperations xsi:type="tool:ChangeContext" browseExpression="[target/]">
-                      <subModelOperations xsi:type="tool:SetValue" featureName="eSuperTypes" valueExpression="[edgeView.targetNode.oclAsType(viewpoint::DSemanticDecorator).target/]"/>
+                  <subModelOperations xsi:type="tool_1:If" conditionExpression="[otherEnd &lt;> sourceView/]">
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[target/]">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="eSuperTypes" valueExpression="[edgeView.targetNode.oclAsType(viewpoint::DSemanticDecorator).target/]"/>
                     </subModelOperations>
-                    <subModelOperations xsi:type="tool:ChangeContext" browseExpression="[source/]">
-                      <subModelOperations xsi:type="tool:Unset" featureName="eSuperTypes" elementExpression="[edgeView.targetNode.oclAsType(viewpoint::DSemanticDecorator).target/]"/>
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[source/]">
+                      <subModelOperations xsi:type="tool_1:Unset" featureName="eSuperTypes" elementExpression="[edgeView.targetNode.oclAsType(viewpoint::DSemanticDecorator).target/]"/>
                     </subModelOperations>
                   </subModelOperations>
                 </subModelOperations>
@@ -133,8 +133,8 @@
             <element name="element"/>
             <newViewContainer name="newContainerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="[newSemanticContainer/]">
-                <subModelOperations xsi:type="tool:SetValue" featureName="eSubpackages" valueExpression="[element/]"/>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[newSemanticContainer/]">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="eSubpackages" valueExpression="[element/]"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>

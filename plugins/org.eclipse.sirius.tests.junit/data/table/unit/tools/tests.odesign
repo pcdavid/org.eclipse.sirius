@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="ASCII"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/table/description/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/description/tool/1.1.0" version="10.0.0.201411061000">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/table/description/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/description/tool/1.1.0" version="12.0.0.2017041100">
   <ownedViewpoints name="TestTableTools" modelFileExtension="ecore">
     <ownedRepresentations xsi:type="description_1:EditionTableDescription" name="TestTableTools_Classes" domainClass="EPackage">
       <ownedLineMappings name="classes" domainClass="EClass" semanticCandidatesExpression="feature:eAllContents">
-        <create forceRefresh="true" mapping="//@ownedViewpoints[name='TestTableTools']/@ownedRepresentations[name='TestTableTools_Classes']/@ownedLineMappings[name='classes']">
+        <create forceRefresh="true" elementsToSelect="service:stdEmptyCollection" mapping="//@ownedViewpoints[name='TestTableTools']/@ownedRepresentations[name='TestTableTools_Classes']/@ownedLineMappings[name='classes']">
           <variables name="root" documentation="The semantic element of the table."/>
           <variables name="element" documentation="The semantic currently edited element."/>
           <variables name="container" documentation="The semantic element corresponding to the view container."/>
@@ -14,7 +14,7 @@
           <variables name="root" documentation="The semantic element corresponding to the current table."/>
         </delete>
       </ownedLineMappings>
-      <ownedCreateLine name="TestTableTools_Classes_CreateLine" precondition="true" forceRefresh="true" mapping="//@ownedViewpoints[name='TestTableTools']/@ownedRepresentations[name='TestTableTools_Classes']/@ownedLineMappings[name='classes']">
+      <ownedCreateLine name="TestTableTools_Classes_CreateLine" precondition="true" forceRefresh="true" elementsToSelect="service:stdEmptyCollection" mapping="//@ownedViewpoints[name='TestTableTools']/@ownedRepresentations[name='TestTableTools_Classes']/@ownedLineMappings[name='classes']">
         <variables name="root" documentation="The semantic element of the table."/>
         <variables name="element" documentation="The semantic currently edited element."/>
         <variables name="container" documentation="The semantic element corresponding to the view container."/>
@@ -24,7 +24,7 @@
     </ownedRepresentations>
     <ownedRepresentations xsi:type="description_1:EditionTableDescription" name="TestTableTools_Attributes" domainClass="EClass">
       <ownedLineMappings name="attributes" domainClass="EAttribute" semanticCandidatesExpression="feature:eStructuralFeatures"/>
-      <ownedCreateLine name="TestTableTools_Attributes_CreateLine" forceRefresh="true" mapping="//@ownedViewpoints[name='TestTableTools']/@ownedRepresentations[name='TestTableTools_Attributes']/@ownedLineMappings[name='attributes']">
+      <ownedCreateLine name="TestTableTools_Attributes_CreateLine" forceRefresh="true" elementsToSelect="service:stdEmptyCollection" mapping="//@ownedViewpoints[name='TestTableTools']/@ownedRepresentations[name='TestTableTools_Attributes']/@ownedLineMappings[name='attributes']">
         <variables name="root" documentation="The semantic element of the table."/>
         <variables name="element" documentation="The semantic currently edited element."/>
         <variables name="container" documentation="The semantic element corresponding to the view container."/>
@@ -37,7 +37,7 @@
     <ownedRepresentations xsi:type="description_1:CrossTableDescription" name="TestTableTools_Columns" domainClass="EPackage">
       <ownedLineMappings domainClass="EPackage"/>
       <ownedColumnMappings domainClass="EClass">
-        <create>
+        <create elementsToSelect="service:stdEmptyCollection">
           <variables name="root" documentation="The semantic element of the table."/>
           <variables name="element" documentation="The semantic currently edited element."/>
           <variables name="container" documentation="The semantic element corresponding to the view container."/>
@@ -55,12 +55,13 @@
           <mask mask="{0}"/>
         </create>
       </intersection>
-      <createColumn precondition="true" mapping="//@ownedViewpoints[name='TestTableTools']/@ownedRepresentations[name='TestTableTools_Columns']/@ownedColumnMappings.0">
+      <createColumn precondition="true" elementsToSelect="service:stdEmptyCollection" mapping="//@ownedViewpoints[name='TestTableTools']/@ownedRepresentations[name='TestTableTools_Columns']/@ownedColumnMappings.0">
         <variables name="root" documentation="The semantic element of the table."/>
         <variables name="element" documentation="The semantic currently edited element."/>
         <variables name="container" documentation="The semantic element corresponding to the view container."/>
         <firstModelOperation xsi:type="tool:ChangeContext" browseExpression="var:self"/>
       </createColumn>
     </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="org.eclipse.sirius.common.tools.api.interpreter.StandardServices"/>
   </ownedViewpoints>
 </description:Group>

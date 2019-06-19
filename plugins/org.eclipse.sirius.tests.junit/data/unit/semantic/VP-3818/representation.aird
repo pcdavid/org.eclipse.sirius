@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xmi:id="_SJKjwLBmEeSdYYtqWL3Ipg" version="10.0.0.201412231738">
-  <models xmi:type="ecore:EPackage" href="r.ecore#/"/>
-  <models xmi:type="ecore:EPackage" href="r2.ecore#/"/>
-  <models xmi:type="ecore:EPackage" href="r3.ecore#/"/>
-  <models xmi:type="ecore:EPackage" href="r4.ecore#/"/>
-  <models xmi:type="ecore:EPackage" href="r5.ecore#/"/>
-  <models xmi:type="ecore:EPackage" href="r6.ecore#/"/>
-  <models xmi:type="ecore:EPackage" href="r7.ecore#/"/>
-  <models xmi:type="ecore:EPackage" href="r8.ecore#/"/>
-  <models xmi:type="ecore:EPackage" href="r9.ecore#/"/>
+<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" uid="_SJKjwLBmEeSdYYtqWL3Ipg" version="14.1.0.201810161215">
+  <semanticResources>r.ecore</semanticResources>
+  <semanticResources>r2.ecore</semanticResources>
+  <semanticResources>r3.ecore</semanticResources>
+  <semanticResources>r4.ecore</semanticResources>
+  <semanticResources>r5.ecore</semanticResources>
+  <semanticResources>r6.ecore</semanticResources>
+  <semanticResources>r7.ecore</semanticResources>
+  <semanticResources>r8.ecore</semanticResources>
+  <semanticResources>r9.ecore</semanticResources>
 </viewpoint:DAnalysis>

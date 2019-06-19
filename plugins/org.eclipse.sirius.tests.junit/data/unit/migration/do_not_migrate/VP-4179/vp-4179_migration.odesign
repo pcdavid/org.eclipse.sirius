@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.obeo.fr/dsl/viewpoint/description/1.1.0" xmlns:style="http://www.obeo.fr/dsl/viewpoint/description/style/1.1.0" xmlns:tool="http://www.obeo.fr/dsl/viewpoint/description/tool/1.1.0" name="vp-4179_migration" version="6.7.0.201302071200">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="vp-4179_migration" version="12.0.0.2017041100">
   <ownedViewpoints name="vp-4179" modelFileExtension="ecore">
-    <ownedRepresentations xsi:type="description:DiagramDescription" name="vp-4179" domainClass="EPackage">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="vp-4179" domainClass="EPackage">
       <defaultLayer name="Default">
         <nodeMappings name="eclass" domainClass="EClass">
           <style xsi:type="style:SquareDescription" resizeKind="NSEW">
@@ -11,8 +11,8 @@
           </style>
         </nodeMappings>
       </defaultLayer>
-      <optionalLayers name="optional1" activeByDefault="true">
-        <nodeMappings xsi:type="description:NodeMappingImport" name="test" importedMapping="//@ownedViewpoints[name='vp-4179']/@ownedRepresentations[name='vp-4179']/@defaultLayer/@nodeMappings[name='eclass']">
+      <additionalLayers name="optional1" activeByDefault="true">
+        <nodeMappings xsi:type="description_1:NodeMappingImport" name="test" importedMapping="//@ownedViewpoints[name='vp-4179']/@ownedRepresentations[name='vp-4179']/@defaultLayer/@nodeMappings[name='eclass']">
           <style xsi:type="style:SquareDescription" resizeKind="NSEW">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -24,18 +24,18 @@
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool:CreateInstance" typeName="EClass" referenceName="eClassifiers"/>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="EClass" referenceName="eClassifiers"/>
             </initialOperation>
           </ownedTools>
         </toolSections>
-      </optionalLayers>
-      <optionalLayers name="optional2">
-        <nodeMappings xsi:type="description:NodeMappingImport" name="test import" importedMapping="//@ownedViewpoints[name='vp-4179']/@ownedRepresentations[name='vp-4179']/@optionalLayers[name='optional1']/@nodeMappings[name='test']"/>
-      </optionalLayers>
+      </additionalLayers>
+      <additionalLayers name="optional2">
+        <nodeMappings xsi:type="description_1:NodeMappingImport" name="test import" importedMapping="//@ownedViewpoints[name='vp-4179']/@ownedRepresentations[name='vp-4179']/@additionalLayers[name='optional1']/@nodeMappings[name='test']"/>
+      </additionalLayers>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description:DiagramDescription" name="vp-4179-2" domainClass="EPackage" reusedTools="//@ownedViewpoints[name='vp-4179']/@ownedRepresentations[name='vp-4179']/@optionalLayers[name='optional1']/@toolSections.0/@ownedTools[name='CreateClass']">
-      <defaultLayer name="Default" reusedTools="//@ownedViewpoints[name='vp-4179']/@ownedRepresentations[name='vp-4179']/@optionalLayers[name='optional1']/@toolSections.0/@ownedTools[name='CreateClass']">
-        <toolSections name="tools" reusedTools="//@ownedViewpoints[name='vp-4179']/@ownedRepresentations[name='vp-4179']/@optionalLayers[name='optional1']/@toolSections.0/@ownedTools[name='CreateClass']"/>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="vp-4179-2" domainClass="EPackage" reusedTools="//@ownedViewpoints[name='vp-4179']/@ownedRepresentations[name='vp-4179']/@additionalLayers[name='optional1']/@toolSections.0/@ownedTools[name='CreateClass']">
+      <defaultLayer name="Default" reusedTools="//@ownedViewpoints[name='vp-4179']/@ownedRepresentations[name='vp-4179']/@additionalLayers[name='optional1']/@toolSections.0/@ownedTools[name='CreateClass']">
+        <toolSections name="tools" reusedTools="//@ownedViewpoints[name='vp-4179']/@ownedRepresentations[name='vp-4179']/@additionalLayers[name='optional1']/@toolSections.0/@ownedTools[name='CreateClass']"/>
       </defaultLayer>
     </ownedRepresentations>
   </ownedViewpoints>

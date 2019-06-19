@@ -94,8 +94,6 @@
       </data>
     </ownedAnnotationEntries>
     <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_EI7zgEv3EemffsfZilNj8Q" name="DC.2">
-      <target xmi:type="component:Component" href="My.component#//@children.0"/>
-      <semanticElements xmi:type="component:Component" href="My.component#//@children.0"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -104,25 +102,25 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='Diagram']/@defaultLayer/@containerMappings[name='Component']"/>
       <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_GCrjYEv3EemffsfZilNj8Q" name="DC.2.1">
-        <target xmi:type="component:Component" href="My.component#//@children.0/@children.0"/>
-        <semanticElements xmi:type="component:Component" href="My.component#//@children.0/@children.0"/>
         <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_GCyREEv3EemffsfZilNj8Q" borderSize="1" borderSizeComputationExpression="1">
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='Diagram']/@defaultLayer/@containerMappings[name='Component']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='Diagram']/@defaultLayer/@containerMappings[name='Component']"/>
         <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_GmCvIEv3EemffsfZilNj8Q" name="DC.2.1.1" incomingEdges="_IWG-kEv3EemffsfZilNj8Q">
-          <target xmi:type="component:Component" href="My.component#//@children.0/@children.0/@children.0"/>
-          <semanticElements xmi:type="component:Component" href="My.component#//@children.0/@children.0/@children.0"/>
           <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_GmDWMEv3EemffsfZilNj8Q" borderSize="1" borderSizeComputationExpression="1">
             <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='Diagram']/@defaultLayer/@containerMappings[name='Component']/@style"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='Diagram']/@defaultLayer/@containerMappings[name='Component']"/>
+          <target xmi:type="component:Component" href="My.component#//@children.0/@children.0/@children.0"/>
+          <semanticElements xmi:type="component:Component" href="My.component#//@children.0/@children.0/@children.0"/>
         </ownedDiagramElements>
+        <target xmi:type="component:Component" href="My.component#//@children.0/@children.0"/>
+        <semanticElements xmi:type="component:Component" href="My.component#//@children.0/@children.0"/>
       </ownedDiagramElements>
+      <target xmi:type="component:Component" href="My.component#//@children.0"/>
+      <semanticElements xmi:type="component:Component" href="My.component#//@children.0"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_EpcfkEv3EemffsfZilNj8Q" name="DC.3">
-      <target xmi:type="component:Component" href="My.component#//@children.1"/>
-      <semanticElements xmi:type="component:Component" href="My.component#//@children.1"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -131,29 +129,31 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='Diagram']/@defaultLayer/@containerMappings[name='Component']"/>
       <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_HHG00Ev3EemffsfZilNj8Q" name="DC.3.1">
-        <target xmi:type="component:Component" href="My.component#//@children.1/@children.0"/>
-        <semanticElements xmi:type="component:Component" href="My.component#//@children.1/@children.0"/>
         <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_HHHb4Ev3EemffsfZilNj8Q" borderSize="1" borderSizeComputationExpression="1">
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='Diagram']/@defaultLayer/@containerMappings[name='Component']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='Diagram']/@defaultLayer/@containerMappings[name='Component']"/>
         <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_Hi-4gEv3EemffsfZilNj8Q" name="DC.3.1.1" outgoingEdges="_IWG-kEv3EemffsfZilNj8Q">
-          <target xmi:type="component:Component" href="My.component#//@children.1/@children.0/@children.0"/>
-          <semanticElements xmi:type="component:Component" href="My.component#//@children.1/@children.0/@children.0"/>
           <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_Hi-4gUv3EemffsfZilNj8Q" borderSize="1" borderSizeComputationExpression="1">
             <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='Diagram']/@defaultLayer/@containerMappings[name='Component']/@style"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='Diagram']/@defaultLayer/@containerMappings[name='Component']"/>
+          <target xmi:type="component:Component" href="My.component#//@children.1/@children.0/@children.0"/>
+          <semanticElements xmi:type="component:Component" href="My.component#//@children.1/@children.0/@children.0"/>
         </ownedDiagramElements>
+        <target xmi:type="component:Component" href="My.component#//@children.1/@children.0"/>
+        <semanticElements xmi:type="component:Component" href="My.component#//@children.1/@children.0"/>
       </ownedDiagramElements>
+      <target xmi:type="component:Component" href="My.component#//@children.1"/>
+      <semanticElements xmi:type="component:Component" href="My.component#//@children.1"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_IWG-kEv3EemffsfZilNj8Q" sourceNode="_Hi-4gEv3EemffsfZilNj8Q" targetNode="_GmCvIEv3EemffsfZilNj8Q" endLabel="R2">
-      <target xmi:type="component:Component" href="My.component#//@children.1/@children.0/@children.0"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_IWIzwEv3EemffsfZilNj8Q" lineStyle="dot" size="2">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='Diagram']/@defaultLayer/@edgeMappings[name='Reference']/@style"/>
         <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_IWJa0Ev3EemffsfZilNj8Q" showIcon="false"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='Diagram']/@defaultLayer/@edgeMappings[name='Reference']"/>
+      <target xmi:type="component:Component" href="My.component#//@children.1/@children.0/@children.0"/>
     </ownedDiagramElements>
     <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='Diagram']"/>
     <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_Cq8LgEv3EemffsfZilNj8Q"/>
@@ -336,8 +336,6 @@
       </data>
     </ownedAnnotationEntries>
     <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_Ln_mEEv3EemffsfZilNj8Q" name="DC.2" childrenPresentation="HorizontalStack">
-      <target xmi:type="component:Component" href="My.component#//@children.0"/>
-      <semanticElements xmi:type="component:Component" href="My.component#//@children.0"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -346,28 +344,24 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithRegionAndEdges']/@defaultLayer/@containerMappings[name='Component']"/>
       <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_TngaUkv3EemffsfZilNj8Q" name="DC.2.1" visible="false">
-        <target xmi:type="component:Component" href="My.component#//@children.0/@children.0"/>
-        <semanticElements xmi:type="component:Component" href="My.component#//@children.0/@children.0"/>
         <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_TnhBYEv3EemffsfZilNj8Q" labelSize="12" borderSize="1" borderSizeComputationExpression="1" backgroundColor="114,159,207" foregroundColor="194,239,255">
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithRegionAndEdges']/@defaultLayer/@containerMappings[name='Component']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithRegionAndEdges']/@defaultLayer/@containerMappings[name='Component']"/>
         <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_TnhocEv3EemffsfZilNj8Q" name="DC.2.1.1" visible="false">
-          <target xmi:type="component:Component" href="My.component#//@children.0/@children.0/@children.0"/>
-          <semanticElements xmi:type="component:Component" href="My.component#//@children.0/@children.0/@children.0"/>
           <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_TnhocUv3EemffsfZilNj8Q" labelSize="12" borderSize="1" borderSizeComputationExpression="1" backgroundColor="114,159,207" foregroundColor="194,239,255">
             <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithRegionAndEdges']/@defaultLayer/@containerMappings[name='Component']/@style"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithRegionAndEdges']/@defaultLayer/@containerMappings[name='Component']"/>
+          <target xmi:type="component:Component" href="My.component#//@children.0/@children.0/@children.0"/>
+          <semanticElements xmi:type="component:Component" href="My.component#//@children.0/@children.0/@children.0"/>
         </ownedDiagramElements>
+        <target xmi:type="component:Component" href="My.component#//@children.0/@children.0"/>
+        <semanticElements xmi:type="component:Component" href="My.component#//@children.0/@children.0"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_jBYHUEv3EemffsfZilNj8Q">
-        <target xmi:type="component:Component" href="My.component#//@children.0"/>
-        <semanticElements xmi:type="component:Component" href="My.component#//@children.0"/>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithRegionAndEdges']/@defaultLayer/@containerMappings[name='Component']/@subContainerMappings[name='ComponentRegion']"/>
         <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_jBYuYEv3EemffsfZilNj8Q" name="DC.2.1" childrenPresentation="HorizontalStack">
-          <target xmi:type="component:Component" href="My.component#//@children.0/@children.0"/>
-          <semanticElements xmi:type="component:Component" href="My.component#//@children.0/@children.0"/>
           <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
           <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
           <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -376,12 +370,8 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithRegionAndEdges']/@defaultLayer/@containerMappings[name='Component']"/>
           <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_jBZVcUv3EemffsfZilNj8Q">
-            <target xmi:type="component:Component" href="My.component#//@children.0/@children.0"/>
-            <semanticElements xmi:type="component:Component" href="My.component#//@children.0/@children.0"/>
             <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithRegionAndEdges']/@defaultLayer/@containerMappings[name='Component']/@subContainerMappings[name='ComponentRegion']"/>
             <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_jBZVckv3EemffsfZilNj8Q" name="DC.2.1.1" incomingEdges="_HwU7sFrDEemzdbaA_nkpIg" childrenPresentation="HorizontalStack">
-              <target xmi:type="component:Component" href="My.component#//@children.0/@children.0/@children.0"/>
-              <semanticElements xmi:type="component:Component" href="My.component#//@children.0/@children.0/@children.0"/>
               <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
               <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
               <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -390,18 +380,26 @@
               </ownedStyle>
               <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithRegionAndEdges']/@defaultLayer/@containerMappings[name='Component']"/>
               <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_jBZ8gUv3EemffsfZilNj8Q">
+                <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithRegionAndEdges']/@defaultLayer/@containerMappings[name='Component']/@subContainerMappings[name='ComponentRegion']"/>
                 <target xmi:type="component:Component" href="My.component#//@children.0/@children.0/@children.0"/>
                 <semanticElements xmi:type="component:Component" href="My.component#//@children.0/@children.0/@children.0"/>
-                <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithRegionAndEdges']/@defaultLayer/@containerMappings[name='Component']/@subContainerMappings[name='ComponentRegion']"/>
               </ownedDiagramElements>
+              <target xmi:type="component:Component" href="My.component#//@children.0/@children.0/@children.0"/>
+              <semanticElements xmi:type="component:Component" href="My.component#//@children.0/@children.0/@children.0"/>
             </ownedDiagramElements>
+            <target xmi:type="component:Component" href="My.component#//@children.0/@children.0"/>
+            <semanticElements xmi:type="component:Component" href="My.component#//@children.0/@children.0"/>
           </ownedDiagramElements>
+          <target xmi:type="component:Component" href="My.component#//@children.0/@children.0"/>
+          <semanticElements xmi:type="component:Component" href="My.component#//@children.0/@children.0"/>
         </ownedDiagramElements>
+        <target xmi:type="component:Component" href="My.component#//@children.0"/>
+        <semanticElements xmi:type="component:Component" href="My.component#//@children.0"/>
       </ownedDiagramElements>
+      <target xmi:type="component:Component" href="My.component#//@children.0"/>
+      <semanticElements xmi:type="component:Component" href="My.component#//@children.0"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_LoANIEv3EemffsfZilNj8Q" name="DC.3" childrenPresentation="HorizontalStack">
-      <target xmi:type="component:Component" href="My.component#//@children.1"/>
-      <semanticElements xmi:type="component:Component" href="My.component#//@children.1"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -410,28 +408,24 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithRegionAndEdges']/@defaultLayer/@containerMappings[name='Component']"/>
       <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_TniPgEv3EemffsfZilNj8Q" name="DC.3.1" visible="false">
-        <target xmi:type="component:Component" href="My.component#//@children.1/@children.0"/>
-        <semanticElements xmi:type="component:Component" href="My.component#//@children.1/@children.0"/>
         <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_TniPgUv3EemffsfZilNj8Q" labelSize="12" borderSize="1" borderSizeComputationExpression="1" backgroundColor="114,159,207" foregroundColor="194,239,255">
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithRegionAndEdges']/@defaultLayer/@containerMappings[name='Component']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithRegionAndEdges']/@defaultLayer/@containerMappings[name='Component']"/>
         <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_Tni2kUv3EemffsfZilNj8Q" name="DC.3.1.1" visible="false">
-          <target xmi:type="component:Component" href="My.component#//@children.1/@children.0/@children.0"/>
-          <semanticElements xmi:type="component:Component" href="My.component#//@children.1/@children.0/@children.0"/>
           <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_Tni2kkv3EemffsfZilNj8Q" labelSize="12" borderSize="1" borderSizeComputationExpression="1" backgroundColor="114,159,207" foregroundColor="194,239,255">
             <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithRegionAndEdges']/@defaultLayer/@containerMappings[name='Component']/@style"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithRegionAndEdges']/@defaultLayer/@containerMappings[name='Component']"/>
+          <target xmi:type="component:Component" href="My.component#//@children.1/@children.0/@children.0"/>
+          <semanticElements xmi:type="component:Component" href="My.component#//@children.1/@children.0/@children.0"/>
         </ownedDiagramElements>
+        <target xmi:type="component:Component" href="My.component#//@children.1/@children.0"/>
+        <semanticElements xmi:type="component:Component" href="My.component#//@children.1/@children.0"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_jBajkEv3EemffsfZilNj8Q">
-        <target xmi:type="component:Component" href="My.component#//@children.1"/>
-        <semanticElements xmi:type="component:Component" href="My.component#//@children.1"/>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithRegionAndEdges']/@defaultLayer/@containerMappings[name='Component']/@subContainerMappings[name='ComponentRegion']"/>
         <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_jBbKoEv3EemffsfZilNj8Q" name="DC.3.1" childrenPresentation="HorizontalStack">
-          <target xmi:type="component:Component" href="My.component#//@children.1/@children.0"/>
-          <semanticElements xmi:type="component:Component" href="My.component#//@children.1/@children.0"/>
           <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
           <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
           <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -440,12 +434,8 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithRegionAndEdges']/@defaultLayer/@containerMappings[name='Component']"/>
           <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_jBbxsEv3EemffsfZilNj8Q">
-            <target xmi:type="component:Component" href="My.component#//@children.1/@children.0"/>
-            <semanticElements xmi:type="component:Component" href="My.component#//@children.1/@children.0"/>
             <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithRegionAndEdges']/@defaultLayer/@containerMappings[name='Component']/@subContainerMappings[name='ComponentRegion']"/>
             <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_jBbxsUv3EemffsfZilNj8Q" name="DC.3.1.1" outgoingEdges="_HwU7sFrDEemzdbaA_nkpIg" childrenPresentation="HorizontalStack">
-              <target xmi:type="component:Component" href="My.component#//@children.1/@children.0/@children.0"/>
-              <semanticElements xmi:type="component:Component" href="My.component#//@children.1/@children.0/@children.0"/>
               <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
               <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
               <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -454,23 +444,33 @@
               </ownedStyle>
               <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithRegionAndEdges']/@defaultLayer/@containerMappings[name='Component']"/>
               <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_jBcYwUv3EemffsfZilNj8Q">
+                <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithRegionAndEdges']/@defaultLayer/@containerMappings[name='Component']/@subContainerMappings[name='ComponentRegion']"/>
                 <target xmi:type="component:Component" href="My.component#//@children.1/@children.0/@children.0"/>
                 <semanticElements xmi:type="component:Component" href="My.component#//@children.1/@children.0/@children.0"/>
-                <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithRegionAndEdges']/@defaultLayer/@containerMappings[name='Component']/@subContainerMappings[name='ComponentRegion']"/>
               </ownedDiagramElements>
+              <target xmi:type="component:Component" href="My.component#//@children.1/@children.0/@children.0"/>
+              <semanticElements xmi:type="component:Component" href="My.component#//@children.1/@children.0/@children.0"/>
             </ownedDiagramElements>
+            <target xmi:type="component:Component" href="My.component#//@children.1/@children.0"/>
+            <semanticElements xmi:type="component:Component" href="My.component#//@children.1/@children.0"/>
           </ownedDiagramElements>
+          <target xmi:type="component:Component" href="My.component#//@children.1/@children.0"/>
+          <semanticElements xmi:type="component:Component" href="My.component#//@children.1/@children.0"/>
         </ownedDiagramElements>
+        <target xmi:type="component:Component" href="My.component#//@children.1"/>
+        <semanticElements xmi:type="component:Component" href="My.component#//@children.1"/>
       </ownedDiagramElements>
+      <target xmi:type="component:Component" href="My.component#//@children.1"/>
+      <semanticElements xmi:type="component:Component" href="My.component#//@children.1"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_HwU7sFrDEemzdbaA_nkpIg" name="myRef" sourceNode="_jBbxsUv3EemffsfZilNj8Q" targetNode="_jBZVckv3EemffsfZilNj8Q" endLabel="R2">
-      <target xmi:type="component:Component" href="My.component#//@children.1/@children.0/@children.0"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_HwViwFrDEemzdbaA_nkpIg" lineStyle="dot" size="2">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithRegionAndEdges']/@defaultLayer/@edgeMappings[name='Reference']/@style"/>
-        <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_HwViwVrDEemzdbaA_nkpIg" showIcon="false"/>
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_voxJJFuvEemENauoXvWsJQ" showIcon="false"/>
+        <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_HwViwVrDEemzdbaA_nkpIg" showIcon="false"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithRegionAndEdges']/@defaultLayer/@edgeMappings[name='Reference']"/>
+      <target xmi:type="component:Component" href="My.component#//@children.1/@children.0/@children.0"/>
     </ownedDiagramElements>
     <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithRegionAndEdges']"/>
     <activatedFilters xmi:type="filter:CompositeFilterDescription" href="platform:/plugin/org.polarsys.kitalpha.ad.integration.sirius/description/ad.odesign#//@ownedViewpoints[name='ad']/@ownedRepresentations[name='AD%20diagram']/@filters[name='ModelExtensionFilter']"/>

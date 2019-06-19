@@ -1,59 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:propertiestests="http://www.eclipse.org/sirius/tests/properties/1.0.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
-  <viewpoint:DAnalysis xmi:id="_n4UK4AhuEea_TaWxXuy80g" selectedViews="_VkPb8AiBEeaRvL3xkYbMuw" version="11.1.0.201608251200">
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:properties_1.0.0="http://www.eclipse.org/sirius/tests/properties/1.0.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+  <viewpoint:DAnalysis uid="_n4UK4AhuEea_TaWxXuy80g" selectedViews="_VkPb8AiBEeaRvL3xkYbMuw" version="14.1.0.201810161215">
     <semanticResources>PropertiesTestsInstance.propertiestests</semanticResources>
-    <ownedViews xmi:type="viewpoint:DView" xmi:id="_VjvFoAiBEeaRvL3xkYbMuw">
+    <ownedViews xmi:type="viewpoint:DView" uid="_VjvFoAiBEeaRvL3xkYbMuw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/org.eclipse.sirius.tests.rcptt.properties.design.text/description/PropertiesTests.odesign#//@ownedViewpoints[name='PropertiesTestsText']"/>
     </ownedViews>
-    <ownedViews xmi:type="viewpoint:DView" xmi:id="_VkPb8AiBEeaRvL3xkYbMuw">
+    <ownedViews xmi:type="viewpoint:DView" uid="_VkPb8AiBEeaRvL3xkYbMuw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/org.eclipse.sirius.tests.rcptt.properties.design/description/PropertiesTests.odesign#//@ownedViewpoints[name='PropertiesTests']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_TwCXIMdiEeaLfbTLPOJWKw" name="RootDiagram" representation="_dK6SYAiBEeaRvL3xkYbMuw">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_TwCXIMdiEeaLfbTLPOJWKw" name="RootDiagram" repPath="#_dK6SYAiBEeaRvL3xkYbMuw">
         <description xmi:type="description_1:DiagramDescription" href="platform:/resource/org.eclipse.sirius.tests.rcptt.properties.design/description/PropertiesTests.odesign#//@ownedViewpoints[name='PropertiesTests']/@ownedRepresentations[name='Diagram']"/>
-        <target xmi:type="propertiestests:TestRoot" href="PropertiesTestsInstance.propertiestests#/"/>
+        <target xmi:type="properties_1.0.0:TestRoot" href="PropertiesTestsInstance.propertiestests#/"/>
       </ownedRepresentationDescriptors>
     </ownedViews>
-    <ownedViews xmi:type="viewpoint:DView" xmi:id="_iLNA0BwnEeajlaFNymgFJw">
+    <ownedViews xmi:type="viewpoint:DView" uid="_iLNA0BwnEeajlaFNymgFJw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/org.eclipse.sirius.tests.rcptt.properties.design.label/description/PropertiesTests.odesign#//@ownedViewpoints[name='PropertiesTestsLabel']"/>
     </ownedViews>
-    <ownedViews xmi:type="viewpoint:DView" xmi:id="_iLsJABwnEeajlaFNymgFJw">
+    <ownedViews xmi:type="viewpoint:DView" uid="_iLsJABwnEeajlaFNymgFJw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/org.eclipse.sirius.tests.rcptt.properties.design.hyperlink/description/PropertiesTests.odesign#//@ownedViewpoints[name='PropertiesTestsHyperlink']"/>
     </ownedViews>
-    <ownedViews xmi:type="viewpoint:DView" xmi:id="_iMFxoBwnEeajlaFNymgFJw">
+    <ownedViews xmi:type="viewpoint:DView" uid="_iMFxoBwnEeajlaFNymgFJw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/org.eclipse.sirius.tests.rcptt.properties.design.select/description/PropertiesTests.odesign#//@ownedViewpoints[name='PropertiesTestsSelect']"/>
     </ownedViews>
-    <ownedViews xmi:type="viewpoint:DView" xmi:id="_iMezMBwnEeajlaFNymgFJw">
+    <ownedViews xmi:type="viewpoint:DView" uid="_iMezMBwnEeajlaFNymgFJw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/org.eclipse.sirius.tests.rcptt.properties.design.checkbox/description/PropertiesTests.odesign#//@ownedViewpoints[name='PropertiesTestsCheckbox']"/>
     </ownedViews>
-    <ownedViews xmi:type="viewpoint:DView" xmi:id="_iNccgBwnEeajlaFNymgFJw">
+    <ownedViews xmi:type="viewpoint:DView" uid="_iNccgBwnEeajlaFNymgFJw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/org.eclipse.sirius.tests.rcptt.properties.design.screenshot/description/PropertiesTests.odesign#//@ownedViewpoints[name='PropertiesTestsScreenshot']"/>
     </ownedViews>
-    <ownedViews xmi:type="viewpoint:DView" xmi:id="_iOBEQBwnEeajlaFNymgFJw">
+    <ownedViews xmi:type="viewpoint:DView" uid="_iOBEQBwnEeajlaFNymgFJw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/org.eclipse.sirius.tests.rcptt.properties.design.group/description/PropertiesTests.odesign#//@ownedViewpoints[name='PropertiesTestsGroup']"/>
     </ownedViews>
-    <ownedViews xmi:type="viewpoint:DView" xmi:id="_iOj20BwnEeajlaFNymgFJw">
+    <ownedViews xmi:type="viewpoint:DView" uid="_iOj20BwnEeajlaFNymgFJw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/org.eclipse.sirius.tests.rcptt.properties.design.radio/description/PropertiesTests.odesign#//@ownedViewpoints[name='PropertiesTestsRadio']"/>
     </ownedViews>
-    <ownedViews xmi:type="viewpoint:DView" xmi:id="_iPRBcBwnEeajlaFNymgFJw">
+    <ownedViews xmi:type="viewpoint:DView" uid="_iPRBcBwnEeajlaFNymgFJw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/org.eclipse.sirius.tests.rcptt.properties.design.reference/description/PropertiesTests.odesign#//@ownedViewpoints[name='PropertiesTestsReference']"/>
     </ownedViews>
-    <ownedViews xmi:type="viewpoint:DView" xmi:id="_iQCdgBwnEeajlaFNymgFJw">
+    <ownedViews xmi:type="viewpoint:DView" uid="_iQCdgBwnEeajlaFNymgFJw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/org.eclipse.sirius.tests.rcptt.properties.design.button/description/PropertiesTests.odesign#//@ownedViewpoints[name='PropertiesTestsButton']"/>
     </ownedViews>
-    <ownedViews xmi:type="viewpoint:DView" xmi:id="_uU-rMCJrEeatLuh0gpprQg">
+    <ownedViews xmi:type="viewpoint:DView" uid="_uU-rMCJrEeatLuh0gpprQg">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/org.eclipse.sirius.tests.rcptt.properties.design.validation/description/PropertiesTests.odesign#//@ownedViewpoints[name='PropertiesTestsValidation']"/>
     </ownedViews>
-    <ownedViews xmi:type="viewpoint:DView" xmi:id="_uWypECJrEeatLuh0gpprQg">
+    <ownedViews xmi:type="viewpoint:DView" uid="_uWypECJrEeatLuh0gpprQg">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/org.eclipse.sirius.tests.rcptt.properties.design.widget/description/PropertiesTests.odesign#//@ownedViewpoints[name='PropertiesTestsWidget']"/>
     </ownedViews>
-    <ownedViews xmi:type="viewpoint:DView" xmi:id="__F9wkCJ1EeaQIb7FemjCbw">
+    <ownedViews xmi:type="viewpoint:DView" uid="__F9wkCJ1EeaQIb7FemjCbw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/org.eclipse.sirius.tests.rcptt.properties.design.container/description/PropertiesTests.odesign#//@ownedViewpoints[name='PropertiesTestsContainer']"/>
     </ownedViews>
   </viewpoint:DAnalysis>
-  <diagram:DSemanticDiagram xmi:id="_dK6SYAiBEeaRvL3xkYbMuw" name="RootDiagram">
-    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_dK6SYQiBEeaRvL3xkYbMuw" source="DANNOTATION_CUSTOMIZATION_KEY">
-      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_dK6SYgiBEeaRvL3xkYbMuw"/>
+  <diagram:DSemanticDiagram uid="_dK6SYAiBEeaRvL3xkYbMuw" name="RootDiagram">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_dK6SYQiBEeaRvL3xkYbMuw" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_dK6SYgiBEeaRvL3xkYbMuw"/>
     </ownedAnnotationEntries>
-    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_dLHtwAiBEeaRvL3xkYbMuw" source="GMF_DIAGRAMS">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_dLHtwAiBEeaRvL3xkYbMuw" source="GMF_DIAGRAMS">
       <data xmi:type="notation:Diagram" xmi:id="_dLHtwQiBEeaRvL3xkYbMuw" type="Sirius" element="_dK6SYAiBEeaRvL3xkYbMuw" measurementUnit="Pixel">
         <children xmi:type="notation:Node" xmi:id="_lUgYQAiYEeaQ8eZ7XL4hjg" type="2001" element="_lUWnQAiYEeaQ8eZ7XL4hjg">
           <children xmi:type="notation:Node" xmi:id="_lUntAAiYEeaQ8eZ7XL4hjg" type="5002">
@@ -124,57 +124,57 @@
         <styles xmi:type="notation:DiagramStyle" xmi:id="_dLHtwgiBEeaRvL3xkYbMuw"/>
       </data>
     </ownedAnnotationEntries>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_lUWnQAiYEeaQ8eZ7XL4hjg" name="Element1" width="10" height="10" resizeKind="NSEW">
-      <target xmi:type="propertiestests:TestElement" href="PropertiesTestsInstance.propertiestests#//@elements.0"/>
-      <semanticElements xmi:type="propertiestests:TestElement" href="PropertiesTestsInstance.propertiestests#//@elements.0"/>
-      <ownedStyle xmi:type="diagram:Square" xmi:id="_lUX1YAiYEeaQ8eZ7XL4hjg" labelPosition="node">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_lUWnQAiYEeaQ8eZ7XL4hjg" name="Element1" width="10" height="10" resizeKind="NSEW">
+      <ownedStyle xmi:type="diagram:Square" uid="_lUX1YAiYEeaQ8eZ7XL4hjg" labelPosition="node">
         <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.sirius.tests.rcptt.properties.design/description/PropertiesTests.odesign#//@ownedViewpoints[name='PropertiesTests']/@ownedRepresentations[name='Diagram']/@defaultLayer/@nodeMappings[name='TestElement']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.sirius.tests.rcptt.properties.design/description/PropertiesTests.odesign#//@ownedViewpoints[name='PropertiesTests']/@ownedRepresentations[name='Diagram']/@defaultLayer/@nodeMappings[name='TestElement']"/>
+      <target xmi:type="properties_1.0.0:TestElement" href="PropertiesTestsInstance.propertiestests#//@elements.0"/>
+      <semanticElements xmi:type="properties_1.0.0:TestElement" href="PropertiesTestsInstance.propertiestests#//@elements.0"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_-GMwQAiYEeaQ8eZ7XL4hjg" name="Element11" width="10" height="10" resizeKind="NSEW">
-      <target xmi:type="propertiestests:TestElement" href="PropertiesTestsInstance.propertiestests#//@elements.0/@containmentReference"/>
-      <semanticElements xmi:type="propertiestests:TestElement" href="PropertiesTestsInstance.propertiestests#//@elements.0/@containmentReference"/>
-      <ownedStyle xmi:type="diagram:Square" xmi:id="_-GNXUAiYEeaQ8eZ7XL4hjg" labelPosition="node">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_-GMwQAiYEeaQ8eZ7XL4hjg" name="Element11" width="10" height="10" resizeKind="NSEW">
+      <ownedStyle xmi:type="diagram:Square" uid="_-GNXUAiYEeaQ8eZ7XL4hjg" labelPosition="node">
         <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.sirius.tests.rcptt.properties.design/description/PropertiesTests.odesign#//@ownedViewpoints[name='PropertiesTests']/@ownedRepresentations[name='Diagram']/@defaultLayer/@nodeMappings[name='TestElement']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.sirius.tests.rcptt.properties.design/description/PropertiesTests.odesign#//@ownedViewpoints[name='PropertiesTests']/@ownedRepresentations[name='Diagram']/@defaultLayer/@nodeMappings[name='TestElement']"/>
+      <target xmi:type="properties_1.0.0:TestElement" href="PropertiesTestsInstance.propertiestests#//@elements.0/@containmentReference"/>
+      <semanticElements xmi:type="properties_1.0.0:TestElement" href="PropertiesTestsInstance.propertiestests#//@elements.0/@containmentReference"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_-GNXUQiYEeaQ8eZ7XL4hjg" name="Element12" width="10" height="10" resizeKind="NSEW">
-      <target xmi:type="propertiestests:TestElement" href="PropertiesTestsInstance.propertiestests#//@elements.0/@containmentReferences.0"/>
-      <semanticElements xmi:type="propertiestests:TestElement" href="PropertiesTestsInstance.propertiestests#//@elements.0/@containmentReferences.0"/>
-      <ownedStyle xmi:type="diagram:Square" xmi:id="_-GN-YAiYEeaQ8eZ7XL4hjg" labelPosition="node">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_-GNXUQiYEeaQ8eZ7XL4hjg" name="Element12" width="10" height="10" resizeKind="NSEW">
+      <ownedStyle xmi:type="diagram:Square" uid="_-GN-YAiYEeaQ8eZ7XL4hjg" labelPosition="node">
         <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.sirius.tests.rcptt.properties.design/description/PropertiesTests.odesign#//@ownedViewpoints[name='PropertiesTests']/@ownedRepresentations[name='Diagram']/@defaultLayer/@nodeMappings[name='TestElement']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.sirius.tests.rcptt.properties.design/description/PropertiesTests.odesign#//@ownedViewpoints[name='PropertiesTests']/@ownedRepresentations[name='Diagram']/@defaultLayer/@nodeMappings[name='TestElement']"/>
+      <target xmi:type="properties_1.0.0:TestElement" href="PropertiesTestsInstance.propertiestests#//@elements.0/@containmentReferences.0"/>
+      <semanticElements xmi:type="properties_1.0.0:TestElement" href="PropertiesTestsInstance.propertiestests#//@elements.0/@containmentReferences.0"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_AwZFoAiZEeaQ8eZ7XL4hjg" name="Element13" width="10" height="10" resizeKind="NSEW">
-      <target xmi:type="propertiestests:TestElement" href="PropertiesTestsInstance.propertiestests#//@elements.0/@containmentReferences.1"/>
-      <semanticElements xmi:type="propertiestests:TestElement" href="PropertiesTestsInstance.propertiestests#//@elements.0/@containmentReferences.1"/>
-      <ownedStyle xmi:type="diagram:Square" xmi:id="_AwZFoQiZEeaQ8eZ7XL4hjg" labelPosition="node">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_AwZFoAiZEeaQ8eZ7XL4hjg" name="Element13" width="10" height="10" resizeKind="NSEW">
+      <ownedStyle xmi:type="diagram:Square" uid="_AwZFoQiZEeaQ8eZ7XL4hjg" labelPosition="node">
         <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.sirius.tests.rcptt.properties.design/description/PropertiesTests.odesign#//@ownedViewpoints[name='PropertiesTests']/@ownedRepresentations[name='Diagram']/@defaultLayer/@nodeMappings[name='TestElement']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.sirius.tests.rcptt.properties.design/description/PropertiesTests.odesign#//@ownedViewpoints[name='PropertiesTests']/@ownedRepresentations[name='Diagram']/@defaultLayer/@nodeMappings[name='TestElement']"/>
+      <target xmi:type="properties_1.0.0:TestElement" href="PropertiesTestsInstance.propertiestests#//@elements.0/@containmentReferences.1"/>
+      <semanticElements xmi:type="properties_1.0.0:TestElement" href="PropertiesTestsInstance.propertiestests#//@elements.0/@containmentReferences.1"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_lUZDgAiYEeaQ8eZ7XL4hjg" name="Element2" width="10" height="10" resizeKind="NSEW">
-      <target xmi:type="propertiestests:TestElement" href="PropertiesTestsInstance.propertiestests#//@elements.1"/>
-      <semanticElements xmi:type="propertiestests:TestElement" href="PropertiesTestsInstance.propertiestests#//@elements.1"/>
-      <ownedStyle xmi:type="diagram:Square" xmi:id="_lUZqkAiYEeaQ8eZ7XL4hjg" labelPosition="node">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_lUZDgAiYEeaQ8eZ7XL4hjg" name="Element2" width="10" height="10" resizeKind="NSEW">
+      <ownedStyle xmi:type="diagram:Square" uid="_lUZqkAiYEeaQ8eZ7XL4hjg" labelPosition="node">
         <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.sirius.tests.rcptt.properties.design/description/PropertiesTests.odesign#//@ownedViewpoints[name='PropertiesTests']/@ownedRepresentations[name='Diagram']/@defaultLayer/@nodeMappings[name='TestElement']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.sirius.tests.rcptt.properties.design/description/PropertiesTests.odesign#//@ownedViewpoints[name='PropertiesTests']/@ownedRepresentations[name='Diagram']/@defaultLayer/@nodeMappings[name='TestElement']"/>
+      <target xmi:type="properties_1.0.0:TestElement" href="PropertiesTestsInstance.propertiestests#//@elements.1"/>
+      <semanticElements xmi:type="properties_1.0.0:TestElement" href="PropertiesTestsInstance.propertiestests#//@elements.1"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_wbfTwAiYEeaQ8eZ7XL4hjg" name="Element3" width="10" height="10" resizeKind="NSEW">
-      <target xmi:type="propertiestests:TestElement" href="PropertiesTestsInstance.propertiestests#//@elements.2"/>
-      <semanticElements xmi:type="propertiestests:TestElement" href="PropertiesTestsInstance.propertiestests#//@elements.2"/>
-      <ownedStyle xmi:type="diagram:Square" xmi:id="_wbf60AiYEeaQ8eZ7XL4hjg" labelPosition="node">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_wbfTwAiYEeaQ8eZ7XL4hjg" name="Element3" width="10" height="10" resizeKind="NSEW">
+      <ownedStyle xmi:type="diagram:Square" uid="_wbf60AiYEeaQ8eZ7XL4hjg" labelPosition="node">
         <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.sirius.tests.rcptt.properties.design/description/PropertiesTests.odesign#//@ownedViewpoints[name='PropertiesTests']/@ownedRepresentations[name='Diagram']/@defaultLayer/@nodeMappings[name='TestElement']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.sirius.tests.rcptt.properties.design/description/PropertiesTests.odesign#//@ownedViewpoints[name='PropertiesTests']/@ownedRepresentations[name='Diagram']/@defaultLayer/@nodeMappings[name='TestElement']"/>
+      <target xmi:type="properties_1.0.0:TestElement" href="PropertiesTestsInstance.propertiestests#//@elements.2"/>
+      <semanticElements xmi:type="properties_1.0.0:TestElement" href="PropertiesTestsInstance.propertiestests#//@elements.2"/>
     </ownedDiagramElements>
     <description xmi:type="description_1:DiagramDescription" href="platform:/resource/org.eclipse.sirius.tests.rcptt.properties.design/description/PropertiesTests.odesign#//@ownedViewpoints[name='PropertiesTests']/@ownedRepresentations[name='Diagram']"/>
-    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_dK6SZQiBEeaRvL3xkYbMuw"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_dK6SZQiBEeaRvL3xkYbMuw"/>
     <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/org.eclipse.sirius.tests.rcptt.properties.design/description/PropertiesTests.odesign#//@ownedViewpoints[name='PropertiesTests']/@ownedRepresentations[name='Diagram']/@defaultLayer"/>
-    <target xmi:type="propertiestests:TestRoot" href="PropertiesTestsInstance.propertiestests#/"/>
+    <target xmi:type="properties_1.0.0:TestRoot" href="PropertiesTestsInstance.propertiestests#/"/>
   </diagram:DSemanticDiagram>
 </xmi:XMI>

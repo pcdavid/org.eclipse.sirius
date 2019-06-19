@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
-  <viewpoint:DAnalysis xmi:id="_yK6dEAi8EeeKCJSRL5OfIw" selectedViews="_hmxqcAi-EeeKCJSRL5OfIw" version="11.1.0.201608251200">
+  <viewpoint:DAnalysis uid="_yK6dEAi8EeeKCJSRL5OfIw" selectedViews="_hmxqcAi-EeeKCJSRL5OfIw" version="14.1.0.201810161215">
     <semanticResources>My.ecore</semanticResources>
-    <ownedViews xmi:type="viewpoint:DView" xmi:id="_hmxqcAi-EeeKCJSRL5OfIw">
+    <ownedViews xmi:type="viewpoint:DView" uid="_hmxqcAi-EeeKCJSRL5OfIw">
       <viewpoint xmi:type="description:Viewpoint" href="My.odesign#//@ownedViewpoints[name='validation']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_jZPGkAi-EeeKCJSRL5OfIw" name="new diag" representation="_jZPGkQi-EeeKCJSRL5OfIw">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_jZPGkAi-EeeKCJSRL5OfIw" name="new diag" repPath="#_jZPGkQi-EeeKCJSRL5OfIw">
         <description xmi:type="description_1:DiagramDescription" href="My.odesign#//@ownedViewpoints[name='validation']/@ownedRepresentations[name='diag']"/>
         <target xmi:type="ecore:EPackage" href="My.ecore#/"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_t6OT4AjQEeeKCJSRL5OfIw" name="new diag2" representation="_t6O68AjQEeeKCJSRL5OfIw">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_t6OT4AjQEeeKCJSRL5OfIw" name="new diag2" repPath="#_t6O68AjQEeeKCJSRL5OfIw">
         <description xmi:type="description_1:DiagramDescription" href="My.odesign#//@ownedViewpoints[name='validation']/@ownedRepresentations[name='diag']"/>
         <target xmi:type="ecore:EPackage" href="My.ecore#/"/>
       </ownedRepresentationDescriptors>
     </ownedViews>
   </viewpoint:DAnalysis>
-  <diagram:DSemanticDiagram xmi:id="_jZPGkQi-EeeKCJSRL5OfIw" name="new diag">
-    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_jZPGkgi-EeeKCJSRL5OfIw" source="DANNOTATION_CUSTOMIZATION_KEY">
-      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_jZPGkwi-EeeKCJSRL5OfIw"/>
+  <diagram:DSemanticDiagram uid="_jZPGkQi-EeeKCJSRL5OfIw" name="new diag">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_jZPGkgi-EeeKCJSRL5OfIw" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_jZPGkwi-EeeKCJSRL5OfIw"/>
     </ownedAnnotationEntries>
-    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_jZPtoAi-EeeKCJSRL5OfIw" source="GMF_DIAGRAMS">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_jZPtoAi-EeeKCJSRL5OfIw" source="GMF_DIAGRAMS">
       <data xmi:type="notation:Diagram" xmi:id="_jZPtoQi-EeeKCJSRL5OfIw" type="Sirius" element="_jZPGkQi-EeeKCJSRL5OfIw" measurementUnit="Pixel">
         <children xmi:type="notation:Node" xmi:id="_Ar2HoA-nEeeusu_GvUDqLw" type="2003" element="_ArjzwA-nEeeusu_GvUDqLw">
           <children xmi:type="notation:Node" xmi:id="_Ar380A-nEeeusu_GvUDqLw" type="5007"/>
@@ -162,38 +162,38 @@
         <styles xmi:type="notation:DiagramStyle" xmi:id="_jZPtogi-EeeKCJSRL5OfIw"/>
       </data>
     </ownedAnnotationEntries>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_jZPGlAi-EeeKCJSRL5OfIw" name="root" tooltipText="">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_jZPGlAi-EeeKCJSRL5OfIw" name="root" tooltipText="">
       <target xmi:type="ecore:EPackage" href="My.ecore#/"/>
       <semanticElements xmi:type="ecore:EPackage" href="My.ecore#/"/>
-      <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_Tj6XMAi_EeeKCJSRL5OfIw" name="EClass1Border" tooltipText="" width="3" height="3" resizeKind="NSEW">
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_Tj6XMAi_EeeKCJSRL5OfIw" name="EClass1Border" tooltipText="" width="3" height="3" resizeKind="NSEW">
         <target xmi:type="ecore:EClass" href="My.ecore#//EClass1"/>
         <semanticElements xmi:type="ecore:EClass" href="My.ecore#//EClass1"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:Square" xmi:id="_Tj6XMQi_EeeKCJSRL5OfIw" showIcon="false" color="138,226,52">
+        <ownedStyle xmi:type="diagram:Square" uid="_Tj6XMQi_EeeKCJSRL5OfIw" showIcon="false" color="138,226,52">
           <description xmi:type="style:SquareDescription" href="My.odesign#//@ownedViewpoints[name='validation']/@ownedRepresentations[name='diag']/@defaultLayer/@containerMappings[name='SelfContainer']/@borderedNodeMappings[name='classBorderNodes']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="My.odesign#//@ownedViewpoints[name='validation']/@ownedRepresentations[name='diag']/@defaultLayer/@containerMappings[name='SelfContainer']/@borderedNodeMappings[name='classBorderNodes']"/>
       </ownedBorderedNodes>
-      <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_Tj6-QAi_EeeKCJSRL5OfIw" name="EClass2Border" tooltipText="" width="3" height="3" resizeKind="NSEW">
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_Tj6-QAi_EeeKCJSRL5OfIw" name="EClass2Border" tooltipText="" width="3" height="3" resizeKind="NSEW">
         <target xmi:type="ecore:EClass" href="My.ecore#//EClass2"/>
         <semanticElements xmi:type="ecore:EClass" href="My.ecore#//EClass2"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:Square" xmi:id="_Tj6-QQi_EeeKCJSRL5OfIw" showIcon="false" color="138,226,52">
+        <ownedStyle xmi:type="diagram:Square" uid="_Tj6-QQi_EeeKCJSRL5OfIw" showIcon="false" color="138,226,52">
           <description xmi:type="style:SquareDescription" href="My.odesign#//@ownedViewpoints[name='validation']/@ownedRepresentations[name='diag']/@defaultLayer/@containerMappings[name='SelfContainer']/@borderedNodeMappings[name='classBorderNodes']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="My.odesign#//@ownedViewpoints[name='validation']/@ownedRepresentations[name='diag']/@defaultLayer/@containerMappings[name='SelfContainer']/@borderedNodeMappings[name='classBorderNodes']"/>
       </ownedBorderedNodes>
-      <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_1YjGoAjQEeeKCJSRL5OfIw" name="EClass3Border" tooltipText="" width="3" height="3" resizeKind="NSEW">
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_1YjGoAjQEeeKCJSRL5OfIw" name="EClass3Border" tooltipText="" width="3" height="3" resizeKind="NSEW">
         <target xmi:type="ecore:EClass" href="My.ecore#//EClass3"/>
         <semanticElements xmi:type="ecore:EClass" href="My.ecore#//EClass3"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:Square" xmi:id="_1YjtsAjQEeeKCJSRL5OfIw" showIcon="false" color="138,226,52">
+        <ownedStyle xmi:type="diagram:Square" uid="_1YjtsAjQEeeKCJSRL5OfIw" showIcon="false" color="138,226,52">
           <description xmi:type="style:SquareDescription" href="My.odesign#//@ownedViewpoints[name='validation']/@ownedRepresentations[name='diag']/@defaultLayer/@containerMappings[name='SelfContainer']/@borderedNodeMappings[name='classBorderNodes']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="My.odesign#//@ownedViewpoints[name='validation']/@ownedRepresentations[name='diag']/@defaultLayer/@containerMappings[name='SelfContainer']/@borderedNodeMappings[name='classBorderNodes']"/>
@@ -201,31 +201,31 @@
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_jZPGnwi-EeeKCJSRL5OfIw" borderSize="1" borderSizeComputationExpression="1" backgroundColor="194,239,255" foregroundColor="194,239,255">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_jZPGnwi-EeeKCJSRL5OfIw" borderSize="1" borderSizeComputationExpression="1" backgroundColor="194,239,255" foregroundColor="194,239,255">
         <description xmi:type="style:FlatContainerStyleDescription" href="My.odesign#//@ownedViewpoints[name='validation']/@ownedRepresentations[name='diag']/@defaultLayer/@containerMappings[name='SelfContainer']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="My.odesign#//@ownedViewpoints[name='validation']/@ownedRepresentations[name='diag']/@defaultLayer/@containerMappings[name='SelfContainer']"/>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_Tj7lUAi_EeeKCJSRL5OfIw" name="EClass1" tooltipText="" width="3" height="3" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" uid="_Tj7lUAi_EeeKCJSRL5OfIw" name="EClass1" tooltipText="" width="3" height="3" resizeKind="NSEW">
         <target xmi:type="ecore:EClass" href="My.ecore#//EClass1"/>
         <semanticElements xmi:type="ecore:EClass" href="My.ecore#//EClass1"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_Tj7lUQi_EeeKCJSRL5OfIw" showIcon="false" labelPosition="node" color="114,159,207">
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_Tj7lUQi_EeeKCJSRL5OfIw" showIcon="false" labelPosition="node" color="114,159,207">
           <description xmi:type="style:BundledImageDescription" href="My.odesign#//@ownedViewpoints[name='validation']/@ownedRepresentations[name='diag']/@defaultLayer/@containerMappings[name='SelfContainer']/@subNodeMappings[name='classNodes']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="My.odesign#//@ownedViewpoints[name='validation']/@ownedRepresentations[name='diag']/@defaultLayer/@containerMappings[name='SelfContainer']/@subNodeMappings[name='classNodes']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_Tj8MYAi_EeeKCJSRL5OfIw" name="EClass2" tooltipText="" width="3" height="3" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" uid="_Tj8MYAi_EeeKCJSRL5OfIw" name="EClass2" tooltipText="" width="3" height="3" resizeKind="NSEW">
         <target xmi:type="ecore:EClass" href="My.ecore#//EClass2"/>
         <semanticElements xmi:type="ecore:EClass" href="My.ecore#//EClass2"/>
-        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_1YnYEAjQEeeKCJSRL5OfIw" name="att2-1" tooltipText="" width="3" height="3" resizeKind="NSEW">
+        <ownedBorderedNodes xmi:type="diagram:DNode" uid="_1YnYEAjQEeeKCJSRL5OfIw" name="att2-1" tooltipText="" width="3" height="3" resizeKind="NSEW">
           <target xmi:type="ecore:EAttribute" href="My.ecore#//EClass2/att2-1"/>
           <semanticElements xmi:type="ecore:EAttribute" href="My.ecore#//EClass2/att2-1"/>
           <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
           <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
           <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-          <ownedStyle xmi:type="diagram:Square" xmi:id="_1YnYEQjQEeeKCJSRL5OfIw">
+          <ownedStyle xmi:type="diagram:Square" uid="_1YnYEQjQEeeKCJSRL5OfIw">
             <description xmi:type="style:SquareDescription" href="My.odesign#//@ownedViewpoints[name='validation']/@ownedRepresentations[name='diag']/@defaultLayer/@containerMappings[name='SelfContainer']/@subNodeMappings[name='classNodes']/@borderedNodeMappings[name='Attributes']/@style"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="My.odesign#//@ownedViewpoints[name='validation']/@ownedRepresentations[name='diag']/@defaultLayer/@containerMappings[name='SelfContainer']/@subNodeMappings[name='classNodes']/@borderedNodeMappings[name='Attributes']"/>
@@ -233,21 +233,21 @@
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_Tj8MYQi_EeeKCJSRL5OfIw" showIcon="false" labelPosition="node" color="114,159,207">
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_Tj8MYQi_EeeKCJSRL5OfIw" showIcon="false" labelPosition="node" color="114,159,207">
           <description xmi:type="style:BundledImageDescription" href="My.odesign#//@ownedViewpoints[name='validation']/@ownedRepresentations[name='diag']/@defaultLayer/@containerMappings[name='SelfContainer']/@subNodeMappings[name='classNodes']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="My.odesign#//@ownedViewpoints[name='validation']/@ownedRepresentations[name='diag']/@defaultLayer/@containerMappings[name='SelfContainer']/@subNodeMappings[name='classNodes']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_1Yk70AjQEeeKCJSRL5OfIw" name="EClass3" tooltipText="" width="3" height="3" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" uid="_1Yk70AjQEeeKCJSRL5OfIw" name="EClass3" tooltipText="" width="3" height="3" resizeKind="NSEW">
         <target xmi:type="ecore:EClass" href="My.ecore#//EClass3"/>
         <semanticElements xmi:type="ecore:EClass" href="My.ecore#//EClass3"/>
-        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_1YmJ8AjQEeeKCJSRL5OfIw" name="a3-1" tooltipText="" width="3" height="3" resizeKind="NSEW">
+        <ownedBorderedNodes xmi:type="diagram:DNode" uid="_1YmJ8AjQEeeKCJSRL5OfIw" name="a3-1" tooltipText="" width="3" height="3" resizeKind="NSEW">
           <target xmi:type="ecore:EAttribute" href="My.ecore#//EClass3/a3-1"/>
           <semanticElements xmi:type="ecore:EAttribute" href="My.ecore#//EClass3/a3-1"/>
           <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
           <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
           <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-          <ownedStyle xmi:type="diagram:Square" xmi:id="_1YmJ8QjQEeeKCJSRL5OfIw">
+          <ownedStyle xmi:type="diagram:Square" uid="_1YmJ8QjQEeeKCJSRL5OfIw">
             <description xmi:type="style:SquareDescription" href="My.odesign#//@ownedViewpoints[name='validation']/@ownedRepresentations[name='diag']/@defaultLayer/@containerMappings[name='SelfContainer']/@subNodeMappings[name='classNodes']/@borderedNodeMappings[name='Attributes']/@style"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="My.odesign#//@ownedViewpoints[name='validation']/@ownedRepresentations[name='diag']/@defaultLayer/@containerMappings[name='SelfContainer']/@subNodeMappings[name='classNodes']/@borderedNodeMappings[name='Attributes']"/>
@@ -255,92 +255,92 @@
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_1Yli4AjQEeeKCJSRL5OfIw" showIcon="false" labelPosition="node" color="114,159,207">
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_1Yli4AjQEeeKCJSRL5OfIw" showIcon="false" labelPosition="node" color="114,159,207">
           <description xmi:type="style:BundledImageDescription" href="My.odesign#//@ownedViewpoints[name='validation']/@ownedRepresentations[name='diag']/@defaultLayer/@containerMappings[name='SelfContainer']/@subNodeMappings[name='classNodes']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="My.odesign#//@ownedViewpoints[name='validation']/@ownedRepresentations[name='diag']/@defaultLayer/@containerMappings[name='SelfContainer']/@subNodeMappings[name='classNodes']"/>
       </ownedDiagramElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_ArjzwA-nEeeusu_GvUDqLw" name="root2">
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_ArjzwA-nEeeusu_GvUDqLw" name="root2">
       <target xmi:type="ecore:EPackage" href="My.ecore#/"/>
       <semanticElements xmi:type="ecore:EPackage" href="My.ecore#/"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_JKwNoA-nEeeusu_GvUDqLw" borderSize="1" borderSizeComputationExpression="1" backgroundColor="204,242,166" foregroundColor="204,242,166">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_JKwNoA-nEeeusu_GvUDqLw" borderSize="1" borderSizeComputationExpression="1" backgroundColor="204,242,166" foregroundColor="204,242,166">
         <description xmi:type="style:FlatContainerStyleDescription" href="My.odesign#//@ownedViewpoints[name='validation']/@ownedRepresentations[name='diag']/@defaultLayer/@containerMappings[name='SelfContainerList']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="My.odesign#//@ownedViewpoints[name='validation']/@ownedRepresentations[name='diag']/@defaultLayer/@containerMappings[name='SelfContainerList']"/>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_Arlo8A-nEeeusu_GvUDqLw" name="itemEClass1">
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_Arlo8A-nEeeusu_GvUDqLw" name="itemEClass1">
         <target xmi:type="ecore:EClass" href="My.ecore#//EClass1"/>
         <semanticElements xmi:type="ecore:EClass" href="My.ecore#//EClass1"/>
-        <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_Arlo8Q-nEeeusu_GvUDqLw" showIcon="false" labelPosition="node" color="114,159,207">
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_Arlo8Q-nEeeusu_GvUDqLw" showIcon="false" labelPosition="node" color="114,159,207">
           <description xmi:type="style:BundledImageDescription" href="My.odesign#//@ownedViewpoints[name='validation']/@ownedRepresentations[name='diag']/@defaultLayer/@containerMappings[name='SelfContainerList']/@subNodeMappings[name='classNodes']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="My.odesign#//@ownedViewpoints[name='validation']/@ownedRepresentations[name='diag']/@defaultLayer/@containerMappings[name='SelfContainerList']/@subNodeMappings[name='classNodes']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_ArmQAA-nEeeusu_GvUDqLw" name="itemEClass2">
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_ArmQAA-nEeeusu_GvUDqLw" name="itemEClass2">
         <target xmi:type="ecore:EClass" href="My.ecore#//EClass2"/>
         <semanticElements xmi:type="ecore:EClass" href="My.ecore#//EClass2"/>
-        <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_ArmQAQ-nEeeusu_GvUDqLw" showIcon="false" labelPosition="node" color="114,159,207">
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_ArmQAQ-nEeeusu_GvUDqLw" showIcon="false" labelPosition="node" color="114,159,207">
           <description xmi:type="style:BundledImageDescription" href="My.odesign#//@ownedViewpoints[name='validation']/@ownedRepresentations[name='diag']/@defaultLayer/@containerMappings[name='SelfContainerList']/@subNodeMappings[name='classNodes']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="My.odesign#//@ownedViewpoints[name='validation']/@ownedRepresentations[name='diag']/@defaultLayer/@containerMappings[name='SelfContainerList']/@subNodeMappings[name='classNodes']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_Arm3EA-nEeeusu_GvUDqLw" name="itemEClass3">
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_Arm3EA-nEeeusu_GvUDqLw" name="itemEClass3">
         <target xmi:type="ecore:EClass" href="My.ecore#//EClass3"/>
         <semanticElements xmi:type="ecore:EClass" href="My.ecore#//EClass3"/>
-        <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_Arm3EQ-nEeeusu_GvUDqLw" showIcon="false" labelPosition="node" color="114,159,207">
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_Arm3EQ-nEeeusu_GvUDqLw" showIcon="false" labelPosition="node" color="114,159,207">
           <description xmi:type="style:BundledImageDescription" href="My.odesign#//@ownedViewpoints[name='validation']/@ownedRepresentations[name='diag']/@defaultLayer/@containerMappings[name='SelfContainerList']/@subNodeMappings[name='classNodes']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="My.odesign#//@ownedViewpoints[name='validation']/@ownedRepresentations[name='diag']/@defaultLayer/@containerMappings[name='SelfContainerList']/@subNodeMappings[name='classNodes']"/>
       </ownedElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_C8-nUA-oEeeusu_GvUDqLw" name="root3">
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_C8-nUA-oEeeusu_GvUDqLw" name="root3">
       <target xmi:type="ecore:EPackage" href="My.ecore#/"/>
       <semanticElements xmi:type="ecore:EPackage" href="My.ecore#/"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_C8_OYA-oEeeusu_GvUDqLw" borderSize="1" borderSizeComputationExpression="1" backgroundColor="217,196,215" foregroundColor="217,196,215">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_C8_OYA-oEeeusu_GvUDqLw" borderSize="1" borderSizeComputationExpression="1" backgroundColor="217,196,215" foregroundColor="217,196,215">
         <description xmi:type="style:FlatContainerStyleDescription" href="My.odesign#//@ownedViewpoints[name='validation']/@ownedRepresentations[name='diag']/@defaultLayer/@containerMappings[name='AnotherSelfContainerList']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="My.odesign#//@ownedViewpoints[name='validation']/@ownedRepresentations[name='diag']/@defaultLayer/@containerMappings[name='AnotherSelfContainerList']"/>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_C8_1cA-oEeeusu_GvUDqLw" name="itemEClass1">
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_C8_1cA-oEeeusu_GvUDqLw" name="itemEClass1">
         <target xmi:type="ecore:EClass" href="My.ecore#//EClass1"/>
         <semanticElements xmi:type="ecore:EClass" href="My.ecore#//EClass1"/>
-        <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_C8_1cQ-oEeeusu_GvUDqLw" showIcon="false" labelPosition="node" color="114,159,207">
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_C8_1cQ-oEeeusu_GvUDqLw" showIcon="false" labelPosition="node" color="114,159,207">
           <description xmi:type="style:BundledImageDescription" href="My.odesign#//@ownedViewpoints[name='validation']/@ownedRepresentations[name='diag']/@defaultLayer/@containerMappings[name='AnotherSelfContainerList']/@subNodeMappings[name='classNodes']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="My.odesign#//@ownedViewpoints[name='validation']/@ownedRepresentations[name='diag']/@defaultLayer/@containerMappings[name='AnotherSelfContainerList']/@subNodeMappings[name='classNodes']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_C9AcgA-oEeeusu_GvUDqLw" name="itemEClass2">
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_C9AcgA-oEeeusu_GvUDqLw" name="itemEClass2">
         <target xmi:type="ecore:EClass" href="My.ecore#//EClass2"/>
         <semanticElements xmi:type="ecore:EClass" href="My.ecore#//EClass2"/>
-        <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_C9AcgQ-oEeeusu_GvUDqLw" showIcon="false" labelPosition="node" color="114,159,207">
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_C9AcgQ-oEeeusu_GvUDqLw" showIcon="false" labelPosition="node" color="114,159,207">
           <description xmi:type="style:BundledImageDescription" href="My.odesign#//@ownedViewpoints[name='validation']/@ownedRepresentations[name='diag']/@defaultLayer/@containerMappings[name='AnotherSelfContainerList']/@subNodeMappings[name='classNodes']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="My.odesign#//@ownedViewpoints[name='validation']/@ownedRepresentations[name='diag']/@defaultLayer/@containerMappings[name='AnotherSelfContainerList']/@subNodeMappings[name='classNodes']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_C9Acgg-oEeeusu_GvUDqLw" name="itemEClass3">
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_C9Acgg-oEeeusu_GvUDqLw" name="itemEClass3">
         <target xmi:type="ecore:EClass" href="My.ecore#//EClass3"/>
         <semanticElements xmi:type="ecore:EClass" href="My.ecore#//EClass3"/>
-        <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_C9BDkA-oEeeusu_GvUDqLw" showIcon="false" labelPosition="node" color="114,159,207">
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_C9BDkA-oEeeusu_GvUDqLw" showIcon="false" labelPosition="node" color="114,159,207">
           <description xmi:type="style:BundledImageDescription" href="My.odesign#//@ownedViewpoints[name='validation']/@ownedRepresentations[name='diag']/@defaultLayer/@containerMappings[name='AnotherSelfContainerList']/@subNodeMappings[name='classNodes']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="My.odesign#//@ownedViewpoints[name='validation']/@ownedRepresentations[name='diag']/@defaultLayer/@containerMappings[name='AnotherSelfContainerList']/@subNodeMappings[name='classNodes']"/>
       </ownedElements>
     </ownedDiagramElements>
     <description xmi:type="description_1:DiagramDescription" href="My.odesign#//@ownedViewpoints[name='validation']/@ownedRepresentations[name='diag']"/>
-    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_jZPGqgi-EeeKCJSRL5OfIw"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_jZPGqgi-EeeKCJSRL5OfIw"/>
     <activatedLayers xmi:type="description_1:Layer" href="My.odesign#//@ownedViewpoints[name='validation']/@ownedRepresentations[name='diag']/@defaultLayer"/>
     <target xmi:type="ecore:EPackage" href="My.ecore#/"/>
   </diagram:DSemanticDiagram>
-  <diagram:DSemanticDiagram xmi:id="_t6O68AjQEeeKCJSRL5OfIw" name="new diag2">
-    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_t6O68QjQEeeKCJSRL5OfIw" source="DANNOTATION_CUSTOMIZATION_KEY">
-      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_t6O68gjQEeeKCJSRL5OfIw"/>
+  <diagram:DSemanticDiagram uid="_t6O68AjQEeeKCJSRL5OfIw" name="new diag2">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_t6O68QjQEeeKCJSRL5OfIw" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_t6O68gjQEeeKCJSRL5OfIw"/>
     </ownedAnnotationEntries>
-    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_t6PiAAjQEeeKCJSRL5OfIw" source="GMF_DIAGRAMS">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_t6PiAAjQEeeKCJSRL5OfIw" source="GMF_DIAGRAMS">
       <data xmi:type="notation:Diagram" xmi:id="_t6PiAQjQEeeKCJSRL5OfIw" type="Sirius" element="_t6O68AjQEeeKCJSRL5OfIw" measurementUnit="Pixel">
         <children xmi:type="notation:Node" xmi:id="_t6QJEAjQEeeKCJSRL5OfIw" type="2002" element="_t6O68wjQEeeKCJSRL5OfIw">
           <children xmi:type="notation:Node" xmi:id="_t6QJEwjQEeeKCJSRL5OfIw" type="5006"/>
@@ -409,56 +409,56 @@
         <styles xmi:type="notation:DiagramStyle" xmi:id="_t6PiAgjQEeeKCJSRL5OfIw"/>
       </data>
     </ownedAnnotationEntries>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_t6O68wjQEeeKCJSRL5OfIw" name="root">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_t6O68wjQEeeKCJSRL5OfIw" name="root">
       <target xmi:type="ecore:EPackage" href="My.ecore#/"/>
       <semanticElements xmi:type="ecore:EPackage" href="My.ecore#/"/>
-      <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_t6O69AjQEeeKCJSRL5OfIw" name="EClass1Border" width="3" height="3" resizeKind="NSEW">
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_t6O69AjQEeeKCJSRL5OfIw" name="EClass1Border" width="3" height="3" resizeKind="NSEW">
         <target xmi:type="ecore:EClass" href="My.ecore#//EClass1"/>
         <semanticElements xmi:type="ecore:EClass" href="My.ecore#//EClass1"/>
-        <ownedStyle xmi:type="diagram:Square" xmi:id="_t6O69QjQEeeKCJSRL5OfIw" showIcon="false" color="138,226,52">
+        <ownedStyle xmi:type="diagram:Square" uid="_t6O69QjQEeeKCJSRL5OfIw" showIcon="false" color="138,226,52">
           <description xmi:type="style:SquareDescription" href="My.odesign#//@ownedViewpoints[name='validation']/@ownedRepresentations[name='diag']/@defaultLayer/@containerMappings[name='SelfContainer']/@borderedNodeMappings[name='classBorderNodes']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="My.odesign#//@ownedViewpoints[name='validation']/@ownedRepresentations[name='diag']/@defaultLayer/@containerMappings[name='SelfContainer']/@borderedNodeMappings[name='classBorderNodes']"/>
       </ownedBorderedNodes>
-      <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_t6O69gjQEeeKCJSRL5OfIw" name="EClass2Border" width="3" height="3" resizeKind="NSEW">
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_t6O69gjQEeeKCJSRL5OfIw" name="EClass2Border" width="3" height="3" resizeKind="NSEW">
         <target xmi:type="ecore:EClass" href="My.ecore#//EClass2"/>
         <semanticElements xmi:type="ecore:EClass" href="My.ecore#//EClass2"/>
-        <ownedStyle xmi:type="diagram:Square" xmi:id="_t6O69wjQEeeKCJSRL5OfIw" showIcon="false" color="138,226,52">
+        <ownedStyle xmi:type="diagram:Square" uid="_t6O69wjQEeeKCJSRL5OfIw" showIcon="false" color="138,226,52">
           <description xmi:type="style:SquareDescription" href="My.odesign#//@ownedViewpoints[name='validation']/@ownedRepresentations[name='diag']/@defaultLayer/@containerMappings[name='SelfContainer']/@borderedNodeMappings[name='classBorderNodes']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="My.odesign#//@ownedViewpoints[name='validation']/@ownedRepresentations[name='diag']/@defaultLayer/@containerMappings[name='SelfContainer']/@borderedNodeMappings[name='classBorderNodes']"/>
       </ownedBorderedNodes>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_t6O6-AjQEeeKCJSRL5OfIw" borderSize="1" borderSizeComputationExpression="1" backgroundColor="194,239,255" foregroundColor="194,239,255">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_t6O6-AjQEeeKCJSRL5OfIw" borderSize="1" borderSizeComputationExpression="1" backgroundColor="194,239,255" foregroundColor="194,239,255">
         <description xmi:type="style:FlatContainerStyleDescription" href="My.odesign#//@ownedViewpoints[name='validation']/@ownedRepresentations[name='diag']/@defaultLayer/@containerMappings[name='SelfContainer']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="My.odesign#//@ownedViewpoints[name='validation']/@ownedRepresentations[name='diag']/@defaultLayer/@containerMappings[name='SelfContainer']"/>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_t6O6-QjQEeeKCJSRL5OfIw" name="EClass1" width="3" height="3" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" uid="_t6O6-QjQEeeKCJSRL5OfIw" name="EClass1" width="3" height="3" resizeKind="NSEW">
         <target xmi:type="ecore:EClass" href="My.ecore#//EClass1"/>
         <semanticElements xmi:type="ecore:EClass" href="My.ecore#//EClass1"/>
-        <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_t6O6-gjQEeeKCJSRL5OfIw" showIcon="false" labelPosition="node" color="114,159,207">
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_t6O6-gjQEeeKCJSRL5OfIw" showIcon="false" labelPosition="node" color="114,159,207">
           <description xmi:type="style:BundledImageDescription" href="My.odesign#//@ownedViewpoints[name='validation']/@ownedRepresentations[name='diag']/@defaultLayer/@containerMappings[name='SelfContainer']/@subNodeMappings[name='classNodes']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="My.odesign#//@ownedViewpoints[name='validation']/@ownedRepresentations[name='diag']/@defaultLayer/@containerMappings[name='SelfContainer']/@subNodeMappings[name='classNodes']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_t6O6-wjQEeeKCJSRL5OfIw" name="EClass2" width="3" height="3" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" uid="_t6O6-wjQEeeKCJSRL5OfIw" name="EClass2" width="3" height="3" resizeKind="NSEW">
         <target xmi:type="ecore:EClass" href="My.ecore#//EClass2"/>
         <semanticElements xmi:type="ecore:EClass" href="My.ecore#//EClass2"/>
-        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_t6O6_AjQEeeKCJSRL5OfIw" name="att1" width="3" height="3" resizeKind="NSEW">
+        <ownedBorderedNodes xmi:type="diagram:DNode" uid="_t6O6_AjQEeeKCJSRL5OfIw" name="att1" width="3" height="3" resizeKind="NSEW">
           <target xmi:type="ecore:EAttribute" href="My.ecore#//EClass2/att1"/>
           <semanticElements xmi:type="ecore:EAttribute" href="My.ecore#//EClass2/att1"/>
-          <ownedStyle xmi:type="diagram:Square" xmi:id="_t6O6_QjQEeeKCJSRL5OfIw">
+          <ownedStyle xmi:type="diagram:Square" uid="_t6O6_QjQEeeKCJSRL5OfIw">
             <description xmi:type="style:SquareDescription" href="My.odesign#//@ownedViewpoints[name='validation']/@ownedRepresentations[name='diag']/@defaultLayer/@containerMappings[name='SelfContainer']/@subNodeMappings[name='classNodes']/@borderedNodeMappings[name='Attributes']/@style"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="My.odesign#//@ownedViewpoints[name='validation']/@ownedRepresentations[name='diag']/@defaultLayer/@containerMappings[name='SelfContainer']/@subNodeMappings[name='classNodes']/@borderedNodeMappings[name='Attributes']"/>
         </ownedBorderedNodes>
-        <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_t6O6_gjQEeeKCJSRL5OfIw" showIcon="false" labelPosition="node" color="114,159,207">
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_t6O6_gjQEeeKCJSRL5OfIw" showIcon="false" labelPosition="node" color="114,159,207">
           <description xmi:type="style:BundledImageDescription" href="My.odesign#//@ownedViewpoints[name='validation']/@ownedRepresentations[name='diag']/@defaultLayer/@containerMappings[name='SelfContainer']/@subNodeMappings[name='classNodes']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="My.odesign#//@ownedViewpoints[name='validation']/@ownedRepresentations[name='diag']/@defaultLayer/@containerMappings[name='SelfContainer']/@subNodeMappings[name='classNodes']"/>
       </ownedDiagramElements>
     </ownedDiagramElements>
     <description xmi:type="description_1:DiagramDescription" href="My.odesign#//@ownedViewpoints[name='validation']/@ownedRepresentations[name='diag']"/>
-    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_t6O6_wjQEeeKCJSRL5OfIw"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_t6O6_wjQEeeKCJSRL5OfIw"/>
     <activatedLayers xmi:type="description_1:Layer" href="My.odesign#//@ownedViewpoints[name='validation']/@ownedRepresentations[name='diag']/@defaultLayer"/>
     <target xmi:type="ecore:EPackage" href="My.ecore#/"/>
   </diagram:DSemanticDiagram>

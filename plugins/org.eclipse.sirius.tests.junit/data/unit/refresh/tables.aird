@@ -1,23 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/table/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/description/1.1.0" xmlns:table="http://www.eclipse.org/sirius/table/1.1.0" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/table/description/1.1.0 http://www.eclipse.org/sirius/table/1.1.0#//description http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description" xmi:id="_u6es0M3REd27vtJe3G8h8w" selectedViews="_u7I0IM3REd27vtJe3G8h8w" version="8.0.0">
-  <models xmi:type="uml:Model" href="tables.uml#_jLo-cXnPEd2hNdpX8IgW8Q"/>
-  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_u7I0IM3REd27vtJe3G8h8w" initialized="true">
-    <ownedRepresentations xmi:type="table:DTable" xmi:id="_wekVwM3REd27vtJe3G8h8w" name="Class and subClass with some attributes">
-      <target xmi:type="uml:Model" href="tables.uml#_jLo-cXnPEd2hNdpX8IgW8Q"/>
-      <description xmi:type="description:EditionTableDescription" href="platform:/plugin/org.eclipse.sirius.tests.junit/data/unit/refresh/tables.odesign#//@ownedViewpoints[name='UML%20tables']/@ownedRepresentations[name='Class%20and%20subClass%20with%20some%20attributes']"/>
-    </ownedRepresentations>
-    <ownedRepresentations xmi:type="table:DTable" xmi:id="_20AN0M3REd27vtJe3G8h8w" name="new Cross Table Colors">
-      <target xmi:type="uml:Model" href="tables.uml#_jLo-cXnPEd2hNdpX8IgW8Q"/>
-      <description xmi:type="description:CrossTableDescription" href="platform:/plugin/org.eclipse.sirius.tests.junit/data/unit/refresh/tables.odesign#//@ownedViewpoints[name='UML%20tables']/@ownedRepresentations[name='Cross%20Table%20Colors']"/>
-    </ownedRepresentations>
-    <ownedRepresentations xmi:type="table:DTable" xmi:id="_6uqskM3REd27vtJe3G8h8w" name="new Cross Table Colors">
-      <target xmi:type="uml:Model" href="tables.uml#_jLo-cXnPEd2hNdpX8IgW8Q"/>
-      <description xmi:type="description:CrossTableDescription" href="platform:/plugin/org.eclipse.sirius.tests.junit/data/unit/refresh/tables.odesign#//@ownedViewpoints[name='UML%20tables']/@ownedRepresentations[name='Cross%20Table%20Colors']"/>
-    </ownedRepresentations>
-    <ownedRepresentations xmi:type="table:DTable" xmi:id="_MLbeYM3SEd27vtJe3G8h8w" name="new Colored Classes Table">
-      <target xmi:type="uml:Model" href="tables.uml#_jLo-cXnPEd2hNdpX8IgW8Q"/>
-      <description xmi:type="description:EditionTableDescription" href="platform:/plugin/org.eclipse.sirius.tests.junit/data/unit/refresh/tables.odesign#//@ownedViewpoints[name='UML%20tables']/@ownedRepresentations[name='Colored%20Classes%20Table']"/>
-    </ownedRepresentations>
-    <viewpoint xmi:type="description_1:Viewpoint" href="platform:/plugin/org.eclipse.sirius.tests.junit/data/unit/refresh/tables.odesign#//@ownedViewpoints[name='UML%20tables']"/>
-  </ownedViews>
-</viewpoint:DAnalysis>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:UML="http://www.eclipse.org/uml2/4.0.0/UML" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/table/description/1.1.0" xmlns:table="http://www.eclipse.org/sirius/table/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/table/description/1.1.0 http://www.eclipse.org/sirius/table/1.1.0#//description">
+  <viewpoint:DAnalysis uid="_u6es0M3REd27vtJe3G8h8w" selectedViews="_u7I0IM3REd27vtJe3G8h8w" version="14.1.0.201810161215">
+    <ownedViews xmi:type="viewpoint:DView" uid="_u7I0IM3REd27vtJe3G8h8w">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.sirius.tests.junit/data/unit/refresh/tables.odesign#//@ownedViewpoints[name='UML%20tables']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_jgSvAZJjEemBxZW6dX01Rg" name="Class and subClass with some attributes" repPath="#_wekVwM3REd27vtJe3G8h8w">
+        <description xmi:type="description_1:EditionTableDescription" href="platform:/plugin/org.eclipse.sirius.tests.junit/data/unit/refresh/tables.odesign#//@ownedViewpoints[name='UML%20tables']/@ownedRepresentations[name='Class%20and%20subClass%20with%20some%20attributes']"/>
+      </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_jgTWEZJjEemBxZW6dX01Rg" name="new Cross Table Colors" repPath="#_20AN0M3REd27vtJe3G8h8w">
+        <description xmi:type="description_1:CrossTableDescription" href="platform:/plugin/org.eclipse.sirius.tests.junit/data/unit/refresh/tables.odesign#//@ownedViewpoints[name='UML%20tables']/@ownedRepresentations[name='Cross%20Table%20Colors']"/>
+      </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_jgT9IZJjEemBxZW6dX01Rg" name="new Cross Table Colors" repPath="#_6uqskM3REd27vtJe3G8h8w">
+        <description xmi:type="description_1:CrossTableDescription" href="platform:/plugin/org.eclipse.sirius.tests.junit/data/unit/refresh/tables.odesign#//@ownedViewpoints[name='UML%20tables']/@ownedRepresentations[name='Cross%20Table%20Colors']"/>
+      </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_jgT9I5JjEemBxZW6dX01Rg" name="new Colored Classes Table" repPath="#_MLbeYM3SEd27vtJe3G8h8w">
+        <description xmi:type="description_1:EditionTableDescription" href="platform:/plugin/org.eclipse.sirius.tests.junit/data/unit/refresh/tables.odesign#//@ownedViewpoints[name='UML%20tables']/@ownedRepresentations[name='Colored%20Classes%20Table']"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+    <models xmi:type="UML:Model" href="tables.uml#_jLo-cXnPEd2hNdpX8IgW8Q"/>
+  </viewpoint:DAnalysis>
+  <table:DTable uid="_wekVwM3REd27vtJe3G8h8w" name="Class and subClass with some attributes">
+    <description xmi:type="description_1:EditionTableDescription" href="platform:/plugin/org.eclipse.sirius.tests.junit/data/unit/refresh/tables.odesign#//@ownedViewpoints[name='UML%20tables']/@ownedRepresentations[name='Class%20and%20subClass%20with%20some%20attributes']"/>
+    <target xmi:type="UML:Model" href="tables.uml#_jLo-cXnPEd2hNdpX8IgW8Q"/>
+  </table:DTable>
+  <table:DTable uid="_20AN0M3REd27vtJe3G8h8w" name="new Cross Table Colors">
+    <description xmi:type="description_1:CrossTableDescription" href="platform:/plugin/org.eclipse.sirius.tests.junit/data/unit/refresh/tables.odesign#//@ownedViewpoints[name='UML%20tables']/@ownedRepresentations[name='Cross%20Table%20Colors']"/>
+    <target xmi:type="UML:Model" href="tables.uml#_jLo-cXnPEd2hNdpX8IgW8Q"/>
+  </table:DTable>
+  <table:DTable uid="_6uqskM3REd27vtJe3G8h8w" name="new Cross Table Colors">
+    <description xmi:type="description_1:CrossTableDescription" href="platform:/plugin/org.eclipse.sirius.tests.junit/data/unit/refresh/tables.odesign#//@ownedViewpoints[name='UML%20tables']/@ownedRepresentations[name='Cross%20Table%20Colors']"/>
+    <target xmi:type="UML:Model" href="tables.uml#_jLo-cXnPEd2hNdpX8IgW8Q"/>
+  </table:DTable>
+  <table:DTable uid="_MLbeYM3SEd27vtJe3G8h8w" name="new Colored Classes Table">
+    <description xmi:type="description_1:EditionTableDescription" href="platform:/plugin/org.eclipse.sirius.tests.junit/data/unit/refresh/tables.odesign#//@ownedViewpoints[name='UML%20tables']/@ownedRepresentations[name='Colored%20Classes%20Table']"/>
+    <target xmi:type="UML:Model" href="tables.uml#_jLo-cXnPEd2hNdpX8IgW8Q"/>
+  </table:DTable>
+</xmi:XMI>

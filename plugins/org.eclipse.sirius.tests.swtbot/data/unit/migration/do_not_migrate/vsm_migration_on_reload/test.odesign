@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" name="test" version="6.7.0.201302071200">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" name="test" version="12.0.0.2017041100">
   <ownedViewpoints name="VP">
-    <ownedRepresentations xsi:type="description:DiagramDescription" name="Diag"/>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Diag"/>
     <ownedJavaExtensions qualifiedClassName="org.eclipse.sirius.test.design.BasicService"/>
     <ownedJavaExtensions qualifiedClassName="org::eclipse::sirius::test::design::AcceleoMtlInterpreterTestModule"/>
   </ownedViewpoints>

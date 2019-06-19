@@ -25,7 +25,6 @@
     </ownedRepresentationDescriptors>
     <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_wR-vcfSPEeiJ46Q2guFOWw" name="newPackage1 package entities with NULL target" repPath="Entities__wR-IUPSPEeiJ46Q2guFOWw.srm#_wR-IUPSPEeiJ46Q2guFOWw">
       <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.sirius.sample.ecore.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
-      <target xmi:type="ecore:EPackage"/>
     </ownedRepresentationDescriptors>
   </ownedViews>
 </viewpoint:DAnalysis>

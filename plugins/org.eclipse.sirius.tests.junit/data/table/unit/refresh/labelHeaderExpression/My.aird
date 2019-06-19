@@ -1,84 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/table/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/description/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:table="http://www.eclipse.org/sirius/table/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/table/description/1.1.0 http://www.eclipse.org/sirius/table/1.1.0#//description http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description" xmi:id="_gkgRIKWFEeG3aeE6_pdmnw" selectedViews="_7egFgKWdEeG3aeE6_pdmnw" version="10.0.0.201412231738">
-  <models xmi:type="ecore:EPackage" href="My.ecore#/"/>
-  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_hzEWAKWFEeG3aeE6_pdmnw" initialized="true">
-    <ownedRepresentations xmi:type="table:DTable" xmi:id="_liCiIKWFEeG3aeE6_pdmnw" name="new TableHeader" headerColumnWidth="69">
-      <target xmi:type="ecore:EPackage" href="My.ecore#/"/>
-      <lines xmi:type="table:DLine" xmi:id="_liCiIaWFEeG3aeE6_pdmnw" label="E221">
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/table/description/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:table="http://www.eclipse.org/sirius/table/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/table/description/1.1.0 http://www.eclipse.org/sirius/table/1.1.0#//description">
+  <viewpoint:DAnalysis uid="_gkgRIKWFEeG3aeE6_pdmnw" selectedViews="_7egFgKWdEeG3aeE6_pdmnw" version="14.1.0.201810161215">
+    <semanticResources>My.ecore</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" uid="_hzEWAKWFEeG3aeE6_pdmnw">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/description/My.odesign#//@ownedViewpoints[name='ModifyHeader']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_jFNVg5JjEemBxZW6dX01Rg" name="new TableHeader" repPath="#_liCiIKWFEeG3aeE6_pdmnw">
+        <description xmi:type="description_1:EditionTableDescription" href="platform:/resource/description/My.odesign#//@ownedViewpoints[name='ModifyHeader']/@ownedRepresentations[name='TableHeader']"/>
+        <target xmi:type="ecore:EPackage" href="My.ecore#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+    <ownedViews xmi:type="viewpoint:DView" uid="_7egFgKWdEeG3aeE6_pdmnw">
+      <viewpoint xmi:type="description:Viewpoint" href="My.odesign#//@ownedViewpoints[name='ModifyHeader']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_jFNVgZJjEemBxZW6dX01Rg" name="new TableHeader" repPath="#_pC4MwKxQEeSrE7wkgyvTdQ">
+        <description xmi:type="description_1:EditionTableDescription" href="My.odesign#//@ownedViewpoints[name='ModifyHeader']/@ownedRepresentations[name='TableHeader']"/>
+        <target xmi:type="ecore:EPackage" href="My.ecore#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <table:DTable uid="_pC4MwKxQEeSrE7wkgyvTdQ" name="new TableHeader" headerColumnWidth="105">
+    <target xmi:type="ecore:EPackage" href="My.ecore#/"/>
+    <lines xmi:type="table:DLine" uid="_pC4MwaxQEeSrE7wkgyvTdQ" label="EClass E221">
+      <target xmi:type="ecore:EClass" href="My.ecore#//E221"/>
+      <semanticElements xmi:type="ecore:EClass" href="My.ecore#//E221"/>
+      <originMapping xmi:type="description_1:LineMapping" href="My.odesign#//@ownedViewpoints[name='ModifyHeader']/@ownedRepresentations[name='TableHeader']/@ownedLineMappings[name='Class']"/>
+      <cells xmi:type="table:DCell" uid="_pC4MwqxQEeSrE7wkgyvTdQ" label="E221" column="_pC4MyqxQEeSrE7wkgyvTdQ">
         <target xmi:type="ecore:EClass" href="My.ecore#//E221"/>
         <semanticElements xmi:type="ecore:EClass" href="My.ecore#//E221"/>
-        <originMapping xmi:type="description:LineMapping" href="platform:/resource/description/My.odesign#//@ownedViewpoints[name='ModifyHeader']/@ownedRepresentations[name='TableHeader']/@ownedLineMappings[name='Class']"/>
-        <cells xmi:type="table:DCell" xmi:id="_liCiIqWFEeG3aeE6_pdmnw" label="E221" column="_liCiJaWFEeG3aeE6_pdmnw">
-          <target xmi:type="ecore:EClass" href="My.ecore#//E221"/>
-          <semanticElements xmi:type="ecore:EClass" href="My.ecore#//E221"/>
-        </cells>
-      </lines>
-      <lines xmi:type="table:DLine" xmi:id="_liCiI6WFEeG3aeE6_pdmnw" label="E2">
-        <target xmi:type="ecore:EClass" href="My.ecore#//E2"/>
-        <semanticElements xmi:type="ecore:EClass" href="My.ecore#//E2"/>
-        <originMapping xmi:type="description:LineMapping" href="platform:/resource/description/My.odesign#//@ownedViewpoints[name='ModifyHeader']/@ownedRepresentations[name='TableHeader']/@ownedLineMappings[name='Class']"/>
-        <cells xmi:type="table:DCell" xmi:id="_liCiJKWFEeG3aeE6_pdmnw" label="E2" column="_liCiJaWFEeG3aeE6_pdmnw">
-          <target xmi:type="ecore:EClass" href="My.ecore#//E2"/>
-          <semanticElements xmi:type="ecore:EClass" href="My.ecore#//E2"/>
-        </cells>
-      </lines>
-      <columns xmi:type="table:DFeatureColumn" xmi:id="_liCiJaWFEeG3aeE6_pdmnw" label="Name" cells="_liCiIqWFEeG3aeE6_pdmnw _liCiJKWFEeG3aeE6_pdmnw" width="47" featureName="name">
-        <originMapping xmi:type="description:FeatureColumnMapping" href="platform:/resource/description/My.odesign#//@ownedViewpoints[name='ModifyHeader']/@ownedRepresentations[name='TableHeader']/@ownedColumnMappings[name='Name']"/>
-      </columns>
-      <description xmi:type="description:EditionTableDescription" href="platform:/resource/description/My.odesign#//@ownedViewpoints[name='ModifyHeader']/@ownedRepresentations[name='TableHeader']"/>
-    </ownedRepresentations>
-    <viewpoint xmi:type="description_1:Viewpoint" href="platform:/resource/description/My.odesign#//@ownedViewpoints[name='ModifyHeader']"/>
-  </ownedViews>
-  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_7egFgKWdEeG3aeE6_pdmnw" initialized="true">
-    <ownedRepresentations xmi:type="table:DTable" xmi:id="_pC4MwKxQEeSrE7wkgyvTdQ" name="new TableHeader" headerColumnWidth="105">
-      <target xmi:type="ecore:EPackage" href="My.ecore#/"/>
-      <lines xmi:type="table:DLine" xmi:id="_pC4MwaxQEeSrE7wkgyvTdQ" label="EClass E221">
+      </cells>
+      <cells xmi:type="table:DCell" uid="_pC4Mw6xQEeSrE7wkgyvTdQ" label="[]" column="_pC4My6xQEeSrE7wkgyvTdQ">
         <target xmi:type="ecore:EClass" href="My.ecore#//E221"/>
         <semanticElements xmi:type="ecore:EClass" href="My.ecore#//E221"/>
-        <originMapping xmi:type="description:LineMapping" href="My.odesign#//@ownedViewpoints[name='ModifyHeader']/@ownedRepresentations[name='TableHeader']/@ownedLineMappings[name='Class']"/>
-        <cells xmi:type="table:DCell" xmi:id="_pC4MwqxQEeSrE7wkgyvTdQ" label="E221" column="_pC4MyqxQEeSrE7wkgyvTdQ">
-          <target xmi:type="ecore:EClass" href="My.ecore#//E221"/>
-          <semanticElements xmi:type="ecore:EClass" href="My.ecore#//E221"/>
-        </cells>
-        <cells xmi:type="table:DCell" xmi:id="_pC4Mw6xQEeSrE7wkgyvTdQ" label="[]" column="_pC4My6xQEeSrE7wkgyvTdQ">
-          <target xmi:type="ecore:EClass" href="My.ecore#//E221"/>
-          <semanticElements xmi:type="ecore:EClass" href="My.ecore#//E221"/>
-        </cells>
-      </lines>
-      <lines xmi:type="table:DLine" xmi:id="_pC4MxKxQEeSrE7wkgyvTdQ" label="EClass E2">
+      </cells>
+    </lines>
+    <lines xmi:type="table:DLine" uid="_pC4MxKxQEeSrE7wkgyvTdQ" label="EClass E2">
+      <target xmi:type="ecore:EClass" href="My.ecore#//E2"/>
+      <semanticElements xmi:type="ecore:EClass" href="My.ecore#//E2"/>
+      <originMapping xmi:type="description_1:LineMapping" href="My.odesign#//@ownedViewpoints[name='ModifyHeader']/@ownedRepresentations[name='TableHeader']/@ownedLineMappings[name='Class']"/>
+      <cells xmi:type="table:DCell" uid="_pC4MxaxQEeSrE7wkgyvTdQ" label="E2" column="_pC4MyqxQEeSrE7wkgyvTdQ">
         <target xmi:type="ecore:EClass" href="My.ecore#//E2"/>
         <semanticElements xmi:type="ecore:EClass" href="My.ecore#//E2"/>
-        <originMapping xmi:type="description:LineMapping" href="My.odesign#//@ownedViewpoints[name='ModifyHeader']/@ownedRepresentations[name='TableHeader']/@ownedLineMappings[name='Class']"/>
-        <cells xmi:type="table:DCell" xmi:id="_pC4MxaxQEeSrE7wkgyvTdQ" label="E2" column="_pC4MyqxQEeSrE7wkgyvTdQ">
-          <target xmi:type="ecore:EClass" href="My.ecore#//E2"/>
-          <semanticElements xmi:type="ecore:EClass" href="My.ecore#//E2"/>
-        </cells>
-        <cells xmi:type="table:DCell" xmi:id="_pC4MxqxQEeSrE7wkgyvTdQ" label="[]" column="_pC4My6xQEeSrE7wkgyvTdQ">
-          <target xmi:type="ecore:EClass" href="My.ecore#//E2"/>
-          <semanticElements xmi:type="ecore:EClass" href="My.ecore#//E2"/>
-        </cells>
-      </lines>
-      <lines xmi:type="table:DLine" xmi:id="_pC4Mx6xQEeSrE7wkgyvTdQ" label="EClass E1">
+      </cells>
+      <cells xmi:type="table:DCell" uid="_pC4MxqxQEeSrE7wkgyvTdQ" label="[]" column="_pC4My6xQEeSrE7wkgyvTdQ">
+        <target xmi:type="ecore:EClass" href="My.ecore#//E2"/>
+        <semanticElements xmi:type="ecore:EClass" href="My.ecore#//E2"/>
+      </cells>
+    </lines>
+    <lines xmi:type="table:DLine" uid="_pC4Mx6xQEeSrE7wkgyvTdQ" label="EClass E1">
+      <target xmi:type="ecore:EClass" href="My.ecore#//E1"/>
+      <semanticElements xmi:type="ecore:EClass" href="My.ecore#//E1"/>
+      <originMapping xmi:type="description_1:LineMapping" href="My.odesign#//@ownedViewpoints[name='ModifyHeader']/@ownedRepresentations[name='TableHeader']/@ownedLineMappings[name='Class']"/>
+      <cells xmi:type="table:DCell" uid="_pC4MyKxQEeSrE7wkgyvTdQ" label="E1" column="_pC4MyqxQEeSrE7wkgyvTdQ">
         <target xmi:type="ecore:EClass" href="My.ecore#//E1"/>
         <semanticElements xmi:type="ecore:EClass" href="My.ecore#//E1"/>
-        <originMapping xmi:type="description:LineMapping" href="My.odesign#//@ownedViewpoints[name='ModifyHeader']/@ownedRepresentations[name='TableHeader']/@ownedLineMappings[name='Class']"/>
-        <cells xmi:type="table:DCell" xmi:id="_pC4MyKxQEeSrE7wkgyvTdQ" label="E1" column="_pC4MyqxQEeSrE7wkgyvTdQ">
-          <target xmi:type="ecore:EClass" href="My.ecore#//E1"/>
-          <semanticElements xmi:type="ecore:EClass" href="My.ecore#//E1"/>
-        </cells>
-        <cells xmi:type="table:DCell" xmi:id="_pC4MyaxQEeSrE7wkgyvTdQ" label="[EClass E2, EClass E221]" column="_pC4My6xQEeSrE7wkgyvTdQ">
-          <target xmi:type="ecore:EClass" href="My.ecore#//E1"/>
-          <semanticElements xmi:type="ecore:EClass" href="My.ecore#//E1"/>
-        </cells>
-      </lines>
-      <columns xmi:type="table:DFeatureColumn" xmi:id="_pC4MyqxQEeSrE7wkgyvTdQ" label="Name" cells="_pC4MwqxQEeSrE7wkgyvTdQ _pC4MxaxQEeSrE7wkgyvTdQ _pC4MyKxQEeSrE7wkgyvTdQ" width="47" featureName="name">
-        <originMapping xmi:type="description:FeatureColumnMapping" href="My.odesign#//@ownedViewpoints[name='ModifyHeader']/@ownedRepresentations[name='TableHeader']/@ownedColumnMappings[name='Name']"/>
-      </columns>
-      <columns xmi:type="table:DFeatureColumn" xmi:id="_pC4My6xQEeSrE7wkgyvTdQ" label="Super types" cells="_pC4Mw6xQEeSrE7wkgyvTdQ _pC4MxqxQEeSrE7wkgyvTdQ _pC4MyaxQEeSrE7wkgyvTdQ" width="129" featureName="eSuperTypes">
-        <originMapping xmi:type="description:FeatureColumnMapping" href="My.odesign#//@ownedViewpoints[name='ModifyHeader']/@ownedRepresentations[name='TableHeader']/@ownedColumnMappings[name='SuperTypes']"/>
-      </columns>
-      <description xmi:type="description:EditionTableDescription" href="My.odesign#//@ownedViewpoints[name='ModifyHeader']/@ownedRepresentations[name='TableHeader']"/>
-    </ownedRepresentations>
-    <viewpoint xmi:type="description_1:Viewpoint" href="My.odesign#//@ownedViewpoints[name='ModifyHeader']"/>
-  </ownedViews>
-</viewpoint:DAnalysis>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_pC4MyaxQEeSrE7wkgyvTdQ" label="[EClass E2, EClass E221]" column="_pC4My6xQEeSrE7wkgyvTdQ">
+        <target xmi:type="ecore:EClass" href="My.ecore#//E1"/>
+        <semanticElements xmi:type="ecore:EClass" href="My.ecore#//E1"/>
+      </cells>
+    </lines>
+    <columns xmi:type="table:DFeatureColumn" uid="_pC4MyqxQEeSrE7wkgyvTdQ" label="Name" cells="_pC4MwqxQEeSrE7wkgyvTdQ _pC4MxaxQEeSrE7wkgyvTdQ _pC4MyKxQEeSrE7wkgyvTdQ" width="47" featureName="name">
+      <originMapping xmi:type="description_1:FeatureColumnMapping" href="My.odesign#//@ownedViewpoints[name='ModifyHeader']/@ownedRepresentations[name='TableHeader']/@ownedColumnMappings[name='Name']"/>
+    </columns>
+    <columns xmi:type="table:DFeatureColumn" uid="_pC4My6xQEeSrE7wkgyvTdQ" label="Super types" cells="_pC4Mw6xQEeSrE7wkgyvTdQ _pC4MxqxQEeSrE7wkgyvTdQ _pC4MyaxQEeSrE7wkgyvTdQ" width="129" featureName="eSuperTypes">
+      <originMapping xmi:type="description_1:FeatureColumnMapping" href="My.odesign#//@ownedViewpoints[name='ModifyHeader']/@ownedRepresentations[name='TableHeader']/@ownedColumnMappings[name='SuperTypes']"/>
+    </columns>
+    <description xmi:type="description_1:EditionTableDescription" href="My.odesign#//@ownedViewpoints[name='ModifyHeader']/@ownedRepresentations[name='TableHeader']"/>
+  </table:DTable>
+  <table:DTable uid="_liCiIKWFEeG3aeE6_pdmnw" name="new TableHeader" headerColumnWidth="69">
+    <target xmi:type="ecore:EPackage" href="My.ecore#/"/>
+    <lines xmi:type="table:DLine" uid="_liCiIaWFEeG3aeE6_pdmnw" label="E221">
+      <target xmi:type="ecore:EClass" href="My.ecore#//E221"/>
+      <semanticElements xmi:type="ecore:EClass" href="My.ecore#//E221"/>
+      <originMapping xmi:type="description_1:LineMapping" href="platform:/resource/description/My.odesign#//@ownedViewpoints[name='ModifyHeader']/@ownedRepresentations[name='TableHeader']/@ownedLineMappings[name='Class']"/>
+      <cells xmi:type="table:DCell" uid="_liCiIqWFEeG3aeE6_pdmnw" label="E221" column="_liCiJaWFEeG3aeE6_pdmnw">
+        <target xmi:type="ecore:EClass" href="My.ecore#//E221"/>
+        <semanticElements xmi:type="ecore:EClass" href="My.ecore#//E221"/>
+      </cells>
+    </lines>
+    <lines xmi:type="table:DLine" uid="_liCiI6WFEeG3aeE6_pdmnw" label="E2">
+      <target xmi:type="ecore:EClass" href="My.ecore#//E2"/>
+      <semanticElements xmi:type="ecore:EClass" href="My.ecore#//E2"/>
+      <originMapping xmi:type="description_1:LineMapping" href="platform:/resource/description/My.odesign#//@ownedViewpoints[name='ModifyHeader']/@ownedRepresentations[name='TableHeader']/@ownedLineMappings[name='Class']"/>
+      <cells xmi:type="table:DCell" uid="_liCiJKWFEeG3aeE6_pdmnw" label="E2" column="_liCiJaWFEeG3aeE6_pdmnw">
+        <target xmi:type="ecore:EClass" href="My.ecore#//E2"/>
+        <semanticElements xmi:type="ecore:EClass" href="My.ecore#//E2"/>
+      </cells>
+    </lines>
+    <columns xmi:type="table:DFeatureColumn" uid="_liCiJaWFEeG3aeE6_pdmnw" label="Name" cells="_liCiIqWFEeG3aeE6_pdmnw _liCiJKWFEeG3aeE6_pdmnw" width="47" featureName="name">
+      <originMapping xmi:type="description_1:FeatureColumnMapping" href="platform:/resource/description/My.odesign#//@ownedViewpoints[name='ModifyHeader']/@ownedRepresentations[name='TableHeader']/@ownedColumnMappings[name='Name']"/>
+    </columns>
+    <description xmi:type="description_1:EditionTableDescription" href="platform:/resource/description/My.odesign#//@ownedViewpoints[name='ModifyHeader']/@ownedRepresentations[name='TableHeader']"/>
+  </table:DTable>
+</xmi:XMI>

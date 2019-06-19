@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/sequence/description/2.0.0" xmlns:description_2="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:interactions="http://www.eclipse.org/sirius/sample/interactions" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:sequence="http://www.eclipse.org/sirius/diagram/sequence/2.0.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/sequence/description/2.0.0 http://www.eclipse.org/sirius/diagram/sequence/2.0.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
-  <viewpoint:DAnalysis xmi:id="_8t7zUDGiEee23qXEKKuVkg" selectedViews="_DqsKEDGjEee23qXEKKuVkg" version="12.0.0.201704271200">
+  <viewpoint:DAnalysis uid="_8t7zUDGiEee23qXEKKuVkg" selectedViews="_DqsKEDGjEee23qXEKKuVkg" version="14.1.0.201810161215">
     <semanticResources>LostFoundMessage.interactions</semanticResources>
-    <ownedViews xmi:type="viewpoint:DView" xmi:id="_DqsKEDGjEee23qXEKKuVkg">
+    <ownedViews xmi:type="viewpoint:DView" uid="_DqsKEDGjEee23qXEKKuVkg">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_EGBbMDGjEee23qXEKKuVkg" name="Sequence Diagram on i1" repPath="#_EF_mADGjEee23qXEKKuVkg">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_EGBbMDGjEee23qXEKKuVkg" name="Sequence Diagram on i1" repPath="#_EF_mADGjEee23qXEKKuVkg">
         <description xmi:type="description_1:SequenceDiagramDescription" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']"/>
         <target xmi:type="interactions:Interaction" href="LostFoundMessage.interactions#//@ownedInteractions.0"/>
       </ownedRepresentationDescriptors>
     </ownedViews>
   </viewpoint:DAnalysis>
-  <sequence:SequenceDDiagram xmi:id="_EF_mADGjEee23qXEKKuVkg" name="Sequence Diagram on i1">
-    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_EF_mATGjEee23qXEKKuVkg" source="DANNOTATION_CUSTOMIZATION_KEY">
-      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_EF_mAjGjEee23qXEKKuVkg"/>
+  <sequence:SequenceDDiagram uid="_EF_mADGjEee23qXEKKuVkg" name="Sequence Diagram on i1">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_EF_mATGjEee23qXEKKuVkg" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_EF_mAjGjEee23qXEKKuVkg"/>
     </ownedAnnotationEntries>
-    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_EGWyYDGjEee23qXEKKuVkg" source="GMF_DIAGRAMS">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_EGWyYDGjEee23qXEKKuVkg" source="GMF_DIAGRAMS">
       <data xmi:type="notation:Diagram" xmi:id="_EGXZcDGjEee23qXEKKuVkg" type="Sirius" element="_EF_mADGjEee23qXEKKuVkg" measurementUnit="Pixel">
         <children xmi:type="notation:Node" xmi:id="_E33H0DGjEee23qXEKKuVkg" type="2001" element="_E3MZcDGjEee23qXEKKuVkg">
           <children xmi:type="notation:Node" xmi:id="_E37ZQDGjEee23qXEKKuVkg" type="5002">
@@ -399,313 +399,313 @@
         </edges>
       </data>
     </ownedAnnotationEntries>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_E3MZcDGjEee23qXEKKuVkg" name="newParticipant1 : " width="12" height="5" resizeKind="NSEW">
-      <target xmi:type="interactions:Participant" href="LostFoundMessage.interactions#//@ownedInteractions.0/@participants.0"/>
-      <semanticElements xmi:type="interactions:Participant" href="LostFoundMessage.interactions#//@ownedInteractions.0/@participants.0"/>
-      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_E3iXsDGjEee23qXEKKuVkg" x="80" y="50" height="50" width="120"/>
-      <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_E3eGQDGjEee23qXEKKuVkg" outgoingEdges="_F727cDGjEee23qXEKKuVkg _H_YSYDGjEee23qXEKKuVkg _KFlJ4DGjEee23qXEKKuVkg" incomingEdges="_9tW1QDSdEeejiob8z221zA _rYRQUDTJEee72YZ_AaArvw _ucIC4DTJEee72YZ_AaArvw _RGZXoDTMEee72YZ_AaArvw _RwfdgDTMEee72YZ_AaArvw _SaSocDTMEee72YZ_AaArvw" width="1" height="40" resizeKind="NSEW">
-        <target xmi:type="interactions:Participant" href="LostFoundMessage.interactions#//@ownedInteractions.0/@participants.0"/>
-        <semanticElements xmi:type="interactions:Participant" href="LostFoundMessage.interactions#//@ownedInteractions.0/@participants.0"/>
-        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_E3etUDGjEee23qXEKKuVkg" width="1" height="1">
-          <target xmi:type="interactions:Participant" href="LostFoundMessage.interactions#//@ownedInteractions.0/@participants.0"/>
-          <semanticElements xmi:type="interactions:Participant" href="LostFoundMessage.interactions#//@ownedInteractions.0/@participants.0"/>
-          <ownedStyle xmi:type="diagram:Dot" xmi:id="_E3etUTGjEee23qXEKKuVkg" strokeSizeComputationExpression="1">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_E3MZcDGjEee23qXEKKuVkg" name="newParticipant1 : " width="12" height="5" resizeKind="NSEW">
+      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" uid="_E3iXsDGjEee23qXEKKuVkg" x="80" y="50" height="50" width="120"/>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_E3eGQDGjEee23qXEKKuVkg" outgoingEdges="_F727cDGjEee23qXEKKuVkg _H_YSYDGjEee23qXEKKuVkg _KFlJ4DGjEee23qXEKKuVkg" incomingEdges="_9tW1QDSdEeejiob8z221zA _rYRQUDTJEee72YZ_AaArvw _ucIC4DTJEee72YZ_AaArvw _RGZXoDTMEee72YZ_AaArvw _RwfdgDTMEee72YZ_AaArvw _SaSocDTMEee72YZ_AaArvw" width="1" height="40" resizeKind="NSEW">
+        <ownedBorderedNodes xmi:type="diagram:DNode" uid="_E3etUDGjEee23qXEKKuVkg" width="1" height="1">
+          <ownedStyle xmi:type="diagram:Dot" uid="_E3etUTGjEee23qXEKKuVkg" strokeSizeComputationExpression="1">
             <description xmi:type="style:DotDescription" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']/@borderedNodeMappings[name='redimEOL']/@style"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:EndOfLifeMapping" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']/@borderedNodeMappings[name='redimEOL']"/>
+          <target xmi:type="interactions:Participant" href="LostFoundMessage.interactions#//@ownedInteractions.0/@participants.0"/>
+          <semanticElements xmi:type="interactions:Participant" href="LostFoundMessage.interactions#//@ownedInteractions.0/@participants.0"/>
         </ownedBorderedNodes>
-        <ownedStyle xmi:type="diagram:Square" xmi:id="_E3etUjGjEee23qXEKKuVkg" showIcon="false" borderSize="3" borderSizeComputationExpression="3" borderColor="114,159,207" width="1" height="40" color="255,255,255">
+        <ownedStyle xmi:type="diagram:Square" uid="_E3etUjGjEee23qXEKKuVkg" showIcon="false" borderSize="3" borderSizeComputationExpression="3" borderColor="114,159,207" width="1" height="40" color="255,255,255">
           <description xmi:type="style:SquareDescription" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ExecutionMapping" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']"/>
+        <target xmi:type="interactions:Participant" href="LostFoundMessage.interactions#//@ownedInteractions.0/@participants.0"/>
+        <semanticElements xmi:type="interactions:Participant" href="LostFoundMessage.interactions#//@ownedInteractions.0/@participants.0"/>
       </ownedBorderedNodes>
-      <ownedStyle xmi:type="diagram:Square" xmi:id="_E3VjYDGjEee23qXEKKuVkg" labelSize="12" showIcon="false" labelPosition="node" width="12" height="5" color="114,159,207">
+      <ownedStyle xmi:type="diagram:Square" uid="_E3VjYDGjEee23qXEKKuVkg" labelSize="12" showIcon="false" labelPosition="node" width="12" height="5" color="114,159,207">
         <labelFormat>bold</labelFormat>
         <description xmi:type="style:SquareDescription" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@nodeMappings[name='Participant']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:InstanceRoleMapping" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@nodeMappings[name='Participant']"/>
+      <target xmi:type="interactions:Participant" href="LostFoundMessage.interactions#//@ownedInteractions.0/@participants.0"/>
+      <semanticElements xmi:type="interactions:Participant" href="LostFoundMessage.interactions#//@ownedInteractions.0/@participants.0"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_FDqIIDGjEee23qXEKKuVkg" name="newParticipant2 : " width="12" height="5" resizeKind="NSEW">
-      <target xmi:type="interactions:Participant" href="LostFoundMessage.interactions#//@ownedInteractions.0/@participants.1"/>
-      <semanticElements xmi:type="interactions:Participant" href="LostFoundMessage.interactions#//@ownedInteractions.0/@participants.1"/>
-      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_FDr9VDGjEee23qXEKKuVkg" x="260" y="50" height="50" width="120"/>
-      <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_FDr9UDGjEee23qXEKKuVkg" width="1" height="40" resizeKind="NSEW">
-        <target xmi:type="interactions:Participant" href="LostFoundMessage.interactions#//@ownedInteractions.0/@participants.1"/>
-        <semanticElements xmi:type="interactions:Participant" href="LostFoundMessage.interactions#//@ownedInteractions.0/@participants.1"/>
-        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_FDr9UTGjEee23qXEKKuVkg" width="1" height="1">
-          <target xmi:type="interactions:Participant" href="LostFoundMessage.interactions#//@ownedInteractions.0/@participants.1"/>
-          <semanticElements xmi:type="interactions:Participant" href="LostFoundMessage.interactions#//@ownedInteractions.0/@participants.1"/>
-          <ownedStyle xmi:type="diagram:Dot" xmi:id="_FDr9UjGjEee23qXEKKuVkg" strokeSizeComputationExpression="1">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_FDqIIDGjEee23qXEKKuVkg" name="newParticipant2 : " width="12" height="5" resizeKind="NSEW">
+      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" uid="_FDr9VDGjEee23qXEKKuVkg" x="260" y="50" height="50" width="120"/>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_FDr9UDGjEee23qXEKKuVkg" width="1" height="40" resizeKind="NSEW">
+        <ownedBorderedNodes xmi:type="diagram:DNode" uid="_FDr9UTGjEee23qXEKKuVkg" width="1" height="1">
+          <ownedStyle xmi:type="diagram:Dot" uid="_FDr9UjGjEee23qXEKKuVkg" strokeSizeComputationExpression="1">
             <description xmi:type="style:DotDescription" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']/@borderedNodeMappings[name='redimEOL']/@style"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:EndOfLifeMapping" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']/@borderedNodeMappings[name='redimEOL']"/>
+          <target xmi:type="interactions:Participant" href="LostFoundMessage.interactions#//@ownedInteractions.0/@participants.1"/>
+          <semanticElements xmi:type="interactions:Participant" href="LostFoundMessage.interactions#//@ownedInteractions.0/@participants.1"/>
         </ownedBorderedNodes>
-        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_F7w00DGjEee23qXEKKuVkg" incomingEdges="_F727cDGjEee23qXEKKuVkg" width="2" height="5" resizeKind="NORTH_SOUTH">
+        <ownedBorderedNodes xmi:type="diagram:DNode" uid="_F7w00DGjEee23qXEKKuVkg" incomingEdges="_F727cDGjEee23qXEKKuVkg" width="2" height="5" resizeKind="NORTH_SOUTH">
+          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" uid="_F82Z8DGjEee23qXEKKuVkg" x="310" y="133" height="57" width="20"/>
+          <ownedStyle xmi:type="diagram:Square" uid="_F7w00TGjEee23qXEKKuVkg" showIcon="false" borderSize="1" borderSizeComputationExpression="1" borderColor="39,76,114" width="2" height="5" color="199,237,232">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']/@borderedNodeMappings[name='Execution']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ExecutionMapping" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']/@borderedNodeMappings[name='Execution']"/>
           <target xmi:type="interactions:Execution" href="LostFoundMessage.interactions#//@ownedInteractions.0/@executions.0"/>
           <semanticElements xmi:type="interactions:Execution" href="LostFoundMessage.interactions#//@ownedInteractions.0/@executions.0"/>
           <semanticElements xmi:type="interactions:MixEnd" href="LostFoundMessage.interactions#//@ownedInteractions.0/@ends.1"/>
           <semanticElements xmi:type="interactions:MixEnd" href="LostFoundMessage.interactions#//@ownedInteractions.0/@ends.2"/>
           <semanticElements xmi:type="interactions:Participant" href="LostFoundMessage.interactions#//@ownedInteractions.0/@participants.1"/>
-          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_F82Z8DGjEee23qXEKKuVkg" x="310" y="133" height="57" width="20"/>
-          <ownedStyle xmi:type="diagram:Square" xmi:id="_F7w00TGjEee23qXEKKuVkg" showIcon="false" borderSize="1" borderSizeComputationExpression="1" borderColor="39,76,114" width="2" height="5" color="199,237,232">
-            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']/@borderedNodeMappings[name='Execution']/@style"/>
-          </ownedStyle>
-          <actualMapping xmi:type="description_1:ExecutionMapping" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']/@borderedNodeMappings[name='Execution']"/>
         </ownedBorderedNodes>
-        <ownedStyle xmi:type="diagram:Square" xmi:id="_FDr9UzGjEee23qXEKKuVkg" showIcon="false" borderSize="3" borderSizeComputationExpression="3" borderColor="114,159,207" width="1" height="40" color="255,255,255">
+        <ownedStyle xmi:type="diagram:Square" uid="_FDr9UzGjEee23qXEKKuVkg" showIcon="false" borderSize="3" borderSizeComputationExpression="3" borderColor="114,159,207" width="1" height="40" color="255,255,255">
           <description xmi:type="style:SquareDescription" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ExecutionMapping" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']"/>
+        <target xmi:type="interactions:Participant" href="LostFoundMessage.interactions#//@ownedInteractions.0/@participants.1"/>
+        <semanticElements xmi:type="interactions:Participant" href="LostFoundMessage.interactions#//@ownedInteractions.0/@participants.1"/>
       </ownedBorderedNodes>
-      <ownedStyle xmi:type="diagram:Square" xmi:id="_FDqvMDGjEee23qXEKKuVkg" labelSize="12" showIcon="false" labelPosition="node" width="12" height="5" color="114,159,207">
+      <ownedStyle xmi:type="diagram:Square" uid="_FDqvMDGjEee23qXEKKuVkg" labelSize="12" showIcon="false" labelPosition="node" width="12" height="5" color="114,159,207">
         <labelFormat>bold</labelFormat>
         <description xmi:type="style:SquareDescription" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@nodeMappings[name='Participant']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:InstanceRoleMapping" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@nodeMappings[name='Participant']"/>
+      <target xmi:type="interactions:Participant" href="LostFoundMessage.interactions#//@ownedInteractions.0/@participants.1"/>
+      <semanticElements xmi:type="interactions:Participant" href="LostFoundMessage.interactions#//@ownedInteractions.0/@participants.1"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_FJTdIDGjEee23qXEKKuVkg" name="newParticipant3 : " width="12" height="5" resizeKind="NSEW">
-      <target xmi:type="interactions:Participant" href="LostFoundMessage.interactions#//@ownedInteractions.0/@participants.2"/>
-      <semanticElements xmi:type="interactions:Participant" href="LostFoundMessage.interactions#//@ownedInteractions.0/@participants.2"/>
-      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_FJVSUDGjEee23qXEKKuVkg" x="470" y="50" height="50" width="120"/>
-      <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_FJUrQDGjEee23qXEKKuVkg" width="1" height="40" resizeKind="NSEW">
-        <target xmi:type="interactions:Participant" href="LostFoundMessage.interactions#//@ownedInteractions.0/@participants.2"/>
-        <semanticElements xmi:type="interactions:Participant" href="LostFoundMessage.interactions#//@ownedInteractions.0/@participants.2"/>
-        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_FJUrQTGjEee23qXEKKuVkg" width="1" height="1">
-          <target xmi:type="interactions:Participant" href="LostFoundMessage.interactions#//@ownedInteractions.0/@participants.2"/>
-          <semanticElements xmi:type="interactions:Participant" href="LostFoundMessage.interactions#//@ownedInteractions.0/@participants.2"/>
-          <ownedStyle xmi:type="diagram:Dot" xmi:id="_FJUrQjGjEee23qXEKKuVkg" strokeSizeComputationExpression="1">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_FJTdIDGjEee23qXEKKuVkg" name="newParticipant3 : " width="12" height="5" resizeKind="NSEW">
+      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" uid="_FJVSUDGjEee23qXEKKuVkg" x="470" y="50" height="50" width="120"/>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_FJUrQDGjEee23qXEKKuVkg" width="1" height="40" resizeKind="NSEW">
+        <ownedBorderedNodes xmi:type="diagram:DNode" uid="_FJUrQTGjEee23qXEKKuVkg" width="1" height="1">
+          <ownedStyle xmi:type="diagram:Dot" uid="_FJUrQjGjEee23qXEKKuVkg" strokeSizeComputationExpression="1">
             <description xmi:type="style:DotDescription" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']/@borderedNodeMappings[name='redimEOL']/@style"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:EndOfLifeMapping" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']/@borderedNodeMappings[name='redimEOL']"/>
+          <target xmi:type="interactions:Participant" href="LostFoundMessage.interactions#//@ownedInteractions.0/@participants.2"/>
+          <semanticElements xmi:type="interactions:Participant" href="LostFoundMessage.interactions#//@ownedInteractions.0/@participants.2"/>
         </ownedBorderedNodes>
-        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_NMxkUDGjEee23qXEKKuVkg" incomingEdges="_NM1OsDGjEee23qXEKKuVkg" width="2" height="5" resizeKind="NORTH_SOUTH">
+        <ownedBorderedNodes xmi:type="diagram:DNode" uid="_NMxkUDGjEee23qXEKKuVkg" incomingEdges="_NM1OsDGjEee23qXEKKuVkg" width="2" height="5" resizeKind="NORTH_SOUTH">
+          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" uid="_NM4SATGjEee23qXEKKuVkg" x="520" y="334" height="99" width="20"/>
+          <ownedStyle xmi:type="diagram:Square" uid="_NMyLYDGjEee23qXEKKuVkg" showIcon="false" borderSize="1" borderSizeComputationExpression="1" borderColor="39,76,114" width="2" height="5" color="199,237,232">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']/@borderedNodeMappings[name='Execution']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ExecutionMapping" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']/@borderedNodeMappings[name='Execution']"/>
           <target xmi:type="interactions:Execution" href="LostFoundMessage.interactions#//@ownedInteractions.0/@executions.1"/>
           <semanticElements xmi:type="interactions:Execution" href="LostFoundMessage.interactions#//@ownedInteractions.0/@executions.1"/>
           <semanticElements xmi:type="interactions:MixEnd" href="LostFoundMessage.interactions#//@ownedInteractions.0/@ends.5"/>
           <semanticElements xmi:type="interactions:ExecutionEnd" href="LostFoundMessage.interactions#//@ownedInteractions.0/@ends.8"/>
           <semanticElements xmi:type="interactions:Participant" href="LostFoundMessage.interactions#//@ownedInteractions.0/@participants.2"/>
-          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_NM4SATGjEee23qXEKKuVkg" x="520" y="334" height="99" width="20"/>
-          <ownedStyle xmi:type="diagram:Square" xmi:id="_NMyLYDGjEee23qXEKKuVkg" showIcon="false" borderSize="1" borderSizeComputationExpression="1" borderColor="39,76,114" width="2" height="5" color="199,237,232">
-            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']/@borderedNodeMappings[name='Execution']/@style"/>
-          </ownedStyle>
-          <actualMapping xmi:type="description_1:ExecutionMapping" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']/@borderedNodeMappings[name='Execution']"/>
         </ownedBorderedNodes>
-        <ownedStyle xmi:type="diagram:Square" xmi:id="_FJUrQzGjEee23qXEKKuVkg" showIcon="false" borderSize="3" borderSizeComputationExpression="3" borderColor="114,159,207" width="1" height="40" color="255,255,255">
+        <ownedStyle xmi:type="diagram:Square" uid="_FJUrQzGjEee23qXEKKuVkg" showIcon="false" borderSize="3" borderSizeComputationExpression="3" borderColor="114,159,207" width="1" height="40" color="255,255,255">
           <description xmi:type="style:SquareDescription" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ExecutionMapping" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']"/>
+        <target xmi:type="interactions:Participant" href="LostFoundMessage.interactions#//@ownedInteractions.0/@participants.2"/>
+        <semanticElements xmi:type="interactions:Participant" href="LostFoundMessage.interactions#//@ownedInteractions.0/@participants.2"/>
       </ownedBorderedNodes>
-      <ownedStyle xmi:type="diagram:Square" xmi:id="_FJUEMDGjEee23qXEKKuVkg" labelSize="12" showIcon="false" labelPosition="node" width="12" height="5" color="114,159,207">
+      <ownedStyle xmi:type="diagram:Square" uid="_FJUEMDGjEee23qXEKKuVkg" labelSize="12" showIcon="false" labelPosition="node" width="12" height="5" color="114,159,207">
         <labelFormat>bold</labelFormat>
         <description xmi:type="style:SquareDescription" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@nodeMappings[name='Participant']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:InstanceRoleMapping" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@nodeMappings[name='Participant']"/>
+      <target xmi:type="interactions:Participant" href="LostFoundMessage.interactions#//@ownedInteractions.0/@participants.2"/>
+      <semanticElements xmi:type="interactions:Participant" href="LostFoundMessage.interactions#//@ownedInteractions.0/@participants.2"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_F727cDGjEee23qXEKKuVkg" name="m1" sourceNode="_E3eGQDGjEee23qXEKKuVkg" targetNode="_F7w00DGjEee23qXEKKuVkg">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_F727cDGjEee23qXEKKuVkg" name="m1" sourceNode="_E3eGQDGjEee23qXEKKuVkg" targetNode="_F7w00DGjEee23qXEKKuVkg">
+      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" uid="_F7-QMDGjEee23qXEKKuVkg" y="133" height="0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_F77z8DGjEee23qXEKKuVkg" size="2" strokeColor="114,159,207">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@edgeMappings[name='Call%20Message']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_F77z8TGjEee23qXEKKuVkg" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:BasicMessageMapping" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@edgeMappings[name='Call%20Message']"/>
       <target xmi:type="interactions:CallMessage" href="LostFoundMessage.interactions#//@ownedInteractions.0/@messages.7"/>
       <semanticElements xmi:type="interactions:CallMessage" href="LostFoundMessage.interactions#//@ownedInteractions.0/@messages.7"/>
       <semanticElements xmi:type="interactions:MessageEnd" href="LostFoundMessage.interactions#//@ownedInteractions.0/@ends.0"/>
       <semanticElements xmi:type="interactions:MixEnd" href="LostFoundMessage.interactions#//@ownedInteractions.0/@ends.1"/>
       <semanticElements xmi:type="interactions:Participant" href="LostFoundMessage.interactions#//@ownedInteractions.0/@participants.0"/>
       <semanticElements xmi:type="interactions:Execution" href="LostFoundMessage.interactions#//@ownedInteractions.0/@executions.0"/>
-      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_F7-QMDGjEee23qXEKKuVkg" y="133" height="0"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_F77z8DGjEee23qXEKKuVkg" size="2" strokeColor="114,159,207">
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@edgeMappings[name='Call%20Message']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_F77z8TGjEee23qXEKKuVkg" showIcon="false"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:BasicMessageMapping" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@edgeMappings[name='Call%20Message']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_SaRaUDTMEee72YZ_AaArvw" tooltipText="Lost end" outgoingEdges="_SaSocDTMEee72YZ_AaArvw" width="1" height="1" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_SaRaUDTMEee72YZ_AaArvw" tooltipText="Lost end" outgoingEdges="_SaSocDTMEee72YZ_AaArvw" width="1" height="1" resizeKind="NSEW">
+      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" uid="_SaT2kTTMEee72YZ_AaArvw" x="65" y="344" height="10" width="10"/>
+      <ownedStyle xmi:type="diagram:Dot" uid="_SaRaUTTMEee72YZ_AaArvw" strokeSizeComputationExpression="1" backgroundColor="0,0,0">
+        <description xmi:type="style:DotDescription" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@nodeMappings[name='Lost%20Message%20End']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_2:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@nodeMappings[name='Lost%20Message%20End']"/>
       <target xmi:type="interactions:FeatureAccessMessage" href="LostFoundMessage.interactions#//@ownedInteractions.0/@messages.0"/>
       <semanticElements xmi:type="interactions:FeatureAccessMessage" href="LostFoundMessage.interactions#//@ownedInteractions.0/@messages.0"/>
-      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_SaT2kTTMEee72YZ_AaArvw" x="65" y="344" height="10" width="10"/>
-      <ownedStyle xmi:type="diagram:Dot" xmi:id="_SaRaUTTMEee72YZ_AaArvw" strokeSizeComputationExpression="1" backgroundColor="0,0,0">
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_RwePYDTMEee72YZ_AaArvw" tooltipText="Lost end" outgoingEdges="_RwfdgDTMEee72YZ_AaArvw" width="1" height="1" resizeKind="NSEW">
+      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" uid="_RwhSsTTMEee72YZ_AaArvw" x="65" y="359" height="10" width="10"/>
+      <ownedStyle xmi:type="diagram:Dot" uid="_RwePYTTMEee72YZ_AaArvw" strokeSizeComputationExpression="1" backgroundColor="0,0,0">
         <description xmi:type="style:DotDescription" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@nodeMappings[name='Lost%20Message%20End']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_2:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@nodeMappings[name='Lost%20Message%20End']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_RwePYDTMEee72YZ_AaArvw" tooltipText="Lost end" outgoingEdges="_RwfdgDTMEee72YZ_AaArvw" width="1" height="1" resizeKind="NSEW">
       <target xmi:type="interactions:FeatureAccessMessage" href="LostFoundMessage.interactions#//@ownedInteractions.0/@messages.1"/>
       <semanticElements xmi:type="interactions:FeatureAccessMessage" href="LostFoundMessage.interactions#//@ownedInteractions.0/@messages.1"/>
-      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_RwhSsTTMEee72YZ_AaArvw" x="65" y="359" height="10" width="10"/>
-      <ownedStyle xmi:type="diagram:Dot" xmi:id="_RwePYTTMEee72YZ_AaArvw" strokeSizeComputationExpression="1" backgroundColor="0,0,0">
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_RGYJgDTMEee72YZ_AaArvw" tooltipText="Lost end" outgoingEdges="_RGZXoDTMEee72YZ_AaArvw" width="1" height="1" resizeKind="NSEW">
+      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" uid="_RGfeQTTMEee72YZ_AaArvw" x="65" y="314" height="10" width="10"/>
+      <ownedStyle xmi:type="diagram:Dot" uid="_RGYJgTTMEee72YZ_AaArvw" strokeSizeComputationExpression="1" backgroundColor="0,0,0">
         <description xmi:type="style:DotDescription" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@nodeMappings[name='Lost%20Message%20End']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_2:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@nodeMappings[name='Lost%20Message%20End']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_RGYJgDTMEee72YZ_AaArvw" tooltipText="Lost end" outgoingEdges="_RGZXoDTMEee72YZ_AaArvw" width="1" height="1" resizeKind="NSEW">
       <target xmi:type="interactions:FeatureAccessMessage" href="LostFoundMessage.interactions#//@ownedInteractions.0/@messages.2"/>
       <semanticElements xmi:type="interactions:FeatureAccessMessage" href="LostFoundMessage.interactions#//@ownedInteractions.0/@messages.2"/>
-      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_RGfeQTTMEee72YZ_AaArvw" x="65" y="314" height="10" width="10"/>
-      <ownedStyle xmi:type="diagram:Dot" xmi:id="_RGYJgTTMEee72YZ_AaArvw" strokeSizeComputationExpression="1" backgroundColor="0,0,0">
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_ucFmoDTJEee72YZ_AaArvw" tooltipText="Lost end" outgoingEdges="_ucIC4DTJEee72YZ_AaArvw" width="1" height="1" resizeKind="NSEW">
+      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" uid="_ucLGMTTJEee72YZ_AaArvw" x="65" y="230" height="10" width="10"/>
+      <ownedStyle xmi:type="diagram:Dot" uid="_ucGNsDTJEee72YZ_AaArvw" strokeSizeComputationExpression="1" backgroundColor="0,0,0">
         <description xmi:type="style:DotDescription" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@nodeMappings[name='Lost%20Message%20End']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_2:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@nodeMappings[name='Lost%20Message%20End']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_ucFmoDTJEee72YZ_AaArvw" tooltipText="Lost end" outgoingEdges="_ucIC4DTJEee72YZ_AaArvw" width="1" height="1" resizeKind="NSEW">
       <target xmi:type="interactions:FeatureAccessMessage" href="LostFoundMessage.interactions#//@ownedInteractions.0/@messages.3"/>
       <semanticElements xmi:type="interactions:FeatureAccessMessage" href="LostFoundMessage.interactions#//@ownedInteractions.0/@messages.3"/>
-      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_ucLGMTTJEee72YZ_AaArvw" x="65" y="230" height="10" width="10"/>
-      <ownedStyle xmi:type="diagram:Dot" xmi:id="_ucGNsDTJEee72YZ_AaArvw" strokeSizeComputationExpression="1" backgroundColor="0,0,0">
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_rYKioDTJEee72YZ_AaArvw" tooltipText="Lost end" outgoingEdges="_rYRQUDTJEee72YZ_AaArvw" width="1" height="1" resizeKind="NSEW">
+      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" uid="_rYYlETTJEee72YZ_AaArvw" x="65" y="541" height="10" width="10"/>
+      <ownedStyle xmi:type="diagram:Dot" uid="_rYMX0DTJEee72YZ_AaArvw" strokeSizeComputationExpression="1" backgroundColor="0,0,0">
         <description xmi:type="style:DotDescription" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@nodeMappings[name='Lost%20Message%20End']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_2:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@nodeMappings[name='Lost%20Message%20End']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_rYKioDTJEee72YZ_AaArvw" tooltipText="Lost end" outgoingEdges="_rYRQUDTJEee72YZ_AaArvw" width="1" height="1" resizeKind="NSEW">
       <target xmi:type="interactions:FeatureAccessMessage" href="LostFoundMessage.interactions#//@ownedInteractions.0/@messages.4"/>
       <semanticElements xmi:type="interactions:FeatureAccessMessage" href="LostFoundMessage.interactions#//@ownedInteractions.0/@messages.4"/>
-      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_rYYlETTJEee72YZ_AaArvw" x="65" y="541" height="10" width="10"/>
-      <ownedStyle xmi:type="diagram:Dot" xmi:id="_rYMX0DTJEee72YZ_AaArvw" strokeSizeComputationExpression="1" backgroundColor="0,0,0">
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_9tTx8DSdEeejiob8z221zA" tooltipText="Lost end" outgoingEdges="_9tW1QDSdEeejiob8z221zA" width="1" height="1" resizeKind="NSEW">
+      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" uid="_9tZRgTSdEeejiob8z221zA" x="65" y="451" height="10" width="10"/>
+      <ownedStyle xmi:type="diagram:Dot" uid="_9tVAEDSdEeejiob8z221zA" strokeSizeComputationExpression="1" backgroundColor="0,0,0">
         <description xmi:type="style:DotDescription" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@nodeMappings[name='Lost%20Message%20End']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_2:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@nodeMappings[name='Lost%20Message%20End']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_9tTx8DSdEeejiob8z221zA" tooltipText="Lost end" outgoingEdges="_9tW1QDSdEeejiob8z221zA" width="1" height="1" resizeKind="NSEW">
       <target xmi:type="interactions:FeatureAccessMessage" href="LostFoundMessage.interactions#//@ownedInteractions.0/@messages.5"/>
       <semanticElements xmi:type="interactions:FeatureAccessMessage" href="LostFoundMessage.interactions#//@ownedInteractions.0/@messages.5"/>
-      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_9tZRgTSdEeejiob8z221zA" x="65" y="451" height="10" width="10"/>
-      <ownedStyle xmi:type="diagram:Dot" xmi:id="_9tVAEDSdEeejiob8z221zA" strokeSizeComputationExpression="1" backgroundColor="0,0,0">
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_NMyycDGjEee23qXEKKuVkg" tooltipText="Lost end" outgoingEdges="_NM1OsDGjEee23qXEKKuVkg" width="1" height="1" resizeKind="NSEW">
+      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" uid="_NM4SAjGjEee23qXEKKuVkg" x="455" y="329" height="10" width="10"/>
+      <ownedStyle xmi:type="diagram:Dot" uid="_NMzZgDGjEee23qXEKKuVkg" strokeSizeComputationExpression="1" backgroundColor="0,0,0">
         <description xmi:type="style:DotDescription" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@nodeMappings[name='Lost%20Message%20End']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_2:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@nodeMappings[name='Lost%20Message%20End']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_NMyycDGjEee23qXEKKuVkg" tooltipText="Lost end" outgoingEdges="_NM1OsDGjEee23qXEKKuVkg" width="1" height="1" resizeKind="NSEW">
       <target xmi:type="interactions:CallMessage" href="LostFoundMessage.interactions#//@ownedInteractions.0/@messages.6"/>
       <semanticElements xmi:type="interactions:CallMessage" href="LostFoundMessage.interactions#//@ownedInteractions.0/@messages.6"/>
-      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_NM4SAjGjEee23qXEKKuVkg" x="455" y="329" height="10" width="10"/>
-      <ownedStyle xmi:type="diagram:Dot" xmi:id="_NMzZgDGjEee23qXEKKuVkg" strokeSizeComputationExpression="1" backgroundColor="0,0,0">
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_KFki0DGjEee23qXEKKuVkg" tooltipText="Lost end" incomingEdges="_KFlJ4DGjEee23qXEKKuVkg" width="1" height="1" resizeKind="NSEW">
+      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" uid="_KFr3kDGjEee23qXEKKuVkg" x="205" y="485" height="10" width="10"/>
+      <ownedStyle xmi:type="diagram:Dot" uid="_KFki0TGjEee23qXEKKuVkg" strokeSizeComputationExpression="1" backgroundColor="0,0,0">
         <description xmi:type="style:DotDescription" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@nodeMappings[name='Lost%20Message%20End']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_2:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@nodeMappings[name='Lost%20Message%20End']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_KFki0DGjEee23qXEKKuVkg" tooltipText="Lost end" incomingEdges="_KFlJ4DGjEee23qXEKKuVkg" width="1" height="1" resizeKind="NSEW">
       <target xmi:type="interactions:FeatureAccessMessage" href="LostFoundMessage.interactions#//@ownedInteractions.0/@messages.8"/>
       <semanticElements xmi:type="interactions:FeatureAccessMessage" href="LostFoundMessage.interactions#//@ownedInteractions.0/@messages.8"/>
-      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_KFr3kDGjEee23qXEKKuVkg" x="205" y="485" height="10" width="10"/>
-      <ownedStyle xmi:type="diagram:Dot" xmi:id="_KFki0TGjEee23qXEKKuVkg" strokeSizeComputationExpression="1" backgroundColor="0,0,0">
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_H_V2IDGjEee23qXEKKuVkg" tooltipText="Lost end" incomingEdges="_H_YSYDGjEee23qXEKKuVkg" width="1" height="1" resizeKind="NSEW">
+      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" uid="_H_auoTGjEee23qXEKKuVkg" x="205" y="647" height="10" width="10"/>
+      <ownedStyle xmi:type="diagram:Dot" uid="_H_V2ITGjEee23qXEKKuVkg" strokeSizeComputationExpression="1" backgroundColor="0,0,0">
         <description xmi:type="style:DotDescription" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@nodeMappings[name='Lost%20Message%20End']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_2:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@nodeMappings[name='Lost%20Message%20End']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_H_V2IDGjEee23qXEKKuVkg" tooltipText="Lost end" incomingEdges="_H_YSYDGjEee23qXEKKuVkg" width="1" height="1" resizeKind="NSEW">
       <target xmi:type="interactions:CallMessage" href="LostFoundMessage.interactions#//@ownedInteractions.0/@messages.9"/>
       <semanticElements xmi:type="interactions:CallMessage" href="LostFoundMessage.interactions#//@ownedInteractions.0/@messages.9"/>
-      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_H_auoTGjEee23qXEKKuVkg" x="205" y="647" height="10" width="10"/>
-      <ownedStyle xmi:type="diagram:Dot" xmi:id="_H_V2ITGjEee23qXEKKuVkg" strokeSizeComputationExpression="1" backgroundColor="0,0,0">
-        <description xmi:type="style:DotDescription" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@nodeMappings[name='Lost%20Message%20End']/@style"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_2:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@nodeMappings[name='Lost%20Message%20End']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_H_YSYDGjEee23qXEKKuVkg" name="m5" sourceNode="_E3eGQDGjEee23qXEKKuVkg" targetNode="_H_V2IDGjEee23qXEKKuVkg">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_H_YSYDGjEee23qXEKKuVkg" name="m5" sourceNode="_E3eGQDGjEee23qXEKKuVkg" targetNode="_H_V2IDGjEee23qXEKKuVkg">
+      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" uid="_H_auoDGjEee23qXEKKuVkg" y="652" height="0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_H_YSYTGjEee23qXEKKuVkg" size="2" strokeColor="114,159,207">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@edgeMappings[name='Call%20Message']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_H_YSYjGjEee23qXEKKuVkg" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:BasicMessageMapping" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@edgeMappings[name='Call%20Message']"/>
       <target xmi:type="interactions:CallMessage" href="LostFoundMessage.interactions#//@ownedInteractions.0/@messages.9"/>
       <semanticElements xmi:type="interactions:CallMessage" href="LostFoundMessage.interactions#//@ownedInteractions.0/@messages.9"/>
       <semanticElements xmi:type="interactions:MessageEnd" href="LostFoundMessage.interactions#//@ownedInteractions.0/@ends.12"/>
       <semanticElements xmi:type="interactions:Participant" href="LostFoundMessage.interactions#//@ownedInteractions.0/@participants.0"/>
-      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_H_auoDGjEee23qXEKKuVkg" y="652" height="0"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_H_YSYTGjEee23qXEKKuVkg" size="2" strokeColor="114,159,207">
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@edgeMappings[name='Call%20Message']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_H_YSYjGjEee23qXEKKuVkg" showIcon="false"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:BasicMessageMapping" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@edgeMappings[name='Call%20Message']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_KFlJ4DGjEee23qXEKKuVkg" name="m8" sourceNode="_E3eGQDGjEee23qXEKKuVkg" targetNode="_KFki0DGjEee23qXEKKuVkg">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_KFlJ4DGjEee23qXEKKuVkg" name="m8" sourceNode="_E3eGQDGjEee23qXEKKuVkg" targetNode="_KFki0DGjEee23qXEKKuVkg">
+      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" uid="_KFrQgDGjEee23qXEKKuVkg" y="490" height="0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_KFoNMDGjEee23qXEKKuVkg" size="2" strokeColor="77,137,20">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@edgeMappings[name='Feature%20Access%20Message']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_KFoNMTGjEee23qXEKKuVkg" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:BasicMessageMapping" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@edgeMappings[name='Feature%20Access%20Message']"/>
       <target xmi:type="interactions:FeatureAccessMessage" href="LostFoundMessage.interactions#//@ownedInteractions.0/@messages.8"/>
       <semanticElements xmi:type="interactions:FeatureAccessMessage" href="LostFoundMessage.interactions#//@ownedInteractions.0/@messages.8"/>
       <semanticElements xmi:type="interactions:MessageEnd" href="LostFoundMessage.interactions#//@ownedInteractions.0/@ends.10"/>
       <semanticElements xmi:type="interactions:Participant" href="LostFoundMessage.interactions#//@ownedInteractions.0/@participants.0"/>
-      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_KFrQgDGjEee23qXEKKuVkg" y="490" height="0"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_KFoNMDGjEee23qXEKKuVkg" size="2" strokeColor="77,137,20">
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@edgeMappings[name='Feature%20Access%20Message']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_KFoNMTGjEee23qXEKKuVkg" showIcon="false"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:BasicMessageMapping" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@edgeMappings[name='Feature%20Access%20Message']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_NM1OsDGjEee23qXEKKuVkg" name="m13" sourceNode="_NMyycDGjEee23qXEKKuVkg" targetNode="_NMxkUDGjEee23qXEKKuVkg">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_NM1OsDGjEee23qXEKKuVkg" name="m13" sourceNode="_NMyycDGjEee23qXEKKuVkg" targetNode="_NMxkUDGjEee23qXEKKuVkg">
+      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" uid="_NM4SADGjEee23qXEKKuVkg" y="334" height="0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_NM11wDGjEee23qXEKKuVkg" size="2" strokeColor="114,159,207">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@edgeMappings[name='Call%20Message']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_NM11wTGjEee23qXEKKuVkg" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:BasicMessageMapping" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@edgeMappings[name='Call%20Message']"/>
       <target xmi:type="interactions:CallMessage" href="LostFoundMessage.interactions#//@ownedInteractions.0/@messages.6"/>
       <semanticElements xmi:type="interactions:CallMessage" href="LostFoundMessage.interactions#//@ownedInteractions.0/@messages.6"/>
       <semanticElements xmi:type="interactions:MixEnd" href="LostFoundMessage.interactions#//@ownedInteractions.0/@ends.5"/>
       <semanticElements xmi:type="interactions:Execution" href="LostFoundMessage.interactions#//@ownedInteractions.0/@executions.1"/>
-      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_NM4SADGjEee23qXEKKuVkg" y="334" height="0"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_NM11wDGjEee23qXEKKuVkg" size="2" strokeColor="114,159,207">
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@edgeMappings[name='Call%20Message']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_NM11wTGjEee23qXEKKuVkg" showIcon="false"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:BasicMessageMapping" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@edgeMappings[name='Call%20Message']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_9tW1QDSdEeejiob8z221zA" name="m5" sourceNode="_9tTx8DSdEeejiob8z221zA" targetNode="_E3eGQDGjEee23qXEKKuVkg">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_9tW1QDSdEeejiob8z221zA" name="m5" sourceNode="_9tTx8DSdEeejiob8z221zA" targetNode="_E3eGQDGjEee23qXEKKuVkg">
+      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" uid="_9tZRgDSdEeejiob8z221zA" y="456" height="0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_9tW1QTSdEeejiob8z221zA" size="2" strokeColor="77,137,20">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@edgeMappings[name='Feature%20Access%20Message']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_9tW1QjSdEeejiob8z221zA" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:BasicMessageMapping" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@edgeMappings[name='Feature%20Access%20Message']"/>
       <target xmi:type="interactions:FeatureAccessMessage" href="LostFoundMessage.interactions#//@ownedInteractions.0/@messages.5"/>
       <semanticElements xmi:type="interactions:FeatureAccessMessage" href="LostFoundMessage.interactions#//@ownedInteractions.0/@messages.5"/>
       <semanticElements xmi:type="interactions:MessageEnd" href="LostFoundMessage.interactions#//@ownedInteractions.0/@ends.9"/>
       <semanticElements xmi:type="interactions:Participant" href="LostFoundMessage.interactions#//@ownedInteractions.0/@participants.0"/>
-      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_9tZRgDSdEeejiob8z221zA" y="456" height="0"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_9tW1QTSdEeejiob8z221zA" size="2" strokeColor="77,137,20">
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_rYRQUDTJEee72YZ_AaArvw" name="m6" sourceNode="_rYKioDTJEee72YZ_AaArvw" targetNode="_E3eGQDGjEee23qXEKKuVkg">
+      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" uid="_rYYlEDTJEee72YZ_AaArvw" y="546" height="0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_rYSecDTJEee72YZ_AaArvw" size="2" strokeColor="77,137,20">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@edgeMappings[name='Feature%20Access%20Message']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_9tW1QjSdEeejiob8z221zA" showIcon="false"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_rYTFgDTJEee72YZ_AaArvw" showIcon="false"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:BasicMessageMapping" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@edgeMappings[name='Feature%20Access%20Message']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_rYRQUDTJEee72YZ_AaArvw" name="m6" sourceNode="_rYKioDTJEee72YZ_AaArvw" targetNode="_E3eGQDGjEee23qXEKKuVkg">
       <target xmi:type="interactions:FeatureAccessMessage" href="LostFoundMessage.interactions#//@ownedInteractions.0/@messages.4"/>
       <semanticElements xmi:type="interactions:FeatureAccessMessage" href="LostFoundMessage.interactions#//@ownedInteractions.0/@messages.4"/>
       <semanticElements xmi:type="interactions:MessageEnd" href="LostFoundMessage.interactions#//@ownedInteractions.0/@ends.11"/>
       <semanticElements xmi:type="interactions:Participant" href="LostFoundMessage.interactions#//@ownedInteractions.0/@participants.0"/>
-      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_rYYlEDTJEee72YZ_AaArvw" y="546" height="0"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_rYSecDTJEee72YZ_AaArvw" size="2" strokeColor="77,137,20">
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_ucIC4DTJEee72YZ_AaArvw" name="m7" sourceNode="_ucFmoDTJEee72YZ_AaArvw" targetNode="_E3eGQDGjEee23qXEKKuVkg">
+      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" uid="_ucLGMDTJEee72YZ_AaArvw" y="235" height="0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_ucIC4TTJEee72YZ_AaArvw" size="2" strokeColor="77,137,20">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@edgeMappings[name='Feature%20Access%20Message']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_rYTFgDTJEee72YZ_AaArvw" showIcon="false"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_ucIp8DTJEee72YZ_AaArvw" showIcon="false"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:BasicMessageMapping" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@edgeMappings[name='Feature%20Access%20Message']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_ucIC4DTJEee72YZ_AaArvw" name="m7" sourceNode="_ucFmoDTJEee72YZ_AaArvw" targetNode="_E3eGQDGjEee23qXEKKuVkg">
       <target xmi:type="interactions:FeatureAccessMessage" href="LostFoundMessage.interactions#//@ownedInteractions.0/@messages.3"/>
       <semanticElements xmi:type="interactions:FeatureAccessMessage" href="LostFoundMessage.interactions#//@ownedInteractions.0/@messages.3"/>
       <semanticElements xmi:type="interactions:MessageEnd" href="LostFoundMessage.interactions#//@ownedInteractions.0/@ends.3"/>
       <semanticElements xmi:type="interactions:Participant" href="LostFoundMessage.interactions#//@ownedInteractions.0/@participants.0"/>
-      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_ucLGMDTJEee72YZ_AaArvw" y="235" height="0"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_ucIC4TTJEee72YZ_AaArvw" size="2" strokeColor="77,137,20">
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@edgeMappings[name='Feature%20Access%20Message']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_ucIp8DTJEee72YZ_AaArvw" showIcon="false"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_RGZXoDTMEee72YZ_AaArvw" name="m8" sourceNode="_RGYJgDTMEee72YZ_AaArvw" targetNode="_E3eGQDGjEee23qXEKKuVkg">
+      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" uid="_RGfeQDTMEee72YZ_AaArvw" y="319" height="0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_RGdCADTMEee72YZ_AaArvw" size="2" strokeColor="224,133,3">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@edgeMappings[name='Feature%20Access%20Message']/@conditionnalStyles.0/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_RGdCATTMEee72YZ_AaArvw" showIcon="false"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:BasicMessageMapping" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@edgeMappings[name='Feature%20Access%20Message']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_RGZXoDTMEee72YZ_AaArvw" name="m8" sourceNode="_RGYJgDTMEee72YZ_AaArvw" targetNode="_E3eGQDGjEee23qXEKKuVkg">
       <target xmi:type="interactions:FeatureAccessMessage" href="LostFoundMessage.interactions#//@ownedInteractions.0/@messages.2"/>
       <semanticElements xmi:type="interactions:FeatureAccessMessage" href="LostFoundMessage.interactions#//@ownedInteractions.0/@messages.2"/>
       <semanticElements xmi:type="interactions:MessageEnd" href="LostFoundMessage.interactions#//@ownedInteractions.0/@ends.4"/>
       <semanticElements xmi:type="interactions:Participant" href="LostFoundMessage.interactions#//@ownedInteractions.0/@participants.0"/>
-      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_RGfeQDTMEee72YZ_AaArvw" y="319" height="0"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_RGdCADTMEee72YZ_AaArvw" size="2" strokeColor="224,133,3">
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_RwfdgDTMEee72YZ_AaArvw" name="m9" sourceNode="_RwePYDTMEee72YZ_AaArvw" targetNode="_E3eGQDGjEee23qXEKKuVkg">
+      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" uid="_RwhSsDTMEee72YZ_AaArvw" y="364" height="0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_RwgEkDTMEee72YZ_AaArvw" size="2" strokeColor="224,133,3">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@edgeMappings[name='Feature%20Access%20Message']/@conditionnalStyles.0/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_RGdCATTMEee72YZ_AaArvw" showIcon="false"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_RwgEkTTMEee72YZ_AaArvw" showIcon="false"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:BasicMessageMapping" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@edgeMappings[name='Feature%20Access%20Message']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_RwfdgDTMEee72YZ_AaArvw" name="m9" sourceNode="_RwePYDTMEee72YZ_AaArvw" targetNode="_E3eGQDGjEee23qXEKKuVkg">
       <target xmi:type="interactions:FeatureAccessMessage" href="LostFoundMessage.interactions#//@ownedInteractions.0/@messages.1"/>
       <semanticElements xmi:type="interactions:FeatureAccessMessage" href="LostFoundMessage.interactions#//@ownedInteractions.0/@messages.1"/>
       <semanticElements xmi:type="interactions:MessageEnd" href="LostFoundMessage.interactions#//@ownedInteractions.0/@ends.7"/>
       <semanticElements xmi:type="interactions:Participant" href="LostFoundMessage.interactions#//@ownedInteractions.0/@participants.0"/>
-      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_RwhSsDTMEee72YZ_AaArvw" y="364" height="0"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_RwgEkDTMEee72YZ_AaArvw" size="2" strokeColor="224,133,3">
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@edgeMappings[name='Feature%20Access%20Message']/@conditionnalStyles.0/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_RwgEkTTMEee72YZ_AaArvw" showIcon="false"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_SaSocDTMEee72YZ_AaArvw" name="m10" sourceNode="_SaRaUDTMEee72YZ_AaArvw" targetNode="_E3eGQDGjEee23qXEKKuVkg">
+      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" uid="_SaT2kDTMEee72YZ_AaArvw" y="349" height="0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_SaSocTTMEee72YZ_AaArvw" size="2" strokeColor="77,137,20">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@edgeMappings[name='Feature%20Access%20Message']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_SaSocjTMEee72YZ_AaArvw" showIcon="false"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:BasicMessageMapping" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@edgeMappings[name='Feature%20Access%20Message']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_SaSocDTMEee72YZ_AaArvw" name="m10" sourceNode="_SaRaUDTMEee72YZ_AaArvw" targetNode="_E3eGQDGjEee23qXEKKuVkg">
       <target xmi:type="interactions:FeatureAccessMessage" href="LostFoundMessage.interactions#//@ownedInteractions.0/@messages.0"/>
       <semanticElements xmi:type="interactions:FeatureAccessMessage" href="LostFoundMessage.interactions#//@ownedInteractions.0/@messages.0"/>
       <semanticElements xmi:type="interactions:MessageEnd" href="LostFoundMessage.interactions#//@ownedInteractions.0/@ends.6"/>
       <semanticElements xmi:type="interactions:Participant" href="LostFoundMessage.interactions#//@ownedInteractions.0/@participants.0"/>
-      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_SaT2kDTMEee72YZ_AaArvw" y="349" height="0"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_SaSocTTMEee72YZ_AaArvw" size="2" strokeColor="77,137,20">
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@edgeMappings[name='Feature%20Access%20Message']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_SaSocjTMEee72YZ_AaArvw" showIcon="false"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:BasicMessageMapping" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@edgeMappings[name='Feature%20Access%20Message']"/>
     </ownedDiagramElements>
     <description xmi:type="description_1:SequenceDiagramDescription" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']"/>
-    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_EGANETGjEee23qXEKKuVkg"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_EGANETGjEee23qXEKKuVkg"/>
     <activatedLayers xmi:type="description_2:Layer" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer"/>
     <activatedLayers xmi:type="description_2:AdditionalLayer" href="platform:/plugin/org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@additionalLayers[name='Lost%20Found']"/>
     <target xmi:type="interactions:Interaction" href="LostFoundMessage.interactions#//@ownedInteractions.0"/>

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
-  <viewpoint:DAnalysis xmi:id="_LRIiwQGeEeKBtNtHA_6CIA" selectedViews="_Amw_4AGgEeK0RvEWqMf9sg" version="12.1.0.201708031200">
+  <viewpoint:DAnalysis uid="_LRIiwQGeEeKBtNtHA_6CIA" selectedViews="_Amw_4AGgEeK0RvEWqMf9sg" version="14.1.0.201810161215">
     <semanticResources>VP-3535.ecore</semanticResources>
-    <ownedViews xmi:type="viewpoint:DView" xmi:id="_Amw_4AGgEeK0RvEWqMf9sg">
+    <ownedViews xmi:type="viewpoint:DView" uid="_Amw_4AGgEeK0RvEWqMf9sg">
       <viewpoint xmi:type="description:Viewpoint" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_yCu7cJ07EeeVW8NN4B1bJQ" name="new VP-3535_Diagram" repPath="#_yBEHgJ07EeeVW8NN4B1bJQ">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_yCu7cJ07EeeVW8NN4B1bJQ" name="new VP-3535_Diagram" repPath="#_C6qVIAGgEeK0RvEWqMf9sg">
         <description xmi:type="description_1:DiagramDescription" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']"/>
         <target xmi:type="ecore:EPackage" href="VP-3535.ecore#/"/>
       </ownedRepresentationDescriptors>
     </ownedViews>
   </viewpoint:DAnalysis>
-  <diagram:DSemanticDiagram xmi:id="_C6qVIAGgEeK0RvEWqMf9sg" name="new VP-3535_Diagram" uid="_yBEHgJ07EeeVW8NN4B1bJQ">
-    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_C7pzoAGgEeK0RvEWqMf9sg" source="GMF_DIAGRAMS">
+  <diagram:DSemanticDiagram uid="_C6qVIAGgEeK0RvEWqMf9sg" name="new VP-3535_Diagram">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_C7pzoAGgEeK0RvEWqMf9sg" source="GMF_DIAGRAMS">
       <data xmi:type="notation:Diagram" xmi:id="_C7pzoQGgEeK0RvEWqMf9sg" type="Sirius" element="_C6qVIAGgEeK0RvEWqMf9sg" measurementUnit="Pixel">
         <children xmi:type="notation:Node" xmi:id="_BPF58AL6EeKK7OfTPSHmnQ" type="2001" element="_BLl6AAL6EeKK7OfTPSHmnQ">
           <children xmi:type="notation:Node" xmi:id="_BPHvIAL6EeKK7OfTPSHmnQ" type="5002">
@@ -372,333 +372,333 @@
         </edges>
       </data>
     </ownedAnnotationEntries>
-    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_yCx-wJ07EeeVW8NN4B1bJQ" source="DANNOTATION_CUSTOMIZATION_KEY">
-      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_yCx-wZ07EeeVW8NN4B1bJQ"/>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_yCx-wJ07EeeVW8NN4B1bJQ" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_yCx-wZ07EeeVW8NN4B1bJQ"/>
     </ownedAnnotationEntries>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_BLl6AAL6EeKK7OfTPSHmnQ" name="EClass1WithSquareStyle" outgoingEdges="_rt4XMAZaEeKSU9Zb6QcbzA" incomingEdges="_rspBEAZaEeKSU9Zb6QcbzA" width="3" height="3" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_BLl6AAL6EeKK7OfTPSHmnQ" name="EClass1WithSquareStyle" outgoingEdges="_rt4XMAZaEeKSU9Zb6QcbzA" incomingEdges="_rspBEAZaEeKSU9Zb6QcbzA" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="ecore:EClass" href="VP-3535.ecore#//EClass1"/>
       <semanticElements xmi:type="ecore:EClass" href="VP-3535.ecore#//EClass1"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:Square" xmi:id="_gds8UFZPEeKv4bncD5UUQg" iconPath="/DesignerTestProject/image.bmp">
+      <ownedStyle xmi:type="diagram:Square" uid="_gds8UFZPEeKv4bncD5UUQg" iconPath="/DesignerTestProject/image.bmp">
         <description xmi:type="style:SquareDescription" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@defaultLayer/@nodeMappings[name='EClassNodeWithSquareStyle']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@defaultLayer/@nodeMappings[name='EClassNodeWithSquareStyle']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_BO1bQAL6EeKK7OfTPSHmnQ" name="EClass2WithSquareStyle" outgoingEdges="_rspBEAZaEeKSU9Zb6QcbzA" incomingEdges="_rt4XMAZaEeKSU9Zb6QcbzA" width="3" height="3" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_BO1bQAL6EeKK7OfTPSHmnQ" name="EClass2WithSquareStyle" outgoingEdges="_rspBEAZaEeKSU9Zb6QcbzA" incomingEdges="_rt4XMAZaEeKSU9Zb6QcbzA" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="ecore:EClass" href="VP-3535.ecore#//EClass2"/>
       <semanticElements xmi:type="ecore:EClass" href="VP-3535.ecore#//EClass2"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:Square" xmi:id="_gdtjYFZPEeKv4bncD5UUQg" iconPath="/DesignerTestProject/image.bmp">
+      <ownedStyle xmi:type="diagram:Square" uid="_gdtjYFZPEeKv4bncD5UUQg" iconPath="/DesignerTestProject/image.bmp">
         <description xmi:type="style:SquareDescription" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@defaultLayer/@nodeMappings[name='EClassNodeWithSquareStyle']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@defaultLayer/@nodeMappings[name='EClassNodeWithSquareStyle']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_d1ec8AZaEeKSU9Zb6QcbzA" name="EPackage1WithFlatContainerStyle">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_d1ec8AZaEeKSU9Zb6QcbzA" name="EPackage1WithFlatContainerStyle">
       <target xmi:type="ecore:EPackage" href="VP-3535.ecore#//EPackage1"/>
       <semanticElements xmi:type="ecore:EPackage" href="VP-3535.ecore#//EPackage1"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_gduKcFZPEeKv4bncD5UUQg" iconPath="/DesignerTestProject/image.bmp" labelAlignment="LEFT" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" backgroundColor="114,159,207" foregroundColor="255,255,255">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_gduKcFZPEeKv4bncD5UUQg" iconPath="/DesignerTestProject/image.bmp" labelAlignment="LEFT" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" backgroundColor="114,159,207" foregroundColor="255,255,255">
         <description xmi:type="style:FlatContainerStyleDescription" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@additionalLayers[name='layerOfContainerStyles']/@containerMappings[name='EPackageWithFlatContainerStyle']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@additionalLayers[name='layerOfContainerStyles']/@containerMappings[name='EPackageWithFlatContainerStyle']"/>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_d1gSIAZaEeKSU9Zb6QcbzA" name="EClass11WithSquareStyle" visible="false" width="3" height="3" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" uid="_d1gSIAZaEeKSU9Zb6QcbzA" name="EClass11WithSquareStyle" visible="false" width="3" height="3" resizeKind="NSEW">
         <target xmi:type="ecore:EClass" href="VP-3535.ecore#//EPackage1/EClass11"/>
         <semanticElements xmi:type="ecore:EClass" href="VP-3535.ecore#//EPackage1/EClass11"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:Square" xmi:id="_d1g5MAZaEeKSU9Zb6QcbzA" iconPath="/DesignerTestProject/image.bmp">
+        <ownedStyle xmi:type="diagram:Square" uid="_d1g5MAZaEeKSU9Zb6QcbzA" iconPath="/DesignerTestProject/image.bmp">
           <description xmi:type="style:SquareDescription" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@defaultLayer/@nodeMappings[name='EClassNodeWithSquareStyle']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@defaultLayer/@nodeMappings[name='EClassNodeWithSquareStyle']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_d1g5NAZaEeKSU9Zb6QcbzA" name="EClass22WithSquareStyle" visible="false" width="3" height="3" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" uid="_d1g5NAZaEeKSU9Zb6QcbzA" name="EClass22WithSquareStyle" visible="false" width="3" height="3" resizeKind="NSEW">
         <target xmi:type="ecore:EClass" href="VP-3535.ecore#//EPackage1/EClass22"/>
         <semanticElements xmi:type="ecore:EClass" href="VP-3535.ecore#//EPackage1/EClass22"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:Square" xmi:id="_d1hgQAZaEeKSU9Zb6QcbzA" iconPath="/DesignerTestProject/image.bmp">
+        <ownedStyle xmi:type="diagram:Square" uid="_d1hgQAZaEeKSU9Zb6QcbzA" iconPath="/DesignerTestProject/image.bmp">
           <description xmi:type="style:SquareDescription" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@defaultLayer/@nodeMappings[name='EClassNodeWithSquareStyle']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@defaultLayer/@nodeMappings[name='EClassNodeWithSquareStyle']"/>
       </ownedDiagramElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_d1iuYAZaEeKSU9Zb6QcbzA" name="EPackage1WithShapeContainerStyle" tooltipText="">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_d1iuYAZaEeKSU9Zb6QcbzA" name="EPackage1WithShapeContainerStyle" tooltipText="">
       <target xmi:type="ecore:EPackage" href="VP-3535.ecore#//EPackage1"/>
       <semanticElements xmi:type="ecore:EPackage" href="VP-3535.ecore#//EPackage1"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:ShapeContainerStyle" xmi:id="_f_kO0FZPEeKv4bncD5UUQg" iconPath="/DesignerTestProject/image.bmp" labelAlignment="LEFT" borderSize="1" borderSizeComputationExpression="1">
+      <ownedStyle xmi:type="diagram:ShapeContainerStyle" uid="_f_kO0FZPEeKv4bncD5UUQg" iconPath="/DesignerTestProject/image.bmp" labelAlignment="LEFT" borderSize="1" borderSizeComputationExpression="1">
         <description xmi:type="style:ShapeContainerStyleDescription" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@additionalLayers[name='layerOfContainerStyles']/@containerMappings[name='EPackageWithShapeContainerStyle']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@additionalLayers[name='layerOfContainerStyles']/@containerMappings[name='EPackageWithShapeContainerStyle']"/>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_d1lKoAZaEeKSU9Zb6QcbzA" name="EClass11WithSquareStyle" visible="false" tooltipText="" width="3" height="3" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" uid="_d1lKoAZaEeKSU9Zb6QcbzA" name="EClass11WithSquareStyle" visible="false" tooltipText="" width="3" height="3" resizeKind="NSEW">
         <target xmi:type="ecore:EClass" href="VP-3535.ecore#//EPackage1/EClass11"/>
         <semanticElements xmi:type="ecore:EClass" href="VP-3535.ecore#//EPackage1/EClass11"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:Square" xmi:id="_d1nm4AZaEeKSU9Zb6QcbzA" iconPath="/DesignerTestProject/image.bmp">
+        <ownedStyle xmi:type="diagram:Square" uid="_d1nm4AZaEeKSU9Zb6QcbzA" iconPath="/DesignerTestProject/image.bmp">
           <description xmi:type="style:SquareDescription" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@defaultLayer/@nodeMappings[name='EClassNodeWithSquareStyle']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@defaultLayer/@nodeMappings[name='EClassNodeWithSquareStyle']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_d1qDIAZaEeKSU9Zb6QcbzA" name="EClass22WithSquareStyle" visible="false" tooltipText="" width="3" height="3" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" uid="_d1qDIAZaEeKSU9Zb6QcbzA" name="EClass22WithSquareStyle" visible="false" tooltipText="" width="3" height="3" resizeKind="NSEW">
         <target xmi:type="ecore:EClass" href="VP-3535.ecore#//EPackage1/EClass22"/>
         <semanticElements xmi:type="ecore:EClass" href="VP-3535.ecore#//EPackage1/EClass22"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:Square" xmi:id="_d1qqMAZaEeKSU9Zb6QcbzA" iconPath="/DesignerTestProject/image.bmp">
+        <ownedStyle xmi:type="diagram:Square" uid="_d1qqMAZaEeKSU9Zb6QcbzA" iconPath="/DesignerTestProject/image.bmp">
           <description xmi:type="style:SquareDescription" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@defaultLayer/@nodeMappings[name='EClassNodeWithSquareStyle']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@defaultLayer/@nodeMappings[name='EClassNodeWithSquareStyle']"/>
       </ownedDiagramElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_d1r4UAZaEeKSU9Zb6QcbzA" name="EPackage1WithWorkspaceImageStyle">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_d1r4UAZaEeKSU9Zb6QcbzA" name="EPackage1WithWorkspaceImageStyle">
       <target xmi:type="ecore:EPackage" href="VP-3535.ecore#//EPackage1"/>
       <semanticElements xmi:type="ecore:EPackage" href="VP-3535.ecore#//EPackage1"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_gduxgFZPEeKv4bncD5UUQg" iconPath="/DesignerTestProject/image.bmp" labelAlignment="LEFT" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" workspacePath="/DesignerTestProject/image.bmp">
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_gduxgFZPEeKv4bncD5UUQg" iconPath="/DesignerTestProject/image.bmp" labelAlignment="LEFT" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" workspacePath="/DesignerTestProject/image.bmp">
         <description xmi:type="style:WorkspaceImageDescription" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@additionalLayers[name='layerOfContainerStyles']/@containerMappings[name='EPackageWithWorkspaceImageDescription']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@additionalLayers[name='layerOfContainerStyles']/@containerMappings[name='EPackageWithWorkspaceImageDescription']"/>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_d1ttgAZaEeKSU9Zb6QcbzA" name="EClass11WithSquareStyle" visible="false" width="3" height="3" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" uid="_d1ttgAZaEeKSU9Zb6QcbzA" name="EClass11WithSquareStyle" visible="false" width="3" height="3" resizeKind="NSEW">
         <target xmi:type="ecore:EClass" href="VP-3535.ecore#//EPackage1/EClass11"/>
         <semanticElements xmi:type="ecore:EClass" href="VP-3535.ecore#//EPackage1/EClass11"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:Square" xmi:id="_d1uUkAZaEeKSU9Zb6QcbzA" iconPath="/DesignerTestProject/image.bmp">
+        <ownedStyle xmi:type="diagram:Square" uid="_d1uUkAZaEeKSU9Zb6QcbzA" iconPath="/DesignerTestProject/image.bmp">
           <description xmi:type="style:SquareDescription" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@defaultLayer/@nodeMappings[name='EClassNodeWithSquareStyle']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@defaultLayer/@nodeMappings[name='EClassNodeWithSquareStyle']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_d1u7oAZaEeKSU9Zb6QcbzA" name="EClass22WithSquareStyle" visible="false" width="3" height="3" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" uid="_d1u7oAZaEeKSU9Zb6QcbzA" name="EClass22WithSquareStyle" visible="false" width="3" height="3" resizeKind="NSEW">
         <target xmi:type="ecore:EClass" href="VP-3535.ecore#//EPackage1/EClass22"/>
         <semanticElements xmi:type="ecore:EClass" href="VP-3535.ecore#//EPackage1/EClass22"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:Square" xmi:id="_d1visAZaEeKSU9Zb6QcbzA" iconPath="/DesignerTestProject/image.bmp">
+        <ownedStyle xmi:type="diagram:Square" uid="_d1visAZaEeKSU9Zb6QcbzA" iconPath="/DesignerTestProject/image.bmp">
           <description xmi:type="style:SquareDescription" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@defaultLayer/@nodeMappings[name='EClassNodeWithSquareStyle']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@defaultLayer/@nodeMappings[name='EClassNodeWithSquareStyle']"/>
       </ownedDiagramElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_rspBEAZaEeKSU9Zb6QcbzA" name="centerSuperTypeEClass2" sourceNode="_BO1bQAL6EeKK7OfTPSHmnQ" targetNode="_BLl6AAL6EeKK7OfTPSHmnQ" beginLabel="beginSuperTypeEClass2" endLabel="endSuperTypeEClass2">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_rspBEAZaEeKSU9Zb6QcbzA" name="centerSuperTypeEClass2" sourceNode="_BO1bQAL6EeKK7OfTPSHmnQ" targetNode="_BLl6AAL6EeKK7OfTPSHmnQ" beginLabel="beginSuperTypeEClass2" endLabel="endSuperTypeEClass2">
       <target xmi:type="ecore:EClass" href="VP-3535.ecore#//EClass2"/>
-      <ownedStyle xmi:type="diagram:BracketEdgeStyle" xmi:id="_gd_3QFZPEeKv4bncD5UUQg">
+      <ownedStyle xmi:type="diagram:BracketEdgeStyle" uid="_gd_3QFZPEeKv4bncD5UUQg">
         <description xmi:type="style:BracketEdgeStyleDescription" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@additionalLayers[name='layerWithEdgeStyles']/@edgeMappings[name='ESuperType']/@style"/>
-        <beginLabelStyle xmi:type="diagram:BeginLabelStyle" xmi:id="_gd_3QlZPEeKv4bncD5UUQg" iconPath="/DesignerTestProject/image.bmp"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_gd_3RFZPEeKv4bncD5UUQg" iconPath="/DesignerTestProject/image.bmp"/>
-        <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_gd_3RlZPEeKv4bncD5UUQg" iconPath="/DesignerTestProject/image.bmp"/>
+        <beginLabelStyle xmi:type="diagram:BeginLabelStyle" uid="_gd_3QlZPEeKv4bncD5UUQg" iconPath="/DesignerTestProject/image.bmp"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_gd_3RFZPEeKv4bncD5UUQg" iconPath="/DesignerTestProject/image.bmp"/>
+        <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_gd_3RlZPEeKv4bncD5UUQg" iconPath="/DesignerTestProject/image.bmp"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@additionalLayers[name='layerWithEdgeStyles']/@edgeMappings[name='ESuperType']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_rt4XMAZaEeKSU9Zb6QcbzA" name="eClass2" sourceNode="_BLl6AAL6EeKK7OfTPSHmnQ" targetNode="_BO1bQAL6EeKK7OfTPSHmnQ" beginLabel="eClass2" endLabel="eClass2">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_rt4XMAZaEeKSU9Zb6QcbzA" name="eClass2" sourceNode="_BLl6AAL6EeKK7OfTPSHmnQ" targetNode="_BO1bQAL6EeKK7OfTPSHmnQ" beginLabel="eClass2" endLabel="eClass2">
       <target xmi:type="ecore:EReference" href="VP-3535.ecore#//EClass1/eClass2"/>
       <semanticElements xmi:type="ecore:EReference" href="VP-3535.ecore#//EClass1/eClass2"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_geBscFZPEeKv4bncD5UUQg" size="2" routingStyle="manhattan">
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_geBscFZPEeKv4bncD5UUQg" size="2" routingStyle="manhattan">
         <description xmi:type="style:EdgeStyleDescription" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@additionalLayers[name='layerWithEdgeStyles']/@edgeMappings[name='EReference']/@style"/>
-        <beginLabelStyle xmi:type="diagram:BeginLabelStyle" xmi:id="_geBsclZPEeKv4bncD5UUQg" iconPath="/DesignerTestProject/image.bmp"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_geBsdFZPEeKv4bncD5UUQg" iconPath="/DesignerTestProject/image.bmp"/>
-        <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_geBsdlZPEeKv4bncD5UUQg" iconPath="/DesignerTestProject/image.bmp"/>
+        <beginLabelStyle xmi:type="diagram:BeginLabelStyle" uid="_geBsclZPEeKv4bncD5UUQg" iconPath="/DesignerTestProject/image.bmp"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_geBsdFZPEeKv4bncD5UUQg" iconPath="/DesignerTestProject/image.bmp"/>
+        <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_geBsdlZPEeKv4bncD5UUQg" iconPath="/DesignerTestProject/image.bmp"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@additionalLayers[name='layerWithEdgeStyles']/@edgeMappings[name='EReference']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_JEVT0AZbEeKSU9Zb6QcbzA" name="EClass1WithLozengeStyle" width="3" height="3" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_JEVT0AZbEeKSU9Zb6QcbzA" name="EClass1WithLozengeStyle" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="ecore:EClass" href="VP-3535.ecore#//EClass1"/>
       <semanticElements xmi:type="ecore:EClass" href="VP-3535.ecore#//EClass1"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:Lozenge" xmi:id="_gdzC8FZPEeKv4bncD5UUQg" iconPath="/DesignerTestProject/image.bmp">
+      <ownedStyle xmi:type="diagram:Lozenge" uid="_gdzC8FZPEeKv4bncD5UUQg" iconPath="/DesignerTestProject/image.bmp">
         <description xmi:type="style:LozengeNodeDescription" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@defaultLayer/@nodeMappings[name='EClassNodeWithLozengeStyle']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@defaultLayer/@nodeMappings[name='EClassNodeWithLozengeStyle']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_JElyhAZbEeKSU9Zb6QcbzA" name="EClass2WithLozengeStyle" width="3" height="3" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_JElyhAZbEeKSU9Zb6QcbzA" name="EClass2WithLozengeStyle" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="ecore:EClass" href="VP-3535.ecore#//EClass2"/>
       <semanticElements xmi:type="ecore:EClass" href="VP-3535.ecore#//EClass2"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:Lozenge" xmi:id="_gdzqAFZPEeKv4bncD5UUQg" iconPath="/DesignerTestProject/image.bmp">
+      <ownedStyle xmi:type="diagram:Lozenge" uid="_gdzqAFZPEeKv4bncD5UUQg" iconPath="/DesignerTestProject/image.bmp">
         <description xmi:type="style:LozengeNodeDescription" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@defaultLayer/@nodeMappings[name='EClassNodeWithLozengeStyle']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@defaultLayer/@nodeMappings[name='EClassNodeWithLozengeStyle']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_JEoOwAZbEeKSU9Zb6QcbzA" name="EClass1WithEllipseStyle" width="3" height="3" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_JEoOwAZbEeKSU9Zb6QcbzA" name="EClass1WithEllipseStyle" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="ecore:EClass" href="VP-3535.ecore#//EClass1"/>
       <semanticElements xmi:type="ecore:EClass" href="VP-3535.ecore#//EClass1"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:Ellipse" xmi:id="_gd0REFZPEeKv4bncD5UUQg" iconPath="/DesignerTestProject/image.bmp">
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_gd0REFZPEeKv4bncD5UUQg" iconPath="/DesignerTestProject/image.bmp">
         <description xmi:type="style:EllipseNodeDescription" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@defaultLayer/@nodeMappings[name='EClassNodeWithEllipseStyle']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@defaultLayer/@nodeMappings[name='EClassNodeWithEllipseStyle']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_JEuVYAZbEeKSU9Zb6QcbzA" name="EClass2WithEllipseStyle" width="3" height="3" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_JEuVYAZbEeKSU9Zb6QcbzA" name="EClass2WithEllipseStyle" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="ecore:EClass" href="VP-3535.ecore#//EClass2"/>
       <semanticElements xmi:type="ecore:EClass" href="VP-3535.ecore#//EClass2"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:Ellipse" xmi:id="_gd0RFFZPEeKv4bncD5UUQg" iconPath="/DesignerTestProject/image.bmp">
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_gd0RFFZPEeKv4bncD5UUQg" iconPath="/DesignerTestProject/image.bmp">
         <description xmi:type="style:EllipseNodeDescription" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@defaultLayer/@nodeMappings[name='EClassNodeWithEllipseStyle']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@defaultLayer/@nodeMappings[name='EClassNodeWithEllipseStyle']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_JEwKkAZbEeKSU9Zb6QcbzA" name="EClass1WithBundledImageStyle" width="3" height="3" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_JEwKkAZbEeKSU9Zb6QcbzA" name="EClass1WithBundledImageStyle" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="ecore:EClass" href="VP-3535.ecore#//EClass1"/>
       <semanticElements xmi:type="ecore:EClass" href="VP-3535.ecore#//EClass1"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_gd04IFZPEeKv4bncD5UUQg" iconPath="/DesignerTestProject/image.bmp">
+      <ownedStyle xmi:type="diagram:BundledImage" uid="_gd04IFZPEeKv4bncD5UUQg" iconPath="/DesignerTestProject/image.bmp">
         <description xmi:type="style:BundledImageDescription" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@defaultLayer/@nodeMappings[name='EClassNodeWithBundledImageStyle']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@defaultLayer/@nodeMappings[name='EClassNodeWithBundledImageStyle']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_JE57kAZbEeKSU9Zb6QcbzA" name="EClass2WithBundledImageStyle" width="3" height="3" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_JE57kAZbEeKSU9Zb6QcbzA" name="EClass2WithBundledImageStyle" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="ecore:EClass" href="VP-3535.ecore#//EClass2"/>
       <semanticElements xmi:type="ecore:EClass" href="VP-3535.ecore#//EClass2"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_gd1fMFZPEeKv4bncD5UUQg" iconPath="/DesignerTestProject/image.bmp">
+      <ownedStyle xmi:type="diagram:BundledImage" uid="_gd1fMFZPEeKv4bncD5UUQg" iconPath="/DesignerTestProject/image.bmp">
         <description xmi:type="style:BundledImageDescription" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@defaultLayer/@nodeMappings[name='EClassNodeWithBundledImageStyle']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@defaultLayer/@nodeMappings[name='EClassNodeWithBundledImageStyle']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_MiakQAZbEeKSU9Zb6QcbzA" name="EClass1WithNoteStyle" width="3" height="3" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_MiakQAZbEeKSU9Zb6QcbzA" name="EClass1WithNoteStyle" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="ecore:EClass" href="VP-3535.ecore#//EClass1"/>
       <semanticElements xmi:type="ecore:EClass" href="VP-3535.ecore#//EClass1"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:Note" xmi:id="_gd2GQFZPEeKv4bncD5UUQg" iconPath="/DesignerTestProject/image.bmp">
+      <ownedStyle xmi:type="diagram:Note" uid="_gd2GQFZPEeKv4bncD5UUQg" iconPath="/DesignerTestProject/image.bmp">
         <description xmi:type="style:NoteDescription" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@defaultLayer/@nodeMappings[name='EClassNodeWithNoteStyle']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@defaultLayer/@nodeMappings[name='EClassNodeWithNoteStyle']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_MiutUAZbEeKSU9Zb6QcbzA" name="EClass2WithNoteStyle" width="3" height="3" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_MiutUAZbEeKSU9Zb6QcbzA" name="EClass2WithNoteStyle" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="ecore:EClass" href="VP-3535.ecore#//EClass2"/>
       <semanticElements xmi:type="ecore:EClass" href="VP-3535.ecore#//EClass2"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:Note" xmi:id="_gd2GRFZPEeKv4bncD5UUQg" iconPath="/DesignerTestProject/image.bmp">
+      <ownedStyle xmi:type="diagram:Note" uid="_gd2GRFZPEeKv4bncD5UUQg" iconPath="/DesignerTestProject/image.bmp">
         <description xmi:type="style:NoteDescription" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@defaultLayer/@nodeMappings[name='EClassNodeWithNoteStyle']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@defaultLayer/@nodeMappings[name='EClassNodeWithNoteStyle']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_StwsMAZbEeKSU9Zb6QcbzA" name="EClass1WithDotStyle" width="3" height="3" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_StwsMAZbEeKSU9Zb6QcbzA" name="EClass1WithDotStyle" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="ecore:EClass" href="VP-3535.ecore#//EClass1"/>
       <semanticElements xmi:type="ecore:EClass" href="VP-3535.ecore#//EClass1"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:Dot" xmi:id="_gd2tUFZPEeKv4bncD5UUQg" iconPath="/DesignerTestProject/image.bmp">
+      <ownedStyle xmi:type="diagram:Dot" uid="_gd2tUFZPEeKv4bncD5UUQg" iconPath="/DesignerTestProject/image.bmp">
         <description xmi:type="style:DotDescription" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@defaultLayer/@nodeMappings[name='EClassNodeWithDotStyle']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@defaultLayer/@nodeMappings[name='EClassNodeWithDotStyle']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_SuBx8AZbEeKSU9Zb6QcbzA" name="EClass2WithDotStyle" width="3" height="3" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_SuBx8AZbEeKSU9Zb6QcbzA" name="EClass2WithDotStyle" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="ecore:EClass" href="VP-3535.ecore#//EClass2"/>
       <semanticElements xmi:type="ecore:EClass" href="VP-3535.ecore#//EClass2"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:Dot" xmi:id="_gd3UYFZPEeKv4bncD5UUQg" iconPath="/DesignerTestProject/image.bmp">
+      <ownedStyle xmi:type="diagram:Dot" uid="_gd3UYFZPEeKv4bncD5UUQg" iconPath="/DesignerTestProject/image.bmp">
         <description xmi:type="style:DotDescription" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@defaultLayer/@nodeMappings[name='EClassNodeWithDotStyle']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@defaultLayer/@nodeMappings[name='EClassNodeWithDotStyle']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_efyv0AZbEeKSU9Zb6QcbzA" name="EClass1WithGaugeStyle" width="3" height="3" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_efyv0AZbEeKSU9Zb6QcbzA" name="EClass1WithGaugeStyle" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="ecore:EClass" href="VP-3535.ecore#//EClass1"/>
       <semanticElements xmi:type="ecore:EClass" href="VP-3535.ecore#//EClass1"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:GaugeCompositeStyle" xmi:id="_gd7l0FZPEeKv4bncD5UUQg" iconPath="/DesignerTestProject/image.bmp">
+      <ownedStyle xmi:type="diagram:GaugeCompositeStyle" uid="_gd7l0FZPEeKv4bncD5UUQg" iconPath="/DesignerTestProject/image.bmp">
         <description xmi:type="style:GaugeCompositeStyleDescription" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@defaultLayer/@nodeMappings[name='EClassNodeWithGaugeStyle']/@style"/>
-        <sections xmi:type="diagram:GaugeSection" xmi:id="_yrHKEJ07EeeVW8NN4B1bJQ" min="0" max="90" value="50" label="FirstSection" backgroundColor="114,159,207" foregroundColor="252,175,62"/>
-        <sections xmi:type="diagram:GaugeSection" xmi:id="_yrHKEZ07EeeVW8NN4B1bJQ" min="0" max="30" value="15" label="SecondSection" backgroundColor="239,41,41" foregroundColor="255,255,255"/>
+        <sections xmi:type="diagram:GaugeSection" uid="_yrHKEJ07EeeVW8NN4B1bJQ" min="0" max="90" value="50" label="FirstSection" backgroundColor="114,159,207" foregroundColor="252,175,62"/>
+        <sections xmi:type="diagram:GaugeSection" uid="_yrHKEZ07EeeVW8NN4B1bJQ" min="0" max="30" value="15" label="SecondSection" backgroundColor="239,41,41" foregroundColor="255,255,255"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@defaultLayer/@nodeMappings[name='EClassNodeWithGaugeStyle']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_egZz0AZbEeKSU9Zb6QcbzA" name="EClass2WithGaugeStyle" width="3" height="3" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_egZz0AZbEeKSU9Zb6QcbzA" name="EClass2WithGaugeStyle" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="ecore:EClass" href="VP-3535.ecore#//EClass2"/>
       <semanticElements xmi:type="ecore:EClass" href="VP-3535.ecore#//EClass2"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:GaugeCompositeStyle" xmi:id="_gd8M4FZPEeKv4bncD5UUQg" iconPath="/DesignerTestProject/image.bmp">
+      <ownedStyle xmi:type="diagram:GaugeCompositeStyle" uid="_gd8M4FZPEeKv4bncD5UUQg" iconPath="/DesignerTestProject/image.bmp">
         <description xmi:type="style:GaugeCompositeStyleDescription" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@defaultLayer/@nodeMappings[name='EClassNodeWithGaugeStyle']/@style"/>
-        <sections xmi:type="diagram:GaugeSection" xmi:id="_yrHKEp07EeeVW8NN4B1bJQ" min="0" max="90" value="50" label="FirstSection" backgroundColor="114,159,207" foregroundColor="252,175,62"/>
-        <sections xmi:type="diagram:GaugeSection" xmi:id="_yrHKE507EeeVW8NN4B1bJQ" min="0" max="30" value="15" label="SecondSection" backgroundColor="239,41,41" foregroundColor="255,255,255"/>
+        <sections xmi:type="diagram:GaugeSection" uid="_yrHKEp07EeeVW8NN4B1bJQ" min="0" max="90" value="50" label="FirstSection" backgroundColor="114,159,207" foregroundColor="252,175,62"/>
+        <sections xmi:type="diagram:GaugeSection" uid="_yrHKE507EeeVW8NN4B1bJQ" min="0" max="30" value="15" label="SecondSection" backgroundColor="239,41,41" foregroundColor="255,255,255"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@defaultLayer/@nodeMappings[name='EClassNodeWithGaugeStyle']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_egcQEAZbEeKSU9Zb6QcbzA" name="EClass1WithWorkspaceImageStyle" width="-1" height="-1" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_egcQEAZbEeKSU9Zb6QcbzA" name="EClass1WithWorkspaceImageStyle" width="-1" height="-1" resizeKind="NSEW">
       <target xmi:type="ecore:EClass" href="VP-3535.ecore#//EClass1"/>
       <semanticElements xmi:type="ecore:EClass" href="VP-3535.ecore#//EClass1"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_gd-CEFZPEeKv4bncD5UUQg" iconPath="/DesignerTestProject/image.bmp" workspacePath="/DesignerTestProject/image.bmp">
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_gd-CEFZPEeKv4bncD5UUQg" iconPath="/DesignerTestProject/image.bmp" workspacePath="/DesignerTestProject/image.bmp">
         <description xmi:type="style:WorkspaceImageDescription" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@defaultLayer/@nodeMappings[name='EClassNodeWithWorkspaceImageStyle']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@defaultLayer/@nodeMappings[name='EClassNodeWithWorkspaceImageStyle']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_egdeMAZbEeKSU9Zb6QcbzA" name="EClass2WithWorkspaceImageStyle" width="-1" height="-1" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_egdeMAZbEeKSU9Zb6QcbzA" name="EClass2WithWorkspaceImageStyle" width="-1" height="-1" resizeKind="NSEW">
       <target xmi:type="ecore:EClass" href="VP-3535.ecore#//EClass2"/>
       <semanticElements xmi:type="ecore:EClass" href="VP-3535.ecore#//EClass2"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_gd-pIFZPEeKv4bncD5UUQg" iconPath="/DesignerTestProject/image.bmp" workspacePath="/DesignerTestProject/image.bmp">
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_gd-pIFZPEeKv4bncD5UUQg" iconPath="/DesignerTestProject/image.bmp" workspacePath="/DesignerTestProject/image.bmp">
         <description xmi:type="style:WorkspaceImageDescription" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@defaultLayer/@nodeMappings[name='EClassNodeWithWorkspaceImageStyle']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@defaultLayer/@nodeMappings[name='EClassNodeWithWorkspaceImageStyle']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_YnmIYJ08EeeVW8NN4B1bJQ" name="EClass1WithBundledImageStyleError" width="3" height="3" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_YnmIYJ08EeeVW8NN4B1bJQ" name="EClass1WithBundledImageStyleError" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="ecore:EClass" href="VP-3535.ecore#//EClass1"/>
       <semanticElements xmi:type="ecore:EClass" href="VP-3535.ecore#//EClass1"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_YnokoJ08EeeVW8NN4B1bJQ" iconPath="/DesignerTestProject/image.bmp" shape="providedShape" providedShapeID="sample.design.donut2">
+      <ownedStyle xmi:type="diagram:BundledImage" uid="_YnokoJ08EeeVW8NN4B1bJQ" iconPath="/DesignerTestProject/image.bmp" shape="providedShape" providedShapeID="sample.design.donut2">
         <description xmi:type="style:BundledImageDescription" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@defaultLayer/@nodeMappings[name='EClassNodeWithBundledImageStyleError']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@defaultLayer/@nodeMappings[name='EClassNodeWithBundledImageStyleError']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_Yns2EJ08EeeVW8NN4B1bJQ" name="EClass2WithBundledImageStyleError" width="3" height="3" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_Yns2EJ08EeeVW8NN4B1bJQ" name="EClass2WithBundledImageStyleError" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="ecore:EClass" href="VP-3535.ecore#//EClass2"/>
       <semanticElements xmi:type="ecore:EClass" href="VP-3535.ecore#//EClass2"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_Yns2EZ08EeeVW8NN4B1bJQ" iconPath="/DesignerTestProject/image.bmp" shape="providedShape" providedShapeID="sample.design.donut2">
+      <ownedStyle xmi:type="diagram:BundledImage" uid="_Yns2EZ08EeeVW8NN4B1bJQ" iconPath="/DesignerTestProject/image.bmp" shape="providedShape" providedShapeID="sample.design.donut2">
         <description xmi:type="style:BundledImageDescription" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@defaultLayer/@nodeMappings[name='EClassNodeWithBundledImageStyleError']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@defaultLayer/@nodeMappings[name='EClassNodeWithBundledImageStyleError']"/>
     </ownedDiagramElements>
     <description xmi:type="description_1:DiagramDescription" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']"/>
-    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_C6qVJgGgEeK0RvEWqMf9sg"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_C6qVJgGgEeK0RvEWqMf9sg"/>
     <activatedLayers xmi:type="description_1:Layer" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@defaultLayer"/>
     <activatedLayers xmi:type="description_1:AdditionalLayer" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@additionalLayers[name='layerWithEdgeStyles']"/>
     <activatedLayers xmi:type="description_1:AdditionalLayer" href="VP-3535.odesign#//@ownedViewpoints[name='VP-3535_Viewpoint']/@ownedRepresentations[name='VP-3535_Diagram']/@additionalLayers[name='layerOfContainerStyles']"/>

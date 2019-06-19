@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:component="http://www.eclipse.org/sirius/sample/component" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
-  <viewpoint:DAnalysis xmi:id="_O6vmcMzkEeaMgJXw3Sw5wA" selectedViews="_r8Zs4MzmEeaMgJXw3Sw5wA" version="11.1.0.201608251200">
+  <viewpoint:DAnalysis uid="_O6vmcMzkEeaMgJXw3Sw5wA" selectedViews="_r8Zs4MzmEeaMgJXw3Sw5wA" version="14.1.0.201810161215">
     <semanticResources>decorationsTest.component</semanticResources>
-    <ownedViews xmi:type="viewpoint:DView" xmi:id="_r8Zs4MzmEeaMgJXw3Sw5wA">
+    <ownedViews xmi:type="viewpoint:DView" uid="_r8Zs4MzmEeaMgJXw3Sw5wA">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_Cs_AkM0aEeab-v3nvO92qw" name="new DiagramWithDecoration" representation="_CtA1wM0aEeab-v3nvO92qw">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_Cs_AkM0aEeab-v3nvO92qw" name="new DiagramWithDecoration" repPath="#_CtA1wM0aEeab-v3nvO92qw">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']"/>
         <target xmi:type="component:Component" href="decorationsTest.component#/"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_16g7MB3MEeeBFcZXMrYe7g" name="new Diagram" representation="_16r6UB3MEeeBFcZXMrYe7g">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_16g7MB3MEeeBFcZXMrYe7g" name="new Diagram" repPath="#_16r6UB3MEeeBFcZXMrYe7g">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='Diagram']"/>
         <target xmi:type="component:Component" href="decorationsTest.component#/"/>
       </ownedRepresentationDescriptors>
     </ownedViews>
   </viewpoint:DAnalysis>
-  <diagram:DSemanticDiagram xmi:id="_CtA1wM0aEeab-v3nvO92qw" name="new DiagramWithDecoration">
-    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_CtA1wc0aEeab-v3nvO92qw" source="DANNOTATION_CUSTOMIZATION_KEY">
-      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_CtA1ws0aEeab-v3nvO92qw"/>
+  <diagram:DSemanticDiagram uid="_CtA1wM0aEeab-v3nvO92qw" name="new DiagramWithDecoration">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_CtA1wc0aEeab-v3nvO92qw" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_CtA1ws0aEeab-v3nvO92qw"/>
     </ownedAnnotationEntries>
-    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_CtGVUM0aEeab-v3nvO92qw" source="GMF_DIAGRAMS">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_CtGVUM0aEeab-v3nvO92qw" source="GMF_DIAGRAMS">
       <data xmi:type="notation:Diagram" xmi:id="_CtGVUc0aEeab-v3nvO92qw" type="Sirius" element="_CtA1wM0aEeab-v3nvO92qw" measurementUnit="Pixel">
         <children xmi:type="notation:Node" xmi:id="_CtJYoM0aEeab-v3nvO92qw" type="2001" element="_CtA1xM0aEeab-v3nvO92qw">
           <children xmi:type="notation:Node" xmi:id="_CtNDAM0aEeab-v3nvO92qw" type="5002">
@@ -95,237 +95,237 @@
         </edges>
       </data>
     </ownedAnnotationEntries>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_CtA1xM0aEeab-v3nvO92qw" name="Root" width="3" height="3" resizeKind="NSEW">
-      <target xmi:type="component:Component" href="decorationsTest.component#/"/>
-      <semanticElements xmi:type="component:Component" href="decorationsTest.component#/"/>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_CtA1xc0aEeab-v3nvO92qw">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_CtA1xM0aEeab-v3nvO92qw" name="Root" width="3" height="3" resizeKind="NSEW">
+      <decorations xmi:type="viewpoint:Decoration" uid="_CtA1xc0aEeab-v3nvO92qw">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='NW_1']"/>
       </decorations>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_CtA1xs0aEeab-v3nvO92qw">
+      <decorations xmi:type="viewpoint:Decoration" uid="_CtA1xs0aEeab-v3nvO92qw">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='NW_2']"/>
       </decorations>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_CtA1x80aEeab-v3nvO92qw">
+      <decorations xmi:type="viewpoint:Decoration" uid="_CtA1x80aEeab-v3nvO92qw">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='NW_3']"/>
       </decorations>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_CtA1yM0aEeab-v3nvO92qw">
+      <decorations xmi:type="viewpoint:Decoration" uid="_CtA1yM0aEeab-v3nvO92qw">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='N_1']"/>
       </decorations>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_CtA1yc0aEeab-v3nvO92qw">
+      <decorations xmi:type="viewpoint:Decoration" uid="_CtA1yc0aEeab-v3nvO92qw">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='C_1']"/>
       </decorations>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_tCciMAKMEeekt9ZznT8z_w">
+      <decorations xmi:type="viewpoint:Decoration" uid="_tCciMAKMEeekt9ZznT8z_w">
         <description xmi:type="description:GenericDecorationDescription" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='SW_BeginsWithUpperCase']"/>
       </decorations>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:Dot" xmi:id="_CtA1ys0aEeab-v3nvO92qw" labelPosition="node" backgroundColor="246,139,139">
+      <ownedStyle xmi:type="diagram:Dot" uid="_CtA1ys0aEeab-v3nvO92qw" labelPosition="node" backgroundColor="246,139,139">
         <description xmi:type="style:DotDescription" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@nodeMappings[name='SelfNode']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@nodeMappings[name='SelfNode']"/>
+      <target xmi:type="component:Component" href="decorationsTest.component#/"/>
+      <semanticElements xmi:type="component:Component" href="decorationsTest.component#/"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_CtA1y80aEeab-v3nvO92qw" name="decoDisplay" outgoingEdges="_OFGVsAKLEeekt9ZznT8z_w">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_CtA1y80aEeab-v3nvO92qw" name="decoDisplay" outgoingEdges="_OFGVsAKLEeekt9ZznT8z_w">
+      <decorations xmi:type="viewpoint:Decoration" uid="_CtA1zM0aEeab-v3nvO92qw">
+        <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='NW_1']"/>
+      </decorations>
+      <decorations xmi:type="viewpoint:Decoration" uid="_CtA1zc0aEeab-v3nvO92qw">
+        <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='NW_2']"/>
+      </decorations>
+      <decorations xmi:type="viewpoint:Decoration" uid="_CtA1zs0aEeab-v3nvO92qw">
+        <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='NW_3']"/>
+      </decorations>
+      <decorations xmi:type="viewpoint:Decoration" uid="_CtA1z80aEeab-v3nvO92qw">
+        <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='SE_1']"/>
+      </decorations>
+      <decorations xmi:type="viewpoint:Decoration" uid="_CtA10M0aEeab-v3nvO92qw">
+        <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='SE_2']"/>
+      </decorations>
+      <decorations xmi:type="viewpoint:Decoration" uid="_CtA10c0aEeab-v3nvO92qw">
+        <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='SE_3']"/>
+      </decorations>
+      <decorations xmi:type="viewpoint:Decoration" uid="_CtA10s0aEeab-v3nvO92qw">
+        <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='SE_4']"/>
+      </decorations>
+      <decorations xmi:type="viewpoint:Decoration" uid="_A3kRoM3LEea-lsAHNGYT7A">
+        <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='E_1']"/>
+      </decorations>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_CtA1080aEeab-v3nvO92qw" borderSize="1" borderSizeComputationExpression="1">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@containerMappings[name='Component']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@containerMappings[name='Component']"/>
       <target xmi:type="component:Component" href="decorationsTest.component#//@children.0"/>
       <semanticElements xmi:type="component:Component" href="decorationsTest.component#//@children.0"/>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_CtA1zM0aEeab-v3nvO92qw">
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_CtA11M0aEeab-v3nvO92qw" name="groupDecoMerge2">
+      <decorations xmi:type="viewpoint:Decoration" uid="_CtA11c0aEeab-v3nvO92qw">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='NW_1']"/>
       </decorations>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_CtA1zc0aEeab-v3nvO92qw">
+      <decorations xmi:type="viewpoint:Decoration" uid="_CtA11s0aEeab-v3nvO92qw">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='NW_2']"/>
       </decorations>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_CtA1zs0aEeab-v3nvO92qw">
+      <decorations xmi:type="viewpoint:Decoration" uid="_CtA1180aEeab-v3nvO92qw">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='NW_3']"/>
       </decorations>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_CtA1z80aEeab-v3nvO92qw">
+      <decorations xmi:type="viewpoint:Decoration" uid="_CtA12M0aEeab-v3nvO92qw">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='SE_1']"/>
       </decorations>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_CtA10M0aEeab-v3nvO92qw">
+      <decorations xmi:type="viewpoint:Decoration" uid="_CtA12c0aEeab-v3nvO92qw">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='SE_2']"/>
       </decorations>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_CtA10c0aEeab-v3nvO92qw">
+      <decorations xmi:type="viewpoint:Decoration" uid="_CtA12s0aEeab-v3nvO92qw">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='SE_3']"/>
       </decorations>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_CtA10s0aEeab-v3nvO92qw">
+      <decorations xmi:type="viewpoint:Decoration" uid="_CtA1280aEeab-v3nvO92qw">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='SE_4']"/>
       </decorations>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_A3kRoM3LEea-lsAHNGYT7A">
+      <decorations xmi:type="viewpoint:Decoration" uid="_A3mG0M3LEea-lsAHNGYT7A">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='E_1']"/>
       </decorations>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_CtA1080aEeab-v3nvO92qw" borderSize="1" borderSizeComputationExpression="1">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_CtA13M0aEeab-v3nvO92qw" borderSize="1" borderSizeComputationExpression="1">
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@containerMappings[name='Component']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@containerMappings[name='Component']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_CtA11M0aEeab-v3nvO92qw" name="groupDecoMerge2">
       <target xmi:type="component:Component" href="decorationsTest.component#//@children.1"/>
       <semanticElements xmi:type="component:Component" href="decorationsTest.component#//@children.1"/>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_CtA11c0aEeab-v3nvO92qw">
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_CtA13c0aEeab-v3nvO92qw" name="listDecoMerge1" incomingEdges="_OFGVsAKLEeekt9ZznT8z_w">
+      <decorations xmi:type="viewpoint:Decoration" uid="_CtA13s0aEeab-v3nvO92qw">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='NW_1']"/>
       </decorations>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_CtA11s0aEeab-v3nvO92qw">
+      <decorations xmi:type="viewpoint:Decoration" uid="_CtA1380aEeab-v3nvO92qw">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='NW_2']"/>
       </decorations>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_CtA1180aEeab-v3nvO92qw">
+      <decorations xmi:type="viewpoint:Decoration" uid="_CtA14M0aEeab-v3nvO92qw">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='NW_3']"/>
       </decorations>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_CtA12M0aEeab-v3nvO92qw">
+      <decorations xmi:type="viewpoint:Decoration" uid="_CtA14c0aEeab-v3nvO92qw">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='SE_1']"/>
       </decorations>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_CtA12c0aEeab-v3nvO92qw">
+      <decorations xmi:type="viewpoint:Decoration" uid="_CtA14s0aEeab-v3nvO92qw">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='SE_2']"/>
       </decorations>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_CtA12s0aEeab-v3nvO92qw">
+      <decorations xmi:type="viewpoint:Decoration" uid="_CtA1480aEeab-v3nvO92qw">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='SE_3']"/>
       </decorations>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_CtA1280aEeab-v3nvO92qw">
+      <decorations xmi:type="viewpoint:Decoration" uid="_CtA15M0aEeab-v3nvO92qw">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='SE_4']"/>
       </decorations>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_A3mG0M3LEea-lsAHNGYT7A">
+      <decorations xmi:type="viewpoint:Decoration" uid="_A3nU8M3LEea-lsAHNGYT7A">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='E_1']"/>
       </decorations>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_CtA13M0aEeab-v3nvO92qw" borderSize="1" borderSizeComputationExpression="1">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_CtA15c0aEeab-v3nvO92qw" borderSize="1" borderSizeComputationExpression="1">
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@containerMappings[name='Component']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@containerMappings[name='Component']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_CtA13c0aEeab-v3nvO92qw" name="listDecoMerge1" incomingEdges="_OFGVsAKLEeekt9ZznT8z_w">
       <target xmi:type="component:Component" href="decorationsTest.component#//@children.2"/>
       <semanticElements xmi:type="component:Component" href="decorationsTest.component#//@children.2"/>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_CtA13s0aEeab-v3nvO92qw">
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_NH5gMM3eEeaKnK-V147gMw" name="listDecoMerge2">
+      <decorations xmi:type="viewpoint:Decoration" uid="_NH6uUM3eEeaKnK-V147gMw">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='NW_1']"/>
       </decorations>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_CtA1380aEeab-v3nvO92qw">
+      <decorations xmi:type="viewpoint:Decoration" uid="_NH6uUc3eEeaKnK-V147gMw">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='NW_2']"/>
       </decorations>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_CtA14M0aEeab-v3nvO92qw">
+      <decorations xmi:type="viewpoint:Decoration" uid="_NH7VYM3eEeaKnK-V147gMw">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='NW_3']"/>
       </decorations>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_CtA14c0aEeab-v3nvO92qw">
+      <decorations xmi:type="viewpoint:Decoration" uid="_NH7VYc3eEeaKnK-V147gMw">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='SE_1']"/>
       </decorations>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_CtA14s0aEeab-v3nvO92qw">
+      <decorations xmi:type="viewpoint:Decoration" uid="_NH7VYs3eEeaKnK-V147gMw">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='SE_2']"/>
       </decorations>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_CtA1480aEeab-v3nvO92qw">
+      <decorations xmi:type="viewpoint:Decoration" uid="_NH7VY83eEeaKnK-V147gMw">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='SE_3']"/>
       </decorations>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_CtA15M0aEeab-v3nvO92qw">
+      <decorations xmi:type="viewpoint:Decoration" uid="_NH7VZM3eEeaKnK-V147gMw">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='SE_4']"/>
       </decorations>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_A3nU8M3LEea-lsAHNGYT7A">
+      <decorations xmi:type="viewpoint:Decoration" uid="_NH7VZc3eEeaKnK-V147gMw">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='E_1']"/>
       </decorations>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_CtA15c0aEeab-v3nvO92qw" borderSize="1" borderSizeComputationExpression="1">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_NH6HQM3eEeaKnK-V147gMw" borderSize="1" borderSizeComputationExpression="1">
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@containerMappings[name='Component']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@containerMappings[name='Component']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_NH5gMM3eEeaKnK-V147gMw" name="listDecoMerge2">
       <target xmi:type="component:Component" href="decorationsTest.component#//@children.3"/>
       <semanticElements xmi:type="component:Component" href="decorationsTest.component#//@children.3"/>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_NH6uUM3eEeaKnK-V147gMw">
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_miHbUM3fEeaKnK-V147gMw" name="groupDecoMerge1">
+      <decorations xmi:type="viewpoint:Decoration" uid="_miICYc3fEeaKnK-V147gMw">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='NW_1']"/>
       </decorations>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_NH6uUc3eEeaKnK-V147gMw">
+      <decorations xmi:type="viewpoint:Decoration" uid="_miICYs3fEeaKnK-V147gMw">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='NW_2']"/>
       </decorations>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_NH7VYM3eEeaKnK-V147gMw">
+      <decorations xmi:type="viewpoint:Decoration" uid="_miICY83fEeaKnK-V147gMw">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='NW_3']"/>
       </decorations>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_NH7VYc3eEeaKnK-V147gMw">
+      <decorations xmi:type="viewpoint:Decoration" uid="_miICZM3fEeaKnK-V147gMw">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='SE_1']"/>
       </decorations>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_NH7VYs3eEeaKnK-V147gMw">
+      <decorations xmi:type="viewpoint:Decoration" uid="_miICZc3fEeaKnK-V147gMw">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='SE_2']"/>
       </decorations>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_NH7VY83eEeaKnK-V147gMw">
+      <decorations xmi:type="viewpoint:Decoration" uid="_miICZs3fEeaKnK-V147gMw">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='SE_3']"/>
       </decorations>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_NH7VZM3eEeaKnK-V147gMw">
+      <decorations xmi:type="viewpoint:Decoration" uid="_miICZ83fEeaKnK-V147gMw">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='SE_4']"/>
       </decorations>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_NH7VZc3eEeaKnK-V147gMw">
+      <decorations xmi:type="viewpoint:Decoration" uid="_miICaM3fEeaKnK-V147gMw">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='E_1']"/>
       </decorations>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_NH6HQM3eEeaKnK-V147gMw" borderSize="1" borderSizeComputationExpression="1">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_miICYM3fEeaKnK-V147gMw" borderSize="1" borderSizeComputationExpression="1">
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@containerMappings[name='Component']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@containerMappings[name='Component']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_miHbUM3fEeaKnK-V147gMw" name="groupDecoMerge1">
       <target xmi:type="component:Component" href="decorationsTest.component#//@children.4"/>
       <semanticElements xmi:type="component:Component" href="decorationsTest.component#//@children.4"/>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_miICYc3fEeaKnK-V147gMw">
-        <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='NW_1']"/>
-      </decorations>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_miICYs3fEeaKnK-V147gMw">
-        <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='NW_2']"/>
-      </decorations>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_miICY83fEeaKnK-V147gMw">
-        <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='NW_3']"/>
-      </decorations>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_miICZM3fEeaKnK-V147gMw">
-        <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='SE_1']"/>
-      </decorations>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_miICZc3fEeaKnK-V147gMw">
-        <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='SE_2']"/>
-      </decorations>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_miICZs3fEeaKnK-V147gMw">
-        <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='SE_3']"/>
-      </decorations>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_miICZ83fEeaKnK-V147gMw">
-        <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='SE_4']"/>
-      </decorations>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_miICaM3fEeaKnK-V147gMw">
-        <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='E_1']"/>
-      </decorations>
-      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
-      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
-      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_miICYM3fEeaKnK-V147gMw" borderSize="1" borderSizeComputationExpression="1">
-        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@containerMappings[name='Component']/@style"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@containerMappings[name='Component']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_OFGVsAKLEeekt9ZznT8z_w" sourceNode="_CtA1y80aEeab-v3nvO92qw" targetNode="_CtA13c0aEeab-v3nvO92qw" endLabel="r">
-      <target xmi:type="component:Component" href="decorationsTest.component#//@children.0"/>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_OFGVswKLEeekt9ZznT8z_w">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_OFGVsAKLEeekt9ZznT8z_w" sourceNode="_CtA1y80aEeab-v3nvO92qw" targetNode="_CtA13c0aEeab-v3nvO92qw" endLabel="r">
+      <decorations xmi:type="viewpoint:Decoration" uid="_OFGVswKLEeekt9ZznT8z_w">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='NW_1']"/>
       </decorations>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_OFG8wAKLEeekt9ZznT8z_w">
+      <decorations xmi:type="viewpoint:Decoration" uid="_OFG8wAKLEeekt9ZznT8z_w">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='NW_2']"/>
       </decorations>
-      <decorations xmi:type="viewpoint:Decoration" xmi:id="_OFG8wQKLEeekt9ZznT8z_w">
+      <decorations xmi:type="viewpoint:Decoration" uid="_OFG8wQKLEeekt9ZznT8z_w">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='NW_3']"/>
       </decorations>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_OFGVsQKLEeekt9ZznT8z_w" size="2">
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_OFGVsQKLEeekt9ZznT8z_w" size="2">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@edgeMappings[name='Single%20Reference']/@style"/>
-        <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_OFGVsgKLEeekt9ZznT8z_w" showIcon="false"/>
+        <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_OFGVsgKLEeekt9ZznT8z_w" showIcon="false"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer/@edgeMappings[name='Single%20Reference']"/>
+      <target xmi:type="component:Component" href="decorationsTest.component#//@children.0"/>
     </ownedDiagramElements>
     <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']"/>
-    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_CtA17M0aEeab-v3nvO92qw"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_CtA17M0aEeab-v3nvO92qw"/>
     <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='DiagramWithDecoration']/@defaultLayer"/>
     <target xmi:type="component:Component" href="decorationsTest.component#/"/>
   </diagram:DSemanticDiagram>
-  <diagram:DSemanticDiagram xmi:id="_16r6UB3MEeeBFcZXMrYe7g" name="new Diagram">
-    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_16r6UR3MEeeBFcZXMrYe7g" source="DANNOTATION_CUSTOMIZATION_KEY">
-      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_16r6Uh3MEeeBFcZXMrYe7g"/>
+  <diagram:DSemanticDiagram uid="_16r6UB3MEeeBFcZXMrYe7g" name="new Diagram">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_16r6UR3MEeeBFcZXMrYe7g" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_16r6Uh3MEeeBFcZXMrYe7g"/>
     </ownedAnnotationEntries>
-    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_17H_MB3MEeeBFcZXMrYe7g" source="GMF_DIAGRAMS">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_17H_MB3MEeeBFcZXMrYe7g" source="GMF_DIAGRAMS">
       <data xmi:type="notation:Diagram" xmi:id="_17H_MR3MEeeBFcZXMrYe7g" type="Sirius" element="_16r6UB3MEeeBFcZXMrYe7g" measurementUnit="Pixel">
         <children xmi:type="notation:Node" xmi:id="_17TlYB3MEeeBFcZXMrYe7g" type="2002" element="_16r6VB3MEeeBFcZXMrYe7g">
           <children xmi:type="notation:Node" xmi:id="_17gZsB3MEeeBFcZXMrYe7g" type="5006"/>
@@ -407,64 +407,64 @@
         </edges>
       </data>
     </ownedAnnotationEntries>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_16r6VB3MEeeBFcZXMrYe7g" name="decoDisplay" outgoingEdges="_16r6Xh3MEeeBFcZXMrYe7g _16r6YR3MEeeBFcZXMrYe7g">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_16r6VB3MEeeBFcZXMrYe7g" name="decoDisplay" outgoingEdges="_16r6Xh3MEeeBFcZXMrYe7g _16r6YR3MEeeBFcZXMrYe7g">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_16r6VR3MEeeBFcZXMrYe7g" borderSize="1" borderSizeComputationExpression="1">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='Diagram']/@defaultLayer/@containerMappings[name='Component']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='Diagram']/@defaultLayer/@containerMappings[name='Component']"/>
       <target xmi:type="component:Component" href="decorationsTest.component#//@children.0"/>
       <semanticElements xmi:type="component:Component" href="decorationsTest.component#//@children.0"/>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_16r6VR3MEeeBFcZXMrYe7g" borderSize="1" borderSizeComputationExpression="1">
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_16r6Vh3MEeeBFcZXMrYe7g" name="groupDecoMerge2">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_16r6Vx3MEeeBFcZXMrYe7g" borderSize="1" borderSizeComputationExpression="1">
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='Diagram']/@defaultLayer/@containerMappings[name='Component']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='Diagram']/@defaultLayer/@containerMappings[name='Component']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_16r6Vh3MEeeBFcZXMrYe7g" name="groupDecoMerge2">
       <target xmi:type="component:Component" href="decorationsTest.component#//@children.1"/>
       <semanticElements xmi:type="component:Component" href="decorationsTest.component#//@children.1"/>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_16r6Vx3MEeeBFcZXMrYe7g" borderSize="1" borderSizeComputationExpression="1">
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_16r6WB3MEeeBFcZXMrYe7g" name="listDecoMerge1" incomingEdges="_16r6Xh3MEeeBFcZXMrYe7g">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_16r6WR3MEeeBFcZXMrYe7g" borderSize="1" borderSizeComputationExpression="1">
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='Diagram']/@defaultLayer/@containerMappings[name='Component']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='Diagram']/@defaultLayer/@containerMappings[name='Component']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_16r6WB3MEeeBFcZXMrYe7g" name="listDecoMerge1" incomingEdges="_16r6Xh3MEeeBFcZXMrYe7g">
       <target xmi:type="component:Component" href="decorationsTest.component#//@children.2"/>
       <semanticElements xmi:type="component:Component" href="decorationsTest.component#//@children.2"/>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_16r6WR3MEeeBFcZXMrYe7g" borderSize="1" borderSizeComputationExpression="1">
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_16r6Wh3MEeeBFcZXMrYe7g" name="listDecoMerge2">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_16r6Wx3MEeeBFcZXMrYe7g" borderSize="1" borderSizeComputationExpression="1">
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='Diagram']/@defaultLayer/@containerMappings[name='Component']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='Diagram']/@defaultLayer/@containerMappings[name='Component']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_16r6Wh3MEeeBFcZXMrYe7g" name="listDecoMerge2">
       <target xmi:type="component:Component" href="decorationsTest.component#//@children.3"/>
       <semanticElements xmi:type="component:Component" href="decorationsTest.component#//@children.3"/>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_16r6Wx3MEeeBFcZXMrYe7g" borderSize="1" borderSizeComputationExpression="1">
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_16r6XB3MEeeBFcZXMrYe7g" name="groupDecoMerge1" incomingEdges="_16r6YR3MEeeBFcZXMrYe7g">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_16r6XR3MEeeBFcZXMrYe7g" borderSize="1" borderSizeComputationExpression="1">
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='Diagram']/@defaultLayer/@containerMappings[name='Component']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='Diagram']/@defaultLayer/@containerMappings[name='Component']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_16r6XB3MEeeBFcZXMrYe7g" name="groupDecoMerge1" incomingEdges="_16r6YR3MEeeBFcZXMrYe7g">
       <target xmi:type="component:Component" href="decorationsTest.component#//@children.4"/>
       <semanticElements xmi:type="component:Component" href="decorationsTest.component#//@children.4"/>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_16r6XR3MEeeBFcZXMrYe7g" borderSize="1" borderSizeComputationExpression="1">
-        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='Diagram']/@defaultLayer/@containerMappings[name='Component']/@style"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='Diagram']/@defaultLayer/@containerMappings[name='Component']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_16r6Xh3MEeeBFcZXMrYe7g" sourceNode="_16r6VB3MEeeBFcZXMrYe7g" targetNode="_16r6WB3MEeeBFcZXMrYe7g" endLabel="r">
-      <target xmi:type="component:Component" href="decorationsTest.component#//@children.0"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_16r6Xx3MEeeBFcZXMrYe7g" size="2">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_16r6Xh3MEeeBFcZXMrYe7g" sourceNode="_16r6VB3MEeeBFcZXMrYe7g" targetNode="_16r6WB3MEeeBFcZXMrYe7g" endLabel="r">
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_16r6Xx3MEeeBFcZXMrYe7g" size="2">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='Diagram']/@defaultLayer/@edgeMappings[name='Single%20Reference']/@style"/>
-        <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_16r6YB3MEeeBFcZXMrYe7g" showIcon="false"/>
+        <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_16r6YB3MEeeBFcZXMrYe7g" showIcon="false"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='Diagram']/@defaultLayer/@edgeMappings[name='Single%20Reference']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_16r6YR3MEeeBFcZXMrYe7g" sourceNode="_16r6VB3MEeeBFcZXMrYe7g" targetNode="_16r6XB3MEeeBFcZXMrYe7g" endLabel="R2">
       <target xmi:type="component:Component" href="decorationsTest.component#//@children.0"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_16r6Yh3MEeeBFcZXMrYe7g" lineStyle="dot" size="2">
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_16r6YR3MEeeBFcZXMrYe7g" sourceNode="_16r6VB3MEeeBFcZXMrYe7g" targetNode="_16r6XB3MEeeBFcZXMrYe7g" endLabel="R2">
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_16r6Yh3MEeeBFcZXMrYe7g" lineStyle="dot" size="2">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='Diagram']/@defaultLayer/@edgeMappings[name='Reference']/@style"/>
-        <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_16r6Yx3MEeeBFcZXMrYe7g" showIcon="false"/>
+        <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_16r6Yx3MEeeBFcZXMrYe7g" showIcon="false"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='Diagram']/@defaultLayer/@edgeMappings[name='Reference']"/>
+      <target xmi:type="component:Component" href="decorationsTest.component#//@children.0"/>
     </ownedDiagramElements>
     <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='Diagram']"/>
-    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_16r6ZB3MEeeBFcZXMrYe7g"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_16r6ZB3MEeeBFcZXMrYe7g"/>
     <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.eclipse.sirius.tests.sample.component.design/description/component.odesign#//@ownedViewpoints[name='Component']/@ownedRepresentations[name='Diagram']/@defaultLayer"/>
     <target xmi:type="component:Component" href="decorationsTest.component#/"/>
   </diagram:DSemanticDiagram>

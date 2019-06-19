@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description" xmi:id="_SOrCoABREd-SfeCIM9iTyA" selectedViews="_SuJz8ABREd-SfeCIM9iTyA" version="8.0.0">
-  <models xmi:type="ecore:EPackage" href="tc1481.ecore#/"/>
-  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_SuJz8ABREd-SfeCIM9iTyA" initialized="true">
+<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description" uid="_SOrCoABREd-SfeCIM9iTyA" selectedViews="_SuJz8ABREd-SfeCIM9iTyA" version="14.1.0.201810161215">
+  <semanticResources>tc1481.ecore</semanticResources>
+  <ownedViews xmi:type="viewpoint:DView" uid="_SuJz8ABREd-SfeCIM9iTyA">
     <viewpoint xmi:type="description:Viewpoint" href="../../edgeStabilityOnPortCollapsing/tc1481.odesign#//@ownedViewpoints[name='Test%20case%20for%20ticket%20%231481']"/>
   </ownedViews>
 </viewpoint:DAnalysis>

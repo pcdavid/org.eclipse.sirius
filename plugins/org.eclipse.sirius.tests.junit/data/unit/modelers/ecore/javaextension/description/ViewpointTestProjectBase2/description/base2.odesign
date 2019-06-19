@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:filter="http://www.eclipse.org/sirius/diagram/description/filter/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" xmlns:validation="http://www.eclipse.org/sirius/description/validation/1.1.0" name="Base2" version="10.0.0.201505222000">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:filter="http://www.eclipse.org/sirius/diagram/description/filter/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" xmlns:validation="http://www.eclipse.org/sirius/description/validation/1.1.0" name="Base2" version="12.0.0.2017041100">
   <ownedViewpoints name="Base2WithTemplate" modelFileExtension="ecore">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Entities2" titleExpression="aql:self.name + ' package entities'" domainClass="EPackage">
       <filters xsi:type="filter:CompositeFilterDescription" name="Hide class content">
@@ -59,14 +59,14 @@
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
           </subNodeMappings>
-          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" backgroundStyle="GradientTopToBottom">
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1" backgroundStyle="GradientTopToBottom">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
             <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </style>
           <conditionnalStyles predicateExpression="aql:self.abstract">
-            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" backgroundStyle="GradientTopToBottom">
+            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1" backgroundStyle="GradientTopToBottom">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelFormat>italic</labelFormat>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -75,7 +75,7 @@
             </style>
           </conditionnalStyles>
           <conditionnalStyles predicateExpression="&lt;%isDocumentedTemplate%>">
-            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" backgroundStyle="GradientTopToBottom">
+            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1" backgroundStyle="GradientTopToBottom">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='yellow']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
@@ -91,14 +91,14 @@
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
           </subNodeMappings>
-          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" backgroundStyle="GradientTopToBottom">
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1" backgroundStyle="GradientTopToBottom">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
             <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </style>
           <conditionnalStyles predicateExpression="&lt;%isDocumentedTemplate%>">
-            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" backgroundStyle="GradientTopToBottom">
+            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1" backgroundStyle="GradientTopToBottom">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
@@ -107,7 +107,7 @@
           </conditionnalStyles>
         </containerMappings>
         <containerMappings name="TEC EDataType Base2" labelDirectEdit="//@ownedViewpoints[name='Base2WithTemplate']/@ownedRepresentations[name='Entities2']/@defaultLayer/@toolSections.0/@ownedTools[name='Edit%20Name']" semanticCandidatesExpression="aql:self.eContents()->filter(ecore::EDataType)" domainClass="EDataType" childrenPresentation="List">
-          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" backgroundStyle="GradientTopToBottom">
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1" backgroundStyle="GradientTopToBottom">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
@@ -235,14 +235,14 @@
       </defaultLayer>
       <additionalLayers name="Package">
         <containerMappings name="Design Package" labelDirectEdit="//@ownedViewpoints[name='Base2WithTemplate']/@ownedRepresentations[name='Entities2']/@defaultLayer/@toolSections.0/@ownedTools[name='Edit%20Name']" semanticCandidatesExpression="aql:self.eContents()->filter(ecore::EPackage)" domainClass="EPackage" reusedContainerMappings="//@ownedViewpoints[name='Base2WithTemplate']/@ownedRepresentations[name='Entities2']/@defaultLayer/@containerMappings[name='TEC%20EClass%20Base2'] //@ownedViewpoints[name='Base2WithTemplate']/@ownedRepresentations[name='Entities2']/@additionalLayers[name='Package']/@containerMappings[name='Design%20Package']">
-          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" labelSize="10" backgroundStyle="GradientTopToBottom">
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1" labelSize="10" backgroundStyle="GradientTopToBottom">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
             <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </style>
           <conditionnalStyles predicateExpression="&lt;%!isDocumentedTemplate%>">
-            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" labelSize="10" backgroundStyle="GradientTopToBottom">
+            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1" labelSize="10" backgroundStyle="GradientTopToBottom">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
@@ -251,7 +251,7 @@
           </conditionnalStyles>
         </containerMappings>
         <containerMappings name="Dropped Package" semanticCandidatesExpression="feature:eAllContents" createElements="false" domainClass="EPackage" reusedContainerMappings="//@ownedViewpoints[name='Base2WithTemplate']/@ownedRepresentations[name='Entities2']/@defaultLayer/@containerMappings[name='TEC%20EClass%20Base2']">
-          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" labelSize="10" backgroundStyle="GradientTopToBottom">
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1" labelSize="10" backgroundStyle="GradientTopToBottom">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_orange']"/>

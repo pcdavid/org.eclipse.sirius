@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/tree/description/1.0.0" xmlns:tool="http://www.eclipse.org/sirius/description/tool/1.1.0" name="Ecore Editing Workbench V4.6" version="10.0.0.201505222000">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/tree/description/1.0.0" xmlns:tool="http://www.eclipse.org/sirius/description/tool/1.1.0" name="Ecore Editing Workbench V4.6" version="12.0.0.2017041100">
   <ownedViewpoints name="TreeViewpoint" modelFileExtension="ecore">
     <ownedRepresentations xsi:type="description_1:TreeDescription" name="Tree" label="Tree" domainClass="EPackage">
       <subItemMappings name="Package" domainClass="EPackage" semanticCandidatesExpression="aql:self.eContents()->filter(ecore::EPackage)" reusedTreeItemMappings="//@ownedViewpoints[name='TreeViewpoint']/@ownedRepresentations[name='Tree']/@subItemMappings[name='Class'] //@ownedViewpoints[name='TreeViewpoint']/@ownedRepresentations[name='Tree']/@subItemMappings[name='Package']">
@@ -39,7 +39,7 @@
           <variables name="element" documentation="The currently edited element."/>
           <variables name="root" documentation="The semantic element corresponding to the current table."/>
         </delete>
-        <create name="my create tool">
+        <create name="my create tool" elementsToSelect="service:stdEmptyCollection">
           <firstModelOperation xsi:type="tool:ChangeContext" browseExpression="var:container">
             <subModelOperations xsi:type="tool:CreateInstance" typeName="EClass" referenceName="eClassifiers">
               <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="NewEClassCreationTool"/>
@@ -74,7 +74,7 @@
           <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
         </defaultStyle>
       </subItemMappings>
-      <createTreeItem name="Create root class" forceRefresh="true" mapping="//@ownedViewpoints[name='TreeViewpoint']/@ownedRepresentations[name='Tree']/@subItemMappings[name='Class']">
+      <createTreeItem name="Create root class" forceRefresh="true" elementsToSelect="service:stdEmptyCollection" mapping="//@ownedViewpoints[name='TreeViewpoint']/@ownedRepresentations[name='Tree']/@subItemMappings[name='Class']">
         <firstModelOperation xsi:type="tool:ChangeContext" browseExpression="var:container">
           <subModelOperations xsi:type="tool:CreateInstance" typeName="EClass" referenceName="eClassifiers">
             <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="NewEClassCreationTool"/>
@@ -98,6 +98,7 @@
       </subItemMappings>
     </ownedRepresentations>
     <ownedJavaExtensions qualifiedClassName="org.eclipse.sirius.ecore.design.service.EcoreService"/>
+    <ownedJavaExtensions qualifiedClassName="org.eclipse.sirius.common.tools.api.interpreter.StandardServices"/>
   </ownedViewpoints>
   <userColorsPalettes name="Ecore Palette">
     <entries xsi:type="description:InterpolatedColor" name="Size Based Color" colorValueComputationExpression="[eContents()->size()/]"/>

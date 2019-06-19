@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
-  <viewpoint:DAnalysis xmi:id="_XVY-EOzQEd-T-fkKxdk2ZA" selectedViews="_hfrAwOzQEd-T-fkKxdk2ZA" version="12.1.0.201708031200">
+  <viewpoint:DAnalysis uid="_XVY-EOzQEd-T-fkKxdk2ZA" selectedViews="_hfrAwOzQEd-T-fkKxdk2ZA" version="14.1.0.201810161215">
     <semanticResources>tc2330.ecore</semanticResources>
-    <ownedViews xmi:type="viewpoint:DView" xmi:id="_Zom94OzQEd-T-fkKxdk2ZA">
+    <ownedViews xmi:type="viewpoint:DView" uid="_Zom94OzQEd-T-fkKxdk2ZA">
       <viewpoint xmi:type="description:Viewpoint" href="tc2330.odesign#//@ownedViewpoints[name='Test%20case%20for%20ticket%20%231481%20domain%20based']"/>
     </ownedViews>
-    <ownedViews xmi:type="viewpoint:DView" xmi:id="_hfrAwOzQEd-T-fkKxdk2ZA">
+    <ownedViews xmi:type="viewpoint:DView" uid="_hfrAwOzQEd-T-fkKxdk2ZA">
       <viewpoint xmi:type="description:Viewpoint" href="tc2330.odesign#//@ownedViewpoints[name='2330']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_o7XJkJRvEeeQtoUIhUY0Ow" name="new 2330 Diagram" repPath="#_o7DnkJRvEeeQtoUIhUY0Ow">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_o7XJkJRvEeeQtoUIhUY0Ow" name="new 2330 Diagram" repPath="#_iSyfwOzQEd-T-fkKxdk2ZA">
         <description xmi:type="description_1:DiagramDescription" href="tc2330.odesign#//@ownedViewpoints[name='2330']/@ownedRepresentations[name='2330%20Diagram']"/>
         <target xmi:type="ecore:EPackage" href="tc2330.ecore#/"/>
       </ownedRepresentationDescriptors>
     </ownedViews>
   </viewpoint:DAnalysis>
-  <diagram:DSemanticDiagram xmi:id="_iSyfwOzQEd-T-fkKxdk2ZA" name="new 2330 Diagram" uid="_o7DnkJRvEeeQtoUIhUY0Ow">
-    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_iT-ykOzQEd-T-fkKxdk2ZA" source="GMF_DIAGRAMS">
+  <diagram:DSemanticDiagram uid="_iSyfwOzQEd-T-fkKxdk2ZA" name="new 2330 Diagram">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_iT-ykOzQEd-T-fkKxdk2ZA" source="GMF_DIAGRAMS">
       <data xmi:type="notation:Diagram" xmi:id="_iT-ykezQEd-T-fkKxdk2ZA" type="Sirius" element="_iSyfwOzQEd-T-fkKxdk2ZA" measurementUnit="Pixel">
         <children xmi:type="notation:Node" xmi:id="_iXZ6AOzQEd-T-fkKxdk2ZA" type="2002" element="_7ayCwUg0EeCm95Tq9dtYWA">
           <children xmi:type="notation:Node" xmi:id="_iYAW8OzQEd-T-fkKxdk2ZA" type="5006"/>
@@ -266,83 +266,83 @@
         </edges>
       </data>
     </ownedAnnotationEntries>
-    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_o7XJkZRvEeeQtoUIhUY0Ow" source="DANNOTATION_CUSTOMIZATION_KEY">
-      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_o7XJkpRvEeeQtoUIhUY0Ow"/>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_o7XJkZRvEeeQtoUIhUY0Ow" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_o7XJkpRvEeeQtoUIhUY0Ow"/>
     </ownedAnnotationEntries>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_7awNkEg0EeCm95Tq9dtYWA" name="myEnum" width="3" height="3">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_7awNkEg0EeCm95Tq9dtYWA" name="myEnum" width="3" height="3">
       <target xmi:type="ecore:EEnum" href="tc2330.ecore#//myEnum"/>
       <semanticElements xmi:type="ecore:EEnum" href="tc2330.ecore#//myEnum"/>
-      <ownedStyle xmi:type="diagram:Ellipse" xmi:id="_7aw0oEg0EeCm95Tq9dtYWA" color="194,239,255">
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_7aw0oEg0EeCm95Tq9dtYWA" color="194,239,255">
         <description xmi:type="style:EllipseNodeDescription" href="tc2330.odesign#//@ownedViewpoints[name='2330']/@ownedRepresentations[name='2330%20Diagram']/@defaultLayer/@nodeMappings[name='NM_EEnum']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="tc2330.odesign#//@ownedViewpoints[name='2330']/@ownedRepresentations[name='2330%20Diagram']/@defaultLayer/@nodeMappings[name='NM_EEnum']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_7axbsUg0EeCm95Tq9dtYWA" name="mySecondEnum" width="3" height="3">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_7axbsUg0EeCm95Tq9dtYWA" name="mySecondEnum" width="3" height="3">
       <target xmi:type="ecore:EEnum" href="tc2330.ecore#//mySecondEnum"/>
       <semanticElements xmi:type="ecore:EEnum" href="tc2330.ecore#//mySecondEnum"/>
-      <ownedStyle xmi:type="diagram:Ellipse" xmi:id="_7axbskg0EeCm95Tq9dtYWA" color="194,239,255">
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_7axbskg0EeCm95Tq9dtYWA" color="194,239,255">
         <description xmi:type="style:EllipseNodeDescription" href="tc2330.odesign#//@ownedViewpoints[name='2330']/@ownedRepresentations[name='2330%20Diagram']/@defaultLayer/@nodeMappings[name='NM_EEnum']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="tc2330.odesign#//@ownedViewpoints[name='2330']/@ownedRepresentations[name='2330%20Diagram']/@defaultLayer/@nodeMappings[name='NM_EEnum']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_7ayCwUg0EeCm95Tq9dtYWA" name="p1">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_7ayCwUg0EeCm95Tq9dtYWA" name="p1">
       <target xmi:type="ecore:EPackage" href="tc2330.ecore#//p1"/>
       <semanticElements xmi:type="ecore:EPackage" href="tc2330.ecore#//p1"/>
-      <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_7a1tIEg0EeCm95Tq9dtYWA" name="A" outgoingEdges="_7a-3EEg0EeCm95Tq9dtYWA" width="2" height="2">
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_7a1tIEg0EeCm95Tq9dtYWA" name="A" outgoingEdges="_7a-3EEg0EeCm95Tq9dtYWA" width="2" height="2">
         <target xmi:type="ecore:EClass" href="tc2330.ecore#//p1/A"/>
         <semanticElements xmi:type="ecore:EClass" href="tc2330.ecore#//p1/A"/>
-        <ownedStyle xmi:type="diagram:Square" xmi:id="_7a1tIUg0EeCm95Tq9dtYWA" borderColor="173,127,168" width="2" height="2" color="239,41,41">
+        <ownedStyle xmi:type="diagram:Square" uid="_7a1tIUg0EeCm95Tq9dtYWA" borderColor="173,127,168" width="2" height="2" color="239,41,41">
           <description xmi:type="style:SquareDescription" href="tc2330.odesign#//@ownedViewpoints[name='2330']/@ownedRepresentations[name='2330%20Diagram']/@defaultLayer/@containerMappings[name='CM_EPackage']/@borderedNodeMappings[name='BN_EClass']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="tc2330.odesign#//@ownedViewpoints[name='2330']/@ownedRepresentations[name='2330%20Diagram']/@defaultLayer/@containerMappings[name='CM_EPackage']/@borderedNodeMappings[name='BN_EClass']"/>
       </ownedBorderedNodes>
-      <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_7a2UMEg0EeCm95Tq9dtYWA" name="G" outgoingEdges="_7a_eIEg0EeCm95Tq9dtYWA" width="2" height="2">
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_7a2UMEg0EeCm95Tq9dtYWA" name="G" outgoingEdges="_7a_eIEg0EeCm95Tq9dtYWA" width="2" height="2">
         <target xmi:type="ecore:EClass" href="tc2330.ecore#//p1/G"/>
         <semanticElements xmi:type="ecore:EClass" href="tc2330.ecore#//p1/G"/>
-        <ownedStyle xmi:type="diagram:Square" xmi:id="_7a2UMUg0EeCm95Tq9dtYWA" borderColor="173,127,168" width="2" height="2" color="239,41,41">
+        <ownedStyle xmi:type="diagram:Square" uid="_7a2UMUg0EeCm95Tq9dtYWA" borderColor="173,127,168" width="2" height="2" color="239,41,41">
           <description xmi:type="style:SquareDescription" href="tc2330.odesign#//@ownedViewpoints[name='2330']/@ownedRepresentations[name='2330%20Diagram']/@defaultLayer/@containerMappings[name='CM_EPackage']/@borderedNodeMappings[name='BN_EClass']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="tc2330.odesign#//@ownedViewpoints[name='2330']/@ownedRepresentations[name='2330%20Diagram']/@defaultLayer/@containerMappings[name='CM_EPackage']/@borderedNodeMappings[name='BN_EClass']"/>
       </ownedBorderedNodes>
-      <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_7a27QEg0EeCm95Tq9dtYWA" name="H" outgoingEdges="_7bAFMEg0EeCm95Tq9dtYWA" width="2" height="2">
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_7a27QEg0EeCm95Tq9dtYWA" name="H" outgoingEdges="_7bAFMEg0EeCm95Tq9dtYWA" width="2" height="2">
         <target xmi:type="ecore:EClass" href="tc2330.ecore#//p1/H"/>
         <semanticElements xmi:type="ecore:EClass" href="tc2330.ecore#//p1/H"/>
-        <ownedStyle xmi:type="diagram:Square" xmi:id="_7a27QUg0EeCm95Tq9dtYWA" borderColor="173,127,168" width="2" height="2" color="239,41,41">
+        <ownedStyle xmi:type="diagram:Square" uid="_7a27QUg0EeCm95Tq9dtYWA" borderColor="173,127,168" width="2" height="2" color="239,41,41">
           <description xmi:type="style:SquareDescription" href="tc2330.odesign#//@ownedViewpoints[name='2330']/@ownedRepresentations[name='2330%20Diagram']/@defaultLayer/@containerMappings[name='CM_EPackage']/@borderedNodeMappings[name='BN_EClass']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="tc2330.odesign#//@ownedViewpoints[name='2330']/@ownedRepresentations[name='2330%20Diagram']/@defaultLayer/@containerMappings[name='CM_EPackage']/@borderedNodeMappings[name='BN_EClass']"/>
       </ownedBorderedNodes>
-      <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_7a3iUEg0EeCm95Tq9dtYWA" name="I" outgoingEdges="_7bAsQEg0EeCm95Tq9dtYWA" width="2" height="2">
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_7a3iUEg0EeCm95Tq9dtYWA" name="I" outgoingEdges="_7bAsQEg0EeCm95Tq9dtYWA" width="2" height="2">
         <target xmi:type="ecore:EClass" href="tc2330.ecore#//p1/I"/>
         <semanticElements xmi:type="ecore:EClass" href="tc2330.ecore#//p1/I"/>
-        <ownedStyle xmi:type="diagram:Square" xmi:id="_7a3iUUg0EeCm95Tq9dtYWA" borderColor="173,127,168" width="2" height="2" color="239,41,41">
+        <ownedStyle xmi:type="diagram:Square" uid="_7a3iUUg0EeCm95Tq9dtYWA" borderColor="173,127,168" width="2" height="2" color="239,41,41">
           <description xmi:type="style:SquareDescription" href="tc2330.odesign#//@ownedViewpoints[name='2330']/@ownedRepresentations[name='2330%20Diagram']/@defaultLayer/@containerMappings[name='CM_EPackage']/@borderedNodeMappings[name='BN_EClass']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="tc2330.odesign#//@ownedViewpoints[name='2330']/@ownedRepresentations[name='2330%20Diagram']/@defaultLayer/@containerMappings[name='CM_EPackage']/@borderedNodeMappings[name='BN_EClass']"/>
       </ownedBorderedNodes>
-      <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_Au53QJRwEeeQtoUIhUY0Ow" width="2" height="2">
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_Au53QJRwEeeQtoUIhUY0Ow" width="2" height="2">
         <target xmi:type="ecore:EPackage" href="tc2330.ecore#//p1"/>
         <semanticElements xmi:type="ecore:EPackage" href="tc2330.ecore#//p1"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:Square" xmi:id="_Au6eUJRwEeeQtoUIhUY0Ow" showIcon="false" borderColor="173,127,168" width="2" height="2" color="204,242,166">
+        <ownedStyle xmi:type="diagram:Square" uid="_Au6eUJRwEeeQtoUIhUY0Ow" showIcon="false" borderColor="173,127,168" width="2" height="2" color="204,242,166">
           <description xmi:type="style:SquareDescription" href="tc2330.odesign#//@ownedViewpoints[name='2330']/@ownedRepresentations[name='2330%20Diagram']/@defaultLayer/@containerMappings[name='CM_EPackage']/@borderedNodeMappings[name='selfP1BorderNode']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="tc2330.odesign#//@ownedViewpoints[name='2330']/@ownedRepresentations[name='2330%20Diagram']/@defaultLayer/@containerMappings[name='CM_EPackage']/@borderedNodeMappings[name='selfP1BorderNode']"/>
       </ownedBorderedNodes>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_7ayp0Eg0EeCm95Tq9dtYWA" borderSize="1" borderSizeComputationExpression="1" borderColor="39,76,114" backgroundColor="114,159,207" foregroundColor="204,242,166">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_7ayp0Eg0EeCm95Tq9dtYWA" borderSize="1" borderSizeComputationExpression="1" borderColor="39,76,114" backgroundColor="114,159,207" foregroundColor="204,242,166">
         <description xmi:type="style:FlatContainerStyleDescription" href="tc2330.odesign#//@ownedViewpoints[name='2330']/@ownedRepresentations[name='2330%20Diagram']/@defaultLayer/@containerMappings[name='CM_EPackage']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="tc2330.odesign#//@ownedViewpoints[name='2330']/@ownedRepresentations[name='2330%20Diagram']/@defaultLayer/@containerMappings[name='CM_EPackage']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_7azQ4Ug0EeCm95Tq9dtYWA" name="p2">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_7azQ4Ug0EeCm95Tq9dtYWA" name="p2">
       <target xmi:type="ecore:EPackage" href="tc2330.ecore#//p2"/>
       <semanticElements xmi:type="ecore:EPackage" href="tc2330.ecore#//p2"/>
-      <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_7a4wcEg0EeCm95Tq9dtYWA" name="B" incomingEdges="_7a-3EEg0EeCm95Tq9dtYWA" width="2" height="2">
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_7a4wcEg0EeCm95Tq9dtYWA" name="B" incomingEdges="_7a-3EEg0EeCm95Tq9dtYWA" width="2" height="2">
         <target xmi:type="ecore:EClass" href="tc2330.ecore#//p2/B"/>
         <semanticElements xmi:type="ecore:EClass" href="tc2330.ecore#//p2/B"/>
-        <ownedStyle xmi:type="diagram:Square" xmi:id="_7a5XgEg0EeCm95Tq9dtYWA" borderColor="173,127,168" width="2" height="2" color="239,41,41">
+        <ownedStyle xmi:type="diagram:Square" uid="_7a5XgEg0EeCm95Tq9dtYWA" borderColor="173,127,168" width="2" height="2" color="239,41,41">
           <description xmi:type="style:SquareDescription" href="tc2330.odesign#//@ownedViewpoints[name='2330']/@ownedRepresentations[name='2330%20Diagram']/@defaultLayer/@containerMappings[name='CM_EPackage']/@borderedNodeMappings[name='BN_EClass']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="tc2330.odesign#//@ownedViewpoints[name='2330']/@ownedRepresentations[name='2330%20Diagram']/@defaultLayer/@containerMappings[name='CM_EPackage']/@borderedNodeMappings[name='BN_EClass']"/>
@@ -350,97 +350,97 @@
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_7azQ4kg0EeCm95Tq9dtYWA" borderSize="1" borderSizeComputationExpression="1" borderColor="39,76,114" backgroundColor="114,159,207" foregroundColor="204,242,166">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_7azQ4kg0EeCm95Tq9dtYWA" borderSize="1" borderSizeComputationExpression="1" borderColor="39,76,114" backgroundColor="114,159,207" foregroundColor="204,242,166">
         <description xmi:type="style:FlatContainerStyleDescription" href="tc2330.odesign#//@ownedViewpoints[name='2330']/@ownedRepresentations[name='2330%20Diagram']/@defaultLayer/@containerMappings[name='CM_EPackage']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="tc2330.odesign#//@ownedViewpoints[name='2330']/@ownedRepresentations[name='2330%20Diagram']/@defaultLayer/@containerMappings[name='CM_EPackage']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_7az38Eg0EeCm95Tq9dtYWA" name="p3">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_7az38Eg0EeCm95Tq9dtYWA" name="p3">
       <target xmi:type="ecore:EPackage" href="tc2330.ecore#//p3"/>
       <semanticElements xmi:type="ecore:EPackage" href="tc2330.ecore#//p3"/>
-      <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_7a5-kEg0EeCm95Tq9dtYWA" name="E" incomingEdges="_7a_eIEg0EeCm95Tq9dtYWA" width="2" height="2">
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_7a5-kEg0EeCm95Tq9dtYWA" name="E" incomingEdges="_7a_eIEg0EeCm95Tq9dtYWA" width="2" height="2">
         <target xmi:type="ecore:EClass" href="tc2330.ecore#//p3/E"/>
         <semanticElements xmi:type="ecore:EClass" href="tc2330.ecore#//p3/E"/>
-        <ownedStyle xmi:type="diagram:Square" xmi:id="_7a6loEg0EeCm95Tq9dtYWA" borderColor="173,127,168" width="2" height="2" color="239,41,41">
+        <ownedStyle xmi:type="diagram:Square" uid="_7a6loEg0EeCm95Tq9dtYWA" borderColor="173,127,168" width="2" height="2" color="239,41,41">
           <description xmi:type="style:SquareDescription" href="tc2330.odesign#//@ownedViewpoints[name='2330']/@ownedRepresentations[name='2330%20Diagram']/@defaultLayer/@containerMappings[name='CM_EPackage']/@borderedNodeMappings[name='BN_EClass']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="tc2330.odesign#//@ownedViewpoints[name='2330']/@ownedRepresentations[name='2330%20Diagram']/@defaultLayer/@containerMappings[name='CM_EPackage']/@borderedNodeMappings[name='BN_EClass']"/>
       </ownedBorderedNodes>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_7az38Ug0EeCm95Tq9dtYWA" borderSize="1" borderSizeComputationExpression="1" borderColor="39,76,114" backgroundColor="114,159,207" foregroundColor="204,242,166">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_7az38Ug0EeCm95Tq9dtYWA" borderSize="1" borderSizeComputationExpression="1" borderColor="39,76,114" backgroundColor="114,159,207" foregroundColor="204,242,166">
         <description xmi:type="style:FlatContainerStyleDescription" href="tc2330.odesign#//@ownedViewpoints[name='2330']/@ownedRepresentations[name='2330%20Diagram']/@defaultLayer/@containerMappings[name='CM_EPackage']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="tc2330.odesign#//@ownedViewpoints[name='2330']/@ownedRepresentations[name='2330%20Diagram']/@defaultLayer/@containerMappings[name='CM_EPackage']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_7a0fAEg0EeCm95Tq9dtYWA" name="p4">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_7a0fAEg0EeCm95Tq9dtYWA" name="p4">
       <target xmi:type="ecore:EPackage" href="tc2330.ecore#//p4"/>
       <semanticElements xmi:type="ecore:EPackage" href="tc2330.ecore#//p4"/>
-      <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_7a7MsEg0EeCm95Tq9dtYWA" name="F" incomingEdges="_7bAFMEg0EeCm95Tq9dtYWA" width="2" height="2">
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_7a7MsEg0EeCm95Tq9dtYWA" name="F" incomingEdges="_7bAFMEg0EeCm95Tq9dtYWA" width="2" height="2">
         <target xmi:type="ecore:EClass" href="tc2330.ecore#//p4/F"/>
         <semanticElements xmi:type="ecore:EClass" href="tc2330.ecore#//p4/F"/>
-        <ownedStyle xmi:type="diagram:Square" xmi:id="_7a7zwEg0EeCm95Tq9dtYWA" borderColor="173,127,168" width="2" height="2" color="239,41,41">
+        <ownedStyle xmi:type="diagram:Square" uid="_7a7zwEg0EeCm95Tq9dtYWA" borderColor="173,127,168" width="2" height="2" color="239,41,41">
           <description xmi:type="style:SquareDescription" href="tc2330.odesign#//@ownedViewpoints[name='2330']/@ownedRepresentations[name='2330%20Diagram']/@defaultLayer/@containerMappings[name='CM_EPackage']/@borderedNodeMappings[name='BN_EClass']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="tc2330.odesign#//@ownedViewpoints[name='2330']/@ownedRepresentations[name='2330%20Diagram']/@defaultLayer/@containerMappings[name='CM_EPackage']/@borderedNodeMappings[name='BN_EClass']"/>
       </ownedBorderedNodes>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_7a0fAUg0EeCm95Tq9dtYWA" borderSize="1" borderSizeComputationExpression="1" borderColor="39,76,114" backgroundColor="114,159,207" foregroundColor="204,242,166">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_7a0fAUg0EeCm95Tq9dtYWA" borderSize="1" borderSizeComputationExpression="1" borderColor="39,76,114" backgroundColor="114,159,207" foregroundColor="204,242,166">
         <description xmi:type="style:FlatContainerStyleDescription" href="tc2330.odesign#//@ownedViewpoints[name='2330']/@ownedRepresentations[name='2330%20Diagram']/@defaultLayer/@containerMappings[name='CM_EPackage']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="tc2330.odesign#//@ownedViewpoints[name='2330']/@ownedRepresentations[name='2330%20Diagram']/@defaultLayer/@containerMappings[name='CM_EPackage']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_7a0fCkg0EeCm95Tq9dtYWA" name="p5">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_7a0fCkg0EeCm95Tq9dtYWA" name="p5">
       <target xmi:type="ecore:EPackage" href="tc2330.ecore#//p5"/>
       <semanticElements xmi:type="ecore:EPackage" href="tc2330.ecore#//p5"/>
-      <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_7a8a0Eg0EeCm95Tq9dtYWA" name="J" incomingEdges="_7bAsQEg0EeCm95Tq9dtYWA" width="2" height="2">
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_7a8a0Eg0EeCm95Tq9dtYWA" name="J" incomingEdges="_7bAsQEg0EeCm95Tq9dtYWA" width="2" height="2">
         <target xmi:type="ecore:EClass" href="tc2330.ecore#//p5/J"/>
         <semanticElements xmi:type="ecore:EClass" href="tc2330.ecore#//p5/J"/>
-        <ownedStyle xmi:type="diagram:Square" xmi:id="_7a9B4Eg0EeCm95Tq9dtYWA" borderColor="173,127,168" width="2" height="2" color="239,41,41">
+        <ownedStyle xmi:type="diagram:Square" uid="_7a9B4Eg0EeCm95Tq9dtYWA" borderColor="173,127,168" width="2" height="2" color="239,41,41">
           <description xmi:type="style:SquareDescription" href="tc2330.odesign#//@ownedViewpoints[name='2330']/@ownedRepresentations[name='2330%20Diagram']/@defaultLayer/@containerMappings[name='CM_EPackage']/@borderedNodeMappings[name='BN_EClass']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="tc2330.odesign#//@ownedViewpoints[name='2330']/@ownedRepresentations[name='2330%20Diagram']/@defaultLayer/@containerMappings[name='CM_EPackage']/@borderedNodeMappings[name='BN_EClass']"/>
       </ownedBorderedNodes>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_7a0fC0g0EeCm95Tq9dtYWA" borderSize="1" borderSizeComputationExpression="1" borderColor="39,76,114" backgroundColor="114,159,207" foregroundColor="204,242,166">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_7a0fC0g0EeCm95Tq9dtYWA" borderSize="1" borderSizeComputationExpression="1" borderColor="39,76,114" backgroundColor="114,159,207" foregroundColor="204,242,166">
         <description xmi:type="style:FlatContainerStyleDescription" href="tc2330.odesign#//@ownedViewpoints[name='2330']/@ownedRepresentations[name='2330%20Diagram']/@defaultLayer/@containerMappings[name='CM_EPackage']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="tc2330.odesign#//@ownedViewpoints[name='2330']/@ownedRepresentations[name='2330%20Diagram']/@defaultLayer/@containerMappings[name='CM_EPackage']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_7a-3EEg0EeCm95Tq9dtYWA" name="toB" sourceNode="_7a1tIEg0EeCm95Tq9dtYWA" targetNode="_7a4wcEg0EeCm95Tq9dtYWA">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_7a-3EEg0EeCm95Tq9dtYWA" name="toB" sourceNode="_7a1tIEg0EeCm95Tq9dtYWA" targetNode="_7a4wcEg0EeCm95Tq9dtYWA">
       <target xmi:type="ecore:EReference" href="tc2330.ecore#//p1/A/toB"/>
       <semanticElements xmi:type="ecore:EReference" href="tc2330.ecore#//p1/A/toB"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_iV6sQezQEd-T-fkKxdk2ZA" routingStyle="manhattan">
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_iV6sQezQEd-T-fkKxdk2ZA" routingStyle="manhattan">
         <description xmi:type="style:EdgeStyleDescription" href="tc2330.odesign#//@ownedViewpoints[name='2330']/@ownedRepresentations[name='2330%20Diagram']/@defaultLayer/@edgeMappings[name='EM_Ref']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_7XWUQEg0EeCm95Tq9dtYWA"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_7XWUQEg0EeCm95Tq9dtYWA"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="tc2330.odesign#//@ownedViewpoints[name='2330']/@ownedRepresentations[name='2330%20Diagram']/@defaultLayer/@edgeMappings[name='EM_Ref']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_7a_eIEg0EeCm95Tq9dtYWA" name="toE" sourceNode="_7a2UMEg0EeCm95Tq9dtYWA" targetNode="_7a5-kEg0EeCm95Tq9dtYWA">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_7a_eIEg0EeCm95Tq9dtYWA" name="toE" sourceNode="_7a2UMEg0EeCm95Tq9dtYWA" targetNode="_7a5-kEg0EeCm95Tq9dtYWA">
       <target xmi:type="ecore:EReference" href="tc2330.ecore#//p1/G/toE"/>
       <semanticElements xmi:type="ecore:EReference" href="tc2330.ecore#//p1/G/toE"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_iV6sRezQEd-T-fkKxdk2ZA" routingStyle="manhattan">
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_iV6sRezQEd-T-fkKxdk2ZA" routingStyle="manhattan">
         <description xmi:type="style:EdgeStyleDescription" href="tc2330.odesign#//@ownedViewpoints[name='2330']/@ownedRepresentations[name='2330%20Diagram']/@defaultLayer/@edgeMappings[name='EM_Ref']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_7XWUSUg0EeCm95Tq9dtYWA"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_7XWUSUg0EeCm95Tq9dtYWA"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="tc2330.odesign#//@ownedViewpoints[name='2330']/@ownedRepresentations[name='2330%20Diagram']/@defaultLayer/@edgeMappings[name='EM_Ref']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_7bAFMEg0EeCm95Tq9dtYWA" name="toF" sourceNode="_7a27QEg0EeCm95Tq9dtYWA" targetNode="_7a7MsEg0EeCm95Tq9dtYWA">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_7bAFMEg0EeCm95Tq9dtYWA" name="toF" sourceNode="_7a27QEg0EeCm95Tq9dtYWA" targetNode="_7a7MsEg0EeCm95Tq9dtYWA">
       <target xmi:type="ecore:EReference" href="tc2330.ecore#//p1/H/toF"/>
       <semanticElements xmi:type="ecore:EReference" href="tc2330.ecore#//p1/H/toF"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_iV6sSezQEd-T-fkKxdk2ZA" routingStyle="manhattan">
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_iV6sSezQEd-T-fkKxdk2ZA" routingStyle="manhattan">
         <description xmi:type="style:EdgeStyleDescription" href="tc2330.odesign#//@ownedViewpoints[name='2330']/@ownedRepresentations[name='2330%20Diagram']/@defaultLayer/@edgeMappings[name='EM_Ref']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_7XWUQ0g0EeCm95Tq9dtYWA"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_7XWUQ0g0EeCm95Tq9dtYWA"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="tc2330.odesign#//@ownedViewpoints[name='2330']/@ownedRepresentations[name='2330%20Diagram']/@defaultLayer/@edgeMappings[name='EM_Ref']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_7bAsQEg0EeCm95Tq9dtYWA" name="toJ" sourceNode="_7a3iUEg0EeCm95Tq9dtYWA" targetNode="_7a8a0Eg0EeCm95Tq9dtYWA">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_7bAsQEg0EeCm95Tq9dtYWA" name="toJ" sourceNode="_7a3iUEg0EeCm95Tq9dtYWA" targetNode="_7a8a0Eg0EeCm95Tq9dtYWA">
       <target xmi:type="ecore:EReference" href="tc2330.ecore#//p1/I/toJ"/>
       <semanticElements xmi:type="ecore:EReference" href="tc2330.ecore#//p1/I/toJ"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_iV6sTezQEd-T-fkKxdk2ZA" routingStyle="manhattan">
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_iV6sTezQEd-T-fkKxdk2ZA" routingStyle="manhattan">
         <description xmi:type="style:EdgeStyleDescription" href="tc2330.odesign#//@ownedViewpoints[name='2330']/@ownedRepresentations[name='2330%20Diagram']/@defaultLayer/@edgeMappings[name='EM_Ref']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_7XWURkg0EeCm95Tq9dtYWA"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_7XWURkg0EeCm95Tq9dtYWA"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="tc2330.odesign#//@ownedViewpoints[name='2330']/@ownedRepresentations[name='2330%20Diagram']/@defaultLayer/@edgeMappings[name='EM_Ref']"/>
     </ownedDiagramElements>
     <description xmi:type="description_1:DiagramDescription" href="tc2330.odesign#//@ownedViewpoints[name='2330']/@ownedRepresentations[name='2330%20Diagram']"/>
-    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_iSyfwezQEd-T-fkKxdk2ZA"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_iSyfwezQEd-T-fkKxdk2ZA"/>
     <activatedLayers xmi:type="description_1:Layer" href="tc2330.odesign#//@ownedViewpoints[name='2330']/@ownedRepresentations[name='2330%20Diagram']/@defaultLayer"/>
     <target xmi:type="ecore:EPackage" href="tc2330.ecore#/"/>
   </diagram:DSemanticDiagram>

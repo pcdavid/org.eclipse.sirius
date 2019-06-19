@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" version="8.0.0">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" version="12.0.0.2017041100">
   <ownedViewpoints name="Mapping Reuse Tests" modelFileExtension="*.ecore">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Common">
       <defaultLayer name="Default">
@@ -18,7 +18,7 @@
           </style>
         </nodeMappings>
         <containerMappings name="Common container mapping - EClass" semanticCandidatesExpression="feature:eAllContents" domainClass="EClass">
-          <style xsi:type="style:ShapeContainerStyleDescription" roundedCorner="true">
+          <style xsi:type="style:ShapeContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1" roundedCorner="true">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_orange']"/>
@@ -35,7 +35,7 @@
     <ownedRepresentations xsi:type="description_1:DiagramDescription" documentation="plop h&#xA;" name="Reuse node mapping in container mapping" initialisation="true" domainClass="EPackage">
       <defaultLayer name="Default">
         <containerMappings name="container mapping - EClass" semanticElements="feature:eAllContents" domainClass="EClass" reusedNodeMappings="//@ownedViewpoints[name='Mapping%20Reuse%20Tests']/@ownedRepresentations[name='Common']/@defaultLayer/@nodeMappings[name='Common%20node%20mapping%20-%20EStructuralFeature']">
-          <style xsi:type="style:FlatContainerStyleDescription">
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_purple']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
@@ -43,7 +43,7 @@
           </style>
         </containerMappings>
         <containerMappings name="container mapping 2 - EClass" semanticElements="feature:eAllContents" domainClass="EClass" reusedNodeMappings="//@ownedViewpoints[name='Mapping%20Reuse%20Tests']/@ownedRepresentations[name='Common']/@defaultLayer/@nodeMappings[name='Common%20node%20mapping%20-%20EStructuralFeature']">
-          <style xsi:type="style:FlatContainerStyleDescription">
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -55,7 +55,7 @@
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Reuse border node mapping in container mapping" domainClass="EPackage">
       <defaultLayer name="Default">
         <containerMappings name="container mapping - EClass" semanticElements="feature:eAllContents" documentation="ssssa" domainClass="EClass" reusedBorderedNodeMappings="//@ownedViewpoints[name='Mapping%20Reuse%20Tests']/@ownedRepresentations[name='Common']/@defaultLayer/@nodeMappings[name='Common%20node%20mapping%20-%20EStructuralFeature']">
-          <style xsi:type="style:FlatContainerStyleDescription">
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -67,7 +67,7 @@
     <ownedRepresentations xsi:type="description_1:DiagramDescription" documentation="hh" name="Reuse border node mapping in container mapping import" domainClass="EPackage">
       <defaultLayer name="Default">
         <containerMappings name="container mapping - EClass" domainClass="EClass">
-          <style xsi:type="style:FlatContainerStyleDescription">
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -77,7 +77,7 @@
       </defaultLayer>
       <additionalLayers name="import" activeByDefault="true">
         <containerMappings xsi:type="description_1:ContainerMappingImport" name="container mapping import - EClass" domainClass="EClass" reusedBorderedNodeMappings="//@ownedViewpoints[name='Mapping%20Reuse%20Tests']/@ownedRepresentations[name='Common']/@defaultLayer/@nodeMappings[name='Common%20node%20mapping%20-%20EStructuralFeature']" importedMapping="//@ownedViewpoints[name='Mapping%20Reuse%20Tests']/@ownedRepresentations[name='Reuse%20border%20node%20mapping%20in%20container%20mapping%20import']/@defaultLayer/@containerMappings[name='container%20mapping%20-%20EClass']">
-          <style xsi:type="style:FlatContainerStyleDescription">
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>

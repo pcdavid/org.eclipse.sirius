@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="ASCII"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" name="2077" version="8.0.0">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" name="2077" version="12.0.0.2017041100">
   <ownedViewpoints name="2077" modelFileExtension="*.ecore">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="2077" domainClass="EPackage">
       <defaultLayer name="Default">
         <edgeMappings name="EReference" semanticCandidatesExpression="aql:self.eAllContents(ecore::EReference)->select(e | not e.eOpposite)" sourceMapping="//@ownedViewpoints[name='2077']/@ownedRepresentations[name='2077']/@defaultLayer/@containerMappings[name='EPackage']/@subNodeMappings[name='EClass']" targetMapping="//@ownedViewpoints[name='2077']/@ownedRepresentations[name='2077']/@defaultLayer/@containerMappings[name='EPackage']/@subNodeMappings[name='EClass']" targetFinderExpression="aql:self.eType" sourceFinderExpression="aql:self.eContainer()" domainClass="EReference" useDomainElement="true">
-          <style sizeComputationExpression="1">
+          <style>
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription showIcon="false" labelExpression="aql:self.name">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -19,7 +19,7 @@
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
             </style>
           </subNodeMappings>
-          <style xsi:type="style:FlatContainerStyleDescription">
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='chocolate']"/>

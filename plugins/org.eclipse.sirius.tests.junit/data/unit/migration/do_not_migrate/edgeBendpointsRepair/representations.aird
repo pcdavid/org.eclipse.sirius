@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
-  <viewpoint:DAnalysis xmi:id="_-aHbgGMqEee3DdaQR_R7SA" selectedViews="_AjlCYGMrEee3DdaQR_R7SA" version="12.0.0.201704271200">
+  <viewpoint:DAnalysis uid="_-aHbgGMqEee3DdaQR_R7SA" selectedViews="_AjlCYGMrEee3DdaQR_R7SA" version="14.1.0.201810161215">
     <semanticResources>TestRectilinear.ecore</semanticResources>
-    <ownedViews xmi:type="viewpoint:DView" xmi:id="_AjlCYGMrEee3DdaQR_R7SA">
+    <ownedViews xmi:type="viewpoint:DView" uid="_AjlCYGMrEee3DdaQR_R7SA">
       <viewpoint xmi:type="description:Viewpoint" href="TestRectilinear.odesign#//@ownedViewpoints[name='TestRectilinear']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_CPjcAGMrEee3DdaQR_R7SA" name="DiagBadEdge" repPath="#_CPgYsGMrEee3DdaQR_R7SA">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_CPjcAGMrEee3DdaQR_R7SA" name="DiagBadEdge" repPath="#_CPgYsGMrEee3DdaQR_R7SA">
         <description xmi:type="description_1:DiagramDescription" href="TestRectilinear.odesign#//@ownedViewpoints[name='TestRectilinear']/@ownedRepresentations[name='TestRectilinear%20Node']"/>
         <target xmi:type="ecore:EPackage" href="TestRectilinear.ecore#/"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_DvXB4GMrEee3DdaQR_R7SA" name="DiagGoodEdge" repPath="#_DvVzwGMrEee3DdaQR_R7SA">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_DvXB4GMrEee3DdaQR_R7SA" name="DiagGoodEdge" repPath="#_DvVzwGMrEee3DdaQR_R7SA">
         <description xmi:type="description_1:DiagramDescription" href="TestRectilinear.odesign#//@ownedViewpoints[name='TestRectilinear']/@ownedRepresentations[name='TestRectilinear%20Node']"/>
         <target xmi:type="ecore:EPackage" href="TestRectilinear.ecore#//P2"/>
       </ownedRepresentationDescriptors>
     </ownedViews>
   </viewpoint:DAnalysis>
-  <diagram:DSemanticDiagram xmi:id="_CPgYsGMrEee3DdaQR_R7SA" name="DiagBadEdge">
-    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_CPgYsWMrEee3DdaQR_R7SA" source="DANNOTATION_CUSTOMIZATION_KEY">
-      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_CPgYsmMrEee3DdaQR_R7SA"/>
+  <diagram:DSemanticDiagram uid="_CPgYsGMrEee3DdaQR_R7SA" name="DiagBadEdge">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_CPgYsWMrEee3DdaQR_R7SA" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_CPgYsmMrEee3DdaQR_R7SA"/>
     </ownedAnnotationEntries>
-    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_CPr-4GMrEee3DdaQR_R7SA" source="GMF_DIAGRAMS">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_CPr-4GMrEee3DdaQR_R7SA" source="GMF_DIAGRAMS">
       <data xmi:type="notation:Diagram" xmi:id="_CPr-4WMrEee3DdaQR_R7SA" type="Sirius" element="_CPgYsGMrEee3DdaQR_R7SA" measurementUnit="Pixel">
         <children xmi:type="notation:Node" xmi:id="_CPvpQGMrEee3DdaQR_R7SA" type="2001" element="_CPg_wGMrEee3DdaQR_R7SA">
           <children xmi:type="notation:Node" xmi:id="_CP1I0GMrEee3DdaQR_R7SA" type="5002">
@@ -55,52 +55,52 @@
           </children>
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_OmF64WMrEee3DdaQR_R7SA" routing="Rectilinear"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_OmF64mMrEee3DdaQR_R7SA" fontName="Segoe UI"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_OmF642MrEee3DdaQR_R7SA" points="[25, 16, -139, -90]$[154, 117, -10, 11]"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_OmF642MrEee3DdaQR_R7SA" points="[25, 16, -139, -90]$[89, 16, -75, -90]$[89, 99, -75, -7]$[154, 99, -10, -7]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_OmGh9WMrEee3DdaQR_R7SA" id="(0.8344370860927153,0.0970873786407767)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_OmGh9mMrEee3DdaQR_R7SA" id="(0.07352941176470588,0.9096385542168675)"/>
         </edges>
       </data>
     </ownedAnnotationEntries>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_CPg_wGMrEee3DdaQR_R7SA" name="C1" outgoingEdges="_OmCQgGMrEee3DdaQR_R7SA" width="3" height="3" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_CPg_wGMrEee3DdaQR_R7SA" name="C1" outgoingEdges="_OmCQgGMrEee3DdaQR_R7SA" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="ecore:EClass" href="TestRectilinear.ecore#//C1"/>
       <semanticElements xmi:type="ecore:EClass" href="TestRectilinear.ecore#//C1"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:Square" xmi:id="_CPg_wWMrEee3DdaQR_R7SA" labelPosition="node">
+      <ownedStyle xmi:type="diagram:Square" uid="_CPg_wWMrEee3DdaQR_R7SA" labelPosition="node">
         <description xmi:type="style:SquareDescription" href="TestRectilinear.odesign#//@ownedViewpoints[name='TestRectilinear']/@ownedRepresentations[name='TestRectilinear%20Node']/@defaultLayer/@nodeMappings[name='NodeEClass']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="TestRectilinear.odesign#//@ownedViewpoints[name='TestRectilinear']/@ownedRepresentations[name='TestRectilinear%20Node']/@defaultLayer/@nodeMappings[name='NodeEClass']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_CPg_wmMrEee3DdaQR_R7SA" name="C2" incomingEdges="_OmCQgGMrEee3DdaQR_R7SA" width="3" height="3" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_CPg_wmMrEee3DdaQR_R7SA" name="C2" incomingEdges="_OmCQgGMrEee3DdaQR_R7SA" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="ecore:EClass" href="TestRectilinear.ecore#//C2"/>
       <semanticElements xmi:type="ecore:EClass" href="TestRectilinear.ecore#//C2"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:Square" xmi:id="_CPg_w2MrEee3DdaQR_R7SA" labelPosition="node">
+      <ownedStyle xmi:type="diagram:Square" uid="_CPg_w2MrEee3DdaQR_R7SA" labelPosition="node">
         <description xmi:type="style:SquareDescription" href="TestRectilinear.odesign#//@ownedViewpoints[name='TestRectilinear']/@ownedRepresentations[name='TestRectilinear%20Node']/@defaultLayer/@nodeMappings[name='NodeEClass']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="TestRectilinear.odesign#//@ownedViewpoints[name='TestRectilinear']/@ownedRepresentations[name='TestRectilinear%20Node']/@defaultLayer/@nodeMappings[name='NodeEClass']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_OmCQgGMrEee3DdaQR_R7SA" sourceNode="_CPg_wGMrEee3DdaQR_R7SA" targetNode="_CPg_wmMrEee3DdaQR_R7SA">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_OmCQgGMrEee3DdaQR_R7SA" sourceNode="_CPg_wGMrEee3DdaQR_R7SA" targetNode="_CPg_wmMrEee3DdaQR_R7SA">
       <target xmi:type="ecore:EClass" href="TestRectilinear.ecore#//C1"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_OmCQgWMrEee3DdaQR_R7SA" size="2" routingStyle="manhattan">
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_OmCQgWMrEee3DdaQR_R7SA" size="2" routingStyle="manhattan">
         <customFeatures>routingStyle</customFeatures>
         <description xmi:type="style:EdgeStyleDescription" href="TestRectilinear.odesign#//@ownedViewpoints[name='TestRectilinear']/@ownedRepresentations[name='TestRectilinear%20Node']/@defaultLayer/@edgeMappings[name='Node_Supertype']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="TestRectilinear.odesign#//@ownedViewpoints[name='TestRectilinear']/@ownedRepresentations[name='TestRectilinear%20Node']/@defaultLayer/@edgeMappings[name='Node_Supertype']"/>
     </ownedDiagramElements>
     <description xmi:type="description_1:DiagramDescription" href="TestRectilinear.odesign#//@ownedViewpoints[name='TestRectilinear']/@ownedRepresentations[name='TestRectilinear%20Node']"/>
-    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_CPg_xGMrEee3DdaQR_R7SA"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_CPg_xGMrEee3DdaQR_R7SA"/>
     <activatedLayers xmi:type="description_1:Layer" href="TestRectilinear.odesign#//@ownedViewpoints[name='TestRectilinear']/@ownedRepresentations[name='TestRectilinear%20Node']/@defaultLayer"/>
     <target xmi:type="ecore:EPackage" href="TestRectilinear.ecore#/"/>
   </diagram:DSemanticDiagram>
-  <diagram:DSemanticDiagram xmi:id="_DvVzwGMrEee3DdaQR_R7SA" name="DiagGoodEdge">
-    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_DvVzwWMrEee3DdaQR_R7SA" source="DANNOTATION_CUSTOMIZATION_KEY">
-      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_DvVzwmMrEee3DdaQR_R7SA"/>
+  <diagram:DSemanticDiagram uid="_DvVzwGMrEee3DdaQR_R7SA" name="DiagGoodEdge">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_DvVzwWMrEee3DdaQR_R7SA" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_DvVzwmMrEee3DdaQR_R7SA"/>
     </ownedAnnotationEntries>
-    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_DvXo8GMrEee3DdaQR_R7SA" source="GMF_DIAGRAMS">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_DvXo8GMrEee3DdaQR_R7SA" source="GMF_DIAGRAMS">
       <data xmi:type="notation:Diagram" xmi:id="_DvXo8WMrEee3DdaQR_R7SA" type="Sirius" element="_DvVzwGMrEee3DdaQR_R7SA" measurementUnit="Pixel">
         <children xmi:type="notation:Node" xmi:id="_DvYQAGMrEee3DdaQR_R7SA" type="2001" element="_DvVzxGMrEee3DdaQR_R7SA">
           <children xmi:type="notation:Node" xmi:id="_DvY3EGMrEee3DdaQR_R7SA" type="5002">
@@ -143,38 +143,38 @@
         </edges>
       </data>
     </ownedAnnotationEntries>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_DvVzxGMrEee3DdaQR_R7SA" name="C3" outgoingEdges="_GdifYGMrEee3DdaQR_R7SA" width="3" height="3" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_DvVzxGMrEee3DdaQR_R7SA" name="C3" outgoingEdges="_GdifYGMrEee3DdaQR_R7SA" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="ecore:EClass" href="TestRectilinear.ecore#//P2/C3"/>
       <semanticElements xmi:type="ecore:EClass" href="TestRectilinear.ecore#//P2/C3"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:Square" xmi:id="_DvVzxWMrEee3DdaQR_R7SA" labelPosition="node">
+      <ownedStyle xmi:type="diagram:Square" uid="_DvVzxWMrEee3DdaQR_R7SA" labelPosition="node">
         <description xmi:type="style:SquareDescription" href="TestRectilinear.odesign#//@ownedViewpoints[name='TestRectilinear']/@ownedRepresentations[name='TestRectilinear%20Node']/@defaultLayer/@nodeMappings[name='NodeEClass']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="TestRectilinear.odesign#//@ownedViewpoints[name='TestRectilinear']/@ownedRepresentations[name='TestRectilinear%20Node']/@defaultLayer/@nodeMappings[name='NodeEClass']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_DvVzxmMrEee3DdaQR_R7SA" name="C4" incomingEdges="_GdifYGMrEee3DdaQR_R7SA" width="3" height="3" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_DvVzxmMrEee3DdaQR_R7SA" name="C4" incomingEdges="_GdifYGMrEee3DdaQR_R7SA" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="ecore:EClass" href="TestRectilinear.ecore#//P2/C4"/>
       <semanticElements xmi:type="ecore:EClass" href="TestRectilinear.ecore#//P2/C4"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:Square" xmi:id="_DvVzx2MrEee3DdaQR_R7SA" labelPosition="node">
+      <ownedStyle xmi:type="diagram:Square" uid="_DvVzx2MrEee3DdaQR_R7SA" labelPosition="node">
         <description xmi:type="style:SquareDescription" href="TestRectilinear.odesign#//@ownedViewpoints[name='TestRectilinear']/@ownedRepresentations[name='TestRectilinear%20Node']/@defaultLayer/@nodeMappings[name='NodeEClass']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="TestRectilinear.odesign#//@ownedViewpoints[name='TestRectilinear']/@ownedRepresentations[name='TestRectilinear%20Node']/@defaultLayer/@nodeMappings[name='NodeEClass']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_GdifYGMrEee3DdaQR_R7SA" sourceNode="_DvVzxGMrEee3DdaQR_R7SA" targetNode="_DvVzxmMrEee3DdaQR_R7SA">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_GdifYGMrEee3DdaQR_R7SA" sourceNode="_DvVzxGMrEee3DdaQR_R7SA" targetNode="_DvVzxmMrEee3DdaQR_R7SA">
       <target xmi:type="ecore:EClass" href="TestRectilinear.ecore#//P2/C3"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_GdjtgGMrEee3DdaQR_R7SA" size="2" routingStyle="manhattan">
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_GdjtgGMrEee3DdaQR_R7SA" size="2" routingStyle="manhattan">
         <customFeatures>routingStyle</customFeatures>
         <description xmi:type="style:EdgeStyleDescription" href="TestRectilinear.odesign#//@ownedViewpoints[name='TestRectilinear']/@ownedRepresentations[name='TestRectilinear%20Node']/@defaultLayer/@edgeMappings[name='Node_Supertype']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="TestRectilinear.odesign#//@ownedViewpoints[name='TestRectilinear']/@ownedRepresentations[name='TestRectilinear%20Node']/@defaultLayer/@edgeMappings[name='Node_Supertype']"/>
     </ownedDiagramElements>
     <description xmi:type="description_1:DiagramDescription" href="TestRectilinear.odesign#//@ownedViewpoints[name='TestRectilinear']/@ownedRepresentations[name='TestRectilinear%20Node']"/>
-    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_DvVzyGMrEee3DdaQR_R7SA"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_DvVzyGMrEee3DdaQR_R7SA"/>
     <activatedLayers xmi:type="description_1:Layer" href="TestRectilinear.odesign#//@ownedViewpoints[name='TestRectilinear']/@ownedRepresentations[name='TestRectilinear%20Node']/@defaultLayer"/>
     <target xmi:type="ecore:EPackage" href="TestRectilinear.ecore#//P2"/>
   </diagram:DSemanticDiagram>

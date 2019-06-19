@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" name="VP-1580 Group" version="8.0.0">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" name="VP-1580 Group" version="12.0.0.2017041100">
   <ownedViewpoints endUserDocumentation="Provides graphical and tabular modelers to design an Ecore model." name="vp-1580" modelFileExtension="ecore" icon="">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" endUserDocumentation="A graphical modeler for Ecore model similar to a UML class diagram." name="Diagram" titleExpression="Diagram" domainClass="EPackage" enablePopupBars="true">
       <defaultLayer name="Default" icon="">
@@ -21,7 +21,7 @@
     </ownedRepresentations>
   </ownedViewpoints>
   <userColorsPalettes name="Ecore Palette">
-    <entries xsi:type="description:InterpolatedColor" name="Size Based Color"/>
+    <entries xsi:type="description:InterpolatedColor" name="Size Based Color" colorValueComputationExpression="[eContents()->size()/]"/>
     <entries xsi:type="description:UserFixedColor" red="250" green="190" blue="190" name="MomentIntervalColor"/>
     <entries xsi:type="description:UserFixedColor" red="250" green="240" blue="180" name="RoleColor"/>
     <entries xsi:type="description:UserFixedColor" red="180" green="230" blue="180" name="PartyPlaceThingColor"/>

@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
-  <viewpoint:DAnalysis xmi:id="_Tf_kgIUYEeC3ftmLixaZXg" selectedViews="_jfkQ0AKwEeiflLvTBgrrEw" version="12.1.0.201708031200">
+  <viewpoint:DAnalysis uid="_Tf_kgIUYEeC3ftmLixaZXg" selectedViews="_jfkQ0AKwEeiflLvTBgrrEw" version="14.1.0.201810161215">
     <semanticResources>vp2120.ecore</semanticResources>
-    <ownedViews xmi:type="viewpoint:DView" xmi:id="_T6-QUIUYEeC3ftmLixaZXg">
+    <ownedViews xmi:type="viewpoint:DView" uid="_T6-QUIUYEeC3ftmLixaZXg">
       <viewpoint xmi:type="description:Viewpoint" href="vp2120.odesign#//@ownedViewpoints[name='LayoutingMode']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_gd_WMAKwEeiflLvTBgrrEw" name="new LayoutingMode Diagram" repPath="#_gdzI8AKwEeiflLvTBgrrEw">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_gd_WMAKwEeiflLvTBgrrEw" name="new LayoutingMode Diagram" repPath="#_deplMIVIEeCSGf835_Mdqg">
         <description xmi:type="description_1:DiagramDescription" href="vp2120.odesign#//@ownedViewpoints[name='LayoutingMode']/@ownedRepresentations[name='LayoutingMode%20Diagram']"/>
         <target xmi:type="viewpoint:DAnalysis" href="vp2120.ecore#_Tf_kgIUYEeC3ftmLixaZXg"/>
       </ownedRepresentationDescriptors>
     </ownedViews>
-    <ownedViews xmi:type="viewpoint:DView" xmi:id="_Dvn0gIVDEeCnb7qGDutJ5Q">
+    <ownedViews xmi:type="viewpoint:DView" uid="_Dvn0gIVDEeCnb7qGDutJ5Q">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.sirius.sample.ecore.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
     </ownedViews>
-    <ownedViews xmi:type="viewpoint:DView" xmi:id="_jfkQ0AKwEeiflLvTBgrrEw">
+    <ownedViews xmi:type="viewpoint:DView" uid="_jfkQ0AKwEeiflLvTBgrrEw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/DesignerTestProject/vp2120.odesign#//@ownedViewpoints[name='LayoutingMode']"/>
     </ownedViews>
   </viewpoint:DAnalysis>
-  <diagram:DSemanticDiagram xmi:id="_deplMIVIEeCSGf835_Mdqg" name="new LayoutingMode Diagram" uid="_gdzI8AKwEeiflLvTBgrrEw">
-    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_dfQCIIVIEeCSGf835_Mdqg" source="GMF_DIAGRAMS">
+  <diagram:DSemanticDiagram uid="_deplMIVIEeCSGf835_Mdqg" name="new LayoutingMode Diagram">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_dfQCIIVIEeCSGf835_Mdqg" source="GMF_DIAGRAMS">
       <data xmi:type="notation:Diagram" xmi:id="_dfQCIYVIEeCSGf835_Mdqg" type="Sirius" element="_deplMIVIEeCSGf835_Mdqg" measurementUnit="Pixel">
         <children xmi:type="notation:Node" xmi:id="_dkw0QIVIEeCSGf835_Mdqg" type="2002" element="_H7gbkJjKEeCGbO5oLE72PQ">
           <children xmi:type="notation:Node" xmi:id="_dlNgMIVIEeCSGf835_Mdqg" type="5006"/>
@@ -62,49 +62,49 @@
         <styles xmi:type="notation:DiagramStyle" xmi:id="_dfQCIoVIEeCSGf835_Mdqg"/>
       </data>
     </ownedAnnotationEntries>
-    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_gd_WMQKwEeiflLvTBgrrEw" source="DANNOTATION_CUSTOMIZATION_KEY">
-      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_gd_WMgKwEeiflLvTBgrrEw"/>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_gd_WMQKwEeiflLvTBgrrEw" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_gd_WMgKwEeiflLvTBgrrEw"/>
     </ownedAnnotationEntries>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_H7gbkJjKEeCGbO5oLE72PQ" name="new Package 1">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_H7gbkJjKEeCGbO5oLE72PQ" name="new Package 1">
       <target xmi:type="ecore:EPackage" href="vp2120.ecore#//new%20Package%201"/>
       <semanticElements xmi:type="ecore:EPackage" href="vp2120.ecore#//new%20Package%201"/>
-      <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_H7hpsJjKEeCGbO5oLE72PQ" name="new EClass 3" width="2" height="2">
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_H7hpsJjKEeCGbO5oLE72PQ" name="new EClass 3" width="2" height="2">
         <target xmi:type="ecore:EClass" href="vp2120.ecore#//new%20Package%201/new%20EClass%203"/>
         <semanticElements xmi:type="ecore:EClass" href="vp2120.ecore#//new%20Package%201/new%20EClass%203"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:Square" xmi:id="_H7hpsZjKEeCGbO5oLE72PQ" borderColor="173,127,168" width="2" height="2" color="239,41,41">
+        <ownedStyle xmi:type="diagram:Square" uid="_H7hpsZjKEeCGbO5oLE72PQ" borderColor="173,127,168" width="2" height="2" color="239,41,41">
           <description xmi:type="style:SquareDescription" href="vp2120.odesign#//@ownedViewpoints[name='LayoutingMode']/@ownedRepresentations[name='LayoutingMode%20Diagram']/@defaultLayer/@containerMappings[name='CM_EPackage']/@borderedNodeMappings[name='BN_EClass']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="vp2120.odesign#//@ownedViewpoints[name='LayoutingMode']/@ownedRepresentations[name='LayoutingMode%20Diagram']/@defaultLayer/@containerMappings[name='CM_EPackage']/@borderedNodeMappings[name='BN_EClass']"/>
       </ownedBorderedNodes>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_H7hCoJjKEeCGbO5oLE72PQ" borderSize="1" borderSizeComputationExpression="1" borderColor="39,76,114" backgroundColor="114,159,207" foregroundColor="204,242,166">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_H7hCoJjKEeCGbO5oLE72PQ" borderSize="1" borderSizeComputationExpression="1" borderColor="39,76,114" backgroundColor="114,159,207" foregroundColor="204,242,166">
         <description xmi:type="style:FlatContainerStyleDescription" href="vp2120.odesign#//@ownedViewpoints[name='LayoutingMode']/@ownedRepresentations[name='LayoutingMode%20Diagram']/@defaultLayer/@containerMappings[name='CM_EPackage']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="vp2120.odesign#//@ownedViewpoints[name='LayoutingMode']/@ownedRepresentations[name='LayoutingMode%20Diagram']/@defaultLayer/@containerMappings[name='CM_EPackage']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_H7hCpZjKEeCGbO5oLE72PQ" name="new EPackage 2">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_H7hCpZjKEeCGbO5oLE72PQ" name="new EPackage 2">
       <target xmi:type="ecore:EPackage" href="vp2120.ecore#//new%20EPackage%202"/>
       <semanticElements xmi:type="ecore:EPackage" href="vp2120.ecore#//new%20EPackage%202"/>
-      <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_H7iQwJjKEeCGbO5oLE72PQ" name="new EClass 4" width="2" height="2">
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_H7iQwJjKEeCGbO5oLE72PQ" name="new EClass 4" width="2" height="2">
         <target xmi:type="ecore:EClass" href="vp2120.ecore#//new%20EPackage%202/new%20EClass%204"/>
         <semanticElements xmi:type="ecore:EClass" href="vp2120.ecore#//new%20EPackage%202/new%20EClass%204"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:Square" xmi:id="_H7iQwZjKEeCGbO5oLE72PQ" borderColor="173,127,168" width="2" height="2" color="239,41,41">
+        <ownedStyle xmi:type="diagram:Square" uid="_H7iQwZjKEeCGbO5oLE72PQ" borderColor="173,127,168" width="2" height="2" color="239,41,41">
           <description xmi:type="style:SquareDescription" href="vp2120.odesign#//@ownedViewpoints[name='LayoutingMode']/@ownedRepresentations[name='LayoutingMode%20Diagram']/@defaultLayer/@containerMappings[name='CM_EPackage']/@borderedNodeMappings[name='BN_EClass']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="vp2120.odesign#//@ownedViewpoints[name='LayoutingMode']/@ownedRepresentations[name='LayoutingMode%20Diagram']/@defaultLayer/@containerMappings[name='CM_EPackage']/@borderedNodeMappings[name='BN_EClass']"/>
       </ownedBorderedNodes>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_H7hCppjKEeCGbO5oLE72PQ" borderSize="1" borderSizeComputationExpression="1" borderColor="39,76,114" backgroundColor="114,159,207" foregroundColor="204,242,166">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_H7hCppjKEeCGbO5oLE72PQ" borderSize="1" borderSizeComputationExpression="1" borderColor="39,76,114" backgroundColor="114,159,207" foregroundColor="204,242,166">
         <description xmi:type="style:FlatContainerStyleDescription" href="vp2120.odesign#//@ownedViewpoints[name='LayoutingMode']/@ownedRepresentations[name='LayoutingMode%20Diagram']/@defaultLayer/@containerMappings[name='CM_EPackage']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="vp2120.odesign#//@ownedViewpoints[name='LayoutingMode']/@ownedRepresentations[name='LayoutingMode%20Diagram']/@defaultLayer/@containerMappings[name='CM_EPackage']"/>
     </ownedDiagramElements>
     <description xmi:type="description_1:DiagramDescription" href="vp2120.odesign#//@ownedViewpoints[name='LayoutingMode']/@ownedRepresentations[name='LayoutingMode%20Diagram']"/>
-    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_deplMYVIEeCSGf835_Mdqg"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_deplMYVIEeCSGf835_Mdqg"/>
     <activatedLayers xmi:type="description_1:Layer" href="vp2120.odesign#//@ownedViewpoints[name='LayoutingMode']/@ownedRepresentations[name='LayoutingMode%20Diagram']/@defaultLayer"/>
     <target xmi:type="viewpoint:DAnalysis" href="vp2120.ecore#_Tf_kgIUYEeC3ftmLixaZXg"/>
   </diagram:DSemanticDiagram>

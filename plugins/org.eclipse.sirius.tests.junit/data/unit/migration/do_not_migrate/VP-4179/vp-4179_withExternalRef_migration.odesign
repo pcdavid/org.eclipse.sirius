@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.obeo.fr/dsl/viewpoint/description/1.1.0" xmlns:tool="http://www.obeo.fr/dsl/viewpoint/description/tool/1.1.0" name="vp-4179_withExternalRef_migration" version="6.7.0.201302071200">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" name="vp-4179_withExternalRef_migration" version="12.0.0.2017041100">
   <ownedViewpoints name="vp-4179-bis" modelFileExtension="ecore">
-    <ownedRepresentations xsi:type="description:DiagramDescription" name="vp-4179-bis" domainClass="EPackage">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="vp-4179-bis" domainClass="EPackage">
       <reusedTools xsi:type="tool:NodeCreationDescription" href="vp-4179_migration_migrated.odesign#//@ownedViewpoints[name='vp-4179']/@ownedRepresentations[name='vp-4179']/@optionalLayers[name='optional1']/@toolSections.0/@ownedTools[name='CreateClass']"/>
     </ownedRepresentations>
   </ownedViewpoints>

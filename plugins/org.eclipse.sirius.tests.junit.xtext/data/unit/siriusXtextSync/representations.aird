@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:statemachine="http://www.eclipse.org/sirius/tests/sample/xtext/Statemachine" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
-  <viewpoint:DAnalysis xmi:id="_KMyAMBf0Eei2waxF5kJPFA" selectedViews="_MRlJgBf0Eei2waxF5kJPFA" version="12.1.0.201708031200">
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Statemachine="http://www.eclipse.org/sirius/tests/sample/xtext/Statemachine" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+  <viewpoint:DAnalysis uid="_KMyAMBf0Eei2waxF5kJPFA" selectedViews="_MRlJgBf0Eei2waxF5kJPFA" version="14.1.0.201810161215">
     <semanticResources>model.statemachine</semanticResources>
-    <ownedViews xmi:type="viewpoint:DView" xmi:id="_MRlJgBf0Eei2waxF5kJPFA">
+    <ownedViews xmi:type="viewpoint:DView" uid="_MRlJgBf0Eei2waxF5kJPFA">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/org.eclipse.sirius.tests.sample.xtext.statemachine.design/description/statemachine.odesign#//@ownedViewpoints[name='StateMachine']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_MnMNIBf0Eei2waxF5kJPFA" name="new StateMachineDiagram" repPath="#_MmJrUBf0Eei2waxF5kJPFA">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_MnMNIBf0Eei2waxF5kJPFA" name="new StateMachineDiagram" repPath="#_MnCcIBf0Eei2waxF5kJPFA">
         <description xmi:type="description_1:DiagramDescription" href="platform:/resource/org.eclipse.sirius.tests.sample.xtext.statemachine.design/description/statemachine.odesign#//@ownedViewpoints[name='StateMachine']/@ownedRepresentations[name='StateMachineDiagram']"/>
-        <target xmi:type="statemachine:Statemachine" href="model.statemachine#/"/>
+        <target xmi:type="Statemachine:Statemachine" href="model.statemachine#/"/>
       </ownedRepresentationDescriptors>
     </ownedViews>
   </viewpoint:DAnalysis>
-  <diagram:DSemanticDiagram xmi:id="_MnCcIBf0Eei2waxF5kJPFA" name="new StateMachineDiagram" uid="_MmJrUBf0Eei2waxF5kJPFA">
-    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_MnCcIRf0Eei2waxF5kJPFA" source="DANNOTATION_CUSTOMIZATION_KEY">
-      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_MnCcIhf0Eei2waxF5kJPFA"/>
+  <diagram:DSemanticDiagram uid="_MnCcIBf0Eei2waxF5kJPFA" name="new StateMachineDiagram">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_MnCcIRf0Eei2waxF5kJPFA" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_MnCcIhf0Eei2waxF5kJPFA"/>
     </ownedAnnotationEntries>
-    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_Mno5EBf0Eei2waxF5kJPFA" source="GMF_DIAGRAMS">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_Mno5EBf0Eei2waxF5kJPFA" source="GMF_DIAGRAMS">
       <data xmi:type="notation:Diagram" xmi:id="_Mno5ERf0Eei2waxF5kJPFA" type="Sirius" element="_MnCcIBf0Eei2waxF5kJPFA" measurementUnit="Pixel">
         <children xmi:type="notation:Node" xmi:id="_wzX68BiCEeiJorlNKF0NkA" type="2002" element="_wxcBQBiCEeiJorlNKF0NkA">
           <children xmi:type="notation:Node" xmi:id="_wzX68xiCEeiJorlNKF0NkA" type="5006"/>
@@ -98,79 +98,79 @@
         </edges>
       </data>
     </ownedAnnotationEntries>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_wxcBQBiCEeiJorlNKF0NkA" name="Initial" outgoingEdges="_zIXmIBizEeiQQ-arQewc1g">
-      <target xmi:type="statemachine:State" href="model.statemachine#//@states.0"/>
-      <semanticElements xmi:type="statemachine:State" href="model.statemachine#//@states.0"/>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_wxcBQBiCEeiJorlNKF0NkA" name="Initial" outgoingEdges="_zIXmIBizEeiQQ-arQewc1g">
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_wxcBQRiCEeiJorlNKF0NkA" borderSize="1" borderSizeComputationExpression="1" backgroundColor="194,239,255">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_wxcBQRiCEeiJorlNKF0NkA" borderSize="1" borderSizeComputationExpression="1" backgroundColor="194,239,255">
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.eclipse.sirius.tests.sample.xtext.statemachine.design/description/statemachine.odesign#//@ownedViewpoints[name='StateMachine']/@ownedRepresentations[name='StateMachineDiagram']/@defaultLayer/@containerMappings[name='SMD_StateContainer']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.eclipse.sirius.tests.sample.xtext.statemachine.design/description/statemachine.odesign#//@ownedViewpoints[name='StateMachine']/@ownedRepresentations[name='StateMachineDiagram']/@defaultLayer/@containerMappings[name='SMD_StateContainer']"/>
+      <target xmi:type="Statemachine:State" href="model.statemachine#//@states.0"/>
+      <semanticElements xmi:type="Statemachine:State" href="model.statemachine#//@states.0"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_wxcBQhiCEeiJorlNKF0NkA" name="SelectingPizza" outgoingEdges="_zIaCYBizEeiQQ-arQewc1g" incomingEdges="_zIXmIBizEeiQQ-arQewc1g">
-      <target xmi:type="statemachine:State" href="model.statemachine#//@states.1"/>
-      <semanticElements xmi:type="statemachine:State" href="model.statemachine#//@states.1"/>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_wxcBQhiCEeiJorlNKF0NkA" name="SelectingPizza" outgoingEdges="_zIaCYBizEeiQQ-arQewc1g" incomingEdges="_zIXmIBizEeiQQ-arQewc1g">
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_wxcBQxiCEeiJorlNKF0NkA" borderSize="1" borderSizeComputationExpression="1" backgroundColor="194,239,255">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_wxcBQxiCEeiJorlNKF0NkA" borderSize="1" borderSizeComputationExpression="1" backgroundColor="194,239,255">
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.eclipse.sirius.tests.sample.xtext.statemachine.design/description/statemachine.odesign#//@ownedViewpoints[name='StateMachine']/@ownedRepresentations[name='StateMachineDiagram']/@defaultLayer/@containerMappings[name='SMD_StateContainer']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.eclipse.sirius.tests.sample.xtext.statemachine.design/description/statemachine.odesign#//@ownedViewpoints[name='StateMachine']/@ownedRepresentations[name='StateMachineDiagram']/@defaultLayer/@containerMappings[name='SMD_StateContainer']"/>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_zIN1IBizEeiQQ-arQewc1g" name="addIngredient" width="3" height="3" resizeKind="NSEW">
-        <target xmi:type="statemachine:Command" href="model.statemachine#//@states.1/@actions.0"/>
-        <semanticElements xmi:type="statemachine:Command" href="model.statemachine#//@states.1/@actions.0"/>
-        <ownedStyle xmi:type="diagram:Square" xmi:id="_zIPDQBizEeiQQ-arQewc1g" labelPosition="node">
+      <ownedDiagramElements xmi:type="diagram:DNode" uid="_zIN1IBizEeiQQ-arQewc1g" name="addIngredient" width="3" height="3" resizeKind="NSEW">
+        <ownedStyle xmi:type="diagram:Square" uid="_zIPDQBizEeiQQ-arQewc1g" labelPosition="node">
           <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.sirius.tests.sample.xtext.statemachine.design/description/statemachine.odesign#//@ownedViewpoints[name='StateMachine']/@ownedRepresentations[name='StateMachineDiagram']/@defaultLayer/@containerMappings[name='SMD_StateContainer']/@subNodeMappings[name='SMD_ActionState']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.sirius.tests.sample.xtext.statemachine.design/description/statemachine.odesign#//@ownedViewpoints[name='StateMachine']/@ownedRepresentations[name='StateMachineDiagram']/@defaultLayer/@containerMappings[name='SMD_StateContainer']/@subNodeMappings[name='SMD_ActionState']"/>
+        <target xmi:type="Statemachine:Command" href="model.statemachine#//@states.1/@actions.0"/>
+        <semanticElements xmi:type="Statemachine:Command" href="model.statemachine#//@states.1/@actions.0"/>
       </ownedDiagramElements>
+      <target xmi:type="Statemachine:State" href="model.statemachine#//@states.1"/>
+      <semanticElements xmi:type="Statemachine:State" href="model.statemachine#//@states.1"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_wxlyQBiCEeiJorlNKF0NkA" name="ConsultingCart">
-      <target xmi:type="statemachine:State" href="model.statemachine#//@states.2"/>
-      <semanticElements xmi:type="statemachine:State" href="model.statemachine#//@states.2"/>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_wxlyQBiCEeiJorlNKF0NkA" name="ConsultingCart">
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_wxlyQRiCEeiJorlNKF0NkA" borderSize="1" borderSizeComputationExpression="1" backgroundColor="194,239,255">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_wxlyQRiCEeiJorlNKF0NkA" borderSize="1" borderSizeComputationExpression="1" backgroundColor="194,239,255">
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.eclipse.sirius.tests.sample.xtext.statemachine.design/description/statemachine.odesign#//@ownedViewpoints[name='StateMachine']/@ownedRepresentations[name='StateMachineDiagram']/@defaultLayer/@containerMappings[name='SMD_StateContainer']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.eclipse.sirius.tests.sample.xtext.statemachine.design/description/statemachine.odesign#//@ownedViewpoints[name='StateMachine']/@ownedRepresentations[name='StateMachineDiagram']/@defaultLayer/@containerMappings[name='SMD_StateContainer']"/>
+      <target xmi:type="Statemachine:State" href="model.statemachine#//@states.2"/>
+      <semanticElements xmi:type="Statemachine:State" href="model.statemachine#//@states.2"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_wxlyQhiCEeiJorlNKF0NkA" name="OrderingPizza" incomingEdges="_zIaCYBizEeiQQ-arQewc1g">
-      <target xmi:type="statemachine:State" href="model.statemachine#//@states.3"/>
-      <semanticElements xmi:type="statemachine:State" href="model.statemachine#//@states.3"/>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_wxlyQhiCEeiJorlNKF0NkA" name="OrderingPizza" incomingEdges="_zIaCYBizEeiQQ-arQewc1g">
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_wxlyQxiCEeiJorlNKF0NkA" borderSize="1" borderSizeComputationExpression="1" backgroundColor="194,239,255">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_wxlyQxiCEeiJorlNKF0NkA" borderSize="1" borderSizeComputationExpression="1" backgroundColor="194,239,255">
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.eclipse.sirius.tests.sample.xtext.statemachine.design/description/statemachine.odesign#//@ownedViewpoints[name='StateMachine']/@ownedRepresentations[name='StateMachineDiagram']/@defaultLayer/@containerMappings[name='SMD_StateContainer']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.eclipse.sirius.tests.sample.xtext.statemachine.design/description/statemachine.odesign#//@ownedViewpoints[name='StateMachine']/@ownedRepresentations[name='StateMachineDiagram']/@defaultLayer/@containerMappings[name='SMD_StateContainer']"/>
+      <target xmi:type="Statemachine:State" href="model.statemachine#//@states.3"/>
+      <semanticElements xmi:type="Statemachine:State" href="model.statemachine#//@states.3"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_zIXmIBizEeiQQ-arQewc1g" name="addNewPizza" sourceNode="_wxcBQBiCEeiJorlNKF0NkA" targetNode="_wxcBQhiCEeiJorlNKF0NkA">
-      <target xmi:type="statemachine:Transition" href="model.statemachine#//@states.0/@transitions.0"/>
-      <semanticElements xmi:type="statemachine:Transition" href="model.statemachine#//@states.0/@transitions.0"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_zIYNMBizEeiQQ-arQewc1g" size="2">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_zIXmIBizEeiQQ-arQewc1g" name="addNewPizza" sourceNode="_wxcBQBiCEeiJorlNKF0NkA" targetNode="_wxcBQhiCEeiJorlNKF0NkA">
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_zIYNMBizEeiQQ-arQewc1g" size="2">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.eclipse.sirius.tests.sample.xtext.statemachine.design/description/statemachine.odesign#//@ownedViewpoints[name='StateMachine']/@ownedRepresentations[name='StateMachineDiagram']/@defaultLayer/@edgeMappings[name='SMD_Transition_Edge']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_zIYNMRizEeiQQ-arQewc1g"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_zIYNMRizEeiQQ-arQewc1g"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.eclipse.sirius.tests.sample.xtext.statemachine.design/description/statemachine.odesign#//@ownedViewpoints[name='StateMachine']/@ownedRepresentations[name='StateMachineDiagram']/@defaultLayer/@edgeMappings[name='SMD_Transition_Edge']"/>
+      <target xmi:type="Statemachine:Transition" href="model.statemachine#//@states.0/@transitions.0"/>
+      <semanticElements xmi:type="Statemachine:Transition" href="model.statemachine#//@states.0/@transitions.0"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_zIaCYBizEeiQQ-arQewc1g" name="validatePizza" sourceNode="_wxcBQhiCEeiJorlNKF0NkA" targetNode="_wxlyQhiCEeiJorlNKF0NkA">
-      <target xmi:type="statemachine:Transition" href="model.statemachine#//@states.1/@transitions.0"/>
-      <semanticElements xmi:type="statemachine:Transition" href="model.statemachine#//@states.1/@transitions.0"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_zIaCYRizEeiQQ-arQewc1g" size="2">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_zIaCYBizEeiQQ-arQewc1g" name="validatePizza" sourceNode="_wxcBQhiCEeiJorlNKF0NkA" targetNode="_wxlyQhiCEeiJorlNKF0NkA">
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_zIaCYRizEeiQQ-arQewc1g" size="2">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.eclipse.sirius.tests.sample.xtext.statemachine.design/description/statemachine.odesign#//@ownedViewpoints[name='StateMachine']/@ownedRepresentations[name='StateMachineDiagram']/@defaultLayer/@edgeMappings[name='SMD_Transition_Edge']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_zIaCYhizEeiQQ-arQewc1g"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_zIaCYhizEeiQQ-arQewc1g"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.eclipse.sirius.tests.sample.xtext.statemachine.design/description/statemachine.odesign#//@ownedViewpoints[name='StateMachine']/@ownedRepresentations[name='StateMachineDiagram']/@defaultLayer/@edgeMappings[name='SMD_Transition_Edge']"/>
+      <target xmi:type="Statemachine:Transition" href="model.statemachine#//@states.1/@transitions.0"/>
+      <semanticElements xmi:type="Statemachine:Transition" href="model.statemachine#//@states.1/@transitions.0"/>
     </ownedDiagramElements>
     <description xmi:type="description_1:DiagramDescription" href="platform:/resource/org.eclipse.sirius.tests.sample.xtext.statemachine.design/description/statemachine.odesign#//@ownedViewpoints[name='StateMachine']/@ownedRepresentations[name='StateMachineDiagram']"/>
-    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_MnCcKBf0Eei2waxF5kJPFA"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_MnCcKBf0Eei2waxF5kJPFA"/>
     <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/org.eclipse.sirius.tests.sample.xtext.statemachine.design/description/statemachine.odesign#//@ownedViewpoints[name='StateMachine']/@ownedRepresentations[name='StateMachineDiagram']/@defaultLayer"/>
-    <target xmi:type="statemachine:Statemachine" href="model.statemachine#/"/>
+    <target xmi:type="Statemachine:Statemachine" href="model.statemachine#/"/>
   </diagram:DSemanticDiagram>
 </xmi:XMI>

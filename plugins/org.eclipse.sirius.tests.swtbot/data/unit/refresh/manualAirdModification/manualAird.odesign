@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/table/description/1.1.0" xmlns:description_2="http://www.eclipse.org/sirius/tree/description/1.0.0" xmlns:tool="http://www.eclipse.org/sirius/description/tool/1.1.0" name="manualAird" version="11.1.1.201610211630">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/table/description/1.1.0" xmlns:description_2="http://www.eclipse.org/sirius/tree/description/1.0.0" xmlns:tool="http://www.eclipse.org/sirius/description/tool/1.1.0" name="manualAird" version="12.0.0.2017041100">
   <ownedViewpoints name="manualAird" modelFileExtension="ecore">
     <ownedRepresentations xsi:type="description_1:EditionTableDescription" name="manualAirdTable" domainClass="EPackage">
       <ownedLineMappings name="Classes" domainClass="EClass" semanticCandidatesExpression="feature:eClassifiers"/>
       <ownedColumnMappings name="IsAbstractColumn" headerLabelExpression="Is Abstract?" featureName="abstract" labelExpression="feature:abstract"/>
       <ownedColumnMappings name="Class label" headerLabelExpression="Label" featureName="name" labelExpression="aql:'D'+self.name">
         <directEdit>
+          <variables name="table" documentation="The current DTable."/>
+          <variables name="line" documentation="The DLine of the current DCell."/>
           <variables name="element" documentation="The semantic currently edited element."/>
           <variables name="lineSemantic" documentation="The semantic element corresponding to the line."/>
           <variables name="root" documentation="The semantic root element of the table."/>

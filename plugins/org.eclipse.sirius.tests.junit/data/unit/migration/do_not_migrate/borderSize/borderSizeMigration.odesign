@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" name="borderSizeMigration" version="10.0.0.201505222000">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" name="borderSizeMigration" version="12.0.0.2017041100">
   <ownedViewpoints name="borderSizeMigration">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="borderSizeMigration" domainClass="EPackage" enablePopupBars="true">
       <defaultLayer name="Default">
         <containerMappings name="cmDefaultLayer" domainClass="ecore.EClass">
           <subContainerMappings name="subCmDefaultLayer" semanticCandidatesExpression="var:self" domainClass="ecore.EClass">
             <subContainerMappings name="subSubCmDefaultLayer" semanticCandidatesExpression="var:self" domainClass="ecore.EClass">
-              <style xsi:type="style:FlatContainerStyleDescription" labelExpression="SubSubDefaultLayerDefaultStyle">
+              <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="SubSubDefaultLayerDefaultStyle">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
                 <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
               </style>
               <conditionnalStyles predicateExpression="feature:abstract">
-                <style xsi:type="style:FlatContainerStyleDescription" labelExpression="SubSubDefaultLayerConditionalStyle">
+                <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="SubSubDefaultLayerConditionalStyle">
                   <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                   <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                   <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -21,14 +21,14 @@
                 </style>
               </conditionnalStyles>
             </subContainerMappings>
-            <style xsi:type="style:FlatContainerStyleDescription" labelExpression="SubDefaultLayerDefaultStyle">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="SubDefaultLayerDefaultStyle">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
               <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
             </style>
             <conditionnalStyles predicateExpression="feature:abstract">
-              <style xsi:type="style:FlatContainerStyleDescription" labelExpression="SubDefaultLayerConditionalStyle">
+              <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="SubDefaultLayerConditionalStyle">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -36,14 +36,14 @@
               </style>
             </conditionnalStyles>
           </subContainerMappings>
-          <style xsi:type="style:FlatContainerStyleDescription" labelExpression="DefaultLayerDefaultStyle">
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="DefaultLayerDefaultStyle">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
           </style>
           <conditionnalStyles predicateExpression="feature:abstract">
-            <style xsi:type="style:FlatContainerStyleDescription" labelExpression="DefaultLayerConditionalStyle">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="DefaultLayerConditionalStyle">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -56,14 +56,14 @@
         <containerMappings name="cmAdditionalLayer" domainClass="ecore.EClass">
           <subContainerMappings name="subCmAdditionalLayer" semanticCandidatesExpression="var:self" domainClass="ecore.EClass">
             <subContainerMappings name="subSubCmAdditionalLayer" semanticCandidatesExpression="var:self" domainClass="ecore.EClass">
-              <style xsi:type="style:FlatContainerStyleDescription" labelExpression="SubSubAdditionalLayerDefaultStyle">
+              <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="SubSubAdditionalLayerDefaultStyle">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
                 <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
               </style>
               <conditionnalStyles predicateExpression="feature:abstract">
-                <style xsi:type="style:FlatContainerStyleDescription" labelExpression="SubSubAdditionalLayerConditionalStyle">
+                <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="SubSubAdditionalLayerConditionalStyle">
                   <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                   <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                   <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -71,14 +71,14 @@
                 </style>
               </conditionnalStyles>
             </subContainerMappings>
-            <style xsi:type="style:FlatContainerStyleDescription" labelExpression="SubAdditionalLayerDefaultStyle">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="SubAdditionalLayerDefaultStyle">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
               <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
             </style>
             <conditionnalStyles predicateExpression="feature:abstract">
-              <style xsi:type="style:FlatContainerStyleDescription" labelExpression="SubAdditionalLayerConditionalStyle">
+              <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="SubAdditionalLayerConditionalStyle">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -86,14 +86,14 @@
               </style>
             </conditionnalStyles>
           </subContainerMappings>
-          <style xsi:type="style:FlatContainerStyleDescription" labelExpression="AdditionalLayerDefaultStyle">
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="AdditionalLayerDefaultStyle">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
           </style>
           <conditionnalStyles predicateExpression="feature:abstract">
-            <style xsi:type="style:FlatContainerStyleDescription" labelExpression="AdditionalLayerConditionalStyle">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="AdditionalLayerConditionalStyle">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -107,14 +107,14 @@
       <containerMappings name="cmWithoutLayer" domainClass="ecore.EClass">
         <subContainerMappings name="subCm" semanticCandidatesExpression="var:self" domainClass="ecore.EClass">
           <subContainerMappings name="subSubCm" semanticCandidatesExpression="var:self" domainClass="ecore.EClass">
-            <style xsi:type="style:FlatContainerStyleDescription" labelExpression="SubSubDefaultStyle">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="SubSubDefaultStyle">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
               <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
             </style>
             <conditionnalStyles predicateExpression="feature:abstract">
-              <style xsi:type="style:FlatContainerStyleDescription" labelExpression="SubSubConditionalStyle">
+              <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="SubSubConditionalStyle">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -122,14 +122,14 @@
               </style>
             </conditionnalStyles>
           </subContainerMappings>
-          <style xsi:type="style:FlatContainerStyleDescription" labelExpression="SubDefaultStyle">
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="SubDefaultStyle">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
           </style>
           <conditionnalStyles predicateExpression="feature:abstract">
-            <style xsi:type="style:FlatContainerStyleDescription" labelExpression="SubConditionalStyle">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="SubConditionalStyle">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -137,14 +137,14 @@
             </style>
           </conditionnalStyles>
         </subContainerMappings>
-        <style xsi:type="style:FlatContainerStyleDescription" labelExpression="NoLayerDefaultStyle">
+        <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="NoLayerDefaultStyle">
           <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
         </style>
         <conditionnalStyles predicateExpression="feature:abstract">
-          <style xsi:type="style:FlatContainerStyleDescription" labelExpression="NoLayerConditionalStyle">
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="NoLayerConditionalStyle">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -158,14 +158,14 @@
         <containerMappings name="cmExtensionLayer" domainClass="ecore.EClass">
           <subContainerMappings name="subCmExtensionLayer" semanticCandidatesExpression="var:self" domainClass="ecore.EClass">
             <subContainerMappings name="subSubCmExtensionLayer" semanticCandidatesExpression="var:self" domainClass="ecore.EClass">
-              <style xsi:type="style:FlatContainerStyleDescription" labelExpression="SubSubExtensionLayerDefaultStyle">
+              <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="SubSubExtensionLayerDefaultStyle">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
                 <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
               </style>
               <conditionnalStyles predicateExpression="feature:abstract">
-                <style xsi:type="style:FlatContainerStyleDescription" labelExpression="SubSubExtensionLayerConditionalStyle">
+                <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="SubSubExtensionLayerConditionalStyle">
                   <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                   <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                   <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -173,14 +173,14 @@
                 </style>
               </conditionnalStyles>
             </subContainerMappings>
-            <style xsi:type="style:FlatContainerStyleDescription" labelExpression="SubExtensionLayerDefaultStyle">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="SubExtensionLayerDefaultStyle">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
               <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
             </style>
             <conditionnalStyles predicateExpression="feature:abstract">
-              <style xsi:type="style:FlatContainerStyleDescription" labelExpression="SubExtensionLayerConditionalStyle">
+              <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="SubExtensionLayerConditionalStyle">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -188,14 +188,14 @@
               </style>
             </conditionnalStyles>
           </subContainerMappings>
-          <style xsi:type="style:FlatContainerStyleDescription" labelExpression="ExtensionLayerDefaultStyle">
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="ExtensionLayerDefaultStyle">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
           </style>
           <conditionnalStyles predicateExpression="feature:abstract">
-            <style xsi:type="style:FlatContainerStyleDescription" labelExpression="ExtensionLayerConditionalStyle">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="ExtensionLayerConditionalStyle">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>

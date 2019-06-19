@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
-  <viewpoint:DAnalysis uid="_aQr84MrWEeiF_rJFaMdq3g" selectedViews="_lUm9UMrWEeiF_rJFaMdq3g" version="14.1.0.201809051700">
+  <viewpoint:DAnalysis uid="_aQr84MrWEeiF_rJFaMdq3g" selectedViews="_lUm9UMrWEeiF_rJFaMdq3g" version="14.1.0.201810161215">
     <semanticResources>My.ecore</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_lUm9UMrWEeiF_rJFaMdq3g">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.sirius.sample.ecore.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
@@ -91,7 +91,6 @@
           </children>
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_rzY-ocrWEeiF_rJFaMdq3g" routing="Tree"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_rzY-osrWEeiF_rJFaMdq3g" fontName="Segoe UI" fontHeight="8"/>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="_rzX-ocrWEeiF_rJGbNer9g" routing="Tree"/>
           <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_rzY-o8rWEeiF_rJFaMdq3g" points="[0, -19, 285, 126]$[0, -94, 285, 51]$[-284, -94, 1, 51]$[-284, -125, 1, 20]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_rzoPMMrWEeiF_rJFaMdq3g" id="(0.5,0.5)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_rzoPMcrWEeiF_rJFaMdq3g" id="(0.5,0.5)"/>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:filter="http://www.eclipse.org/sirius/diagram/description/filter/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" version="10.0.0.201505222000">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:filter="http://www.eclipse.org/sirius/diagram/description/filter/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" version="12.0.0.2017041100">
   <ownedViewpoints name="UML2" modelFileExtension="uml">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" documentation="Test a simple class diagram with only a box representing a Class" name="Node Class Diagram" domainClass="Package">
       <metamodel href="platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#/"/>
@@ -42,7 +42,7 @@
     <ownedRepresentations xsi:type="description_1:DiagramDescription" documentation="Test a simple class diagram with only a box representing a Class" name="Container Class Diagram with Semantic Candidates" domainClass="Package">
       <metamodel href="platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#/"/>
       <containerMappings name="CDSemantic_Class" semanticCandidatesExpression="aql:self.eContents()->filter(uml::Class)" domainClass="Class">
-        <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1">
+        <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1">
           <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
@@ -53,7 +53,7 @@
     <ownedRepresentations xsi:type="description_1:DiagramDescription" documentation="Test a simple class diagram with only a box representing a Class" name="Container Class Diagram" domainClass="Package">
       <metamodel href="platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#/"/>
       <containerMappings name="CD_Class" semanticCandidatesExpression="feature:eAllContents" domainClass="Class">
-        <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1">
+        <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1">
           <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
@@ -72,7 +72,7 @@
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
           </style>
         </borderedNodeMappings>
-        <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1">
+        <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1">
           <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
@@ -83,7 +83,7 @@
     <ownedRepresentations xsi:type="description_1:DiagramDescription" documentation="Test a simple class diagram with only a box representing a Class" name="Container Package Diagram" domainClass="Model">
       <metamodel href="platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#/"/>
       <containerMappings name="Package" semanticCandidatesExpression="feature:eAllContents" domainClass="Package">
-        <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1">
+        <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1">
           <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
@@ -94,7 +94,7 @@
     <ownedRepresentations xsi:type="description_1:DiagramDescription" documentation="Test a simple class diagram with only a box representing a Class" name="Container Package Diagram with Precondition" domainClass="Model">
       <metamodel href="platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#/"/>
       <containerMappings name="Package" preconditionExpression="aql:self.name.endsWith('1')" semanticCandidatesExpression="feature:eAllContents" domainClass="Package">
-        <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1">
+        <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1">
           <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
@@ -105,7 +105,7 @@
     <ownedRepresentations xsi:type="description_1:DiagramDescription" documentation="Test a simple class diagram with only a box representing a Class" name="Container Package Diagram with Semantic Candidate" domainClass="Model" rootExpression="">
       <metamodel href="platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#/"/>
       <containerMappings name="Package" semanticCandidatesExpression="aql:self.eContents()->filter(ecore::EPackage)" domainClass="Package">
-        <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1">
+        <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1">
           <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
@@ -116,7 +116,7 @@
     <ownedRepresentations xsi:type="description_1:DiagramDescription" documentation="Test a simple class diagram with only a box representing a Class" name="Container Package Diagram with Recursive Package" domainClass="Model" rootExpression="aql:self.eContents()->filter(ecore::EPackage)">
       <metamodel href="platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#/"/>
       <containerMappings name="Package Recur" semanticCandidatesExpression="aql:self.eContents()->filter(ecore::EPackage)" domainClass="Package" reusedContainerMappings="//@ownedViewpoints[name='UML2']/@ownedRepresentations[name='Container%20Package%20Diagram%20with%20Recursive%20Package']/@containerMappings[name='Package%20Recur']">
-        <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1">
+        <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1">
           <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
@@ -189,7 +189,7 @@
         </style>
       </edgeMappings>
       <containerMappings name="ECD_Class" semanticCandidatesExpression="feature:eAllContents" domainClass="Class">
-        <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1">
+        <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1">
           <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
@@ -208,7 +208,7 @@
         </style>
       </edgeMappings>
       <containerMappings name="ECD_Class" semanticCandidatesExpression="feature:eAllContents" domainClass="Class">
-        <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1">
+        <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1">
           <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
@@ -234,7 +234,7 @@
         </style>
       </edgeMappings>
       <containerMappings name="ECDCN_Class" semanticCandidatesExpression="feature:eAllContents" domainClass="Class">
-        <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1">
+        <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1">
           <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
@@ -407,7 +407,7 @@
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
           </style>
         </subNodeMappings>
-        <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1">
+        <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1">
           <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
@@ -453,7 +453,7 @@
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
           </style>
         </subNodeMappings>
-        <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1">
+        <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1">
           <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='orange']"/>
@@ -512,7 +512,7 @@
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
           </style>
         </subNodeMappings>
-        <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1">
+        <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1">
           <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='orange']"/>
