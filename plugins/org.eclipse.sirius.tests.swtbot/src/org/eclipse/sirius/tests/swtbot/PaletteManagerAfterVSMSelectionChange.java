@@ -18,14 +18,15 @@ import java.util.SortedSet;
 import java.util.TreeSet;
 
 import org.eclipse.gef.palette.PaletteEntry;
+import org.eclipse.gef.palette.PaletteRoot;
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.ui.tools.internal.palette.SectionPaletteDrawer;
 import org.eclipse.sirius.diagram.ui.tools.internal.palette.SiriusPaletteViewer;
 import org.eclipse.sirius.tests.swtbot.support.api.AbstractSiriusSwtBotGefTestCase;
 import org.eclipse.sirius.tests.swtbot.support.api.business.UIResource;
 import org.eclipse.sirius.tests.swtbot.support.api.editor.SWTBotSiriusDiagramEditor;
+import org.eclipse.sirius.tests.swtbot.support.utils.SWTBotUtils;
 
-import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
 
 /**
@@ -58,13 +59,10 @@ public class PaletteManagerAfterVSMSelectionChange extends AbstractSiriusSwtBotG
 
     private static final String OTHERS_LAYER_1 = "Others_Layer_1";
 
-    private static final SortedSet<String> EXPECTED_ENTRIES_LAYER_PERSON1_SHOWN = new TreeSet<String>(Arrays.asList("createClass_1"));
+    private static final SortedSet<String> EXPECTED_ENTRIES_LAYER_PERSON1_SHOWN = new TreeSet<>(Arrays.asList("createClass_1"));
 
-    private static final SortedSet<String> EXPECTED_ENTRIES_LAYER_PERSON1_OTHERS1_SHOWN = new TreeSet<String>(Arrays.asList("createClass_1", "createEEnum_1"));
+    private static final SortedSet<String> EXPECTED_ENTRIES_LAYER_PERSON1_OTHERS1_SHOWN = new TreeSet<>(Arrays.asList("createClass_1", "createEEnum_1"));
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     protected void onSetUpAfterOpeningDesignerPerspective() throws Exception {
         copyFileToTestProject(Activator.PLUGIN_ID, DATA_UNIT_DIR, MODEL_NAME, SESSION_NAME, MODELER_NAME, MODELER_EXTENSION_NAME);
@@ -72,9 +70,6 @@ public class PaletteManagerAfterVSMSelectionChange extends AbstractSiriusSwtBotG
         localSession = designerPerspective.openSessionFromFile(sessionAirdResource);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     protected void tearDown() throws Exception {
         localSession = null;
@@ -82,8 +77,7 @@ public class PaletteManagerAfterVSMSelectionChange extends AbstractSiriusSwtBotG
     }
 
     /**
-     * Ensure that only selected viewpoint tools still available from the
-     * palette after a viewpoint selection change.
+     * Ensure that only selected viewpoint tools still available from the palette after a viewpoint selection change.
      * 
      * @throws Exception
      *             Test error.
@@ -91,6 +85,7 @@ public class PaletteManagerAfterVSMSelectionChange extends AbstractSiriusSwtBotG
     public void testHideShowLayersAfterDiagramCreation() throws Exception {
         editor = (SWTBotSiriusDiagramEditor) openRepresentation(localSession.getOpenedSession(), REPRESENTATION_DESC_NAME, REPRESENTATION_INST_DESC_NAME, DDiagram.class);
         editor.changeLayerActivation(LAYER_1);
+        SWTBotUtils.waitAllUiEvents();
         editor.changeLayerActivation(OTHERS_LAYER_1);
         assertEquals("Palette entries content is wrong", EXPECTED_ENTRIES_LAYER_PERSON1_OTHERS1_SHOWN, getVisiblePaletteEntries());
         localSession.changeViewpointSelection(Collections.<String> emptySet(), Collections.singleton(EXTENSION_VIEWPOINT_NAME));
@@ -98,26 +93,16 @@ public class PaletteManagerAfterVSMSelectionChange extends AbstractSiriusSwtBotG
     }
 
     private TreeSet<String> getVisiblePaletteEntries() {
-        Iterable<SectionPaletteDrawer> filtered = Iterables.filter(((SiriusPaletteViewer) editor.getSiriusPaletteGroupEditPartBot().part().getViewer()).getPaletteRoot().getChildren(),
-                SectionPaletteDrawer.class);
+        PaletteRoot paletteRoot = ((SiriusPaletteViewer) editor.getSiriusPaletteGroupEditPartBot().part().getViewer()).getPaletteRoot();
+        Iterable<SectionPaletteDrawer> drawers = Iterables.filter(paletteRoot.getChildren(), SectionPaletteDrawer.class);
         TreeSet<String> result = new TreeSet<>();
-        for (PaletteEntry paletteEntry : filtered) {
-            Iterable<PaletteEntry> visibleEntries = Iterables.filter(((SectionPaletteDrawer) paletteEntry).getChildren(), VISIBLE_ENTRY);
-            for (PaletteEntry visiblePaletteEntry : visibleEntries) {
-                result.add(visiblePaletteEntry.getLabel());
+        for (PaletteEntry paletteEntry : drawers) {
+            for (Object child : ((SectionPaletteDrawer) paletteEntry).getChildren()) {
+                if (child instanceof PaletteEntry && ((PaletteEntry) child).isVisible()) {
+                    result.add(((PaletteEntry) child).getLabel());
+                }
             }
         }
         return result;
     }
-
-    private static final Predicate<PaletteEntry> VISIBLE_ENTRY = new Predicate<PaletteEntry>() {
-        /**
-         * {@inheritDoc}
-         */
-        @Override
-        public boolean apply(PaletteEntry input) {
-            return input.isVisible();
-        }
-    };
-
 }

@@ -32,27 +32,37 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.gef.palette.PaletteRoot;
 import org.eclipse.gmf.runtime.diagram.ui.internal.services.palette.PaletteToolEntry;
+import org.eclipse.jface.bindings.keys.KeyStroke;
+import org.eclipse.jface.bindings.keys.ParseException;
 import org.eclipse.sirius.business.api.componentization.ViewpointRegistry;
 import org.eclipse.sirius.common.tools.api.util.MessageTranslator;
 import org.eclipse.sirius.common.tools.internal.resource.ResourceSyncClientNotifier;
+import org.eclipse.sirius.diagram.ui.edit.api.part.IDDiagramEditPart;
 import org.eclipse.sirius.diagram.ui.tools.internal.palette.SectionPaletteDrawer;
 import org.eclipse.sirius.diagram.ui.tools.internal.palette.SiriusPaletteViewer;
 import org.eclipse.sirius.tests.swtbot.support.api.AbstractSiriusSwtBotGefTestCase;
+import org.eclipse.sirius.tests.swtbot.support.api.bot.SWTDesignerBot;
 import org.eclipse.sirius.tests.swtbot.support.api.business.UILocalSession;
 import org.eclipse.sirius.tests.swtbot.support.api.business.UIProject;
 import org.eclipse.sirius.tests.swtbot.support.api.business.UIResource;
 import org.eclipse.sirius.tests.swtbot.support.api.condition.CheckSelectedCondition;
-import org.eclipse.sirius.tests.swtbot.support.api.editor.SWTBotSiriusDiagramEditor;
+import org.eclipse.sirius.tests.swtbot.support.api.condition.EditorHasFocusCondition;
 import org.eclipse.sirius.tests.swtbot.support.api.editor.SWTBotSiriusHelper;
 import org.eclipse.sirius.tests.swtbot.support.utils.SWTBotUtils;
 import org.eclipse.sirius.ui.tools.api.project.ModelingProjectManager;
 import org.eclipse.sirius.viewpoint.description.RepresentationDescription;
 import org.eclipse.sirius.viewpoint.description.Viewpoint;
+import org.eclipse.swt.widgets.MenuItem;
 import org.eclipse.swtbot.eclipse.gef.finder.SWTGefBot;
+import org.eclipse.swtbot.eclipse.gef.finder.widgets.SWTBotGefEditPart;
+import org.eclipse.swtbot.swt.finder.matchers.WidgetMatcherFactory;
 import org.eclipse.swtbot.swt.finder.waits.DefaultCondition;
+import org.eclipse.swtbot.swt.finder.widgets.SWTBotMenu;
 import org.eclipse.swtbot.swt.finder.widgets.SWTBotShell;
+import org.eclipse.swtbot.swt.finder.widgets.SWTBotToolbarDropDownButton;
 import org.eclipse.swtbot.swt.finder.widgets.SWTBotTree;
 import org.eclipse.swtbot.swt.finder.widgets.SWTBotTreeItem;
+import org.hamcrest.Matcher;
 import org.junit.Assert;
 
 import com.google.common.collect.Sets;
@@ -310,9 +320,7 @@ public class SiriusInternationalizationTest extends AbstractSiriusSwtBotGefTestC
 
         // Check that labels in the filters tool are properly displayed and internationalized
         editor.click(100, 100);
-        labelsToCheck = new ArrayList<>();
-        labelsToCheck.add(getToolFilterLabel());
-        SWTBotUtils.checkLabelsInDiagramToolBar(editor, FILTERS, labelsToCheck);
+        checkToolbarButtonIsPresent(FILTERS, getToolFilterLabel());
 
         // Check SelectionWizard label and use tool
         editor.activateTool(TOOL2_LABEL);
@@ -356,10 +364,8 @@ public class SiriusInternationalizationTest extends AbstractSiriusSwtBotGefTestC
         checkLabelsInModelExplorerView(getDiagramDescriptionLabel());
 
         // Check that labels in the layers tool are properly displayed and internationalized
-        editor.click(100, 100);
-        labelsToCheck = new ArrayList<>();
-        labelsToCheck.add(getToolLayerLabel());
-        SWTBotUtils.checkLabelsInDiagramToolBar(editor, LAYERS, labelsToCheck);
+        selectDiagram();
+        checkToolbarButtonIsPresent(LAYERS, getToolLayerLabel());
 
         // Bug 522368 test that there is no duplicated entries in the palette after an external modification.
         URI ecoreURI = URI.createPlatformResourceURI(getProjectName() + "/" + MODEL, false);
@@ -375,6 +381,34 @@ public class SiriusInternationalizationTest extends AbstractSiriusSwtBotGefTestC
         String description = ((PaletteToolEntry) ((SectionPaletteDrawer) paletteRoot.getChildren().get(1)).getChildren().get(0)).getDescription();
         assertEquals("The tool documentation tooltip is not the expected one.", description, getToolDocumentationTooltip());
 
+    }
+    
+    private void selectDiagram() {
+        editor.show();
+        editor.rootEditPart().select().focus();
+        SWTBotGefEditPart diagPart = editor.rootEditPart().children().iterator().next();
+        IDDiagramEditPart part = (IDDiagramEditPart) diagPart.part();
+        CheckSelectedCondition cs = new CheckSelectedCondition(editor, part);
+        editor.select(diagPart);
+        bot.waitUntil(cs);
+
+        // Wait for tabbar refresh
+        // Should be removed when tabbar will be rewritten.
+        bot.sleep(1000);
+    }
+    
+    private void checkToolbarButtonIsPresent(String dropDownTooltip, String buttonName) {
+        SWTDesignerBot designerBot = new SWTDesignerBot();
+        SWTBotToolbarDropDownButton dropDown = designerBot.toolbarDropDownButtonWithTooltip(dropDownTooltip);
+        Matcher<MenuItem> withName = WidgetMatcherFactory.withText(buttonName);
+        SWTBotMenu menuButton = dropDown.menuItem(withName);
+        assertNotNull(menuButton);
+        assertEquals(buttonName, menuButton.getText());
+        try {  
+            dropDown.pressShortcut(KeyStroke.getInstance("ESC"));
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     /**
