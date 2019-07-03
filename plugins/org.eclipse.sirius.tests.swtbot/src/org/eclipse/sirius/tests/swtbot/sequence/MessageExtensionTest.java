@@ -29,9 +29,11 @@ import org.eclipse.sirius.diagram.sequence.business.internal.elements.ISequenceE
 import org.eclipse.sirius.diagram.sequence.business.internal.elements.Message;
 import org.eclipse.sirius.diagram.sequence.ui.tool.internal.edit.part.SequenceDiagramEditPart;
 import org.eclipse.sirius.diagram.sequence.ui.tool.internal.edit.part.SequenceMessageEditPart;
+import org.eclipse.sirius.diagram.ui.business.internal.dialect.DiagramDialectUIServices;
 import org.eclipse.sirius.tests.swtbot.Activator;
 import org.eclipse.sirius.tests.swtbot.support.api.business.UIDiagramRepresentation;
 import org.eclipse.sirius.tests.swtbot.support.api.condition.OperationDoneCondition;
+import org.eclipse.sirius.tests.swtbot.support.utils.SWTBotUtils;
 import org.eclipse.sirius.tests.unit.diagram.sequence.InteractionsConstants;
 import org.eclipse.sirius.ui.business.api.preferences.SiriusUIPreferencesKeys;
 import org.eclipse.sirius.viewpoint.SiriusPlugin;
@@ -122,7 +124,7 @@ public class MessageExtensionTest extends AbstractDefaultModelSequenceTests {
         // Refresh the diagram.
         ICondition done = new OperationDoneCondition();
         editor.click(0, 0);
-        manualRefresh();
+        editor.refresh();
         bot.waitUntil(done);
 
         assertFalse("The editor should not be dirty after the manual refresh.", editor.isDirty());
