@@ -33,6 +33,7 @@ import org.eclipse.sirius.viewpoint.description.AnnotationEntry;
 import org.eclipse.sirius.viewpoint.description.DAnnotation;
 import org.eclipse.sirius.viewpoint.description.DModelElement;
 import org.eclipse.sirius.viewpoint.description.DescriptionPackage;
+import org.eclipse.sirius.viewpoint.description.DocumentedElement;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object ' <em><b>DRepresentation</b></em>'. <!-- end-user-doc
@@ -64,6 +65,46 @@ public abstract class DRepresentationImpl extends IdentifiedElementImpl implemen
      * @ordered
      */
     protected EList<DAnnotation> eAnnotations;
+
+    /**
+     * The default value of the '{@link #getDocumentation() <em>Documentation</em>}' attribute. <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     *
+     * @see #getDocumentation()
+     * @generated
+     * @ordered
+     */
+    protected static final String DOCUMENTATION_EDEFAULT = ""; //$NON-NLS-1$
+
+    /**
+     * The cached value of the '{@link #getDocumentation() <em>Documentation</em>}' attribute. <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     *
+     * @see #getDocumentation()
+     * @generated
+     * @ordered
+     */
+    protected String documentation = DRepresentationImpl.DOCUMENTATION_EDEFAULT;
+
+    /**
+     * The default value of the '{@link #getName() <em>Name</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+     * -->
+     *
+     * @see #getName()
+     * @generated
+     * @ordered
+     */
+    protected static final String NAME_EDEFAULT = ""; //$NON-NLS-1$
+
+    /**
+     * The cached value of the '{@link #getName() <em>Name</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+     * -->
+     *
+     * @see #getName()
+     * @generated
+     * @ordered
+     */
+    protected String name = DRepresentationImpl.NAME_EDEFAULT;
 
     /**
      * The cached value of the '{@link #getOwnedAnnotationEntries() <em>Owned Annotation Entries</em>}' containment
@@ -124,6 +165,30 @@ public abstract class DRepresentationImpl extends IdentifiedElementImpl implemen
      * @generated
      */
     @Override
+    public String getDocumentation() {
+        return documentation;
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public void setDocumentation(String newDocumentation) {
+        String oldDocumentation = documentation;
+        documentation = newDocumentation;
+        if (eNotificationRequired()) {
+            eNotify(new ENotificationImpl(this, Notification.SET, ViewpointPackage.DREPRESENTATION__DOCUMENTATION, oldDocumentation, documentation));
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
     public EList<DRepresentationElement> getOwnedRepresentationElements() {
         // TODO: implement this method to return the 'Owned Representation Elements' reference list
         // Ensure that you remove @generated or mark it @generated NOT
@@ -146,6 +211,30 @@ public abstract class DRepresentationImpl extends IdentifiedElementImpl implemen
         // org.eclipse.emf.ecore.EStructuralFeature.Setting
         // so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
         throw new UnsupportedOperationException();
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public void setName(String newName) {
+        String oldName = name;
+        name = newName;
+        if (eNotificationRequired()) {
+            eNotify(new ENotificationImpl(this, Notification.SET, ViewpointPackage.DREPRESENTATION__NAME, oldName, name));
+        }
     }
 
     /**
@@ -254,10 +343,14 @@ public abstract class DRepresentationImpl extends IdentifiedElementImpl implemen
         switch (featureID) {
         case ViewpointPackage.DREPRESENTATION__EANNOTATIONS:
             return getEAnnotations();
+        case ViewpointPackage.DREPRESENTATION__DOCUMENTATION:
+            return getDocumentation();
         case ViewpointPackage.DREPRESENTATION__OWNED_REPRESENTATION_ELEMENTS:
             return getOwnedRepresentationElements();
         case ViewpointPackage.DREPRESENTATION__REPRESENTATION_ELEMENTS:
             return getRepresentationElements();
+        case ViewpointPackage.DREPRESENTATION__NAME:
+            return getName();
         case ViewpointPackage.DREPRESENTATION__OWNED_ANNOTATION_ENTRIES:
             return getOwnedAnnotationEntries();
         case ViewpointPackage.DREPRESENTATION__UI_STATE:
@@ -278,6 +371,12 @@ public abstract class DRepresentationImpl extends IdentifiedElementImpl implemen
         case ViewpointPackage.DREPRESENTATION__EANNOTATIONS:
             getEAnnotations().clear();
             getEAnnotations().addAll((Collection<? extends DAnnotation>) newValue);
+            return;
+        case ViewpointPackage.DREPRESENTATION__DOCUMENTATION:
+            setDocumentation((String) newValue);
+            return;
+        case ViewpointPackage.DREPRESENTATION__NAME:
+            setName((String) newValue);
             return;
         case ViewpointPackage.DREPRESENTATION__OWNED_ANNOTATION_ENTRIES:
             getOwnedAnnotationEntries().clear();
@@ -301,6 +400,12 @@ public abstract class DRepresentationImpl extends IdentifiedElementImpl implemen
         case ViewpointPackage.DREPRESENTATION__EANNOTATIONS:
             getEAnnotations().clear();
             return;
+        case ViewpointPackage.DREPRESENTATION__DOCUMENTATION:
+            setDocumentation(DRepresentationImpl.DOCUMENTATION_EDEFAULT);
+            return;
+        case ViewpointPackage.DREPRESENTATION__NAME:
+            setName(DRepresentationImpl.NAME_EDEFAULT);
+            return;
         case ViewpointPackage.DREPRESENTATION__OWNED_ANNOTATION_ENTRIES:
             getOwnedAnnotationEntries().clear();
             return;
@@ -321,10 +426,14 @@ public abstract class DRepresentationImpl extends IdentifiedElementImpl implemen
         switch (featureID) {
         case ViewpointPackage.DREPRESENTATION__EANNOTATIONS:
             return eAnnotations != null && !eAnnotations.isEmpty();
+        case ViewpointPackage.DREPRESENTATION__DOCUMENTATION:
+            return DRepresentationImpl.DOCUMENTATION_EDEFAULT == null ? documentation != null : !DRepresentationImpl.DOCUMENTATION_EDEFAULT.equals(documentation);
         case ViewpointPackage.DREPRESENTATION__OWNED_REPRESENTATION_ELEMENTS:
             return !getOwnedRepresentationElements().isEmpty();
         case ViewpointPackage.DREPRESENTATION__REPRESENTATION_ELEMENTS:
             return !getRepresentationElements().isEmpty();
+        case ViewpointPackage.DREPRESENTATION__NAME:
+            return DRepresentationImpl.NAME_EDEFAULT == null ? name != null : !DRepresentationImpl.NAME_EDEFAULT.equals(name);
         case ViewpointPackage.DREPRESENTATION__OWNED_ANNOTATION_ENTRIES:
             return ownedAnnotationEntries != null && !ownedAnnotationEntries.isEmpty();
         case ViewpointPackage.DREPRESENTATION__UI_STATE:
@@ -344,6 +453,14 @@ public abstract class DRepresentationImpl extends IdentifiedElementImpl implemen
             switch (derivedFeatureID) {
             case ViewpointPackage.DREPRESENTATION__EANNOTATIONS:
                 return DescriptionPackage.DMODEL_ELEMENT__EANNOTATIONS;
+            default:
+                return -1;
+            }
+        }
+        if (baseClass == DocumentedElement.class) {
+            switch (derivedFeatureID) {
+            case ViewpointPackage.DREPRESENTATION__DOCUMENTATION:
+                return DescriptionPackage.DOCUMENTED_ELEMENT__DOCUMENTATION;
             default:
                 return -1;
             }
@@ -372,6 +489,14 @@ public abstract class DRepresentationImpl extends IdentifiedElementImpl implemen
                 return -1;
             }
         }
+        if (baseClass == DocumentedElement.class) {
+            switch (baseFeatureID) {
+            case DescriptionPackage.DOCUMENTED_ELEMENT__DOCUMENTATION:
+                return ViewpointPackage.DREPRESENTATION__DOCUMENTATION;
+            default:
+                return -1;
+            }
+        }
         if (baseClass == DRefreshable.class) {
             switch (baseFeatureID) {
             default:
@@ -379,6 +504,26 @@ public abstract class DRepresentationImpl extends IdentifiedElementImpl implemen
             }
         }
         return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public String toString() {
+        if (eIsProxy()) {
+            return super.toString();
+        }
+
+        StringBuilder result = new StringBuilder(super.toString());
+        result.append(" (documentation: "); //$NON-NLS-1$
+        result.append(documentation);
+        result.append(", name: "); //$NON-NLS-1$
+        result.append(name);
+        result.append(')');
+        return result.toString();
     }
 
 } // DRepresentationImpl

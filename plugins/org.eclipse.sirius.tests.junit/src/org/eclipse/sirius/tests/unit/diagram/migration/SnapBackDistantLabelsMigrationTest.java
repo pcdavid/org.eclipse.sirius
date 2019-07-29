@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2017, 2019 THALES GLOBAL SERVICES.
+ * Copyright (c) 2017 THALES GLOBAL SERVICES.
  * This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
  * which accompanies this distribution, and is available at
@@ -22,7 +22,6 @@ import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.LayoutConstraint;
 import org.eclipse.gmf.runtime.notation.Location;
 import org.eclipse.gmf.runtime.notation.Node;
-import org.eclipse.sirius.business.api.query.DRepresentationQuery;
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.ui.business.internal.migration.SnapBackDistantLabelsMigrationParticipant;
 import org.eclipse.sirius.tests.SiriusTestsPlugin;
@@ -99,7 +98,7 @@ public class SnapBackDistantLabelsMigrationTest extends SiriusTestCase {
 
         while (diagrams.hasNext()) {
             Diagram diagram = diagrams.next();
-            String diagramName = new DRepresentationQuery(((DDiagram) diagram.getElement())).getRepresentationDescriptor().getName();
+            String diagramName = ((DDiagram) diagram.getElement()).getName();
             if (diagramName.startsWith("DiagWithNode")) {
                 if (diagramName.endsWith(suffix)) {
                     corruptedDiagram1 = diagram;
@@ -146,8 +145,7 @@ public class SnapBackDistantLabelsMigrationTest extends SiriusTestCase {
     private void compareDiagram(Diagram corruptedDiagram, Diagram diagram) {
         assertNotNull(UNEXPECTED_DATA_MESSAGE, diagram);
         assertNotNull(UNEXPECTED_DATA_MESSAGE, corruptedDiagram);
-        assertEquals("Corrupted diagram " + new DRepresentationQuery(((DDiagram) corruptedDiagram.getElement())).getRepresentationDescriptor().getName()
-                + " should have the same bounding box as other diagram after migration.",
+        assertEquals("Corrupted diagram " + ((DDiagram) corruptedDiagram.getElement()).getName() + " should have the same bounding box as other diagram after migration.",
                 calculateLocationBoundingBox(diagram), calculateLocationBoundingBox(corruptedDiagram));
     }
 

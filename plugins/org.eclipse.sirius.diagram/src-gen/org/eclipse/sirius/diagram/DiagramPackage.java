@@ -91,6 +91,14 @@ public interface DiagramPackage extends EPackage {
     int DDIAGRAM__EANNOTATIONS = ViewpointPackage.DREPRESENTATION__EANNOTATIONS;
 
     /**
+     * The feature id for the '<em><b>Documentation</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int DDIAGRAM__DOCUMENTATION = ViewpointPackage.DREPRESENTATION__DOCUMENTATION;
+
+    /**
      * The feature id for the '<em><b>Owned Representation Elements</b></em>' reference list. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      *
@@ -107,6 +115,14 @@ public interface DiagramPackage extends EPackage {
      * @ordered
      */
     int DDIAGRAM__REPRESENTATION_ELEMENTS = ViewpointPackage.DREPRESENTATION__REPRESENTATION_ELEMENTS;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int DDIAGRAM__NAME = ViewpointPackage.DREPRESENTATION__NAME;
 
     /**
      * The feature id for the '<em><b>Owned Annotation Entries</b></em>' containment reference list. <!-- begin-user-doc
@@ -127,21 +143,13 @@ public interface DiagramPackage extends EPackage {
     int DDIAGRAM__UI_STATE = ViewpointPackage.DREPRESENTATION__UI_STATE;
 
     /**
-     * The feature id for the '<em><b>Documentation</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     * @ordered
-     */
-    int DDIAGRAM__DOCUMENTATION = ViewpointPackage.DREPRESENTATION_FEATURE_COUNT + 0;
-
-    /**
      * The feature id for the '<em><b>Owned Diagram Elements</b></em>' containment reference list. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
      *
      * @generated
      * @ordered
      */
-    int DDIAGRAM__OWNED_DIAGRAM_ELEMENTS = ViewpointPackage.DREPRESENTATION_FEATURE_COUNT + 1;
+    int DDIAGRAM__OWNED_DIAGRAM_ELEMENTS = ViewpointPackage.DREPRESENTATION_FEATURE_COUNT + 0;
 
     /**
      * The feature id for the '<em><b>Diagram Elements</b></em>' reference list. <!-- begin-user-doc --> <!--
@@ -150,7 +158,7 @@ public interface DiagramPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DDIAGRAM__DIAGRAM_ELEMENTS = ViewpointPackage.DREPRESENTATION_FEATURE_COUNT + 2;
+    int DDIAGRAM__DIAGRAM_ELEMENTS = ViewpointPackage.DREPRESENTATION_FEATURE_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>Description</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -158,7 +166,7 @@ public interface DiagramPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DDIAGRAM__DESCRIPTION = ViewpointPackage.DREPRESENTATION_FEATURE_COUNT + 3;
+    int DDIAGRAM__DESCRIPTION = ViewpointPackage.DREPRESENTATION_FEATURE_COUNT + 2;
 
     /**
      * The feature id for the '<em><b>Edges</b></em>' reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -166,7 +174,7 @@ public interface DiagramPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DDIAGRAM__EDGES = ViewpointPackage.DREPRESENTATION_FEATURE_COUNT + 4;
+    int DDIAGRAM__EDGES = ViewpointPackage.DREPRESENTATION_FEATURE_COUNT + 3;
 
     /**
      * The feature id for the '<em><b>Nodes</b></em>' reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -174,7 +182,7 @@ public interface DiagramPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DDIAGRAM__NODES = ViewpointPackage.DREPRESENTATION_FEATURE_COUNT + 5;
+    int DDIAGRAM__NODES = ViewpointPackage.DREPRESENTATION_FEATURE_COUNT + 4;
 
     /**
      * The feature id for the '<em><b>Node List Elements</b></em>' reference list. <!-- begin-user-doc --> <!--
@@ -183,7 +191,7 @@ public interface DiagramPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DDIAGRAM__NODE_LIST_ELEMENTS = ViewpointPackage.DREPRESENTATION_FEATURE_COUNT + 6;
+    int DDIAGRAM__NODE_LIST_ELEMENTS = ViewpointPackage.DREPRESENTATION_FEATURE_COUNT + 5;
 
     /**
      * The feature id for the '<em><b>Containers</b></em>' reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -191,7 +199,7 @@ public interface DiagramPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DDIAGRAM__CONTAINERS = ViewpointPackage.DREPRESENTATION_FEATURE_COUNT + 7;
+    int DDIAGRAM__CONTAINERS = ViewpointPackage.DREPRESENTATION_FEATURE_COUNT + 6;
 
     /**
      * The feature id for the '<em><b>Current Concern</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -199,7 +207,7 @@ public interface DiagramPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DDIAGRAM__CURRENT_CONCERN = ViewpointPackage.DREPRESENTATION_FEATURE_COUNT + 8;
+    int DDIAGRAM__CURRENT_CONCERN = ViewpointPackage.DREPRESENTATION_FEATURE_COUNT + 7;
 
     /**
      * The feature id for the '<em><b>Activated Filters</b></em>' reference list. <!-- begin-user-doc --> <!--
@@ -208,7 +216,7 @@ public interface DiagramPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DDIAGRAM__ACTIVATED_FILTERS = ViewpointPackage.DREPRESENTATION_FEATURE_COUNT + 9;
+    int DDIAGRAM__ACTIVATED_FILTERS = ViewpointPackage.DREPRESENTATION_FEATURE_COUNT + 8;
 
     /**
      * The feature id for the '<em><b>Activated Transient Layers</b></em>' reference list. <!-- begin-user-doc --> <!--
@@ -217,7 +225,7 @@ public interface DiagramPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DDIAGRAM__ACTIVATED_TRANSIENT_LAYERS = ViewpointPackage.DREPRESENTATION_FEATURE_COUNT + 10;
+    int DDIAGRAM__ACTIVATED_TRANSIENT_LAYERS = ViewpointPackage.DREPRESENTATION_FEATURE_COUNT + 9;
 
     /**
      * The feature id for the '<em><b>All Filters</b></em>' reference list. <!-- begin-user-doc --> <!-- end-user-doc
@@ -226,7 +234,7 @@ public interface DiagramPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DDIAGRAM__ALL_FILTERS = ViewpointPackage.DREPRESENTATION_FEATURE_COUNT + 11;
+    int DDIAGRAM__ALL_FILTERS = ViewpointPackage.DREPRESENTATION_FEATURE_COUNT + 10;
 
     /**
      * The feature id for the '<em><b>Activated Rules</b></em>' reference list. <!-- begin-user-doc --> <!--
@@ -235,7 +243,7 @@ public interface DiagramPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DDIAGRAM__ACTIVATED_RULES = ViewpointPackage.DREPRESENTATION_FEATURE_COUNT + 12;
+    int DDIAGRAM__ACTIVATED_RULES = ViewpointPackage.DREPRESENTATION_FEATURE_COUNT + 11;
 
     /**
      * The feature id for the '<em><b>Activate Behaviors</b></em>' reference list. <!-- begin-user-doc --> <!--
@@ -244,7 +252,7 @@ public interface DiagramPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DDIAGRAM__ACTIVATE_BEHAVIORS = ViewpointPackage.DREPRESENTATION_FEATURE_COUNT + 13;
+    int DDIAGRAM__ACTIVATE_BEHAVIORS = ViewpointPackage.DREPRESENTATION_FEATURE_COUNT + 12;
 
     /**
      * The feature id for the '<em><b>Filter Variable History</b></em>' containment reference. <!-- begin-user-doc -->
@@ -253,7 +261,7 @@ public interface DiagramPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DDIAGRAM__FILTER_VARIABLE_HISTORY = ViewpointPackage.DREPRESENTATION_FEATURE_COUNT + 14;
+    int DDIAGRAM__FILTER_VARIABLE_HISTORY = ViewpointPackage.DREPRESENTATION_FEATURE_COUNT + 13;
 
     /**
      * The feature id for the '<em><b>Activated Layers</b></em>' reference list. <!-- begin-user-doc --> <!--
@@ -262,7 +270,7 @@ public interface DiagramPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DDIAGRAM__ACTIVATED_LAYERS = ViewpointPackage.DREPRESENTATION_FEATURE_COUNT + 15;
+    int DDIAGRAM__ACTIVATED_LAYERS = ViewpointPackage.DREPRESENTATION_FEATURE_COUNT + 14;
 
     /**
      * The feature id for the '<em><b>Synchronized</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -270,7 +278,7 @@ public interface DiagramPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DDIAGRAM__SYNCHRONIZED = ViewpointPackage.DREPRESENTATION_FEATURE_COUNT + 16;
+    int DDIAGRAM__SYNCHRONIZED = ViewpointPackage.DREPRESENTATION_FEATURE_COUNT + 15;
 
     /**
      * The feature id for the '<em><b>Hidden Elements</b></em>' reference list. <!-- begin-user-doc --> <!--
@@ -279,7 +287,7 @@ public interface DiagramPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DDIAGRAM__HIDDEN_ELEMENTS = ViewpointPackage.DREPRESENTATION_FEATURE_COUNT + 17;
+    int DDIAGRAM__HIDDEN_ELEMENTS = ViewpointPackage.DREPRESENTATION_FEATURE_COUNT + 16;
 
     /**
      * The feature id for the '<em><b>Is In Layouting Mode</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -288,7 +296,7 @@ public interface DiagramPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DDIAGRAM__IS_IN_LAYOUTING_MODE = ViewpointPackage.DREPRESENTATION_FEATURE_COUNT + 18;
+    int DDIAGRAM__IS_IN_LAYOUTING_MODE = ViewpointPackage.DREPRESENTATION_FEATURE_COUNT + 17;
 
     /**
      * The feature id for the '<em><b>Is In Showing Mode</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
@@ -297,7 +305,7 @@ public interface DiagramPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DDIAGRAM__IS_IN_SHOWING_MODE = ViewpointPackage.DREPRESENTATION_FEATURE_COUNT + 19;
+    int DDIAGRAM__IS_IN_SHOWING_MODE = ViewpointPackage.DREPRESENTATION_FEATURE_COUNT + 18;
 
     /**
      * The feature id for the '<em><b>Header Height</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -305,7 +313,7 @@ public interface DiagramPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DDIAGRAM__HEADER_HEIGHT = ViewpointPackage.DREPRESENTATION_FEATURE_COUNT + 20;
+    int DDIAGRAM__HEADER_HEIGHT = ViewpointPackage.DREPRESENTATION_FEATURE_COUNT + 19;
 
     /**
      * The number of structural features of the '<em>DDiagram</em>' class. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -313,7 +321,7 @@ public interface DiagramPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DDIAGRAM_FEATURE_COUNT = ViewpointPackage.DREPRESENTATION_FEATURE_COUNT + 21;
+    int DDIAGRAM_FEATURE_COUNT = ViewpointPackage.DREPRESENTATION_FEATURE_COUNT + 20;
 
     /**
      * The meta object id for the '{@link org.eclipse.sirius.diagram.impl.DSemanticDiagramImpl <em>DSemantic
@@ -343,6 +351,14 @@ public interface DiagramPackage extends EPackage {
     int DSEMANTIC_DIAGRAM__EANNOTATIONS = DiagramPackage.DDIAGRAM__EANNOTATIONS;
 
     /**
+     * The feature id for the '<em><b>Documentation</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int DSEMANTIC_DIAGRAM__DOCUMENTATION = DiagramPackage.DDIAGRAM__DOCUMENTATION;
+
+    /**
      * The feature id for the '<em><b>Owned Representation Elements</b></em>' reference list. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      *
@@ -361,6 +377,14 @@ public interface DiagramPackage extends EPackage {
     int DSEMANTIC_DIAGRAM__REPRESENTATION_ELEMENTS = DiagramPackage.DDIAGRAM__REPRESENTATION_ELEMENTS;
 
     /**
+     * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int DSEMANTIC_DIAGRAM__NAME = DiagramPackage.DDIAGRAM__NAME;
+
+    /**
      * The feature id for the '<em><b>Owned Annotation Entries</b></em>' containment reference list. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
      *
@@ -377,14 +401,6 @@ public interface DiagramPackage extends EPackage {
      * @ordered
      */
     int DSEMANTIC_DIAGRAM__UI_STATE = DiagramPackage.DDIAGRAM__UI_STATE;
-
-    /**
-     * The feature id for the '<em><b>Documentation</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     * @ordered
-     */
-    int DSEMANTIC_DIAGRAM__DOCUMENTATION = DiagramPackage.DDIAGRAM__DOCUMENTATION;
 
     /**
      * The feature id for the '<em><b>Owned Diagram Elements</b></em>' containment reference list. <!-- begin-user-doc

@@ -25,8 +25,6 @@ import org.eclipse.sirius.business.api.dialect.DialectManager;
 import org.eclipse.sirius.business.api.dialect.command.RefreshRepresentationsCommand;
 import org.eclipse.sirius.business.api.session.CustomDataConstants;
 import org.eclipse.sirius.business.api.session.Session;
-import org.eclipse.sirius.business.internal.query.DRepresentationDescriptorInternalHelper;
-import org.eclipse.sirius.business.internal.session.danalysis.DAnalysisSessionImpl;
 import org.eclipse.sirius.diagram.AbstractDNode;
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.DDiagramElement;
@@ -55,10 +53,9 @@ public class GenericTestCase extends SiriusDiagramTestCase {
 
     protected void initSynchronizer(final DiagramDescription description, final String diagramName) {
         sync = new DDiagramSynchronizer(interpreter, description, accessor);
-        sync.initDiagram(semanticModel, new NullProgressMonitor());
+        sync.initDiagram(diagramName, semanticModel, new NullProgressMonitor());
         boolean syncOnCreation = Platform.getPreferencesService().getBoolean(DiagramPlugin.ID, SiriusDiagramInternalPreferencesKeys.PREF_SYNCHRONIZE_DIAGRAM_ON_CREATION.name(), false, null);
         sync.getDiagram().setSynchronized(syncOnCreation);
-        DRepresentationDescriptorInternalHelper.createDRepresentationDescriptor(sync.getDiagram(), (DAnalysisSessionImpl) session, sync.getDiagram().eResource(), diagramName);
     }
 
     /**

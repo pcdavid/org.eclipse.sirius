@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2010, 2019 THALES GLOBAL SERVICES.
+ * Copyright (c) 2010, 2018 THALES GLOBAL SERVICES.
  * This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
  * which accompanies this distribution, and is available at
@@ -20,7 +20,6 @@ import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.sirius.business.api.query.DRepresentationQuery;
 import org.eclipse.sirius.business.api.session.SessionManager;
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.DDiagramElement;
@@ -162,7 +161,7 @@ public abstract class AbstractRefreshWithCustomizedStyleTest extends AbstractSir
         SWTBot propertiesBot = selectAppearanceTab();
         SWTBotButton resetStyleCustomizationButton = getResetStylePropertiesToDefaultValuesButtonFromAppearanceTab();
         DDiagram parentDiagram = ((DDiagramElement) ((View) selectedEditPart.part().getModel()).getElement()).getParentDiagram();
-        final String representationName = new DRepresentationQuery(parentDiagram).getRepresentationDescriptor().getName();
+        final String representationName = parentDiagram.getName();
         final String representationDescriptionName = parentDiagram.getDescription().getName();
 
         SWTBotRadio radioToTest = propertiesBot.radioInGroup(radioGroupName, radioIndexInGroup);
@@ -232,7 +231,7 @@ public abstract class AbstractRefreshWithCustomizedStyleTest extends AbstractSir
         SWTBot propertiesBot = selectAppearanceTab();
         SWTBotButton resetStyleCustomizationButton = getResetStylePropertiesToDefaultValuesButtonFromAppearanceTab();
         DDiagram parentDiagram = ((DDiagramElement) ((View) selectedEditPart.part().getModel()).getElement()).getParentDiagram();
-        final String representationName = new DRepresentationQuery(parentDiagram).getRepresentationDescriptor().getName();
+        final String representationName = parentDiagram.getName();
         final String representationDescriptionName = parentDiagram.getDescription().getName();
 
         SWTBotCheckBox checkboxToTest = propertiesBot.checkBoxInGroup(checkboxGroupName, checkBoxIndexInGroup);
@@ -318,7 +317,7 @@ public abstract class AbstractRefreshWithCustomizedStyleTest extends AbstractSir
         SWTBot propertiesBot = selectAppearanceTab();
         SWTBotButton resetStyleCustomizationButton = getResetStylePropertiesToDefaultValuesButtonFromAppearanceTab();
         DDiagram parentDiagram = ((DDiagramElement) ((View) selectedEditPart.part().getModel()).getElement()).getParentDiagram();
-        final String representationName = new DRepresentationQuery(parentDiagram).getRepresentationDescriptor().getName();
+        final String representationName = parentDiagram.getName();
         final String representationDescriptionName = parentDiagram.getDescription().getName();
 
         SWTBotCCombo comboBoxToTest = propertiesBot.ccomboBoxInGroup("Fonts and Colors:", comboBoxIdIngroup);
@@ -403,7 +402,7 @@ public abstract class AbstractRefreshWithCustomizedStyleTest extends AbstractSir
         SWTBot propertiesBot = selectAppearanceTab();
         SWTBotButton resetStyleCustomizationButton = getResetStylePropertiesToDefaultValuesButtonFromAppearanceTab();
         DDiagram parentDiagram = ((DDiagramElement) ((View) selectedEditPart.part().getModel()).getElement()).getParentDiagram();
-        final String representationName = new DRepresentationQuery(parentDiagram).getRepresentationDescriptor().getName();
+        final String representationName = parentDiagram.getName();
         final String representationDescriptionName = parentDiagram.getDescription().getName();
 
         // Check initial state
@@ -500,7 +499,7 @@ public abstract class AbstractRefreshWithCustomizedStyleTest extends AbstractSir
         SWTBot propertiesBot = selectAppearanceTab();
         SWTBotButton resetStylePropertiesToDefaultValuesButtonFromAppearanceTab = getResetStylePropertiesToDefaultValuesButtonFromAppearanceTab();
         DDiagram parentDiagram = ((DDiagramElement) ((View) selectedEditPart.part().getModel()).getElement()).getParentDiagram();
-        final String representationName = new DRepresentationQuery(parentDiagram).getRepresentationDescriptor().getName();
+        final String representationName = parentDiagram.getName();
         final String representationDescriptionName = parentDiagram.getDescription().getName();
 
         SWTBotButton buttonFromAppearanceSectionToTest = propertiesBot.buttonInGroup("Fonts and Colors:", 3);
@@ -572,7 +571,7 @@ public abstract class AbstractRefreshWithCustomizedStyleTest extends AbstractSir
         SWTBot propertiesBot = selectAppearanceTab();
         SWTBotButton resetStyleCustomizationButton = getResetStylePropertiesToDefaultValuesButtonFromAppearanceTab();
         DDiagram parentDiagram = ((DDiagramElement) ((View) selectedEditPart.part().getModel()).getElement()).getParentDiagram();
-        final String representationName = new DRepresentationQuery(parentDiagram).getRepresentationDescriptor().getName();
+        final String representationName = parentDiagram.getName();
         final String representationDescriptionName = parentDiagram.getDescription().getName();
 
         SWTBotToggleButton buttonFromAppearanceSectionToTest = propertiesBot.toggleButtonInGroup(buttonToToggleGroupName, buttonToToggleIndexInGroup);
@@ -715,7 +714,7 @@ public abstract class AbstractRefreshWithCustomizedStyleTest extends AbstractSir
             Predicate<SWTBotGefEditPart> stateWhenButtonIsCheckedPredicate) {
         SWTBotToolbarButton resetStyleCustomizationButton = getResetStylePropertiesToDefaultValuesButtonFromTabbar();
         DDiagram parentDiagram = ((DDiagramElement) ((View) selectedEditPart.part().getModel()).getElement()).getParentDiagram();
-        final String representationName = new DRepresentationQuery(parentDiagram).getRepresentationDescriptor().getName();
+        final String representationName = parentDiagram.getName();
         final String representationDescriptionName = parentDiagram.getDescription().getName();
 
         SWTBotToolbarToggleButton buttonFromTabbarToTest = bot.toolbarToggleButtonWithTooltip(tabbarButtonTooltip);
@@ -810,7 +809,7 @@ public abstract class AbstractRefreshWithCustomizedStyleTest extends AbstractSir
         selectedEditPart.select();
         SWTBotUtils.waitAllUiEvents();
         DDiagram parentDiagram = ((DDiagramElement) ((View) selectedEditPart.part().getModel()).getElement()).getParentDiagram();
-        final String representationName = new DRepresentationQuery(parentDiagram).getRepresentationDescriptor().getName();
+        final String representationName = parentDiagram.getName();
         final String representationDescriptionName = parentDiagram.getDescription().getName();
 
         // Check initial state
@@ -885,7 +884,7 @@ public abstract class AbstractRefreshWithCustomizedStyleTest extends AbstractSir
         selectedEditPart.select();
         SWTBotUtils.waitAllUiEvents();
         DDiagram parentDiagram = ((DDiagramElement) ((View) selectedEditPart.part().getModel()).getElement()).getParentDiagram();
-        final String representationName = new DRepresentationQuery(parentDiagram).getRepresentationDescriptor().getName();
+        final String representationName = parentDiagram.getName();
         final String representationDescriptionName = parentDiagram.getDescription().getName();
 
         // Check initial state
@@ -947,7 +946,7 @@ public abstract class AbstractRefreshWithCustomizedStyleTest extends AbstractSir
         selectedEditPart.select();
         SWTBotUtils.waitAllUiEvents();
         DDiagram parentDiagram = ((DDiagramElement) ((View) selectedEditPart.part().getModel()).getElement()).getParentDiagram();
-        final String representationName = new DRepresentationQuery(parentDiagram).getRepresentationDescriptor().getName();
+        final String representationName = parentDiagram.getName();
         final String representationDescriptionName = parentDiagram.getDescription().getName();
 
         SWTBotToolbarButton resetStylePropertiesToDefaultValuesButtonFromTabbar = getResetStylePropertiesToDefaultValuesButtonFromTabbar();

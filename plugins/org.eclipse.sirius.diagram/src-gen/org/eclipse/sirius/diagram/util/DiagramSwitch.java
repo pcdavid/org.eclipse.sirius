@@ -150,9 +150,6 @@ public class DiagramSwitch<T> {
                 result = caseDRepresentation(dDiagram);
             }
             if (result == null) {
-                result = caseDocumentedElement(dDiagram);
-            }
-            if (result == null) {
                 result = caseDragAndDropTarget(dDiagram);
             }
             if (result == null) {
@@ -160,6 +157,9 @@ public class DiagramSwitch<T> {
             }
             if (result == null) {
                 result = caseDModelElement(dDiagram);
+            }
+            if (result == null) {
+                result = caseDocumentedElement(dDiagram);
             }
             if (result == null) {
                 result = caseDRefreshable(dDiagram);
@@ -182,9 +182,6 @@ public class DiagramSwitch<T> {
                 result = caseDRepresentation(dSemanticDiagram);
             }
             if (result == null) {
-                result = caseDocumentedElement(dSemanticDiagram);
-            }
-            if (result == null) {
                 result = caseDragAndDropTarget(dSemanticDiagram);
             }
             if (result == null) {
@@ -192,6 +189,9 @@ public class DiagramSwitch<T> {
             }
             if (result == null) {
                 result = caseDModelElement(dSemanticDiagram);
+            }
+            if (result == null) {
+                result = caseDocumentedElement(dSemanticDiagram);
             }
             if (result == null) {
                 result = caseDRefreshable(dSemanticDiagram);

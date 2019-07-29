@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2010, 2019 THALES GLOBAL SERVICES and others.
+ * Copyright (c) 2010, 2016 THALES GLOBAL SERVICES and others.
  * This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
  * which accompanies this distribution, and is available at
@@ -28,7 +28,6 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.workspace.WorkspaceEditingDomainFactory;
-import org.eclipse.sirius.business.api.query.DRepresentationQuery;
 import org.eclipse.sirius.business.api.query.URIQuery;
 import org.eclipse.sirius.business.api.session.DefaultLocalSessionCreationOperation;
 import org.eclipse.sirius.business.api.session.Session;
@@ -39,7 +38,6 @@ import org.eclipse.sirius.diagram.DSemanticDiagram;
 import org.eclipse.sirius.diagram.DiagramFactory;
 import org.eclipse.sirius.diagram.tools.internal.management.ToolFilterDescriptionListenerForUpdate;
 import org.eclipse.sirius.tools.api.command.semantic.AddSemanticResourceCommand;
-import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
 import org.eclipse.sirius.viewpoint.description.tool.FeatureChangeListener;
 import org.eclipse.sirius.viewpoint.description.tool.ToolFactory;
 import org.eclipse.sirius.viewpoint.description.tool.ToolFilterDescription;
@@ -78,8 +76,6 @@ public class ToolFilterDescriptionListenerTests extends TestCase {
 
     private DSemanticDiagram diagram;
 
-    private DRepresentationDescriptor representationDescriptor;
-
     @Override
     protected void setUp() throws Exception {
         super.setUp();
@@ -102,7 +98,6 @@ public class ToolFilterDescriptionListenerTests extends TestCase {
         session = sessionCreationOperation.getCreatedSession();
         session.getTransactionalEditingDomain().getCommandStack().execute(new AddSemanticResourceCommand(session, resource.getURI(), new NullProgressMonitor()));
         diagram = createDiagram(airdResource);
-        representationDescriptor = new DRepresentationQuery(diagram).getRepresentationDescriptor();
 
     }
 
@@ -142,13 +137,13 @@ public class ToolFilterDescriptionListenerTests extends TestCase {
         editingDomain.getCommandStack().execute(new RecordingCommand(editingDomain) {
             @Override
             protected void doExecute() {
-                representationDescriptor.setName("new name");
+                diagram.setName("new name");
             }
         });
         editingDomain.getCommandStack().execute(new RecordingCommand(editingDomain) {
             @Override
             protected void doExecute() {
-                representationDescriptor.setName("quick name");
+                diagram.setName("quick name");
             }
         });
         assertEquals("The right number of notification has not been sent.", 2, listener.getCallCount());
@@ -162,8 +157,8 @@ public class ToolFilterDescriptionListenerTests extends TestCase {
         editingDomain.getCommandStack().execute(new RecordingCommand(editingDomain) {
             @Override
             protected void doExecute() {
-                representationDescriptor.setName("new name");
-                representationDescriptor.setName("this is an annoucement");
+                diagram.setName("new name");
+                diagram.setName("this is an annoucement");
             }
         });
         assertEquals("The right number of notification has not been sent.", 1, listener.getCallCount());
@@ -177,14 +172,14 @@ public class ToolFilterDescriptionListenerTests extends TestCase {
         editingDomain.getCommandStack().execute(new RecordingCommand(editingDomain) {
             @Override
             protected void doExecute() {
-                representationDescriptor.setName("dirty name");
+                diagram.setName("dirty name");
             }
         });
         editingDomain.removeResourceSetListener(listener);
         editingDomain.getCommandStack().execute(new RecordingCommand(editingDomain) {
             @Override
             protected void doExecute() {
-                representationDescriptor.setName("another name");
+                diagram.setName("another name");
             }
         });
         assertEquals("The right number of notification has not been sent.", 1, listener.getCallCount());
@@ -206,7 +201,7 @@ public class ToolFilterDescriptionListenerTests extends TestCase {
 
     @Override
     protected void tearDown() throws Exception {
-        representationDescriptor = null;
+
         session.close(new NullProgressMonitor());
         editingDomain.dispose();
 

@@ -20,7 +20,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.sirius.business.api.resource.ResourceDescriptor;
 import org.eclipse.sirius.business.internal.representation.DRepresentationDescriptorToDRepresentationLinkManager;
 import org.eclipse.sirius.viewpoint.description.DModelElement;
-import org.eclipse.sirius.viewpoint.description.DocumentedElement;
 import org.eclipse.sirius.viewpoint.description.RepresentationDescription;
 
 /**
@@ -43,7 +42,7 @@ import org.eclipse.sirius.viewpoint.description.RepresentationDescription;
  * @model
  * @generated
  */
-public interface DRepresentationDescriptor extends IdentifiedElement, DModelElement, DocumentedElement {
+public interface DRepresentationDescriptor extends IdentifiedElement, DModelElement {
     /**
      * Returns the value of the '<em><b>Name</b></em>' attribute. The default value is <code>""</code>. <!--
      * begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc --> The name of the representation. <!--

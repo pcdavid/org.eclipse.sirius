@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2017, 2019 Obeo.
+ * Copyright (c) 2017 Obeo.
  * This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
  * which accompanies this distribution, and is available at
@@ -17,7 +17,6 @@ import java.util.Iterator;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramEditor;
 import org.eclipse.sirius.business.api.preferences.SiriusPreferencesKeys;
-import org.eclipse.sirius.business.api.query.DRepresentationQuery;
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.tests.SiriusTestsPlugin;
 import org.eclipse.sirius.tests.support.api.SiriusDiagramTestCase;
@@ -86,7 +85,7 @@ public class ForceRefreshToolTest extends SiriusDiagramTestCase {
 
         // Step 3 : ensuring that the Creation works and refresh has been activated only on the second diagram
         assertEquals("Force refresh diagram has not been refreshed. Bad diagram elements number in diagram "
-                + new DRepresentationQuery(secondDiag).getRepresentationDescriptor().getName(), 1, secondDiag.getOwnedDiagramElements().size());
+            + secondDiag.getName(), 1, secondDiag.getOwnedDiagramElements().size());
         assertTrue("The non 'force refresh' diagram has been refreshed whereas 'automatic refresh' is false.",
                 firstDiag.getOwnedDiagramElements().isEmpty());
     }
@@ -110,9 +109,9 @@ public class ForceRefreshToolTest extends SiriusDiagramTestCase {
 
         // Step 3 : ensuring that the Creation works and refresh has been activated on both diagram
         assertEquals("Force refresh diagram has not been refreshed. Bad diagram elements number in diagram "
-                + new DRepresentationQuery(secondDiag).getRepresentationDescriptor().getName(), 1, secondDiag.getOwnedDiagramElements().size());
+            + secondDiag.getName(), 1, secondDiag.getOwnedDiagramElements().size());
         assertEquals("Non 'Force refresh' diagram has not been refreshed. Bad diagram elements number in diagram "
-                + new DRepresentationQuery(firstDiag).getRepresentationDescriptor().getName(), 1, firstDiag.getOwnedDiagramElements().size());
+            + firstDiag.getName(), 1, firstDiag.getOwnedDiagramElements().size());
     }
 
     /**
@@ -134,8 +133,8 @@ public class ForceRefreshToolTest extends SiriusDiagramTestCase {
 
         // Step 3 : ensuring that the Creation works and refresh has been activated on both diagram
         assertEquals("Force refresh diagram has not been refreshed. Bad diagram elements number in diagram "
-                + new DRepresentationQuery(secondDiag).getRepresentationDescriptor().getName(), 1, secondDiag.getOwnedDiagramElements().size());
+            + secondDiag.getName(), 1, secondDiag.getOwnedDiagramElements().size());
         assertEquals("Non 'Force refresh' diagram has not been refreshed. Bad diagram elements number in diagram "
-                + new DRepresentationQuery(firstDiag).getRepresentationDescriptor().getName(), 1, firstDiag.getOwnedDiagramElements().size());
+            + firstDiag.getName(), 1, firstDiag.getOwnedDiagramElements().size());
     }
 }

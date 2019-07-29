@@ -16,6 +16,7 @@ package org.eclipse.sirius.viewpoint;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.sirius.viewpoint.description.AnnotationEntry;
 import org.eclipse.sirius.viewpoint.description.DModelElement;
+import org.eclipse.sirius.viewpoint.description.DocumentedElement;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object ' <em><b>DRepresentation</b></em>'. <!-- end-user-doc
@@ -39,7 +40,7 @@ import org.eclipse.sirius.viewpoint.description.DModelElement;
  * @model abstract="true"
  * @generated
  */
-public interface DRepresentation extends IdentifiedElement, DModelElement, DRefreshable {
+public interface DRepresentation extends IdentifiedElement, DModelElement, DocumentedElement, DRefreshable {
     /**
      * Returns the value of the '<em><b>Owned Representation Elements</b></em>' reference list. The list contents are of
      * type {@link org.eclipse.sirius.viewpoint.DRepresentationElement}. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -63,6 +64,30 @@ public interface DRepresentation extends IdentifiedElement, DModelElement, DRefr
      * @generated
      */
     EList<DRepresentationElement> getRepresentationElements();
+
+    /**
+     * Returns the value of the '<em><b>Name</b></em>' attribute. The default value is <code>""</code>. <!--
+     * begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc --> The name of the representation. <!--
+     * end-model-doc -->
+     *
+     * @return the value of the '<em>Name</em>' attribute.
+     * @see #setName(String)
+     * @see org.eclipse.sirius.viewpoint.ViewpointPackage#getDRepresentation_Name()
+     * @model default=""
+     * @generated
+     */
+    String getName();
+
+    /**
+     * Sets the value of the '{@link org.eclipse.sirius.viewpoint.DRepresentation#getName <em>Name</em>}' attribute.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @param value
+     *            the new value of the '<em>Name</em>' attribute.
+     * @see #getName()
+     * @generated
+     */
+    void setName(String value);
 
     /**
      * Returns the value of the '<em><b>Owned Annotation Entries</b></em>' containment reference list. The list contents

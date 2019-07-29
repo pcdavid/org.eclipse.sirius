@@ -36,9 +36,8 @@ import org.eclipse.sirius.business.api.helper.task.AbstractCommandTask;
 import org.eclipse.sirius.business.api.query.EObjectQuery;
 import org.eclipse.sirius.business.api.query.RepresentationDescriptionQuery;
 import org.eclipse.sirius.business.api.query.ViewpointQuery;
+import org.eclipse.sirius.business.api.session.CustomDataConstants;
 import org.eclipse.sirius.business.api.session.Session;
-import org.eclipse.sirius.business.internal.query.DRepresentationDescriptorInternalHelper;
-import org.eclipse.sirius.business.internal.session.danalysis.DAnalysisSessionImpl;
 import org.eclipse.sirius.common.tools.api.interpreter.EvaluationException;
 import org.eclipse.sirius.common.tools.api.interpreter.IInterpreter;
 import org.eclipse.sirius.common.tools.api.util.StringUtil;
@@ -189,12 +188,12 @@ public abstract class AbstractRepresentationDialectServices implements DialectSe
     }
 
     @Override
-    public DRepresentation copyRepresentation(final DRepresentationDescriptor representationDescriptor, final String name, final Session session, final IProgressMonitor monitor) {
+    public DRepresentation copyRepresentation(final DRepresentation representation, final String name, final Session session, final IProgressMonitor monitor) {
         // Copy the representation and get new uid values for copies.
-        DRepresentation newRepresentation = SiriusCopierHelper.copyWithNoUidDuplication(representationDescriptor.getRepresentation());
+        DRepresentation newRepresentation = SiriusCopierHelper.copyWithNoUidDuplication(representation);
 
         /* Set the correct name */
-        representationDescriptor.setName(name);
+        newRepresentation.setName(name);
         return newRepresentation;
     }
 
@@ -221,6 +220,9 @@ public abstract class AbstractRepresentationDialectServices implements DialectSe
         return false;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRepresentation createRepresentation(String name, EObject semantic, RepresentationDescription description, Session session, IProgressMonitor monitor) {
         DRepresentation representation = null;
@@ -228,7 +230,7 @@ public abstract class AbstractRepresentationDialectServices implements DialectSe
             monitor.beginTask(MessageFormat.format(Messages.AbstractRepresentationDialectServices_createRepresentationMsg, name), 2);
             representation = createRepresentation(name, semantic, description, new SubProgressMonitor(monitor, 1));
             if (representation != null) {
-                DRepresentationDescriptorInternalHelper.createDRepresentationDescriptor(representation, (DAnalysisSessionImpl) session, semantic.eResource(), name);
+                session.getServices().putCustomData(CustomDataConstants.DREPRESENTATION, semantic, representation);
             }
             monitor.worked(1);
         } finally {

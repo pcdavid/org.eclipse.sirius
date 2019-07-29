@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2011, 2019 THALES GLOBAL SERVICES and others.
+ * Copyright (c) 2011, 2015 THALES GLOBAL SERVICES and others.
  * This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
  * which accompanies this distribution, and is available at
@@ -42,7 +42,6 @@ import org.eclipse.sirius.ui.business.api.dialect.DialectUIManager;
 import org.eclipse.sirius.ui.business.api.viewpoint.ViewpointSelectionCallback;
 import org.eclipse.sirius.ui.business.internal.commands.ChangeViewpointSelectionCommand;
 import org.eclipse.sirius.viewpoint.DRepresentation;
-import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
 import org.eclipse.sirius.viewpoint.description.Viewpoint;
 import org.eclipse.sirius.viewpoint.provider.Messages;
@@ -289,10 +288,10 @@ public class UserSession {
     }
 
     private DRepresentation findRepresentationByName(String name) {
-        Collection<DRepresentationDescriptor> allRepresentationDescriptors = DialectManager.INSTANCE.getAllRepresentationDescriptors(session);
-        for (DRepresentationDescriptor representationDescriptor : allRepresentationDescriptors) {
-            if (representationDescriptor.getName().equals(name)) {
-                return representationDescriptor.getRepresentation();
+        Collection<DRepresentation> allRepresentation = DialectManager.INSTANCE.getAllRepresentations(session);
+        for (DRepresentation representation : allRepresentation) {
+            if (representation.getName().equals(name)) {
+                return representation;
             }
         }
         return null;

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2010, 2019 THALES GLOBAL SERVICES.
+ * Copyright (c) 2010, 2014 THALES GLOBAL SERVICES.
  * This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
  * which accompanies this distribution, and is available at
@@ -19,7 +19,6 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.sirius.business.api.preferences.SiriusPreferencesKeys;
-import org.eclipse.sirius.business.api.query.DRepresentationQuery;
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.DDiagramElement;
 import org.eclipse.sirius.diagram.DEdge;
@@ -81,7 +80,7 @@ public class RepairOnLabelHiddenTest extends AbstractRepairMigrateTest {
         Iterator<DDiagram> filter = Iterators.filter(representationsResource.getAllContents(), DDiagram.class);
         assertTrue("It miss a DDiagram in the aird resource", filter.hasNext());
         DDiagram dDiagram = filter.next();
-        assertEquals(DIAGRAM_NAME, new DRepresentationQuery(dDiagram).getRepresentationDescriptor().getName());
+        assertEquals(DIAGRAM_NAME, dDiagram.getName());
         assertEquals("The DDiagram " + DIAGRAM_NAME + " after repair should always contains 12 DDiagramElements", 12, Iterators.size(Iterators.filter(dDiagram.eAllContents(), DDiagramElement.class)));
 
         DDiagramElement dDiagramElementOfP1 = dDiagram.getOwnedDiagramElements().get(3);
@@ -117,7 +116,7 @@ public class RepairOnLabelHiddenTest extends AbstractRepairMigrateTest {
         // Check second diagram
         assertTrue("It miss a DDiagram in the aird resource", filter.hasNext());
         DDiagram dDiagramBis = filter.next();
-        assertEquals(DIAGRAM_BIS_NAME, new DRepresentationQuery(dDiagramBis).getRepresentationDescriptor().getName());
+        assertEquals(DIAGRAM_BIS_NAME, dDiagramBis.getName());
         assertEquals("The DDiagram " + DIAGRAM_BIS_NAME + " after repair should always contains 12 DDiagramElements", 12,
                 Iterators.size(Iterators.filter(dDiagramBis.eAllContents(), DDiagramElement.class)));
 

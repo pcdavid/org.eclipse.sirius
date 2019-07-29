@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2010, 2019 THALES GLOBAL SERVICES.
+ * Copyright (c) 2010, 2014 THALES GLOBAL SERVICES.
  * This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
  * which accompanies this distribution, and is available at
@@ -32,7 +32,6 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.ITreeSelection;
-import org.eclipse.sirius.business.api.query.DRepresentationQuery;
 import org.eclipse.sirius.diagram.ui.tools.api.editor.DDiagramEditor;
 import org.eclipse.sirius.ecore.extender.tool.api.ModelUtils;
 import org.eclipse.sirius.tests.support.api.SiriusDiagramTestCase;
@@ -560,7 +559,7 @@ public class GoToMarkerTests extends SiriusDiagramTestCase implements Traceabili
             if (part instanceof IEditingDomainProvider) {
                 domainProvider = (IEditingDomainProvider) part;
             } else {
-                domainProvider = part.getAdapter(IEditingDomainProvider.class);
+                domainProvider = (IEditingDomainProvider) part.getAdapter(IEditingDomainProvider.class);
             }
 
             if (domainProvider != null) {
@@ -593,8 +592,8 @@ public class GoToMarkerTests extends SiriusDiagramTestCase implements Traceabili
 
     private DRepresentation getRepresentationWithName(String type, String diagramName) {
         for (final DRepresentation representation : getRepresentations(type)) {
-            if (new DRepresentationQuery(representation).getRepresentationDescriptor().getName().equals(diagramName)) {
-                return representation;
+            if (representation.getName().equals(diagramName)) {
+                return (DRepresentation) representation;
             }
         }
         throw new IllegalArgumentException("Representation with diagram name :" + diagramName + "could not be found.");
@@ -618,7 +617,7 @@ public class GoToMarkerTests extends SiriusDiagramTestCase implements Traceabili
      */
     protected void setUpMarker(String representationType, String representationName, String semanticElementName, boolean openEditor) {
 
-        originalRepresentation = getRepresentationWithName(representationType, representationName);
+        originalRepresentation = (DRepresentation) getRepresentationWithName(representationType, representationName);
         if (openEditor) {
             originalEditor = (DialectEditor) DialectUIManager.INSTANCE.openEditor(session, originalRepresentation, new NullProgressMonitor());
             TestsUtil.synchronizationWithUIThread();
