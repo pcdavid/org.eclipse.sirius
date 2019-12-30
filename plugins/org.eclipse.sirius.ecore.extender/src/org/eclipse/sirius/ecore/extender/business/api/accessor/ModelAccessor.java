@@ -16,6 +16,7 @@ import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.function.Predicate;
 
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
@@ -31,7 +32,6 @@ import org.eclipse.sirius.ecore.extender.business.api.permission.PermissionAutho
 import org.eclipse.sirius.ecore.extender.business.api.permission.exception.LockedInstanceException;
 import org.eclipse.sirius.ecore.extender.business.internal.Messages;
 import org.eclipse.sirius.ecore.extender.business.internal.permission.PermissionService;
-import org.eclipse.sirius.ext.emf.EReferencePredicate;
 
 /**
  * This class is the common layer to access emf models. You may want to use it
@@ -432,7 +432,7 @@ public class ModelAccessor {
      *            during deletion or not (can be null if all references should
      *            be considered)
      */
-    public void eDelete(EObject objectToRemove, ECrossReferenceAdapter xref, EReferencePredicate isReferencesToIgnorePredicate) {
+    public void eDelete(EObject objectToRemove, ECrossReferenceAdapter xref, Predicate<EReference> isReferencesToIgnorePredicate) {
         eDelete(objectToRemove, xref, isReferencesToIgnorePredicate, true);
     }
 
@@ -458,7 +458,7 @@ public class ModelAccessor {
      *            can be deleted and leave the not changeable features
      *            unchanged.
      */
-    private void eDelete(EObject objectToRemove, ECrossReferenceAdapter xref, EReferencePredicate isReferencesToIgnorePredicate, boolean simpleRemoveShouldBePerformedIfDanglingReferenceIsNotChangeable) {
+    private void eDelete(EObject objectToRemove, ECrossReferenceAdapter xref, Predicate<EReference> isReferencesToIgnorePredicate, boolean simpleRemoveShouldBePerformedIfDanglingReferenceIsNotChangeable) {
         // Step 1: getting cross referencer for the adapters of the object to
         // remove (if needed)
         final ECrossReferenceAdapter effectiveXRef;
@@ -538,7 +538,7 @@ public class ModelAccessor {
      * @return a Collection of impacted {@link EObject objects} of this inverse
      *         cross references removal
      */
-    public Collection<EObject> eRemoveInverseCrossReferences(EObject eObject, ECrossReferenceAdapter xref, EReferencePredicate isReferencesToIgnorePredicate) {
+    public Collection<EObject> eRemoveInverseCrossReferences(EObject eObject, ECrossReferenceAdapter xref, Predicate<EReference> isReferencesToIgnorePredicate) {
         // Step 1: getting cross referencer for the adapters of the object to
         // remove (if needed)
         final ECrossReferenceAdapter effectiveXRef;
@@ -570,7 +570,7 @@ public class ModelAccessor {
      *            a predicate indicating if a given reference should be ignored
      *            during deletion or not
      */
-    private boolean allReferencesCanBeEdited(final EObject target, final ECrossReferenceAdapter xref, EReferencePredicate isReferencesToIgnorePredicate) {
+    private boolean allReferencesCanBeEdited(final EObject target, final ECrossReferenceAdapter xref, Predicate<EReference> isReferencesToIgnorePredicate) {
         boolean allReferencesCanBeEdited = true;
         if (xref != null) {
             final Collection<Setting> refs = xref.getInverseReferences(target, true);
@@ -581,7 +581,7 @@ public class ModelAccessor {
                 // can be deleted
                 // Check 1: if the containing type of the reference is a type to
                 // ignore, we consider that we can delete it
-                boolean isFeatureToIgnore = isReferencesToIgnorePredicate != null && feature instanceof EReference && isReferencesToIgnorePredicate.apply((EReference) feature);
+                boolean isFeatureToIgnore = isReferencesToIgnorePredicate != null && feature instanceof EReference && isReferencesToIgnorePredicate.test((EReference) feature);
 
                 if (!isFeatureToIgnore) {
                     // Check 2: we first check if the reference is changeable

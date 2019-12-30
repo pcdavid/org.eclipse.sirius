@@ -16,10 +16,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.LinkedHashSet;
 import java.util.Set;
+import java.util.Spliterators;
+import java.util.stream.StreamSupport;
 
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.SubProgressMonitor;
+import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -35,9 +39,7 @@ import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
 import org.eclipse.sirius.viewpoint.Messages;
 import org.eclipse.sirius.viewpoint.SiriusPlugin;
 
-import com.google.common.collect.Iterables;
 import com.google.common.collect.Iterators;
-import com.google.common.collect.Sets;
 
 /**
  * An extension of the basic {@link UncontrolCommand} to handle both the
@@ -156,7 +158,8 @@ public class SiriusUncontrolCommand extends UncontrolCommand {
     }
 
     private boolean airdResourceHasNoRepresentations(final Resource childAirdResource) {
-        return Iterators.size(Iterators.filter(EcoreUtil.getAllProperContents(childAirdResource, true), DRepresentation.class)) == 0;
+        TreeIterator<Object> airdContents = EcoreUtil.getAllProperContents(childAirdResource, true);
+        return StreamSupport.stream(Spliterators.spliteratorUnknownSize(airdContents, 0), false).anyMatch(DRepresentation.class::isInstance);
     }
 
     private Resource getChildAirdResource() {
@@ -177,11 +180,10 @@ public class SiriusUncontrolCommand extends UncontrolCommand {
      * @return the corresponding resource if found, false otherwise.
      */
     protected Resource getAirdResourceWithAnalysisOn(final EObject object) {
-
         for (final Resource anResource : session.getAllSessionResources()) {
             for (final DAnalysis analysis : getAnalyses(anResource)) {
                 Set<EObject> releventModels = new DAnalysisQuery(analysis).getMainModels();
-                if (Iterables.contains(releventModels, object)) {
+                if (releventModels.contains(object)) {
                     return anResource;
                 }
             }
@@ -235,7 +237,7 @@ public class SiriusUncontrolCommand extends UncontrolCommand {
     }
 
     private Collection<DRepresentationDescriptor> collectExistingRepresentations(final Resource resource) {
-        return Sets.newHashSet(Iterators.filter(EcoreUtil.getAllProperContents(resource, true), DRepresentationDescriptor.class));
+        return new LinkedHashSet<>(Iterators.filter(EcoreUtil.getAllProperContents(resource, true), DRepresentationDescriptor.class));
     }
 
     private void markContainerResourceAsModified(final EObject obj) {

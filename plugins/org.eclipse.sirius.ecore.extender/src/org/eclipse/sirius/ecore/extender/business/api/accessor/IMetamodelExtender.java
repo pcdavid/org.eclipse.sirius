@@ -14,11 +14,12 @@ package org.eclipse.sirius.ecore.extender.business.api.accessor;
 
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.function.Predicate;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
-import org.eclipse.sirius.ext.emf.EReferencePredicate;
 
 /**
  * This Interface defines a metamodel extender. An extender add new information
@@ -262,7 +263,7 @@ public interface IMetamodelExtender {
      *            be considered)
      * @return the deleted instance or null if it was not able to delete it.
      */
-    EObject eDelete(EObject objectToRemove, ECrossReferenceAdapter xref, EReferencePredicate isReferencesToIgnorePredicate);
+    EObject eDelete(EObject objectToRemove, ECrossReferenceAdapter xref, Predicate<EReference> isReferencesToIgnorePredicate);
 
     /**
      * Remove inverse cross references of the specified {@link EObject}. This
@@ -286,7 +287,7 @@ public interface IMetamodelExtender {
      * @return a Collection of impacted {@link EObject objects} of this inverse
      *         cross references removal
      */
-    Collection<EObject> eRemoveInverseCrossReferences(EObject eObject, ECrossReferenceAdapter xref, EReferencePredicate isReferencesToIgnorePredicate);
+    Collection<EObject> eRemoveInverseCrossReferences(EObject eObject, ECrossReferenceAdapter xref, Predicate<EReference> isReferencesToIgnorePredicate);
 
     /**
      * Return true if the given instance comes from a metamodel extension

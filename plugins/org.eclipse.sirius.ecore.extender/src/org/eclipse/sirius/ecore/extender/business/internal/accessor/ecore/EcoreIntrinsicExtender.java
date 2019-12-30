@@ -17,6 +17,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
+import java.util.function.Predicate;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
@@ -37,7 +38,6 @@ import org.eclipse.sirius.ecore.extender.business.api.accessor.AbstractMetamodel
 import org.eclipse.sirius.ecore.extender.business.api.accessor.EcoreMetamodelDescriptor;
 import org.eclipse.sirius.ecore.extender.business.api.accessor.ExtensionFeatureDescription;
 import org.eclipse.sirius.ecore.extender.business.api.accessor.MetamodelDescriptor;
-import org.eclipse.sirius.ext.emf.EReferencePredicate;
 
 import com.google.common.base.Predicates;
 import com.google.common.collect.HashMultimap;
@@ -151,7 +151,7 @@ public class EcoreIntrinsicExtender extends AbstractMetamodelExtender {
     }
 
     @Override
-    public EObject eDelete(EObject objectToRemove, ECrossReferenceAdapter xref, EReferencePredicate isReferencesToIgnorePredicate) {
+    public EObject eDelete(EObject objectToRemove, ECrossReferenceAdapter xref, Predicate<EReference> isReferencesToIgnorePredicate) {
         if (xref == null) {
             // If no cross referencer can be found,
             // we simply remove the element from its container
@@ -167,8 +167,8 @@ public class EcoreIntrinsicExtender extends AbstractMetamodelExtender {
     }
 
     @Override
-    public Collection<EObject> eRemoveInverseCrossReferences(EObject eObject, ECrossReferenceAdapter xref, EReferencePredicate isReferencesToIgnorePredicate) {
-        Collection<EObject> impactedEObjects = new LinkedHashSet<EObject>();
+    public Collection<EObject> eRemoveInverseCrossReferences(EObject eObject, ECrossReferenceAdapter xref, Predicate<EReference> isReferencesToIgnorePredicate) {
+        Collection<EObject> impactedEObjects = new LinkedHashSet<>();
         Collection<Setting> inverseReferences = xref.getInverseReferences(eObject, true);
         Collection<Setting> containmentReferences = getContainmentReferences(inverseReferences);
         Collection<Setting> otherReferences = getNonContainmentReferences(inverseReferences);
@@ -177,7 +177,7 @@ public class EcoreIntrinsicExtender extends AbstractMetamodelExtender {
             // If reference is changeable and should not be ignored
             boolean isChangeableFeature = setting.getEStructuralFeature().isChangeable();
             boolean isFeatureToIgnore = isReferencesToIgnorePredicate != null && setting.getEStructuralFeature() instanceof EReference
-                    && isReferencesToIgnorePredicate.apply((EReference) setting.getEStructuralFeature());
+                    && isReferencesToIgnorePredicate.test((EReference) setting.getEStructuralFeature());
 
             if (isChangeableFeature && !isFeatureToIgnore) {
                 // we delete it
@@ -190,7 +190,7 @@ public class EcoreIntrinsicExtender extends AbstractMetamodelExtender {
             // If reference is changeable and should not be ignored
             boolean isChangeableFeature = setting.getEStructuralFeature().isChangeable();
             boolean isFeatureToIgnore = isReferencesToIgnorePredicate != null && setting.getEStructuralFeature() instanceof EReference
-                    && isReferencesToIgnorePredicate.apply((EReference) setting.getEStructuralFeature());
+                    && isReferencesToIgnorePredicate.test((EReference) setting.getEStructuralFeature());
 
             if (isChangeableFeature && !isFeatureToIgnore) {
                 // we delete it

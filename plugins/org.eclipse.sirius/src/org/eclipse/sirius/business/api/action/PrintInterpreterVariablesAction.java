@@ -13,15 +13,15 @@
 package org.eclipse.sirius.business.api.action;
 
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.Map;
+import java.util.Optional;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.sirius.common.tools.api.interpreter.IInterpreter;
 import org.eclipse.sirius.tools.api.interpreter.InterpreterUtil;
-
-import com.google.common.collect.Ordering;
 
 /**
  * An action designed to help debugging VSMs by dumping on <code>stdout</code> all the variables accessible to model
@@ -72,7 +72,7 @@ public class PrintInterpreterVariablesAction extends AbstractExternalJavaAction 
     private SortedMap<String, Object> getSortedVariables(Collection<? extends EObject> selections) {
         EObject context = selections.iterator().next();
         IInterpreter interpreter = InterpreterUtil.getInterpreter(context);
-        SortedMap<String, Object> allVariables = new TreeMap<>(Ordering.natural());
+        SortedMap<String, Object> allVariables = new TreeMap<>(Comparator.naturalOrder());
         allVariables.putAll(interpreter.getVariables());
         allVariables.put("self", context); //$NON-NLS-1$
         return allVariables;
@@ -83,7 +83,8 @@ public class PrintInterpreterVariablesAction extends AbstractExternalJavaAction 
         if (allVariables.isEmpty()) {
             sb.append("[").append(title).append("] no variables available.\n"); //$NON-NLS-1$ //$NON-NLS-2$
         } else {
-            int maxLength = Ordering.natural().onResultOf(String::length).max(allVariables.keySet()).length();
+            Optional<String> longest = allVariables.keySet().stream().max(Comparator.comparing(String::length));
+            int maxLength = longest.get().length();
             sb.append("[").append(title).append("] variables available:\n"); //$NON-NLS-1$ //$NON-NLS-2$
             int i = 1;
             for (Map.Entry<String, Object> variable : allVariables.entrySet()) {

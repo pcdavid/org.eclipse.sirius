@@ -13,6 +13,7 @@
 package org.eclipse.sirius.common.acceleo.aql.ide.proposal;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedHashMap;
@@ -45,8 +46,6 @@ import org.eclipse.sirius.ecore.extender.business.api.accessor.EcoreMetamodelDes
 import org.eclipse.sirius.ecore.extender.business.api.accessor.MetamodelDescriptor;
 
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.Lists;
-import com.google.common.collect.Sets;
 
 /**
  * This implementation of the {@link IProposalProvider} interface will be used
@@ -93,7 +92,7 @@ public class AQLProposalProvider implements IProposalProvider {
         if (context.getInterpreterContext().getElement() != null) {
             Resource vsmResource = context.getInterpreterContext().getElement().eResource();
             if (vsmResource != null) {
-                interpreter.setProperty(IInterpreter.FILES, Lists.newArrayList(vsmResource.getURI().toPlatformString(true)));
+                interpreter.setProperty(IInterpreter.FILES, Arrays.asList(vsmResource.getURI().toPlatformString(true)));
             }
         }
         for (String imp : context.getInterpreterContext().getDependencies()) {
@@ -126,7 +125,7 @@ public class AQLProposalProvider implements IProposalProvider {
         /*
          * completionResult.sort(new ProposalComparator());
          */
-        final Set<ICompletionProposal> aqlProposals = Sets.newLinkedHashSet(completionResult.getProposals(QueryCompletion.createBasicFilter(completionResult)));
+        final Set<ICompletionProposal> aqlProposals = new LinkedHashSet<>(completionResult.getProposals(QueryCompletion.createBasicFilter(completionResult)));
 
         for (ICompletionProposal propFromAQL : aqlProposals) {
             int offset = trimmer.getPositionInExpression(completionResult.getReplacementOffset());

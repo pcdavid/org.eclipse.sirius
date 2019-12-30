@@ -19,8 +19,7 @@ import org.eclipse.sirius.tools.api.ui.IExternalJavaAction;
 import org.eclipse.sirius.viewpoint.Messages;
 
 /**
- * Abstract base class for {@link IExternalJavaAction} implementations, with
- * helper methods to deal with parameters.
+ * Abstract base class for {@link IExternalJavaAction} implementations, with helper methods to deal with parameters.
  * 
  * @author pcdavid
  */
@@ -37,11 +36,9 @@ public abstract class AbstractExternalJavaAction implements IExternalJavaAction 
      *            the name of the parameter.
      * @param type
      *            the expected type of the parameter.
-     * @return the value of the named parameter, if it is present and of an
-     *         appropriate (compatible) type.
+     * @return the value of the named parameter, if it is present and of an appropriate (compatible) type.
      * @throws IllegalArgumentException
-     *             if the parameter is missing or is not type-compatible with
-     *             the expected type.
+     *             if the parameter is missing or is not type-compatible with the expected type.
      */
     protected <T> T getParameter(Map<String, Object> parameters, String name, Class<T> type) {
         return getParameter(parameters, name, type, true);
@@ -58,15 +55,27 @@ public abstract class AbstractExternalJavaAction implements IExternalJavaAction 
      *            the name of the parameter.
      * @param type
      *            the expected type of the parameter.
-     * @return the value of the named parameter, if it is present and of an
-     *         appropriate (compatible) type, or <code>null</code> if no
-     *         parameter with the specified name is available.
+     * @return the value of the named parameter, if it is present and of an appropriate (compatible) type, or
+     *         <code>null</code> if no parameter with the specified name is available.
      * @throws IllegalArgumentException
-     *             if the parameter is present but is not type-compatible with
-     *             the expected type.
+     *             if the parameter is present but is not type-compatible with the expected type.
      */
     protected <T> T getOptionalParameter(Map<String, Object> parameters, String name, Class<T> type) {
         return getParameter(parameters, name, type, false);
+    }
+
+    /**
+     * Helper to check if the arguments passed to the action are valid, or throw an exception otherwise.
+     * 
+     * @param condition
+     *            the condition on the arguments that should be true.
+     * @param message
+     *            the error message to use of the condition does not hold.
+     */
+    protected void checkArgument(boolean condition, String message) {
+        if (!condition) {
+            throw new IllegalArgumentException(message);
+        }
     }
 
     private <T> T getParameter(Map<String, Object> parameters, String name, Class<T> type, boolean required) {

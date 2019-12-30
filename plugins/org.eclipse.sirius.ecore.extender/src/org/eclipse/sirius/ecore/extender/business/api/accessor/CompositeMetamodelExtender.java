@@ -22,12 +22,11 @@ import java.util.List;
 import org.eclipse.emf.common.util.AbstractTreeIterator;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.sirius.ecore.extender.business.internal.common.ExtenderDescriptor;
-import org.eclipse.sirius.ext.emf.EReferencePredicate;
 
-import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Iterators;
 
@@ -224,7 +223,7 @@ public class CompositeMetamodelExtender extends AbstractMetamodelExtender {
     }
 
     @Override
-    public EObject eDelete(EObject objectToRemove, ECrossReferenceAdapter xref, EReferencePredicate isReferencesToIgnorePredicate) {
+    public EObject eDelete(EObject objectToRemove, ECrossReferenceAdapter xref, java.util.function.Predicate<EReference> isReferencesToIgnorePredicate) {
         EObject result = null;
         /*
          * we want every extender to be notified when an instance should be
@@ -237,8 +236,8 @@ public class CompositeMetamodelExtender extends AbstractMetamodelExtender {
     }
 
     @Override
-    public Collection<EObject> eRemoveInverseCrossReferences(EObject eObject, ECrossReferenceAdapter xref, EReferencePredicate isReferencesToIgnorePredicate) {
-        Collection<EObject> impactedEObjects = new LinkedHashSet<EObject>();
+    public Collection<EObject> eRemoveInverseCrossReferences(EObject eObject, ECrossReferenceAdapter xref, java.util.function.Predicate<EReference> isReferencesToIgnorePredicate) {
+        Collection<EObject> impactedEObjects = new LinkedHashSet<>();
         for (final IMetamodelExtender extender : getActivatedExtenders()) {
             impactedEObjects.addAll(extender.eRemoveInverseCrossReferences(eObject, xref, isReferencesToIgnorePredicate));
         }
@@ -477,12 +476,7 @@ public class CompositeMetamodelExtender extends AbstractMetamodelExtender {
      */
     protected synchronized Iterable<IMetamodelExtender> getActivatedExtenders() {
         if (activeExtenders == null) {
-            activeExtenders = Iterables.filter(extenders, new Predicate<IMetamodelExtender>() {
-                @Override
-                public boolean apply(IMetamodelExtender extender) {
-                    return extender.isActive();
-                }
-            });
+            activeExtenders = Iterables.filter(extenders, IMetamodelExtender::isActive);
         }
         return activeExtenders;
     }

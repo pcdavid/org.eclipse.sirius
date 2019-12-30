@@ -17,6 +17,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.function.Predicate;
 
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
@@ -27,10 +28,6 @@ import org.eclipse.emf.ecore.resource.impl.ResourceImpl;
 import org.eclipse.sirius.ecore.extender.business.api.permission.IPermissionAuthority;
 import org.eclipse.sirius.ecore.extender.business.api.permission.PermissionAuthorityRegistry;
 import org.eclipse.sirius.ecore.extender.business.internal.Messages;
-import org.eclipse.sirius.ext.emf.EReferencePredicate;
-
-import com.google.common.base.Predicate;
-import com.google.common.collect.Iterators;
 
 /**
  * Class responsible for resolving some references.
@@ -40,9 +37,9 @@ import com.google.common.collect.Iterators;
  */
 public class ReferencesResolver {
 
-    private Predicate<EReference> filter;
+    private final Predicate<EReference> filter;
 
-    private ResourceSet set;
+    private final ResourceSet set;
 
     /**
      * Create a new references resolver.
@@ -52,13 +49,8 @@ public class ReferencesResolver {
      * @param set
      *            resource set to resolve.
      */
-    public ReferencesResolver(ResourceSet set, final EReferencePredicate filter) {
-        this.filter = new Predicate<EReference>() {
-            @Override
-            public boolean apply(EReference input) {
-                return filter.apply(input);
-            }
-        };
+    public ReferencesResolver(ResourceSet set, Predicate<EReference> filter) {
+        this.filter = filter;
         this.set = set;
     }
 
@@ -97,9 +89,10 @@ public class ReferencesResolver {
     }
 
     private void resolveCrossReferences(EObject eObject) {
-        Iterator<EReference> it = Iterators.filter(eObject.eClass().getEAllReferences().iterator(), filter);
-        while (it.hasNext()) {
-            eObject.eGet(it.next());
+        for (EReference ref : eObject.eClass().getEAllReferences()) {
+            if (filter.test(ref)) {
+                eObject.eGet(ref);
+            }
         }
     }
 
@@ -116,7 +109,7 @@ public class ReferencesResolver {
         if (authority != null) {
             authority.setListening(false);
         }
-        final List<Resource> cachedIdsResources = new LinkedList<Resource>();
+        List<Resource> cachedIdsResources = new LinkedList<>();
         Iterator<Resource> iterResources = set.getResources().iterator();
         while (iterResources.hasNext()) {
             final Resource resource = iterResources.next();

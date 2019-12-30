@@ -13,6 +13,7 @@
  */
 package org.eclipse.sirius.viewpoint.impl;
 
+import java.util.Arrays;
 import java.util.Iterator;
 
 import org.eclipse.emf.ecore.EClass;
@@ -49,8 +50,6 @@ import org.eclipse.sirius.viewpoint.ToolSectionInstance;
 import org.eclipse.sirius.viewpoint.UIState;
 import org.eclipse.sirius.viewpoint.ViewpointFactory;
 import org.eclipse.sirius.viewpoint.ViewpointPackage;
-
-import com.google.common.base.Splitter;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
@@ -468,7 +467,7 @@ public class ViewpointFactoryImpl extends EFactoryImpl implements ViewpointFacto
         int g = 0;
         int b = 0;
         if (!StringUtil.isEmpty(initialValue)) {
-            Iterator<String> it = Splitter.on(',').split(initialValue).iterator();
+            Iterator<String> it = Arrays.asList(initialValue.split(",")).iterator(); //$NON-NLS-1$
             if (it.hasNext()) {
                 r = toInt(it.next());
             }
