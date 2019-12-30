@@ -202,7 +202,7 @@ public class EcoreIntrinsicExtender extends AbstractMetamodelExtender {
     }
 
     private Collection<Setting> getContainmentReferences(Collection<Setting> inverseReferences) {
-        Collection<Setting> containmentReferences = new ArrayList<EStructuralFeature.Setting>();
+        Collection<Setting> containmentReferences = new ArrayList<>();
         for (EStructuralFeature.Setting setting : inverseReferences) {
             EStructuralFeature eStructuralFeature = setting.getEStructuralFeature();
             if (eStructuralFeature instanceof EReference) {
@@ -216,7 +216,7 @@ public class EcoreIntrinsicExtender extends AbstractMetamodelExtender {
     }
 
     private Collection<Setting> getNonContainmentReferences(Collection<Setting> inverseReferences) {
-        Collection<Setting> containmentReferences = new ArrayList<EStructuralFeature.Setting>();
+        Collection<Setting> containmentReferences = new ArrayList<>();
         for (EStructuralFeature.Setting setting : inverseReferences) {
             EStructuralFeature eStructuralFeature = setting.getEStructuralFeature();
             if (eStructuralFeature instanceof EReference) {
@@ -346,7 +346,7 @@ public class EcoreIntrinsicExtender extends AbstractMetamodelExtender {
 
     @Override
     public Iterator<String> getContributedAttributeNames(final EObject next) {
-        final Collection<String> attributeNames = new ArrayList<String>();
+        final Collection<String> attributeNames = new ArrayList<>();
         final Iterator<EAttribute> it = next.eClass().getEAllAttributes().iterator();
         while (it.hasNext()) {
             final EAttribute attr = it.next();
@@ -357,7 +357,7 @@ public class EcoreIntrinsicExtender extends AbstractMetamodelExtender {
 
     @Override
     public Iterator<String> getContributedReferenceNames(final EObject instance) {
-        final Collection<String> referencesNames = new ArrayList<String>();
+        final Collection<String> referencesNames = new ArrayList<>();
         final Iterator<EReference> it = instance.eClass().getEAllReferences().iterator();
         while (it.hasNext()) {
             final EReference ref = it.next();

@@ -360,7 +360,7 @@ public class AQLSiriusInterpreter extends AcceleoAbstractInterpreter implements 
     public Collection<Method> getImplementation(String serviceCall) {
         javaExtensions.reloadIfNeeded();
         Set<org.eclipse.acceleo.query.runtime.IService> registeredServices = queryEnvironment.getLookupEngine().getRegisteredServices();
-        List<Method> results = new ArrayList<Method>();
+        List<Method> results = new ArrayList<>();
         registeredServices.iterator().forEachRemaining(s -> {
             if (s instanceof JavaMethodService) {
                 results.add(((JavaMethodService) s).getMethod());

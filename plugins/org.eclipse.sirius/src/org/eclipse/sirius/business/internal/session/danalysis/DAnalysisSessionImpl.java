@@ -419,6 +419,7 @@ public class DAnalysisSessionImpl extends DAnalysisSessionEObjectImpl implements
         this.interpreter.setProperty(IInterpreter.FILES, null);
         this.interpreter.setProperty(IInterpreter.FILES, filePaths);
         InterpreterRegistry.prepareImportsFromSession(this.interpreter, this);
+
     }
 
     // *******************
