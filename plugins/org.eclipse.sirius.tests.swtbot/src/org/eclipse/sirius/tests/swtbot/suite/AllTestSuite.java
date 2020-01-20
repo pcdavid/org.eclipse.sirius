@@ -133,10 +133,18 @@ public class AllTestSuite extends TestCase {
                 fail("The class " + testClassQualifiedName + ", to launch for test specific case, has not been found.");
             }
         } else {
-            addPart1(suite);
-            addPart2(suite);
+            addFailingTests(suite);
+//            addPart1(suite);
+//            addPart2(suite);
         }
         return suite;
+    }
+    
+    private static void addFailingTests(TestSuite suite) {
+        suite.addTestSuite(MetamodelPropertyTabTests.class);
+        suite.addTestSuite(CellEditorExtensionTest.class);
+        suite.addTestSuite(EdgeOnFigureWithAlphaAnchorTest.class);
+        suite.addTestSuite(ArrangeAllLinkedBorderedNodesLayoutStabilityTest.class);
     }
 
     /**
