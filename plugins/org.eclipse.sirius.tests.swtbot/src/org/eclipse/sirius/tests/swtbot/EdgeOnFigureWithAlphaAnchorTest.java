@@ -248,7 +248,11 @@ public class EdgeOnFigureWithAlphaAnchorTest extends AbstractSiriusSwtBotGefTest
 
             // Select the edge and move it
             editor.select(referenceEditPartBot);
+            takeScreenshot("-before-drag");
+            System.out.println("Dragging originalPoint = " + originalPoint + " to targetPoint = " +targetPoint);
             editor.drag(originalPoint, targetPoint);
+            SWTBotUtils.waitAllUiEvents();
+            takeScreenshot("-after-drag");
 
             // Check that the edge has been moved
             referenceEditPartBot = editor.getEditPart(EREFERENCE_TO_C2, AbstractConnectionEditPart.class);
@@ -263,6 +267,7 @@ public class EdgeOnFigureWithAlphaAnchorTest extends AbstractSiriusSwtBotGefTest
                 editor.zoom(ZoomLevel.ZOOM_100);
                 SWTBotUtils.waitAllUiEvents();
             }
+            takeScreenshot("-zoomed-out");
             // Check edge extremities
             if (isSource) {
                 checkEdgeExtremitiesLocation(EREFERENCE_TO_C2, ECLASS_PROVIDED, ECLASS_ELLIPSE, false, true);
