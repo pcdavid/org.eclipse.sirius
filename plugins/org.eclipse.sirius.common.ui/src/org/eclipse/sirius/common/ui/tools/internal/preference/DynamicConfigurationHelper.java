@@ -125,7 +125,7 @@ public class DynamicConfigurationHelper implements IPropertyChangeListener {
         store.removePropertyChangeListener(this);
     }
 
-    private void setInt(String field, int value) throws IllegalArgumentException {
+    private void setInt(String field, int value) {
         Field f = getAccessibleField(this.getClass(), field);
         try {
             f.setInt(this, value);
@@ -136,7 +136,7 @@ public class DynamicConfigurationHelper implements IPropertyChangeListener {
         }
     }
 
-    private void setBoolean(String field, boolean value) throws IllegalArgumentException {
+    private void setBoolean(String field, boolean value) {
         Field f = getAccessibleField(this.getClass(), field);
         try {
             f.setBoolean(this, value);
@@ -147,7 +147,7 @@ public class DynamicConfigurationHelper implements IPropertyChangeListener {
         }
     }
 
-    private void setString(String field, String value) throws IllegalArgumentException {
+    private void setString(String field, String value) {
         Field f = getAccessibleField(this.getClass(), field);
         try {
             f.set(this, value);
@@ -177,7 +177,7 @@ public class DynamicConfigurationHelper implements IPropertyChangeListener {
         if (result != null) {
             return result;
         } else {
-            throw new IllegalArgumentException(MessageFormat.format(Messages.DynamicConfigurationHelper_unknownField, fieldName, klass.getName()));
+            throw new IllegalArgumentException(MessageFormat.format(Messages.DynamicConfigurationHelper_unknownField, fieldName, klass != null ? klass.getName() : "")); //$NON-NLS-1$
         }
     }
 }
