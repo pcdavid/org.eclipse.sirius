@@ -131,7 +131,7 @@ public class SiriusMessageDialogWithToggle extends MessageDialogWithToggle {
             // get the JFace button ID that matches the label, or use the
             // specified
             // id if there is no match.
-            int id = mapButtonLabelToButtonID(label, suggestedId);
+            int id = getButtonIdFromLabel(label, suggestedId);
 
             // if the suggested id was used, increment the default for next use
             if (id == suggestedId) {
@@ -158,7 +158,7 @@ public class SiriusMessageDialogWithToggle extends MessageDialogWithToggle {
      * @return the id for the specified button label
      */
     // CHECKSTYLE:OFF
-    private int mapButtonLabelToButtonID(String buttonLabel, int defaultId) {
+    private int getButtonIdFromLabel(String buttonLabel, int defaultId) {
         // CHECKSTYLE:OON
         // Not pretty but does the job...
         if (IDialogConstants.OK_LABEL.equals(buttonLabel)) {
