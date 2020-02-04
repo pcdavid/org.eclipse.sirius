@@ -57,9 +57,6 @@ public class FormatHelperImpl implements FormatHelper {
             this.configuration = configuration;
         }
 
-        /**
-         * {@inheritDoc}
-         */
         @Override
         public String getMessage() {
             return MessageFormat.format(Messages.FormatHelperImpl_formatDifferenceMessage, configuration, elementToString(leftElement), elementToString(rightElement));
@@ -75,34 +72,22 @@ public class FormatHelperImpl implements FormatHelper {
             return elementToString;
         }
 
-        /**
-         * {@inheritDoc}
-         */
         @Override
         public T getLeftElement() {
             return leftElement;
         }
 
-        /**
-         * {@inheritDoc}
-         */
         @Override
         public T getRightElement() {
             return rightElement;
         }
 
-        /**
-         * {@inheritDoc}
-         */
         @Override
         public String toString() {
             return getMessage();
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public boolean haveSameLayout(final NodeFormatData nodeFormat1, final NodeFormatData nodeFormat2, final Configuration configuration) {
         return doHaveSameLayout(nodeFormat1, nodeFormat2, configuration) == null;
@@ -189,15 +174,12 @@ public class FormatHelperImpl implements FormatHelper {
      *         otherwise
      */
     private boolean isAroundPoint(Point expectedLocation, Point realLocation, double maxDistance) {
-        long dx = realLocation.getX() - expectedLocation.getX();
-        long dy = realLocation.getY() - expectedLocation.getY();
+        int dx = realLocation.getX() - expectedLocation.getX();
+        int dy = realLocation.getY() - expectedLocation.getY();
         long distance2 = dx * dx + dy * dy;
         return distance2 <= (maxDistance * maxDistance);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public FormatDifference<?> computeFirstFormatDifference(final Collection<? extends EObject> col1, final Collection<? extends EObject> col2, final Configuration configuration) {
 
@@ -234,17 +216,11 @@ public class FormatHelperImpl implements FormatHelper {
         return result;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public boolean haveSameLayout(final Collection<? extends EObject> col1, final Collection<? extends EObject> col2, final Configuration configuration) {
         return computeFirstFormatDifference(col1, col2, configuration) == null;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public boolean haveSameLayout(final EdgeFormatData edgeFormat1, final EdgeFormatData edgeFormat2, Configuration configuration) {
         return doHaveSameLayout(edgeFormat1, edgeFormat2, configuration) == null;

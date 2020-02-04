@@ -43,7 +43,9 @@ public final class EditingDomainFactoryService {
             result = new DefaultEditingDomainFactory();
         } else {
             EditingDomainFactoryDescriptor editingDomainFactoryDescriptor = getFirstMostOverrider(editingDomainFactoryDescriptors);
-            result = editingDomainFactoryDescriptor.getEditingDomainFactory();
+            if (editingDomainFactoryDescriptor != null) {
+                result = editingDomainFactoryDescriptor.getEditingDomainFactory();
+            }
         }
         return result;
     }
@@ -57,7 +59,7 @@ public final class EditingDomainFactoryService {
      * @return
      */
     private EditingDomainFactoryDescriptor getFirstMostOverrider(List<EditingDomainFactoryDescriptor> editingDomainFactoryDescriptors) {
-        ArrayList<String> overriddenEditingDomainFactoryIDs = new ArrayList<String>();
+        ArrayList<String> overriddenEditingDomainFactoryIDs = new ArrayList<>();
         EditingDomainFactoryDescriptor firstMostPriorityEditingDomainFactoryDescriptor = null;
         Iterator<EditingDomainFactoryDescriptor> descriptorsIterator = editingDomainFactoryDescriptors.iterator();
         while (descriptorsIterator.hasNext()) {

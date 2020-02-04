@@ -892,18 +892,16 @@ public class ElkDiagramLayoutConnector implements IDiagramLayoutConnector {
         // set the port's layout, relative to the node position
         Rectangle portBounds = getAbsoluteBounds(portEditPart.getFigure());
         Rectangle nodeBounds = getAbsoluteBounds(nodeEditPart.getFigure());
-        double xpos = portBounds.x - nodeBounds.x;
-        double ypos = portBounds.y - nodeBounds.y;
+        int xpos = portBounds.x - nodeBounds.x;
+        int ypos = portBounds.y - nodeBounds.y;
         port.setLocation(xpos, ypos);
         port.setDimensions(portBounds.width, portBounds.height);
 
         // Compute the border node offset from Sirius
         double borderNodeOffset = -IBorderItemOffsets.DEFAULT_OFFSET.preciseWidth();
         final EObject eObj = portEditPart.resolveSemanticElement();
-        if (eObj instanceof DDiagramElement) {
-            if (new DDiagramElementQuery((DDiagramElement) eObj).isIndirectlyCollapsed()) {
-                borderNodeOffset = -IBorderItemOffsets.COLLAPSE_FILTER_OFFSET.preciseWidth();
-            }
+        if (eObj instanceof DDiagramElement && new DDiagramElementQuery((DDiagramElement) eObj).isIndirectlyCollapsed()) {
+            borderNodeOffset = -IBorderItemOffsets.COLLAPSE_FILTER_OFFSET.preciseWidth();
         }
         port.setProperty(CoreOptions.PORT_BORDER_OFFSET, borderNodeOffset);
         // We would set the modified flag to false here, but that doesn't exist
@@ -936,7 +934,9 @@ public class ElkDiagramLayoutConnector implements IDiagramLayoutConnector {
 
                     // set the port label's layout
                     Rectangle labelBounds = getAbsoluteBounds(labelFigure);
-                    portLabel.setLocation(labelBounds.x - portBounds.x, labelBounds.y - portBounds.y);
+                    int labelx = labelBounds.x - portBounds.x;
+                    int labely = labelBounds.y - portBounds.y;
+                    portLabel.setLocation(labelx, labely);
                     try {
                         Dimension size = labelFigure.getPreferredSize();
                         portLabel.setDimensions(size.width, size.height);
@@ -1002,7 +1002,9 @@ public class ElkDiagramLayoutConnector implements IDiagramLayoutConnector {
             } else {
                 nodeBounds = getAbsoluteBounds(labelEditPart.getFigure());
             }
-            label.setLocation(labelBounds.x - nodeBounds.x, labelBounds.y - nodeBounds.y);
+            int labelx = labelBounds.x - nodeBounds.x;
+            int labely = labelBounds.y - nodeBounds.y;
+            label.setLocation(labelx, labely);
 
             try {
                 // We use the preferred size and not the labelBounds to "reset" previous manual wrapping size

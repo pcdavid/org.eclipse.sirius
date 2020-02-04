@@ -20,10 +20,10 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * The {@link CartesianProduct} is useful to browse all the lists combinations.
- * 
- * 
+ *
+ *
  * @author cbrun
- * 
+ *
  */
 public class CartesianProduct implements Iterable<EObjectCouple>, Iterator<EObjectCouple> {
 
@@ -39,7 +39,7 @@ public class CartesianProduct implements Iterable<EObjectCouple>, Iterator<EObje
 
     /**
      * Build an iterator providing a cartesian product of two collections.
-     * 
+     *
      * @param set1
      *            first set
      * @param set2
@@ -53,9 +53,7 @@ public class CartesianProduct implements Iterable<EObjectCouple>, Iterator<EObje
         this.ids = ids;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    @Override
     public boolean hasNext() {
         if (it2 == null && set2.size() == 0) {
             return false;
@@ -63,12 +61,10 @@ public class CartesianProduct implements Iterable<EObjectCouple>, Iterator<EObje
         return obj1 != null || it1.hasNext();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    @Override
     public EObjectCouple next() {
-        if (it1 != null || it2 == null && !it1.hasNext()) {
-            if (obj1 == null) {
+        if (it1 != null || ((it2 == null) && !it1.hasNext())) {
+            if (obj1 == null && it1 != null) {
                 obj1 = it1.next();
             }
             Object obj2 = null;
@@ -87,24 +83,19 @@ public class CartesianProduct implements Iterable<EObjectCouple>, Iterator<EObje
     }
 
     /**
-     * Remove the iterator value from the list. {@inheritDoc} throw
-     * UnsupportedOperationException
+     * Remove the iterator value from the list. {@inheritDoc} throw UnsupportedOperationException
      */
+    @Override
     public void remove() {
         throw new UnsupportedOperationException();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public String toString() {
         return "ProductIterator"; //$NON-NLS-1$
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    @Override
     public Iterator<EObjectCouple> iterator() {
         return this;
     }
