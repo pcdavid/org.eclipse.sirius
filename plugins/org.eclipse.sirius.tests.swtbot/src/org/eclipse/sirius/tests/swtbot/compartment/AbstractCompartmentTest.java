@@ -224,7 +224,8 @@ public abstract class AbstractCompartmentTest extends AbstractSiriusSwtBotGefTes
                 if (widthDelta == 0 && heightDelta == 0) {
                     assertEquals("Wrong Draw2D bounds for " + label, expectedFigureBounds, mainFigure.getBounds());
                 } else {
-                    assertEquals("Wrong Draw2D location for " + label, expectedFigureBounds.getLocation(), mainFigure.getBounds().getLocation());
+                    assertEquals("Wrong Draw2D x location for " + label, expectedFigureBounds.getLocation().x, mainFigure.getBounds().getLocation().x, widthDelta);
+                    assertEquals("Wrong Draw2D y location for " + label, expectedFigureBounds.getLocation().y, mainFigure.getBounds().getLocation().y);
                     assertEquals("Wrong Draw2D width for " + label, expectedFigureBounds.width(), mainFigure.getBounds().width(), widthDelta);
                     assertEquals("Wrong Draw2D height for " + label, expectedFigureBounds.height(), mainFigure.getBounds().height(), heightDelta);
                 }
