@@ -17,6 +17,10 @@ Contributors:
   <artifactId>rcpttTests</artifactId>
   <version>6.3.1-SNAPSHOT</version>
   <packaging>rcpttTest</packaging>
+  
+  <properties>
+      <rcptt.version>2.5.1</rcptt.version>
+  </properties>
 
   <pluginRepositories>
     <pluginRepository>
@@ -24,6 +28,7 @@ Contributors:
       <name>RCPTT Maven repository</name>
       <url>https://repo.eclipse.org/content/repositories/rcptt-releases/</url>
     </pluginRepository>
+    <!-- 
     <pluginRepository>
       <id>rcptt-snapshots</id>
       <name>RCPTT Maven Snapshots repository</name>
@@ -32,6 +37,7 @@ Contributors:
       </snapshots>
       <url>https://repo.eclipse.org/content/repositories/rcptt-snapshots/</url>
     </pluginRepository>
+     -->
   </pluginRepositories> 
 
   <build>
@@ -39,11 +45,11 @@ Contributors:
       <plugin>
         <groupId>org.eclipse.rcptt</groupId>
         <artifactId>rcptt-maven-plugin</artifactId>
-        <version>2.3.0</version>
+        <version>${rcptt.version}</version>
         <extensions>true</extensions>
         <configuration>
           <runner>
-            <version>2.3.0</version>
+            <version>${rcptt.version}</version>
             <vmArgs>
               <vmArg>-Xms256m</vmArg>
               <vmArg>-Xmx1024m</vmArg>
