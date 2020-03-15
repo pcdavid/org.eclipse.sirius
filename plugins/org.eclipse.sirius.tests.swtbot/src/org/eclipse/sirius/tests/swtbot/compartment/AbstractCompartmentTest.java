@@ -185,6 +185,7 @@ public abstract class AbstractCompartmentTest extends AbstractSiriusSwtBotGefTes
     protected Rectangle checkBounds(String label, Rectangle expectedGmfBounds, Rectangle expectedFigureBounds, boolean onlyCheckSize, int widthDelta, int heightDelta) {
         SWTBotGefEditPart swtBotEditPart = editor.getEditPart(label, AbstractDiagramElementContainerEditPart.class);
         AbstractDiagramElementContainerEditPart editPart = (AbstractDiagramElementContainerEditPart) swtBotEditPart.part();
+        widthDelta = Math.max(widthDelta, 2);
 
         IFigure mainFigure = editPart.getMainFigure();
 

@@ -233,7 +233,15 @@ public class CompartmentsTest extends AbstractCompartmentTest {
     @Override
     protected void onSetUpAfterOpeningDesignerPerspective() throws Exception {
         super.onSetUpAfterOpeningDesignerPerspective();
+<<<<<<< Updated upstream
         oldFont = changeDefaultFontName(TEST_FONT);
+||||||| merged common ancestors
+        oldFont = changeDefaultFontName("Comic Sans MS");
+=======
+        String fontName = "Comic Sans MS";
+        boolean testFontAvailable = Arrays.asList(GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames()).stream().anyMatch(font -> Objects.equal(fontName, font));
+        oldFont = changeDefaultFontName(fontName);
+>>>>>>> Stashed changes
     }
 
     /**
