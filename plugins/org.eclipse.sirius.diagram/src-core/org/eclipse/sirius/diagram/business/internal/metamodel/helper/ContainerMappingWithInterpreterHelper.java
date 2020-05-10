@@ -416,17 +416,9 @@ public final class ContainerMappingWithInterpreterHelper {
             }
         }
 
-        if (style != null && style.getTooltipExpression() != null) {
-            try {
-                interpreter.setVariable(IInterpreterSiriusVariables.VIEW, container);
-                final String tooltip = interpreter.evaluateString(container.getTarget(), style.getTooltipExpression());
-                container.setTooltipText(tooltip);
-            } catch (final EvaluationException e) {
-                RuntimeLoggerManager.INSTANCE.error(style, StylePackage.eINSTANCE.getTooltipStyleDescription_TooltipExpression(), e);
-            } finally {
-                interpreter.unSetVariable(IInterpreterSiriusVariables.VIEW);
-            }
-        }
+        TooltipProvider tooltipProvider = new TooltipProvider(this.interpreter, RuntimeLoggerManager.INSTANCE);
+        tooltipProvider.refreshTooltip(container, style, Collections.emptyMap());
+        
         interpreter.unSetVariable(IInterpreterSiriusVariables.VIEW);
 
         // semantic elements

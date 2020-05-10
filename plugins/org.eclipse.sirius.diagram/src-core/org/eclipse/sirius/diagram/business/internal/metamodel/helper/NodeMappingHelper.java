@@ -13,7 +13,9 @@
 package org.eclipse.sirius.diagram.business.internal.metamodel.helper;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
@@ -229,20 +231,11 @@ public final class NodeMappingHelper {
                 interpreter.unSetVariable(IInterpreterSiriusVariables.VIEW);
             }
         }
-
-        if (style != null && style.getTooltipExpression() != null) {
-            try {
-                interpreter.setVariable(IInterpreterSiriusVariables.DIAGRAM, parentDiagram);
-                interpreter.setVariable(IInterpreterSiriusVariables.VIEW, node);
-                final String tooltip = interpreter.evaluateString(modelElement, style.getTooltipExpression());
-                node.setTooltipText(tooltip);
-            } catch (final EvaluationException e) {
-                RuntimeLoggerManager.INSTANCE.error(style, StylePackage.eINSTANCE.getTooltipStyleDescription_TooltipExpression(), e);
-            } finally {
-                interpreter.unSetVariable(IInterpreterSiriusVariables.DIAGRAM);
-                interpreter.unSetVariable(IInterpreterSiriusVariables.VIEW);
-            }
-        }
+        
+        Map<String, Object> vars = new HashMap<>();
+        vars.put(IInterpreterSiriusVariables.DIAGRAM, parentDiagram);
+        TooltipProvider tooltipProvider = new TooltipProvider(this.interpreter, RuntimeLoggerManager.INSTANCE);
+        tooltipProvider.refreshTooltip(node, style, vars);
 
         /*
          * Getting the node size

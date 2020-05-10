@@ -61,6 +61,7 @@ import org.eclipse.sirius.diagram.business.internal.helper.decoration.Decoration
 import org.eclipse.sirius.diagram.business.internal.metamodel.helper.DiagramElementMappingHelper;
 import org.eclipse.sirius.diagram.business.internal.metamodel.helper.MappingWithInterpreterHelper;
 import org.eclipse.sirius.diagram.business.internal.metamodel.helper.StyleHelper;
+import org.eclipse.sirius.diagram.business.internal.metamodel.helper.TooltipProvider;
 import org.eclipse.sirius.diagram.business.internal.metamodel.operations.DDiagramSpecOperations;
 import org.eclipse.sirius.diagram.description.AbstractNodeMapping;
 import org.eclipse.sirius.diagram.description.ContainerMapping;
@@ -90,10 +91,8 @@ import org.eclipse.sirius.viewpoint.description.Viewpoint;
 import org.eclipse.sirius.viewpoint.description.style.BasicLabelStyleDescription;
 import org.eclipse.sirius.viewpoint.description.style.LabelStyleDescription;
 import org.eclipse.sirius.viewpoint.description.style.StyleDescription;
-import org.eclipse.sirius.viewpoint.description.style.StylePackage;
 import org.eclipse.sirius.viewpoint.description.style.TooltipStyleDescription;
 
-import com.google.common.base.Objects;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
 
@@ -591,13 +590,8 @@ public class DDiagramElementSynchronizer {
     }
 
     private void refreshTooltip(final DDiagramElement elt, final TooltipStyleDescription style) {
-        if (!StringUtil.isEmpty(style.getTooltipExpression())) {
-            final String oldValue = elt.getTooltipText();
-            final String newValue = computeTooltip(elt, style);
-            if (!Objects.equal(newValue, oldValue)) {
-                elt.setTooltipText(newValue);
-            }
-        }
+        TooltipProvider provider = new TooltipProvider(this.interpreter, RuntimeLoggerManager.INSTANCE);
+        provider.refreshTooltip(elt, style, Collections.emptyMap());
     }
 
     /**
@@ -792,25 +786,6 @@ public class DDiagramElementSynchronizer {
 
         if (descriptionObject instanceof BasicLabelStyleDescription) {
             result = DiagramElementMappingHelper.computeLabel(view, (BasicLabelStyleDescription) descriptionObject, this.diagram, interpreter);
-        }
-
-        return result;
-    }
-
-    private String computeTooltip(final DSemanticDecorator view, final EObject descriptionObject) {
-        String result = StylePackage.eINSTANCE.getTooltipStyleDescription_TooltipExpression().getDefaultValueLiteral();
-
-        if (descriptionObject instanceof TooltipStyleDescription) {
-            String tooltipExpression = ((TooltipStyleDescription) descriptionObject).getTooltipExpression();
-
-            try {
-                interpreter.setVariable(IInterpreterSiriusVariables.VIEW, view);
-                result = interpreter.evaluateString(view.getTarget(), tooltipExpression);
-            } catch (final EvaluationException e) {
-                RuntimeLoggerManager.INSTANCE.error(descriptionObject, StylePackage.eINSTANCE.getTooltipStyleDescription_TooltipExpression(), e);
-            } finally {
-                interpreter.unSetVariable(IInterpreterSiriusVariables.VIEW);
-            }
         }
 
         return result;
