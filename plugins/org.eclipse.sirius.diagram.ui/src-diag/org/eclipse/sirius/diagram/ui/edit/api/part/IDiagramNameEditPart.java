@@ -12,6 +12,8 @@
  *******************************************************************************/
 package org.eclipse.sirius.diagram.ui.edit.api.part;
 
+import java.util.function.Supplier;
+
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 
@@ -34,9 +36,22 @@ public interface IDiagramNameEditPart extends IDiagramElementEditPart, ITextAwar
      * Sets the text of the element's tooltip.
      * 
      * @param text
-     *            the text to show in the tooltip. If <code>null</code> or the
-     *            empty string, the element's tooltip is disabled.
+     *            the text to show in the tooltip. If <code>null</code> or the empty string, the element's tooltip is
+     *            disabled.
      * @since 0.9.0
+     * @deprecated Use {@link #setTooltipTextProvider(Supplier)}
      */
+    @Deprecated
     void setTooltipText(String text);
+
+    /**
+     * Sets the text of the element's tooltip.
+     * 
+     * @param textSupplier
+     *            the supplier from which to obtain the text to show in the tooltip. If it returns <code>null</code> or
+     *            the empty string, the element's tooltip is disabled.
+     * @since 6.4.0
+     */
+    void setTooltipTextProvider(Supplier<String> textSupplier);
+
 }

@@ -14,6 +14,7 @@ package org.eclipse.sirius.diagram.ui.edit.api.part;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Supplier;
 
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.draw2d.ConnectionAnchor;
@@ -426,6 +427,10 @@ public abstract class AbstractDiagramBorderNodeEditPart extends BorderedBorderIt
     public void setTooltipText(final String text) {
         AbstractDiagramNodeEditPartOperation.setTooltipText(this, text);
     }
+    
+    @Override
+    public void setTooltipTextProvider(Supplier<String> textProvider) {
+        AbstractDiagramNodeEditPartOperation.setTooltipTextProvider(this, textProvider);    }
 
     @Override
     public Command getCommand(final Request request) {

@@ -15,6 +15,7 @@ package org.eclipse.sirius.diagram.ui.edit.internal.part;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.Set;
+import java.util.function.Supplier;
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
@@ -46,6 +47,7 @@ import org.eclipse.sirius.diagram.ui.graphical.edit.policies.RefreshSiriusElemen
 import org.eclipse.sirius.diagram.ui.graphical.edit.policies.SiriusGraphicalNodeEditPolicy;
 import org.eclipse.sirius.diagram.ui.graphical.edit.policies.SiriusPopupBarEditPolicy;
 import org.eclipse.sirius.diagram.ui.graphical.edit.policies.SiriusPropertyHandlerEditPolicy;
+import org.eclipse.sirius.diagram.ui.graphical.figures.LazyLabel;
 import org.eclipse.sirius.diagram.ui.internal.edit.parts.DNode2EditPart;
 import org.eclipse.sirius.diagram.ui.internal.edit.parts.DNode3EditPart;
 import org.eclipse.sirius.diagram.ui.internal.edit.parts.DNode4EditPart;
@@ -274,6 +276,15 @@ public final class AbstractDiagramNodeEditPartOperation {
             }
         } else {
             self.getFigure().setToolTip(null);
+        }
+    }
+    
+    public static void setTooltipTextProvider(IAbstractDiagramNodeEditPart self, Supplier<String> textProvider) {
+        final IFigure tt = self.getFigure().getToolTip();
+        if (tt instanceof Label) {
+            ((Label) tt).setText(textProvider.get());
+        } else {
+            self.getFigure().setToolTip(new LazyLabel(textProvider));
         }
     }
 
