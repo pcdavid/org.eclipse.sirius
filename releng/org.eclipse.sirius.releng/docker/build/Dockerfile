@@ -1,8 +1,8 @@
-FROM debian:9.4-slim
+FROM debian:10.4-slim
 
 # To build the image, use the following line. You have to be in the folder of the Dockerfile to run it (or use -f option)
 #
-# docker build . --tag sirius/sirius-build:1.0
+# docker build . --tag sirius/sirius-build:1.2
 #
 # the --tag option works as follow : the name of the image will be sirius/sirius-build and it will be tagged 1.0
 
@@ -28,7 +28,7 @@ ENV DISPLAY :0
 # To override them, use the -e option in docker run command line
 # docker run -p 32001:5900 -e PLATFORM=photon -e GOAL="verify" sirius/sirius-build:1.0
 ENV BUILD_FOLDER target
-ENV PLATFORM photon
+ENV PLATFORM 2020-03
 ENV GOAL package
 ENV TESTS_SUITES junit,swtbot-sequence,swtbot
 ENV USE_P2_MIRRORS true
@@ -39,8 +39,8 @@ RUN addgroup --system xusers \
     && useradd -g xusers -m -d /sirius sirius
 
 # Add package repository for Microsoft fonts
-RUN echo "deb http://security.debian.org/ stretch/updates contrib non-free" >> /etc/apt/sources.list \
-    && echo "deb http://ftp.debian.org/debian/ stretch contrib non-free" >> /etc/apt/sources.list \
+RUN echo "deb http://security.debian.org/ buster/updates contrib non-free" >> /etc/apt/sources.list \
+    && echo "deb http://ftp.debian.org/debian/ buster contrib non-free" >> /etc/apt/sources.list \
     && echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections
 
 # This is needed for the configuration of installed packets
@@ -56,7 +56,7 @@ RUN mkdir -p /usr/share/man/man1
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     # Install dev tools (Java/Maven/Git)
-    openjdk-8-jre git maven \
+    openjdk-11-jre git maven \
     # Install fonts
     xfonts-base xfonts-scalable xfonts-100dpi xfonts-75dpi \
     fonts-liberation fonts-liberation2 fonts-freefont-ttf \
