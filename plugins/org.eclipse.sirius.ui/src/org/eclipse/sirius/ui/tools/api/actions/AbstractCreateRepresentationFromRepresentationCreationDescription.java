@@ -65,6 +65,8 @@ public abstract class AbstractCreateRepresentationFromRepresentationCreationDesc
     private final TransactionalEditingDomain editingDomain;
 
     private final ICommandFactory commandFactory;
+    
+    private final MessageTranslator msgTranslator;
 
     /**
      * Build the action.
@@ -82,6 +84,7 @@ public abstract class AbstractCreateRepresentationFromRepresentationCreationDesc
     public AbstractCreateRepresentationFromRepresentationCreationDescription(final RepresentationCreationDescription desc, final DRepresentationElement target,
             final TransactionalEditingDomain editingDomain, final ICommandFactory commandFactory) {
         this.desc = desc;
+        this.msgTranslator = MessageTranslator.forContext(desc);
         this.target = target;
         this.editingDomain = editingDomain;
         ImageDescriptor imageDescriptor = null;
@@ -119,7 +122,7 @@ public abstract class AbstractCreateRepresentationFromRepresentationCreationDesc
     @Override
     public String getText() {
         final IdentifiedElementQuery query = new IdentifiedElementQuery(desc);
-        return MessageTranslator.INSTANCE.getMessage(desc, query.getLabel());
+        return msgTranslator.getMessage(query.getLabel());
     }
 
     @Override
@@ -140,7 +143,7 @@ public abstract class AbstractCreateRepresentationFromRepresentationCreationDesc
 
         try {
             name = commandFactory.getUserInterfaceCallBack().askForDetailName(name,
-                    MessageTranslator.INSTANCE.getMessage(desc, new IdentifiedElementQuery(desc.getRepresentationDescription()).getLabel()),
+                    msgTranslator.getMessage(new IdentifiedElementQuery(desc.getRepresentationDescription()).getLabel()),
                     desc.getRepresentationDescription().getEndUserDocumentation());
         } catch (final InterruptedException e) {
             // the user pressed "cancel", we should exit
