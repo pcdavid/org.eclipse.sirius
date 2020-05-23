@@ -1395,7 +1395,7 @@ public class SWTBotSiriusDiagramEditor extends SWTBotGefEditor {
                 nearest = child;
             }
         }
-        if (nearest.children().size() > 0) {
+        if (nearest != null && !nearest.children().isEmpty()) {
             nearest = getNearestEditPart(searchedPosition, nearest.children());
         }
         return nearest;
