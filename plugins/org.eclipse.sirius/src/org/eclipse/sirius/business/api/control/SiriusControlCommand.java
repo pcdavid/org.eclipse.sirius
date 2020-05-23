@@ -129,7 +129,7 @@ public class SiriusControlCommand extends ControlCommand {
             final boolean shouldEndBySaving, IProgressMonitor monitor) {
         super(semanticRoot, semanticDest);
         this.session = SessionManager.INSTANCE.getSession(semanticRoot);
-        this.repDescriptors = new HashSet<DRepresentationDescriptor>(representations);
+        this.repDescriptors = new HashSet<>(representations);
         this.representationsDestination = representationsDest;
         this.shouldEndBySaving = shouldEndBySaving;
         this.monitor = monitor;

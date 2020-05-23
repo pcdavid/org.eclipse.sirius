@@ -83,7 +83,7 @@ public class AQLProposalProvider implements IProposalProvider {
     }
 
     private void setupInterpreter(ContentContext context, AQLSiriusInterpreter interpreter) {
-        Collection<MetamodelDescriptor> metamodels = new ArrayList<MetamodelDescriptor>();
+        Collection<MetamodelDescriptor> metamodels = new ArrayList<>();
         for (EPackage pak : context.getInterpreterContext().getAvailableEPackages()) {
             if (pak != null) {
                 metamodels.add(new EcoreMetamodelDescriptor(pak));
@@ -153,10 +153,10 @@ public class AQLProposalProvider implements IProposalProvider {
         if (interpreter instanceof AQLSiriusInterpreter) {
             IQueryEnvironment queryEnvironment = ((AQLSiriusInterpreter) interpreter).getQueryEnvironment();
 
-            Map<String, Set<IType>> variableTypes = new LinkedHashMap<String, Set<IType>>();
+            Map<String, Set<IType>> variableTypes = new LinkedHashMap<>();
             if (context.getCurrentSelected() != null) {
                 queryEnvironment.registerEPackage(context.getCurrentSelected().eClass().getEPackage());
-                final Set<IType> potentialTypes = new LinkedHashSet<IType>(1);
+                final Set<IType> potentialTypes = new LinkedHashSet<>(1);
                 potentialTypes.add(new EClassifierType(queryEnvironment, context.getCurrentSelected().eClass()));
                 variableTypes.put("self", potentialTypes); //$NON-NLS-1$
             }

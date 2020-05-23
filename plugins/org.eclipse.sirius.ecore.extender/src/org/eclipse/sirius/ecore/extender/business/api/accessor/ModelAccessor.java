@@ -676,7 +676,7 @@ public class ModelAccessor {
      *         names associated with this instance.
      */
     public Iterator<String> getAllExtendedAttributesName(final EObject instance) {
-        final Collection<String> result = new ArrayList<String>();
+        final Collection<String> result = new ArrayList<>();
         final Iterator<String> it = extender.getContributedAttributeNames(instance);
         while (it.hasNext()) {
             final String name = it.next();
@@ -697,7 +697,7 @@ public class ModelAccessor {
      *         names associated with this instance.
      */
     public Iterator<String> getAllExtendedReferencesName(final EObject instance) {
-        final Collection<String> result = new ArrayList<String>();
+        final Collection<String> result = new ArrayList<>();
         final Iterator<String> it = extender.getContributedReferenceNames(instance);
         while (it.hasNext()) {
             final String name = it.next();

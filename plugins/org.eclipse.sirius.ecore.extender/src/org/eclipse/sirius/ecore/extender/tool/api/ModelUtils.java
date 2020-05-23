@@ -255,7 +255,7 @@ public final class ModelUtils {
         EObject result = null;
 
         final Resource modelResource = ModelUtils.createResource(URI.createURI(fileName), resourceSet);
-        final Map<Object, Object> options = new HashMap<Object, Object>();
+        final Map<Object, Object> options = new HashMap<>();
         options.put(XMLResource.OPTION_ENCODING, System.getProperty(ModelUtils.ENCODING_PROPERTY));
         modelResource.load(stream, options);
         if (modelResource.getContents().size() > 0) {
@@ -286,7 +286,7 @@ public final class ModelUtils {
         if (modelResource == null) {
             modelResource = ModelUtils.createResource(modelURI, resourceSet);
         }
-        Map<Object, Object> options = new HashMap<Object, Object>();
+        Map<Object, Object> options = new HashMap<>();
         options.put(XMLResource.OPTION_ENCODING, System.getProperty(ModelUtils.ENCODING_PROPERTY));
         return ModelUtils.load(modelResource, options);
     }
@@ -341,7 +341,7 @@ public final class ModelUtils {
      */
     public static EObject loadFast(final URI modelURI, final ResourceSet resourceSet) throws IOException {
         final Resource modelResource = ModelUtils.createResource(modelURI, resourceSet);
-        final Map<Object, Object> options = new HashMap<Object, Object>();
+        final Map<Object, Object> options = new HashMap<>();
         options.put(XMLResource.OPTION_ENCODING, System.getProperty(ModelUtils.ENCODING_PROPERTY));
         options.put(XMLResource.OPTION_DEFER_ATTACHMENT, Boolean.TRUE);
         options.put(XMLResource.OPTION_DEFER_IDREF_RESOLUTION, Boolean.TRUE);
@@ -393,7 +393,7 @@ public final class ModelUtils {
 
         final Resource newModelResource = ModelUtils.createResource(URI.createFileURI(path));
         newModelResource.getContents().add(root);
-        final Map<Object, Object> options = new HashMap<Object, Object>();
+        final Map<Object, Object> options = new HashMap<>();
         options.put(XMLResource.OPTION_ENCODING, System.getProperty(ModelUtils.ENCODING_PROPERTY));
         newModelResource.save(options);
     }
@@ -416,7 +416,7 @@ public final class ModelUtils {
         final XMIResourceImpl newResource = new XMIResourceImpl();
         final StringWriter writer = new StringWriter();
         newResource.getContents().add(root);
-        final Map<Object, Object> options = new HashMap<Object, Object>();
+        final Map<Object, Object> options = new HashMap<>();
         options.put(XMLResource.OPTION_ENCODING, System.getProperty(ModelUtils.ENCODING_PROPERTY));
         newResource.save(writer, options);
         final String result = writer.toString();
@@ -506,10 +506,10 @@ public final class ModelUtils {
         if (res != null && res.getResourceSet() != null) {
             cachedIDsResources = ModelUtils.cachedEObjectIDs(res.getResourceSet());
         }
-        List<Resource> resourcesBeforeResolveAll = new ArrayList<Resource>(res.getResourceSet().getResources());
+        List<Resource> resourcesBeforeResolveAll = new ArrayList<>(res.getResourceSet().getResources());
         EcoreUtil.resolveAll(res);
         if (recursive) {
-            List<Resource> resourcesAfterResolveAll = new ArrayList<Resource>(res.getResourceSet().getResources());
+            List<Resource> resourcesAfterResolveAll = new ArrayList<>(res.getResourceSet().getResources());
             // Remove the known resources
             Iterators.removeAll(resourcesAfterResolveAll.iterator(), resourcesBeforeResolveAll);
             for (Resource resource : resourcesAfterResolveAll) {
@@ -559,7 +559,7 @@ public final class ModelUtils {
      * @return all modified resources.
      */
     public static List<Resource> cachedEObjectIDs(final ResourceSet resourceSet) {
-        final List<Resource> result = new LinkedList<Resource>();
+        final List<Resource> result = new LinkedList<>();
         final Iterator<Resource> iterResources = resourceSet.getResources().iterator();
         while (iterResources.hasNext()) {
             final Resource currentResource = iterResources.next();
