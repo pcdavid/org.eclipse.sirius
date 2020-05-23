@@ -179,9 +179,7 @@ public class CreateRepresentationAction extends Action {
             Shell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
             IRunnableContext context = new ProgressMonitorDialog(shell);
             PlatformUI.getWorkbench().getProgressService().runInUI(context, runnable, null);
-        } catch (final InvocationTargetException e) {
-            SiriusEditPlugin.getPlugin().getLog().log(new Status(IStatus.ERROR, SiriusEditPlugin.ID, e.getLocalizedMessage(), e));
-        } catch (final InterruptedException e) {
+        } catch (InvocationTargetException | InterruptedException e) {
             SiriusEditPlugin.getPlugin().getLog().log(new Status(IStatus.ERROR, SiriusEditPlugin.ID, e.getLocalizedMessage(), e));
         }
 
