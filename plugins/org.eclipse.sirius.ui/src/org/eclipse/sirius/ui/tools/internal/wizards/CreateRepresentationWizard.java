@@ -252,11 +252,6 @@ public class CreateRepresentationWizard extends Wizard {
     }
 
     @Override
-    public boolean canFinish() {
-        return super.canFinish();
-    }
-
-    @Override
     public boolean performCancel() {
         this.creationCancelled = true;
         return true;
