@@ -22,7 +22,6 @@ import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.SubProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.action.Action;
-import org.eclipse.jface.dialogs.IInputValidator;
 import org.eclipse.jface.dialogs.InputDialog;
 import org.eclipse.jface.dialogs.ProgressMonitorDialog;
 import org.eclipse.jface.operation.IRunnableContext;
@@ -205,12 +204,7 @@ public class CreateRepresentationAction extends Action {
         descriptionLabel += Messages.createRepresentationInputDialog_NewRepresentationNameLabel;
         final InputDialog askSiriusName = new InputDialog(Display.getDefault().getActiveShell(),
                 MessageFormat.format(Messages.createRepresentationInputDialog_Title, MessageTranslator.INSTANCE.getMessage(description, new IdentifiedElementQuery(description).getLabel())),
-                descriptionLabel, name, new IInputValidator() {
-                    @Override
-                    public String isValid(final String newText) {
-                        return null;
-                    }
-                });
+                descriptionLabel, name, newText -> null);
         if (askSiriusName.open() == Window.OK) {
             return askSiriusName.getValue();
         }
