@@ -133,19 +133,12 @@ public final class MigrationUtil {
      */
     public static Map<String, String> loadProperties(final Class<?> clazz, final String resourceName) {
         final Properties result = new Properties();
-        final InputStream in = new BufferedInputStream(clazz.getResourceAsStream(resourceName));
-        try {
+        try (InputStream in = new BufferedInputStream(clazz.getResourceAsStream(resourceName))) {
             result.load(in);
-        } catch (final IOException e) {
+        } catch (IOException e) {
             SiriusPlugin.getDefault().error(Messages.MigrationUtil_IOErrorMsg, e);
-        } finally {
-            try {
-                in.close();
-            } catch (final IOException e) {
-                SiriusPlugin.getDefault().error(Messages.MigrationUtil_IOErrorMsg, e);
-            }
         }
-        final Map<String, String> resultMap = new HashMap<String, String>();
+        final Map<String, String> resultMap = new HashMap<>();
         for (final Entry<Object, Object> entry : result.entrySet()) {
             if (entry.getKey() instanceof String && entry.getValue() instanceof String) {
                 resultMap.put((String) entry.getKey(), (String) entry.getValue());
