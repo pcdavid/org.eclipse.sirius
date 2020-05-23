@@ -13,6 +13,7 @@
 package org.eclipse.sirius.tools.internal.validation.description.constraints;
 
 import java.util.Collection;
+import java.util.Collections;
 
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.ecore.EObject;
@@ -52,13 +53,13 @@ public class RepresentationDescriptionMetaModelsConstraint extends AbstractConst
      *            the parentDescription.
      * @return the available meta-models.
      */
-    private Collection<EPackage> getAvailableMetamodels(final EObject parentDescription) {
-        Collection<EPackage> metamodel = null;
+    private Collection<EPackage> getAvailableMetamodels(EObject parentDescription) {
+        Collection<EPackage> metamodels = Collections.emptyList();
         if (parentDescription instanceof RepresentationDescription) {
-            metamodel = ((RepresentationDescription) parentDescription).getMetamodel();
+            metamodels = ((RepresentationDescription) parentDescription).getMetamodel();
         } else if (parentDescription instanceof RepresentationExtensionDescription) {
-            metamodel = ((RepresentationExtensionDescription) parentDescription).getMetamodel();
+            metamodels = ((RepresentationExtensionDescription) parentDescription).getMetamodel();
         }
-        return metamodel;
+        return metamodels;
     }
 }
