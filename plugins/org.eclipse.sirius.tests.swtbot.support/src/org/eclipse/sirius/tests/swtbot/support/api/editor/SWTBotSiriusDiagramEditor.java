@@ -1387,11 +1387,11 @@ public class SWTBotSiriusDiagramEditor extends SWTBotGefEditor {
      */
     protected SWTBotGefEditPart getNearestEditPart(final Point searchedPosition, List<SWTBotGefEditPart> allEditParts) {
         SWTBotGefEditPart nearest = null;
-        int distance = Integer.MAX_VALUE;
+        double distance = Double.MAX_VALUE;
         for (SWTBotGefEditPart child : allEditParts) {
             IFigure figure = ((GraphicalEditPart) child.part()).getFigure();
-            if (distance > figure.getBounds().getCenter().getDistance2(searchedPosition)) {
-                distance = figure.getBounds().getCenter().getDistance2(searchedPosition);
+            if (distance > figure.getBounds().getCenter().getDistance(searchedPosition)) {
+                distance = figure.getBounds().getCenter().getDistance(searchedPosition);
                 nearest = child;
             }
         }
@@ -1471,11 +1471,11 @@ public class SWTBotSiriusDiagramEditor extends SWTBotGefEditor {
     protected IFigure getNearestFoldingFigure(final Point searchedPosition, List<SWTBotGefEditPart> allEditParts) {
         IFigure nearestFoldingFigure = null;
         SWTBotGefEditPart nearestEditPart = null;
-        int distance = Integer.MAX_VALUE;
+        double distance = Double.MAX_VALUE;
         for (SWTBotGefEditPart child : allEditParts) {
             IFigure figure = ((GraphicalEditPart) child.part()).getFigure();
-            if (distance > figure.getBounds().getCenter().getDistance2(searchedPosition)) {
-                distance = figure.getBounds().getCenter().getDistance2(searchedPosition);
+            if (distance > figure.getBounds().getCenter().getDistance(searchedPosition)) {
+                distance = figure.getBounds().getCenter().getDistance(searchedPosition);
                 nearestEditPart = child;
             }
         }
