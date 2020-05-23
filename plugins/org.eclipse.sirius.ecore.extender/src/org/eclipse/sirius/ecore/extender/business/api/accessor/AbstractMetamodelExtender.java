@@ -17,11 +17,11 @@ import java.util.Collection;
 /**
  * Basic implementation of an extender. It implements:
  * <ul>
- * <li> {@link IMetamodelExtender#activate()}</li>
- * <li> {@link IMetamodelExtender#deactivate()}</li>
- * <li> {@link IMetamodelExtender#isActive()}</li>
+ * <li>{@link IMetamodelExtender#activate()}</li>
+ * <li>{@link IMetamodelExtender#deactivate()}</li>
+ * <li>{@link IMetamodelExtender#isActive()}</li>
  * </ul>
- * 
+ *
  * @author ymortier
  */
 public abstract class AbstractMetamodelExtender implements IMetamodelExtender {
@@ -31,35 +31,21 @@ public abstract class AbstractMetamodelExtender implements IMetamodelExtender {
      */
     private boolean active;
 
-    /**
-     * {@inheritDoc}
-     * 
-     * @see org.eclipse.sirius.ecore.extender.business.api.accessor.IMetamodelExtender#isActive()
-     */
+    @Override
     public boolean isActive() {
         return active;
     }
 
-    /**
-     * 
-     * {@inheritDoc}
-     */
+    @Override
     public void activate() {
         this.active = true;
-
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    @Override
     public void updateMetamodels(Collection<? extends MetamodelDescriptor> metamodelDescriptors) {
     }
 
-    /**
-     * {@inheritDoc}
-     * 
-     * @see org.eclipse.sirius.ecore.extender.business.api.accessor.IMetamodelExtender#deactivate()
-     */
+    @Override
     public void deactivate() {
         this.active = false;
     }
