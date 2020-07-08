@@ -141,76 +141,6 @@ public final class ModelUtils {
     }
 
     /**
-     * Loads the models contained by the given directory in the given
-     * ResourceSet.
-     * 
-     * @param directory
-     *            The directory from which to load the models.
-     * @param resourceSet
-     *            The {@link ResourceSet} to load the model in.
-     * @return The models contained by the given directory.
-     * @throws IOException
-     *             Thrown if an I/O operation has failed or been interrupted.
-     */
-    public static List<EObject> getModelsFrom(final File directory, final ResourceSet resourceSet) throws IOException {
-        return ModelUtils.getModelsFrom(directory, null, resourceSet);
-    }
-
-    // TODO unit test this
-    /**
-     * Loads the files with the given extension contained by the given directory
-     * as EObjects in the given ResourceSet.
-     * <p>
-     * The argument <code>extension</code> is in fact the needed suffix for its
-     * name in order for a file to be loaded. If it is equal to &quot;rd&quot;,
-     * a file named &quot;model.aird&quot; will be loaded, but so would be a
-     * file named &quot;Shepherd&quot;.
-     * </p>
-     * <p>
-     * The empty String or <code>null</code> will result in all the files of the
-     * given directory to be loaded, and would then be equivalent to
-     * {@link #getModelsFrom(File)}.
-     * </p>
-     * 
-     * @param directory
-     *            The directory from which to load the models.
-     * @param extension
-     *            File extension of the files to load. If <code>null</code>,
-     *            will consider all extensions.
-     * @param resourceSet
-     *            The {@link ResourceSet} to load the model in.
-     * @return The models contained by the given directory.
-     * @throws IOException
-     *             Thrown if an I/O operation has failed or been interrupted.
-     */
-    public static List<EObject> getModelsFrom(final File directory, final String extension, final ResourceSet resourceSet) throws IOException {
-        final List<EObject> models = new ArrayList<EObject>();
-        final String fileExtension;
-        if (extension != null) {
-            fileExtension = extension;
-        } else {
-            fileExtension = ""; //$NON-NLS-1$
-        }
-
-        if (directory.exists() && directory.isDirectory() && directory.listFiles() != null) {
-            final File[] files = directory.listFiles();
-
-            final StringBuffer pattern = new StringBuffer("[^.].*?\\Q"); //$NON-NLS-1$
-            pattern.append(fileExtension);
-            pattern.append("\\E"); //$NON-NLS-1$
-
-            for (File file : files) {
-                final File aFile = file;
-                if (!aFile.isDirectory() && aFile.getName().matches(pattern.toString())) {
-                    models.add(ModelUtils.load(aFile, resourceSet));
-                }
-            }
-        }
-
-        return models;
-    }
-
-    /**
      * Loads a model from a {@link java.io.File File} in a given
      * {@link ResourceSet}.
      * <p>
@@ -258,7 +188,7 @@ public final class ModelUtils {
         final Map<Object, Object> options = new HashMap<>();
         options.put(XMLResource.OPTION_ENCODING, System.getProperty(ModelUtils.ENCODING_PROPERTY));
         modelResource.load(stream, options);
-        if (modelResource.getContents().size() > 0) {
+        if (!modelResource.getContents().isEmpty()) {
             result = modelResource.getContents().get(0);
         }
         return result;
@@ -530,13 +460,8 @@ public final class ModelUtils {
      * @return true if all the references are valid, false otherwise.
      */
     public static boolean validateProxies(final EObject eObject) {
-        final Diagnostic diagnostic = Diagnostician.INSTANCE.validate(eObject);
-        if (diagnostic.getSeverity() == Diagnostic.ERROR) {
-            if (ModelUtils.hasAnyFailingProxy(diagnostic)) {
-                return false;
-            }
-        }
-        return true;
+        Diagnostic diagnostic = Diagnostician.INSTANCE.validate(eObject);
+        return diagnostic.getSeverity() != Diagnostic.ERROR || !ModelUtils.hasAnyFailingProxy(diagnostic);
     }
 
     private static boolean hasAnyFailingProxy(final Diagnostic diagnostic) {

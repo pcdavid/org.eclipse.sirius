@@ -71,14 +71,10 @@ public class EMFUtil {
             nameAttribute = (EAttribute) ref.get();
         } else {
             EStructuralFeature feature = eClass.getEStructuralFeature("name"); //$NON-NLS-1$
-            if (feature != null) {
-                if (feature instanceof EAttribute) {
-                    EClassifier type = feature.getEType();
-                    if (type != null) {
-                        if (type.getInstanceClass() == String.class) {
-                            nameAttribute = (EAttribute) feature;
-                        }
-                    }
+            if (feature instanceof EAttribute) {
+                EClassifier type = feature.getEType();
+                if (type != null && type.getInstanceClass() == String.class) {
+                    nameAttribute = (EAttribute) feature;
                 }
             }
 
@@ -107,10 +103,8 @@ public class EMFUtil {
             nameAttribute = (EAttribute) ref.get();
         } else {
             EStructuralFeature feature = eClass.getEStructuralFeature("qualifiedName"); //$NON-NLS-1$
-            if (feature != null) {
-                if ((feature instanceof EAttribute) && (feature.getEType().getInstanceClass() == String.class)) {
-                    nameAttribute = (EAttribute) feature;
-                }
+            if (feature instanceof EAttribute && feature.getEType().getInstanceClass() == String.class) {
+                nameAttribute = (EAttribute) feature;
             }
 
             // cache the result, whatever it is. As long as the key (EClass)
@@ -165,8 +159,7 @@ public class EMFUtil {
     }
 
     private static String getProxyQualifiedName(EObject proxy) {
-        String result = EMPTY_STRING;
-        return result;
+        return EMPTY_STRING;
     }
 
     /**

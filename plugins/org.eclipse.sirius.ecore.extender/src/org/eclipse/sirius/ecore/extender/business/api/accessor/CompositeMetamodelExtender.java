@@ -35,7 +35,6 @@ import com.google.common.collect.Iterators;
  * Aggregate more {@link IMetamodelExtender}'s using a priority system.
  * 
  * @author cbrun
- * 
  */
 public class CompositeMetamodelExtender extends AbstractMetamodelExtender {
 
