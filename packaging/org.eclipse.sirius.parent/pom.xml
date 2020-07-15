@@ -38,9 +38,9 @@
   </licenses>
 
   <properties>
-    <tycho-version>1.7.0</tycho-version>
-    <tycho-extras-version>1.7.0</tycho-extras-version>
-    <platform-version-name>photon</platform-version-name>
+    <tycho-version>2.0.0-SNAPSHOT</tycho-version>
+    <tycho-extras-version>2.0.0-SNAPSHOT</tycho-extras-version>
+    <platform-version-name>2020-06</platform-version-name>
     <!-- This property is used to customize the maven build folder. Used for parallel builds -->
     <build-folder-name>target</build-folder-name>
     <target-platform-path>.</target-platform-path>
@@ -77,6 +77,10 @@
   </repositories>
 
   <pluginRepositories>
+    <pluginRepository>
+      <id>tycho-snapshots</id>
+      <url>https://repo.eclipse.org/content/repositories/tycho-snapshots/</url>
+    </pluginRepository>
     <pluginRepository>
       <id>Eclipse - Acceleo Release</id>
       <url>https://repo.eclipse.org/content/repositories/acceleo-releases</url>
