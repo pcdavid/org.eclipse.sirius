@@ -18,6 +18,7 @@ import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -73,9 +74,6 @@ import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
-
-import com.google.common.collect.Iterables;
-import com.google.common.collect.Lists;
 
 /**
  * Implementation of the UI services for the tree dialect.
@@ -258,9 +256,14 @@ public class TreeDialectUIServices implements DialectUIServices {
     public void setSelection(DialectEditor dialectEditor, List<DRepresentationElement> selection) {
         if (dialectEditor instanceof DTreeEditor) {
             Viewer viewer = ((DTreeEditor) dialectEditor).getViewer();
-            Iterable<DTreeItem> treeElements = Iterables.filter(selection, DTreeItem.class);
             if (viewer != null) {
-                viewer.setSelection(new StructuredSelection(Lists.newArrayList(treeElements)));
+                // @formatter:off
+                List<DTreeItem> treeElements = selection.stream()
+                                                        .filter(DTreeItem.class::isInstance)
+                                                        .map(DTreeItem.class::cast)
+                                                        .collect(Collectors.toList());
+                // @formatter:on
+                viewer.setSelection(new StructuredSelection(treeElements));
             }
         }
     }
@@ -278,7 +281,11 @@ public class TreeDialectUIServices implements DialectUIServices {
             if (editor.getSite() != null && editor.getSite().getSelectionProvider() != null) {
                 ISelection sel = dEditor.getSite().getSelectionProvider().getSelection();
                 if (sel instanceof IStructuredSelection) {
-                    Iterables.addAll(selection, Iterables.filter(((IStructuredSelection) sel).toList(), DSemanticDecorator.class));
+                    for (Object element : ((IStructuredSelection) sel).toList()) {
+                        if (element instanceof DSemanticDecorator) {
+                            selection.add((DSemanticDecorator) element);
+                        }
+                    }
                 }
             }
         }

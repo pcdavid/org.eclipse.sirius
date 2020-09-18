@@ -35,8 +35,6 @@ import org.eclipse.sirius.viewpoint.DRepresentation;
 import org.eclipse.sirius.viewpoint.ViewpointPackage;
 import org.eclipse.sirius.viewpoint.description.style.StylePackage;
 
-import com.google.common.collect.Sets;
-
 /**
  * A class responsible to update the UI part of a {@link DTree}.
  *
@@ -168,8 +166,9 @@ public class TreeUIUpdater extends ResourceSetListenerImpl {
 
     private void updateDTreeViewer() {
         if (!toRefreshInViewer.isEmpty() || !toUpdateInViewer.isEmpty() || !toCollapses.isEmpty() || !toExpands.isEmpty()) {
-            final Object[] objectsToUpdateInViewer = Sets.difference(toUpdateInViewer, toRefreshInViewer).toArray(new Object[0]);
-            Runnable runnable = new TreeUIUpdaterRunnable(dTreeViewer, toRefreshInViewer, objectsToUpdateInViewer, toExpands, toCollapses);
+            LinkedHashSet<Object> objectsToUpdateInViewer = new LinkedHashSet<>(toUpdateInViewer);
+            objectsToUpdateInViewer.removeAll(toRefreshInViewer);
+            Runnable runnable = new TreeUIUpdaterRunnable(dTreeViewer, toRefreshInViewer, objectsToUpdateInViewer.toArray(new Object[0]), toExpands, toCollapses);
             EclipseUIUtil.displayAsyncExec(runnable);
         }
     }

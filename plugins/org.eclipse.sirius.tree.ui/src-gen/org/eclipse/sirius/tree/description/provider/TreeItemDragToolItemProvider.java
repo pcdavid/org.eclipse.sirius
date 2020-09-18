@@ -13,6 +13,7 @@
 package org.eclipse.sirius.tree.description.provider;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -36,8 +37,6 @@ import org.eclipse.sirius.viewpoint.description.tool.ToolFactory;
 import org.eclipse.sirius.viewpoint.description.tool.ToolPackage;
 import org.eclipse.sirius.viewpoint.description.tool.provider.MappingBasedToolDescriptionItemProvider;
 
-import com.google.common.collect.Lists;
-
 /**
  * This is the item provider adapter for a {@link org.eclipse.sirius.tree.description.TreeItemDragTool} object. <!--
  * begin-user-doc --> <!-- end-user-doc -->
@@ -45,7 +44,7 @@ import com.google.common.collect.Lists;
  * @generated
  */
 public class TreeItemDragToolItemProvider extends MappingBasedToolDescriptionItemProvider {
-    private static final Collection<EClass> TYPES_TO_HIDE = Lists.newArrayList(ToolPackage.Literals.DELETE_VIEW);
+    private static final Collection<EClass> TYPES_TO_HIDE = Collections.singletonList(ToolPackage.Literals.DELETE_VIEW);
 
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!-- end-user-doc -->
