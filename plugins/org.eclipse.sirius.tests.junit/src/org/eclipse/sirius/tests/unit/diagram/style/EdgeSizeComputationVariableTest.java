@@ -12,6 +12,10 @@
  *******************************************************************************/
 package org.eclipse.sirius.tests.unit.diagram.style;
 
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.EList;
@@ -24,9 +28,6 @@ import org.eclipse.sirius.tests.support.api.SiriusDiagramTestCase;
 import org.eclipse.sirius.tests.support.api.TestsUtil;
 import org.eclipse.sirius.ui.business.api.dialect.DialectUIManager;
 import org.eclipse.sirius.ui.business.api.preferences.SiriusUIPreferencesKeys;
-
-import com.google.common.collect.LinkedHashMultimap;
-import com.google.common.collect.Multimap;
 
 /**
  * Tests that sourceView, targetView, view and diagram variables are vailables
@@ -80,7 +81,7 @@ public class EdgeSizeComputationVariableTest extends SiriusDiagramTestCase {
         changeSiriusPreference(SiriusPreferencesKeys.PREF_AUTO_REFRESH.name(), true);
 
         boolean errorCatchActive = isErrorCatchActive();
-        Multimap<String, IStatus> prevError = LinkedHashMultimap.create(errors);
+        Map<String, List<IStatus>> prevError = new LinkedHashMap<>(errors);
         clearErrors();
         setErrorCatchActive(true);
 

@@ -110,10 +110,6 @@ import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PlatformUI;
 import org.junit.Assert;
 
-import com.google.common.collect.Iterables;
-import com.google.common.collect.Sets;
-import com.google.common.collect.Sets.SetView;
-
 import junit.framework.TestCase;
 
 /**
@@ -704,10 +700,12 @@ public class SiriusDiagramTestCase extends AbstractToolDescriptionTestCase {
         computeMapping(mappingsManager);
 
         final Set<DiagramElementMapping> allMappings = new DiagramDescriptionMappingManagerQuery(mappingsManager).computeAllMappings();
-        final Iterable<NodeMapping> allNodeMappings = Iterables.filter(allMappings, NodeMapping.class);
-        for (NodeMapping nodeMapping : allNodeMappings) {
-            if (mappingName.equals(nodeMapping.getName()) && SiriusDiagramTestCase.getParentLayer(nodeMapping) == layer) {
-                return nodeMapping;
+        for (DiagramElementMapping mapping : allMappings) {
+            if (mapping instanceof NodeMapping) {
+                NodeMapping nodeMapping = (NodeMapping) mapping;
+                if (mappingName.equals(nodeMapping.getName()) && SiriusDiagramTestCase.getParentLayer(nodeMapping) == layer) {
+                    return nodeMapping;
+                }
             }
         }
 
@@ -758,10 +756,12 @@ public class SiriusDiagramTestCase extends AbstractToolDescriptionTestCase {
         computeMapping(mappingsManager);
 
         final Set<DiagramElementMapping> allMappings = new DiagramDescriptionMappingManagerQuery(mappingsManager).computeAllMappings();
-        final Iterable<ContainerMapping> allContainerMappings = Iterables.filter(allMappings, ContainerMapping.class);
-        for (ContainerMapping containerMapping : allContainerMappings) {
-            if (mappingName.equals(containerMapping.getName()) && SiriusDiagramTestCase.getParentLayer(containerMapping) == layer) {
-                return containerMapping;
+        for (DiagramElementMapping mapping : allMappings) {
+            if (mapping instanceof ContainerMapping) {
+                ContainerMapping containerMapping = (ContainerMapping) mapping;
+                if (mappingName.equals(containerMapping.getName()) && SiriusDiagramTestCase.getParentLayer(containerMapping) == layer) {
+                    return containerMapping;
+                }
             }
         }
         throw new IllegalArgumentException(SiriusDiagramTestCase.MAPPING_NAME_INCORRECT);
@@ -1330,14 +1330,15 @@ public class SiriusDiagramTestCase extends AbstractToolDescriptionTestCase {
     protected void checkForHiddenLabels(final DDiagram diagram, DDiagramElement... elementsThatShouldHaveHiddenLabel) {
 
         // We first get all the elements that should have visible labels
-        HashSet<DDiagramElement> allDiagramElements = new HashSet<DDiagramElement>(diagram.getOwnedDiagramElements());
+        HashSet<DDiagramElement> allDiagramElements = new HashSet<>(diagram.getOwnedDiagramElements());
         for (DDiagramElement diagramElement : diagram.getOwnedDiagramElements()) {
             Iterator<DDiagramElement> filter = diagramElement.eContents().stream().filter(DDiagramElement.class::isInstance).map(DDiagramElement.class::cast).iterator();
             while (filter.hasNext()) {
                 allDiagramElements.add(filter.next());
             }
         }
-        SetView<DDiagramElement> elementsThatShouldHaveVisibleLabel = Sets.difference(allDiagramElements, new HashSet<DDiagramElement>(Arrays.asList(elementsThatShouldHaveHiddenLabel)));
+        Set<DDiagramElement> elementsThatShouldHaveVisibleLabel = new HashSet<>(allDiagramElements);
+        elementsThatShouldHaveVisibleLabel.removeAll(new HashSet<DDiagramElement>(Arrays.asList(elementsThatShouldHaveHiddenLabel)));
 
         // And ensure that all these elements have visible labels
         for (DDiagramElement elementThatShouldHaveVisibleLabel : elementsThatShouldHaveVisibleLabel) {

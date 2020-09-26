@@ -246,8 +246,8 @@ public class RunRepairTest extends AbstractRepairMigrateTest {
         setErrorCatchActive(false);
         // Check that one error occurs (because the representation files
         // contains no DAnalysis).
-        assertEquals("One error should occur (because the representation files contains no DAnalysis)", 1, errors.values().size());
-        assertEquals("The error message is not the expected one.", SiriusRepairProcess.ERROR_MSG, errors.values().iterator().next().getMessage());
+        assertTrue("One error should occur (because the representation files contains no DAnalysis)", errors.values().size() == 1 && errors.values().iterator().next().size() == 1);
+        assertEquals("The error message is not the expected one.", SiriusRepairProcess.ERROR_MSG, errors.values().iterator().next().iterator().next().getMessage());
         // Clear the expected error
         clearErrors();
     }
