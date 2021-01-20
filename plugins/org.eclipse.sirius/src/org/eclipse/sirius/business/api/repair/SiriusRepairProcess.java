@@ -22,6 +22,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.stream.Collectors;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
@@ -66,9 +67,6 @@ import org.eclipse.sirius.viewpoint.Messages;
 import org.eclipse.sirius.viewpoint.SiriusPlugin;
 import org.eclipse.sirius.viewpoint.description.RepresentationDescription;
 import org.eclipse.sirius.viewpoint.description.Viewpoint;
-
-import com.google.common.base.Predicate;
-import com.google.common.collect.Collections2;
 
 /**
  * Repair process extract from
@@ -492,12 +490,11 @@ public class SiriusRepairProcess {
     }
 
     private List<Resource> getFragmentedResources(final Resource modelResource) {
-        return new ArrayList<Resource>(Collections2.filter(modelResource.getResourceSet().getResources(), new Predicate<Resource>() {
-            @Override
-            public boolean apply(Resource resource) {
-                return !resource.equals(modelResource) && resource instanceof AirdResource && resource.getURI().isPlatformResource();
-            }
-        }));
+        // @formatter:off
+        return modelResource.getResourceSet().getResources().stream()
+                .filter(resource -> resource instanceof AirdResource && !resource.equals(modelResource) && resource.getURI().isPlatformResource())
+                .collect(Collectors.toList());
+        // @formatter:on
     }
 
     /**

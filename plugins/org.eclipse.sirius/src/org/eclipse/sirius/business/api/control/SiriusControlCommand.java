@@ -42,8 +42,6 @@ import org.eclipse.sirius.viewpoint.SiriusPlugin;
 import org.eclipse.sirius.viewpoint.ViewpointFactory;
 import org.eclipse.sirius.viewpoint.description.Viewpoint;
 
-import com.google.common.collect.Iterables;
-
 /**
  * An extension of the basic {@link ControlCommand} to handle both the semantic
  * model and the corresponding Sirius representations. Also handles session
@@ -255,8 +253,8 @@ public class SiriusControlCommand extends ControlCommand {
         for (Resource aird : session.getAllSessionResources()) {
             DAnalysis currentAnalysis = getDAnalysis(aird);
             Set<EObject> releventModels = new DAnalysisQuery(currentAnalysis).getMainModels();
-            if (Iterables.contains(releventModels, semanticParentRoot)) {
-                List<DAnalysis> referencedAnalysis = new ArrayList<DAnalysis>(currentAnalysis.getReferencedAnalysis());
+            if (releventModels.contains(semanticParentRoot)) {
+                List<DAnalysis> referencedAnalysis = new ArrayList<>(currentAnalysis.getReferencedAnalysis());
                 for (DAnalysis childrenAnalysis : referencedAnalysis) {
                     Option<EObject> optionalChildrenMainModel = new DAnalysisQuery(childrenAnalysis).getMainModel();
                     if (optionalChildrenMainModel.some() && new EObjectQuery(optionalChildrenMainModel.get()).isContainedIn(semanticObjectToControl)) {

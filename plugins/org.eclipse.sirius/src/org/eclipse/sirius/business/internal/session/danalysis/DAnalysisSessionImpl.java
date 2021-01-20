@@ -25,6 +25,7 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Objects;
 import java.util.Set;
 
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -123,7 +124,6 @@ import org.eclipse.sirius.viewpoint.description.RepresentationDescription;
 import org.eclipse.sirius.viewpoint.description.Viewpoint;
 import org.eclipse.sirius.viewpoint.impl.DAnalysisSessionEObjectImpl;
 
-import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Predicate;
 import com.google.common.base.Predicates;
@@ -1093,7 +1093,7 @@ public class DAnalysisSessionImpl extends DAnalysisSessionEObjectImpl implements
      */
     protected boolean isResourceOfSession(Resource resource, Iterable<Resource> resources) {
         for (Resource input : resources) {
-            if (resource == input || (input.getURI() != null && Objects.equal(resource.getURI(), input.getURI()))) {
+            if (resource == input || (input.getURI() != null && Objects.equals(resource.getURI(), input.getURI()))) {
                 return true;
             }
         }

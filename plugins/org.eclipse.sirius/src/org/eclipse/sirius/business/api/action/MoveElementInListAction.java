@@ -22,8 +22,6 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.sirius.viewpoint.Messages;
 
-import com.google.common.base.Preconditions;
-
 /**
  * An external Java action which can move an element to a different position
  * inside a many-valued EReference.
@@ -63,20 +61,20 @@ public class MoveElementInListAction extends AbstractExternalJavaAction {
         String refName = getParameter(parameters, "referenceName", String.class); //$NON-NLS-1$
         EObject pred = getOptionalParameter(parameters, "predecessor", EObject.class); //$NON-NLS-1$
         if (pred != null) {
-            Preconditions.checkArgument(element != pred, Messages.MoveElementInListAction_elementAndPredecessorShouldBeDiffErrorMsg);
+            checkArgument(element != pred, Messages.MoveElementInListAction_elementAndPredecessorShouldBeDiffErrorMsg);
         }
 
         EStructuralFeature feature = owner.eClass().getEStructuralFeature(refName);
-        Preconditions.checkArgument(feature != null, MessageFormat.format(Messages.MoveElementInListAction_featureNotFoundErrorMsg, owner.eClass().getName(), refName));
+        checkArgument(feature != null, MessageFormat.format(Messages.MoveElementInListAction_featureNotFoundErrorMsg, owner.eClass().getName(), refName));
         String qName = feature.getEContainingClass().getName() + "." + feature.getName(); //$NON-NLS-1$
-        Preconditions.checkArgument(feature instanceof EReference, MessageFormat.format(Messages.MoveElementInListAction_notARefErrorMsg, qName));
-        Preconditions.checkArgument(feature.isMany(), MessageFormat.format(Messages.MoveElementInListAction_notMultiValuedRefErrorMsg, qName));
-        Preconditions.checkArgument(feature.isChangeable(), MessageFormat.format(Messages.MoveElementInListAction_referenceNotChangeableErrorMsg, qName));
+        checkArgument(feature instanceof EReference, MessageFormat.format(Messages.MoveElementInListAction_notARefErrorMsg, qName));
+        checkArgument(feature.isMany(), MessageFormat.format(Messages.MoveElementInListAction_notMultiValuedRefErrorMsg, qName));
+        checkArgument(feature.isChangeable(), MessageFormat.format(Messages.MoveElementInListAction_referenceNotChangeableErrorMsg, qName));
 
         @SuppressWarnings("unchecked")
         EList<EObject> list = (EList<EObject>) owner.eGet(feature);
-        Preconditions.checkArgument(pred == null || list.contains(pred), Messages.MoveElementInListAction_predecessorParameterErrorMsg);
-        Preconditions.checkArgument(list.contains(element), Messages.MoveElementInListAction_notAMemberErrorMsg);
+        checkArgument(pred == null || list.contains(pred), Messages.MoveElementInListAction_predecessorParameterErrorMsg);
+        checkArgument(list.contains(element), Messages.MoveElementInListAction_notAMemberErrorMsg);
 
         moveElementAfter(element, pred, list);
     }
