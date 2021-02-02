@@ -121,21 +121,6 @@ public class ContentHelperTests extends TestCase {
      * There is a bug in Acceleo completion without context:
      * getEStructuralFeature(name) is not proposed.
      */
-    public void testContextHelperAndOCL() {
-
-        ContentContextHelper cch = new ContentContextHelper("ocl:", 4, "");
-        assertEquals("", cch.getProposalStart());
-
-        cch = new ContentContextHelper("ocl:sel", 7, "");
-        assertEquals("sel", cch.getProposalStart());
-    }
-
-    /**
-     * Tests completion for an EClass.
-     * 
-     * There is a bug in Acceleo completion without context:
-     * getEStructuralFeature(name) is not proposed.
-     */
     public void testContextHelperStartDetection() {
 
         ContentContextHelper cch = new ContentContextHelper("aaaa.aaaa(", 10, "");
