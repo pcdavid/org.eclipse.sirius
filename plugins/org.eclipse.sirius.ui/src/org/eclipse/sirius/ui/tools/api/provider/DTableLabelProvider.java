@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -32,8 +33,6 @@ import org.eclipse.sirius.viewpoint.DSemanticDecorator;
 import org.eclipse.sirius.viewpoint.provider.Messages;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.IEditorPart;
-
-import com.google.common.base.Joiner;
 
 /**
  * Label provider of the DTable tabbed property sheet page.
@@ -114,7 +113,7 @@ public class DTableLabelProvider extends LabelProvider {
                 for (Object selected : semanticSelection) {
                     labels.add(getAdapterFactoryLabelProvider().getText(selected));
                 }
-                text = MessageFormat.format(Messages.DTableLabelProvider_selectedItemsList, selectionSize, Joiner.on(", ").join(labels)); //$NON-NLS-1$
+                text = MessageFormat.format(Messages.DTableLabelProvider_selectedItemsList, selectionSize, labels.stream().collect(Collectors.joining(", "))); //$NON-NLS-1$
             }
         }
         return text;

@@ -16,12 +16,12 @@ import java.text.MessageFormat;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 import java.util.SortedMap;
 import java.util.TreeMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -53,14 +53,11 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;
 
-import com.google.common.base.Function;
-import com.google.common.base.Joiner;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Predicate;
 import com.google.common.base.Predicates;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Iterables;
-import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Multimap;
 
@@ -318,12 +315,7 @@ public class ViewpointSelectionDialog extends TitleAreaDialog {
      * @return the new list of items
      */
     private List<Item> computeItemList() {
-        return Lists.newArrayList(Iterables.transform(selection.keySet(), new Function<Viewpoint, Item>() {
-            @Override
-            public Item apply(Viewpoint from) {
-                return new Item(from);
-            }
-        }));
+        return selection.keySet().stream().map(Item::new).collect(Collectors.toList());
     }
 
     @Override
@@ -399,18 +391,8 @@ public class ViewpointSelectionDialog extends TitleAreaDialog {
      * @return error message
      */
     private static String getMissingDependenciesErrorMessage(Map<String, Collection<String>> missingDependencies) {
-        final Function<Collection<String>, String> toStringList = new Function<Collection<String>, String>() {
-            @Override
-            public String apply(java.util.Collection<String> from) {
-                return Joiner.on(", ").join(from); //$NON-NLS-1$
-            }
-        };
-        return Joiner.on("\n").join(Iterables.transform(missingDependencies.entrySet(), new Function<Map.Entry<String, Collection<String>>, String>() { //$NON-NLS-1$
-            @Override
-            public String apply(Entry<String, Collection<String>> entry) {
-                return MessageFormat.format(Messages.ViewpointSelection_missingDependencies_requirements, entry.getKey(), toStringList.apply(entry.getValue()));
-            }
-        }));
+        return missingDependencies.entrySet().stream()
+                           .map(entry -> MessageFormat.format(Messages.ViewpointSelection_missingDependencies_requirements, entry.getKey(), entry.getValue().stream().collect(Collectors.joining(", ")))) //$NON-NLS-1$
+                           .collect(Collectors.joining("\n")); //$NON-NLS-1$
     }
-
 }
