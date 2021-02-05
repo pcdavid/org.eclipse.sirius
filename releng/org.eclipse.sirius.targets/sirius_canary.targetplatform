@@ -84,14 +84,14 @@ location EMF-Transaction-Interim "https://download.eclipse.org/modeling/emf/tran
 
 include "modules/eef-1.5.tpd"
 
-location Acceleo-3.7 "https://download.eclipse.org/acceleo/updates/releases/3.7/R202002210922/" {
+location Acceleo-4.0-nighty "https://download.eclipse.org/acceleo/updates/nightly/4.0.0.202106150945" {
     org.eclipse.acceleo.feature.group lazy
     org.eclipse.acceleo.ide.ui lazy
     org.eclipse.acceleo.ui.interpreter.feature.group lazy
     org.eclipse.acceleo.ui.interpreter.source.feature.group lazy
     org.eclipse.acceleo.query.feature.group lazy
     org.eclipse.acceleo.query.source.feature.group lazy
-    org.antlr.runtime [4.7.2,4.7.3)
+    //org.antlr.runtime lazy
 }
 
 location EMF-Compare-Nightly "https://download.eclipse.org/modeling/emf/compare/updates/nightly/latest/" {

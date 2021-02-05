@@ -144,7 +144,7 @@ public class AQLSiriusInterpreter extends AcceleoAbstractInterpreter implements 
 
             @Override
             public void unloaded(String nsURI, EPackage pak) {
-                queryEnvironment.removeEPackage(pak.getName());
+                queryEnvironment.removeEPackage(pak);
             }
         };
         this.javaExtensions.addClassLoadingCallBack(callback);
@@ -359,11 +359,11 @@ public class AQLSiriusInterpreter extends AcceleoAbstractInterpreter implements 
     @Override
     public Collection<Method> getImplementation(String serviceCall) {
         javaExtensions.reloadIfNeeded();
-        Set<org.eclipse.acceleo.query.runtime.IService> registeredServices = queryEnvironment.getLookupEngine().getRegisteredServices();
+        Set<org.eclipse.acceleo.query.runtime.IService<?>> registeredServices = queryEnvironment.getLookupEngine().getRegisteredServices();
         List<Method> results = new ArrayList<Method>();
         registeredServices.iterator().forEachRemaining(s -> {
             if (s instanceof JavaMethodService) {
-                results.add(((JavaMethodService) s).getMethod());
+                results.add(((JavaMethodService) s).getOrigin());
             }
         });
 
