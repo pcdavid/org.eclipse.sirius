@@ -15,6 +15,7 @@ package org.eclipse.sirius.diagram.editor.tools.internal.menu.refactoring;
 import java.util.Collection;
 import java.util.LinkedHashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import org.eclipse.emf.edit.command.CommandParameter;
 import org.eclipse.jface.viewers.ISelection;
@@ -23,9 +24,6 @@ import org.eclipse.sirius.editor.tools.api.menu.AbstractEObjectRefactoringAction
 import org.eclipse.sirius.editor.tools.api.menu.AbstractMenuBuilder;
 import org.eclipse.sirius.editor.tools.internal.menu.refactoring.RefactoringMenu;
 import org.eclipse.ui.IEditorPart;
-
-import com.google.common.base.Predicate;
-import com.google.common.collect.Sets;
 
 /**
  * The menu for the refactoring actions.
@@ -58,12 +56,7 @@ public class DiagramRefactoringMenu extends AbstractMenuBuilder {
         allActions.add(new EdgeMappingRefactoringAction(editor, selection));
 
         // We only add to the menu the actions that have a valid selection
-        return Sets.filter(allActions, new Predicate<AbstractEObjectRefactoringAction>() {
-
-            public boolean apply(AbstractEObjectRefactoringAction candidateAction) {
-                return candidateAction.isSelectionValid();
-            }
-        });
+        return allActions.stream().filter(AbstractEObjectRefactoringAction::isSelectionValid).collect(Collectors.toSet());
     }
 
     @Override

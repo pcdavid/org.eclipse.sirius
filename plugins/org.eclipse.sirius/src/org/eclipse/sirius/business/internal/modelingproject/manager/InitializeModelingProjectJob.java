@@ -32,12 +32,10 @@ import org.eclipse.sirius.ext.base.Option;
 import org.eclipse.sirius.viewpoint.Messages;
 import org.eclipse.sirius.viewpoint.SiriusPlugin;
 
-import com.google.common.base.Predicate;
 import com.google.common.collect.Iterators;
 
 /**
- * A job to compute the main representations file of each modeling project of
- * the workspace.
+ * A job to compute the main representations file of each modeling project of the workspace.
  * 
  * @author <a href="mailto:laurent.redor@obeo.fr">Laurent Redor</a>
  */
@@ -48,11 +46,9 @@ public class InitializeModelingProjectJob extends WorkspaceJob {
     public static final String JOB_LABEL = Messages.InitializeModelingProjectJob_label;
 
     /**
-     * The label of the job (if all projects are empty, ie containing only
-     * .project file). There is a specific job name if all projects are empty
-     * because this job can be launch just before a job that initialize the non
-     * empty project (in case of importing simultaneously several projects). See
-     * ModelingProjectResourceListener for more details.
+     * The label of the job (if all projects are empty, ie containing only .project file). There is a specific job name
+     * if all projects are empty because this job can be launch just before a job that initialize the non empty project
+     * (in case of importing simultaneously several projects). See ModelingProjectResourceListener for more details.
      */
     public static final String JOB_LABEL_FOR_EMPTY_PROJECTS = Messages.InitializeModelingProjectJob_labelEmptyProject;
 
@@ -62,14 +58,12 @@ public class InitializeModelingProjectJob extends WorkspaceJob {
     private static final String JOB_FAMILY_ID = SiriusPlugin.ID + ".initializemodelingprojects"; //$NON-NLS-1$
 
     /**
-     * The projects concerned by this job. If null, all projects of the
-     * workspace is concerned by this job.
+     * The projects concerned by this job. If null, all projects of the workspace is concerned by this job.
      */
     private List<IProject> projects;
 
     /**
-     * True if the main representations file must be recomputed (even if it is
-     * already known), false otherwise.
+     * True if the main representations file must be recomputed (even if it is already known), false otherwise.
      */
     private boolean forceInit;
 
@@ -87,14 +81,11 @@ public class InitializeModelingProjectJob extends WorkspaceJob {
      *            The projects concerned by this job
      */
     public InitializeModelingProjectJob(List<IProject> projects) {
-        this(Iterators.all(projects.iterator(), new Predicate<IProject>() {
-            @Override
-            public boolean apply(IProject input) {
-                try {
-                    return input.members().length == 1;
-                } catch (CoreException e) {
-                    return false;
-                }
+        this(Iterators.all(projects.iterator(), (IProject input) -> {
+            try {
+                return input.members().length == 1;
+            } catch (CoreException e) {
+                return false;
             }
         }) ? JOB_LABEL_FOR_EMPTY_PROJECTS : JOB_LABEL);
         this.projects = projects;
@@ -111,18 +102,16 @@ public class InitializeModelingProjectJob extends WorkspaceJob {
     }
 
     /**
-     * Compute the main representations file of each modeling projects of the
-     * list of <code>projects</code>.
+     * Compute the main representations file of each modeling projects of the list of <code>projects</code>.
      * 
      * @param projects
-     *            The projects concerned by this job. If null, all projects of
-     *            the workspace is concerned by this job.
+     *            The projects concerned by this job. If null, all projects of the workspace is concerned by this job.
      * @param forceInit
-     *            True if the main representations file must be recomputed (even
-     *            if it is already known), false otherwise.
+     *            True if the main representations file must be recomputed (even if it is already known), false
+     *            otherwise.
      * @param monitor
-     *            the monitor to be used for reporting progress and responding
-     *            to cancellation. The monitor is never <code>null</code>
+     *            the monitor to be used for reporting progress and responding to cancellation. The monitor is never
+     *            <code>null</code>
      * @return resulting status of the initialization
      */
     public static IStatus initializeModelingProjects(List<IProject> projects, boolean forceInit, IProgressMonitor monitor) {
@@ -186,8 +175,7 @@ public class InitializeModelingProjectJob extends WorkspaceJob {
     }
 
     /**
-     * The main representations file will be computed even if it is already
-     * known.
+     * The main representations file will be computed even if it is already known.
      * 
      * @param forceInit
      *            the forceInit to set

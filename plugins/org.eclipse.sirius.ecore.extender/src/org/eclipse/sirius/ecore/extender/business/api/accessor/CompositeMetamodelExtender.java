@@ -27,7 +27,6 @@ import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.sirius.ecore.extender.business.internal.common.ExtenderDescriptor;
 import org.eclipse.sirius.ext.emf.EReferencePredicate;
 
-import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Iterators;
 
@@ -86,13 +85,11 @@ public class CompositeMetamodelExtender extends AbstractMetamodelExtender {
     }
 
     /**
-     * Returns an iterator browsing the model through the containment
-     * references.
+     * Returns an iterator browsing the model through the containment references.
      * 
      * @param root
      *            element to start browsing from.
-     * @return an iterator browsing the model through the containment
-     *         references.
+     * @return an iterator browsing the model through the containment references.
      */
     public TreeIterator<EObject> eAllContents(final EObject root) {
         return new AbstractTreeIterator<EObject>(root, false) {
@@ -201,13 +198,12 @@ public class CompositeMetamodelExtender extends AbstractMetamodelExtender {
     }
 
     /**
-     * Check whether the given instance should block the eAllContent browsing or
-     * not.
+     * Check whether the given instance should block the eAllContent browsing or not.
      * 
      * @param root
      *            any instance.
-     * @return a {@link IMetamodelExtender} willing to block the eAllContents
-     *         browsing, null if no extenders want to do that.
+     * @return a {@link IMetamodelExtender} willing to block the eAllContents browsing, null if no extenders want to do
+     *         that.
      */
     private IMetamodelExtender hasBrowsingBlocker(final EObject root) {
         for (final IMetamodelExtender extender : getActivatedExtenders()) {
@@ -227,8 +223,7 @@ public class CompositeMetamodelExtender extends AbstractMetamodelExtender {
     public EObject eDelete(EObject objectToRemove, ECrossReferenceAdapter xref, EReferencePredicate isReferencesToIgnorePredicate) {
         EObject result = null;
         /*
-         * we want every extender to be notified when an instance should be
-         * removed.
+         * we want every extender to be notified when an instance should be removed.
          */
         for (final IMetamodelExtender extender : getActivatedExtenders()) {
             result = extender.eDelete(objectToRemove, xref, isReferencesToIgnorePredicate);
@@ -297,8 +292,7 @@ public class CompositeMetamodelExtender extends AbstractMetamodelExtender {
     public Object eRemove(final EObject instance, final String name, final Object value) {
         Object result = null;
         /*
-         * we want every extender to be notified when an instance should be
-         * removed.
+         * we want every extender to be notified when an instance should be removed.
          */
         for (final IMetamodelExtender extender : getActivatedExtenders()) {
             result = extender.eRemove(instance, name, value);
@@ -382,8 +376,7 @@ public class CompositeMetamodelExtender extends AbstractMetamodelExtender {
      *            element to start browsing from.
      * @param typeName
      *            Type to keep.
-     * @return an iterator browsing the model through the containment
-     *         references.
+     * @return an iterator browsing the model through the containment references.
      */
     public Collection<EObject> eAllContents(final EObject target, final String typeName) {
         final Collection<EObject> result = new ArrayList<>();
@@ -469,20 +462,13 @@ public class CompositeMetamodelExtender extends AbstractMetamodelExtender {
     }
 
     /**
-     * return an ordered iterator on the activated extenders considering
-     * priority.
+     * return an ordered iterator on the activated extenders considering priority.
      * 
-     * @return an ordered iterator on the activated extenders considering
-     *         priority.
+     * @return an ordered iterator on the activated extenders considering priority.
      */
     protected synchronized Iterable<IMetamodelExtender> getActivatedExtenders() {
         if (activeExtenders == null) {
-            activeExtenders = Iterables.filter(extenders, new Predicate<IMetamodelExtender>() {
-                @Override
-                public boolean apply(IMetamodelExtender extender) {
-                    return extender.isActive();
-                }
-            });
+            activeExtenders = Iterables.filter(extenders, IMetamodelExtender::isActive);
         }
         return activeExtenders;
     }

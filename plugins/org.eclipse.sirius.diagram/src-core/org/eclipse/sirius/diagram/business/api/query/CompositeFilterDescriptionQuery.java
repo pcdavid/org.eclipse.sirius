@@ -13,6 +13,8 @@
 package org.eclipse.sirius.diagram.business.api.query;
 
 import java.util.Collection;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
@@ -21,10 +23,6 @@ import org.eclipse.sirius.diagram.description.filter.CompositeFilterDescription;
 import org.eclipse.sirius.diagram.description.filter.Filter;
 import org.eclipse.sirius.diagram.description.filter.FilterKind;
 import org.eclipse.sirius.diagram.description.filter.MappingFilter;
-
-import com.google.common.base.Predicate;
-import com.google.common.collect.Iterables;
-import com.google.common.collect.Lists;
 
 /**
  * A class aggregating all the queries (read-only!) having a
@@ -84,29 +82,23 @@ public class CompositeFilterDescriptionQuery {
     }
 
     private boolean hasFilter(FilterKind filterKind) {
-        return Iterables.any(composite.getFilters(), new FilterKindPredicate(filterKind));
+        return composite.getFilters().stream().anyMatch(new FilterKindPredicate(filterKind));
     }
 
     private Collection<Filter> getFilters(FilterKind filterKind) {
-        return Lists.newArrayList(Iterables.filter(composite.getFilters(), new FilterKindPredicate(filterKind)));
+        return composite.getFilters().stream().filter(new FilterKindPredicate(filterKind)).collect(Collectors.toList());
     }
 
     private static class FilterKindPredicate implements Predicate<Filter> {
 
-        private FilterKind filterKind;
+        private final FilterKind filterKind;
 
-        /**
-         * Default constructor.
-         * 
-         * @param filterKind
-         *            the expected filter kind
-         */
         FilterKindPredicate(FilterKind filterKind) {
-            super();
             this.filterKind = filterKind;
         }
 
-        public boolean apply(Filter input) {
+        @Override
+        public boolean test(Filter input) {
             return input.getFilterKind() == filterKind;
         }
     }
@@ -119,7 +111,7 @@ public class CompositeFilterDescriptionQuery {
      *         composite filter.
      */
     public EList<DiagramElementMapping> getHiddenMappings() {
-        EList<DiagramElementMapping> result = new BasicEList<DiagramElementMapping>();
+        EList<DiagramElementMapping> result = new BasicEList<>();
         for (Filter filter : getHideFilters()) {
             if (filter instanceof MappingFilter) {
                 result.addAll(((MappingFilter) filter).getMappings());

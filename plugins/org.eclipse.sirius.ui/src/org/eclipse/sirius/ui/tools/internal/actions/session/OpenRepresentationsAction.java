@@ -15,6 +15,9 @@ package org.eclipse.sirius.ui.tools.internal.actions.session;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.LinkedHashSet;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.SubMonitor;
@@ -30,10 +33,6 @@ import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
 import org.eclipse.sirius.viewpoint.provider.Messages;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.PlatformUI;
-
-import com.google.common.base.Predicates;
-import com.google.common.collect.Iterables;
-import com.google.common.collect.Sets;
 
 /**
  * Action to open the given representations and init/update the corresponding ui session(s).
@@ -54,7 +53,7 @@ public class OpenRepresentationsAction extends Action {
         super(Messages.OpenRepresentationsAction_name);
 
         if (repDesriptors != null) {
-            this.representationsToOpen = Sets.newLinkedHashSet(Iterables.filter(repDesriptors, Predicates.notNull()));
+            this.representationsToOpen = repDesriptors.stream().filter(Objects::nonNull).collect(Collectors.toCollection(LinkedHashSet::new));
         }
     }
 
@@ -71,19 +70,14 @@ public class OpenRepresentationsAction extends Action {
     @Override
     public void run() {
         try {
-            IRunnableWithProgress runnable = new IRunnableWithProgress() {
-                @Override
-                public void run(final IProgressMonitor pm) {
-                    openRepresentations(pm);
-                }
-            };
+            IRunnableWithProgress runnable = pm -> openRepresentations(pm);
             PlatformUI.getWorkbench().getProgressService().run(true, false, runnable);
         } catch (final InvocationTargetException e) {
             if (e.getCause() instanceof RuntimeException) {
                 throw (RuntimeException) e.getCause();
             }
             throw new RuntimeException(e);
-        } catch (final InterruptedException e) {
+        } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
     }

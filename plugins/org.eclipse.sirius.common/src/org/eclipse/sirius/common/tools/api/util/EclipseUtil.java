@@ -18,7 +18,9 @@ import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Optional;
+import java.util.function.Predicate;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
@@ -34,9 +36,6 @@ import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.eclipse.sirius.common.tools.DslCommonPlugin;
 import org.eclipse.sirius.common.tools.Messages;
-
-import com.google.common.base.Predicate;
-import com.google.common.base.Predicates;
 
 /**
  * This class is should contains useful static functions related to Eclipse
@@ -79,7 +78,7 @@ public final class EclipseUtil {
      * @return a List of clazz instance
      */
     public static <T> List<T> getExtensionPlugins(final Class<T> clazz, final String extensionId, final String attribute) {
-        return EclipseUtil.getExtensionPlugins(clazz, extensionId, attribute, null, Predicates.<String> alwaysTrue());
+        return EclipseUtil.getExtensionPlugins(clazz, extensionId, attribute, null, any -> true);
     }
 
     /**
@@ -102,7 +101,7 @@ public final class EclipseUtil {
      * @since 0.9.0
      */
     public static <T> List<T> getExtensionPlugins(final Class<T> clazz, final String extensionId, final String executableAttribute, final String attributeName, final String exceptedAttributeValue) {
-        return EclipseUtil.getExtensionPlugins(clazz, extensionId, executableAttribute, attributeName, Predicates.equalTo(exceptedAttributeValue));
+        return EclipseUtil.getExtensionPlugins(clazz, extensionId, executableAttribute, attributeName, attr -> Objects.equals(exceptedAttributeValue, attr));
     }
 
     /**
@@ -181,7 +180,7 @@ public final class EclipseUtil {
                 final IConfigurationElement[] ce = ext.getConfigurationElements();
                 for (IConfigurationElement element : ce) {
 
-                    if (EclipseUtil.checkAttribute(element, keyAttributeName, Predicates.<String> alwaysTrue())) {
+                    if (EclipseUtil.checkAttribute(element, keyAttributeName, any -> true)) {
                         Object obj;
                         try {
                             obj = element.createExecutableExtension(executableAttribute);
@@ -226,7 +225,7 @@ public final class EclipseUtil {
     private static boolean checkAttribute(final IConfigurationElement element, final String attributeName, final Predicate<String> exceptedAttributeValue) {
         if (attributeName != null) {
             final String namedAttribute = element.getAttribute(attributeName);
-            return namedAttribute != null && (exceptedAttributeValue == null || exceptedAttributeValue.apply(namedAttribute));
+            return namedAttribute != null && (exceptedAttributeValue == null || exceptedAttributeValue.test(namedAttribute));
         }
         return true;
     }

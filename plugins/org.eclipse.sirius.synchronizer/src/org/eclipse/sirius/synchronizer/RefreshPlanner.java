@@ -19,13 +19,12 @@ import org.eclipse.sirius.ext.base.Option;
 import org.eclipse.sirius.ext.base.Options;
 
 import com.google.common.base.Function;
-import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Sets;
 
 /**
- * The refresh planner use the input mappings and status of the output model
- * before update to compute the {@link RefreshPlan}
+ * The refresh planner use the input mappings and status of the output model before update to compute the
+ * {@link RefreshPlan}
  * 
  * @author Cedric Brun <cedric.brun@obeo.fr>
  * 
@@ -86,11 +85,8 @@ public class RefreshPlanner {
         pre.computeStatus(container, childMappings);
         post.addPreviousStatus(pre.getExistingOutputs());
 
-        Iterable<? extends Mapping> mappingsCreatingElements = Iterables.filter(childMappings, new Predicate<Mapping>() {
-            @Override
-            public boolean apply(Mapping input) {
-                return input.getCreator().some();
-            }
+        Iterable<? extends Mapping> mappingsCreatingElements = Iterables.filter(childMappings, (Mapping input) -> {
+            return input.getCreator().some();
         });
         Iterable<Collection<MappingHiearchy>> transformedHiearchy = Iterables.transform(mappingsCreatingElements, toHierarchy);
         Iterable<MappingHiearchy> childHiearchies = Sets.newLinkedHashSet(Iterables.concat(transformedHiearchy));

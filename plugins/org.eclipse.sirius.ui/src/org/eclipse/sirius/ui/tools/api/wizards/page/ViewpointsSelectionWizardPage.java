@@ -32,7 +32,6 @@ import org.eclipse.sirius.viewpoint.description.Viewpoint;
 import org.eclipse.sirius.viewpoint.provider.Messages;
 import org.eclipse.swt.widgets.Composite;
 
-import com.google.common.base.Predicate;
 import com.google.common.collect.Collections2;
 
 /**
@@ -159,17 +158,13 @@ public class ViewpointsSelectionWizardPage extends WizardPage {
     private Collection<Viewpoint> getAvailableViewpoints() {
         ViewpointRegistry registry = ViewpointRegistry.getInstance();
 
-        return Collections2.filter(registry.getViewpoints(), new Predicate<Viewpoint>() {
-
-            @Override
-            public boolean apply(Viewpoint viewpoint) {
-                for (final String ext : computeSemanticFileExtensions(session)) {
-                    if (new ViewpointQuery(viewpoint).handlesSemanticModelExtension(ext)) {
-                        return true;
-                    }
+        return Collections2.filter(registry.getViewpoints(), viewpoint -> {
+            for (final String ext : computeSemanticFileExtensions(session)) {
+                if (new ViewpointQuery(viewpoint).handlesSemanticModelExtension(ext)) {
+                    return true;
                 }
-                return false;
             }
+            return false;
         });
     }
 

@@ -18,9 +18,6 @@ import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.impl.AdapterImpl;
 import org.eclipse.emf.ecore.resource.Resource;
 
-import com.google.common.base.Predicates;
-import com.google.common.collect.Iterators;
-
 /**
  * Utility class used to mark a {@link Resource} as having been migrated. A
  * {@link Resource} having such a marker *might* have been processed by a
@@ -70,6 +67,6 @@ public class ResourceMigrationMarker extends AdapterImpl {
      * @return true if the {@link Resource} has a migration marker.
      */
     public static boolean hasMigrationMarker(Resource res) {
-        return Iterators.any(res.eAdapters().iterator(), Predicates.instanceOf(ResourceMigrationMarker.class));
+        return res.eAdapters().stream().anyMatch(ResourceMigrationMarker.class::isInstance);
     }
 }

@@ -59,7 +59,6 @@ import org.eclipse.sirius.viewpoint.description.RepresentationDescription;
 import org.eclipse.sirius.viewpoint.description.Viewpoint;
 import org.eclipse.sirius.viewpoint.description.tool.ModelOperation;
 
-import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
 
 /**
@@ -281,12 +280,7 @@ public abstract class AbstractRepresentationDialectServices implements DialectSe
      */
     protected Iterable<RepresentationDescription> getAvailableRepresentationDescriptions(Viewpoint vp, final EObject semantic) {
         Iterable<RepresentationDescription> candidates = new ViewpointQuery(vp).getAllRepresentationDescriptions();
-        return Iterables.filter(candidates, new Predicate<RepresentationDescription>() {
-            @Override
-            public boolean apply(RepresentationDescription input) {
-                return canCreate(semantic, input);
-            }
-        });
+        return Iterables.filter(candidates, input -> canCreate(semantic, input));
     }
 
     /**

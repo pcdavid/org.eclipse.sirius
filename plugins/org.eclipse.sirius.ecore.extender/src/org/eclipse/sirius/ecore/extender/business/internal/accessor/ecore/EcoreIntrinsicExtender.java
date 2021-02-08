@@ -39,12 +39,10 @@ import org.eclipse.sirius.ecore.extender.business.api.accessor.ExtensionFeatureD
 import org.eclipse.sirius.ecore.extender.business.api.accessor.MetamodelDescriptor;
 import org.eclipse.sirius.ext.emf.EReferencePredicate;
 
-import com.google.common.base.Predicates;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Multimap;
-import com.google.common.collect.Sets;
 
 /**
  * This metamodel Extender accesses the intrinsic data of an EObject.
@@ -58,7 +56,7 @@ public class EcoreIntrinsicExtender extends AbstractMetamodelExtender {
 
     private static final String AQL_SEPARATOR = "::"; //$NON-NLS-1$
 
-    private static PackageRegistryIndex platformIndex = new PackageRegistryIndex(EPackage.Registry.INSTANCE, Predicates.<EPackage> alwaysTrue());
+    private static PackageRegistryIndex platformIndex = new PackageRegistryIndex(EPackage.Registry.INSTANCE, any -> true);
 
     private Multimap<String, EClass> viewpointIndex = HashMultimap.create();
 
@@ -439,7 +437,7 @@ public class EcoreIntrinsicExtender extends AbstractMetamodelExtender {
 
     @Override
     public void updateMetamodels(final Collection<? extends MetamodelDescriptor> metamodelDescriptors) {
-        final Collection<? extends MetamodelDescriptor> metamodelDescriptorsCopy = Sets.newLinkedHashSet(metamodelDescriptors);
+        final Collection<? extends MetamodelDescriptor> metamodelDescriptorsCopy = new LinkedHashSet<>(metamodelDescriptors);
         if (lastDescriptors != null) {
             metamodelDescriptorsCopy.removeAll(lastDescriptors);
         }

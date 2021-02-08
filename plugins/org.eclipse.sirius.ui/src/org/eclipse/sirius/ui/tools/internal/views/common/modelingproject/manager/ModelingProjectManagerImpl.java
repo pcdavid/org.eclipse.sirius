@@ -20,6 +20,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
+import java.util.function.Predicate;
 
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
@@ -60,8 +61,6 @@ import org.eclipse.sirius.viewpoint.SiriusPlugin;
 import org.eclipse.sirius.viewpoint.provider.Messages;
 import org.eclipse.sirius.viewpoint.provider.SiriusEditPlugin;
 
-import com.google.common.base.Predicate;
-import com.google.common.base.Predicates;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Lists;
 
@@ -94,12 +93,7 @@ public class ModelingProjectManagerImpl implements ModelingProjectManager {
         }
     };
 
-    private Predicate<URI> isAlreadyLoadedPredicate = new Predicate<URI>() {
-        @Override
-        public boolean apply(URI representationsFileURI) {
-            return isAlreadyLoaded(representationsFileURI);
-        }
-    };
+    private Predicate<URI> isAlreadyLoadedPredicate = this::isAlreadyLoaded;
 
     /**
      * Set of representations files that are currently loading. There can be only one representations file in loading at
@@ -176,8 +170,7 @@ public class ModelingProjectManagerImpl implements ModelingProjectManager {
 
         // List only the representations files that are not already loaded or
         // that are not currently in loading.
-        Iterator<URI> representationsFilesURIsToLoadIterator = Iterators.filter(representationsFilesURIs.iterator(),
-                Predicates.not(Predicates.or(Predicates.in(sessionFileLoading), isAlreadyLoadedPredicate)));
+        Iterator<URI> representationsFilesURIsToLoadIterator = Iterators.filter(representationsFilesURIs.iterator(), isAlreadyLoadedPredicate.or(sessionFileLoading::contains).negate()::test);
         if (!representationsFilesURIsToLoadIterator.hasNext()) {
             return;
         }

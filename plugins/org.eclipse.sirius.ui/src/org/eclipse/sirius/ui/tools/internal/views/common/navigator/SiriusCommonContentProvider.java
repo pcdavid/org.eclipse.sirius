@@ -25,6 +25,7 @@ import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.function.Predicate;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
@@ -78,8 +79,6 @@ import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonContentProvider;
 import org.eclipse.ui.progress.UIJob;
 
-import com.google.common.base.Function;
-import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 
@@ -243,12 +242,7 @@ public class SiriusCommonContentProvider implements ICommonContentProvider {
         // Look for opened sessions on parent file : detect main aird for non
         // modeling projects, all aird for modeling ones, semantic file for
         // transient sessions.
-        List<Session> openedSessions = Lists.newArrayList(Iterables.filter(FileSessionFinder.getSelectedSessions(Collections.singletonList(parentFile)), new Predicate<Session>() {
-            @Override
-            public boolean apply(Session input) {
-                return input.isOpen();
-            }
-        }));
+        List<Session> openedSessions = Lists.newArrayList(Iterables.filter(FileSessionFinder.getSelectedSessions(Collections.singletonList(parentFile)), Session::isOpen));
 
         // Modeling project case.
         Option<ModelingProject> modelingProject = ModelingProject.asModelingProject(parentProject);
@@ -292,7 +286,7 @@ public class SiriusCommonContentProvider implements ICommonContentProvider {
 
         // Transient case
         if (!SiriusUtil.SESSION_RESOURCE_EXTENSION.equals(parentFile.getFileExtension())) {
-            Iterable<Session> transientSessions = Iterables.filter(openedSessions, new TransientSessionPredicate());
+            Iterable<Session> transientSessions = Iterables.filter(openedSessions, new TransientSessionPredicate()::test);
             if (!Iterables.isEmpty(transientSessions)) {
                 if (modelingProject.some() || Iterables.size(transientSessions) > 1) {
                     Iterables.addAll(fileChildren, transientSessions);
@@ -406,7 +400,7 @@ public class SiriusCommonContentProvider implements ICommonContentProvider {
             Option<ModelingProject> modelingProj = ModelingProject.asModelingProject(mainAirdFile.getProject());
             if (modelingProj.some()) {
                 parent = new ProjectDependenciesItemImpl(modelingProj.get());
-            } else if (new TransientSessionPredicate().apply(session)) {
+            } else if (new TransientSessionPredicate().test(session)) {
                 parent = res.getURI().isPlatformResource() ? WorkspaceSynchronizer.getFile(res) : null;
             } else {
                 parent = mainAirdFile;
@@ -417,7 +411,7 @@ public class SiriusCommonContentProvider implements ICommonContentProvider {
 
     private Object getSessionParent(Session session) {
         Object parent = null;
-        if (new TransientSessionPredicate().apply(session)) {
+        if (new TransientSessionPredicate().test(session)) {
             for (Resource res : session.getSemanticResources()) {
                 if (res.getURI().isPlatformResource()) {
                     parent = WorkspaceSynchronizer.getFile(res);
@@ -620,17 +614,14 @@ public class SiriusCommonContentProvider implements ICommonContentProvider {
      *            the list of elements to refresh
      */
     private void updateViewer(final Collection<?> toUpdate) {
-        Runnable updateViewer = new Runnable() {
-            @Override
-            public void run() {
-                if (myViewer instanceof StructuredViewer && toUpdate != null && !toUpdate.isEmpty()) {
-                    ((StructuredViewer) myViewer).update(toUpdate.toArray(), null);
-                } else {
-                    myViewer.refresh();
-                }
+        Runnable updateViewer = () -> {
+            if (myViewer instanceof StructuredViewer && toUpdate != null && !toUpdate.isEmpty()) {
+                ((StructuredViewer) myViewer).update(toUpdate.toArray(), null);
+            } else {
+                myViewer.refresh();
             }
         };
-        executeRunnables(new ArrayList<Runnable>(Arrays.asList(updateViewer)));
+        executeRunnables(new ArrayList<>(Arrays.asList(updateViewer)));
     }
 
     /**
@@ -663,10 +654,7 @@ public class SiriusCommonContentProvider implements ICommonContentProvider {
                     } else if (myViewer != null) {
                         myViewer.refresh();
                     }
-                } catch (IllegalStateException e) {
-                    // Can occur when trying to refresh the content of a
-                    // Collaborative Session being closed (silent catch)
-                } catch (NullPointerException e) {
+                } catch (IllegalStateException | NullPointerException e) {
                     // Can occur when trying to refresh the content of a
                     // Collaborative Session being closed (silent catch)
                 }
@@ -750,9 +738,7 @@ public class SiriusCommonContentProvider implements ICommonContentProvider {
             Method method = null;
             try {
                 method = myViewer.getClass().getMethod("isBusy"); //$NON-NLS-1$
-            } catch (SecurityException e) {
-                // No method, no data
-            } catch (NoSuchMethodException e) {
+            } catch (SecurityException | NoSuchMethodException e) {
                 // No method, no data
             }
 
@@ -765,11 +751,7 @@ public class SiriusCommonContentProvider implements ICommonContentProvider {
                     if (data instanceof Boolean) {
                         viewerIsBusy = ((Boolean) data).booleanValue();
                     }
-                } catch (IllegalArgumentException e) {
-                    // No access, no data
-                } catch (IllegalAccessException e) {
-                    // No access, no data
-                } catch (InvocationTargetException e) {
+                } catch (IllegalArgumentException | IllegalAccessException | InvocationTargetException e) {
                     // No access, no data
                 }
             }
@@ -942,11 +924,8 @@ public class SiriusCommonContentProvider implements ICommonContentProvider {
      */
     public static class TransientSessionPredicate implements Predicate<Session> {
 
-        /**
-         * {@inheritDoc}
-         */
         @Override
-        public boolean apply(Session input) {
+        public boolean test(Session input) {
             return new URIQuery(input.getSessionResource().getURI()).isInMemoryURI();
         }
     }
@@ -973,15 +952,8 @@ public class SiriusCommonContentProvider implements ICommonContentProvider {
                 // remove this trigger and launch a refresh of the viewer.
                 return;
             }
-            Collection<Notification> notifications = Lists.newArrayList(Iterables.filter(Iterables.filter(event.getNotifications(), Notification.class), new RefreshViewerTriggerScope(session)));
-
-            Function<Notification, Object> notifToNotifier = new Function<Notification, Object>() {
-                @Override
-                public Object apply(Notification from) {
-                    return from.getNotifier();
-                }
-            };
-            Collection<EObject> impactedElements = Lists.newArrayList(Iterables.filter(Iterables.transform(notifications, notifToNotifier), EObject.class));
+            Collection<Notification> notifications = Lists.newArrayList(Iterables.filter(Iterables.filter(event.getNotifications(), Notification.class), new RefreshViewerTriggerScope(session)::test));
+            Collection<EObject> impactedElements = Lists.newArrayList(Iterables.filter(Iterables.transform(notifications, Notification::getNotifier), EObject.class));
 
             if (!impactedElements.isEmpty()) {
                 boolean needRefresh = shouldRefresh(notifications, impactedElements);
@@ -1045,7 +1017,7 @@ public class SiriusCommonContentProvider implements ICommonContentProvider {
         }
 
         @Override
-        public boolean apply(Notification notification) {
+        public boolean test(Notification notification) {
             Object notifier = notification.getNotifier();
             boolean result = false;
 

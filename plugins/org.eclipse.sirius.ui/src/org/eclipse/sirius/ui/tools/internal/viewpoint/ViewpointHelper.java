@@ -57,9 +57,6 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.PlatformUI;
 
-import com.google.common.base.Predicate;
-import com.google.common.collect.Collections2;
-
 /**
  * Utility class containing method to handle viewpoints.
  * 
@@ -315,20 +312,14 @@ public final class ViewpointHelper {
      * @return all registered viewpoints that define editors for metamodel of loaded session's semantic models.
      */
     public static Collection<Viewpoint> getAvailableViewpoints(Session session) {
-        ViewpointRegistry registry = ViewpointRegistry.getInstance();
-
-        return Collections2.filter(registry.getViewpoints(), new Predicate<Viewpoint>() {
-
-            @Override
-            public boolean apply(Viewpoint viewpoint) {
-                for (final String ext : getSemanticFileExtensionsFromSession(session)) {
-                    if (new ViewpointQuery(viewpoint).handlesSemanticModelExtension(ext)) {
-                        return true;
-                    }
+        return ViewpointRegistry.getInstance().getViewpoints().stream().filter((Viewpoint viewpoint) -> {
+            for (String ext : getSemanticFileExtensionsFromSession(session)) {
+                if (new ViewpointQuery(viewpoint).handlesSemanticModelExtension(ext)) {
+                    return true;
                 }
-                return false;
             }
-        });
+            return false;
+        }).collect(Collectors.toList());
     }
 
     /**
@@ -339,7 +330,7 @@ public final class ViewpointHelper {
      * @return the semantic file extensions of each semantic model loaded in the session.
      */
     public static Collection<String> getSemanticFileExtensionsFromSession(Session theSession) {
-        final Collection<String> extensions = new HashSet<String>();
+        final Collection<String> extensions = new HashSet<>();
         for (final Resource resource : theSession.getSemanticResources()) {
             if (resource != null && resource.getURI() != null) {
                 final String currentFileExtension = resource.getURI().fileExtension();

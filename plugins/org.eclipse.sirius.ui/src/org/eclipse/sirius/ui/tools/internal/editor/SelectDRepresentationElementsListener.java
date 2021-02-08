@@ -64,7 +64,7 @@ public class SelectDRepresentationElementsListener extends ResourceSetListenerIm
      * Select" list.
      */
     private static final NotificationFilter DEFAULT_NOTIFICATION_FILTER = NotificationFilter.createFeatureFilter(ViewpointPackage.Literals.UI_STATE__ELEMENTS_TO_SELECT)
-            .or(NotificationFilter.NOT_TOUCH.and(SessionEventBrokerImpl.asFilter(DanglingRefRemovalTrigger.IS_ATTACHMENT)).and(NotificationFilter
+            .or(NotificationFilter.NOT_TOUCH.and(SessionEventBrokerImpl.asFilter(DanglingRefRemovalTrigger.IS_ATTACHMENT::test)).and(NotificationFilter
                     .createNotifierTypeFilter(ViewpointPackage.Literals.DREPRESENTATION).or(NotificationFilter.createNotifierTypeFilter(ViewpointPackage.Literals.DREPRESENTATION_ELEMENT))));
 
     /**

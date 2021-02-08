@@ -23,7 +23,6 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.common.tools.api.resource.ResourceSetSync;
 import org.eclipse.sirius.common.tools.api.resource.ResourceSetSync.ResourceStatus;
 
-import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 
@@ -55,13 +54,7 @@ public class SavingPolicyImpl extends AbstractSavingPolicy {
     @Override
     protected Collection<Resource> computeResourcesToSave(Set<Resource> scope, Map<?, ?> options, IProgressMonitor monitor) {
         this.saveOptions = options;
-        final Predicate<Resource> savingFilter = new Predicate<Resource>() {
-            @Override
-            public boolean apply(final Resource input) {
-                return shouldSave(input);
-            }
-        };
-        return Lists.newArrayList(Iterables.filter(scope, savingFilter));
+        return Lists.newArrayList(Iterables.filter(scope, this::shouldSave));
     }
 
     /**
@@ -72,7 +65,7 @@ public class SavingPolicyImpl extends AbstractSavingPolicy {
      * @return <code>true</code> if the resource has changes to save, <code>false</code> otherwise
      */
     protected boolean hasChangesToSave(final Resource resource) {
-        Map<Object, Object> mergedOptions = new HashMap<Object, Object>(getDefaultSaveOptions());
+        Map<Object, Object> mergedOptions = new HashMap<>(getDefaultSaveOptions());
         if (saveOptions != null) {
             mergedOptions.putAll(saveOptions);
         }

@@ -14,6 +14,7 @@ package org.eclipse.sirius.ui.tools.internal.views.common.navigator;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IMarker;
@@ -60,9 +61,7 @@ import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonLabelProvider;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 
-import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
-import com.google.common.collect.Lists;
 
 /**
  * Sirius label provider for common navigator.
@@ -291,7 +290,7 @@ public class SiriusCommonLabelProvider extends ColumnLabelProvider implements IC
 
             } else {
                 // Transient case
-                Iterable<Session> transientSessions = Iterables.filter(getOpenSessions(file), new SiriusCommonContentProvider.TransientSessionPredicate());
+                Iterable<Session> transientSessions = Iterables.filter(getOpenSessions(file), new SiriusCommonContentProvider.TransientSessionPredicate()::test);
                 if (Iterables.size(transientSessions) == 1) {
                     boolean dirty = SiriusCommonLabelProvider.shoudlShowSessionDirtyStatus(transientSessions.iterator().next());
                     text = dirty ? SiriusCommonLabelProvider.DIRTY + file.getName() : file.getName();
@@ -307,13 +306,7 @@ public class SiriusCommonLabelProvider extends ColumnLabelProvider implements IC
      * semantic file for transient sessions.
      */
     private List<Session> getOpenSessions(IFile file) {
-
-        return Lists.newArrayList(Iterables.filter(FileSessionFinder.getSelectedSessions(Collections.singletonList(file)), new Predicate<Session>() {
-            @Override
-            public boolean apply(Session input) {
-                return input.isOpen();
-            }
-        }));
+        return FileSessionFinder.getSelectedSessions(Collections.singletonList(file)).stream().filter(Session::isOpen).collect(Collectors.toList());
     }
 
     /**

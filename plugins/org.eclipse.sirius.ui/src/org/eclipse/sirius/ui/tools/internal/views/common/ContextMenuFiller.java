@@ -99,8 +99,6 @@ import org.eclipse.ui.Saveable;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 
-import com.google.common.base.Predicate;
-import com.google.common.base.Predicates;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Sets;
 
@@ -696,7 +694,7 @@ public class ContextMenuFiller implements IMenuListener, IMenuListener2 {
         Collection<EObject> eObjects = Collections.emptyList();
         if (selection != null) {
             // Keep only EObjects, not Resources (CDOResources are EObjects).
-            eObjects = Sets.newLinkedHashSet(Iterables.filter(Iterables.filter(selection, EObject.class), Predicates.not(Predicates.instanceOf(Resource.class))));
+            eObjects = selection.stream().filter(o -> o instanceof EObject && !(o instanceof Resource)).map(EObject.class::cast).collect(Collectors.toCollection(LinkedHashSet::new));
         }
         return eObjects;
     }
@@ -712,12 +710,7 @@ public class ContextMenuFiller implements IMenuListener, IMenuListener2 {
     private Collection<IProject> getModelingProjects(Collection<?> selection) {
         Collection<IProject> projects = Collections.emptyList();
         if (selection != null) {
-            projects = Sets.newLinkedHashSet(Iterables.filter(Iterables.filter(selection, IProject.class), new Predicate<IProject>() {
-                @Override
-                public boolean apply(IProject input) {
-                    return ModelingProject.hasModelingProjectNature(input);
-                }
-            }));
+            projects = Sets.newLinkedHashSet(Iterables.filter(Iterables.filter(selection, IProject.class), ModelingProject::hasModelingProjectNature));
         }
         return projects;
     }

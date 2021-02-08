@@ -42,9 +42,6 @@ import org.eclipse.sirius.viewpoint.provider.SiriusEditPlugin;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 
-import com.google.common.base.Predicate;
-import com.google.common.collect.Iterables;
-
 /**
  * An action to move selected representations.
  *
@@ -152,41 +149,34 @@ public class MoveRepresentationAction extends Action {
      */
     private boolean isValidSelection() {
         if (targetAnalysis == null) {
-
             return session.getReferencedSessionResources().size() > 0;
         } else {
 
-            boolean anyInvalidMove = Iterables.any(repDescriptors, new Predicate<DRepresentationDescriptor>() {
+            return repDescriptors.stream().noneMatch((DRepresentationDescriptor input) -> {
+                boolean invalid = false; // false is the default value
 
-                @Override
-                public boolean apply(DRepresentationDescriptor input) {
-                    boolean invalid = false; // false is the default value
+                // Step 1: Check source representation container
+                EObject container = input.eContainer();
+                if (container instanceof DView) {
+                    IPermissionAuthority permissionAuthority = PermissionAuthorityRegistry.getDefault().getPermissionAuthority(container);
+                    if (permissionAuthority != null && !permissionAuthority.canDeleteInstance(input)) {
+                        invalid = true;
+                    }
+                }
 
-                    // Step 1: Check source representation container
-                    EObject container = input.eContainer();
-                    if (container instanceof DView) {
-                        IPermissionAuthority permissionAuthority = PermissionAuthorityRegistry.getDefault().getPermissionAuthority(container);
-                        if (permissionAuthority != null && !permissionAuthority.canDeleteInstance(input)) {
+                // Step 2: Check target representation container
+                if (!invalid) {
+                    DView targetContainer = DAnalysisSessionHelper.findDViewForAddedRepresentation(targetAnalysis, input.getDescription());
+                    if (targetContainer != null) {
+                        IPermissionAuthority permissionAuthority = PermissionAuthorityRegistry.getDefault().getPermissionAuthority(targetContainer);
+                        if (permissionAuthority != null && !permissionAuthority.canCreateIn(targetContainer)) {
                             invalid = true;
                         }
                     }
-
-                    // Step 2: Check target representation container
-                    if (!invalid) {
-                        DView targetContainer = DAnalysisSessionHelper.findDViewForAddedRepresentation(targetAnalysis, input.getDescription());
-                        if (targetContainer != null) {
-                            IPermissionAuthority permissionAuthority = PermissionAuthorityRegistry.getDefault().getPermissionAuthority(targetContainer);
-                            if (permissionAuthority != null && !permissionAuthority.canCreateIn(targetContainer)) {
-                                invalid = true;
-                            }
-                        }
-                    }
-
-                    return invalid;
                 }
-            });
 
-            return !anyInvalidMove;
+                return invalid;
+            });
         }
     }
 }

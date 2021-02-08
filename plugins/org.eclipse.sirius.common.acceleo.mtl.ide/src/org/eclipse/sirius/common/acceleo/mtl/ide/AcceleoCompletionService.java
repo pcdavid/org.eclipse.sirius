@@ -15,7 +15,9 @@ package org.eclipse.sirius.common.acceleo.mtl.ide;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import org.eclipse.acceleo.internal.ide.ui.editors.template.AcceleoCompletionProcessor;
 import org.eclipse.acceleo.internal.ide.ui.editors.template.AcceleoCompletionProposal;
@@ -33,9 +35,6 @@ import org.eclipse.sirius.common.acceleo.mtl.business.internal.interpreter.Dynam
 import org.eclipse.sirius.common.tools.api.contentassist.ContentProposal;
 import org.eclipse.sirius.common.tools.api.contentassist.ContentProposalBuilder;
 import org.eclipse.sirius.common.tools.api.contentassist.ContentProposalWithReplacement.ImageKind;
-
-import com.google.common.base.Predicates;
-import com.google.common.collect.Iterables;
 
 /**
  * Service to provide completion for the Acceleo MTL interpreter.
@@ -181,7 +180,7 @@ public class AcceleoCompletionService {
     private List<URI> getDeclaredImports() {
         List<URI> accessibleOutputFiles = new ArrayList<>();
         if (dependencies != null) {
-            Iterables.addAll(accessibleOutputFiles, Iterables.filter(dependencies, Predicates.notNull()));
+            dependencies.stream().filter(Objects::nonNull).collect(Collectors.toCollection(() -> accessibleOutputFiles));
         }
         return accessibleOutputFiles;
     }

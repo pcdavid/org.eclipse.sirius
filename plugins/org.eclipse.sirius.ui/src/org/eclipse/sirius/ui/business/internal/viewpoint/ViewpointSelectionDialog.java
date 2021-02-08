@@ -54,8 +54,6 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;
 
 import com.google.common.base.Preconditions;
-import com.google.common.base.Predicate;
-import com.google.common.base.Predicates;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Maps;
@@ -166,7 +164,7 @@ public class ViewpointSelectionDialog extends TitleAreaDialog {
 
         @Override
         public Object[] getElements(Object inputElement) {
-            if (inputElement instanceof List<?> && Iterables.all((List<?>) inputElement, Predicates.instanceOf(Item.class))) {
+            if (inputElement instanceof List<?> && Iterables.all((List<?>) inputElement, Item.class::isInstance)) {
                 @SuppressWarnings("unchecked")
                 List<Item> topItems = (List<Item>) inputElement;
                 return topItems.toArray();
@@ -355,7 +353,7 @@ public class ViewpointSelectionDialog extends TitleAreaDialog {
      * @return missing dependencies
      */
     private Map<String, Collection<String>> getMissingDependencies() {
-        Set<Viewpoint> selected = Maps.filterValues(selection, Predicates.equalTo(Boolean.TRUE)).keySet();
+        Set<Viewpoint> selected = Maps.filterValues(selection, Boolean.TRUE::equals).keySet();
 
         Multimap<String, String> result = HashMultimap.create();
         for (Viewpoint viewpoint : selected) {
@@ -364,16 +362,13 @@ public class ViewpointSelectionDialog extends TitleAreaDialog {
                 final Pattern pattern = Pattern.compile(extended);
 
                 // Is there at least one available selected viewpoint URI ?
-                if (!Iterables.any(selected, new Predicate<Viewpoint>() {
-                    @Override
-                    public boolean apply(Viewpoint vp) {
-                        Option<URI> uri = new ViewpointQuery(vp).getViewpointURI();
-                        if (uri.some()) {
-                            Matcher matcher = pattern.matcher(uri.get().toString());
-                            return matcher.matches();
-                        } else {
-                            return false;
-                        }
+                if (!Iterables.any(selected, (Viewpoint vp) -> {
+                    Option<URI> uri = new ViewpointQuery(vp).getViewpointURI();
+                    if (uri.some()) {
+                        Matcher matcher = pattern.matcher(uri.get().toString());
+                        return matcher.matches();
+                    } else {
+                        return false;
                     }
                 })) {
                     result.put(viewpoint.getName(), extended.trim().replaceFirst("^viewpoint:/[^/]+/", "")); //$NON-NLS-1$ //$NON-NLS-2$
@@ -392,7 +387,7 @@ public class ViewpointSelectionDialog extends TitleAreaDialog {
      */
     private static String getMissingDependenciesErrorMessage(Map<String, Collection<String>> missingDependencies) {
         return missingDependencies.entrySet().stream()
-                           .map(entry -> MessageFormat.format(Messages.ViewpointSelection_missingDependencies_requirements, entry.getKey(), entry.getValue().stream().collect(Collectors.joining(", ")))) //$NON-NLS-1$
-                           .collect(Collectors.joining("\n")); //$NON-NLS-1$
+                .map(entry -> MessageFormat.format(Messages.ViewpointSelection_missingDependencies_requirements, entry.getKey(), entry.getValue().stream().collect(Collectors.joining(", ")))) //$NON-NLS-1$
+                .collect(Collectors.joining("\n")); //$NON-NLS-1$
     }
 }

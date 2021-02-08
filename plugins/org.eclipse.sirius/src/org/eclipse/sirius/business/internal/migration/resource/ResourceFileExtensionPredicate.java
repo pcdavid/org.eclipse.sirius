@@ -12,13 +12,13 @@
  *******************************************************************************/
 package org.eclipse.sirius.business.internal.migration.resource;
 
-import org.eclipse.emf.ecore.resource.Resource;
+import java.util.function.Predicate;
 
-import com.google.common.base.Predicate;
+import org.eclipse.emf.ecore.resource.Resource;
 
 /**
  * A Predicate checking for a given file extension.
- * 
+ *
  * @author cbrun
  */
 public class ResourceFileExtensionPredicate implements Predicate<Resource> {
@@ -29,7 +29,7 @@ public class ResourceFileExtensionPredicate implements Predicate<Resource> {
 
     /**
      * Default constructor.
-     * 
+     *
      * @param fileExtension
      *            The extension of the file to check.
      */
@@ -39,24 +39,19 @@ public class ResourceFileExtensionPredicate implements Predicate<Resource> {
 
     /**
      * Default constructor.
-     * 
+     *
      * @param fileExtension
      *            The extension of the file to check.
      * @param shouldBePlatformResource
-     *            true if we must check that this resource is a platform
-     *            resource, false otherwise
+     *            true if we must check that this resource is a platform resource, false otherwise
      */
     public ResourceFileExtensionPredicate(final String fileExtension, final boolean shouldBePlatformResource) {
         this.fileExtension = fileExtension;
         this.shouldBePlatformResource = shouldBePlatformResource;
     }
 
-    /**
-     * {@inheritDoc}
-     * 
-     * @see com.google.common.base.Predicate#apply(java.lang.Object)
-     */
-    public boolean apply(Resource input) {
+    @Override
+    public boolean test(Resource input) {
         boolean result = true;
         if (shouldBePlatformResource) {
             result = input.getURI().isPlatformResource();

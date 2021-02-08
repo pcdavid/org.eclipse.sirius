@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
+import java.util.function.Predicate;
 
 import org.eclipse.acceleo.common.IAcceleoConstants;
 import org.eclipse.acceleo.parser.interpreter.ModuleDescriptor;
@@ -43,7 +44,6 @@ import org.eclipse.sirius.common.acceleo.mtl.business.api.extension.AbstractImpo
 import org.eclipse.sirius.common.acceleo.mtl.business.api.extension.DynamicJavaModuleCreator;
 
 import com.google.common.base.Joiner;
-import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
 
 /**
@@ -221,23 +221,11 @@ public class WorkspaceJavaImportHandler extends AbstractImportHandler {
         }
     }
 
-    /**
-     * {@inheritDoc}
-     * 
-     * @see org.eclipse.sirius.common.acceleo.mtl.business.api.extension.AbstractImportHandler#canImport(java.util.Set,
-     *      java.util.Set, java.lang.String)
-     */
     @Override
     public boolean canImport(Set<String> viewpointPlugins, Set<String> viewpointProjects, String dependency) {
         return candidateExist(dependency);
     }
 
-    /**
-     * {@inheritDoc}
-     * 
-     * @see org.eclipse.sirius.common.acceleo.mtl.business.api.extension.AbstractImportHandler#createImport(java.util.Set,
-     *      java.util.Set, java.lang.String)
-     */
     @Override
     public ModuleDescriptor createImport(Set<String> viewpointPlugins, Set<String> viewpointProjects, String dependency) {
         final List<IFile> javaCandidates = findJavaCandidates(dependency);
@@ -287,15 +275,10 @@ public class WorkspaceJavaImportHandler extends AbstractImportHandler {
         javaPath += ".java"; //$NON-NLS-1$
 
         final IProject[] projects = ResourcesPlugin.getWorkspace().getRoot().getProjects();
-        final Iterable<IProject> accessibleProjects = Iterables.filter(Arrays.asList(projects), new AccessibleProjectPredicate());
+        final Iterable<IProject> accessibleProjects = Iterables.filter(Arrays.asList(projects), new AccessibleProjectPredicate()::test);
         for (IProject project : accessibleProjects) {
             try {
                 final ResourceFinder javaFinder = new ResourceFinder(javaPath) {
-                    /**
-                     * {@inheritDoc}
-                     * 
-                     * @see org.eclipse.sirius.common.acceleo.mtl.business.api.ResourceFinder#visit(org.eclipse.core.resources.IResource)
-                     */
                     @Override
                     public boolean visit(IResource resource) throws CoreException {
                         if (path.length == 0 || getMatches().size() != 0) {
@@ -340,7 +323,7 @@ public class WorkspaceJavaImportHandler extends AbstractImportHandler {
         javaPath += ".java"; //$NON-NLS-1$
 
         final IProject[] projects = ResourcesPlugin.getWorkspace().getRoot().getProjects();
-        final Iterable<IProject> accessibleProjects = Iterables.filter(Arrays.asList(projects), new AccessibleProjectPredicate());
+        final Iterable<IProject> accessibleProjects = Iterables.filter(Arrays.asList(projects), new AccessibleProjectPredicate()::test);
         for (IProject project : accessibleProjects) {
             try {
                 final ResourceFinder javaFinder = new ResourceFinder(javaPath);
@@ -362,13 +345,8 @@ public class WorkspaceJavaImportHandler extends AbstractImportHandler {
      * @author <a href="mailto:laurent.goubet@obeo.fr">Laurent Goubet</a>
      */
     private static final class AccessibleProjectPredicate implements Predicate<IProject> {
-        /**
-         * {@inheritDoc}
-         * 
-         * @see com.google.common.base.Predicate#apply(java.lang.Object)
-         */
         @Override
-        public boolean apply(IProject input) {
+        public boolean test(IProject input) {
             return input.isAccessible() && input.isOpen() && !input.isDerived();
         }
     }

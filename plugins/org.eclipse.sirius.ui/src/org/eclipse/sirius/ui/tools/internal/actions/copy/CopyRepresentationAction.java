@@ -32,7 +32,6 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.ISharedImages;
 import org.eclipse.ui.PlatformUI;
 
-import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
 
 /**
@@ -113,19 +112,15 @@ public class CopyRepresentationAction extends Action {
      */
     private boolean isValidSelection() {
 
-        boolean anyInvalidCopy = Iterables.any(repDescriptors, new Predicate<DRepresentationDescriptor>() {
-
-            @Override
-            public boolean apply(DRepresentationDescriptor input) {
-                EObject container = input.eContainer();
-                if (container instanceof DView) {
-                    IPermissionAuthority permissionAuthority = PermissionAuthorityRegistry.getDefault().getPermissionAuthority(container);
-                    if (permissionAuthority != null && !permissionAuthority.canCreateIn(container)) {
-                        return true;
-                    }
+        boolean anyInvalidCopy = Iterables.any(repDescriptors, (DRepresentationDescriptor input) -> {
+            EObject container = input.eContainer();
+            if (container instanceof DView) {
+                IPermissionAuthority permissionAuthority = PermissionAuthorityRegistry.getDefault().getPermissionAuthority(container);
+                if (permissionAuthority != null && !permissionAuthority.canCreateIn(container)) {
+                    return true;
                 }
-                return false;
             }
+            return false;
         });
 
         return !anyInvalidCopy;

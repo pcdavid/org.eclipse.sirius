@@ -39,7 +39,6 @@ import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.internal.WorkbenchMessages;
 
-import com.google.common.base.Predicate;
 import com.google.common.base.Throwables;
 import com.google.common.collect.Iterables;
 
@@ -143,24 +142,20 @@ public final class LogThroughActiveDialectEditorLogListener implements ILogListe
                 } else {
                     session = SessionManager.INSTANCE.getSession(lockedElement);
                 }
-                Iterable<Setting> representationsElementsReferencingLockedElement = Iterables.filter(session.getSemanticCrossReferencer().getInverseReferences(lockedElement),
-                        new Predicate<Setting>() {
-                            @Override
-                            public boolean apply(Setting input) {
-                                if (input.getEObject() instanceof DSemanticDecorator) {
-                                    DRepresentation concernedRepresentation = null;
-                                    if (input.getEObject() instanceof DRepresentation) {
-                                        concernedRepresentation = (DRepresentation) input.getEObject();
-                                    } else {
-                                        if (input.getEObject() instanceof DRepresentationElement) {
-                                            concernedRepresentation = new DRepresentationElementQuery((DRepresentationElement) input.getEObject()).getParentRepresentation();
-                                        }
-                                    }
-                                    return concernedRepresentation == activeRepresentation;
-                                }
-                                return false;
+                Iterable<Setting> representationsElementsReferencingLockedElement = Iterables.filter(session.getSemanticCrossReferencer().getInverseReferences(lockedElement), (Setting input) -> {
+                    if (input.getEObject() instanceof DSemanticDecorator) {
+                        DRepresentation concernedRepresentation = null;
+                        if (input.getEObject() instanceof DRepresentation) {
+                            concernedRepresentation = (DRepresentation) input.getEObject();
+                        } else {
+                            if (input.getEObject() instanceof DRepresentationElement) {
+                                concernedRepresentation = new DRepresentationElementQuery((DRepresentationElement) input.getEObject()).getParentRepresentation();
                             }
-                        });
+                        }
+                        return concernedRepresentation == activeRepresentation;
+                    }
+                    return false;
+                });
                 isConcerningObjectsOfCurrentEditor = representationsElementsReferencingLockedElement.iterator().hasNext();
             }
             return isConcerningObjectsOfCurrentEditor;

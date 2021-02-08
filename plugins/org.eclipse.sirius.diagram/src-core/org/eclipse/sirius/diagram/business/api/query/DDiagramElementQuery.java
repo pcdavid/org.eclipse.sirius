@@ -12,6 +12,9 @@
  *******************************************************************************/
 package org.eclipse.sirius.diagram.business.api.query;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.sirius.common.tools.api.util.StringUtil;
 import org.eclipse.sirius.diagram.AppliedCompositeFilters;
@@ -38,9 +41,6 @@ import org.eclipse.sirius.viewpoint.Style;
 import org.eclipse.sirius.viewpoint.description.RepresentationElementMapping;
 import org.eclipse.sirius.viewpoint.description.style.LabelStyleDescription;
 import org.eclipse.sirius.viewpoint.description.style.StyleDescription;
-
-import com.google.common.base.Predicates;
-import com.google.common.collect.Iterables;
 
 /**
  * A class aggregating all the queries (read-only!) having a
@@ -92,7 +92,7 @@ public class DDiagramElementQuery {
      * @return true if the given element is hidden.
      */
     public boolean isHidden() {
-        return Iterables.any(element.getGraphicalFilters(), Predicates.instanceOf(HideFilter.class));
+        return element.getGraphicalFilters().stream().anyMatch(HideFilter.class::isInstance);
     }
 
     /**
@@ -131,7 +131,7 @@ public class DDiagramElementQuery {
      * @return true if the label of the given element is hidden.
      */
     public boolean isLabelHidden() {
-        return Iterables.any(element.getGraphicalFilters(), Predicates.instanceOf(HideLabelFilter.class));
+        return element.getGraphicalFilters().stream().anyMatch(HideLabelFilter.class::isInstance);
     }
 
     /**
@@ -216,8 +216,7 @@ public class DDiagramElementQuery {
      * @return true if the given element is directly collapsed.
      */
     public boolean isCollapsed() {
-        return Iterables.any(element.getGraphicalFilters(), Predicates.and(Predicates.instanceOf(CollapseFilter.class), Predicates.not(Predicates.instanceOf(IndirectlyCollapseFilter.class))));
-
+        return element.getGraphicalFilters().stream().anyMatch(f -> f instanceof CollapseFilter && !(f instanceof IndirectlyCollapseFilter));
     }
 
     /**
@@ -241,7 +240,7 @@ public class DDiagramElementQuery {
      * @return true if the given element is indirectly filtered.
      */
     public boolean isOnlyIndirectlyCollapsed() {
-        return Iterables.any(element.getGraphicalFilters(), Predicates.instanceOf(IndirectlyCollapseFilter.class));
+        return element.getGraphicalFilters().stream().anyMatch(IndirectlyCollapseFilter.class::isInstance);
     }
 
     /**
@@ -251,7 +250,7 @@ public class DDiagramElementQuery {
      * @return true if the given element is filtered.
      */
     public boolean isFiltered() {
-        return Iterables.any(element.getGraphicalFilters(), Predicates.instanceOf(AppliedCompositeFilters.class));
+        return element.getGraphicalFilters().stream().anyMatch(AppliedCompositeFilters.class::isInstance);
     }
 
     /**
@@ -289,11 +288,16 @@ public class DDiagramElementQuery {
      * @return true if the given element is collapsed.
      */
     public Option<AppliedCompositeFilters> getAppliedCompositeFilters() {
-        Iterable<AppliedCompositeFilters> appliedFilters = Iterables.filter(element.getGraphicalFilters(), AppliedCompositeFilters.class);
-        if (Iterables.isEmpty(appliedFilters)) {
+        // @formatter:off
+        List<AppliedCompositeFilters> appliedFilters = element.getGraphicalFilters().stream()
+                                                              .filter(AppliedCompositeFilters.class::isInstance)
+                                                              .map(AppliedCompositeFilters.class::cast)
+                                                              .collect(Collectors.toList());
+        // @formatter:on
+        if (appliedFilters.isEmpty()) {
             return Options.newNone();
         } else {
-            return Options.newSome(Iterables.get(appliedFilters, 0));
+            return Options.newSome(appliedFilters.get(0));
         }
     }
 
@@ -370,7 +374,7 @@ public class DDiagramElementQuery {
      * @return <code>true</code> if the dDiagramElement is explicitly folded.
      */
     public boolean isExplicitlyFolded() {
-        return Iterables.any(element.getGraphicalFilters(), Predicates.instanceOf(FoldingPointFilter.class));
+        return element.getGraphicalFilters().stream().anyMatch(FoldingPointFilter.class::isInstance);
     }
 
     /**
@@ -380,7 +384,7 @@ public class DDiagramElementQuery {
      * @return <code>true</code> if the dDiagramElement is explicitly folded.
      */
     public boolean isIndirectlyFolded() {
-        return Iterables.any(element.getGraphicalFilters(), Predicates.instanceOf(FoldingFilter.class));
+        return element.getGraphicalFilters().stream().anyMatch(FoldingFilter.class::isInstance);
     }
 
     /**
@@ -390,6 +394,6 @@ public class DDiagramElementQuery {
      *         indirectly).
      */
     public boolean isFolded() {
-        return Iterables.any(element.getGraphicalFilters(), Predicates.or(Predicates.instanceOf(FoldingPointFilter.class), Predicates.instanceOf(FoldingFilter.class)));
+        return element.getGraphicalFilters().stream().anyMatch(f -> f instanceof FoldingPointFilter || f instanceof FoldingFilter);
     }
 }

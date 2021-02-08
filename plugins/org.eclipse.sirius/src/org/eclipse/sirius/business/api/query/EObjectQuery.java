@@ -21,6 +21,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 import org.eclipse.emf.common.util.EList;
@@ -55,7 +56,6 @@ import org.eclipse.sirius.viewpoint.description.Group;
 import org.eclipse.sirius.viewpoint.description.Viewpoint;
 
 import com.google.common.base.Preconditions;
-import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
 
 /**
@@ -179,12 +179,7 @@ public class EObjectQuery {
      */
     public Collection<EObject> getInverseReferences(final String featureName) {
         Preconditions.checkNotNull(featureName);
-        return getInverseReferences(new Predicate<EStructuralFeature.Setting>() {
-            @Override
-            public boolean apply(Setting input) {
-                return input != null && input.getEStructuralFeature() != null && featureName.equals(input.getEStructuralFeature().getName());
-            }
-        });
+        return getInverseReferences((Setting input)-> input != null && input.getEStructuralFeature() != null && featureName.equals(input.getEStructuralFeature().getName()));
     }
 
     /**
@@ -197,12 +192,7 @@ public class EObjectQuery {
      */
     public Collection<EObject> getInverseReferences(final EReference ref) {
         Preconditions.checkNotNull(ref);
-        return getInverseReferences(new Predicate<EStructuralFeature.Setting>() {
-            @Override
-            public boolean apply(Setting input) {
-                return input != null && ref.equals(input.getEStructuralFeature());
-            }
-        });
+        return getInverseReferences((Setting input) -> input != null && ref.equals(input.getEStructuralFeature()));
     }
 
     /**
@@ -216,12 +206,7 @@ public class EObjectQuery {
      */
     public Collection<EObject> getInverseReferences(final Set<EReference> refs) {
         Preconditions.checkNotNull(refs);
-        return getInverseReferences(new Predicate<EStructuralFeature.Setting>() {
-            @Override
-            public boolean apply(Setting input) {
-                return input != null && refs.contains(input.getEStructuralFeature());
-            }
-        });
+        return getInverseReferences((Setting input) ->input != null && refs.contains(input.getEStructuralFeature()));
     }
 
     /**
@@ -244,7 +229,7 @@ public class EObjectQuery {
             return Collections.emptySet();
         } else {
             Collection<EObject> result = new HashSet<>();
-            for (EStructuralFeature.Setting setting : Iterables.filter(xref.getInverseReferences(eObject), predicate)) {
+            for (EStructuralFeature.Setting setting : Iterables.filter(xref.getInverseReferences(eObject), predicate::test)) {
                 result.add(setting.getEObject());
             }
             return result;

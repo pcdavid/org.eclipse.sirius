@@ -16,7 +16,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 import org.eclipse.emf.ecore.EObject;
@@ -42,11 +44,8 @@ import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
 import org.eclipse.sirius.viewpoint.description.RepresentationDescription;
 import org.eclipse.sirius.viewpoint.description.Viewpoint;
 
-import com.google.common.base.Function;
-import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
-import com.google.common.collect.Ordering;
 
 /**
  * ContentProvider handling sessions and mixing semantic/representations.
@@ -206,15 +205,8 @@ public class SessionWrapperContentProvider implements ITreeContentProvider {
         final Session session = SessionManager.INSTANCE.getSession(eObject);
         if (session != null && session.isOpen()) {
             Collection<DRepresentationDescriptor> allRepDescriptors = DialectManager.INSTANCE.getRepresentationDescriptors(eObject, session);
-            List<DRepresentationDescriptor> filteredReps = Lists.newArrayList(Iterables.filter(allRepDescriptors, new InViewpointPredicate(session.getSelectedViewpoints(false))));
-            // Sort the available representation descriptors alphabetically by
-            // name
-            Collections.sort(filteredReps, Ordering.natural().onResultOf(new Function<DRepresentationDescriptor, String>() {
-                @Override
-                public String apply(DRepresentationDescriptor from) {
-                    return from.getName();
-                }
-            }));
+            List<DRepresentationDescriptor> filteredReps = Lists.newArrayList(Iterables.filter(allRepDescriptors, new InViewpointPredicate(session.getSelectedViewpoints(false))::test));
+            Collections.sort(filteredReps, Comparator.comparing(DRepresentationDescriptor::getName));
             return filteredReps;
         }
         return Collections.emptyList();
@@ -317,7 +309,7 @@ public class SessionWrapperContentProvider implements ITreeContentProvider {
         }
 
         @Override
-        public boolean apply(DRepresentationDescriptor repDescriptor) {
+        public boolean test(DRepresentationDescriptor repDescriptor) {
             if (repDescriptor.eResource() != null) {
                 RepresentationDescription description = repDescriptor.getDescription();
                 if (description != null) {

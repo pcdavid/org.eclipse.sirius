@@ -26,7 +26,6 @@ import org.eclipse.sirius.viewpoint.description.JavaExtension;
 import org.eclipse.sirius.viewpoint.description.Viewpoint;
 import org.osgi.framework.Version;
 
-import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Iterators;
 
@@ -77,12 +76,7 @@ public class InitializeCreationToolElementsToSelectExpressionParticipant extends
 
                 if (atLeastOneChange) {
                     // Add the Java Extension to use the service:
-                    if (!Iterables.any(viewpoint.getOwnedJavaExtensions(), new Predicate<JavaExtension>() {
-                        @Override
-                        public boolean apply(JavaExtension input) {
-                            return JAVA_EXTENSION_QUALIFIED_NAME.equals(input.getQualifiedClassName());
-                        }
-                    })) {
+                    if (!Iterables.any(viewpoint.getOwnedJavaExtensions(), (JavaExtension input) -> JAVA_EXTENSION_QUALIFIED_NAME.equals(input.getQualifiedClassName()))) {
                         JavaExtension javaExtension = DescriptionFactory.eINSTANCE.createJavaExtension();
                         javaExtension.setQualifiedClassName(JAVA_EXTENSION_QUALIFIED_NAME);
                         viewpoint.getOwnedJavaExtensions().add(javaExtension);

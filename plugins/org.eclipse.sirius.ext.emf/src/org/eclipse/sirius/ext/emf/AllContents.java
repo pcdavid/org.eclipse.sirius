@@ -18,7 +18,6 @@ import java.util.Iterator;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 
-import com.google.common.base.Predicate;
 import com.google.common.collect.Iterators;
 
 /**
@@ -115,9 +114,7 @@ public final class AllContents implements Iterable<EObject> {
         return new AllContents(obj, klass, includeRoot);
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    @Override
     public Iterator<EObject> iterator() {
         final Iterator<EObject> contentsIterator;
         if (root == null) {
@@ -125,11 +122,7 @@ public final class AllContents implements Iterable<EObject> {
         } else if (klass == null) {
             contentsIterator = root.eAllContents();
         } else {
-            contentsIterator = Iterators.filter(root.eAllContents(), new Predicate<EObject>() {
-                public boolean apply(EObject input) {
-                    return klass.isInstance(input);
-                }
-            });
+            contentsIterator = Iterators.filter(root.eAllContents(), klass::isInstance);
         }
         if (includeRoot) {
             return Iterators.concat(Iterators.singletonIterator(root), contentsIterator);

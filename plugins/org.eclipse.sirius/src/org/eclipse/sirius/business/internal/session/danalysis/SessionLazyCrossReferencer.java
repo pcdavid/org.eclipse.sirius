@@ -29,7 +29,6 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.sirius.common.tools.api.util.SiriusCrossReferenceAdapter;
 import org.eclipse.sirius.viewpoint.DRepresentation;
 
-import com.google.common.base.Predicates;
 import com.google.common.collect.Iterables;
 
 /**
@@ -330,7 +329,7 @@ public class SessionLazyCrossReferencer extends SiriusCrossReferenceAdapter {
             isRepresentationRemoval = true;
         } else if (notification.getEventType() == Notification.REMOVE_MANY) {
             Collection<?> removed = (Collection<?>) notification.getOldValue();
-            isRepresentationRemoval = Iterables.all(removed, Predicates.instanceOf(DRepresentation.class));
+            isRepresentationRemoval = Iterables.all(removed, DRepresentation.class::isInstance);
         } else {
             isRepresentationRemoval = false;
         }

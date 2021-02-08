@@ -74,7 +74,6 @@ import org.eclipse.sirius.viewpoint.description.RepresentationDescription;
 import org.eclipse.sirius.viewpoint.description.Viewpoint;
 
 import com.google.common.base.Function;
-import com.google.common.base.Predicate;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
@@ -447,13 +446,7 @@ public class ViewpointRegistryImpl extends ViewpointRegistry {
             final String pluginName = vpResource.getURI().segment(1);
 
             if (vpName != null && pluginName != null) {
-                Iterable<Viewpoint> sameNameAndPluginViewpoints = Iterables.filter(viewpointsFromPlugin.values(), new Predicate<Viewpoint>() {
-
-                    @Override
-                    public boolean apply(final Viewpoint input) {
-                        return vpName.equals(input.getName()) && pluginName.equals(input.eResource().getURI().segment(1));
-                    }
-                });
+                Iterable<Viewpoint> sameNameAndPluginViewpoints = Iterables.filter(viewpointsFromPlugin.values(), input -> vpName.equals(input.getName()) && pluginName.equals(input.eResource().getURI().segment(1)));
 
                 for (Viewpoint sameNameAndPluginSirius : sameNameAndPluginViewpoints) {
                     mapToViewpointProtocol(sameNameAndPluginSirius);

@@ -54,7 +54,6 @@ import org.eclipse.sirius.viewpoint.description.tool.SetValue;
 import org.eclipse.sirius.viewpoint.description.tool.ToolFactory;
 import org.eclipse.ui.IEditorPart;
 
-import com.google.common.base.Predicate;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Iterators;
@@ -83,13 +82,7 @@ public class TreeWizardMenuBuilder extends AbstractMenuBuilder {
     private Collection generateRefactoringActions(final ISelection selection, final IEditorPart editor) {
         Set<AbstractEObjectRefactoringAction> allActions = new LinkedHashSet<>();
         allActions.add(new InitializeTreeFromEClass(editor, selection));
-
-        return Sets.filter(allActions, new Predicate<AbstractEObjectRefactoringAction>() {
-
-            public boolean apply(AbstractEObjectRefactoringAction candidateAction) {
-                return candidateAction.isSelectionValid();
-            }
-        });
+        return Sets.filter(allActions, AbstractEObjectRefactoringAction::isSelectionValid);
     }
 
     @Override
@@ -224,11 +217,8 @@ class TreeDescriptionBuilderFromEClass {
         TreePopupMenu menu = DescriptionFactory.eINSTANCE.createTreePopupMenu();
         menu.setName("New");
 
-        for (EReference ownedReferences : Iterables.filter(eClassToStartFrom.getEAllReferences(), new Predicate<EReference>() {
-
-            public boolean apply(EReference input) {
-                return input.isContainment() && input.getEType() instanceof EClass;
-            }
+        for (EReference ownedReferences : Iterables.filter(eClassToStartFrom.getEAllReferences(), (EReference input) -> {
+            return input.isContainment() && input.getEType() instanceof EClass;
         })) {
             EClass targetClass = (EClass) ownedReferences.getEType();
 
@@ -339,11 +329,8 @@ class TreeDescriptionBuilderFromEClass {
     }
 
     private Option<EAttribute> lookForEditableName(EClass eClassToStartFrom) {
-        Iterator<EAttribute> it = Iterators.filter(eClassToStartFrom.getEAllAttributes().iterator(), new Predicate<EAttribute>() {
-
-            public boolean apply(EAttribute input) {
-                return "name".equals(input.getName()) && "EString".equals(input.getEType().getName());
-            }
+        Iterator<EAttribute> it = Iterators.filter(eClassToStartFrom.getEAllAttributes().iterator(), (EAttribute input) -> {
+            return "name".equals(input.getName()) && "EString".equals(input.getEType().getName());
         });
         if (it.hasNext()) {
             return Options.newSome(it.next());
@@ -381,12 +368,7 @@ class EClassHierarchy {
     }
 
     public Iterable<EClass> getConcreteSubclassesLeafs(EClass targetClass) {
-        return Iterables.filter(mostSpecific.get(targetClass), new Predicate<EClass>() {
-
-            public boolean apply(EClass input) {
-                return !input.isAbstract();
-            }
-        });
+        return Iterables.filter(mostSpecific.get(targetClass), (EClass input) -> !input.isAbstract());
     }
 
 }

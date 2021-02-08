@@ -24,6 +24,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
+import java.util.function.Predicate;
 
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.ListenerList;
@@ -112,8 +113,6 @@ import org.eclipse.sirius.viewpoint.description.Viewpoint;
 import org.eclipse.sirius.viewpoint.impl.DAnalysisSessionEObjectImpl;
 
 import com.google.common.base.Preconditions;
-import com.google.common.base.Predicate;
-import com.google.common.base.Predicates;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
@@ -337,7 +336,7 @@ public class DAnalysisSessionImpl extends DAnalysisSessionEObjectImpl implements
             }
         }
 
-        for (final DAnalysis analysis : Iterables.filter(allAnalyses(), Predicates.notNull())) {
+        for (final DAnalysis analysis : Iterables.filter(allAnalyses(), Objects::nonNull)) {
             removeAdaptersOnAnalysis(analysis);
         }
     }
@@ -1021,9 +1020,9 @@ public class DAnalysisSessionImpl extends DAnalysisSessionEObjectImpl implements
      * launching the SessionListener.OPENED notifications.
      */
     protected void initLocalTriggers() {
-        Predicate<Notification> danglingRemovalPredicate = Predicates.or(DanglingRefRemovalTrigger.IS_DETACHMENT, DanglingRefRemovalTrigger.IS_ATTACHMENT);
+        Predicate<Notification> danglingRemovalPredicate = DanglingRefRemovalTrigger.IS_DETACHMENT.or(DanglingRefRemovalTrigger.IS_ATTACHMENT::test);
         DanglingRefRemovalTrigger danglingRemovalTrigger = new DanglingRefRemovalTrigger(this);
-        getEventBroker().addLocalTrigger(SessionEventBrokerImpl.asFilter(danglingRemovalPredicate), danglingRemovalTrigger);
+        getEventBroker().addLocalTrigger(SessionEventBrokerImpl.asFilter(danglingRemovalPredicate::test), danglingRemovalTrigger);
 
         addRefreshEditorsListener();
         /*

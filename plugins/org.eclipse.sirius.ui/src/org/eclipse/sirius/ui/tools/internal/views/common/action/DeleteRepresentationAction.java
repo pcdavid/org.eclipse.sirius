@@ -49,9 +49,6 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 
-import com.google.common.base.Predicate;
-import com.google.common.collect.Iterables;
-
 /**
  * Action to delete on or more Sirius representations.
  * 
@@ -198,23 +195,15 @@ public class DeleteRepresentationAction extends Action {
      * @return true if the selection is valid
      */
     private boolean isValidSelection() {
-
-        boolean anyInvalidDelete = Iterables.any(selectedRepDescriptors, new Predicate<DRepresentationDescriptor>() {
-
-            @Override
-            public boolean apply(DRepresentationDescriptor input) {
-                EObject container = input.eContainer();
-                if (container instanceof DView) {
-                    IPermissionAuthority permissionAuthority = PermissionAuthorityRegistry.getDefault().getPermissionAuthority(container);
-                    if (permissionAuthority != null && !permissionAuthority.canDeleteInstance(input)) {
-                        return true;
-                    }
+        return selectedRepDescriptors.stream().noneMatch((DRepresentationDescriptor input) -> {
+            EObject container = input.eContainer();
+            if (container instanceof DView) {
+                IPermissionAuthority permissionAuthority = PermissionAuthorityRegistry.getDefault().getPermissionAuthority(container);
+                if (permissionAuthority != null && !permissionAuthority.canDeleteInstance(input)) {
+                    return true;
                 }
-                return false;
             }
+            return false;
         });
-
-        return !anyInvalidDelete;
     }
-
 }

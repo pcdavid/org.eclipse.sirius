@@ -20,12 +20,14 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
 import java.util.SortedMap;
 import java.util.SortedSet;
 import java.util.TreeMap;
 import java.util.TreeSet;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -76,9 +78,6 @@ import org.eclipse.ui.progress.IProgressService;
 
 import com.google.common.base.Function;
 import com.google.common.base.Joiner;
-import com.google.common.base.Predicate;
-import com.google.common.base.Predicates;
-import com.google.common.collect.Collections2;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Maps;
@@ -112,18 +111,10 @@ public final class ViewpointSelection {
      * @return The set of corresponding viewpoints, sorted with workspace viewpoints before plug-in viewpoints, and
      *         otherwise by name.
      */
-    public static Set<Viewpoint> getViewpoints(final String fileExtension) {
-        final Predicate<Viewpoint> isValidViewpoint = new Predicate<Viewpoint>() {
-            @Override
-            public boolean apply(final Viewpoint viewpoint) {
-                return new ViewpointQuery(viewpoint).handlesSemanticModelExtension(fileExtension != null ? fileExtension : StringUtil.JOKER_STRING);
-            }
-        };
-
-        final Set<Viewpoint> allViewpoints = ViewpointRegistry.getInstance().getViewpoints();
-        final Set<Viewpoint> validViewpoints = new HashSet<Viewpoint>();
-        validViewpoints.addAll(Collections2.filter(allViewpoints, isValidViewpoint));
-        return validViewpoints;
+    public static Set<Viewpoint> getViewpoints(String fileExtension) {
+        return ViewpointRegistry.getInstance().getViewpoints().stream().filter((Viewpoint viewpoint) -> {
+            return new ViewpointQuery(viewpoint).handlesSemanticModelExtension(fileExtension != null ? fileExtension : StringUtil.JOKER_STRING);
+        }).collect(Collectors.toCollection(HashSet::new));
     }
 
     /**
@@ -179,7 +170,7 @@ public final class ViewpointSelection {
             viewpointsMap.put(viewpoint, Boolean.FALSE);
         }
 
-        final WizardPage page = new WizardPage(ViewpointSelection.VIEWPOINTS_SELECTION_WIZARD_PAGE_ID, ViewpointSelection.VIEWPOINT_SELECTION_WIZARD_PAGE_TITLE, null) {
+        return new WizardPage(ViewpointSelection.VIEWPOINTS_SELECTION_WIZARD_PAGE_ID, ViewpointSelection.VIEWPOINT_SELECTION_WIZARD_PAGE_TITLE, null) {
 
             @Override
             public void createControl(final Composite parent) {
@@ -187,12 +178,7 @@ public final class ViewpointSelection {
             }
 
             private boolean isThereOneSelectedViewpoint() {
-                return Maps.filterValues(viewpointsMap, new Predicate<Boolean>() {
-                    @Override
-                    public boolean apply(final Boolean input) {
-                        return input.booleanValue();
-                    }
-                }).entrySet().iterator().hasNext();
+                return Maps.filterValues(viewpointsMap, Boolean::booleanValue).entrySet().iterator().hasNext();
             }
 
             @Override
@@ -201,7 +187,6 @@ public final class ViewpointSelection {
             }
 
         };
-        return page;
     }
 
     private static Control createViewpointsTableControl(final Composite parent, final IWizardContainer wizardContainer, final Map<Viewpoint, Boolean> viewpoints) {
@@ -320,17 +305,14 @@ public final class ViewpointSelection {
      *         as key and the list of the missing viewpoints' names as value.
      */
     public static Map<String, Collection<String>> getMissingDependencies(Set<Viewpoint> selected) {
-        Set<String> selectedURIs = Sets.newHashSet(Iterables.filter(Iterables.transform(selected, new Function<Viewpoint, String>() {
-            @Override
-            public String apply(Viewpoint from) {
-                Option<URI> uri = new ViewpointQuery(from).getViewpointURI();
-                if (uri.some()) {
-                    return uri.get().toString();
-                } else {
-                    return null;
-                }
+        Set<String> selectedURIs = Sets.newHashSet(Iterables.filter(Iterables.transform(selected, from -> {
+            Option<URI> uri = new ViewpointQuery(from).getViewpointURI();
+            if (uri.some()) {
+                return uri.get().toString();
+            } else {
+                return null;
             }
-        }), Predicates.notNull()));
+        }), Objects::nonNull));
 
         Multimap<String, String> result = HashMultimap.create();
         for (Viewpoint viewpoint : selected) {

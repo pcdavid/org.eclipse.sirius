@@ -16,14 +16,13 @@ import java.util.Collection;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.function.Predicate;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import com.google.common.base.Function;
-import com.google.common.base.Predicate;
-import com.google.common.base.Predicates;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 
@@ -39,7 +38,8 @@ public class EClassQuery {
      * @author pierre-charles.david@obeo.fr
      */
     private static final class IsContaintmentFeature implements Predicate<EStructuralFeature> {
-        public boolean apply(EStructuralFeature input) {
+        @Override
+        public boolean test(EStructuralFeature input) {
             return new EStructuralFeatureQuery(input).isContainment();
         }
     }
@@ -62,7 +62,7 @@ public class EClassQuery {
      * @return all the containment features of the {@link EClass}.
      */
     public Collection<EStructuralFeature> getAllContainmentFeatures() {
-        return ImmutableList.copyOf(Iterables.filter(eClass.getEAllStructuralFeatures(), new IsContaintmentFeature()));
+        return ImmutableList.copyOf(Iterables.filter(eClass.getEAllStructuralFeatures(), new IsContaintmentFeature()::test));
     }
 
     /**
@@ -71,45 +71,39 @@ public class EClassQuery {
      * @return all the non-containment features of the {@link EClass}.
      */
     public Collection<EStructuralFeature> getAllNonContainmentFeatures() {
-        return ImmutableList.copyOf(Iterables.filter(eClass.getEAllStructuralFeatures(), Predicates.not(new IsContaintmentFeature())));
+        return ImmutableList.copyOf(Iterables.filter(eClass.getEAllStructuralFeatures(), new IsContaintmentFeature().negate()::test));
     }
 
     /**
-     * Search structural features in <code>eClazz</code> and also in its
-     * children. For example GaugeSectionDescription is not a StyleDescription
-     * but we should searched in its references (also for EdgeStyleDescription
-     * with Begin, Center and EndLabelStyleDescription).
+     * Search structural features in <code>eClazz</code> and also in its children. For example GaugeSectionDescription
+     * is not a StyleDescription but we should searched in its references (also for EdgeStyleDescription with Begin,
+     * Center and EndLabelStyleDescription).
      * 
      * @param featureName
      *            The name of the searched EStructuralFeature
      * @param knownEClasses
      *            Already treated EClass (to avoid infinite loop)
-     * @return All structural features that have the <code>featureName</code> as
-     *         name.
+     * @return All structural features that have the <code>featureName</code> as name.
      */
     public Set<EStructuralFeature> getEStructuralFeatures(String featureName, List<EClass> knownEClasses) {
         knownEClasses.add(eClass);
-        Set<EStructuralFeature> result = new LinkedHashSet<EStructuralFeature>();
+        Set<EStructuralFeature> result = new LinkedHashSet<>();
         // Search reference in this EClass,
         EStructuralFeature eStructuralFeature = eClass.getEStructuralFeature(featureName);
         if (eStructuralFeature instanceof EReference) {
             result.add(eStructuralFeature);
         }
         // and in all contents
-        Function<EReference, EClass> toEType = new Function<EReference, EClass>() {
-            public EClass apply(EReference reference) {
-                if (reference.getEType() instanceof EClass) {
-                    return (EClass) reference.getEType();
-                } else {
-                    return null;
-                }
+        Function<EReference, EClass> toEType = (EReference reference) -> {
+            if (reference.getEType() instanceof EClass) {
+                return (EClass) reference.getEType();
+            } else {
+                return null;
             }
         };
         for (EClass subPartMetaModelEClass : Iterables.transform(eClass.getEAllContainments(), toEType)) {
-            if (subPartMetaModelEClass != null) {
-                if (!knownEClasses.contains(subPartMetaModelEClass)) {
-                    result.addAll(new EClassQuery(subPartMetaModelEClass).getEStructuralFeatures(featureName, knownEClasses));
-                }
+            if (subPartMetaModelEClass != null && !knownEClasses.contains(subPartMetaModelEClass)) {
+                result.addAll(new EClassQuery(subPartMetaModelEClass).getEStructuralFeatures(featureName, knownEClasses));
             }
         }
         return result;

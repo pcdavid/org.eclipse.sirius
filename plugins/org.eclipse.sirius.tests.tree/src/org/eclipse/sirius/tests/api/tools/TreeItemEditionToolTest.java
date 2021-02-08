@@ -24,7 +24,6 @@ import org.eclipse.sirius.tree.DTreeItem;
 import org.eclipse.sirius.ui.business.api.dialect.DialectUIManager;
 import org.junit.Assert;
 
-import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
 
 /**
@@ -73,17 +72,13 @@ public class TreeItemEditionToolTest extends TreeTestCase {
     }
 
     /**
-     * Ensures that editing a DTreeItem with an edition tool with no behavior
-     * (no model operation) does not change the semantic element neither than
-     * the treeitem.
+     * Ensures that editing a DTreeItem with an edition tool with no behavior (no model operation) does not change the
+     * semantic element neither than the treeitem.
      */
     public void testDirectEditWithNoBehavior() {
         // Step 1 : getting the semantic element to edit
-        EPackage pkgToEdit = Iterables.filter(semanticModel.getESubpackages(), new Predicate<EPackage>() {
-
-            public boolean apply(EPackage input) {
-                return elementNameP2.equals(input.getName());
-            }
+        EPackage pkgToEdit = Iterables.filter(semanticModel.getESubpackages(), (EPackage input) -> {
+            return elementNameP2.equals(input.getName());
         }).iterator().next();
 
         // Step 2 : getting the tree items corresponding to this element
@@ -109,9 +104,8 @@ public class TreeItemEditionToolTest extends TreeTestCase {
     }
 
     /**
-     * Tests edition tool with preconditions. The Edition Tool defined has a
-     * precondition that will be checked for the first DTreeItem and false for
-     * the second.
+     * Tests edition tool with preconditions. The Edition Tool defined has a precondition that will be checked for the
+     * first DTreeItem and false for the second.
      */
     public void testDirectEditWithPrecondition() {
         // Step 1 : getting the semantic elements to edit
@@ -155,12 +149,7 @@ public class TreeItemEditionToolTest extends TreeTestCase {
      */
     public void testDirectEditWithEditMask() {
         // Step 1 : getting the semantic elements to edit
-        EPackage pkgToEdit = Iterables.filter(semanticModel.getESubpackages(), new Predicate<EPackage>() {
-
-            public boolean apply(EPackage input) {
-                return elementNameP2.equals(input.getName());
-            }
-        }).iterator().next();
+        EPackage pkgToEdit = Iterables.filter(semanticModel.getESubpackages(), (EPackage input) -> elementNameP2.equals(input.getName())).iterator().next();
         EAttribute attributeToEdit = ((EClass) pkgToEdit.getEClassifier("C4")).getEAttributes().iterator().next();
 
         // Step 2 : getting the tree items corresponding to these elements
@@ -191,8 +180,8 @@ public class TreeItemEditionToolTest extends TreeTestCase {
     }
 
     /**
-     * Ensures that direct edit on TreeItem having no associated Description
-     * Tool simply renames the TreeItem and not the semantic element.
+     * Ensures that direct edit on TreeItem having no associated Description Tool simply renames the TreeItem and not
+     * the semantic element.
      */
     public void testDirectEditWithoutEditionTool() {
         // Step 1 : getting the semantic elements to edit
