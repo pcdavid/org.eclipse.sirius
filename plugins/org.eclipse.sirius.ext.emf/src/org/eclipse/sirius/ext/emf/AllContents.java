@@ -14,11 +14,10 @@ package org.eclipse.sirius.ext.emf;
 
 import java.util.Collections;
 import java.util.Iterator;
+import java.util.stream.StreamSupport;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-
-import com.google.common.collect.Iterators;
 
 /**
  * Adapter class to treat an EObject as an Iterable on all its contents.
@@ -122,10 +121,31 @@ public final class AllContents implements Iterable<EObject> {
         } else if (klass == null) {
             contentsIterator = root.eAllContents();
         } else {
-            contentsIterator = Iterators.filter(root.eAllContents(), klass::isInstance);
+            Iterable<EObject> iterable = () -> root.eAllContents();
+            contentsIterator = StreamSupport.stream(iterable.spliterator(), false).filter(klass::isInstance).iterator();
         }
         if (includeRoot) {
-            return Iterators.concat(Iterators.singletonIterator(root), contentsIterator);
+            return new Iterator<EObject>() {
+                private boolean onRoot = true;
+                @Override
+                public boolean hasNext() {
+                    if (onRoot) {
+                        return true;
+                    } else {
+                        return contentsIterator.hasNext();
+                    }
+                }
+
+                @Override
+                public EObject next() {
+                    if (onRoot) {
+                        onRoot = false;
+                        return root;
+                    } else {
+                        return contentsIterator.next();
+                    }
+                }
+            };
         } else {
             return contentsIterator;
         }

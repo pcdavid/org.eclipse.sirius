@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2011 THALES GLOBAL SERVICES.
+ * Copyright (c) 2011, 2021 THALES GLOBAL SERVICES and others.
  * This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
  * which accompanies this distribution, and is available at
@@ -13,18 +13,17 @@
 package org.eclipse.sirius.ext.emf;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
-
-import com.google.common.base.Function;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.Iterables;
 
 /**
  * Queries on {@link EClass}.
@@ -62,7 +61,7 @@ public class EClassQuery {
      * @return all the containment features of the {@link EClass}.
      */
     public Collection<EStructuralFeature> getAllContainmentFeatures() {
-        return ImmutableList.copyOf(Iterables.filter(eClass.getEAllStructuralFeatures(), new IsContaintmentFeature()::test));
+        return Collections.unmodifiableList(eClass.getEAllStructuralFeatures().stream().filter(new IsContaintmentFeature()).collect(Collectors.toList()));
     }
 
     /**
@@ -71,7 +70,7 @@ public class EClassQuery {
      * @return all the non-containment features of the {@link EClass}.
      */
     public Collection<EStructuralFeature> getAllNonContainmentFeatures() {
-        return ImmutableList.copyOf(Iterables.filter(eClass.getEAllStructuralFeatures(), new IsContaintmentFeature().negate()::test));
+        return Collections.unmodifiableList(eClass.getEAllStructuralFeatures().stream().filter(new IsContaintmentFeature().negate()).collect(Collectors.toList()));
     }
 
     /**
@@ -101,11 +100,11 @@ public class EClassQuery {
                 return null;
             }
         };
-        for (EClass subPartMetaModelEClass : Iterables.transform(eClass.getEAllContainments(), toEType)) {
+        eClass.getEAllContainments().stream().map(toEType).forEach((EClass subPartMetaModelEClass) -> {
             if (subPartMetaModelEClass != null && !knownEClasses.contains(subPartMetaModelEClass)) {
                 result.addAll(new EClassQuery(subPartMetaModelEClass).getEStructuralFeatures(featureName, knownEClasses));
             }
-        }
+        });
         return result;
     }
 }
