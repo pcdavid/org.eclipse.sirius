@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2011 Obeo.
+ * Copyright (c) 2011, 2021 Obeo.
  * This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
  * which accompanies this distribution, and is available at
@@ -12,13 +12,12 @@
  *******************************************************************************/
 package org.eclipse.sirius.synchronizer;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
-
-import com.google.common.collect.Lists;
 
 /**
  * A set of classical semantic partitions.
@@ -33,7 +32,6 @@ public class SemanticPartitions {
     }
 
     public static SemanticPartition eAllContents(String domainClass) {
-        // TODO Auto-generated method stub
         return null;
     }
 
@@ -45,7 +43,9 @@ public class SemanticPartitions {
 class EAllContentsPartition implements SemanticPartition {
 
     public EvaluatedSemanticPartition evaluate(EObject root, CreatedOutput parentElement) {
-        return new EObjectList(Lists.newArrayList(root.eAllContents()));
+        ArrayList<EObject> eObjects = new ArrayList<>();
+        root.eAllContents().forEachRemaining(eObjects::add);
+        return new EObjectList(eObjects);
     }
 
 }

@@ -31,7 +31,7 @@ public interface ModelChangeTrigger {
      * Will be called when a Notification event gets sent from the
      * SiriusEventBroker during the firing of pre-commit events.
      * 
-     * Might return <tt>null</tt> if there is nothing to do.
+     * Might return an empty {@link Option} if there is nothing to do.
      * 
      * @param notifications
      *            the list of notifications of interest.

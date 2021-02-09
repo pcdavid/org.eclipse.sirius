@@ -12,10 +12,16 @@
  *******************************************************************************/
 package org.eclipse.sirius.editor.tree.tools.internal.menu;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.command.UnexecutableCommand;
@@ -25,6 +31,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.edit.command.CommandParameter;
 import org.eclipse.emf.edit.domain.EditingDomain;
@@ -35,6 +42,7 @@ import org.eclipse.sirius.editor.tools.api.menu.AbstractMenuBuilder;
 import org.eclipse.sirius.editor.tools.api.menu.AbstractUndoRecordingCommand;
 import org.eclipse.sirius.ext.base.Option;
 import org.eclipse.sirius.ext.base.Options;
+import org.eclipse.sirius.ext.emf.AllContents;
 import org.eclipse.sirius.tree.description.DescriptionFactory;
 import org.eclipse.sirius.tree.description.TreeDescription;
 import org.eclipse.sirius.tree.description.TreeItemEditionTool;
@@ -53,13 +61,6 @@ import org.eclipse.sirius.viewpoint.description.tool.OperationAction;
 import org.eclipse.sirius.viewpoint.description.tool.SetValue;
 import org.eclipse.sirius.viewpoint.description.tool.ToolFactory;
 import org.eclipse.ui.IEditorPart;
-
-import com.google.common.collect.HashMultimap;
-import com.google.common.collect.Iterables;
-import com.google.common.collect.Iterators;
-import com.google.common.collect.Lists;
-import com.google.common.collect.Multimap;
-import com.google.common.collect.Sets;
 
 public class TreeWizardMenuBuilder extends AbstractMenuBuilder {
 
@@ -82,7 +83,7 @@ public class TreeWizardMenuBuilder extends AbstractMenuBuilder {
     private Collection generateRefactoringActions(final ISelection selection, final IEditorPart editor) {
         Set<AbstractEObjectRefactoringAction> allActions = new LinkedHashSet<>();
         allActions.add(new InitializeTreeFromEClass(editor, selection));
-        return Sets.filter(allActions, AbstractEObjectRefactoringAction::isSelectionValid);
+        return allActions.stream().filter(AbstractEObjectRefactoringAction::isSelectionValid).collect(Collectors.toList());
     }
 
     @Override
@@ -130,7 +131,7 @@ class InitializeTreeFromEClass extends AbstractEObjectRefactoringAction {
     private boolean isAbleToInitialize(final EObject elementToMove) {
         if (elementToMove instanceof TreeDescription && !StringUtil.isEmpty(((TreeDescription) elementToMove).getDomainClass())) {
             TreeDescription tree = (TreeDescription) elementToMove;
-            if (tree.getMetamodel().size() > 0) {
+            if (!tree.getMetamodel().isEmpty()) {
                 EClass foundEClass = lookForEClass(tree.getDomainClass(), tree.getMetamodel());
                 if (foundEClass != null) {
                     return true;
@@ -146,29 +147,28 @@ class InitializeTreeFromEClass extends AbstractEObjectRefactoringAction {
     }
 
     private EClass lookForEClass(String domainClass, EList<EPackage> metamodel) {
-        EClass found = null;
         Iterator<EPackage> itPak = metamodel.iterator();
-        while (found == null && itPak.hasNext()) {
+        while (itPak.hasNext()) {
             EPackage curPack = itPak.next();
-            Iterator<EClass> itClaz = Iterators.filter(curPack.eAllContents(), EClass.class);
-            while (found == null && itClaz.hasNext()) {
-                EClass cur = itClaz.next();
+            Iterator<EObject> itClaz = AllContents.of(curPack, EcorePackage.Literals.ECLASS).iterator();
+            while (itClaz.hasNext()) {
+                EObject cur = itClaz.next();
                 // TODO handle qualified name too.
-                if (domainClass.equals(cur.getName())) {
-                    return cur;
+                if (cur instanceof EClass && domainClass.equals(((EClass) cur).getName())) {
+                    return (EClass) cur;
                 }
             }
         }
-        return found;
+        return null;
     }
 
 }
 
 class TreeDescriptionBuilderFromEClass {
 
-    private Multimap<EClass, TreeItemMapping> doneClasses;
+    private Map<EClass, List<TreeItemMapping>> doneClasses;
 
-    private Multimap<EClass, OperationAction> doneItems;
+    private Map<EClass, List<OperationAction>> doneItems;
 
     private EClass rootEClass;
 
@@ -328,47 +328,47 @@ class TreeDescriptionBuilderFromEClass {
         return Options.newSome(found);
     }
 
-    private Option<EAttribute> lookForEditableName(EClass eClassToStartFrom) {
-        Iterator<EAttribute> it = Iterators.filter(eClassToStartFrom.getEAllAttributes().iterator(), (EAttribute input) -> {
+    private Optional<EAttribute> lookForEditableName(EClass eClassToStartFrom) {
+        return eClassToStartFrom.getEAllAttributes().stream().filter((EAttribute input) -> {
             return "name".equals(input.getName()) && "EString".equals(input.getEType().getName());
-        });
-        if (it.hasNext()) {
-            return Options.newSome(it.next());
-        } else {
-            return Options.newNone();
-        }
+        }).findFirst();
     }
 
 }
 
 class EClassHierarchy {
 
-    private Multimap<EClass, EClass> mostSpecific = HashMultimap.create();
+    private Map<EClass, List<EClass>> mostSpecific = new HashMap<>();
 
     EClassHierarchy(ResourceSet resourceSet) {
 
-        Set<EClass> allClasses = Sets.newLinkedHashSet(Lists.newArrayList(Iterators.filter(resourceSet.getAllContents(), EClass.class)));
+        Set<EClass> allClasses = new LinkedHashSet<>();
+        resourceSet.getAllContents().forEachRemaining(o -> {
+            if (o instanceof EClass) {
+                allClasses.add((EClass) o);
+            }
+        });
 
-        Set<EClass> somebodyIsExtendingMe = new LinkedHashSet<>();
+        Set<EClass> allSuperTypes = new LinkedHashSet<>();
         for (EClass eClass : allClasses) {
-            // TODO open a popup to allow selection of types to browse..
             if (!"DiagramImportDescription".equals(eClass.getName())) {
-                somebodyIsExtendingMe.addAll(eClass.getEAllSuperTypes());
+                allSuperTypes.addAll(eClass.getEAllSuperTypes());
             }
         }
-        Collection<? extends EClass> leaves = Sets.difference(allClasses, somebodyIsExtendingMe);
-        for (EClass leaf : leaves) {
-            mostSpecific.put(leaf, leaf);
+        allClasses.removeAll(allSuperTypes);
+        
+        for (EClass leaf : allClasses) {
+            mostSpecific.computeIfAbsent(leaf, key -> new ArrayList<>()).add(leaf);
             Iterator<EClass> it = leaf.getEAllSuperTypes().iterator();
             while (it.hasNext()) {
                 EClass next = it.next();
-                mostSpecific.put(next, leaf);
+                mostSpecific.computeIfAbsent(next, key -> new ArrayList<>()).add(leaf);
             }
         }
     }
 
     public Iterable<EClass> getConcreteSubclassesLeafs(EClass targetClass) {
-        return Iterables.filter(mostSpecific.get(targetClass), (EClass input) -> !input.isAbstract());
+        return mostSpecific.get(targetClass).stream().filter((EClass klass) -> !klass.isAbstract()).collect(Collectors.toList());
     }
 
 }

@@ -35,10 +35,6 @@ import org.eclipse.swtbot.swt.finder.widgets.SWTBotTreeItem;
 import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;
 
-import com.google.common.base.Predicates;
-import com.google.common.collect.Iterables;
-import com.google.common.collect.Lists;
-
 /**
  * Tests for the automatic arrangement features.
  * 

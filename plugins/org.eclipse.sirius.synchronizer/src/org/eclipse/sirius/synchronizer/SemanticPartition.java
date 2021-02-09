@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2011 Obeo.
+ * Copyright (c) 2011, 2021 Obeo.
  * This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
  * which accompanies this distribution, and is available at
@@ -12,17 +12,15 @@
  *******************************************************************************/
 package org.eclipse.sirius.synchronizer;
 
+import java.util.Collections;
 import java.util.Iterator;
 
 import org.eclipse.emf.ecore.EObject;
-
-import com.google.common.collect.Lists;
 
 /**
  * A {@link SemanticPartition} represents a set of elements in the input model.
  * 
  * @author Cedric Brun <cedric.brun@obeo.fr>
- * 
  */
 public interface SemanticPartition {
 
@@ -39,7 +37,7 @@ public interface SemanticPartition {
                 }
 
                 public Iterator<EObject> elements() {
-                    return Lists.<EObject> newArrayList().iterator();
+                    return Collections.emptyIterator();
                 }
             };
         }
