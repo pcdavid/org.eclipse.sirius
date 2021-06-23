@@ -19,8 +19,8 @@ import java.awt.geom.AffineTransform;
 import java.awt.image.renderable.RenderableImage;
 import java.util.Optional;
 
-import org.apache.batik.dom.svg.SVGDOMImplementation;
-import org.apache.batik.dom.svg.SVGOMDocument;
+import org.apache.batik.anim.dom.SVGDOMImplementation;
+import org.apache.batik.anim.dom.SVGOMDocument;
 import org.apache.batik.dom.util.DOMUtilities;
 import org.apache.batik.svggen.DOMTreeManager;
 import org.apache.batik.svggen.GenericImageHandler;
