@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Optional;
 import java.util.WeakHashMap;
+import java.util.function.Supplier;
 
 import org.apache.batik.anim.dom.SAXSVGDocumentFactory;
 import org.apache.batik.util.XMLResourceDescriptor;
@@ -115,12 +116,12 @@ public class SVGFigure extends Figure implements StyledFigure, ITransparentFigur
          *            the graphical context
          * @return an image store in a cache
          */
-        public synchronized Image getImage(SVGFigure fig, Rectangle clientArea, Graphics graphics) {
-            String key = fig.getKey(graphics);
+        public synchronized Image getImage(String key, Supplier<Optional<Image>> renderer) {
             Image result = images.getIfPresent(key);
             if (result == null || result.isDisposed()) {
-                if (fig.transcoder != null) {
-                    result = fig.transcoder.render(fig, clientArea, graphics, CACHE_SCALED_IMAGES);
+                Optional<Image> optionalImage = renderer.get();
+                if (optionalImage.isPresent()) {
+                    result = optionalImage.get();
                 }
                 if (result != null) {
                     images.put(key, result);
@@ -456,7 +457,13 @@ public class SVGFigure extends Figure implements StyledFigure, ITransparentFigur
      */
     protected Image getImage(Rectangle clientArea, Graphics graphics) {
         if (CACHE_ENABLED) {
-            return CACHE.getImage(this, clientArea, graphics);
+            return CACHE.getImage(this.getKey(graphics), () -> {
+                if (this.transcoder != null) {
+                    return Optional.of(this.transcoder.render(this, clientArea, graphics, CACHE_SCALED_IMAGES));
+                } else {
+                    return Optional.empty();
+                }
+            });
         } else if (transcoder != null) {
             return transcoder.render(this, clientArea, graphics, CACHE_SCALED_IMAGES);
         } else {
