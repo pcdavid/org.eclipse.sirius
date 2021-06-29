@@ -19,12 +19,11 @@ import java.util.function.Supplier;
 
 import org.eclipse.sirius.common.tools.api.util.StringUtil;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.graphics.Rectangle;
 
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
-import com.google.common.cache.RemovalListener;
 import com.google.common.cache.RemovalNotification;
-import com.google.common.cache.Weigher;
 
 /**
  * Cache of pre-rendered images.
@@ -47,38 +46,15 @@ public class ImageCache {
     }
 
     /**
-     * Computes the weight of a rendered image, as the number of bytes occupied by the raw raster data (assumes 4 8-bit
-     * channels).
+     * The rendered bitmaps, organized by key.
      */
-    private static final class ImageWeigher implements Weigher<String, Image> {
-        @Override
-        public int weigh(String key, Image value) {
-            if (value != null) {
-                synchronized (value) {
-                    if (!value.isDisposed()) {
-                        org.eclipse.swt.graphics.Rectangle bounds = value.getBounds();
-                        return bounds.width * bounds.height * 4;
-                    }
-                }
-            }
-            return 0;
-        }
-    }
-
-    private final class ImageRemovalListener implements RemovalListener<String, Image> {
-        @Override
-        public void onRemoval(RemovalNotification<String, Image> notification) {
-            Image img = notification.getValue();
-            synchronized (img) {
-                img.dispose();
-            }
-        }
-    }
-
-    /**
-     * The rendered bitmaps, organized by key..
-     */
-    private final Cache<String, Image> images = CacheBuilder.newBuilder().maximumWeight(ImageCache.MAX_WEIGHT).removalListener(new ImageRemovalListener()).weigher(new ImageWeigher()).build();
+    // @formatter:off
+    private final Cache<String, Image> images = CacheBuilder.newBuilder()
+                                                            .maximumWeight(ImageCache.MAX_WEIGHT)
+                                                            .removalListener(this::onImageRemoved)
+                                                            .weigher(this::imageWeigh)
+                                                            .build();
+    // @formatter:on
 
     /**
      * Get the image cached or create new one and cache it.
@@ -128,5 +104,24 @@ public class ImageCache {
             return remove;
         }
         return false;
+    }
+    
+    private int imageWeigh(String key, Image value) {
+        if (value != null) {
+            synchronized (value) {
+                if (!value.isDisposed()) {
+                    Rectangle bounds = value.getBounds();
+                    return bounds.width * bounds.height * 4;
+                }
+            }
+        }
+        return 0;
+    }
+    
+    private void onImageRemoved(RemovalNotification<String, Image> notification) {
+        Image img = notification.getValue();
+        synchronized (img) {
+            img.dispose();
+        }
     }
 }
