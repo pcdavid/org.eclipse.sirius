@@ -16,11 +16,8 @@ package org.eclipse.sirius.diagram.ui.tools.api.figure;
 
 import java.io.IOException;
 import java.text.MessageFormat;
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Optional;
 import java.util.WeakHashMap;
-import java.util.function.Supplier;
 
 import org.apache.batik.anim.dom.SAXSVGDocumentFactory;
 import org.apache.batik.util.XMLResourceDescriptor;
@@ -34,6 +31,7 @@ import org.eclipse.sirius.diagram.DiagramPlugin;
 import org.eclipse.sirius.diagram.ui.provider.DiagramUIPlugin;
 import org.eclipse.sirius.diagram.ui.provider.Messages;
 import org.eclipse.sirius.diagram.ui.tools.internal.figure.svg.SimpleImageTranscoder;
+import org.eclipse.sirius.diagram.ui.tools.internal.render.ImageCache;
 import org.eclipse.sirius.ext.draw2d.figure.ITransparentFigure;
 import org.eclipse.sirius.ext.draw2d.figure.ImageFigureWithAlpha;
 import org.eclipse.sirius.ext.draw2d.figure.StyledFigure;
@@ -43,122 +41,8 @@ import org.eclipse.swt.graphics.Image;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
-import com.google.common.cache.Cache;
-import com.google.common.cache.CacheBuilder;
-import com.google.common.cache.RemovalListener;
-import com.google.common.cache.RemovalNotification;
-import com.google.common.cache.Weigher;
-
 //CHECKSTYLE:OFF
 public class SVGFigure extends Figure implements StyledFigure, ITransparentFigure, ImageFigureWithAlpha {
-    /**
-     * Cache of pre-rendered images.
-     */
-    private static class ImageCache {
-        /**
-         * The maximum size of the cache, in bytes.
-         */
-        private static final int MAX_WEIGHT;
-
-        static {
-            String s = System.getProperty("org.eclipse.sirius.diagram.ui.svg.maxCacheSizeMB"); //$NON-NLS-1$
-            int mb;
-            try {
-                mb = Integer.parseInt(s);
-            } catch (NumberFormatException nfe) {
-                mb = 50;
-            }
-            MAX_WEIGHT = mb * 1024 * 1024;
-        }
-
-        /**
-         * Computes the weight of a rendered image, as the number of bytes
-         * occupied by the raw raster data (assumes 4 8-bit channels).
-         */
-        private static final class ImageWeigher implements Weigher<String, Image> {
-            @Override
-            public int weigh(String key, Image value) {
-                if (value != null) {
-                    synchronized (value) {
-                        if (!value.isDisposed()) {
-                            org.eclipse.swt.graphics.Rectangle bounds = value.getBounds();
-                            return bounds.width * bounds.height * 4;
-                        }
-                    }
-                }
-                return 0;
-            }
-        }
-
-        private final class ImageRemovalListener implements RemovalListener<String, Image> {
-            @Override
-            public void onRemoval(RemovalNotification<String, Image> notification) {
-                Image img = notification.getValue();
-                synchronized (img) {
-                    img.dispose();
-                }
-            }
-        }
-
-        /**
-         * The rendered bitmaps, organized by key..
-         */
-        private final Cache<String, Image> images = CacheBuilder.newBuilder().maximumWeight(ImageCache.MAX_WEIGHT).removalListener(new ImageRemovalListener()).weigher(new ImageWeigher()).build();
-
-        /**
-         * Get the image cached or create new one and cache it.
-         *
-         * @param key
-         *            the key
-         * @param clientArea
-         *            the client area
-         * @param graphics
-         *            the graphical context
-         * @return an image store in a cache
-         */
-        public synchronized Image getImage(String key, Supplier<Optional<Image>> renderer) {
-            Image result = images.getIfPresent(key);
-            if (result == null || result.isDisposed()) {
-                Optional<Image> optionalImage = renderer.get();
-                if (optionalImage.isPresent()) {
-                    result = optionalImage.get();
-                }
-                if (result != null) {
-                    images.put(key, result);
-                }
-            }
-            return result;
-        }
-
-        /**
-         * Remove all entries whose key begins with the given key. Remove from
-         * the document map, the entries with the given keys to force to re-read
-         * the file.
-         *
-         * @param documentKey
-         *            the document key.
-         * @return true of something was removed.
-         */
-        public synchronized boolean doRemoveFromCache(String documentKey) {
-            if (!StringUtil.isEmpty(documentKey)) {
-                boolean remove = false;
-                Collection<String> keyToRemove = new ArrayList<>();
-                for (String key : images.asMap().keySet()) {
-                    if (key.startsWith(documentKey)) {
-                        keyToRemove.add(key);
-                    }
-                }
-
-                for (String toRemove : keyToRemove) {
-                    images.invalidate(toRemove);
-                    remove = true;
-                }
-                return remove;
-            }
-            return false;
-        }
-    }
-
     private static final ImageCache CACHE = new ImageCache();
 
     private static final boolean CACHE_ENABLED = true;
