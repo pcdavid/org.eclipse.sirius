@@ -49,6 +49,8 @@ public class SVGFigure extends Figure implements StyledFigure, ITransparentFigur
 
     private static final boolean CACHE_SCALED_IMAGES = true;
 
+    private static WeakHashMap<String, Document> documentsMap = new WeakHashMap<>();
+    
     /**
      * The uri of the image to display when the file has not been found.
      */
@@ -67,7 +69,6 @@ public class SVGFigure extends Figure implements StyledFigure, ITransparentFigur
 
     private boolean failedToLoadDocument;
 
-    private SimpleImageTranscoder transcoder;
 
     /** The image ratio (width/height); computed during a SVG change detected {@link #contentChanged()}. */
     private double initialAspectRatio = 1;
@@ -80,7 +81,7 @@ public class SVGFigure extends Figure implements StyledFigure, ITransparentFigur
      */
     protected boolean modeWithViewBox;
 
-    protected static WeakHashMap<String, Document> documentsMap = new WeakHashMap<String, Document>();
+    private SimpleImageTranscoder transcoder;
 
     public SVGFigure() {
         this.setLayoutManager(new XYLayout());
@@ -143,23 +144,22 @@ public class SVGFigure extends Figure implements StyledFigure, ITransparentFigur
         transcoder = null;
         failedToLoadDocument = false;
         if (loadOnDemand) {
-            loadDocument();
+            loadDocument(getDocumentKey());
         }
     }
 
-    private void loadDocument() {
+    private void loadDocument(String documentKey) {
         transcoder = null;
         failedToLoadDocument = true;
         if (uri == null) {
             return;
         }
 
-        String documentKey = getDocumentKey();
         Document document;
         if (documentsMap.containsKey(documentKey)) {
             document = documentsMap.get(documentKey);
         } else {
-            document = createDocument();
+            document = createDocument(uri);
             documentsMap.put(documentKey, document);
         }
 
@@ -169,25 +169,25 @@ public class SVGFigure extends Figure implements StyledFigure, ITransparentFigur
         }
     }
 
-    private Document createDocument() {
+    private static Document createDocument(String uri) {
         String parser = Optional.ofNullable(XMLResourceDescriptor.getXMLParserClassName()).orElse("org.apache.xerces.parsers.SAXParser"); //$NON-NLS-1$
         SAXSVGDocumentFactory factory = new SAXSVGDocumentFactory(parser);
-        return createDocument(factory, false);
+        return createDocument(factory, uri, false);
     }
 
-    private Document createDocument(SAXSVGDocumentFactory factory, boolean forceClassLoader) {
+    private static Document createDocument(SAXSVGDocumentFactory factory, String uri, boolean forceClassLoader) {
         if (Messages.BundledImageShape_idMissing.equals(uri)) {
             DiagramPlugin.getDefault().logError(Messages.SVGFigure_usingInvalidBundledImageShape);
         } else {
             if (forceClassLoader) {
-                Thread.currentThread().setContextClassLoader(this.getClass().getClassLoader());
+                Thread.currentThread().setContextClassLoader(SVGFigure.class.getClassLoader());
             }
             try {
                 return factory.createDocument(uri);
             } catch (IOException e) {
                 boolean saxParserNotFound = e.getMessage() != null && e.getMessage().contains("SAX2 driver class org.apache.xerces.parsers.SAXParser not found"); //$NON-NLS-1$
                 if (!forceClassLoader && saxParserNotFound) {
-                    return createDocument(factory, true);
+                    return createDocument(factory, uri, true);
                 } else {
                     DiagramPlugin.getDefault().logError(MessageFormat.format(Messages.SVGFigure_loadError, uri), e);
                 }
@@ -200,12 +200,12 @@ public class SVGFigure extends Figure implements StyledFigure, ITransparentFigur
         return null;
     }
 
-    protected final Document getDocument() {
+    private Document getDocument() {
         if (failedToLoadDocument) {
             return null;
         }
         if (transcoder == null) {
-            loadDocument();
+            loadDocument(getDocumentKey());
         }
         return transcoder == null ? null : transcoder.getDocument();
     }
@@ -223,7 +223,7 @@ public class SVGFigure extends Figure implements StyledFigure, ITransparentFigur
                 if (node instanceof Element) {
                     String viewBoxValue = ((Element) node).getAttribute("viewBox"); //$NON-NLS-1$
                     if (!StringUtil.isEmpty(viewBoxValue)) {
-                        // stretch the image is not supported as the current version of Batif used does not handled it
+                        // stretch the image is not supported as the current version of Batik used does not handled it
                         // (org.apache.batik.dom.svg.SVGOMSVGElement.getViewBox()).
                         modeWithViewBox = true;
                     }
@@ -261,7 +261,7 @@ public class SVGFigure extends Figure implements StyledFigure, ITransparentFigur
      *
      * @return The key corresponding to this BundleImageFigure.
      */
-    protected String getKey(Graphics graphics) {
+    private String getKey(Graphics graphics) {
         int aaText = SWT.DEFAULT;
         try {
             aaText = graphics.getTextAntialias();
