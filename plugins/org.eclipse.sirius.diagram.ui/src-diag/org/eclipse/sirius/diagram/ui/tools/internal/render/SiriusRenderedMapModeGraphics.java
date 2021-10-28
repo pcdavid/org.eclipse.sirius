@@ -15,6 +15,7 @@ package org.eclipse.sirius.diagram.ui.tools.internal.render;
 import java.util.function.Supplier;
 
 import org.eclipse.draw2d.Graphics;
+import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.draw2d.ui.mapmode.IMapMode;
@@ -64,6 +65,27 @@ public class SiriusRenderedMapModeGraphics extends RenderedMapModeGraphics {
             } else {
                 ((SiriusGraphicsSVG) subGraphics).setCurrentId("none"); //$NON-NLS-1$
             }
+        }
+    }
+    
+    @Override
+    public Graphics getGraphics() {
+        return super.getGraphics();
+    }
+
+    /**
+     * .
+     * @param uri .
+     * @param svgArea .
+     * @param scaledArea .
+     */
+    public void drawSVGReference(String uri, Rectangle svgArea, Rectangle scaledArea) {
+        Graphics subGraphics = this.getGraphics();
+        if (subGraphics instanceof SiriusGraphicsSVG) {
+            SiriusGraphicsSVG svgGraphics = (SiriusGraphicsSVG) subGraphics;
+            svgGraphics.drawSVGReference(uri, svgArea, scaledArea);
+        } else {
+            throw new RuntimeException();
         }
     }
 

@@ -38,6 +38,8 @@ import org.eclipse.sirius.diagram.tools.api.DiagramPlugin;
 import org.eclipse.sirius.diagram.ui.provider.DiagramUIPlugin;
 import org.eclipse.sirius.diagram.ui.provider.Messages;
 import org.eclipse.sirius.diagram.ui.tools.internal.figure.svg.SimpleImageTranscoder;
+import org.eclipse.sirius.diagram.ui.tools.internal.render.SiriusGraphicsSVG;
+import org.eclipse.sirius.diagram.ui.tools.internal.render.SiriusRenderedMapModeGraphics;
 import org.eclipse.sirius.ext.draw2d.figure.ITransparentFigure;
 import org.eclipse.sirius.ext.draw2d.figure.ImageFigureWithAlpha;
 import org.eclipse.sirius.ext.draw2d.figure.StyledFigure;
@@ -479,27 +481,10 @@ public class SVGFigure extends Figure implements StyledFigure, ITransparentFigur
         if (CACHE_SCALED_IMAGES) {
             Rectangle scaledArea = new PrecisionRectangle(svgArea);
             scaledArea.performScale(graphics.getAbsoluteScale());
-            Image image = getImage(svgArea, graphics);
-            if (image != null) {
-                synchronized (image) {
-                    if (!image.isDisposed()) {
-                        if (modeWithViewBox) {
-                            graphics.drawImage(image, 0, 0, scaledArea.width(), scaledArea.height(), svgArea.x(), svgArea.y(), svgArea.width(), svgArea.height());
-                        } else {
-                            // The scaled width (and height) must not be greater than area width (and height). So
-                            // depending
-                            // on the initialAspectRatio and zoom factor, the reference can be the width or the height.
-                            double scaledWidth = svgArea.width() * graphics.getAbsoluteScale();
-                            double scaledHeight = scaledWidth / getImageAspectRatio();
-                            if ((scaledHeight / graphics.getAbsoluteScale()) > svgArea.height()) {
-                                // The height must be the reference to avoid an IllegalArgumentException later.
-                                scaledHeight = svgArea.height() * graphics.getAbsoluteScale();
-                                scaledWidth = scaledHeight * getImageAspectRatio();
-                            }
-                            graphics.drawImage(image, 0, 0, (int) scaledWidth, (int) scaledHeight, svgArea.x(), svgArea.y(), svgArea.width(), svgArea.height());
-                        }
-                    }
-                }
+            if (graphics instanceof SiriusRenderedMapModeGraphics && ((SiriusRenderedMapModeGraphics) graphics).getGraphics() instanceof SiriusGraphicsSVG) {
+                ((SiriusRenderedMapModeGraphics) graphics).drawSVGReference(this.uri, svgArea, scaledArea);
+            } else {
+                paintRenderedBitmap(graphics, svgArea, scaledArea);
             }
         } else {
             Image image = getImage(svgArea, graphics);
@@ -512,6 +497,31 @@ public class SVGFigure extends Figure implements StyledFigure, ITransparentFigur
             }
         }
         modifier.popState();
+    }
+
+    private void paintRenderedBitmap(Graphics graphics, Rectangle svgArea, Rectangle scaledArea) {
+        Image image = getImage(svgArea, graphics);
+        if (image != null) {
+            synchronized (image) {
+                if (!image.isDisposed()) {
+                    if (modeWithViewBox) {
+                        graphics.drawImage(image, 0, 0, scaledArea.width(), scaledArea.height(), svgArea.x(), svgArea.y(), svgArea.width(), svgArea.height());
+                    } else {
+                        // The scaled width (and height) must not be greater than area width (and height). So
+                        // depending
+                        // on the initialAspectRatio and zoom factor, the reference can be the width or the height.
+                        double scaledWidth = svgArea.width() * graphics.getAbsoluteScale();
+                        double scaledHeight = scaledWidth / getImageAspectRatio();
+                        if ((scaledHeight / graphics.getAbsoluteScale()) > svgArea.height()) {
+                            // The height must be the reference to avoid an IllegalArgumentException later.
+                            scaledHeight = svgArea.height() * graphics.getAbsoluteScale();
+                            scaledWidth = scaledHeight * getImageAspectRatio();
+                        }
+                        graphics.drawImage(image, 0, 0, (int) scaledWidth, (int) scaledHeight, svgArea.x(), svgArea.y(), svgArea.width(), svgArea.height());
+                    }
+                }
+            }
+        }
     }
 
     /**

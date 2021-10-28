@@ -106,6 +106,20 @@ public class SiriusGraphicsSVG extends SiriusGraphicsToGraphics2DAdaptor impleme
             ((AnnotatedSVGShape) this.shapeConverter).setCurrentId(id);
             this.currentId = id;
         }
+        
+        public void drawImageReference(String uri, Rectangle svgArea, Rectangle scaledArea) {
+            SVGGeneratorContext generatorContext = getGeneratorContext();
+            
+            Element image = getGenericImageHandler().createElement(generatorContext);
+            image.setAttributeNS(null, SVG_X_ATTRIBUTE, generatorContext.doubleString(0));
+            image.setAttributeNS(null, SVG_Y_ATTRIBUTE, generatorContext.doubleString(0));
+            image.setAttributeNS(null, SVG_WIDTH_ATTRIBUTE, generatorContext.doubleString(scaledArea.width));
+            image.setAttributeNS(null, SVG_HEIGHT_ATTRIBUTE, generatorContext.doubleString(scaledArea.height));
+            image.setAttributeNS(null, SVG_PRESERVE_ASPECT_RATIO_ATTRIBUTE, SVG_NONE_VALUE);
+            image.setAttributeNS("http://www.w3.org/1999/xlink", "xlink:href", uri.toString()); //$NON-NLS-1$ //$NON-NLS-2$
+            
+            domGroupManager.addElement(image);
+        }
 
         @Override
         public void drawString(String s, float x, float y) {
@@ -263,6 +277,10 @@ public class SiriusGraphicsSVG extends SiriusGraphicsToGraphics2DAdaptor impleme
         } else {
             return super.drawRenderedImage(srcImage, rect, listener);
         }
+    }
+
+    public void drawSVGReference(String uri, Rectangle svgArea, Rectangle scaledArea) {
+        ((CustomSVGGraphics2D) this.getGraphics2D()).drawImageReference(uri, svgArea, scaledArea);
     }
 
 }
