@@ -19,95 +19,57 @@ import org.eclipse.gmf.runtime.draw2d.ui.geometry.LineSeg;
 import org.eclipse.sirius.ext.draw2d.figure.ImageFigureWithAlpha;
 
 /**
- * Class that contains utility method to find an opaque pixel on a
- * {@link ImageFigureWithAlpha}.
+ * Class that contains utility method to find an opaque pixel on a {@link ImageFigureWithAlpha}.
  * 
  * @author <a href="mailto:laurent.redor@obeo.fr">Laurent Redor</a>
  * 
  */
 public class OpaquePixelFinder {
 
-    private int alphaLimit = 15;
-
-    /**
-     * Default constructor.
-     */
-    public OpaquePixelFinder() {
-    }
-
-    /**
-     * Constructor that allows to define the alpha limit.
-     * 
-     * @param alphaLimit
-     *            The alpha value until a pixel is consider has transparent
-     */
-    public OpaquePixelFinder(int alphaLimit) {
-        setAlphaLimit(alphaLimit);
-    }
-
-    /**
-     * Set the alpha value until a pixel is consider has transparent (between 0
-     * and this value).
-     * 
-     * @param alphaLimit
-     *            The limit to use
-     */
-    public void setAlphaLimit(int alphaLimit) {
-        this.alphaLimit = alphaLimit;
-    }
-
     /**
      * Search the first opaque point nearest from the initial cursor.
      * 
      * @param orientation
-     *            an orientation ({@link PositionConstants#HORIZONTAL} or
-     *            {@link PositionConstants#VERTICAL}) the method will consider
-     *            to start its search of an anchor position.
+     *            an orientation ({@link PositionConstants#HORIZONTAL} or {@link PositionConstants#VERTICAL}) the method
+     *            will consider to start its search of an anchor position.
      * @param initialCursorLocation
      *            The initial cursor location to consider
      * @param imageFigure
      *            The image in which to search an opaque point
      * @param box
      *            The bounding box of the figure in absolute coordinates.
-     * @return The first opaque point nearest from the initial cursor or the
-     *         <code>initialCursorLocation</code> itself if any.
+     * @return The first opaque point nearest from the initial cursor or the <code>initialCursorLocation</code> itself
+     *         if any.
      */
     public Point searchFirstOpaquePoint(int orientation, final Point initialCursorLocation, final ImageFigureWithAlpha imageFigure, Rectangle box) {
         if (box != null && box.width > 0 && box.height > 0) {
             /*
-             * This algorithm adapt the anchor position returned by super to
-             * shift it on the x or y axis up to the point where a
-             * non-transparent pixel is found.
+             * This algorithm adapt the anchor position returned by super to shift it on the x or y axis up to the point
+             * where a non-transparent pixel is found.
              */
             /*
-             * We first decide from which side (TOP, LEFT, RIGHT or BOTTOM) we
-             * will start the search, then maintain the offsetX and offsetY up
-             * to the point where we find a non transparent pixel.
+             * We first decide from which side (TOP, LEFT, RIGHT or BOTTOM) we will start the search, then maintain the
+             * offsetX and offsetY up to the point where we find a non transparent pixel.
              */
             /*
-             * if the orientation has been decided by the caller, then we should
-             * stick to its choice to return a position which maps its
-             * expectation. This is especially relevant in the case of
-             * orthogonal routing.
+             * if the orientation has been decided by the caller, then we should stick to its choice to return a
+             * position which maps its expectation. This is especially relevant in the case of orthogonal routing.
              */
             int sideToStartSearchFrom = computeSideToStartFrom(orientation, initialCursorLocation, box);
 
             /*
-             * the x offset in the box coordinate system where we are looking at
-             * currently.
+             * the x offset in the box coordinate system where we are looking at currently.
              */
             Point searchCursor = new Point(0, 0);
 
             /*
-             * The primaryScanStep is used during the search to translate the
-             * current cursor horizontally, or vertically, according to the
-             * sideToStartSearchFrom
+             * The primaryScanStep is used during the search to translate the current cursor horizontally, or
+             * vertically, according to the sideToStartSearchFrom
              */
             Point primaryScanStep = new Point(0, 0);
             /*
-             * The secondaryScanStep is used during the search to translate the
-             * current cursor horizontally, or vertically (the opposite axis of
-             * primaryScanStep) according to the sideToStartSearchFrom
+             * The secondaryScanStep is used during the search to translate the current cursor horizontally, or
+             * vertically (the opposite axis of primaryScanStep) according to the sideToStartSearchFrom
              */
             Point secondaryScanStep = new Point(0, 0);
 
@@ -163,26 +125,21 @@ public class OpaquePixelFinder {
      *            The initial cursor location
      * @param startSearchFromSide
      *            The side of the parent from which to start the search (one of
-     *            {@link org.eclipse.draw2d.PositionConstants#LEFT},
-     *            {@link org.eclipse.draw2d.PositionConstants#RIGHT},
+     *            {@link org.eclipse.draw2d.PositionConstants#LEFT}, {@link org.eclipse.draw2d.PositionConstants#RIGHT},
      *            {@link org.eclipse.draw2d.PositionConstants#TOP} or
      *            {@link org.eclipse.draw2d.PositionConstants#BOTTOM}).
      * @param primaryScanStep
-     *            It is used during the search to translate the current cursor
-     *            horizontally, or vertically, according to the
-     *            <code>sideToStartSearchFrom</code>
+     *            It is used during the search to translate the current cursor horizontally, or vertically, according to
+     *            the <code>sideToStartSearchFrom</code>
      * @param secondaryScanStep
-     *            It is used to pass to the next line, or next column, according
-     *            to the startSearchFromSide. This
-     *            <code>secondaryScanStep</code> is used alternately as is, or
-     *            as opposite to search the nearest opaque point in both
-     *            direction.
+     *            It is used to pass to the next line, or next column, according to the startSearchFromSide. This
+     *            <code>secondaryScanStep</code> is used alternately as is, or as opposite to search the nearest opaque
+     *            point in both direction.
      * @param imageFigure
      *            The image in which to search an opaque point
      * @param box
      *            The bounding box of the figure in absolute coordinates.
-     * @return The first opaque point nearest from the initial cursor if found,
-     *         or <code>initialCursor</code> otherwise.
+     * @return The first opaque point nearest from the initial cursor if found, or <code>initialCursor</code> otherwise.
      */
     public Point searchFirstOpaquePoint(final Point initialCursor, int startSearchFromSide, Point primaryScanStep, Point secondaryScanStep, final ImageFigureWithAlpha imageFigure, Rectangle box) {
         boolean foundAnOpaquePixel = false;
@@ -209,14 +166,13 @@ public class OpaquePixelFinder {
     }
 
     /**
-     * Search the first opaque point nearest from the initial cursor (
-     * <code>searchCursor</code> on the primary axis.
+     * Search the first opaque point nearest from the initial cursor ( <code>searchCursor</code> on the primary axis.
      * 
      * @param searchCursor
      *            The initial cursor location
      * @param primaryScanStep
-     *            It is used during the search to translate the current cursor
-     *            horizontally, or vertically, according to the primary axis
+     *            It is used during the search to translate the current cursor horizontally, or vertically, according to
+     *            the primary axis
      * @param imageFigure
      *            The image in which to search an opaque point
      * @param box
@@ -232,26 +188,13 @@ public class OpaquePixelFinder {
     }
 
     /**
-     * The alpha value until a pixel is consider has transparent (between 0 and
-     * this value). The default value, used if not set, is 15.
-     * 
-     * @return The alpha limit.
-     */
-    protected int getAlphaLimit() {
-        return alphaLimit;
-    }
-
-    /**
-     * Check if the point coordinates considered relative to the box origin are
-     * within the box bounds.
+     * Check if the point coordinates considered relative to the box origin are within the box bounds.
      * 
      * @param box
      *            a rectangle.
      * @param point
-     *            any point, in relative coordinate with the box origin as
-     *            reference.
-     * @return true if the relative coordinates represented by the point are out
-     *         of the box coordinates.
+     *            any point, in relative coordinate with the box origin as reference.
+     * @return true if the relative coordinates represented by the point are out of the box coordinates.
      */
     private boolean isOut(Rectangle box, Point point) {
         return box.width - Math.abs(point.x) < 0 || box.height - Math.abs(point.y) < 0;
@@ -261,9 +204,8 @@ public class OpaquePixelFinder {
         int startSearchFromSide = PositionConstants.TOP;
         Point boxCenter = box.getCenter();
         /*
-         * if the line orientation has been specified upstream, we match this
-         * choice and pick the side which is closest while keeping the
-         * horizontal or vertical orientation.
+         * if the line orientation has been specified upstream, we match this choice and pick the side which is closest
+         * while keeping the horizontal or vertical orientation.
          */
         if (orientation == PositionConstants.VERTICAL) {
             if (anchorForBoundingBox.y >= boxCenter.y) {
@@ -279,11 +221,9 @@ public class OpaquePixelFinder {
             }
         } else {
             /*
-             * No orientation has been specified. We detect the side of the box
-             * the anchor is at by intersecting a line going from anchor to the
-             * box center and each line at the side of the box. From this
-             * information we decide from which side we should start the search
-             * of non-transparent pixel.
+             * No orientation has been specified. We detect the side of the box the anchor is at by intersecting a line
+             * going from anchor to the box center and each line at the side of the box. From this information we decide
+             * from which side we should start the search of non-transparent pixel.
              */
             final LineSeg anchorToCenter = new LineSeg(anchorForBoundingBox, boxCenter);
             if (anchorToCenter.intersect(new LineSeg(box.getTopLeft(), box.getTopRight()), 3) != null) {
@@ -300,8 +240,7 @@ public class OpaquePixelFinder {
     }
 
     /**
-     * isTransparentAt Accessor to determine if the image is transparent at a
-     * given point.
+     * isTransparentAt Accessor to determine if the image is transparent at a given point.
      * 
      * @param fig
      *            the image figure.
@@ -319,8 +258,7 @@ public class OpaquePixelFinder {
         int imageHeight = fig.getImageHeight();
 
         /*
-         * scaling x and y position to get the corresponding position in the
-         * image buffer.
+         * scaling x and y position to get the corresponding position in the image buffer.
          */
         int x = (xInBox * imageWidth) / box.width;
         int y = (yInBox * imageHeight) / box.height;
@@ -332,9 +270,6 @@ public class OpaquePixelFinder {
             return true;
         }
 
-        int transValue = fig.getImageAlphaValue(x, y) == 0 ? 0 : 255;
-
-        // use a tolerance
-        return transValue <= getAlphaLimit();
+        return fig.getImageAlphaValue(x, y) == 0;
     }
 }

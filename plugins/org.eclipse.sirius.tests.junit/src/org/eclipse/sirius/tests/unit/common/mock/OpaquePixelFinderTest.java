@@ -215,7 +215,7 @@ public class OpaquePixelFinderTest {
      *            The expected opaque point, can be null if any
      */
     private void validateFirstOpaquePoint(int orientation, Point initialCursor, ImageFigureWithAlpha image, Point expectedOpaquePoint) {
-        Point result = new OpaquePixelFinder(0).searchFirstOpaquePoint(orientation, initialCursor, image, new Rectangle(0, 0, image.getImageWidth(), image.getImageHeight()));
+        Point result = new OpaquePixelFinder().searchFirstOpaquePoint(orientation, initialCursor, image, new Rectangle(0, 0, image.getImageWidth(), image.getImageHeight()));
         if (expectedOpaquePoint == null) {
             assertEquals("The first opaque point should be the initial point if there is no opaque point.", initialCursor, result);
         } else {
