@@ -18,6 +18,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Optional;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -27,7 +28,6 @@ import org.eclipse.sirius.business.api.query.RepresentationDescriptionQuery;
 import org.eclipse.sirius.business.api.query.URIQuery;
 import org.eclipse.sirius.business.api.resource.ResourceDescriptor;
 import org.eclipse.sirius.common.tools.api.util.EqualityHelper;
-import org.eclipse.sirius.ext.base.Option;
 import org.eclipse.sirius.viewpoint.DAnalysis;
 import org.eclipse.sirius.viewpoint.DRepresentation;
 import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
@@ -374,8 +374,8 @@ public final class DAnalysisSessionHelper {
             if (rootContainerInSameResource != null) {
                 boolean isMainModelOfReferencedAnalysis = false;
                 for (DAnalysis referencedAnalysis : new DAnalysisQuery(analysis).getAllReferencedAnalyses()) {
-                    Option<EObject> optionalMainModel = new DAnalysisQuery(referencedAnalysis).getMainModel();
-                    if (optionalMainModel.some() && optionalMainModel.get().equals(rootContainerInSameResource)) {
+                    Optional<EObject> optionalMainModel = new DAnalysisQuery(referencedAnalysis).getMainModel();
+                    if (optionalMainModel.isPresent() && optionalMainModel.get().equals(rootContainerInSameResource)) {
                         isMainModelOfReferencedAnalysis = true;
                     }
                 }

@@ -12,6 +12,8 @@
  *******************************************************************************/
 package org.eclipse.sirius.business.api.query;
 
+import java.util.Optional;
+
 import org.eclipse.sirius.business.api.session.resource.AirdResource;
 import org.eclipse.sirius.ext.base.Option;
 import org.eclipse.sirius.ext.base.Options;
@@ -73,7 +75,7 @@ public class AirDResouceQuery {
         if (analysis == null) {
             return true;
         }
-        final Option<DAnnotationEntry> annotation = new DAnalysisQuery(analysis).getAnnotation(ANNOTATION_SOURCE, tag);
-        return annotation.some();
+        final Optional<DAnnotationEntry> annotation = new DAnalysisQuery(analysis).getAnnotation(ANNOTATION_SOURCE, tag);
+        return annotation.isPresent();
     }
 }

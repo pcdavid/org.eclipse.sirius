@@ -14,13 +14,13 @@ package org.eclipse.sirius.business.api.query;
 
 import java.util.Collection;
 import java.util.LinkedHashSet;
+import java.util.Objects;
+import java.util.Optional;
 import java.util.Set;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
-import org.eclipse.sirius.ext.base.Option;
-import org.eclipse.sirius.ext.base.Options;
 import org.eclipse.sirius.viewpoint.DAnalysis;
 import org.eclipse.sirius.viewpoint.DView;
 import org.eclipse.sirius.viewpoint.description.DAnnotationEntry;
@@ -32,9 +32,10 @@ import org.eclipse.sirius.viewpoint.description.Viewpoint;
  * @author nlepine
  * 
  */
+@SuppressWarnings("restriction")
 public class DAnalysisQuery {
 
-    private org.eclipse.sirius.model.business.internal.query.DAnalysisQuery internalQuery;
+    private final org.eclipse.sirius.model.business.internal.query.DAnalysisQuery internalQuery;
 
     /**
      * Create a new query.
@@ -43,7 +44,7 @@ public class DAnalysisQuery {
      *            the element to query.
      */
     public DAnalysisQuery(DAnalysis analysis) {
-        this.internalQuery = new org.eclipse.sirius.model.business.internal.query.DAnalysisQuery(analysis);
+        this.internalQuery = new org.eclipse.sirius.model.business.internal.query.DAnalysisQuery(Objects.requireNonNull(analysis));
     }
 
     /**
@@ -55,7 +56,7 @@ public class DAnalysisQuery {
      *            the data of the annotation
      * @return the annotation entry
      */
-    public Option<DAnnotationEntry> getAnnotation(final String source, final String detail) {
+    public Optional<DAnnotationEntry> getAnnotation(final String source, final String detail) {
         return internalQuery.getAnnotation(source, detail);
     }
 
@@ -66,7 +67,7 @@ public class DAnalysisQuery {
      *            the source of the annotation
      * @return the annotation entries
      */
-    public Option<DAnnotationEntry> getAnnotation(final String source) {
+    public Optional<DAnnotationEntry> getAnnotation(final String source) {
         return internalQuery.getAnnotation(source);
     }
 
@@ -86,12 +87,12 @@ public class DAnalysisQuery {
      * 
      * @return an optional EObject representing the root of the main semantic model.
      */
-    public Option<EObject> getMainModel() {
+    public Optional<EObject> getMainModel() {
         EList<EObject> models = internalQuery.getDAnalysis().getModels();
         if (models.isEmpty()) {
-            return Options.newNone();
+            return Optional.empty();
         } else {
-            return Options.newSome(models.get(0));
+            return Optional.of(models.get(0));
         }
     }
 
@@ -105,11 +106,11 @@ public class DAnalysisQuery {
      * @return an {@link Set} of EObject representing the root of the main semantic models.
      */
     public Set<EObject> getMainModels() {
-        Option<EObject> optionalMainModel = getMainModel();
+        Optional<EObject> optionalMainModel = getMainModel();
         // We need a list with the "main model" and other root models to allow
         // control on project with many models
         Set<EObject> releventModels = new LinkedHashSet<>();
-        if (optionalMainModel.some()) {
+        if (optionalMainModel.isPresent()) {
             releventModels.add(optionalMainModel.get());
             for (EObject model : internalQuery.getDAnalysis().getModels()) {
                 if (!AdapterFactoryEditingDomain.isControlled(model) && !(new EObjectQuery(optionalMainModel.get()).isContainedIn(model))) {

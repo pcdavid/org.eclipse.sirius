@@ -15,9 +15,8 @@ package org.eclipse.sirius.model.business.internal.query;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedHashSet;
+import java.util.Optional;
 
-import org.eclipse.sirius.ext.base.Option;
-import org.eclipse.sirius.ext.base.Options;
 import org.eclipse.sirius.viewpoint.DAnalysis;
 import org.eclipse.sirius.viewpoint.DView;
 import org.eclipse.sirius.viewpoint.description.DAnnotationEntry;
@@ -59,13 +58,13 @@ public class DAnalysisQuery {
      *            the data of the annotation
      * @return the annotation entry
      */
-    public Option<DAnnotationEntry> getAnnotation(final String source, final String detail) {
+    public Optional<DAnnotationEntry> getAnnotation(final String source, final String detail) {
         for (DAnnotationEntry annotation : analysis.getEAnnotations()) {
             if (source.equals(annotation.getSource()) && annotation.getDetails().contains(detail)) {
-                return Options.newSome(annotation);
+                return Optional.of(annotation);
             }
         }
-        return Options.newNone();
+        return Optional.empty();
     }
 
     /**
@@ -75,13 +74,13 @@ public class DAnalysisQuery {
      *            the source of the annotation
      * @return the annotation entries
      */
-    public Option<DAnnotationEntry> getAnnotation(final String source) {
+    public Optional<DAnnotationEntry> getAnnotation(final String source) {
         for (DAnnotationEntry annotation : analysis.getEAnnotations()) {
             if (source.equals(annotation.getSource())) {
-                return Options.newSome(annotation);
+                return Optional.of(annotation);
             }
         }
-        return Options.newNone();
+        return Optional.empty();
     }
 
     /**
@@ -108,7 +107,7 @@ public class DAnalysisQuery {
      * @return selected {@link Viewpoint}s for the current {@link DAnalysis}
      */
     public Collection<Viewpoint> getSelectedViewpoints() {
-        Collection<Viewpoint> selectedViewpoints = new ArrayList<Viewpoint>();
+        Collection<Viewpoint> selectedViewpoints = new ArrayList<>();
         Collection<DView> selectedDViews = analysis.getSelectedViews();
         for (final DView dView : selectedDViews) {
             final Viewpoint viewpoint = dView.getViewpoint();
