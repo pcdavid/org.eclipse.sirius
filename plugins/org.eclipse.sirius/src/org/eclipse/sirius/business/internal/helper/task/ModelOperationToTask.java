@@ -126,8 +126,8 @@ public class ModelOperationToTask implements Function<ModelOperation, ICommandTa
      */
     public AbstractOperationTask createTask(final ModelOperation op) {
         AbstractOperationTask task = null;
-        Option<? extends AbstractCommandTask> optionalDialectTask = DialectManager.INSTANCE.createTask(context, extPackage, op, session, uiCallback);
-        if (optionalDialectTask.some() && optionalDialectTask.get() instanceof AbstractOperationTask) {
+        Optional<? extends AbstractCommandTask> optionalDialectTask = DialectManager.INSTANCE.createTask(context, extPackage, op, session, uiCallback);
+        if (optionalDialectTask.isPresent() && optionalDialectTask.get() instanceof AbstractOperationTask) {
             task = (AbstractOperationTask) optionalDialectTask.get();
         } else if (op instanceof CreateInstance) {
             task = new CreateInstanceTask(context, extPackage, (CreateInstance) op, interpreter);
@@ -171,7 +171,7 @@ public class ModelOperationToTask implements Function<ModelOperation, ICommandTa
                 task = UnexecutableOperationTask.getInstance();
                 SiriusPlugin.getDefault().getLog()
                         .log(new Status(IStatus.WARNING, SiriusPlugin.ID, MessageFormat.format(Messages.ModelOperationToTask_cannotCreateTaskWarningMsg, op.eClass().getName())));
-            } else if (optionalTask.isPresent() && optionalTask.get() instanceof AbstractOperationTask) {
+            } else if (optionalTask.get() instanceof AbstractOperationTask) {
                 task = (AbstractOperationTask) optionalTask.get();
             }
         }

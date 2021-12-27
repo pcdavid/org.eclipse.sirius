@@ -19,6 +19,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -78,8 +79,6 @@ import org.eclipse.sirius.diagram.tools.api.command.ChangeLayerActivationCommand
 import org.eclipse.sirius.diagram.tools.api.command.DiagramCommandFactoryService;
 import org.eclipse.sirius.diagram.tools.internal.preferences.SiriusDiagramInternalPreferencesKeys;
 import org.eclipse.sirius.ecore.extender.business.api.accessor.ModelAccessor;
-import org.eclipse.sirius.ext.base.Option;
-import org.eclipse.sirius.ext.base.Options;
 import org.eclipse.sirius.tools.api.SiriusPlugin;
 import org.eclipse.sirius.tools.api.command.CommandContext;
 import org.eclipse.sirius.tools.api.command.DCommand;
@@ -375,14 +374,14 @@ public class DiagramDialectServices extends AbstractRepresentationDialectService
     }
 
     @Override
-    public Option<? extends AbstractCommandTask> createTask(CommandContext context, ModelAccessor extPackage, ModelOperation op, Session session, UICallBack uiCallback) {
-        Option<? extends AbstractCommandTask> task = Options.newNone();
+    public Optional<? extends AbstractCommandTask> createTask(CommandContext context, ModelAccessor extPackage, ModelOperation op, Session session, UICallBack uiCallback) {
+        Optional<? extends AbstractCommandTask> task = Optional.empty();
         if (op instanceof CreateView) {
             final CreateView createView = (CreateView) op;
-            task = Options.newSome(new CreateViewTask(context, extPackage, createView, session.getInterpreter()));
+            task = Optional.of(new CreateViewTask(context, extPackage, createView, session.getInterpreter()));
         } else if (op instanceof Navigation) {
             final Navigation doubleClickNavigation = (Navigation) op;
-            task = Options.newSome(new NavigationTask(context, extPackage, doubleClickNavigation, session.getInterpreter(), uiCallback));
+            task = Optional.of(new NavigationTask(context, extPackage, doubleClickNavigation, session.getInterpreter(), uiCallback));
         }
         return task;
     }

@@ -20,6 +20,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -43,7 +44,6 @@ import org.eclipse.sirius.common.tools.api.util.EclipseUtil;
 import org.eclipse.sirius.common.tools.api.util.EqualityHelper;
 import org.eclipse.sirius.ecore.extender.business.api.accessor.ModelAccessor;
 import org.eclipse.sirius.ext.base.Option;
-import org.eclipse.sirius.ext.base.Options;
 import org.eclipse.sirius.tools.api.Messages;
 import org.eclipse.sirius.tools.api.SiriusPlugin;
 import org.eclipse.sirius.tools.api.command.CommandContext;
@@ -480,10 +480,10 @@ public class DialectManagerImpl implements DialectManager {
     }
 
     @Override
-    public Option<? extends AbstractCommandTask> createTask(CommandContext context, ModelAccessor extPackage, ModelOperation op, Session session, UICallBack uiCallback) {
-        Option<? extends AbstractCommandTask> task = Options.newNone();
+    public Optional<? extends AbstractCommandTask> createTask(CommandContext context, ModelAccessor extPackage, ModelOperation op, Session session, UICallBack uiCallback) {
+        Optional<? extends AbstractCommandTask> task = Optional.empty();
         Iterator<Dialect> iterDialect = dialects.values().iterator();
-        while (iterDialect.hasNext() && !task.some()) {
+        while (iterDialect.hasNext() && task.isEmpty()) {
             Dialect dialect = iterDialect.next();
             task = dialect.getServices().createTask(context, extPackage, op, session, uiCallback);
         }
