@@ -12,13 +12,13 @@
  *******************************************************************************/
 package org.eclipse.sirius.business.api.migration;
 
+import java.util.Optional;
 import java.util.UUID;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.sirius.business.api.query.AirDResouceQuery;
 import org.eclipse.sirius.business.api.session.resource.AirdResource;
-import org.eclipse.sirius.ext.base.Option;
 import org.eclipse.sirius.viewpoint.DAnalysis;
 import org.eclipse.sirius.viewpoint.DRepresentation;
 import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
@@ -48,8 +48,8 @@ public abstract class AbstractRepresentationsFileMigrationParticipant extends Ab
         // The migration often uses dAnalysis and loaded version at osgi form
         if (resource instanceof AirdResource) {
             AirDResouceQuery query = new AirDResouceQuery((AirdResource) resource);
-            Option<DAnalysis> optionalAnalysis = query.getDAnalysis();
-            if (optionalAnalysis.some()) {
+            Optional<DAnalysis> optionalAnalysis = query.getDAnalysis();
+            if (optionalAnalysis.isPresent()) {
                 DAnalysis dAnalysis = optionalAnalysis.get();
                 postLoad(dAnalysis, Version.parseVersion(loadedVersion));
             }

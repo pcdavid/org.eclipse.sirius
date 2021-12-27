@@ -13,6 +13,7 @@
 package org.eclipse.sirius.tests.unit.diagram.sequence;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.URI;
@@ -161,11 +162,11 @@ public class SequenceMessageFlagResetMigrationTest extends AbstractSequenceSiriu
         }
 
         AirDResouceQuery query = new AirDResouceQuery((AirdResource) session2.getSessionResource());
-        Option<DAnalysis> dAnalysis = query.getDAnalysis();
+        Optional<DAnalysis> dAnalysis = query.getDAnalysis();
 
         // Check that the version attribute has not been set by the migration,
         // it will be set during save.
-        assertTrue(dAnalysis.some());
+        assertTrue(dAnalysis.isPresent());
         String version = dAnalysis.get().getVersion();
         assertTrue("The migration should still be marked as needed for next load.", RepresentationsFileMigrationService.getInstance().isMigrationNeeded(Version.parseVersion(version)));
 

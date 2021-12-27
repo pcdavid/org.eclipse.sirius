@@ -15,8 +15,6 @@ package org.eclipse.sirius.business.api.query;
 import java.util.Optional;
 
 import org.eclipse.sirius.business.api.session.resource.AirdResource;
-import org.eclipse.sirius.ext.base.Option;
-import org.eclipse.sirius.ext.base.Options;
 import org.eclipse.sirius.viewpoint.DAnalysis;
 import org.eclipse.sirius.viewpoint.description.DAnnotationEntry;
 
@@ -34,7 +32,7 @@ public class AirDResouceQuery {
      */
     public static final String ANNOTATION_SOURCE = "Migration"; //$NON-NLS-1$
 
-    private DAnalysis analysis;
+    private final DAnalysis analysis;
 
     /**
      * Create a new query.
@@ -43,10 +41,10 @@ public class AirDResouceQuery {
      *            the element to query.
      */
     public AirDResouceQuery(AirdResource resource) {
-        if (resource != null) {
-            if (!resource.getContents().isEmpty() && resource.getContents().get(0) instanceof DAnalysis) {
-                analysis = (DAnalysis) resource.getContents().get(0);
-            }
+        if (resource != null && !resource.getContents().isEmpty() && resource.getContents().get(0) instanceof DAnalysis) {
+            analysis = (DAnalysis) resource.getContents().get(0);
+        } else {
+            analysis = null;
         }
     }
 
@@ -55,11 +53,8 @@ public class AirDResouceQuery {
      * 
      * @return the DAnalysis of the resource
      */
-    public Option<DAnalysis> getDAnalysis() {
-        if (analysis != null) {
-            return Options.newSome(analysis);
-        }
-        return Options.newNone();
+    public Optional<DAnalysis> getDAnalysis() {
+        return Optional.ofNullable(analysis);
     }
 
     /**
