@@ -15,6 +15,7 @@ package org.eclipse.sirius.diagram.business.api.query;
 import org.eclipse.sirius.diagram.description.EdgeMapping;
 import org.eclipse.sirius.diagram.description.IEdgeMapping;
 import org.eclipse.sirius.ext.base.Option;
+import org.eclipse.sirius.ext.base.Options;
 
 /**
  * A class aggregating all the queries (read-only!) having a {@link IEdgeMapping} as a starting point.
@@ -42,7 +43,7 @@ public class IEdgeMappingQuery {
      * @return The correct EdgeMapping
      */
     public Option<EdgeMapping> getEdgeMapping() {
-        return this.internalQuery.getEdgeMapping();
+        return Options.fromOptional(this.internalQuery.getEdgeMapping());
     }
 
     /**
@@ -52,6 +53,6 @@ public class IEdgeMappingQuery {
      * @return the real edge mapping.
      */
     public Option<EdgeMapping> getOriginalEdgeMapping() {
-        return this.internalQuery.getOriginalEdgeMapping();
+        return Options.fromOptional(this.internalQuery.getOriginalEdgeMapping());
     }
 }

@@ -108,13 +108,13 @@ public class DescriptionResourceImpl extends XMIResourceImpl {
      */
     @Override
     public EObject getEObject(String uriFragment) {
-        Option<String> optionalRewrittenFragment = Options.newNone();
+        Optional<String> optionalRewrittenFragment = Optional.empty();
         if (migrationHandler.isPresent()) {
             optionalRewrittenFragment = migrationHandler.get().getOptionalRewrittenFragment(uriFragment);
         }
 
         EObject result = null;
-        if (optionalRewrittenFragment.some()) {
+        if (optionalRewrittenFragment.isPresent()) {
             result = getEObject(optionalRewrittenFragment.get());
         } else if (useURIFragmentAsId) {
             result = getEObjectUsingURIFragmentAsId(uriFragment);

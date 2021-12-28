@@ -82,6 +82,7 @@ import org.eclipse.sirius.diagram.ui.tools.api.layout.LayoutUtils;
 import org.eclipse.sirius.diagram.ui.tools.internal.figure.RegionRoundedGradientRectangle;
 import org.eclipse.sirius.diagram.ui.tools.internal.preferences.SiriusDiagramUiInternalPreferencesKeys;
 import org.eclipse.sirius.ext.base.Option;
+import org.eclipse.sirius.ext.base.Options;
 import org.eclipse.sirius.ext.gmf.runtime.gef.ui.figures.AlphaDropShadowBorder;
 import org.eclipse.sirius.ext.gmf.runtime.gef.ui.figures.LabelBorderStyleIds;
 import org.eclipse.sirius.ext.gmf.runtime.gef.ui.figures.RoundedCornerMarginBorder;
@@ -1091,7 +1092,7 @@ public class CompartmentsLayoutTest extends SiriusDiagramTestCase implements ICo
 
     private Insets getExpectedScrollPaneInsets(DNodeContainer dnc) {
         DDiagramElementContainerExperimentalQuery query = new DDiagramElementContainerExperimentalQuery(dnc);
-        Option<LabelBorderStyleDescription> labelBorderStyle = query.getLabelBorderStyle();
+        Option<LabelBorderStyleDescription> labelBorderStyle = Options.fromOptional(query.getLabelBorderStyle());
         final int defaultMargin = AbstractDNodeContainerCompartmentEditPart.DEFAULT_MARGIN;
 
         int borderSize = 0;

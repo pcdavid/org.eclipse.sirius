@@ -12,13 +12,14 @@
  *******************************************************************************/
 package org.eclipse.sirius.business.api.migration;
 
+import java.util.Optional;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.xmi.XMLResource;
-import org.eclipse.sirius.ext.base.Option;
 import org.osgi.framework.Version;
 import org.xml.sax.Attributes;
 
@@ -139,7 +140,7 @@ public interface IMigrationParticipant {
      *            the current fragment.
      * @return the optional new uri fragment (none if no changes).
      */
-    Option<String> getNewFragment(String uriFragment);
+    Optional<String> getNewFragment(String uriFragment);
 
     /**
      * Return the EPackage to use for the given namespace.

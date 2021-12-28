@@ -60,6 +60,7 @@ import org.eclipse.sirius.diagram.ui.tools.api.layout.LayoutUtils;
 import org.eclipse.sirius.diagram.ui.tools.api.policy.CompoundEditPolicy;
 import org.eclipse.sirius.diagram.ui.tools.internal.ui.NoCopyDragEditPartsTrackerEx;
 import org.eclipse.sirius.ext.base.Option;
+import org.eclipse.sirius.ext.base.Options;
 import org.eclipse.sirius.ext.gmf.runtime.diagram.ui.tools.RubberbandDragTracker;
 import org.eclipse.sirius.ext.gmf.runtime.gef.ui.figures.LabelBorderStyleIds;
 import org.eclipse.sirius.viewpoint.description.style.LabelBorderStyleDescription;
@@ -267,7 +268,7 @@ public abstract class AbstractDiagramContainerEditPart extends AbstractDiagramEl
     private boolean hasFullLabelBorder() {
         EObject element = resolveSemanticElement();
         if (element instanceof DDiagramElementContainer) {
-            Option<LabelBorderStyleDescription> labelBorderStyle = new DDiagramElementContainerExperimentalQuery((DDiagramElementContainer) element).getLabelBorderStyle();
+            Option<LabelBorderStyleDescription> labelBorderStyle = Options.fromOptional(new DDiagramElementContainerExperimentalQuery((DDiagramElementContainer) element).getLabelBorderStyle());
             return labelBorderStyle.some() && LabelBorderStyleIds.LABEL_FULL_BORDER_STYLE_FOR_CONTAINER_ID.equals(labelBorderStyle.get().getId());
         }
         return false;

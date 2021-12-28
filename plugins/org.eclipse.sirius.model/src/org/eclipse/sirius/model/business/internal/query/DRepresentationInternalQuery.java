@@ -22,8 +22,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
-import org.eclipse.sirius.ext.base.Option;
-import org.eclipse.sirius.ext.base.Options;
 import org.eclipse.sirius.model.business.internal.DRepresentationDescriptorAdapter;
 import org.eclipse.sirius.viewpoint.DAnalysis;
 import org.eclipse.sirius.viewpoint.DRepresentation;
@@ -71,13 +69,13 @@ public class DRepresentationInternalQuery {
      *            the data of the annotation
      * @return the annotation entry
      */
-    public Option<AnnotationEntry> getAnnotation(final String source, final EObject eObject) {
+    public Optional<AnnotationEntry> getAnnotation(final String source, final EObject eObject) {
         for (AnnotationEntry annotation : representation.getOwnedAnnotationEntries()) {
             if (source.equals(annotation.getSource()) && eObject.equals(annotation.getData())) {
-                return Options.newSome(annotation);
+                return Optional.of(annotation);
             }
         }
-        return Options.newNone();
+        return Optional.empty();
     }
 
     /**
@@ -106,12 +104,12 @@ public class DRepresentationInternalQuery {
      *            the detail of the annotations
      * @return the annotation
      */
-    public Option<DAnnotation> getDAnnotation(final String source, String detail) {
+    public Optional<DAnnotation> getDAnnotation(final String source, String detail) {
         DAnnotation annotation = representation.getDAnnotation(source);
         if (annotation != null && annotation.getDetails().get(detail) != null) {
-            return Options.newSome(annotation);
+            return Optional.of(annotation);
         }
-        return Options.newNone();
+        return Optional.empty();
     }
 
     /**

@@ -14,6 +14,7 @@ package org.eclipse.sirius.business.api.migration;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
@@ -23,8 +24,6 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.xml.type.AnyType;
-import org.eclipse.sirius.ext.base.Option;
-import org.eclipse.sirius.ext.base.Options;
 import org.osgi.framework.Version;
 import org.xml.sax.Attributes;
 
@@ -78,9 +77,9 @@ public abstract class AbstractMigrationParticipant implements IMigrationParticip
     }
 
     @Override
-    public Option<String> getNewFragment(String uriFragment) {
+    public Optional<String> getNewFragment(String uriFragment) {
         // Nothing to migrate by default.
-        return Options.newNone();
+        return Optional.empty();
     }
 
     @Override

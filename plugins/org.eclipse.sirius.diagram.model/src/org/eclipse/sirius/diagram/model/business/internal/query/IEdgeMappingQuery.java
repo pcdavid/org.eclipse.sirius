@@ -12,12 +12,12 @@
  *******************************************************************************/
 package org.eclipse.sirius.diagram.model.business.internal.query;
 
+import java.util.Optional;
+
 import org.eclipse.sirius.diagram.description.EdgeMapping;
 import org.eclipse.sirius.diagram.description.EdgeMappingImport;
 import org.eclipse.sirius.diagram.description.IEdgeMapping;
 import org.eclipse.sirius.diagram.model.business.internal.description.spec.EdgeMappingImportWrapper;
-import org.eclipse.sirius.ext.base.Option;
-import org.eclipse.sirius.ext.base.Options;
 
 /**
  * A class aggregating all the queries (read-only!) having a {@link IEdgeMapping} as a starting point.
@@ -44,14 +44,14 @@ public class IEdgeMappingQuery {
      * 
      * @return The correct EdgeMapping
      */
-    public Option<EdgeMapping> getEdgeMapping() {
+    public Optional<EdgeMapping> getEdgeMapping() {
         EdgeMapping result = null;
         if (iEdgeMapping instanceof EdgeMappingImport && !(iEdgeMapping instanceof EdgeMappingImportWrapper)) {
             result = EdgeMappingImportWrapper.getWrapper((EdgeMappingImport) iEdgeMapping);
         } else {
             result = (EdgeMapping) iEdgeMapping;
         }
-        return Options.newSome(result);
+        return Optional.ofNullable(result);
     }
 
     /**
@@ -60,14 +60,14 @@ public class IEdgeMappingQuery {
      * 
      * @return the real edge mapping.
      */
-    public Option<EdgeMapping> getOriginalEdgeMapping() {
+    public Optional<EdgeMapping> getOriginalEdgeMapping() {
         EdgeMapping result = null;
         if (iEdgeMapping instanceof EdgeMappingImport) {
             result = getOriginalEdgeMapping((EdgeMappingImport) iEdgeMapping);
         } else {
             result = (EdgeMapping) iEdgeMapping;
         }
-        return Options.newSome(result);
+        return Optional.ofNullable(result);
     }
 
     private EdgeMapping getOriginalEdgeMapping(EdgeMappingImport edgeMappingImport) {

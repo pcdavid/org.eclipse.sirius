@@ -30,8 +30,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.sirius.ext.base.Option;
-import org.eclipse.sirius.ext.base.Options;
 import org.eclipse.sirius.ext.emf.EClassQuery;
 import org.eclipse.sirius.viewpoint.DAnalysis;
 import org.eclipse.sirius.viewpoint.DRepresentation;
@@ -89,15 +87,15 @@ public class EObjectQuery {
      * 
      * @return the representation if found, null otherwise.
      */
-    public Option<DRepresentation> getRepresentation() {
+    public Optional<DRepresentation> getRepresentation() {
         EObject current = eObject;
         while (current != null) {
             if (current instanceof DRepresentation) {
-                return Options.newSome((DRepresentation) current);
+                return Optional.of((DRepresentation) current);
             }
             current = current.eContainer();
         }
-        return Options.newNone();
+        return Optional.empty();
     }
 
     /**
@@ -124,15 +122,15 @@ public class EObjectQuery {
      *            the type of element to look for.
      * @return the closest ancestor of the specified type, if one was found.
      */
-    public Option<EObject> getFirstAncestorOfType(EClass klass) {
+    public Optional<EObject> getFirstAncestorOfType(EClass klass) {
         EObject current = eObject.eContainer();
         while (current != null && !klass.isInstance(current)) {
             current = current.eContainer();
         }
         if (current != null) {
-            return Options.newSome(current);
+            return Optional.of(current);
         } else {
-            return Options.newNone();
+            return Optional.empty();
         }
     }
 
@@ -303,8 +301,8 @@ public class EObjectQuery {
      */
     public DAnalysis getDAnalysis() {
         DAnalysis dAnalysis = null;
-        Option<DRepresentation> representation = getRepresentation();
-        if (representation.some()) {
+        Optional<DRepresentation> representation = getRepresentation();
+        if (representation.isPresent()) {
             DRepresentationDescriptor representationDescriptor = new DRepresentationInternalQuery(representation.get()).getRepresentationDescriptor();
             EObject rootContainer = EcoreUtil.getRootContainer(representationDescriptor, false);
             if (rootContainer instanceof DAnalysis) {

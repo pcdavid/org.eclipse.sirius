@@ -12,6 +12,7 @@
  *******************************************************************************/
 package org.eclipse.sirius.ext.base;
 
+import java.util.Optional;
 
 /**
  * Factory class to create new instances of Options.
@@ -27,7 +28,7 @@ public final class Options {
     private Options() {
 
     }
-    
+
     /**
      * create a new option representing a None value.
      * 
@@ -53,21 +54,38 @@ public final class Options {
     }
 
     /**
-     * Returns an option wrapping the specified value if it is not null, or an
-     * {@linkplain Options#newNone() empty} option otherwise.
+     * Returns an option wrapping the specified value if it is not null, or an {@linkplain Options#newNone() empty}
+     * option otherwise.
      * 
      * @param <T>
      *            the type expected by the option.
      * @param value
      *            the value, which may be null.
-     * @return an option wrapping the specified value if it is not null, or an
-     *         {@linkplain Options#newNone() empty} option otherwise.
+     * @return an option wrapping the specified value if it is not null, or an {@linkplain Options#newNone() empty}
+     *         option otherwise.
      */
     public static <T> Option<T> fromNullable(T value) {
         if (value == null) {
             return newNone();
         } else {
             return newSome(value);
+        }
+    }
+
+    /**
+     * Conversion helper to help the transition to {@link Optional}.
+     * 
+     * @param <T>
+     *            the type expected by the option.
+     * @param optionalValue
+     *            an optional value, wrapped in a standard {@link Optional}.
+     * @return an equivalent {@link Option}.
+     */
+    public static <T> Option<T> fromOptional(Optional<T> optionalValue) {
+        if (optionalValue != null && optionalValue.isPresent()) {
+            return Options.newSome(optionalValue.get());
+        } else {
+            return Options.newNone();
         }
     }
 }

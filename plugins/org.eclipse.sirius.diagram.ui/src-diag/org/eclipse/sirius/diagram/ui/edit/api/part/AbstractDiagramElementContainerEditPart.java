@@ -525,7 +525,7 @@ public abstract class AbstractDiagramElementContainerEditPart extends AbstractBo
 
     private Option<LabelBorderStyleDescription> getLabelBorderStyle(DStylizable viewNode) {
         if (viewNode instanceof DDiagramElementContainer) {
-            return new DDiagramElementContainerExperimentalQuery((DDiagramElementContainer) viewNode).getLabelBorderStyle();
+            return Options.fromOptional(new DDiagramElementContainerExperimentalQuery((DDiagramElementContainer) viewNode).getLabelBorderStyle());
         }
         return Options.newNone();
     }

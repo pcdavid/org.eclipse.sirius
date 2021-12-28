@@ -14,6 +14,7 @@
 package org.eclipse.sirius.business.internal.migration.description;
 
 import java.util.Map;
+import java.util.Optional;
 
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.URI;
@@ -24,7 +25,6 @@ import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.sirius.business.api.migration.ResourceVersionMismatchDiagnostic;
 import org.eclipse.sirius.business.internal.migration.AbstractSiriusMigrationService;
 import org.eclipse.sirius.business.internal.migration.IMigrationHandler;
-import org.eclipse.sirius.ext.base.Option;
 import org.osgi.framework.Version;
 
 /**
@@ -69,7 +69,7 @@ public class ViewpointMigrationHandler implements IMigrationHandler {
      * @see IMigrationHandler#getOptionalRewrittenFragment(String)
      */
     @Override
-    public Option<String> getOptionalRewrittenFragment(String uriFragment) {
+    public Optional<String> getOptionalRewrittenFragment(String uriFragment) {
         return VSMMigrationService.getInstance().getNewFragment(uriFragment);
     }
 

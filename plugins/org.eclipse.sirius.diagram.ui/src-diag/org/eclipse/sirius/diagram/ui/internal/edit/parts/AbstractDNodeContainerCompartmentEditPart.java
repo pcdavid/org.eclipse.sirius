@@ -322,7 +322,7 @@ public abstract class AbstractDNodeContainerCompartmentEditPart extends ShapeCom
     private Option<LabelBorderStyleDescription> getLabelBorderStyle() {
         EObject element = resolveSemanticElement();
         if (element instanceof DDiagramElementContainer) {
-            return new DDiagramElementContainerExperimentalQuery((DDiagramElementContainer) element).getLabelBorderStyle();
+            return Options.fromOptional(new DDiagramElementContainerExperimentalQuery((DDiagramElementContainer) element).getLabelBorderStyle());
         }
         return Options.newNone();
     }

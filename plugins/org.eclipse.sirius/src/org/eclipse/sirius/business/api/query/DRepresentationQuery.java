@@ -19,6 +19,7 @@ import org.eclipse.sirius.business.api.preferences.SiriusPreferencesKeys;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.internal.query.DRepresentationWithSessionInternalQuery;
 import org.eclipse.sirius.ext.base.Option;
+import org.eclipse.sirius.ext.base.Options;
 import org.eclipse.sirius.viewpoint.DAnalysis;
 import org.eclipse.sirius.viewpoint.DRepresentation;
 import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
@@ -68,7 +69,7 @@ public class DRepresentationQuery {
      * @return the annotation entry
      */
     public Option<AnnotationEntry> getAnnotation(final String source, final EObject eObject) {
-        return internalQuery.getAnnotation(source, eObject);
+        return Options.fromOptional(internalQuery.getAnnotation(source, eObject));
     }
 
     /**
@@ -92,7 +93,7 @@ public class DRepresentationQuery {
      * @return the annotation
      */
     public Option<DAnnotation> getDAnnotation(final String source, String detail) {
-        return internalQuery.getDAnnotation(source, detail);
+        return Options.fromOptional(internalQuery.getDAnnotation(source, detail));
     }
 
     /**

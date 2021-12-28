@@ -13,13 +13,13 @@
 package org.eclipse.sirius.model.business.internal.migration;
 
 import java.util.Map;
+import java.util.Optional;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource.Diagnostic;
 import org.eclipse.emf.ecore.xmi.XMLHelper;
 import org.eclipse.emf.ecore.xmi.XMLLoad;
 import org.eclipse.emf.ecore.xmi.XMLResource;
-import org.eclipse.sirius.ext.base.Option;
 
 /**
  * The interface used to call migration process.
@@ -62,7 +62,7 @@ public interface IMigrationHandler {
      * 
      * @return map of option used to migrate fragment.
      */
-    Option<String> getOptionalRewrittenFragment(String uriFragment);
+    Optional<String> getOptionalRewrittenFragment(String uriFragment);
 
     /**
      * Create XML configuration.

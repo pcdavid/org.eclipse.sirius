@@ -277,7 +277,7 @@ public final class GMFHelper {
     }
 
     private static boolean hasFullLabelBorder(DDiagramElementContainer ddec) {
-        Option<LabelBorderStyleDescription> labelBorderStyle = new DDiagramElementContainerExperimentalQuery(ddec).getLabelBorderStyle();
+        Option<LabelBorderStyleDescription> labelBorderStyle = Options.fromOptional(new DDiagramElementContainerExperimentalQuery(ddec).getLabelBorderStyle());
         return labelBorderStyle.some() && LabelBorderStyleIds.LABEL_FULL_BORDER_STYLE_FOR_CONTAINER_ID.equals(labelBorderStyle.get().getId());
     }
 

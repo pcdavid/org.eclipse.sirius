@@ -69,6 +69,7 @@ import org.eclipse.sirius.diagram.ui.internal.edit.policies.RegionCollapseAwareP
 import org.eclipse.sirius.diagram.ui.internal.operation.ComparisonHelper;
 import org.eclipse.sirius.diagram.ui.tools.api.requests.RequestConstants;
 import org.eclipse.sirius.ext.base.Option;
+import org.eclipse.sirius.ext.base.Options;
 import org.eclipse.sirius.ext.gmf.runtime.gef.ui.figures.LabelBorderStyleIds;
 import org.eclipse.sirius.viewpoint.DRepresentationElement;
 import org.eclipse.sirius.viewpoint.description.RepresentationElementMapping;
@@ -214,7 +215,7 @@ public abstract class AbstractDNodeListCompartmentEditPart extends ListCompartme
     private boolean hasLabelBorderStyle() {
         EObject element = resolveSemanticElement();
         if (element instanceof DDiagramElementContainer) {
-            Option<LabelBorderStyleDescription> labelBorderStyle = new DDiagramElementContainerExperimentalQuery((DDiagramElementContainer) element).getLabelBorderStyle();
+            Option<LabelBorderStyleDescription> labelBorderStyle = Options.fromOptional(new DDiagramElementContainerExperimentalQuery((DDiagramElementContainer) element).getLabelBorderStyle());
             return labelBorderStyle.some() && !LabelBorderStyleIds.LABEL_FULL_BORDER_STYLE_FOR_CONTAINER_ID.equals(labelBorderStyle.get().getId());
         }
         return false;
