@@ -35,8 +35,6 @@ import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
 import org.eclipse.sirius.business.api.session.danalysis.DAnalysisSession;
 import org.eclipse.sirius.business.internal.session.danalysis.DAnalysisSessionImpl;
-import org.eclipse.sirius.ext.base.Option;
-import org.eclipse.sirius.ext.base.Options;
 import org.eclipse.sirius.viewpoint.DAnalysis;
 import org.eclipse.sirius.viewpoint.DRepresentation;
 import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
@@ -92,8 +90,8 @@ public class EObjectQuery {
      * 
      * @return the representation if found, null otherwise.
      */
-    public Option<DRepresentation> getRepresentation() {
-        return Options.fromOptional(internalQuery.getRepresentation());
+    public Optional<DRepresentation> getRepresentation() {
+        return internalQuery.getRepresentation();
     }
 
     /**
@@ -112,8 +110,8 @@ public class EObjectQuery {
      *            the type of element to look for.
      * @return the closest ancestor of the specified type, if one was found.
      */
-    public Option<EObject> getFirstAncestorOfType(EClass klass) {
-        return Options.fromOptional(internalQuery.getFirstAncestorOfType(klass));
+    public Optional<EObject> getFirstAncestorOfType(EClass klass) {
+        return internalQuery.getFirstAncestorOfType(klass);
     }
 
     /**

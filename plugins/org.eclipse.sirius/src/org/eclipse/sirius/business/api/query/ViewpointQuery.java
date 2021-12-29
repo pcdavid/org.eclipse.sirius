@@ -15,12 +15,11 @@ package org.eclipse.sirius.business.api.query;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.sirius.common.tools.api.util.StringUtil;
-import org.eclipse.sirius.ext.base.Option;
-import org.eclipse.sirius.ext.base.Options;
 import org.eclipse.sirius.viewpoint.description.RepresentationDescription;
 import org.eclipse.sirius.viewpoint.description.RepresentationExtensionDescription;
 import org.eclipse.sirius.viewpoint.description.RepresentationTemplate;
@@ -83,15 +82,15 @@ public class ViewpointQuery {
      * 
      * @return the logical Sirius URI identifying this viewpoint.
      */
-    public Option<URI> getViewpointURI() {
+    public Optional<URI> getViewpointURI() {
         Resource vpResource = vp.eResource();
         if (vpResource != null && vpResource.getURI().isPlatform()) {
             URI resourceURI = vpResource.getURI();
             String pluginId = resourceURI.segment(1);
             String uri = ViewpointURIQuery.VIEWPOINT_URI_SCHEME + ":/" + pluginId + "/" + vp.getName(); //$NON-NLS-1$ //$NON-NLS-2$
-            return Options.newSome(URI.createURI(uri));
+            return Optional.of(URI.createURI(uri));
         }
-        return Options.newNone();
+        return Optional.empty();
     }
 
     /**
@@ -105,9 +104,9 @@ public class ViewpointQuery {
      */
     public boolean hasSameSiriusURI(Viewpoint other) {
         Objects.requireNonNull(other);
-        Option<URI> vpURI = getViewpointURI();
-        Option<URI> otherURI = new ViewpointQuery(other).getViewpointURI();
-        return vpURI.some() && otherURI.some() && vpURI.get().equals(otherURI.get());
+        Optional<URI> vpURI = getViewpointURI();
+        Optional<URI> otherURI = new ViewpointQuery(other).getViewpointURI();
+        return vpURI.isPresent() && otherURI.isPresent() && vpURI.get().equals(otherURI.get());
     }
 
     /**

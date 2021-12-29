@@ -13,13 +13,12 @@
 package org.eclipse.sirius.business.api.query;
 
 import java.util.Collection;
+import java.util.Optional;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.sirius.business.api.preferences.SiriusPreferencesKeys;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.internal.query.DRepresentationWithSessionInternalQuery;
-import org.eclipse.sirius.ext.base.Option;
-import org.eclipse.sirius.ext.base.Options;
 import org.eclipse.sirius.viewpoint.DAnalysis;
 import org.eclipse.sirius.viewpoint.DRepresentation;
 import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
@@ -68,8 +67,8 @@ public class DRepresentationQuery {
      *            the data of the annotation
      * @return the annotation entry
      */
-    public Option<AnnotationEntry> getAnnotation(final String source, final EObject eObject) {
-        return Options.fromOptional(internalQuery.getAnnotation(source, eObject));
+    public Optional<AnnotationEntry> getAnnotation(final String source, final EObject eObject) {
+        return internalQuery.getAnnotation(source, eObject);
     }
 
     /**
@@ -92,8 +91,8 @@ public class DRepresentationQuery {
      *            the detail of the annotations
      * @return the annotation
      */
-    public Option<DAnnotation> getDAnnotation(final String source, String detail) {
-        return Options.fromOptional(internalQuery.getDAnnotation(source, detail));
+    public Optional<DAnnotation> getDAnnotation(final String source, String detail) {
+        return internalQuery.getDAnnotation(source, detail);
     }
 
     /**

@@ -14,11 +14,10 @@ package org.eclipse.sirius.business.api.query;
 
 import java.util.Iterator;
 import java.util.List;
+import java.util.Optional;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.sirius.ext.base.Option;
-import org.eclipse.sirius.ext.base.Options;
 
 /**
  * Queries on {@link List} of {@link EStructuralFeature}.
@@ -41,14 +40,14 @@ public class EStructuralFeaturesQuery {
 
     /**
      * Get the common {@link EClass} for all
-     * {@link EStructuralFeature#getEType()}, None {@link Option} if no common
+     * {@link EStructuralFeature#getEType()}, empty {@link Optional} if no common
      * type exists.
      * 
      * @return the common {@link EClass} for all
-     *         {@link EStructuralFeature#getEType()}, None {@link Option} if no
+     *         {@link EStructuralFeature#getEType()}, empty {@link Optional} if no
      *         common type exists
      */
-    public Option<EClass> getCommonType() {
+    public Optional<EClass> getCommonType() {
         EClass commonType = null;
         Iterator<EStructuralFeature> it = eStructuralFeatures.iterator();
         if (it.hasNext()) {
@@ -71,10 +70,6 @@ public class EStructuralFeaturesQuery {
                 }
             }
         }
-        if (commonType == null) {
-            return Options.newNone();
-        } else {
-            return Options.newSome(commonType);
-        }
+        return Optional.ofNullable(commonType);
     }
 }
